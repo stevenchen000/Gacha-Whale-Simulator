@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "eYwhFMX1kJK6S+KTVxCHZZnbA3+wIS6cFg2lbSaN6z5z5zv1l24oJCoX8oTyG8pM/pZ58vJJLK9gV59kOYH1bA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chens\\Documents\\Godot\\Gacha Whale Simulator\\Gacha Whale Simulator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chens\\.nuget\\packages\\godot.sourcegenerators\\4.3.0\\godot.sourcegenerators.4.3.0.nupkg.sha512",
+    "C:\\Users\\chens\\.nuget\\packages\\godotsharp\\4.3.0\\godotsharp.4.3.0.nupkg.sha512",
+    "C:\\Users\\chens\\.nuget\\packages\\godotsharpeditor\\4.3.0\\godotsharpeditor.4.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

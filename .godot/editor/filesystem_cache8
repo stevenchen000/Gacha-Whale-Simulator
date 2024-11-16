@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1731638392
+icon.svg::CompressedTexture2D::4903127257690524952::1731550235::1731550242::1::::<><>::
+info_display.cs::CSharpScript::-1::1731569775::0::1::::<>Control<>::
+info_display.tscn::PackedScene::1559297094793520019::1731569780::0::1::::<><>::res://info_display.cs
+menu.cs::CSharpScript::-1::1731570246::0::1::::<>Control<>::
+menu.tscn::PackedScene::9149309644096009371::1731569780::0::1::::<><>::res://menu.cs
+Room.tscn::PackedScene::5223980861175805312::1731569780::0::1::::<><>::uid://d3l8173j7xgql::::res://menu.tscn<>res://Scripts/GameState.cs<>uid://whlnpairs4d0::::res://info_display.tscn
+::res://Scripts/::1731569438
+GameState.cs::CSharpScript::-1::1731569438::0::1::::<>Node<>::
+::res://Scripts/Gacha System/::1731550490
+GachaGame.cs::CSharpScript::-1::1731565818::0::1::::GachaGame<>Resource<>::
