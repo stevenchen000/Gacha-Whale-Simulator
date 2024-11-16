@@ -9,4 +9,5 @@ public partial class GachaGame : Resource
     //game leaderboard
     //game points
     [Export] private int accountPower;
+    //list of currencies
 }

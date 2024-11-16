@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://whlnpairs4d0"]
 
-[ext_resource type="Script" path="res://info_display.cs" id="1_itxiu"]
+[ext_resource type="Script" path="res://Scripts/Menus/info_display.cs" id="1_itxiu"]
 
-[node name="Info Display" type="Control" node_paths=PackedStringArray("premiumCurrency", "currentPower", "money", "time", "day")]
+[node name="Info Display" type="Control" node_paths=PackedStringArray("premiumCurrency", "currentPower", "upgradeMaterials", "money", "time", "day")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -10,6 +10,7 @@ offset_bottom = 40.0
 script = ExtResource("1_itxiu")
 premiumCurrency = NodePath("MarginContainer/VBoxContainer/Gems")
 currentPower = NodePath("MarginContainer/VBoxContainer/Power")
+upgradeMaterials = NodePath("MarginContainer/VBoxContainer/Materials")
 money = NodePath("MarginContainer/VBoxContainer/Money")
 time = NodePath("MarginContainer/VBoxContainer/Time")
 day = NodePath("MarginContainer/VBoxContainer/Day")
@@ -24,20 +25,24 @@ layout_mode = 2
 
 [node name="Gems" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+text = "Gems: "
 
 [node name="Power" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+text = "Power: "
+
+[node name="Materials" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mats: "
 
 [node name="Money" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+text = "$0"
 
 [node name="Time" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+text = "8:00 AM"
 
 [node name="Day" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+text = "Day 0"

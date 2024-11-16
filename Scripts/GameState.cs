@@ -7,6 +7,7 @@ public partial class GameState : Node
 
     public static int currentPower = 0;
     public static int premiumCurrency = 0;
+    public static int upgradeCurrency = 0;
     public static int day = 0;
     public static int hour = 8;
     public static int minute = 0;
@@ -43,6 +44,23 @@ public partial class GameState : Node
         return premiumCurrency >= cost && cost >= 0;
     }
 
+    public static void AddUpgradeCurrency(int amount){
+        upgradeCurrency += amount;
+    }
+
+    public static bool UseUpgradeCurrency(int cost){
+        bool hasEnough = HasEnoughUpgradeCurrency(cost);
+
+        if(hasEnough){
+            upgradeCurrency -= cost;
+        }
+
+        return hasEnough;
+    }
+
+    public static bool HasEnoughUpgradeCurrency(int cost){
+        return upgradeCurrency >= cost;
+    }
 
 
 
