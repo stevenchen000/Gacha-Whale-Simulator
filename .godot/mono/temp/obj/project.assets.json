@@ -85,11 +85,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
+      "projectUniqueName": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
       "projectName": "Gacha Whale Simulator",
-      "projectPath": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
+      "projectPath": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
       "packagesPath": "C:\\Users\\chens\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "E:\\Godot Projects\\Gacha-Whale-Simulator\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chens\\AppData\\Roaming\\NuGet\\NuGet.Config",

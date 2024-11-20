@@ -1,18 +1,22 @@
 using Godot;
 using System;
+using GachaSystem;
 
 public partial class GameState : Node
 {
     public static GameState state;
 
-    public static int currentPower = 0;
-    public static int premiumCurrency = 0;
-    public static int upgradeCurrency = 0;
-    public static int day = 0;
-    public static int hour = 8;
-    public static int minute = 0;
-    public static int money = 10_000;
-    public static int salary = 5_000;
+    [Export] public int currentPower = 0;
+    [Export] public int premiumCurrency = 0;
+    [Export] public int upgradeCurrency = 0;
+    [Export] public int day = 0;
+    [Export] public int hour = 8;
+    [Export] public int minute = 0;
+    [Export] public int money = 10_000;
+    [Export] public int salary = 5_000;
+    [Export] public GachaCharacter[] allCharacters;
+    [Export] public GachaCharacter[] ownedCharacters;
+    
 
 
 
@@ -27,41 +31,45 @@ public partial class GameState : Node
     *****************/
 
     public static void AddPower(int power){
-        currentPower += power;
+        state.currentPower += power;
     }
 
     public static void AddPremiumCurrency(int amount){
-        premiumCurrency += amount;
+        state.premiumCurrency += amount;
     }
 
     public static void UsePremiumCurrency(int cost){
         if(HasEnoughPremiumCurrency(cost)){
-            premiumCurrency -= cost;
+            state.premiumCurrency -= cost;
         }
     }
 
     public static bool HasEnoughPremiumCurrency(int cost){
-        return premiumCurrency >= cost && cost >= 0;
+        return state.premiumCurrency >= cost && cost >= 0;
     }
 
     public static void AddUpgradeCurrency(int amount){
-        upgradeCurrency += amount;
+        state.upgradeCurrency += amount;
     }
 
     public static bool UseUpgradeCurrency(int cost){
         bool hasEnough = HasEnoughUpgradeCurrency(cost);
 
         if(hasEnough){
-            upgradeCurrency -= cost;
+            state.upgradeCurrency -= cost;
         }
 
         return hasEnough;
     }
 
     public static bool HasEnoughUpgradeCurrency(int cost){
-        return upgradeCurrency >= cost;
+        return state.upgradeCurrency >= cost;
     }
 
+    public static GachaCharacter PullRandomGachaCharacter(){
+        int length = state.allCharacters.Length;
+        return state.allCharacters[0];
+    }
 
 
     /****************
@@ -70,13 +78,13 @@ public partial class GameState : Node
 
     public static void Work(){
         if(IsTimeForWork()){
-            hour = 17;
-            minute = 30;
+            state.hour = 17;
+            state.minute = 30;
         }
     }
 
     public static bool IsTimeForWork(){
-        return hour == 8;
+        return state.hour == 8;
     }
 
     
@@ -85,11 +93,11 @@ public partial class GameState : Node
     ******************/
 
     public static void GoToSleep(){
-        hour = 8;
-        minute = 0;
-        day++;
-        if(day % 15 == 0){
-            money += salary;
+        state.hour = 8;
+        state.minute = 0;
+        state.day++;
+        if(state.day % 15 == 0){
+            state.money += state.salary;
         }
     }
 

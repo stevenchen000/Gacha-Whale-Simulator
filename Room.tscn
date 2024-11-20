@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgosg380clfem"]
+[gd_scene load_steps=6 format=3 uid="uid://cgosg380clfem"]
 
 [ext_resource type="PackedScene" uid="uid://d3l8173j7xgql" path="res://menu.tscn" id="1_4hc3r"]
 [ext_resource type="Script" path="res://Scripts/GameState.cs" id="2_eketu"]
 [ext_resource type="PackedScene" uid="uid://whlnpairs4d0" path="res://info_display.tscn" id="3_1iltf"]
+[ext_resource type="Resource" uid="uid://cuclr7vjvjjld" path="res://Resources/Gacha Characters/corner_jeraldeen.tres" id="3_u1g5c"]
+[ext_resource type="PackedScene" uid="uid://bbywqghbhxtw1" path="res://Gacha Window.tscn" id="5_5e0il"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(1041, 20)
@@ -11,9 +13,16 @@ position = Vector2(1041, 20)
 
 [node name="Game State" type="Node2D" parent="."]
 script = ExtResource("2_eketu")
+allCharacters = Array[Object]([ExtResource("3_u1g5c")])
 
 [node name="Info Display" parent="." instance=ExtResource("3_1iltf")]
 offset_left = -1021.0
 offset_top = -11.0
 offset_right = -981.0
 offset_bottom = 29.0
+
+[node name="GachaWindow" parent="." instance=ExtResource("5_5e0il")]
+offset_left = -858.0
+offset_top = -14.0
+offset_right = -858.0
+offset_bottom = -14.0

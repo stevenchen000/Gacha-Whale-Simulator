@@ -18,7 +18,7 @@ public partial class menu : Control
 	public void OnDailyButtonPressed(){
 		GameState.AddPremiumCurrency(50);
 		GameState.AddPower(100);
-		GD.Print(GameState.premiumCurrency);
+		GD.Print(GameState.state.premiumCurrency);
 	}
 
 	public void OnBannerButtonPressed(){

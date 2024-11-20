@@ -1,9 +1,1 @@
 res://Gacha Window.tscn
-res://menu.tscn
-res://info_display.tscn
-res://Room.tscn
-res://Scripts/Gacha System/GachaGame.cs
-res://Scripts/Menus/info_display.cs
-res://Scripts/GameState.cs
-res://Scripts/Menus/GachaMenu.cs
-res://Scripts/Menus/menu.cs

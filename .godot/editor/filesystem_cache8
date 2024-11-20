@@ -1,15 +1,43 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731780909
-Gacha Window.tscn::PackedScene::2507519265981356890::1731779498::0::1::::<><>::
+::res://::1732049589
+Gacha Window.tscn::PackedScene::2507519265981356890::1731965564::0::1::::<><>::res://Scripts/Menus/GachaMenu.cs<>uid://cb4d130t6c7wm::::res://icon.svg<>uid://pkim4yxl8ikp::::res://Art Assets/Placeholder Characters/Husbandos/Edge.png
 icon.svg::CompressedTexture2D::4903127257690524952::1731550235::1731550242::1::::<><>::
-info_display.cs::CSharpScript::-1::1731569775::0::1::::<>Control<>::
-info_display.tscn::PackedScene::1559297094793520019::1731780918::0::1::::<><>::res://info_display.cs
-menu.tscn::PackedScene::9149309644096009371::1731780909::0::1::::<><>::res://Scripts/Menus/menu.cs
-Room.tscn::PackedScene::5223980861175805312::1731569780::0::1::::<><>::uid://d3l8173j7xgql::::res://menu.tscn<>res://Scripts/GameState.cs<>uid://whlnpairs4d0::::res://info_display.tscn
-::res://Scripts/::1731780900
-GameState.cs::CSharpScript::-1::1731569438::0::1::::<>Node<>::
-::res://Scripts/Gacha System/::1731550490
-GachaGame.cs::CSharpScript::-1::1731641581::0::1::::GachaGame<>Resource<>::
-::res://Scripts/Menus/::1731780909
-GachaMenu.cs::CSharpScript::-1::1731780885::0::1::::<><>::
-menu.cs::CSharpScript::-1::1731570246::0::1::::<><>::
+info_display.tscn::PackedScene::1559297094793520019::1731783511::0::1::::<><>::res://Scripts/Menus/info_display.cs
+menu.tscn::PackedScene::9149309644096009371::1731783511::0::1::::<><>::res://Scripts/Menus/menu.cs
+Room.tscn::PackedScene::5223980861175805312::1731883940::0::1::::<><>::uid://d3l8173j7xgql::::res://menu.tscn<>res://Scripts/GameState.cs<>uid://whlnpairs4d0::::res://info_display.tscn<>uid://cuclr7vjvjjld::::res://Resources/Gacha Characters/corner_jeraldeen.tres<>uid://bbywqghbhxtw1::::res://Gacha Window.tscn
+::res://Art Assets/::1732049505
+::res://Art Assets/Placeholder Characters/::1732049507
+::res://Art Assets/Placeholder Characters/Husbandos/::1732049507
+Angeal.png::CompressedTexture2D::3550361574299600229::1731881659::1731882105::1::::<><>::
+Cor.png::CompressedTexture2D::4475285901161592937::1731881623::1731882105::1::::<><>::
+Edge.png::CompressedTexture2D::1073985158893555227::1731881619::1731882105::1::::<><>::
+Ignis.png::CompressedTexture2D::3086620148600509343::1731881632::1731882105::1::::<><>::
+Locke.png::CompressedTexture2D::8111589144395199699::1731881636::1731882105::1::::<><>::
+Reno.png::CompressedTexture2D::1646218008515673370::1731881629::1731882105::1::::<><>::
+Rude.png::CompressedTexture2D::9187311071610670626::1731881626::1731882105::1::::<><>::
+Weiss.png::CompressedTexture2D::7017251483615721995::1731881773::1731882105::1::::<><>::
+::res://Art Assets/Placeholder Characters/Waifus/::1732049508
+Aranea.png::CompressedTexture2D::1550756319871771082::1731882019::1731882101::1::::<><>::
+Arciela.png::CompressedTexture2D::6971332944205803881::1731882028::1731882101::1::::<><>::
+Beatrix.png::CompressedTexture2D::5524372288452101990::1731882025::1731882101::1::::<><>::
+Cloud of Darkness.png::CompressedTexture2D::7131036722793020242::1731882022::1731882101::1::::<><>::
+Jessie.png::CompressedTexture2D::3752927138559396830::1731882013::1731882101::1::::<><>::
+Leila.png::CompressedTexture2D::3512410193776107992::1731882016::1731882101::1::::<><>::
+Lulu.png::CompressedTexture2D::2443413714073669340::1731882035::1731882101::1::::<><>::
+Ultimecia.png::CompressedTexture2D::1559815289216482657::1731882032::1731882101::1::::<><>::
+::res://Resources/::1732049509
+::res://Resources/Gacha Characters/::1732049509
+corner_jeraldeen.tres::Resource/GachaCharacter::6181446954697227413::1731882172::0::1::::<><>::uid://pkim4yxl8ikp::::res://Art Assets/Placeholder Characters/Husbandos/Edge.png<>res://Scripts/Gacha System/GachaCharacter.cs
+::res://Scripts/::1732049509
+GameState.cs::CSharpScript::-1::1731879991::0::1::::<>Node<>::
+::res://Scripts/Gacha System/::1732049509
+GachaCharacter.cs::CSharpScript::-1::1731879958::0::1::::GachaCharacter<>Resource<>::
+GachaCharacterData.cs::CSharpScript::-1::1731879975::0::1::::GachaCharacterData<>Resource<>::
+GachaGame.cs::CSharpScript::-1::1731883275::0::1::::GachaGame<>Resource<>::
+::res://Scripts/Gacha System/Dungeons/::1732049509
+Dungeon.cs::CSharpScript::-1::1731885536::0::1::::Dungeon<>Resource<>::
+GachaDungeons.cs::CSharpScript::-1::1731885067::0::1::::<>Resource<>::
+::res://Scripts/Menus/::1732049509
+GachaMenu.cs::CSharpScript::-1::1731783018::0::1::::<>Control<>::
+info_display.cs::CSharpScript::-1::1731828967::0::1::::<>Control<>::
+menu.cs::CSharpScript::-1::1731828989::0::1::::<>Control<>::

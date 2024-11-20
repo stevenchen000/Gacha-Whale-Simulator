@@ -1,8 +1,10 @@
+Label
+Sprite2D
+TextureRect
+Control
 HBoxContainer
 VBoxContainer
 MarginContainer
 Button
-Label
 Panel
-Control
 Node2D

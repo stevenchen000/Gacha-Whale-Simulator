@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://cuclr7vjvjjld"]
+
+[ext_resource type="Texture2D" uid="uid://pkim4yxl8ikp" path="res://Art Assets/Placeholder Characters/Husbandos/Edge.png" id="1_wbyiq"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="2_e83x2"]
+
+[resource]
+script = ExtResource("2_e83x2")
+characterName = "Corner Jeraldeen"
+basePower = 1000
+characterPortrait = ExtResource("1_wbyiq")

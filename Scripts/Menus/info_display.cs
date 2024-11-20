@@ -24,11 +24,11 @@ public partial class info_display : Control
 	}
 
 	public void UpdateDisplay(){
-		premiumCurrency.Text = $"Gems: {GameState.premiumCurrency}";
-		currentPower.Text = $"Power: {GameState.currentPower}";
-		upgradeMaterials.Text = $"Materials: {GameState.upgradeCurrency}";
-		money.Text = $"${GameState.money}";
-		time.Text = $"{GameState.hour}:{GameState.minute}";
-		day.Text = $"Day {GameState.day}";
+		premiumCurrency.Text = $"Gems: {GameState.state.premiumCurrency}";
+		currentPower.Text = $"Power: {GameState.state.currentPower}";
+		upgradeMaterials.Text = $"Materials: {GameState.state.upgradeCurrency}";
+		money.Text = $"${GameState.state.money}";
+		time.Text = $"{GameState.state.hour}:{GameState.state.minute}";
+		day.Text = $"Day {GameState.state.day}";
 	}
 }
