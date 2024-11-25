@@ -1,25 +1,35 @@
-res://Scripts/Gacha System/GachaBanner.cs
-res://Scripts/Menus/menu.cs
+res://Scenes/UI/Gacha Menu Bar.tscn
+res://Scenes/Room.tscn
+res://Scenes/UI/menu.tscn
+res://Scenes/UI/info_display.tscn
+res://Scripts/UI/Calendar/DateTime.cs
+res://Scripts/Event System/GameEvent.cs
 res://Scripts/Gacha System/Skill System/CharacterSkill.cs
-res://Scripts/Gacha System/UpgradeCurrency.cs
-res://Scripts/Gacha System/GachaCharacter.cs
-res://Scripts/Menus/info_display.cs
-res://Scripts/Event System/EventManager.cs
-res://Scripts/Gacha System/GachaCharacterList.cs
 res://Scripts/Gacha System/GachaCharacterData.cs
-res://Scripts/Gacha System/Skill System/Skill Effects/SkillEffect.cs
-res://Scripts/Menus/GachaMenu.cs
+res://Scripts/Event System/GachaCharacterEvent.cs
+res://Scripts/Menus/info_display.cs
+res://Scripts/Gacha System/GachaCharacterList.cs
+res://Scripts/Menus/menu.cs
 res://Scripts/Gacha System/GachaCharacterPower.cs
-res://Scripts/Gacha System/GachaGame.cs
-res://Scripts/Gacha System/Skill System/Skill Effects/DamageEffect.cs
+res://Scripts/Event System/EventManager.cs
 res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
 res://Scripts/Node2d.cs
+res://Scripts/Gacha System/GachaGame.cs
 res://Scripts/Tag.cs
-res://Scripts/GameState.cs
-res://Scripts/Gacha System/Dungeons/Dungeon.cs
-res://Scripts/Gacha System/GachaValuePair.cs
-res://Scripts/Event System/GameEvent.cs
-res://Scripts/UI/Calendar/CalendarUI.cs
-res://Scripts/UI/Calendar/DateTime.cs
+res://Scripts/Event System/VoidEvent.cs
+res://Scripts/Gacha System/GachaBanner.cs
+res://Scripts/Gacha System/Skill System/Skill Effects/DamageEffect.cs
 res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs
+res://Scripts/Menus/GachaMenu.cs
+res://Scripts/GameState.cs
+res://Scripts/Gacha System/Skill System/Skill Effects/SkillEffect.cs
+res://Scripts/Gacha System/GachaCharacter.cs
 res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
+res://Scripts/UI/Banners Display/BannersWindow.cs
+res://Scripts/Gacha System/GachaValuePair.cs
+res://Scripts/Gacha System/UpgradeCurrency.cs
+res://Scripts/Gacha System/Dungeons/Dungeon.cs
+res://Scripts/UI/Calendar/CalendarUI.cs
+res://Scripts/UI/GachaBottomBar.cs
+res://Scenes/UI/Gacha Window/Gacha Window.tscn
+res://Scenes/UI/Gacha Window/Lobby Window.tscn

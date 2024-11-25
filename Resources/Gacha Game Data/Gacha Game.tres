@@ -14,3 +14,4 @@ upgradeCurrency = 0
 allCharacters = ExtResource("1_us7j2")
 ownedCharacters = Array[Object]([])
 currentBanner = ExtResource("1_pmgav")
+updateNumber = 0

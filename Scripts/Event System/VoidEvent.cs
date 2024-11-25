@@ -1,17 +1,19 @@
 using Godot;
 using System;
 
-namespace EventSystem{ 
-    public partial class GameEvent<T> : Resource
+namespace EventSystem
+{
+    [GlobalClass]
+    public partial class VoidEvent : Resource
     {
-        public delegate void EventDelegate(T character);
+        public delegate void EventDelegate();
         private event EventDelegate OnEvent;
 
-        public void RaiseEvent(T parameter)
+        public void RaiseEvent()
         {
-            if(OnEvent != null)
+            if (OnEvent != null)
             {
-                OnEvent(parameter);
+                OnEvent();
             }
         }
 

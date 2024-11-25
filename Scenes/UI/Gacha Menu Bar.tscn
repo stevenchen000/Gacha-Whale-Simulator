@@ -1,4 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4058rclqtcjo"]
+[gd_scene load_steps=6 format=3 uid="uid://b4058rclqtcjo"]
+
+[ext_resource type="Script" path="res://Scripts/UI/GachaBottomBar.cs" id="1_uu6ra"]
+[ext_resource type="PackedScene" uid="uid://bbywqghbhxtw1" path="res://Scenes/UI/Gacha Window/Gacha Window.tscn" id="2_en5rk"]
+[ext_resource type="PackedScene" uid="uid://dpw1nf6qhmgi4" path="res://Scenes/UI/Gacha Window/Banners Window.tscn" id="3_qydpv"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ikcno"]
 
@@ -13,9 +17,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uu6ra")
+characterMenuScene = ExtResource("2_en5rk")
+bannersMenuScene = ExtResource("3_qydpv")
+metadata/_edit_pinned_properties_ = [&"bannersMenuScene", &"characterMenuScene"]
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.425739, 0.0018229, 0.68281, 1)
+layout_mode = 0
 offset_right = 303.0
 offset_bottom = 536.0
 texture = SubResource("CanvasTexture_e7joj")
@@ -23,13 +33,22 @@ expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 20.0
+offset_top = 491.69
+offset_right = 248.0
+offset_bottom = 531.69
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Character Butto" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Characters"
 
-[node name="Button2" type="Button" parent="HBoxContainer"]
+[node name="Lobby Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Lobby"
+
+[node name="Gacha Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Banners"
+
+[connection signal="button_up" from="HBoxContainer/Character Butto" to="." method="OnCharacterButton"]
+[connection signal="button_up" from="HBoxContainer/Gacha Button" to="." method="OnBannersButton"]

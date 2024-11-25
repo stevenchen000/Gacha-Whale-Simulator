@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpw1nf6qhmgi4"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Banners Display/BannersWindow.cs" id="1_bc0ir"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ikcno"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uc8hs"]
+specular_texture = SubResource("ImageTexture_ikcno")
+specular_color = Color(0, 0.156597, 0.999988, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yksi5"]
+
+[node name="Banners Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bc0ir")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.304478, 0.672216, 0.159251, 1)
+layout_mode = 0
+offset_right = 303.0
+offset_bottom = 536.0
+texture = SubResource("CanvasTexture_uc8hs")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 123.04
+offset_right = 287.0
+offset_bottom = 261.04
+texture = SubResource("CanvasTexture_yksi5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 303.0
+offset_bottom = 519.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = -12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 277.5
+offset_right = 110.0
+offset_bottom = 317.5
+
+[node name="Summon x1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Summon x1"
+
+[node name="Summon x10" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Summon x10"

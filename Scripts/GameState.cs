@@ -22,13 +22,12 @@ public partial class GameState : Node
     [Export] public GachaCharacter[] ownedCharacters;
 
     [Export] public GachaGame game { get; set; }
-    [Export] private EventManager eventManager;
 
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        eventManager.OnGachaCharacterPulled += game.AddCharacterToAccount;
+        
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,10 +56,6 @@ public partial class GameState : Node
         return state.game;
     }
 
-    public static EventManager GetEventManager()
-    {
-        return state.eventManager;
-    }
 
     /****************
     * Gacha Functions

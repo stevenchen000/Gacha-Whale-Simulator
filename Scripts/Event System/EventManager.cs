@@ -1,23 +1,14 @@
 using Godot;
 using System;
 using GachaSystem;
+using EventSystem;
 
-public partial class EventManager : Node
+namespace EventSystem
 {
-    public delegate void GachaCharacterPulled(GachaCharacter pulledCharacter);
-    public event GachaCharacterPulled OnGachaCharacterPulled;
-    public void RaiseCharacterPulledEvent(GachaCharacter character)
+    public partial class EventManager : Node
     {
-        if(OnGachaCharacterPulled != null)
-            OnGachaCharacterPulled(character);
-    }
+        [Export] public GachaCharacterEvent gachaEvent;
 
 
-    public delegate void VoidEvent();
-    public event VoidEvent OnCharacterListUpdated;
-    public void RaiseCharacterListUpdatedEvent()
-    {
-        if(OnCharacterListUpdated != null)
-            OnCharacterListUpdated();
     }
 }

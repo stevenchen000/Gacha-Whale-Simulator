@@ -1,12 +1,16 @@
 using Godot;
 using System;
 using Godot.Collections;
+using EventSystem;
 
 public partial class OwnedGachaCharactersMenu : Control
 {
 	[Export] private Node scrollArea;
 	[Export] private Array<CharacterBoxDisplay> boxes;
 	[Export] private string rowSceneLocation = "res://Scenes/UI/Gacha Window/gacha_display_row.tscn";
+
+	[Export] private VoidEvent OnCharacterListUpdated;
+
 	public override void _Ready()
 	{
 		boxes = new Array<CharacterBoxDisplay>();
@@ -14,9 +18,8 @@ public partial class OwnedGachaCharactersMenu : Control
 		AddAllMissingRows();
 		RevealProperNumberOfBoxes();
 		UpdateAllPortraits();
-
-		GameState.GetEventManager().OnCharacterListUpdated += UpdateUI;
-		GameState.GetEventManager().OnCharacterListUpdated += () => GD.Print(GameState.GetGame().GetNumberOfCharacters());
+		
+		OnCharacterListUpdated.SubscribeEvent(UpdateUI);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,9 +29,13 @@ public partial class OwnedGachaCharactersMenu : Control
 
 	public void UpdateUI()
     {
+		GD.Print(1);
 		AddAllMissingRows();
+		GD.Print(2);
 		RevealProperNumberOfBoxes();
+		GD.Print(3);
 		UpdateAllPortraits();
+		GD.Print(4);
 	}
 
 	private void UpdateAllPortraits(){
@@ -74,6 +81,7 @@ public partial class OwnedGachaCharactersMenu : Control
 	private void AddAllMissingRows()
     {
 		int numOfCharacters = GameState.GetNumberOfCharacters();
+		GD.Print(5);
 		int numOfBoxes = boxes.Count;
 		int numOfMissingBoxes = numOfCharacters - numOfBoxes;
 
@@ -81,6 +89,7 @@ public partial class OwnedGachaCharactersMenu : Control
         {
 			AddRow();
         }
+		GD.Print(6);
 	}
 
 	private void AddAllChildrenNodes()

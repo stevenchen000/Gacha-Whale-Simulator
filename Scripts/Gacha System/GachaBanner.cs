@@ -32,8 +32,6 @@ namespace GachaSystem{
                 result = PullCharacterFromList(characterList.allRCharacters);
             }
 
-            GameState.GetEventManager().RaiseCharacterPulledEvent(result);
-
             return result;
         }
 

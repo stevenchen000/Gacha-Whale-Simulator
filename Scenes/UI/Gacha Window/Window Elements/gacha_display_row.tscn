@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqircsi2jaxqm"]
 
-[ext_resource type="PackedScene" uid="uid://eb2f5c2h3f5w" path="res://Scenes/UI/Gacha Window/Character Box Display.tscn" id="1_cs142"]
+[ext_resource type="PackedScene" uid="uid://eb2f5c2h3f5w" path="res://Scenes/UI/Gacha Window/Window Elements/Character Box Display.tscn" id="1_cs142"]
 
 [node name="Gacha Display Row" type="HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)

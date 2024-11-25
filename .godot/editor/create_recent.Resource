@@ -1,4 +1,5 @@
-GachaCharacterPower
+VoidEvent
+GachaCharacterEvent
 GachaBanner
 GachaGame
 GachaCharacterList

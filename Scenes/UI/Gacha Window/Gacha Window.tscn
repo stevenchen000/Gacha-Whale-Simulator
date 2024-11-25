@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbywqghbhxtw1"]
+[gd_scene load_steps=6 format=3 uid="uid://bbywqghbhxtw1"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs" id="1_vbyk4"]
-[ext_resource type="PackedScene" uid="uid://dqircsi2jaxqm" path="res://Scenes/UI/Gacha Window/gacha_display_row.tscn" id="2_mwijw"]
+[ext_resource type="PackedScene" uid="uid://dqircsi2jaxqm" path="res://Scenes/UI/Gacha Window/Window Elements/gacha_display_row.tscn" id="2_mwijw"]
+[ext_resource type="Resource" uid="uid://bkll23l0c6di4" path="res://Resources/Events/OnCharacterListUpdated.tres" id="2_veip7"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ikcno"]
 
@@ -19,6 +20,8 @@ grow_vertical = 2
 script = ExtResource("1_vbyk4")
 scrollArea = NodePath("MarginContainer/ScrollContainer/VBoxContainer")
 boxes = []
+rowSceneLocation = "res://Scenes/UI/Gacha Window/Window Elements/gacha_display_row.tscn"
+OnCharacterListUpdated = ExtResource("2_veip7")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.425739, 0.0018229, 0.68281, 1)

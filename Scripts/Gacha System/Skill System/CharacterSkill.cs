@@ -6,4 +6,5 @@ using Godot.Collections;
 public partial class CharacterSkill : Resource
 {
     [Export] public Array<SkillEffect> effects;
+    [Export] public float duration = 2f;
 }

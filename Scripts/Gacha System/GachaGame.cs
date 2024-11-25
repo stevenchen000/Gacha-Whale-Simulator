@@ -1,10 +1,11 @@
 using System;
 using Godot;
 using Godot.Collections;
+using EventSystem;
 
 namespace GachaSystem{
     [GlobalClass]
-    public partial class GachaGame : Resource
+    public partial class GachaGame : Node
     {
         [Export] private string gameName;
         //game icon
@@ -22,6 +23,13 @@ namespace GachaSystem{
         //[Export] public GachaCharacterPower powerList;
         [Export] public int updateNumber = 0;
 
+        [Export] public GachaCharacterEvent OnCharacterPulled;
+        [Export] public VoidEvent OnAccountListUpdated;
+
+        public override void _Ready()
+        {
+            OnCharacterPulled.SubscribeEvent(AddCharacterToAccount);
+        }
 
 
 
@@ -62,7 +70,10 @@ namespace GachaSystem{
         *****************/
 
         public GachaCharacter PullRandomCharacter(){
-            return currentBanner.PullRandomCharacter(allCharacters);
+            var character = currentBanner.PullRandomCharacter(allCharacters);
+            OnCharacterPulled.RaiseEvent(character);
+
+            return character;
         }
 
         public void AddCharacterToAccount(GachaCharacter character){
@@ -78,7 +89,8 @@ namespace GachaSystem{
                 characterData.numberOfCopies++;
             }
 
-            GameState.GetEventManager().RaiseCharacterListUpdatedEvent();
+            if(OnAccountListUpdated != null)
+                OnAccountListUpdated.RaiseEvent();
         }
 
         public GachaCharacterData GetDataIfCharacterOwned(GachaCharacter character)

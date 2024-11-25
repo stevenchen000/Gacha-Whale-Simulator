@@ -1,8 +1,9 @@
-Node2D
-HBoxContainer
-Button
-ScrollContainer
 TextureRect
+TabContainer
+Button
+HBoxContainer
+Node2D
+ScrollContainer
 MarginContainer
 VScrollBar
 VBoxContainer
