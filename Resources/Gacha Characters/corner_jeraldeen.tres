@@ -8,3 +8,4 @@ script = ExtResource("2_e83x2")
 characterName = "Corner Jeraldeen"
 basePower = 1000
 characterPortrait = ExtResource("1_wbyiq")
+portraitRegion = Rect2(183.31, 89.55, 120, 120)

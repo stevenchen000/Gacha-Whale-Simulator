@@ -1,0 +1,65 @@
+[gd_scene load_steps=14 format=3 uid="uid://cgosg380clfem"]
+
+[ext_resource type="PackedScene" uid="uid://d3l8173j7xgql" path="res://Scenes/UI/menu.tscn" id="1_4hc3r"]
+[ext_resource type="Script" path="res://Scripts/GameState.cs" id="2_eketu"]
+[ext_resource type="PackedScene" uid="uid://whlnpairs4d0" path="res://Scenes/UI/info_display.tscn" id="3_1iltf"]
+[ext_resource type="Resource" uid="uid://dt5kohhtiglqu" path="res://Resources/Gacha Game Data/Gacha Game.tres" id="3_cqy07"]
+[ext_resource type="Resource" uid="uid://cuclr7vjvjjld" path="res://Resources/Gacha Characters/corner_jeraldeen.tres" id="3_u1g5c"]
+[ext_resource type="Script" path="res://Scripts/Event System/EventManager.cs" id="4_q5dni"]
+[ext_resource type="PackedScene" uid="uid://bbywqghbhxtw1" path="res://Scenes/UI/Gacha Window/Gacha Window.tscn" id="5_5e0il"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacterPower.cs" id="5_6c7lb"]
+[ext_resource type="Texture2D" uid="uid://bbirdxkrbp1x8" path="res://Art Assets/Phone/Phone Screen.png" id="5_lnqtj"]
+[ext_resource type="Resource" uid="uid://2r41q02byvxx" path="res://Resources/Gacha Characters/Angealfish.tres" id="6_3rbfv"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaValuePair.cs" id="7_i5yhp"]
+[ext_resource type="Texture2D" uid="uid://dfj7k5fe8bmcw" path="res://Art Assets/Phone/Phone Border.png" id="7_n2mf7"]
+
+[sub_resource type="Resource" id="Resource_koi0c"]
+script = ExtResource("7_i5yhp")
+character = ExtResource("6_3rbfv")
+power = 0
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(1041, 20)
+
+[node name="Game State" type="Node2D" parent="." node_paths=PackedStringArray("eventManager")]
+script = ExtResource("2_eketu")
+premiumCurrency = 99999
+allCharacters = Array[Object]([ExtResource("3_u1g5c")])
+ownedCharacters = Array[Object]([])
+game = ExtResource("3_cqy07")
+eventManager = NodePath("Event Manager")
+
+[node name="Event Manager" type="Node2D" parent="Game State"]
+script = ExtResource("4_q5dni")
+
+[node name="Character Power List" type="Node2D" parent="Game State"]
+script = ExtResource("5_6c7lb")
+characterPowers = Array[Object]([SubResource("Resource_koi0c")])
+powerValues = {}
+
+[node name="Menu" parent="." instance=ExtResource("1_4hc3r")]
+offset_left = -338.0
+offset_top = 8.0
+offset_right = -298.0
+offset_bottom = 48.0
+
+[node name="Info Display" parent="." instance=ExtResource("3_1iltf")]
+offset_left = -1021.0
+offset_top = -11.0
+offset_right = -981.0
+offset_bottom = 29.0
+
+[node name="PhoneScreen" type="Sprite2D" parent="."]
+position = Vector2(-229, -1)
+texture = ExtResource("5_lnqtj")
+offset = Vector2(160, 276)
+
+[node name="GachaWindow" parent="PhoneScreen" instance=ExtResource("5_5e0il")]
+offset_left = 8.445
+offset_top = 8.175
+offset_right = 8.44501
+offset_bottom = 8.17499
+
+[node name="PhoneBorder" type="Sprite2D" parent="PhoneScreen"]
+texture = ExtResource("7_n2mf7")
+offset = Vector2(160, 276)

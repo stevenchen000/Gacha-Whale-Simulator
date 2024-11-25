@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using GachaSystem;
+using Godot.Collections;
 
 public partial class GameState : Node
 {
@@ -12,18 +13,53 @@ public partial class GameState : Node
     [Export] public int day = 0;
     [Export] public int hour = 8;
     [Export] public int minute = 0;
+    [Export] private DateTime time;
+    
+    
     [Export] public int money = 10_000;
     [Export] public int salary = 5_000;
     [Export] public GachaCharacter[] allCharacters;
     [Export] public GachaCharacter[] ownedCharacters;
-    
+
+    [Export] public GachaGame game { get; set; }
+    [Export] private EventManager eventManager;
 
 
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+        eventManager.OnGachaCharacterPulled += game.AddCharacterToAccount;
+    }
+
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
+    {
+    }
+
+    //Called when object is about to get deleted
+    public override void _Notification(int what)
+    {
+        if(what == NotificationPredelete)
+        {
+
+        }
+    }
 
     public GameState(){
         if(state == null){
             state = this;
         }
+    }
+
+
+    public static GachaGame GetGame()
+    {
+        return state.game;
+    }
+
+    public static EventManager GetEventManager()
+    {
+        return state.eventManager;
     }
 
     /****************
@@ -67,8 +103,21 @@ public partial class GameState : Node
     }
 
     public static GachaCharacter PullRandomGachaCharacter(){
-        int length = state.allCharacters.Length;
-        return state.allCharacters[0];
+        return state.game.PullRandomCharacter();
+    }
+
+    public static void AddCharacterToAccount(GachaCharacter character){
+        state.game.AddCharacterToAccount(character);
+    }
+
+    public static int GetNumberOfCharacters()
+    {
+        return state.game.GetNumberOfCharacters();
+    }
+
+    public static Array<GachaCharacterData> GetAllOwnedCharacters()
+    {
+        return state.game.ownedCharacters;
     }
 
 

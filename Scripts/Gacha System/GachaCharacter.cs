@@ -7,7 +7,9 @@ namespace GachaSystem{
     {
         [Export] public string characterName;
         [Export] public int basePower;
-        [Export] public Texture characterPortrait;
+        [Export] public Texture2D characterPortrait;
+
+        [Export] public Rect2 portraitRegion;
         
     }
 }

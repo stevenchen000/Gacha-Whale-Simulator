@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://dw13wwoj4o6v7"]
+
+[ext_resource type="Texture2D" uid="uid://c68hdvl2tc6qp" path="res://Art Assets/Placeholder Characters/Husbandos/Weiss.png" id="1_saru3"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="2_e4kvl"]
+
+[resource]
+script = ExtResource("2_e4kvl")
+characterName = "Weiss"
+basePower = 1000
+characterPortrait = ExtResource("1_saru3")
+portraitRegion = Rect2(183.31, 89.55, 120, 120)

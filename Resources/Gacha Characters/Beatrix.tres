@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://dtl72rvcs237"]
+
+[ext_resource type="Texture2D" uid="uid://ckybus1c527os" path="res://Art Assets/Placeholder Characters/Waifus/Beatrix.png" id="1_wveb1"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="2_0p6tv"]
+
+[resource]
+script = ExtResource("2_0p6tv")
+characterName = "Beatrix"
+basePower = 1000
+characterPortrait = ExtResource("1_wveb1")
+portraitRegion = Rect2(183.31, 89.55, 120, 120)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gacha Whale Simulator"
-run/main_scene="res://Room.tscn"
+run/main_scene="res://Scenes/Room.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

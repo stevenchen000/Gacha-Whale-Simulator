@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqircsi2jaxqm"]
+
+[ext_resource type="PackedScene" uid="uid://eb2f5c2h3f5w" path="res://Scenes/UI/Gacha Window/Character Box Display.tscn" id="1_cs142"]
+
+[node name="Gacha Display Row" type="HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+theme_override_constants/separation = 11
+
+[node name="Character 1" parent="." instance=ExtResource("1_cs142")]
+layout_mode = 2
+
+[node name="Character 2" parent="." instance=ExtResource("1_cs142")]
+layout_mode = 2
+
+[node name="Character 3" parent="." instance=ExtResource("1_cs142")]
+layout_mode = 2
+
+[node name="Character 4" parent="." instance=ExtResource("1_cs142")]
+layout_mode = 2

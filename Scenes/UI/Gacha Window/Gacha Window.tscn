@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbywqghbhxtw1"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs" id="1_vbyk4"]
+[ext_resource type="PackedScene" uid="uid://dqircsi2jaxqm" path="res://Scenes/UI/Gacha Window/gacha_display_row.tscn" id="2_mwijw"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ikcno"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uc8hs"]
+specular_texture = SubResource("ImageTexture_ikcno")
+specular_color = Color(0, 0.156597, 0.999988, 1)
+
+[node name="GachaWindow" type="Control" node_paths=PackedStringArray("scrollArea", "boxes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vbyk4")
+scrollArea = NodePath("MarginContainer/ScrollContainer/VBoxContainer")
+boxes = []
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.425739, 0.0018229, 0.68281, 1)
+layout_mode = 0
+offset_right = 303.0
+offset_bottom = 536.0
+texture = SubResource("CanvasTexture_uc8hs")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 303.0
+offset_bottom = 519.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = -12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Gacha Display Row" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_mwijw")]
+layout_mode = 2
+
+[node name="Bottom Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 748.0
+offset_top = 593.0
+offset_right = 1273.0
+offset_bottom = 785.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom Buttons"]
+layout_mode = 2
+offset_right = 389.0
+offset_bottom = 40.0
+
+[node name="Page <" type="Button" parent="Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+text = "<"
+
+[node name="Characters" type="Button" parent="Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+text = "Characters"
+
+[node name="Upgrades" type="Button" parent="Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+text = "Upgrades"
+
+[node name="Banners" type="Button" parent="Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+text = "Banners"
+
+[node name="Dungeons" type="Button" parent="Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+text = "Dungeons"
+
+[node name="Page >" type="Button" parent="Bottom Buttons/HBoxContainer"]
+layout_mode = 2
+text = ">"
+
+[connection signal="button_up" from="Bottom Buttons/HBoxContainer/Characters" to="." method="_on_characters_button_up"]
+[connection signal="button_up" from="Bottom Buttons/HBoxContainer/Upgrades" to="." method="_on_upgrades_button_up"]
+[connection signal="button_up" from="Bottom Buttons/HBoxContainer/Banners" to="." method="_on_banners_button_up"]
+[connection signal="button_up" from="Bottom Buttons/HBoxContainer/Dungeons" to="." method="_on_dungeons_button_up"]

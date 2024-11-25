@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DateTime" load_steps=2 format=3 uid="uid://b532oh5xegljd"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Calendar/DateTime.cs" id="1_p1rto"]
+
+[resource]
+script = ExtResource("1_p1rto")
+day = 0
+hour = 18
+minute = 0

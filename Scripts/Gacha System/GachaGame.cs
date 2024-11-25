@@ -1,5 +1,6 @@
 using System;
 using Godot;
+using Godot.Collections;
 
 namespace GachaSystem{
     [GlobalClass]
@@ -15,8 +16,11 @@ namespace GachaSystem{
         [Export] public int currentPower = 0;
         [Export] public int premiumCurrency = 0;
         [Export] public int upgradeCurrency = 0;
-        [Export] public GachaCharacter[] allCharacters;
-        [Export] public GachaCharacter[] ownedCharacters;
+        [Export] public GachaCharacterList allCharacters;
+        [Export] public Array<GachaCharacterData> ownedCharacters;
+        [Export] public GachaBanner currentBanner;
+        //[Export] public GachaCharacterPower powerList;
+        [Export] public int updateNumber = 0;
 
 
 
@@ -57,14 +61,50 @@ namespace GachaSystem{
         * Character Functions
         *****************/
 
-        public GachaCharacter PullRandomGachaCharacter(){
-            int length = allCharacters.Length;
-            return allCharacters[0];
+        public GachaCharacter PullRandomCharacter(){
+            return currentBanner.PullRandomCharacter(allCharacters);
+        }
+
+        public void AddCharacterToAccount(GachaCharacter character){
+            var characterData = GetDataIfCharacterOwned(character);
+
+            if(characterData == null)
+            {
+                characterData = new GachaCharacterData(character);
+                ownedCharacters.Add(characterData);
+            }
+            else
+            {
+                characterData.numberOfCopies++;
+            }
+
+            GameState.GetEventManager().RaiseCharacterListUpdatedEvent();
+        }
+
+        public GachaCharacterData GetDataIfCharacterOwned(GachaCharacter character)
+        {
+            GachaCharacterData data = null;
+
+            foreach(var characterData in ownedCharacters)
+            {
+                if(characterData.baseCharacter == character)
+                {
+                    data = characterData;
+                    break;
+                }
+            }
+
+            return data;
         }
 
         
         public void AddPower(int power){
             currentPower += power;
+        }
+
+        public int GetNumberOfCharacters()
+        {
+            return ownedCharacters.Count;
         }
     }
 }

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://d3dl2lsyul7td"]
+
+[ext_resource type="Texture2D" uid="uid://bj8gghof7l13h" path="res://Art Assets/Placeholder Characters/Husbandos/Ignis.png" id="1_uqmp8"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="2_w7lkk"]
+
+[resource]
+script = ExtResource("2_w7lkk")
+characterName = "Ignis"
+basePower = 1000
+characterPortrait = ExtResource("1_uqmp8")
+portraitRegion = Rect2(183.31, 89.55, 120, 120)

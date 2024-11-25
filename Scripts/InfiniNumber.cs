@@ -1,11 +1,13 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
-[GlobalClass]
 public class InfiniNumber
 {
-    [Export] private string numAsText = "1,000,000";
-    [Export] private int[] numbers;
+    private List<int> number;
+    private List<string> numberAbbreviations;
 
-    
+    public string GetNumberAsString(){
+        return "1,000";
+    }
 }

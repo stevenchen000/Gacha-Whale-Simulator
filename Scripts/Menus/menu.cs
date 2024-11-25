@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using GachaSystem;
 
 public partial class menu : Control
 {
@@ -22,7 +23,11 @@ public partial class menu : Control
 	}
 
 	public void OnBannerButtonPressed(){
-		GameState.UsePremiumCurrency(1000);
+		if(GameState.HasEnoughPremiumCurrency(1000)){
+			GameState.UsePremiumCurrency(1000);
+			GachaCharacter character = GameState.PullRandomGachaCharacter();
+			GD.Print(character.characterName);
+		}
 	}
 
 	public void OnEventButtonPressed(){

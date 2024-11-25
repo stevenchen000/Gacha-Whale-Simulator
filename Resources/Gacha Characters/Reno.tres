@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://d2m162o1x3f2e"]
+
+[ext_resource type="Texture2D" uid="uid://xpo78ohh3v51" path="res://Art Assets/Placeholder Characters/Husbandos/Reno.png" id="1_xuhv8"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="2_2vihh"]
+
+[resource]
+script = ExtResource("2_2vihh")
+characterName = "Reno"
+basePower = 1000
+characterPortrait = ExtResource("1_xuhv8")
+portraitRegion = Rect2(183.31, 89.55, 120, 120)

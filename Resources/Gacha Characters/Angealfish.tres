@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://2r41q02byvxx"]
+
+[ext_resource type="Texture2D" uid="uid://bqt263q3jfhxd" path="res://Art Assets/Placeholder Characters/Husbandos/Angeal.png" id="1_3gh4a"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="2_64eqm"]
+
+[resource]
+script = ExtResource("2_64eqm")
+characterName = "Angealfish"
+basePower = 1000
+characterPortrait = ExtResource("1_3gh4a")
+portraitRegion = Rect2(183.31, 89.55, 120, 120)

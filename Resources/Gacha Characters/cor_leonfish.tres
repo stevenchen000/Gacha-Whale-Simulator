@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://cm0sdvgmtwjx8"]
+
+[ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="1_iuw83"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="1_ws8ij"]
+
+[resource]
+script = ExtResource("1_ws8ij")
+characterName = "Cor"
+basePower = 1000
+characterPortrait = ExtResource("1_iuw83")
+portraitRegion = Rect2(158.815, 71.805, 120, 120)

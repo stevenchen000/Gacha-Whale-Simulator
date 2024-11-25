@@ -1,1 +1,6 @@
+GachaCharacterPower
+GachaBanner
+GachaGame
+GachaCharacterList
+DateTime
 GachaCharacter

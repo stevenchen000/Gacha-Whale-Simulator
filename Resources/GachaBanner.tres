@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GachaBanner" load_steps=2 format=3 uid="uid://bkdo7vcfuf1xk"]
+
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaBanner.cs" id="1_8cw5h"]
+
+[resource]
+script = ExtResource("1_8cw5h")
+chanceForRateUpCharacter = 0.0
+chanceForSSR = 0.1
+chanceForSR = 0.3

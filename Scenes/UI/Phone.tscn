@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckkks307qwkv4"]
+
+[ext_resource type="Texture2D" uid="uid://dfj7k5fe8bmcw" path="res://Art Assets/Phone/Phone Border.png" id="1_xb1km"]
+[ext_resource type="Texture2D" uid="uid://bbirdxkrbp1x8" path="res://Art Assets/Phone/Phone Screen.png" id="2_kalf0"]
+
+[node name="Phone" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PhoneBorder" type="Sprite2D" parent="."]
+texture = ExtResource("1_xb1km")
+offset = Vector2(160, 276)
+
+[node name="PhoneScreen" type="Sprite2D" parent="."]
+texture = ExtResource("2_kalf0")
+offset = Vector2(160, 276)

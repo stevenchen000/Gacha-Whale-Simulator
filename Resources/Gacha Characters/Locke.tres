@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GachaCharacter" load_steps=3 format=3 uid="uid://dqjbrn2np3lv0"]
+
+[ext_resource type="Texture2D" uid="uid://dntkxnoxxhudv" path="res://Art Assets/Placeholder Characters/Husbandos/Locke.png" id="1_wkpji"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacter.cs" id="2_ehd6j"]
+
+[resource]
+script = ExtResource("2_ehd6j")
+characterName = "Locke"
+basePower = 1000
+characterPortrait = ExtResource("1_wkpji")
+portraitRegion = Rect2(183.31, 89.55, 120, 120)

@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=3 uid="uid://eb2f5c2h3f5w"]
+
+[ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Art Assets/Gacha Frames/Character Frame.png" id="1_8co0s"]
+[ext_resource type="Script" path="res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs" id="2_1eov5"]
+[ext_resource type="Texture2D" uid="uid://bsd0q4di11vk0" path="res://Art Assets/Gacha Frames/Character Frame Border.png" id="3_5j152"]
+[ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="3_6gqfc"]
+
+[sub_resource type="FontFile" id="FontFile_gobb7"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_m47ri"]
+font = SubResource("FontFile_gobb7")
+font_size = 13
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Character 1" type="TextureRect" node_paths=PackedStringArray("portraitElement", "copiesElement", "nameElement", "powerElement")]
+custom_minimum_size = Vector2(60, 60)
+texture = ExtResource("1_8co0s")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("2_1eov5")
+portraitElement = NodePath("Character Portrait")
+copiesElement = NodePath("Extra Copies")
+nameElement = NodePath("Name")
+powerElement = NodePath("Power")
+
+[node name="Character Portrait" type="Sprite2D" parent="."]
+position = Vector2(30, 30)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6gqfc")
+region_enabled = true
+region_rect = Rect2(158.815, 71.805, 120, 120)
+
+[node name="Border" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("3_5j152")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = -9.21
+offset_top = 57.0
+offset_right = 69.705
+offset_bottom = 79.94
+text = "Edge"
+label_settings = SubResource("LabelSettings_m47ri")
+horizontal_alignment = 1
+
+[node name="Power" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 41.0
+offset_right = 101.0
+offset_bottom = 75.0
+text = "4B 242M"
+label_settings = SubResource("LabelSettings_m47ri")
+
+[node name="Extra Copies" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.1614
+offset_top = -5.82346
+offset_right = 111.162
+offset_bottom = 28.1765
+text = "+5"
+label_settings = SubResource("LabelSettings_m47ri")

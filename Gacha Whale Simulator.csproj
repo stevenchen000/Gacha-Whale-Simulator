@@ -6,4 +6,8 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>GachaWhaleSimulator</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Scripts\Gacha System\Skill System\SkillEffects\**" />
+    <EmbeddedResource Remove="Scripts\Gacha System\Skill System\SkillEffects\**" />
+  </ItemGroup>
 </Project>

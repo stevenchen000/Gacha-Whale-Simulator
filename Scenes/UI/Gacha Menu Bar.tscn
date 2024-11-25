@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4058rclqtcjo"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ikcno"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e7joj"]
+specular_texture = SubResource("ImageTexture_ikcno")
+specular_color = Color(0, 0.156597, 0.999988, 1)
+
+[node name="GachaMenuBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.425739, 0.0018229, 0.68281, 1)
+offset_right = 303.0
+offset_bottom = 536.0
+texture = SubResource("CanvasTexture_e7joj")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Characters"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Lobby"
