@@ -1,11 +1,22 @@
 using Godot;
 using System;
 using GachaSystem;
+using Godot.Collections;
 
-public class BattleState
+namespace CombatSystem
 {
-    public GachaCharacterData player;
-    public GachaCharacterData enemy;
-    public bool enemyPartyIsDead = false;
-    public bool playerPartyIsDead = false;
+    public class BattleState
+    {
+
+        public Array<BattleCharacter> playerParty { get; set; }
+        public Array<BattleCharacter> enemyParty { get; set; }
+
+        public bool enemyPartyIsDead = false;
+        public bool playerPartyIsDead = false;
+
+        public BattleState()
+        {
+
+        }
+    }
 }

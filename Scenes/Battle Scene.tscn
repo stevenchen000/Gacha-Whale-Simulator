@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu2spse3qae4c"]
+
+[ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/BattleManager.cs" id="1_7rwl6"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs" id="2_0g6id"]
+[ext_resource type="PackedScene" uid="uid://bhysvr23m0r0i" path="res://Scenes/Battle/battle_space.tscn" id="2_h1bf1"]
+[ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="3_15b5f"]
+[ext_resource type="PackedScene" uid="uid://cnuodvla63kph" path="res://Scenes/Battle/battle_character.tscn" id="4_6flvj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_85dyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyj41"]
+
+[node name="BattleScene" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1168.0
+offset_bottom = 656.0
+texture = SubResource("CanvasTexture_85dyr")
+metadata/_edit_lock_ = true
+
+[node name="Battle Grid" type="Node2D" parent="."]
+script = ExtResource("2_0g6id")
+spaceScene = ExtResource("2_h1bf1")
+startingPoint = Vector2(68, 511)
+horizontalOffset = Vector2(112, 0)
+verticalOffset = Vector2(50, -80)
+horizontalGrids = 9
+verticalGrids = 5
+
+[node name="Battle Manager" type="Node2D" parent="." node_paths=PackedStringArray("playerParty", "enemyParty", "grid")]
+script = ExtResource("1_7rwl6")
+playerParty = [NodePath("../Battle Character"), NodePath("../Battle Character2"), NodePath("../Battle Character3")]
+enemyParty = [NodePath("../Battle Character4")]
+grid = NodePath("../Battle Grid")
+
+[node name="Battle Character" parent="." instance=ExtResource("4_6flvj")]
+
+[node name="Battle Character2" parent="." instance=ExtResource("4_6flvj")]
+
+[node name="Battle Character3" parent="." instance=ExtResource("4_6flvj")]
+
+[node name="Battle Character4" parent="." instance=ExtResource("4_6flvj")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.552941, 0.552941, 1)
+position = Vector2(191, 661)
+texture = ExtResource("3_15b5f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+scale = Vector2(6.09, 6.09)
+shape = SubResource("RectangleShape2D_nyj41")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgosg380clfem"]
+[gd_scene load_steps=17 format=3 uid="uid://dmcbt7du1gju2"]
 
 [ext_resource type="PackedScene" uid="uid://d3l8173j7xgql" path="res://Scenes/UI/menu.tscn" id="1_4hc3r"]
 [ext_resource type="Script" path="res://Scripts/GameState.cs" id="2_eketu"]
 [ext_resource type="PackedScene" uid="uid://whlnpairs4d0" path="res://Scenes/UI/info_display.tscn" id="3_1iltf"]
 [ext_resource type="Resource" uid="uid://cuclr7vjvjjld" path="res://Resources/Gacha Characters/corner_jeraldeen.tres" id="3_u1g5c"]
-[ext_resource type="Script" path="res://Scripts/Event System/EventManager.cs" id="4_q5dni"]
 [ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacterPower.cs" id="5_6c7lb"]
 [ext_resource type="Texture2D" uid="uid://bbirdxkrbp1x8" path="res://Art Assets/Phone/Phone Screen.png" id="5_lnqtj"]
 [ext_resource type="Resource" uid="uid://2r41q02byvxx" path="res://Resources/Gacha Characters/Angealfish.tres" id="6_3rbfv"]
@@ -31,9 +30,6 @@ premiumCurrency = 99999
 allCharacters = Array[Object]([ExtResource("3_u1g5c")])
 ownedCharacters = Array[Object]([])
 game = NodePath("Gacha Game Data")
-
-[node name="Event Manager" type="Node2D" parent="Game State"]
-script = ExtResource("4_q5dni")
 
 [node name="Character Power List" type="Node2D" parent="Game State"]
 script = ExtResource("5_6c7lb")
