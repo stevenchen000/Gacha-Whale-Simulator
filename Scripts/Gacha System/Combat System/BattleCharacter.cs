@@ -13,12 +13,20 @@ namespace CombatSystem
         public Vector2I currentPosition { get; set; }
         public bool isFacingLeft { get; set; }
         [Export] public float speed = 5;
-        [Export] private GridShape attackShape;
+        //[Export] private GridShape attackShape;
+        [Export] public CharacterSkill skill { get; set; }
+        [Export] private StatContainer savedStats { get; set; }
+        public BattleStats stats { get; set; }
 
         private GridSpace previousNearestSpace = null;
         private GridSpace previousAttackSpace = null;
         private Array<GridSpace> previousAttackArea = null;
-        
+
+        public override void _Ready()
+        {
+            stats = new BattleStats(savedStats);
+        }
+
 
         public void StartCharacterTurn(BattleManager battle, BattleGrid grid)
         {
@@ -27,13 +35,20 @@ namespace CombatSystem
 
         public bool ControlCharacter(double delta, BattleManager battle, BattleGrid grid)
         {
+            bool selectedAction = false;
             var movement = CalculateMovementVector();
             SetFacingDirection(movement);
             MoveCharacter(movement);
             UpdateNearestSpaceColor(grid);
             ShowSkillArea(grid);
 
-            return false;
+            if (Input.IsActionJustPressed("ui_accept"))
+            {
+                AttackTarget(battle, grid);
+                selectedAction = true;
+            }
+
+            return selectedAction;
         }
 
         public void EndTurn(double delta, BattleManager battle, BattleGrid grid)
@@ -41,11 +56,23 @@ namespace CombatSystem
             Position = Position.Lerp(previousNearestSpace.GlobalPosition, 1f);
         }
 
+        public bool IsDead() { return stats.IsDead(); }
 
 
         /***************
          * Helper Functions
          * ****************/
+        private void AttackTarget(BattleManager battle, BattleGrid grid)
+        {
+            var attackPositions = skill.attackArea.GetPositionsInRange(currentPosition, isFacingLeft);
+            var targets = battle.FindCharactersInRange(attackPositions, this);
+            GD.Print(targets.Count);
+            foreach(var target in targets)
+            {
+                int potency = skill.potency;
+                target.stats.TakeDamage(stats, potency);
+            }
+        }
 
         private Vector2 GetMovementDirection()
         {
@@ -122,7 +149,8 @@ namespace CombatSystem
 
         private void ShowSkillArea(BattleGrid grid)
         {
-            var attackPositions = attackShape.GetPositionsInRange(currentPosition, isFacingLeft);
+            var attackArea = skill.attackArea;
+            var attackPositions = attackArea.GetPositionsInRange(currentPosition, isFacingLeft);
 
             if(previousAttackArea != null)
             {

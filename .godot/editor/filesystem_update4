@@ -1,47 +1,48 @@
 res://Scenes/Room.tscn
+res://Resources/Skills/basic_attack.tres
 res://Scenes/UI/menu.tscn
 res://Scenes/UI/info_display.tscn
 res://Scenes/UI/Gacha Menu Bar.tscn
 res://Scenes/UI/Gacha Window/Gacha Window.tscn
 res://Scenes/UI/Gacha Window/Lobby Window.tscn
 res://Scenes/Battle Scene.tscn
-res://Scenes/Battle/battle_character.tscn
 res://Scenes/Battle/battle_space.tscn
 res://Scenes/Battle/battle_character_2.tscn
-res://Scripts/UI/Calendar/DateTime.cs
+res://Scripts/UI/Calendar/CalendarUI.cs
 res://Scripts/Event System/GameEvent.cs
-res://Scripts/Gacha System/GachaValuePair.cs
-res://Scripts/Gacha System/Dungeons/Dungeon.cs
+res://Scripts/Gacha System/GachaCharacterData.cs
+res://Scripts/Gacha System/Combat System/Grid/GridSpace.cs
 res://Scripts/Event System/GachaCharacterEvent.cs
+res://Scripts/Menus/GachaMenu.cs
+res://Scripts/Gacha System/Combat System/Skill System/DamageEffect.cs
 res://Scripts/Menus/info_display.cs
-res://Scripts/Gacha System/GachaBanner.cs
-res://Scripts/Menus/menu.cs
-res://Scripts/Gacha System/GachaCharacter.cs
+res://Scripts/Gacha System/Combat System/Skill System/Skill Effects/SkillEffect.cs
 res://Scripts/Event System/EventManager.cs
 res://Scripts/Gacha System/Combat System/BattleManager.cs
+res://Scripts/Menus/menu.cs
+res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
 res://Scripts/Node2d.cs
-res://Scripts/Gacha System/GachaCharacterList.cs
-res://Scripts/Tag.cs
 res://Scripts/Event System/VoidEvent.cs
 res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs
-res://Scripts/Gacha System/Skill System/CharacterSkill.cs
-res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs
-res://Scripts/Menus/GachaMenu.cs
+res://Scripts/Gacha System/GachaCharacterList.cs
+res://Scripts/UI/Calendar/DateTime.cs
 res://Scripts/Gacha System/UpgradeCurrency.cs
-res://Scripts/Gacha System/Skill System/Skill Effects/DamageEffect.cs
-res://Scripts/Gacha System/Combat System/Grid/GridSpace.cs
-res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
-res://Scripts/UI/Banners Display/BannersWindow.cs
-res://Scripts/Gacha System/GachaCharacterPower.cs
-res://Scripts/Gacha System/Skill System/Skill Effects/SkillEffect.cs
-res://Scripts/Gacha System/Combat System/BattleCharacter.cs
-res://Scripts/UI/Calendar/CalendarUI.cs
-res://Scripts/Gacha System/GachaGame.cs
-res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
-res://Scripts/Gacha System/GachaCharacterData.cs
 res://Scripts/UI/GachaBottomBar.cs
-res://Scripts/GameState.cs
+res://Scripts/Gacha System/GachaValuePair.cs
+res://Scripts/Gacha System/GachaCharacterPower.cs
 res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
-res://Resources/Skill Shape/single_range.tres
-res://Resources/Skill Shape/T_range.tres
-res://Resources/Skill Shape/two_spaces_away.tres
+res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs
+res://Scripts/Tag.cs
+res://Scripts/Gacha System/GachaBanner.cs
+res://Scripts/Gacha System/GachaGame.cs
+res://Scripts/Gacha System/Combat System/BattleCharacter.cs
+res://Scripts/UI/Banners Display/BannersWindow.cs
+res://Scripts/Gacha System/GachaCharacter.cs
+res://Scripts/Gacha System/Combat System/Skill System/CharacterSkill.cs
+res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
+res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
+res://Scripts/Gacha System/Dungeons/Dungeon.cs
+res://Scripts/GameState.cs
+res://Resources/Character Stats/ally_stats.tres
+res://Scenes/Battle/battle_character.tscn
+res://Scripts/Scene Manager/SceneManager.cs

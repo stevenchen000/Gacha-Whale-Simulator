@@ -16,6 +16,8 @@ namespace CombatSystem
         [Export] private Array<Vector2I> playerStartingPositions;
         [Export] private Array<Vector2I> enemyStartingPositions;
 
+        [Export] private PackedScene roomScene;
+
         private BattleCharacter currentCharacter;
         private Vector2I currentPosition;
         private Vector2I attackPosition;
@@ -27,7 +29,6 @@ namespace CombatSystem
 
         public override void _Ready()
         {
-            GD.Print("Battle Manager running");
             InitStartingPositions();
             SetupStartingPositions(playerParty, playerStartingPositions);
             SetupStartingPositions(enemyParty, enemyStartingPositions);
@@ -62,7 +63,24 @@ namespace CombatSystem
             timeSinceStateStarted += delta;
         }
 
+        public Array<BattleCharacter> FindCharactersInRange(Array<Vector2I> attackArea, BattleCharacter caster)
+        {
+            var characters = new Array<BattleCharacter>();
+            characters.AddRange(playerParty);
+            characters.AddRange(enemyParty);
+            var result = new Array<BattleCharacter>();
 
+            foreach(var character in characters)
+            {
+                var characterPosition = character.currentPosition;
+                if (attackArea.Contains(characterPosition))
+                {
+                    result.Add(character);
+                }
+            }
+
+            return result;
+        }
 
 
         /*****************
@@ -91,13 +109,29 @@ namespace CombatSystem
         {
             if (timeSinceStateStarted > 2)
             {
-                ChangeState(BattleStateEnum.CHARACTER_TURN);
+                bool playerPartyIsDead = CheckIfPartyIsDead(playerParty);
+                bool enemyPartyIsDead = CheckIfPartyIsDead(enemyParty);
+                GD.Print(playerPartyIsDead);
+                GD.Print(enemyPartyIsDead);
+                if (playerPartyIsDead)
+                {
+                    GD.Print("lol, u suk");
+                    ChangeState(BattleStateEnum.BATTLE_OVER);
+                }else if (enemyPartyIsDead)
+                {
+                    GD.Print("Congrats, you won!");
+                    ChangeState(BattleStateEnum.BATTLE_OVER);
+                }
+                else
+                {
+                    ChangeState(BattleStateEnum.CHARACTER_TURN);
+                }
             }
         }
 
         private void BattleOverState()
         {
-
+            SceneManager.LoadScene("res://Scenes/Room.tscn");
         }
 
         /**********************
@@ -111,7 +145,6 @@ namespace CombatSystem
                 case BattleStateEnum.PREBATTLE:
                     break;
                 case BattleStateEnum.CHARACTER_TURN:
-                    currentCharacter.EndTurn(0, this, grid);
                     break;
                 case BattleStateEnum.CHARACTER_ATTACK:
                     break;
@@ -128,10 +161,10 @@ namespace CombatSystem
                     currentPosition = currentCharacter.currentPosition;
 
                     UpdateAllWalkableAreas();
-                    GD.Print($"{currentCharacter.Name} is taking their turn");
+                    //GD.Print($"{currentCharacter.Name} is taking their turn");
                     break;
                 case BattleStateEnum.CHARACTER_ATTACK:
-                    GD.Print($"{currentCharacter.Name} is now attacking");
+                    //GD.Print($"{currentCharacter.Name} is now attacking");
                     grid.SetAllSpacesToDefault();
                     turnOrder.SetupNextTurn(currentPosition);
                     break;
@@ -156,7 +189,7 @@ namespace CombatSystem
             playerStartingPositions.Add(new Vector2I(0, 2));
 
             enemyStartingPositions = new Array<Vector2I>();
-            enemyStartingPositions.Add(new Vector2I(5, 0));
+            enemyStartingPositions.Add(new Vector2I(3, 0));
             enemyStartingPositions.Add(new Vector2I(5, 1));
         }
 
@@ -178,40 +211,29 @@ namespace CombatSystem
          * Helper functions
          * ***************/
 
+        private bool CheckIfPartyIsDead(Array<BattleCharacter> party)
+        {
+            bool result = true;
+            foreach(var character in party)
+            {
+                GD.Print($"{character.Name}");
+                if (!character.IsDead())
+                {
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+
         private void CheckCharacterMovement(double delta)
         {
             bool turnFinished = currentCharacter.ControlCharacter(delta, this, grid);
-            if (Input.IsActionJustPressed("ui_accept"))
+            if (turnFinished)
             {
                 currentCharacter.EndTurn(delta, this, grid);
                 ChangeState(BattleStateEnum.CHARACTER_ATTACK);
             }
-            /*int x = currentPosition.X;
-            int y = currentPosition.Y;
-
-            if (Input.IsActionJustReleased("ui_up"))
-            {
-                y++;
-                UpdateSpace(x, y);
-            }
-            else if (Input.IsActionJustReleased("ui_down"))
-            {
-                y--;
-                UpdateSpace(x, y);
-            }
-            else if (Input.IsActionJustReleased("ui_left"))
-            {
-                x--;
-                UpdateSpace(x, y);
-            }
-            else if (Input.IsActionJustReleased("ui_right"))
-            {
-                x++;
-                UpdateSpace(x, y);
-            }else if (Input.IsActionJustReleased("ui_accept"))
-            {
-                ChangeState(BattleStateEnum.CHARACTER_ATTACK);
-            }*/
         }
 
         private void UpdateSpace(int x, int y)
