@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GridShape" load_steps=2 format=3 uid="uid://cmtkcvyvs20ya"]
+
+[ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/Grid/GridShape.cs" id="1_lh5yq"]
+
+[resource]
+script = ExtResource("1_lh5yq")
+spaces = Array[Vector2i]([Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, -1)])

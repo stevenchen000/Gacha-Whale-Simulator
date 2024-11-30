@@ -87,27 +87,6 @@ namespace CombatSystem
             //turn skip button
         }
 
-        private void CharacterSelectAttackState()
-        {
-            bool facedLeft = currentCharacter.isFacingLeft;
-            bool facingLeft = false;
-            //Check facing direction
-            //Check input
-            if (Input.IsActionJustPressed("ui_left"))
-            {
-                currentCharacter.isFacingLeft = true;
-            }else if (Input.IsActionJustPressed("ui_right"))
-            {
-                currentCharacter.isFacingLeft = false;
-            }else if (Input.IsActionJustPressed("ui_enter"))
-            {
-                //Attack
-            }else if (Input.IsActionJustPressed("ui_cancel"))
-            {
-                ChangeState(BattleStateEnum.CHARACTER_TURN); //need to split into turn start and move character
-            }
-        }
-
         private void CharacterAttackState()
         {
             if (timeSinceStateStarted > 2)
@@ -132,6 +111,7 @@ namespace CombatSystem
                 case BattleStateEnum.PREBATTLE:
                     break;
                 case BattleStateEnum.CHARACTER_TURN:
+                    currentCharacter.EndTurn(0, this, grid);
                     break;
                 case BattleStateEnum.CHARACTER_ATTACK:
                     break;
@@ -200,7 +180,7 @@ namespace CombatSystem
 
         private void CheckCharacterMovement(double delta)
         {
-            currentCharacter.ControlCharacter(delta, this, grid);
+            bool turnFinished = currentCharacter.ControlCharacter(delta, this, grid);
             if (Input.IsActionJustPressed("ui_accept"))
             {
                 currentCharacter.EndTurn(delta, this, grid);
@@ -251,11 +231,10 @@ namespace CombatSystem
         private void UpdateAllWalkableAreas()
         {
             int movement = currentCharacter.movableSpaces;
-            int x = currentPosition.X;
-            int y = currentPosition.Y;
-            Vector2I position = new Vector2I(x, y);
+            currentPosition = currentCharacter.currentPosition;
 
-            walkableSpaces = grid.RevealAllWalkableAreas(position, movement);
+            GD.Print($"{currentCharacter.Name} starting at {currentPosition}");
+            walkableSpaces = grid.RevealAllWalkableAreas(currentPosition, movement);
         }
 
         private bool CheckIfSpaceIsWalkable(int x, int y)

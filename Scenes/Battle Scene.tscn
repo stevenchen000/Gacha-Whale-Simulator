@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu2spse3qae4c"]
+[gd_scene load_steps=11 format=3 uid="uid://bu2spse3qae4c"]
 
 [ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/BattleManager.cs" id="1_7rwl6"]
 [ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs" id="2_0g6id"]
 [ext_resource type="PackedScene" uid="uid://bhysvr23m0r0i" path="res://Scenes/Battle/battle_space.tscn" id="2_h1bf1"]
 [ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="3_15b5f"]
 [ext_resource type="PackedScene" uid="uid://cnuodvla63kph" path="res://Scenes/Battle/battle_character.tscn" id="4_6flvj"]
+[ext_resource type="Resource" uid="uid://cmtkcvyvs20ya" path="res://Resources/Skill Shape/T_range.tres" id="5_1v7dn"]
+[ext_resource type="Resource" uid="uid://b68h5nh2inr2b" path="res://Resources/Skill Shape/single_range.tres" id="5_ap2me"]
+[ext_resource type="Resource" uid="uid://b7v35htiwlung" path="res://Resources/Skill Shape/two_spaces_away.tres" id="5_opffl"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_85dyr"]
 
@@ -34,12 +37,16 @@ enemyParty = [NodePath("../Battle Character4")]
 grid = NodePath("../Battle Grid")
 
 [node name="Battle Character" parent="." instance=ExtResource("4_6flvj")]
+attackShape = ExtResource("5_1v7dn")
 
 [node name="Battle Character2" parent="." instance=ExtResource("4_6flvj")]
+attackShape = ExtResource("5_ap2me")
 
 [node name="Battle Character3" parent="." instance=ExtResource("4_6flvj")]
+attackShape = ExtResource("5_ap2me")
 
 [node name="Battle Character4" parent="." instance=ExtResource("4_6flvj")]
+attackShape = ExtResource("5_opffl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0.552941, 0.552941, 1)

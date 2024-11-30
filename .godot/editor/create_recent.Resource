@@ -1,3 +1,4 @@
+GridShape
 VoidEvent
 GachaCharacterEvent
 GachaBanner

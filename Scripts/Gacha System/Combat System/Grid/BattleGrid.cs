@@ -77,6 +77,28 @@ namespace CombatSystem {
 			return result;
         }
 
+		public Vector2I CalculateNearestGridSpace(Vector2 position)
+		{
+			float baseY = startingPoint.Y;
+			float currY = position.Y;
+			float diffY = baseY - currY;
+			float verticalOffsetDistance = MathF.Abs(verticalOffset.Y);
+
+			int vertical = (int)MathF.Round(diffY / verticalOffsetDistance);
+
+			float baseX = startingPoint.X;
+			float currX = position.X;
+			float horizontalOffsetDistance = horizontalOffset.X;
+			float horizontalOffsetBasedOnVertical = vertical * verticalOffset.X;
+			float diffX = currX - baseX - horizontalOffsetBasedOnVertical;
+
+			int horizontal = (int)MathF.Round(diffX / horizontalOffsetDistance);
+
+			//GD.Print($"{horizontal}, {vertical}");
+
+			return new Vector2I(horizontal, vertical);
+		}
+
 		public Array<Vector2I> RevealAllWalkableAreas(Vector2I position, int movableSpaces)
         {
 			int x = position.X;
@@ -103,11 +125,11 @@ namespace CombatSystem {
 					if(distance == 0)
                     {
 						space.SetState(GridState.ALLY_STANDING);
-						GD.Print("Default space revealed");
+						//GD.Print("Default space revealed");
                     }else if (distance <= movableSpaces)
 					{
 						space.SetState(GridState.ALLY_MOVEABLE);
-						GD.Print("New space revealed");
+						//GD.Print("New space revealed");
 					}
 
 					walkableSpaces.Add(new Vector2I(i, j));
@@ -123,6 +145,13 @@ namespace CombatSystem {
 			var space = GetSpaceFromCoords(position);
 			return space.IsWalkable();
         }
+
+		public bool CheckIfSpaceIsWalkable(GridSpace space)
+        {
+			return space.IsWalkable();
+        }
+
+
 		/****************
 		* Helper Functions
 		* **************/
@@ -188,27 +217,6 @@ namespace CombatSystem {
 			space.Position = position;
 		}
 
-		private Vector2I CalculateNearestGridSpace(Vector2 position)
-        {
-			float baseY = startingPoint.Y;
-			float currY = position.Y;
-			float diffY = baseY - currY;
-			float verticalOffsetDistance = MathF.Abs(verticalOffset.Y);
-			
-			int vertical = (int)MathF.Round(diffY / verticalOffsetDistance);
-
-			float baseX = startingPoint.X;
-			float currX = position.X;
-			float horizontalOffsetDistance = horizontalOffset.X;
-			float horizontalOffsetBasedOnVertical = vertical * verticalOffset.X;
-			float diffX = currX - baseX - horizontalOffsetBasedOnVertical;
-			
-			int horizontal = (int)MathF.Round(diffX / horizontalOffsetDistance);
-
-			//GD.Print($"{horizontal}, {vertical}");
-
-			return new Vector2I(horizontal, vertical);
-        }
 
 		private void InitScenePath()
         {

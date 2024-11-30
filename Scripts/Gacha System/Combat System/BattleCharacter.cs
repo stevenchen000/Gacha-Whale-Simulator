@@ -1,6 +1,7 @@
 ﻿using System;
 using Godot;
 using GachaSystem;
+using Godot.Collections;
 
 namespace CombatSystem
 {
@@ -12,25 +13,27 @@ namespace CombatSystem
         public Vector2I currentPosition { get; set; }
         public bool isFacingLeft { get; set; }
         [Export] public float speed = 5;
+        [Export] private GridShape attackShape;
 
         private GridSpace previousNearestSpace = null;
+        private GridSpace previousAttackSpace = null;
+        private Array<GridSpace> previousAttackArea = null;
+        
 
         public void StartCharacterTurn(BattleManager battle, BattleGrid grid)
         {
 
         }
 
-        public void ControlCharacter(double delta, BattleManager battle, BattleGrid grid)
+        public bool ControlCharacter(double delta, BattleManager battle, BattleGrid grid)
         {
-            var direction = GetMovementDirection();
-            var movement = direction.Normalized() * speed;
-            //Position += movement;
-            //grid needs to calculate nearest space based on position and offset per grid space
-            var space = grid.GetNearestSpace(Position);
-            UpdateNearestSpaceColor(space);
-            Velocity = movement;
-            MoveAndSlide();
-            
+            var movement = CalculateMovementVector();
+            SetFacingDirection(movement);
+            MoveCharacter(movement);
+            UpdateNearestSpaceColor(grid);
+            ShowSkillArea(grid);
+
+            return false;
         }
 
         public void EndTurn(double delta, BattleManager battle, BattleGrid grid)
@@ -39,6 +42,10 @@ namespace CombatSystem
         }
 
 
+
+        /***************
+         * Helper Functions
+         * ****************/
 
         private Vector2 GetMovementDirection()
         {
@@ -65,9 +72,12 @@ namespace CombatSystem
             return new Vector2(horizontal, vertical);
         }
         
-        private void UpdateNearestSpaceColor(GridSpace newSpace)
+        private void UpdateNearestSpaceColor(BattleGrid grid)
         {
-            if (!newSpace.IsWalkable())
+            Vector2I newPosition = grid.CalculateNearestGridSpace(Position);
+            var newSpace = grid.GetSpaceFromCoords(newPosition);
+
+            if (newSpace != null && !newSpace.IsWalkable())
             {
                 return;
             }
@@ -78,6 +88,61 @@ namespace CombatSystem
             }
             previousNearestSpace = newSpace;
             previousNearestSpace.SetState(GridState.ALLY_STANDING);
+
+            previousPosition = currentPosition;
+            currentPosition = newPosition;
+        }
+
+        private void SetFacingDirection(Vector2 movement)
+        {
+            float x = movement.X;
+            if(x > 0)
+            {
+                isFacingLeft = false;
+            }else if(x < 0)
+            {
+                isFacingLeft = true;
+            }
+
+            //GD.Print($"X Vel: {x}; Facing left: {isFacingLeft}");
+        }
+
+        private void MoveCharacter(Vector2 movement)
+        {
+            Velocity = movement;
+            MoveAndSlide();
+        }
+
+        private Vector2 CalculateMovementVector()
+        {
+            var direction = GetMovementDirection();
+            var movement = direction.Normalized() * speed;
+            return movement;
+        }
+
+        private void ShowSkillArea(BattleGrid grid)
+        {
+            var attackPositions = attackShape.GetPositionsInRange(currentPosition, isFacingLeft);
+
+            if(previousAttackArea != null)
+            {
+                foreach(var space in previousAttackArea)
+                {
+                    if (space.IsWalkable()) space.SetState(GridState.ALLY_MOVEABLE);
+                    else space.SetState(GridState.DEFAULT);
+                }
+            }
+
+            previousAttackArea = new Array<GridSpace>();
+            foreach(var position in attackPositions)
+            {
+                var space = grid.GetSpaceFromCoords(position);
+                if(space != null)
+                {
+                    previousAttackArea.Add(space);
+                    space.SetState(GridState.ALLY_ATTACK);
+                }
+            }
         }
     }
 }
