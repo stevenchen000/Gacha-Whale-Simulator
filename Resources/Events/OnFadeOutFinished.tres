@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="VoidEvent" load_steps=2 format=3 uid="uid://b05f45vitglph"]
+
+[ext_resource type="Script" path="res://Scripts/Event System/VoidEvent.cs" id="1_jngrx"]
+
+[resource]
+script = ExtResource("1_jngrx")
+debug = true

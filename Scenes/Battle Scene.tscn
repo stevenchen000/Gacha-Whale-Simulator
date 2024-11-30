@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bhysvr23m0r0i" path="res://Scenes/Battle/battle_space.tscn" id="2_h1bf1"]
 [ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="3_15b5f"]
 [ext_resource type="PackedScene" uid="uid://cnuodvla63kph" path="res://Scenes/Battle/battle_character.tscn" id="4_6flvj"]
-[ext_resource type="Script" path="res://Scripts/Scene Manager/SceneManager.cs" id="6_5arcx"]
+[ext_resource type="PackedScene" uid="uid://denrkd823yp0d" path="res://Scenes/scene_manager.tscn" id="6_cup31"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_85dyr"]
 
@@ -53,6 +53,4 @@ texture = ExtResource("3_15b5f")
 scale = Vector2(6.09, 6.09)
 shape = SubResource("RectangleShape2D_nyj41")
 
-[node name="Scene Manager" type="Node2D" parent="." node_paths=PackedStringArray("rootNode")]
-script = ExtResource("6_5arcx")
-rootNode = NodePath("..")
+[node name="Scene Manager2" parent="." instance=ExtResource("6_cup31")]

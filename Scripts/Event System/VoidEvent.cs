@@ -8,6 +8,7 @@ namespace EventSystem
     {
         public delegate void EventDelegate();
         private event EventDelegate OnEvent;
+        [Export] private bool debug = false;
 
         public void RaiseEvent()
         {
@@ -15,6 +16,7 @@ namespace EventSystem
             {
                 OnEvent();
             }
+            if (debug) GD.Print($"{ResourcePath.TrimSuffix(".tres")} was called");
         }
 
         public void SubscribeEvent(EventDelegate func)

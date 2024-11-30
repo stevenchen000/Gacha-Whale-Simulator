@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://denrkd823yp0d"]
+
+[ext_resource type="Script" path="res://Scripts/Scene Manager/SceneManager.cs" id="1_c15ao"]
+[ext_resource type="Resource" uid="uid://b05f45vitglph" path="res://Resources/Events/OnFadeOutFinished.tres" id="3_40kel"]
+[ext_resource type="Script" path="res://Scripts/Scene Manager/LoadScreen.cs" id="4_f2nut"]
+[ext_resource type="Resource" uid="uid://ciqnn2r7ohuhm" path="res://Resources/Events/OnFadeOutStarted.tres" id="5_nc5br"]
+[ext_resource type="Resource" uid="uid://bxm0n3yf7s5du" path="res://Resources/Events/OnFadeInStarted.tres" id="6_pclxh"]
+[ext_resource type="Resource" uid="uid://taecbqpnrvvr" path="res://Resources/Events/OnFadeInFinished.tres" id="7_cuttu"]
+[ext_resource type="Resource" uid="uid://bv8d1vsuuw2b5" path="res://Resources/Events/OnSceneLoad.tres" id="8_du7bo"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_41ro7"]
+
+[node name="Scene Manager" type="Node2D" node_paths=PackedStringArray("loadScreen")]
+script = ExtResource("1_c15ao")
+OnSceneLoad = ExtResource("8_du7bo")
+OnFadeOutFinished = ExtResource("3_40kel")
+OnFadeInFinished = ExtResource("7_cuttu")
+nodeWhitelist = Array[String](["Game State"])
+loadScreen = NodePath("Load Screen")
+
+[node name="Load Screen" type="Control" parent="." node_paths=PackedStringArray("loadScreen")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_f2nut")
+loadScreen = NodePath("TextureRect")
+loadScreenColor = Color(0, 0, 0, 1)
+transitionTime = 2.0
+OnFadeOutStarted = ExtResource("5_nc5br")
+OnFadeOutFinished = ExtResource("3_40kel")
+OnFadeInStarted = ExtResource("6_pclxh")
+OnFadeInFinished = ExtResource("7_cuttu")
+OnSceneLoad = ExtResource("8_du7bo")
+
+[node name="TextureRect" type="TextureRect" parent="Load Screen"]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+layout_mode = 0
+offset_left = 99999.0
+offset_top = 99999.0
+offset_right = 101919.0
+offset_bottom = 101079.0
+mouse_filter = 2
+texture = SubResource("CanvasTexture_41ro7")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://4do7obn4i8bk"]
+
+[ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="1_ae8wl"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Player.cs" id="1_fb2f3"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Trigger.cs" id="3_vpeca"]
+[ext_resource type="PackedScene" uid="uid://bu2spse3qae4c" path="res://Scenes/Battle Scene.tscn" id="4_c3aeg"]
+[ext_resource type="PackedScene" uid="uid://denrkd823yp0d" path="res://Scenes/scene_manager.tscn" id="5_1syl0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mt627"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5yhq"]
+
+[node name="Town" type="Node2D"]
+
+[node name="Scene Manager" parent="." instance=ExtResource("5_1syl0")]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(437, 352)
+script = ExtResource("1_fb2f3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(0, -16.85)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ae8wl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(3.37, 3.37)
+shape = SubResource("CircleShape2D_mt627")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(166, 222)
+script = ExtResource("3_vpeca")
+scene = ExtResource("4_c3aeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(6.455, 6.455)
+shape = SubResource("RectangleShape2D_p5yhq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_ae8wl")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="OnBodyEntered"]

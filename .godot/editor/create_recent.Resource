@@ -1,7 +1,7 @@
+VoidEvent
 StatContainer
 CharacterSkill
 GridShape
-VoidEvent
 GachaCharacterEvent
 GachaBanner
 GachaGame
