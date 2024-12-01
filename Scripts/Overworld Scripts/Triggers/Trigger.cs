@@ -1,9 +1,11 @@
 using Godot;
 using System;
+using Godot.Collections;
 
 public partial class Trigger : Area2D
 {
-	[Export] private PackedScene scene;
+	[Export] public bool ActivatesOnEnter { get; set; }
+	[Export] private Array<TriggerEffect> effects;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -15,12 +17,11 @@ public partial class Trigger : Area2D
 	{
 	}
 
-	public void OnBodyEntered(Node2D body)
+	public void ActivateTrigger()
     {
-		if (body.Name == "Player")
+        foreach(var effect in effects)
 		{
-			GD.Print("Player entered");
-			SceneManager.LoadScene(scene.ResourcePath);
+			effect.ActivateEffect();
 		}
     }
 }

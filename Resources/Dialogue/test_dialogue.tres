@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueTree" load_steps=6 format=3 uid="uid://x1st2gj86p70"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueTree.cs" id="1_q5e37"]
+[ext_resource type="Resource" uid="uid://dan74vwixd5uq" path="res://Resources/Dialogue/Actors/whalefred.tres" id="2_6mh0v"]
+[ext_resource type="Resource" uid="uid://dwriatxrjmb2b" path="res://Resources/Tags/default_emotion.tres" id="3_n7r1w"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueScene.cs" id="4_bu22w"]
+
+[sub_resource type="Resource" id="Resource_8sgw4"]
+script = ExtResource("4_bu22w")
+dialogue = "Hold it right there!"
+emotion = ExtResource("3_n7r1w")
+actor = ExtResource("2_6mh0v")
+
+[resource]
+script = ExtResource("1_q5e37")
+tree = Array[Object]([SubResource("Resource_8sgw4")])

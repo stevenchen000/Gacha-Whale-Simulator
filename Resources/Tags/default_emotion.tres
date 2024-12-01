@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Tag" load_steps=2 format=3 uid="uid://dwriatxrjmb2b"]
+
+[ext_resource type="Script" path="res://Scripts/Tag.cs" id="1_0qoig"]
+
+[resource]
+script = ExtResource("1_0qoig")
+tag = "Default Emotion"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TriggerLoadScene" load_steps=3 format=3 uid="uid://b246ptvb5bsm0"]
+
+[ext_resource type="PackedScene" uid="uid://bu2spse3qae4c" path="res://Scenes/Battle Scene.tscn" id="1_ral1r"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/TriggerLoadScene.cs" id="1_yuemf"]
+
+[resource]
+script = ExtResource("1_yuemf")
+scene = ExtResource("1_ral1r")

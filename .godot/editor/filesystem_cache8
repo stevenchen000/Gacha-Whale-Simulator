@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733002132
+::res://::1733026967
 icon.svg::CompressedTexture2D::4903127257690524952::1731550235::1731550242::1::::<><>::
-::res://Art Assets/::1732175188
-::res://Art Assets/Gacha Frames/::1732160553
-Character Frame Border.png::CompressedTexture2D::3657561028172345329::1732160548::1732160553::1::::<><>::
-Character Frame.png::CompressedTexture2D::498292938506935476::1732160325::1732160527::1::::<><>::
-::res://Art Assets/Phone/::1732175428
-Phone Border.png::CompressedTexture2D::7530748054413999330::1732175420::1732175428::1::::<><>::
-Phone Screen.png::CompressedTexture2D::2474163319881812671::1732175212::1732175216::1::::<><>::
-::res://Art Assets/Placeholder Characters/::1732070303
-::res://Art Assets/Placeholder Characters/Husbandos/::1732070303
+::res://Art Assets/::1732500615
+::res://Art Assets/Gacha Frames/::1733025225
+Character Frame Border.png::CompressedTexture2D::3657561028172345329::1732500615::1733025225::1::::<><>::
+Character Frame.png::CompressedTexture2D::498292938506935476::1732500615::1733025225::1::::<><>::
+::res://Art Assets/Phone/::1733025225
+Phone Border.png::CompressedTexture2D::7530748054413999330::1732500615::1733025225::1::::<><>::
+Phone Screen.png::CompressedTexture2D::2474163319881812671::1732500615::1733025225::1::::<><>::
+::res://Art Assets/Placeholder Characters/::1732049507
+::res://Art Assets/Placeholder Characters/Husbandos/::1732049507
 Angeal.png::CompressedTexture2D::3550361574299600229::1731881659::1731882105::1::::<><>::
 Cor.png::CompressedTexture2D::4475285901161592937::1731881623::1731882105::1::::<><>::
 Edge.png::CompressedTexture2D::1073985158893555227::1731881619::1731882105::1::::<><>::
@@ -18,7 +18,7 @@ Locke.png::CompressedTexture2D::8111589144395199699::1731881636::1731882105::1::
 Reno.png::CompressedTexture2D::1646218008515673370::1731881629::1731882105::1::::<><>::
 Rude.png::CompressedTexture2D::9187311071610670626::1731881626::1731882105::1::::<><>::
 Weiss.png::CompressedTexture2D::7017251483615721995::1731881773::1731882105::1::::<><>::
-::res://Art Assets/Placeholder Characters/Waifus/::1732070305
+::res://Art Assets/Placeholder Characters/Waifus/::1732049508
 Aranea.png::CompressedTexture2D::1550756319871771082::1731882019::1731882101::1::::<><>::
 Arciela.png::CompressedTexture2D::6971332944205803881::1731882028::1731882101::1::::<><>::
 Beatrix.png::CompressedTexture2D::5524372288452101990::1731882025::1731882101::1::::<><>::
@@ -27,123 +27,145 @@ Jessie.png::CompressedTexture2D::3752927138559396830::1731882013::1731882101::1:
 Leila.png::CompressedTexture2D::3512410193776107992::1731882016::1731882101::1::::<><>::
 Lulu.png::CompressedTexture2D::2443413714073669340::1731882035::1731882101::1::::<><>::
 Ultimecia.png::CompressedTexture2D::1559815289216482657::1731882032::1731882101::1::::<><>::
-::res://Resources/::1732949996
-GachaBanner.tres::Resource/GachaBanner::3095410542973384456::1732251153::0::1::::<><>::res://Scripts/Gacha System/GachaBanner.cs
-StartDate.tres::Resource/DateTime::4551553344925301809::1732177426::0::1::::<><>::res://Scripts/UI/Calendar/DateTime.cs
-::res://Resources/Character Stats/::1732959984
-ally_stats.tres::Resource/StatContainer::7357147325684597638::1732959984::0::1::::<><>::res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
-enemy_stats.tres::Resource/StatContainer::3450589308702017698::1732950244::0::1::::<><>::res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
-::res://Resources/Events/::1733004662
-OnCharacterListUpdated.tres::Resource/VoidEvent::3111734867510378801::1732520329::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
-OnCharacterPulledEvent.tres::Resource/GachaCharacterEvent::2640517794801583888::1732517658::0::1::::<><>::res://Scripts/Event System/GachaCharacterEvent.cs
-OnFadeInStarted.tres::Resource/VoidEvent::4027079268556280610::1733004662::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
-OnFadeOutFinished.tres::Resource/VoidEvent::4203430088783298129::1733004652::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
-OnFadeOutStarted.tres::Resource/VoidEvent::5368196142647215010::1733004645::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
-OnLoadFinish.tres::Resource/VoidEvent::4489629458873585039::1732965642::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
-OnLoadStart.tres::Resource/VoidEvent::8169519749126934143::1732965634::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
-OnFadeInFinished.tres::Resource/VoidEvent::1333834546621308647::1733004669::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
-::res://Resources/Gacha Characters/::1732491320
-Angealfish.tres::Resource/GachaCharacter::1932001303700419177::1732247003::0::1::::<><>::uid://bqt263q3jfhxd::::res://Art Assets/Placeholder Characters/Husbandos/Angeal.png<>res://Scripts/Gacha System/GachaCharacter.cs
-Aranea.tres::Resource/GachaCharacter::2483484689205110272::1732247303::0::1::::<><>::uid://wdgy25x7fcji::::res://Art Assets/Placeholder Characters/Waifus/Aranea.png<>res://Scripts/Gacha System/GachaCharacter.cs
-Beatrix.tres::Resource/GachaCharacter::250516185916305876::1732247303::0::1::::<><>::uid://ckybus1c527os::::res://Art Assets/Placeholder Characters/Waifus/Beatrix.png<>res://Scripts/Gacha System/GachaCharacter.cs
-corner_jeraldeen.tres::Resource/GachaCharacter::6181446954697227413::1732167624::0::1::::<><>::uid://pkim4yxl8ikp::::res://Art Assets/Placeholder Characters/Husbandos/Edge.png<>res://Scripts/Gacha System/GachaCharacter.cs
-cor_leonfish.tres::Resource/GachaCharacter::5667816310976267059::1732491320::0::1::::<><>::uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>res://Scripts/Gacha System/GachaCharacter.cs
-Ignis.tres::Resource/GachaCharacter::9131459516243230497::1732247079::0::1::::<><>::uid://bj8gghof7l13h::::res://Art Assets/Placeholder Characters/Husbandos/Ignis.png<>res://Scripts/Gacha System/GachaCharacter.cs
-Locke.tres::Resource/GachaCharacter::8300954749688599615::1732247303::0::1::::<><>::uid://dntkxnoxxhudv::::res://Art Assets/Placeholder Characters/Husbandos/Locke.png<>res://Scripts/Gacha System/GachaCharacter.cs
-Reno.tres::Resource/GachaCharacter::9080768804748754366::1732247303::0::1::::<><>::uid://xpo78ohh3v51::::res://Art Assets/Placeholder Characters/Husbandos/Reno.png<>res://Scripts/Gacha System/GachaCharacter.cs
-Rude.tres::Resource/GachaCharacter::5518986824222238178::1732247303::0::1::::<><>::uid://d35nw20ukeca1::::res://Art Assets/Placeholder Characters/Husbandos/Rude.png<>res://Scripts/Gacha System/GachaCharacter.cs
-Weiss.tres::Resource/GachaCharacter::8758830973574162886::1732247303::0::1::::<><>::uid://c68hdvl2tc6qp::::res://Art Assets/Placeholder Characters/Husbandos/Weiss.png<>res://Scripts/Gacha System/GachaCharacter.cs
-::res://Resources/Gacha Game Data/::1732520270
-Gacha Characters List.tres::Resource/GachaCharacterList::2069387824586629026::1732405991::0::1::::<><>::uid://bbnavojdyrhq3::::res://Resources/Gacha Characters/Aranea.tres<>uid://dtl72rvcs237::::res://Resources/Gacha Characters/Beatrix.tres<>uid://2r41q02byvxx::::res://Resources/Gacha Characters/Angealfish.tres<>uid://cuclr7vjvjjld::::res://Resources/Gacha Characters/corner_jeraldeen.tres<>uid://cm0sdvgmtwjx8::::res://Resources/Gacha Characters/cor_leonfish.tres<>uid://d3dl2lsyul7td::::res://Resources/Gacha Characters/Ignis.tres<>uid://dqjbrn2np3lv0::::res://Resources/Gacha Characters/Locke.tres<>uid://d2m162o1x3f2e::::res://Resources/Gacha Characters/Reno.tres<>uid://ckvo53dnth6mg::::res://Resources/Gacha Characters/Rude.tres<>uid://dw13wwoj4o6v7::::res://Resources/Gacha Characters/Weiss.tres<>res://Scripts/Gacha System/GachaCharacterList.cs
-Gacha Game.tres::Resource/GachaGame::8555413963217339696::1732520270::0::1::::<><>::res://Scripts/Gacha System/GachaGame.cs<>uid://bkdo7vcfuf1xk::::res://Resources/GachaBanner.tres<>uid://4qorrqwhv7ri::::res://Resources/Gacha Game Data/Gacha Characters List.tres
-::res://Resources/Skills/::1733002148
-basic_attack.tres::Resource/CharacterSkill::8873783875028128976::1733002148::0::1::::<><>::res://Scripts/Gacha System/Combat System/Skill System/CharacterSkill.cs<>uid://b68h5nh2inr2b::::res://Resources/Skills/Skill Shape/single_range.tres
-::res://Resources/Skills/Skill Shape/::1732949796
-single_range.tres::Resource/GridShape::4630878589977751139::1732949796::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
-two_spaces_away.tres::Resource/GridShape::4677569659968074120::1732949796::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
-T_range.tres::Resource/GridShape::5654942550930148780::1732949796::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
-::res://Scenes/::1733004608
-Battle Scene.tscn::PackedScene::3847056401484831596::1732965740::0::1::::<><>::res://Scripts/Gacha System/Combat System/BattleManager.cs<>res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs<>uid://bhysvr23m0r0i::::res://Scenes/Battle/battle_space.tscn<>uid://cb4d130t6c7wm::::res://icon.svg<>uid://cnuodvla63kph::::res://Scenes/Battle/battle_character.tscn<>uid://denrkd823yp0d::::res://Scenes/scene_manager.tscn
-Calendar.tscn::PackedScene::5804744087901366379::1732343414::0::1::::<><>::
-Room.tscn::PackedScene::8005753263646088823::1733004608::0::1::::<><>::uid://d3l8173j7xgql::::res://Scenes/UI/menu.tscn<>res://Scripts/GameState.cs<>uid://whlnpairs4d0::::res://Scenes/UI/info_display.tscn<>uid://cuclr7vjvjjld::::res://Resources/Gacha Characters/corner_jeraldeen.tres<>res://Scripts/Gacha System/GachaCharacterPower.cs<>uid://bbirdxkrbp1x8::::res://Art Assets/Phone/Phone Screen.png<>uid://2r41q02byvxx::::res://Resources/Gacha Characters/Angealfish.tres<>res://Scripts/Gacha System/GachaValuePair.cs<>res://Scripts/Gacha System/GachaGame.cs<>uid://dfj7k5fe8bmcw::::res://Art Assets/Phone/Phone Border.png<>uid://4qorrqwhv7ri::::res://Resources/Gacha Game Data/Gacha Characters List.tres<>uid://bkdo7vcfuf1xk::::res://Resources/GachaBanner.tres<>uid://bdvc7bj8667ce::::res://Resources/Events/OnCharacterPulledEvent.tres<>uid://bkll23l0c6di4::::res://Resources/Events/OnCharacterListUpdated.tres<>uid://b4058rclqtcjo::::res://Scenes/UI/Gacha Menu Bar.tscn
-scene_manager.tscn::PackedScene::7467904593064020145::1733004608::0::1::::<><>::res://Scripts/Scene Manager/SceneManager.cs<>uid://donm2c77v85x8::::res://Resources/Events/OnLoadStart.tres<>res://Scripts/Scene Manager/LoadScreen.cs
-Town.tscn::PackedScene::2042577519570278944::1733004608::0::1::::<><>::uid://cb4d130t6c7wm::::res://icon.svg<>res://Scripts/Overworld Scripts/Player.cs<>res://Scripts/Overworld Scripts/Trigger.cs<>uid://bu2spse3qae4c::::res://Scenes/Battle Scene.tscn<>uid://denrkd823yp0d::::res://Scenes/scene_manager.tscn
-::res://Scenes/Battle/::1732961594
-battle_character.tscn::PackedScene::5727440405068004413::1732960382::0::1::::<><>::uid://cb4d130t6c7wm::::res://icon.svg<>res://Scripts/Gacha System/Combat System/BattleCharacter.cs<>uid://dyor6oc038qua::::res://Resources/Skills/basic_attack.tres<>uid://dc24e2v6r5xpm::::res://Resources/Character Stats/ally_stats.tres
-battle_character_2.tscn::PackedScene::5081989386123556816::1732960362::0::1::::<><>::
-battle_space.tscn::PackedScene::2928418998694464230::1732961594::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridSpace.cs
-::res://Scenes/UI/::1733004608
-Gacha Menu Bar.tscn::PackedScene::4475387930537871808::1733004608::0::1::::<><>::res://Scripts/UI/GachaBottomBar.cs<>uid://bbywqghbhxtw1::::res://Scenes/UI/Gacha Window/Gacha Window.tscn<>uid://dpw1nf6qhmgi4::::res://Scenes/UI/Gacha Window/Banners Window.tscn
-info_display.tscn::PackedScene::1559297094793520019::1733004608::0::1::::<><>::res://Scripts/Menus/info_display.cs
-menu.tscn::PackedScene::9149309644096009371::1733004608::0::1::::<><>::res://Scripts/Menus/menu.cs
-Phone.tscn::PackedScene::5496014406275182847::1732343414::0::1::::<><>::uid://dfj7k5fe8bmcw::::res://Art Assets/Phone/Phone Border.png<>uid://bbirdxkrbp1x8::::res://Art Assets/Phone/Phone Screen.png
-::res://Scenes/UI/Gacha Window/::1733004608
-Banners Window.tscn::PackedScene::8259113184614283349::1732521483::0::1::::<><>::res://Scripts/UI/Banners Display/BannersWindow.cs
-Gacha Window.tscn::PackedScene::2507519265981356890::1733004608::0::1::::<><>::res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs<>uid://dqircsi2jaxqm::::res://Scenes/UI/Gacha Window/Window Elements/gacha_display_row.tscn<>uid://bkll23l0c6di4::::res://Resources/Events/OnCharacterListUpdated.tres
-Lobby Window.tscn::PackedScene::6025537448354271276::1733004608::0::1::::<><>::
-::res://Scenes/UI/Gacha Window/Window Elements/::1732521334
-Character Box Display.tscn::PackedScene::284469620107739606::1732515641::0::1::::<><>::uid://hdm2us0pmnaq::::res://Art Assets/Gacha Frames/Character Frame.png<>res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs<>uid://bsd0q4di11vk0::::res://Art Assets/Gacha Frames/Character Frame Border.png<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png
-gacha_display_row.tscn::PackedScene::8299835290802687736::1732521334::0::1::::<><>::uid://eb2f5c2h3f5w::::res://Scenes/UI/Gacha Window/Window Elements/Character Box Display.tscn
-::res://Scripts/::1732963374
-GameState.cs::CSharpScript::-1::1732518010::0::1::::<>Node<>::
-InfiniNumber.cs::CSharpScript::-1::1732167030::0::1::::<><>::
-Node2d.cs::CSharpScript::-1::1732341700::0::1::::<>Node2D<>::
-Tag.cs::CSharpScript::-1::1732488174::0::1::::Tag<>Resource<>::
-::res://Scripts/Event System/::1732520157
-EventManager.cs::CSharpScript::-1::1732517782::0::1::::<>Node<>::
-GachaCharacterEvent.cs::CSharpScript::-1::1732520065::0::1::::GachaCharacterEvent<>Resource<>::
-GameEvent.cs::CSharpScript::-1::1732517820::0::1::::<><>::
-VoidEvent.cs::CSharpScript::-1::1732520157::0::1::::VoidEvent<>Resource<>::
-::res://Scripts/Gacha System/::1732520396
-GachaBanner.cs::CSharpScript::-1::1732517928::0::1::::GachaBanner<>Resource<>::
-GachaCharacter.cs::CSharpScript::-1::1732168268::0::1::::GachaCharacter<>Resource<>::
-GachaCharacterData.cs::CSharpScript::-1::1732342924::0::1::::GachaCharacterData<>Resource<>::
-GachaCharacterList.cs::CSharpScript::-1::1732342312::0::1::::GachaCharacterList<>Resource<>::
-GachaCharacterPower.cs::CSharpScript::-1::1732481355::0::1::::<>Node<>::
-GachaData.cs::CSharpScript::-1::1732246887::0::1::::<><>::
-GachaGame.cs::CSharpScript::-1::1732520396::0::1::::GachaGame<>Node<>::
-GachaValuePair.cs::CSharpScript::-1::1732405487::0::1::::GachaValuePair<>Resource<>::
-UpgradeCurrency.cs::CSharpScript::-1::1732233339::0::1::::UpgradeCurrency<>Resource<>::
-::res://Scripts/Gacha System/Combat System/::1732962213
-BattleCharacter.cs::CSharpScript::-1::1732961055::0::1::::<>CharacterBody2D<>::
-BattleManager.cs::CSharpScript::-1::1732962213::0::1::::<>Node<>::
-BattleState.cs::CSharpScript::-1::1732857629::0::1::::<><>::
-BattleStateEnum.cs::CSharpScript::-1::1732832834::0::1::::<><>::
-TurnOrderManager.cs::CSharpScript::-1::1732920316::0::1::::<><>::
-::res://Scripts/Gacha System/Combat System/Grid/::1732959527
-BattleGrid.cs::CSharpScript::-1::1732920262::0::1::::<>Node2D<>::
-GridShape.cs::CSharpScript::-1::1732917018::0::1::::GridShape<>Resource<>::
-GridSpace.cs::CSharpScript::-1::1732959527::0::1::::<>Node2D<>::
-GridState.cs::CSharpScript::-1::1732869206::0::1::::<><>::
-::res://Scripts/Gacha System/Combat System/Skill System/::1732961022
-BattleStats.cs::CSharpScript::-1::1732961022::0::1::::<><>::
-CharacterSkill.cs::CSharpScript::-1::1732949866::0::1::::CharacterSkill<>Resource<>::
-DamageEffect.cs::CSharpScript::-1::1732492073::0::1::::<>SkillEffect<>::
-StatContainer.cs::CSharpScript::-1::1732960814::0::1::::StatContainer<>Resource<>::
-::res://Scripts/Gacha System/Combat System/Skill System/Skill Effects/::1732947925
-SkillEffect.cs::CSharpScript::-1::1732491969::0::1::::SkillEffect<>Resource<>::
-::res://Scripts/Gacha System/Dungeons/::1732070306
+::res://Resources/::1733036772
+GachaBanner.tres::Resource/GachaBanner::3095410542973384456::1732500615::0::1::::<><>::res://Scripts/Gacha System/GachaBanner.cs
+StartDate.tres::Resource/DateTime::4551553344925301809::1732500615::0::1::::<><>::res://Scripts/UI/Calendar/DateTime.cs
+::res://Resources/Character Stats/::1733023185
+ally_stats.tres::Resource/StatContainer::7357147325684597638::1733023185::0::1::::<><>::res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
+enemy_stats.tres::Resource/StatContainer::3450589308702017698::1733023185::0::1::::<><>::res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
+::res://Resources/Dialogue/::1733034877
+::res://Resources/Dialogue/Actors/::1733034938
+whalefred.tres::Resource/Actor::7188094831044271672::1733036806::0::1::::<><>::res://Scripts/Dialogue System/Actor.cs<>uid://bqt263q3jfhxd::::res://Art Assets/Placeholder Characters/Husbandos/Angeal.png<>res://Scripts/Dialogue System/ActorEmotion.cs<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>uid://pkim4yxl8ikp::::res://Art Assets/Placeholder Characters/Husbandos/Edge.png
+::res://Resources/Events/::1733023185
+OnCharacterListUpdated.tres::Resource/VoidEvent::3111734867510378801::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+OnCharacterPulledEvent.tres::Resource/GachaCharacterEvent::2640517794801583888::1733023185::0::1::::<><>::res://Scripts/Event System/GachaCharacterEvent.cs
+OnFadeInFinished.tres::Resource/VoidEvent::1333834546621308647::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+OnFadeInStarted.tres::Resource/VoidEvent::4027079268556280610::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+OnFadeOutFinished.tres::Resource/VoidEvent::4203430088783298129::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+OnFadeOutStarted.tres::Resource/VoidEvent::5368196142647215010::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+OnLoadFinish.tres::Resource/VoidEvent::4489629458873585039::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+OnLoadStart.tres::Resource/VoidEvent::8169519749126934143::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+OnSceneLoad.tres::Resource/VoidEvent::3928740579328744092::1733023185::0::1::::<><>::res://Scripts/Event System/VoidEvent.cs
+::res://Resources/Gacha Characters/::1732500615
+Angealfish.tres::Resource/GachaCharacter::1932001303700419177::1732500615::0::1::::<><>::uid://bqt263q3jfhxd::::res://Art Assets/Placeholder Characters/Husbandos/Angeal.png<>res://Scripts/Gacha System/GachaCharacter.cs
+Aranea.tres::Resource/GachaCharacter::2483484689205110272::1732500615::0::1::::<><>::uid://wdgy25x7fcji::::res://Art Assets/Placeholder Characters/Waifus/Aranea.png<>res://Scripts/Gacha System/GachaCharacter.cs
+Beatrix.tres::Resource/GachaCharacter::250516185916305876::1732500615::0::1::::<><>::uid://ckybus1c527os::::res://Art Assets/Placeholder Characters/Waifus/Beatrix.png<>res://Scripts/Gacha System/GachaCharacter.cs
+corner_jeraldeen.tres::Resource/GachaCharacter::6181446954697227413::1732500615::0::1::::<><>::uid://pkim4yxl8ikp::::res://Art Assets/Placeholder Characters/Husbandos/Edge.png<>res://Scripts/Gacha System/GachaCharacter.cs
+cor_leonfish.tres::Resource/GachaCharacter::5667816310976267059::1732500615::0::1::::<><>::uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>res://Scripts/Gacha System/GachaCharacter.cs
+Ignis.tres::Resource/GachaCharacter::9131459516243230497::1732500615::0::1::::<><>::uid://bj8gghof7l13h::::res://Art Assets/Placeholder Characters/Husbandos/Ignis.png<>res://Scripts/Gacha System/GachaCharacter.cs
+Locke.tres::Resource/GachaCharacter::8300954749688599615::1732500615::0::1::::<><>::uid://dntkxnoxxhudv::::res://Art Assets/Placeholder Characters/Husbandos/Locke.png<>res://Scripts/Gacha System/GachaCharacter.cs
+Reno.tres::Resource/GachaCharacter::9080768804748754366::1732500615::0::1::::<><>::uid://xpo78ohh3v51::::res://Art Assets/Placeholder Characters/Husbandos/Reno.png<>res://Scripts/Gacha System/GachaCharacter.cs
+Rude.tres::Resource/GachaCharacter::5518986824222238178::1732500615::0::1::::<><>::uid://d35nw20ukeca1::::res://Art Assets/Placeholder Characters/Husbandos/Rude.png<>res://Scripts/Gacha System/GachaCharacter.cs
+Weiss.tres::Resource/GachaCharacter::8758830973574162886::1732500615::0::1::::<><>::uid://c68hdvl2tc6qp::::res://Art Assets/Placeholder Characters/Husbandos/Weiss.png<>res://Scripts/Gacha System/GachaCharacter.cs
+::res://Resources/Gacha Game Data/::1733023185
+Gacha Characters List.tres::Resource/GachaCharacterList::2069387824586629026::1732500615::0::1::::<><>::uid://bbnavojdyrhq3::::res://Resources/Gacha Characters/Aranea.tres<>uid://dtl72rvcs237::::res://Resources/Gacha Characters/Beatrix.tres<>uid://2r41q02byvxx::::res://Resources/Gacha Characters/Angealfish.tres<>uid://cuclr7vjvjjld::::res://Resources/Gacha Characters/corner_jeraldeen.tres<>uid://cm0sdvgmtwjx8::::res://Resources/Gacha Characters/cor_leonfish.tres<>uid://d3dl2lsyul7td::::res://Resources/Gacha Characters/Ignis.tres<>uid://dqjbrn2np3lv0::::res://Resources/Gacha Characters/Locke.tres<>uid://d2m162o1x3f2e::::res://Resources/Gacha Characters/Reno.tres<>uid://ckvo53dnth6mg::::res://Resources/Gacha Characters/Rude.tres<>uid://dw13wwoj4o6v7::::res://Resources/Gacha Characters/Weiss.tres<>res://Scripts/Gacha System/GachaCharacterList.cs
+Gacha Game.tres::Resource/GachaGame::8555413963217339696::1733023185::0::1::::<><>::res://Scripts/Gacha System/GachaGame.cs<>uid://bkdo7vcfuf1xk::::res://Resources/GachaBanner.tres<>uid://4qorrqwhv7ri::::res://Resources/Gacha Game Data/Gacha Characters List.tres
+::res://Resources/Skills/::1733027652
+basic_attack.tres::Resource/CharacterSkill::8873783875028128976::1733027652::0::1::::<><>::res://Scripts/Gacha System/Combat System/Skill System/CharacterSkill.cs<>uid://b68h5nh2inr2b::::res://Resources/Skills/Skill Shape/single_range.tres
+::res://Resources/Skills/Skill Shape/::1733023185
+single_range.tres::Resource/GridShape::4630878589977751139::1733023185::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
+two_spaces_away.tres::Resource/GridShape::4677569659968074120::1733023185::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
+T_range.tres::Resource/GridShape::5654942550930148780::1733023185::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
+::res://Resources/Tags/::1733036793
+default_emotion.tres::Resource/Tag::8738997803136220779::1733036806::0::1::::<><>::res://Scripts/Tag.cs
+happy_emotion.tres::Resource/Tag::7382405383330765954::1733036793::0::1::::<><>::res://Scripts/Tag.cs
+sad_emotion.tres::Resource/Tag::4173873396353449789::1733036823::0::1::::<><>::res://Scripts/Tag.cs
+::res://Resources/Trigger Effects/::1733027652
+load_battle_effect.tres::Resource/TriggerLoadScene::4343296460942174273::1733027652::0::1::::<><>::uid://bu2spse3qae4c::::res://Scenes/Battle Scene.tscn<>res://Scripts/Overworld Scripts/Triggers/TriggerLoadScene.cs
+::res://Scenes/::1733032759
+Battle Scene.tscn::PackedScene::3847056401484831596::1733023185::0::1::::<><>::res://Scripts/Gacha System/Combat System/BattleManager.cs<>res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs<>uid://bhysvr23m0r0i::::res://Scenes/Battle/battle_space.tscn<>uid://cb4d130t6c7wm::::res://icon.svg<>uid://cnuodvla63kph::::res://Scenes/Battle/battle_character.tscn<>uid://denrkd823yp0d::::res://Scenes/scene_manager.tscn
+Calendar.tscn::PackedScene::5804744087901366379::1732500615::0::1::::<><>::
+player.tscn::PackedScene::4200002678614279173::1733032759::0::1::::<><>::res://Scripts/Overworld Scripts/Player.cs<>uid://cb4d130t6c7wm::::res://icon.svg<>res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs<>uid://bv8d1vsuuw2b5::::res://Resources/Events/OnSceneLoad.tres
+Room.tscn::PackedScene::8005753263646088823::1733032758::0::1::::<><>::uid://d3l8173j7xgql::::res://Scenes/UI/menu.tscn<>res://Scripts/GameState.cs<>uid://whlnpairs4d0::::res://Scenes/UI/info_display.tscn<>uid://cuclr7vjvjjld::::res://Resources/Gacha Characters/corner_jeraldeen.tres<>res://Scripts/Gacha System/GachaCharacterPower.cs<>uid://bbirdxkrbp1x8::::res://Art Assets/Phone/Phone Screen.png<>uid://2r41q02byvxx::::res://Resources/Gacha Characters/Angealfish.tres<>res://Scripts/Gacha System/GachaValuePair.cs<>res://Scripts/Gacha System/GachaGame.cs<>uid://dfj7k5fe8bmcw::::res://Art Assets/Phone/Phone Border.png<>uid://4qorrqwhv7ri::::res://Resources/Gacha Game Data/Gacha Characters List.tres<>uid://bkdo7vcfuf1xk::::res://Resources/GachaBanner.tres<>uid://bdvc7bj8667ce::::res://Resources/Events/OnCharacterPulledEvent.tres<>uid://bkll23l0c6di4::::res://Resources/Events/OnCharacterListUpdated.tres<>uid://b4058rclqtcjo::::res://Scenes/UI/Gacha Menu Bar.tscn
+scene_manager.tscn::PackedScene::7467904593064020145::1733032759::0::1::::<><>::res://Scripts/Scene Manager/SceneManager.cs<>uid://b05f45vitglph::::res://Resources/Events/OnFadeOutFinished.tres<>res://Scripts/Scene Manager/LoadScreen.cs<>uid://ciqnn2r7ohuhm::::res://Resources/Events/OnFadeOutStarted.tres<>uid://bxm0n3yf7s5du::::res://Resources/Events/OnFadeInStarted.tres<>uid://taecbqpnrvvr::::res://Resources/Events/OnFadeInFinished.tres<>uid://bv8d1vsuuw2b5::::res://Resources/Events/OnSceneLoad.tres
+Town.tscn::PackedScene::2042577519570278944::1733036806::0::1::::<><>::uid://cb4d130t6c7wm::::res://icon.svg<>uid://b03rovv6s5qxh::::res://Scenes/player.tscn<>res://Scripts/Overworld Scripts/Triggers/Trigger.cs<>res://Scripts/Overworld Scripts/NPC.cs<>uid://denrkd823yp0d::::res://Scenes/scene_manager.tscn<>uid://b246ptvb5bsm0::::res://Resources/Trigger Effects/load_battle_effect.tres<>res://Scripts/Dialogue System/DialogueManager.cs
+::res://Scenes/Battle/::1733023185
+battle_character.tscn::PackedScene::5727440405068004413::1733023185::0::1::::<><>::uid://cb4d130t6c7wm::::res://icon.svg<>res://Scripts/Gacha System/Combat System/BattleCharacter.cs<>uid://dyor6oc038qua::::res://Resources/Skills/basic_attack.tres<>uid://dc24e2v6r5xpm::::res://Resources/Character Stats/ally_stats.tres
+battle_character_2.tscn::PackedScene::5081989386123556816::1733023185::0::1::::<><>::
+battle_space.tscn::PackedScene::2928418998694464230::1733023185::0::1::::<><>::res://Scripts/Gacha System/Combat System/Grid/GridSpace.cs
+::res://Scenes/UI/::1733032758
+Gacha Menu Bar.tscn::PackedScene::4475387930537871808::1733032758::0::1::::<><>::res://Scripts/UI/GachaBottomBar.cs<>uid://bbywqghbhxtw1::::res://Scenes/UI/Gacha Window/Gacha Window.tscn<>uid://dpw1nf6qhmgi4::::res://Scenes/UI/Gacha Window/Banners Window.tscn
+info_display.tscn::PackedScene::1559297094793520019::1733032758::0::1::::<><>::res://Scripts/Menus/info_display.cs
+menu.tscn::PackedScene::9149309644096009371::1733032758::0::1::::<><>::res://Scripts/Menus/menu.cs
+Phone.tscn::PackedScene::5496014406275182847::1732500615::0::1::::<><>::uid://dfj7k5fe8bmcw::::res://Art Assets/Phone/Phone Border.png<>uid://bbirdxkrbp1x8::::res://Art Assets/Phone/Phone Screen.png
+::res://Scenes/UI/Gacha Window/::1733032758
+Banners Window.tscn::PackedScene::8259113184614283349::1733023185::0::1::::<><>::res://Scripts/UI/Banners Display/BannersWindow.cs
+Gacha Window.tscn::PackedScene::2507519265981356890::1733032758::0::1::::<><>::res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs<>uid://dqircsi2jaxqm::::res://Scenes/UI/Gacha Window/Window Elements/gacha_display_row.tscn<>uid://bkll23l0c6di4::::res://Resources/Events/OnCharacterListUpdated.tres
+Lobby Window.tscn::PackedScene::6025537448354271276::1733032758::0::1::::<><>::
+::res://Scenes/UI/Gacha Window/Window Elements/::1733023185
+Character Box Display.tscn::PackedScene::284469620107739606::1733023185::0::1::::<><>::uid://hdm2us0pmnaq::::res://Art Assets/Gacha Frames/Character Frame.png<>res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs<>uid://bsd0q4di11vk0::::res://Art Assets/Gacha Frames/Character Frame Border.png<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png
+gacha_display_row.tscn::PackedScene::8299835290802687736::1733023185::0::1::::<><>::uid://eb2f5c2h3f5w::::res://Scenes/UI/Gacha Window/Window Elements/Character Box Display.tscn
+::res://Scripts/::1733030070
+GameState.cs::CSharpScript::-1::1733025253::0::1::::<>Node<>::
+InfiniNumber.cs::CSharpScript::-1::1732500615::0::1::::<><>::
+Node2d.cs::CSharpScript::-1::1732500615::0::1::::<>Node2D<>::
+Tag.cs::CSharpScript::-1::1732500615::0::1::::Tag<>Resource<>::
+::res://Scripts/Dialogue System/::1733036748
+Actor.cs::CSharpScript::-1::1733036735::0::1::::Actor<>Resource<>::
+ActorEmotion.cs::CSharpScript::-1::1733036724::0::1::::ActorEmotion<>Resource<>::
+DialogueManager.cs::CSharpScript::-1::1733033894::0::1::::<>Node<>::
+DialogueScene.cs::CSharpScript::-1::1733036748::0::1::::DialogueScene<>Resource<>::
+DialogueState.cs::CSharpScript::-1::1733033096::0::1::::<><>::
+DialogueTree.cs::CSharpScript::-1::1733036590::0::1::::DialogueTree<>Resource<>::
+::res://Scripts/Event System/::1733023185
+EventManager.cs::CSharpScript::-1::1733023185::0::1::::<>Node<>::
+GachaCharacterEvent.cs::CSharpScript::-1::1733023185::0::1::::GachaCharacterEvent<>Resource<>::
+GameEvent.cs::CSharpScript::-1::1733023185::0::1::::<><>::
+VoidEvent.cs::CSharpScript::-1::1733023185::0::1::::VoidEvent<>Resource<>::
+::res://Scripts/Gacha System/::1733023185
+GachaBanner.cs::CSharpScript::-1::1733023185::0::1::::GachaBanner<>Resource<>::
+GachaCharacter.cs::CSharpScript::-1::1732500615::0::1::::GachaCharacter<>Resource<>::
+GachaCharacterData.cs::CSharpScript::-1::1732500615::0::1::::GachaCharacterData<>Resource<>::
+GachaCharacterList.cs::CSharpScript::-1::1732500615::0::1::::GachaCharacterList<>Resource<>::
+GachaCharacterPower.cs::CSharpScript::-1::1732500615::0::1::::<>Node<>::
+GachaData.cs::CSharpScript::-1::1732500615::0::1::::<><>::
+GachaGame.cs::CSharpScript::-1::1733023185::0::1::::GachaGame<>Node<>::
+GachaValuePair.cs::CSharpScript::-1::1732500615::0::1::::GachaValuePair<>Resource<>::
+UpgradeCurrency.cs::CSharpScript::-1::1732500615::0::1::::UpgradeCurrency<>Resource<>::
+::res://Scripts/Gacha System/Combat System/::1733023185
+BattleCharacter.cs::CSharpScript::-1::1733023185::0::1::::<>CharacterBody2D<>::
+BattleManager.cs::CSharpScript::-1::1733023185::0::1::::<>Node<>::
+BattleState.cs::CSharpScript::-1::1733023185::0::1::::<><>::
+BattleStateEnum.cs::CSharpScript::-1::1733023185::0::1::::<><>::
+TurnOrderManager.cs::CSharpScript::-1::1733023185::0::1::::<><>::
+::res://Scripts/Gacha System/Combat System/Grid/::1733023185
+BattleGrid.cs::CSharpScript::-1::1733023185::0::1::::<>Node2D<>::
+GridShape.cs::CSharpScript::-1::1733023185::0::1::::GridShape<>Resource<>::
+GridSpace.cs::CSharpScript::-1::1733023185::0::1::::<>Node2D<>::
+GridState.cs::CSharpScript::-1::1733023185::0::1::::<><>::
+::res://Scripts/Gacha System/Combat System/Skill System/::1733023185
+BattleStats.cs::CSharpScript::-1::1733023185::0::1::::<><>::
+CharacterSkill.cs::CSharpScript::-1::1733023185::0::1::::CharacterSkill<>Resource<>::
+DamageEffect.cs::CSharpScript::-1::1733023185::0::1::::<>SkillEffect<>::
+StatContainer.cs::CSharpScript::-1::1733023185::0::1::::StatContainer<>Resource<>::
+::res://Scripts/Gacha System/Combat System/Skill System/Skill Effects/::1733023185
+SkillEffect.cs::CSharpScript::-1::1733023185::0::1::::SkillEffect<>Resource<>::
+::res://Scripts/Gacha System/Dungeons/::1732049509
 Dungeon.cs::CSharpScript::-1::1731885536::0::1::::Dungeon<>Resource<>::
 GachaDungeons.cs::CSharpScript::-1::1731885067::0::1::::<>Resource<>::
-::res://Scripts/Gacha System/Skill System/::1732947939
-::res://Scripts/Menus/::1732491493
-GachaMenu.cs::CSharpScript::-1::1731783018::0::1::::<>Control<>::
+::res://Scripts/Menus/::1733024624
+GachaMenu.cs::CSharpScript::-1::1733024624::0::1::::<>Control<>::
 info_display.cs::CSharpScript::-1::1731828967::0::1::::<>Control<>::
-menu.cs::CSharpScript::-1::1732491493::0::1::::<>Control<>::
-::res://Scripts/Overworld Scripts/::1732964102
-Player.cs::CSharpScript::-1::1732963712::0::1::::<>CharacterBody2D<>::
-Trigger.cs::CSharpScript::-1::1732964102::0::1::::<>Area2D<>::
-::res://Scripts/Scene Manager/::1733004551
-LoadScreen.cs::CSharpScript::-1::1733004171::0::1::::<>Node<>::
-LoadScreenState.cs::CSharpScript::-1::1733002976::0::1::::<><>::
-SceneManager.cs::CSharpScript::-1::1733004551::0::1::::<>Node<>::
-::res://Scripts/UI/::1732516277
-GachaBottomBar.cs::CSharpScript::-1::1732515600::0::1::::<>Control<>::
-::res://Scripts/UI/Banners Display/::1732520099
-BannersWindow.cs::CSharpScript::-1::1732520099::0::1::::<>Control<>::
-::res://Scripts/UI/Calendar/::1732176906
-CalendarUI.cs::CSharpScript::-1::1732176906::0::1::::<>Node<>::
-DateTime.cs::CSharpScript::-1::1732177502::0::1::::DateTime<>Resource<>::
-::res://Scripts/UI/Gacha Display/::1732522599
-CharacterBoxDisplay.cs::CSharpScript::-1::1732343409::0::1::::<>TextureRect<>::
-OwnedGachaCharactersMenu.cs::CSharpScript::-1::1732522599::0::1::::<>Control<>::
+menu.cs::CSharpScript::-1::1732500615::0::1::::<>Control<>::
+::res://Scripts/Overworld Scripts/::1733029671
+NPC.cs::CSharpScript::-1::1733029671::0::1::::<>CharacterBody2D<>::
+Player.cs::CSharpScript::-1::1733026374::0::1::::<>CharacterBody2D<>::
+::res://Scripts/Overworld Scripts/Triggers/::1733028780
+Trigger.cs::CSharpScript::-1::1733027724::0::1::::<>Area2D<>::
+TriggerDetector.cs::CSharpScript::-1::1733028780::0::1::::<>Area2D<>::
+TriggerEffect.cs::CSharpScript::-1::1733026846::0::1::::<>Resource<>::
+TriggerLoadScene.cs::CSharpScript::-1::1733027596::0::1::::TriggerLoadScene<>Resource<>::
+::res://Scripts/Scene Manager/::1733029354
+LoadScreen.cs::CSharpScript::-1::1733023185::0::1::::<>Node<>::
+LoadScreenState.cs::CSharpScript::-1::1733023185::0::1::::<><>::
+SceneManager.cs::CSharpScript::-1::1733029354::0::1::::<>Node<>::
+::res://Scripts/UI/::1733023185
+GachaBottomBar.cs::CSharpScript::-1::1733023185::0::1::::<>Control<>::
+::res://Scripts/UI/Banners Display/::1733023185
+BannersWindow.cs::CSharpScript::-1::1733023185::0::1::::<>Control<>::
+::res://Scripts/UI/Calendar/::1732500615
+CalendarUI.cs::CSharpScript::-1::1732500615::0::1::::<>Node<>::
+DateTime.cs::CSharpScript::-1::1732500615::0::1::::DateTime<>Resource<>::
+::res://Scripts/UI/Gacha Display/::1733023185
+CharacterBoxDisplay.cs::CSharpScript::-1::1732500615::0::1::::<>TextureRect<>::
+OwnedGachaCharactersMenu.cs::CSharpScript::-1::1733023185::0::1::::<>Control<>::

@@ -1,10 +1,12 @@
 using Godot;
 using System;
+using Godot.Collections;
 
 public partial class Player : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
+	private Array<Trigger> currentTriggers;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -18,9 +20,4 @@ public partial class Player : CharacterBody2D
 		Velocity = direction * Speed;
 		MoveAndSlide();
 	}
-
-	public void InteractWithObject()
-    {
-
-    }
 }

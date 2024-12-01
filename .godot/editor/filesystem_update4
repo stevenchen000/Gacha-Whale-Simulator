@@ -1,5 +1,6 @@
 res://Scenes/Room.tscn
 res://Resources/Skills/basic_attack.tres
+res://Scripts/GameState.cs
 res://Scenes/UI/menu.tscn
 res://Scenes/UI/info_display.tscn
 res://Scenes/UI/Gacha Menu Bar.tscn
@@ -7,43 +8,57 @@ res://Scenes/UI/Gacha Window/Gacha Window.tscn
 res://Scenes/UI/Gacha Window/Lobby Window.tscn
 res://Scenes/Town.tscn
 res://Scenes/scene_manager.tscn
-res://Scripts/Tag.cs
+res://Scripts/UI/Banners Display/BannersWindow.cs
 res://Scripts/Event System/GameEvent.cs
 res://Scripts/Gacha System/GachaCharacterPower.cs
 res://Scripts/Gacha System/Combat System/Grid/GridSpace.cs
 res://Scripts/Event System/GachaCharacterEvent.cs
 res://Scripts/Menus/menu.cs
-res://Scripts/Gacha System/Combat System/Skill System/Skill Effects/SkillEffect.cs
+res://Scripts/Gacha System/Combat System/Skill System/DamageEffect.cs
 res://Scripts/Node2d.cs
-res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
+res://Scripts/Gacha System/Combat System/Skill System/Skill Effects/SkillEffect.cs
 res://Scripts/Event System/EventManager.cs
 res://Scripts/Gacha System/Combat System/BattleManager.cs
 res://Scripts/Overworld Scripts/Player.cs
 res://Scripts/Gacha System/GachaBanner.cs
-res://Scripts/Overworld Scripts/Trigger.cs
+res://Scripts/Scene Manager/LoadScreen.cs
 res://Scripts/Event System/VoidEvent.cs
 res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs
 res://Scripts/Gacha System/GachaGame.cs
-res://Scripts/UI/Banners Display/BannersWindow.cs
+res://Scripts/UI/Calendar/CalendarUI.cs
 res://Scripts/Menus/GachaMenu.cs
-res://Scripts/UI/GachaBottomBar.cs
-res://Scripts/GameState.cs
 res://Scripts/Gacha System/GachaValuePair.cs
 res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
-res://Scripts/UI/Calendar/CalendarUI.cs
-res://Scripts/Scene Manager/LoadScreen.cs
+res://Scripts/UI/Calendar/DateTime.cs
+res://Scripts/Tag.cs
 res://Scripts/Gacha System/GachaCharacter.cs
 res://Scripts/Gacha System/UpgradeCurrency.cs
 res://Scripts/Gacha System/Combat System/BattleCharacter.cs
 res://Scripts/Scene Manager/SceneManager.cs
 res://Scripts/Gacha System/GachaCharacterData.cs
 res://Scripts/Gacha System/Combat System/Skill System/CharacterSkill.cs
-res://Scripts/Gacha System/Dungeons/Dungeon.cs
-res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
+res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
+res://Scripts/UI/GachaBottomBar.cs
 res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
 res://Scripts/Menus/info_display.cs
 res://Scripts/Gacha System/GachaCharacterList.cs
-res://Scripts/UI/Calendar/DateTime.cs
 res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs
-res://Scripts/Gacha System/Combat System/Skill System/DamageEffect.cs
-res://Resources/Events/OnFadeOutFinished.tres
+res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
+res://Scripts/Gacha System/Dungeons/Dungeon.cs
+res://Scripts/Overworld Scripts/Trigger.cs
+res://Scripts/Overworld Scripts/NPC.cs
+res://Scripts/Overworld Scripts/TriggerDetector.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerLoadScene.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerEffect.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs
+res://Resources/Trigger Effects/load_battle_effect.tres
+res://Scenes/player.tscn
+res://Scripts/Dialogue System/DialogueManager.cs
+res://Scripts/Dialogue System/DialogueScene.cs
+res://Scripts/Dialogue System/Actor.cs
+res://Scripts/Dialogue System/DialogueTree.cs
+res://Scripts/Dialogue System/ActorEmotion.cs
+res://Resources/Dialogue/Actors/whalefred.tres
+res://Resources/Tags/default_emotion.tres
+res://Resources/Dialogue/test_dialogue.tres

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b03rovv6s5qxh"]
+
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Player.cs" id="1_sequw"]
+[ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="2_2dsr3"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs" id="3_7qh1w"]
+[ext_resource type="Resource" uid="uid://bv8d1vsuuw2b5" path="res://Resources/Events/OnSceneLoad.tres" id="4_vjbnk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mt627"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpw0o"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(546, 352)
+script = ExtResource("1_sequw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16.85)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_2dsr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.37, 3.37)
+shape = SubResource("CircleShape2D_mt627")
+
+[node name="Trigger Detector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_7qh1w")
+OnSceneLoaded = ExtResource("4_vjbnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Detector"]
+scale = Vector2(6.355, 6.355)
+shape = SubResource("CircleShape2D_dpw0o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="area_entered" from="Trigger Detector" to="Trigger Detector" method="OnTriggerEnter"]
+[connection signal="area_exited" from="Trigger Detector" to="Trigger Detector" method="OnTriggerExit"]

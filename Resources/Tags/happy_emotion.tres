@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Tag" load_steps=2 format=3 uid="uid://ddgdexvd8s0gs"]
+
+[ext_resource type="Script" path="res://Scripts/Tag.cs" id="1_uuh06"]
+
+[resource]
+script = ExtResource("1_uuh06")
+tag = ""

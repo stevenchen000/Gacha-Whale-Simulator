@@ -1,42 +1,103 @@
-[gd_scene load_steps=8 format=3 uid="uid://4do7obn4i8bk"]
+[gd_scene load_steps=12 format=3 uid="uid://4do7obn4i8bk"]
 
 [ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="1_ae8wl"]
-[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Player.cs" id="1_fb2f3"]
-[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Trigger.cs" id="3_vpeca"]
-[ext_resource type="PackedScene" uid="uid://bu2spse3qae4c" path="res://Scenes/Battle Scene.tscn" id="4_c3aeg"]
+[ext_resource type="PackedScene" uid="uid://b03rovv6s5qxh" path="res://Scenes/player.tscn" id="2_vfac5"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger.cs" id="3_vpeca"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/NPC.cs" id="4_p600j"]
 [ext_resource type="PackedScene" uid="uid://denrkd823yp0d" path="res://Scenes/scene_manager.tscn" id="5_1syl0"]
+[ext_resource type="Resource" uid="uid://b246ptvb5bsm0" path="res://Resources/Trigger Effects/load_battle_effect.tres" id="6_qirjp"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueManager.cs" id="7_qdej2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mt627"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_sanx0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5yhq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnrdg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jakdi"]
+font_size = 30
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eub64"]
+font_size = 30
 
 [node name="Town" type="Node2D"]
 
 [node name="Scene Manager" parent="." instance=ExtResource("5_1syl0")]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(437, 352)
-script = ExtResource("1_fb2f3")
+[node name="Player" parent="." instance=ExtResource("2_vfac5")]
+visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(0, -16.85)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_ae8wl")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("4_p600j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-scale = Vector2(3.37, 3.37)
-shape = SubResource("CircleShape2D_mt627")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(166, 222)
+[node name="Battle Trigger" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(0, -30.425)
+scale = Vector2(0.76, 0.76)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_vpeca")
-scene = ExtResource("4_c3aeg")
+ActivatesOnEnter = true
+effects = Array[Resource]([ExtResource("6_qirjp")])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(6.455, 6.455)
-shape = SubResource("RectangleShape2D_p5yhq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Battle Trigger"]
+scale = Vector2(8.095, 8.095)
+shape = SubResource("CircleShape2D_sanx0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Battle Trigger"]
 texture = ExtResource("1_ae8wl")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="OnBodyEntered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(3.155, 3.155)
+shape = SubResource("CircleShape2D_cnrdg")
+
+[node name="Dialogue Manager" type="CanvasLayer" parent="." node_paths=PackedStringArray("dialogueBox", "nameLabel", "textLabel")]
+script = ExtResource("7_qdej2")
+dialogueBox = NodePath("Control")
+nameLabel = NodePath("Control/Character Name/Name Text")
+textLabel = NodePath("Control/Dialogue Box/Textbox")
+textToDisplay = "This is some text that will be displayed"
+
+[node name="Control" type="Control" parent="Dialogue Manager"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Character Name" type="ColorRect" parent="Dialogue Manager/Control"]
+offset_left = -514.0
+offset_top = -224.0
+offset_right = -254.0
+offset_bottom = -158.0
+color = Color(0.303238, 0.458465, 0.938772, 1)
+
+[node name="Name Text" type="Label" parent="Dialogue Manager/Control/Character Name"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 261.0
+offset_bottom = 56.0
+text = "Whalefred"
+label_settings = SubResource("LabelSettings_jakdi")
+
+[node name="Dialogue Box" type="ColorRect" parent="Dialogue Manager/Control"]
+offset_left = -532.0
+offset_top = -167.0
+offset_right = 572.0
+offset_bottom = 12.0
+color = Color(0.243746, 0.540429, 0.941238, 1)
+
+[node name="Textbox" type="Label" parent="Dialogue Manager/Control/Dialogue Box"]
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 1091.0
+offset_bottom = 166.0
+text = "This is a dialogue box"
+label_settings = SubResource("LabelSettings_eub64")
+autowrap_mode = 2
