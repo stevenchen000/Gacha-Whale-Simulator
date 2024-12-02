@@ -1,3 +1,4 @@
+TextureRect
 Control
 Label
 ColorRect
@@ -8,7 +9,6 @@ CollisionShape2D
 CharacterBody2D
 Camera2D
 Area2D
-TextureRect
 Sprite2D
 CollisionPolygon2D
 StaticBody2D
