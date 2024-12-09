@@ -12,8 +12,7 @@ namespace DialogueSystem
 		[Export] private Control dialogueBox;
 		[Export] private Label nameLabel;
 		[Export] private Label textLabel;
-		[Export] private TextureRect leftCharacterPortrait;
-		[Export] private TextureRect rightCharacterPortrait;
+		[Export] private TextureRect characterPortrait;
 		[Export] private Color enabledColor;
 		[Export] private Color disabledColor;
 		[Export] private int charactersPerSecond = 30;
@@ -52,7 +51,6 @@ namespace DialogueSystem
 			if (instance.dialogue == null && dialogue != null)
 			{
 				instance.dialogue = dialogue;
-				//instance.ChangeState(DialogueState.ACTIVATING);
 				instance.OnDialogueStart?.RaiseEvent();
 			}
 		}
@@ -72,125 +70,35 @@ namespace DialogueSystem
 			textLabel.Text = text;
         }
 
+		public void SetName(string name)
+        {
+			nameLabel.Text = name;
+        }
+
+		public void SetName(Actor actor)
+        {
+			string name = actor.actorName;
+			SetName(name);
+        }
+
 		public void EndDialogue()
         {
 			dialogue = null;
         }
 
+		public void ChangePortrait(Texture2D texture, Vector2 size, Vector2 offset)
+        {
+			characterPortrait.Texture = texture;
+			characterPortrait.Size = size;
+			characterPortrait.Position = offset;
+        }
 
-		/****************
-		 * States
-		 * *****************/
-
-		private void RunState(double delta)
-		{
-			switch (state)
-			{
-				case DialogueState.INACTIVE:
-					break;
-				case DialogueState.ACTIVATING:
-					ChangeState(DialogueState.REVEALING_TEXT);
-					break;
-				case DialogueState.REVEALING_TEXT:
-					RevealTextState(delta);
-					break;
-				case DialogueState.TEXT_DISPLAYED:
-					TextDisplayedState(delta);
-					break;
-			}
-		}
-
-		private void ChangeState(DialogueState newState)
-		{
-			GD.Print(newState);
-			switch (state)
-			{
-				case DialogueState.INACTIVE:
-					break;
-				case DialogueState.ACTIVATING:
-					break;
-				case DialogueState.REVEALING_TEXT:
-					break;
-				case DialogueState.TEXT_DISPLAYED:
-					break;
-			}
-
-			switch (newState)
-			{
-				case DialogueState.INACTIVE:
-					dialogueBox.Visible = false;
-					dialogue = null;
-					OnDialogueEnd?.RaiseEvent();
-					break;
-				case DialogueState.ACTIVATING:
-					dialogueBox.Visible = true;
-					currDialogue = dialogue.GetDialogueStart();
-					break;
-				case DialogueState.REVEALING_TEXT:
-					break;
-				case DialogueState.TEXT_DISPLAYED:
-					break;
-			}
-
-			state = newState;
-		}
-
-		private void RevealTextState(double delta)
-		{
-			string textToDisplay = currDialogue.dialogue;
-
-			if (Input.IsActionJustPressed("ui_accept"))
-			{
-				textLabel.Text = textToDisplay;
-				ChangeState(DialogueState.TEXT_DISPLAYED);
-			}
-			else
-			{
-				numOfCharsDisplayed += (float)delta * charactersPerSecond;
-				string substring = textToDisplay.Substr(0, (int)numOfCharsDisplayed);
-				textLabel.Text = substring;
-
-				if (substring == textToDisplay)
-				{
-					ChangeState(DialogueState.TEXT_DISPLAYED);
-				}
-			}
-		}
-
-		private void TextDisplayedState(double delta)
-		{
-			if (Input.IsActionJustPressed("ui_accept"))
-			{
-				numOfCharsDisplayed = 0;
-				currDialogue = dialogue.GetNextScene(currDialogue);
-				if (currDialogue != null)
-				{
-					ChangeState(DialogueState.REVEALING_TEXT);
-                }
-                else
-                {
-					ChangeState(DialogueState.INACTIVE);
-                }
-			}
-		}
 
 
 		/**************
 		 * Helper
 		 * ***************/
 
-		private void SetName()
-		{
-			if (nameLabel != null)
-				nameLabel.Text = currDialogue.GetActorName();
-		}
-
-
-		private void UpdateCurrentDialogue()
-        {
-			currDialogue = dialogue.GetNextScene(currDialogue);
-			SetName();
-			//UpdateImage();
-        }
+		
 	}
 }

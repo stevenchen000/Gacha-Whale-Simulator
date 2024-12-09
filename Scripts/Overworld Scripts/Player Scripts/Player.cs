@@ -55,6 +55,11 @@ public partial class Player : CharacterBody2D
 		GD.Print($"Unlocked: {movementLock} locks in place");
 	}
 
+	public bool IsMovementLocked()
+    {
+		return movementLock > 0;
+    }
+
 	/******************
 	 * Helpers
 	 * **************/

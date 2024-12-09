@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_ey70y")
 description = "Called when the dialogue box first appears"
-debug = true
+debug = false

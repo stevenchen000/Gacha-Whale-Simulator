@@ -1,28 +1,38 @@
-[gd_scene load_steps=10 format=3 uid="uid://4do7obn4i8bk"]
+[gd_scene load_steps=17 format=3 uid="uid://4do7obn4i8bk"]
 
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_ae8wl"]
 [ext_resource type="PackedScene" uid="uid://b03rovv6s5qxh" path="res://Scenes/player.tscn" id="2_vfac5"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger.cs" id="3_vpeca"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/NPC.cs" id="4_p600j"]
 [ext_resource type="PackedScene" uid="uid://denrkd823yp0d" path="res://Scenes/scene_manager.tscn" id="5_1syl0"]
-[ext_resource type="Resource" uid="uid://chko8lym7whks" path="res://Resources/Trigger Effects/dialogue_trigger.tres" id="5_l3d3q"]
+[ext_resource type="Resource" uid="uid://chko8lym7whks" path="res://Resources/Trigger Effects/dialogue_to_battle_trigger.tres" id="5_l3d3q"]
 [ext_resource type="PackedScene" uid="uid://ci0dbx4pjavqo" path="res://Scenes/dialogue_manager.tscn" id="7_swxyr"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/World Events/WorldEventManager.cs" id="8_unumg"]
+[ext_resource type="Resource" uid="uid://ccvcce25eqkfb" path="res://Resources/Events/Dialogue Events/OnDialogueEnd.tres" id="9_lhf61"]
+[ext_resource type="Resource" uid="uid://x1st2gj86p70" path="res://Resources/Dialogue/test_battle_dialogue.tres" id="10_3a1c1"]
+[ext_resource type="Resource" uid="uid://cu7680288j8ng" path="res://Resources/World Events/load_battle_scene.tres" id="11_s2m0u"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs" id="12_p0cry"]
+[ext_resource type="Resource" uid="uid://b0m6ieolpexmm" path="res://Resources/Trigger Effects/hello_world_dialogue_trigger.tres" id="13_tya8q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sanx0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cnrdg"]
 
-[node name="Town" type="Node2D"]
+[sub_resource type="Resource" id="Resource_ecj3w"]
+script = ExtResource("12_p0cry")
+afterDialogue = ExtResource("10_3a1c1")
+effect = ExtResource("11_s2m0u")
+description = ""
 
-[node name="Scene Manager" parent="." instance=ExtResource("5_1syl0")]
+[node name="Town" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_vfac5")]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Whalefred Battle" type="CharacterBody2D" parent="."]
 position = Vector2(342, 307)
 script = ExtResource("4_p600j")
 
-[node name="Battle Trigger" type="Area2D" parent="CharacterBody2D"]
+[node name="Battle Trigger" type="Area2D" parent="Whalefred Battle"]
 position = Vector2(0, -30.425)
 scale = Vector2(0.76, 0.76)
 collision_layer = 2
@@ -30,15 +40,45 @@ collision_mask = 2
 script = ExtResource("3_vpeca")
 effects = Array[Resource]([ExtResource("5_l3d3q")])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Battle Trigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whalefred Battle/Battle Trigger"]
 scale = Vector2(8.095, 8.095)
 shape = SubResource("CircleShape2D_sanx0")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Battle Trigger"]
+[node name="Sprite2D" type="Sprite2D" parent="Whalefred Battle/Battle Trigger"]
 texture = ExtResource("1_ae8wl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whalefred Battle"]
 scale = Vector2(3.155, 3.155)
 shape = SubResource("CircleShape2D_cnrdg")
 
 [node name="Dialogue Manager" parent="." instance=ExtResource("7_swxyr")]
+
+[node name="Scene Manager" parent="." instance=ExtResource("5_1syl0")]
+
+[node name="World Event Manager" type="Node2D" parent="."]
+script = ExtResource("8_unumg")
+OnDialogueEndEvent = ExtResource("9_lhf61")
+dialogueEvents = Array[Resource]([SubResource("Resource_ecj3w")])
+
+[node name="Whalefred Talker" type="CharacterBody2D" parent="."]
+position = Vector2(724, 313)
+script = ExtResource("4_p600j")
+
+[node name="Battle Trigger" type="Area2D" parent="Whalefred Talker"]
+position = Vector2(0, -30.425)
+scale = Vector2(0.76, 0.76)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_vpeca")
+effects = Array[Resource]([ExtResource("13_tya8q")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whalefred Talker/Battle Trigger"]
+scale = Vector2(8.095, 8.095)
+shape = SubResource("CircleShape2D_sanx0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Whalefred Talker/Battle Trigger"]
+texture = ExtResource("1_ae8wl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whalefred Talker"]
+scale = Vector2(3.155, 3.155)
+shape = SubResource("CircleShape2D_cnrdg")

@@ -8,6 +8,8 @@ namespace DialogueSystem
     {
         [Export] public Tag emotion;
         [Export] public Texture2D portrait;
+        [Export] public Vector2 size;
         [Export] public Vector2 offset;
+        
     }
 }

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_vctvs")
 description = "Called at the end of dialogue after the UI has been cleared"
-debug = true
+debug = false

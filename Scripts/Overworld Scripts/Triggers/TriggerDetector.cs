@@ -5,6 +5,7 @@ using EventSystem;
 
 public partial class TriggerDetector : Area2D
 {
+	private Player player;
 	private Array<Trigger> triggers;
 	[Export] private VoidEvent OnSceneLoaded;
 
@@ -12,13 +13,14 @@ public partial class TriggerDetector : Area2D
 	public override void _Ready()
 	{
 		ResetTriggers();
+		player = (Player)GetParent();
 		//OnSceneLoaded?.SubscribeEvent(ResetTriggers);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("ui_accept"))
+		if (Input.IsActionJustPressed("ui_accept") && !player.IsMovementLocked())
 		{
 			if(triggers.Count > 0)
 			{

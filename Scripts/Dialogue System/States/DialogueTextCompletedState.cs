@@ -18,16 +18,20 @@ namespace DialogueSystem
 
         protected override void RunState(double delta)
         {
-            if (Input.IsActionJustPressed("ui_accept") && timeInState > 0.1)
+            if (Input.IsActionPressed("ui_accept") && timeInState > 0.1)
             {
                 var dialogueTree = dialogue.dialogue;
                 var currDialogue = dialogue.currDialogue;
                 dialogue.currDialogue = dialogue.dialogue.GetNextScene(currDialogue);
+                currDialogue = dialogue.currDialogue;
+                GD.Print(dialogueTree.ResourceName);
                 
-                if(dialogue.currDialogue == null)
+                if(currDialogue == null)
                 {
                     ChangeState(inactiveState);
                     dialogue.EndDialogue();
+
+                    GD.Print(dialogueTree.ResourceName);
                     OnDialogueEnd?.RaiseEvent(dialogueTree);
                 }
                 else

@@ -46,12 +46,6 @@ namespace StateSystem
 
         }
 
-        protected void ChangeState(StateNode node)
-        {
-            active = false;
-            node.active = true;
-        }
-
         protected virtual void OnStateActivated()
         {
 
@@ -60,6 +54,12 @@ namespace StateSystem
         protected virtual void OnStateDeactivated()
         {
 
+        }
+
+        protected void ChangeState(StateNode node)
+        {
+            active = false;
+            node.active = true;
         }
 
         private void Tick(double delta)

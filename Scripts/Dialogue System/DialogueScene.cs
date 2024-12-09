@@ -19,8 +19,13 @@ namespace DialogueSystem
         public Vector2 GetPortraitPosition()
         {
             var actorEmotion = actor.GetEmotion(emotion);
-            Vector2 offset = actorEmotion.offset;
-            return actorLocation + offset;
+            return actorEmotion.offset;
+        }
+
+        public Vector2 GetPortraitSize()
+        {
+            var actorEmotion = actor.GetEmotion(emotion);
+            return actorEmotion.size;
         }
 
         public string GetActorName() { return actor.actorName; }

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_vx8ql")
 description = ""
-debug = true
+debug = false
