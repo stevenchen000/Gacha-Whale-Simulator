@@ -10,10 +10,7 @@ public partial class GameState : Node
 	[Export] public int currentPower = 0;
 	[Export] public int premiumCurrency = 0;
 	[Export] public int upgradeCurrency = 0;
-	[Export] public int day = 0;
-	[Export] public int hour = 8;
-	[Export] public int minute = 0;
-	[Export] private DateTime time;
+	[Export] private DateTimeManager time;
 	
 	
 	[Export] public int money = 10_000;
@@ -23,16 +20,27 @@ public partial class GameState : Node
 
 	[Export] public GachaGame game { get; set; }
 
+	private bool frameZero = true;
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		if(state == null)
+        {
+			state = this;
+        }
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+        if (frameZero)
+        {
+			frameZero = false;
+			if(state == this)
+				GodotHelper.MoveNodeToRoot(this);
+        }
 	}
 
 	//Called when object is about to get deleted
@@ -122,14 +130,33 @@ public partial class GameState : Node
 
 	public static void Work(){
 		if(IsTimeForWork()){
-			state.hour = 17;
-			state.minute = 30;
+			/*state.hour = 17;
+			state.time.minute = 30;*/
 		}
 	}
 
 	public static bool IsTimeForWork(){
-		return state.hour == 8;
+		return state.time.hour == 8;
 	}
+
+	/**************
+	 * Time Functions
+	 * ***********/
+
+	public static int GetDay()
+    {
+		return state.time.day;
+    }
+
+	public static int GetHour()
+    {
+		return state.time.hour;
+    }
+
+	public static int GetMinute()
+    {
+		return state.time.minute;
+    }
 
 	
 	/*****************
@@ -137,12 +164,12 @@ public partial class GameState : Node
 	******************/
 
 	public static void GoToSleep(){
-		state.hour = 8;
+		/*state.hour = 8;
 		state.minute = 0;
 		state.day++;
 		if(state.day % 15 == 0){
 			state.money += state.salary;
-		}
+		}*/
 	}
 
 	public static bool TimeForBed(){

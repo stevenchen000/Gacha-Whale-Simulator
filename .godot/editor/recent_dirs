@@ -1,3 +1,4 @@
+res://Scenes
 res://Resources/Trigger Effects
 res://Resources/Dialogue
 res://Resources/World Events
@@ -5,7 +6,6 @@ res://Resources/Events/Player Events
 res://Resources/Events/Dialogue Events
 res://Scripts/Dialogue System/States
 res://Resources/Gacha Game Data/Currencies
-res://Scenes
 res://Resources/Tags
 res://Resources/Dialogue/Actors
 res://Resources/Events

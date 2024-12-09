@@ -1,97 +1,88 @@
-res://Scenes/Room.tscn
+res://Scenes/UI/Time UI.tscn
 res://Resources/Dialogue/Actors/whalefred.tres
-res://Resources/Dialogue/test_dialogue.tres
+res://Resources/Dialogue/test_battle_dialogue.tres
+res://Resources/Skills/basic_attack.tres
+res://Resources/Dialogue/Actors/whalema.tres
+res://Resources/Dialogue/test_random_dialogue.tres
+res://Scenes/Room.tscn
 res://Scenes/Town.tscn
 res://Scenes/player.tscn
 res://Scenes/scene_manager.tscn
 res://Scenes/dialogue_manager.tscn
-res://Scripts/Dialogue System/Actor.cs
+res://Scenes/Portrait Tester.tscn
+res://Scenes/game_state.tscn
+res://Scripts/DateTimeManager.cs
 res://Scripts/UI/Banners Display/BannersWindow.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueStateTimePassedCondition.cs
-res://Scripts/Gacha System/GachaValuePair.cs
-res://Scripts/Gacha System/Dungeons/Dungeon.cs
+res://Scripts/GameState.cs
+res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueDisplayingTextStateResource.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueStateResource.cs
 res://Scripts/Dialogue System/States/DialogueTextCompletedState.cs
 res://Scripts/Dialogue System/DialogueScene.cs
-res://Scripts/Gacha System/GachaCost.cs
+res://Scripts/Gacha System/GachaValuePair.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueInactiveStateResource.cs
-res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs
+res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
 res://Scripts/Event System/VoidEvent.cs
 res://Scripts/State System/Resource-Based States/StateObject.cs
-res://Scripts/Overworld Scripts/NPC.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueStateDialogueNotNullCondition.cs
 res://Scripts/UI/GachaBottomBar.cs
 res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
 res://Scripts/UI/Calendar/DateTime.cs
-res://Scripts/Gacha System/GachaBanner.cs
-res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
-res://Scripts/Gacha System/Combat System/Skill System/Skill Effects/SkillEffect.cs
-res://Scripts/Overworld Scripts/Triggers/TriggerEffect.cs
+res://Scripts/Gacha System/GachaCharacterData.cs
+res://Scripts/Gacha System/GachaCharacter.cs
+res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
+res://Scripts/Overworld Scripts/World Events/WorldEventEffect.cs
 res://Scripts/Tag.cs
 res://Scripts/Dialogue System/States/DialogueInactiveState.cs
-res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs
-res://Scripts/Node2d.cs
+res://Scripts/Overworld Scripts/World Events/LoadSceneWorldEffect.cs
+res://Scripts/Overworld Scripts/Player Scripts/PlayerEventManager.cs
 res://Scripts/Dialogue System/ActorEmotion.cs
 res://Scripts/Event System/GameEvent.cs
 res://Scripts/State System/Resource-Based States/StateChangeCondition.cs
-res://Scripts/Gacha System/Combat System/Grid/GridShape.cs
-res://Scripts/Gacha System/GachaCharacter.cs
-res://Scripts/Overworld Scripts/Triggers/TriggerDialogue.cs
-res://Scripts/Overworld Scripts/Player Scripts/PlayerEventManager.cs
-res://Scripts/Menus/info_display.cs
-res://Scripts/Overworld Scripts/Triggers/TriggerLoadScene.cs
-res://Scripts/UI/Calendar/CalendarUI.cs
-res://Scripts/Gacha System/Combat System/Skill System/DamageEffect.cs
+res://Scripts/Gacha System/Combat System/Skill System/CharacterSkill.cs
 res://Scripts/Gacha System/GachaCharacterList.cs
+res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerLoadScene.cs
+res://Scripts/Overworld Scripts/NPC.cs
+res://Scripts/Overworld Scripts/World Events/WorldEventManager.cs
+res://Scripts/UI/Calendar/CalendarUI.cs
+res://Scripts/Gacha System/Combat System/Skill System/Skill Effects/SkillEffect.cs
+res://Scripts/Gacha System/GachaCost.cs
 res://Scripts/State System/Resource-Based States/StateResource.cs
 res://Scripts/Dialogue System/DialogueTree.cs
-res://Scripts/Gacha System/UpgradeCurrency.cs
+res://Scripts/Menus/GachaMenu.cs
 res://Scripts/Event System/GachaCharacterEvent.cs
-res://Scripts/Overworld Scripts/Player Scripts/Player.cs
-res://Scripts/Gacha System/Combat System/Skill System/CharacterSkill.cs
-res://Scripts/Gacha System/GachaCharacterPower.cs
-res://Scripts/Dialogue System/States/DialogueActivatingState.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs
+res://Scripts/Gacha System/Combat System/Skill System/DamageEffect.cs
 res://Scripts/Gacha System/GachaGame.cs
+res://Scripts/Dialogue System/States/DialogueActivatingState.cs
+res://Scripts/Gacha System/UpgradeCurrency.cs
 res://Scripts/Gacha System/Combat System/BattleCharacter.cs
 res://Scripts/Dialogue System/DialogueManager.cs
-res://Scripts/Gacha System/Combat System/BattleManager.cs
+res://Scripts/Gacha System/Combat System/Grid/BattleGrid.cs
 res://Scripts/Event System/DialogueEvent.cs
-res://Scripts/Gacha System/GachaCharacterData.cs
+res://Scripts/Gacha System/GachaCharacterPower.cs
 res://Scripts/State System/Node-Based States/StateNode.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueActivatingStateResource.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueStateChangeData.cs
-res://Scripts/Menus/GachaMenu.cs
+res://Scripts/Node2d.cs
 res://Scripts/Scene Manager/LoadScreen.cs
 res://Scripts/Dialogue System/States/DialogueStateNode.cs
 res://Scripts/Scene Manager/SceneManager.cs
 res://Scripts/Dialogue System/States/DialogueTextUpdatingState.cs
 res://Scripts/Dialogue System/States/Resource Version/DialogueFinishedDisplayingTextStateResource.cs
 res://Scripts/Event System/EventManager.cs
-res://Scripts/Menus/menu.cs
+res://Scripts/Overworld Scripts/Player Scripts/Player.cs
 res://Scripts/UI/Gacha Display/CharacterBoxDisplay.cs
-res://Scripts/GameState.cs
-res://Scripts/Gacha System/Combat System/Skill System/StatContainer.cs
+res://Scripts/Menus/info_display.cs
+res://Scripts/Gacha System/Dungeons/Dungeon.cs
 res://Scripts/State System/Resource-Based States/StateChangeData.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger.cs
+res://Scripts/Menus/menu.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerDialogue.cs
+res://Scripts/Gacha System/GachaBanner.cs
+res://Scripts/Gacha System/Combat System/BattleManager.cs
+res://Scripts/Dialogue System/Actor.cs
 res://Scripts/Gacha System/Combat System/Grid/GridSpace.cs
-res://Scripts/Overworld Scripts/World Events/WorldEventManager.cs
-res://Scripts/Overworld Scripts/World Events/WorldEventEffect.cs
-res://Scripts/Overworld Scripts/World Events/LoadSceneWorldEffect.cs
-res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs
-res://Resources/World Events/load_battle_scene.tres
-res://Resources/Skills/basic_attack.tres
-res://Resources/Events/Load Screen Events/OnSceneLoad.tres
-res://Resources/Events/Dialogue Events/OnDialogueStart.tres
-res://Resources/Events/Dialogue Events/OnDialogueEnd.tres
-res://Resources/Events/Load Screen Events/OnFadeOutStarted.tres
-res://Resources/Events/Load Screen Events/OnFadeInFinished.tres
-res://Resources/Events/Load Screen Events/OnFadeOutFinished.tres
-res://Resources/Events/Load Screen Events/OnFadeInStarted.tres
-res://Resources/Events/Load Screen Events/OnLoadFinish.tres
-res://Resources/Events/Load Screen Events/OnLoadStart.tres
-res://Resources/Dialogue/test_random_dialogue.tres
-res://Resources/Trigger Effects/hello_world_dialogue_trigger.tres
-res://Resources/Dialogue/Actors/whalema.tres
-res://Scenes/Portrait Tester.tscn
-res://Resources/Dialogue/test_battle_dialogue.tres
+res://Scripts/Overworld Scripts/Triggers/TriggerEffect.cs

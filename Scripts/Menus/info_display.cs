@@ -28,7 +28,7 @@ public partial class info_display : Control
 		currentPower.Text = $"Power: {GameState.state.currentPower}";
 		upgradeMaterials.Text = $"Materials: {GameState.state.upgradeCurrency}";
 		money.Text = $"${GameState.state.money}";
-		time.Text = $"{GameState.state.hour}:{GameState.state.minute}";
-		day.Text = $"Day {GameState.state.day}";
+		//time.Text = $"{GameState.state.hour}:{GameState.state.minute}";
+		//day.Text = $"Day {GameState.state.day}";
 	}
 }

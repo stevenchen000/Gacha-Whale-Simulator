@@ -1,0 +1,42 @@
+[gd_scene load_steps=13 format=3 uid="uid://dhy4vi30p0fpw"]
+
+[ext_resource type="Script" path="res://Scripts/GameState.cs" id="1_1csjl"]
+[ext_resource type="Resource" uid="uid://cuclr7vjvjjld" path="res://Resources/Gacha Characters/corner_jeraldeen.tres" id="2_3aeg6"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacterPower.cs" id="3_yvm2p"]
+[ext_resource type="Resource" uid="uid://2r41q02byvxx" path="res://Resources/Gacha Characters/Angealfish.tres" id="4_cuorn"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaValuePair.cs" id="5_281qg"]
+[ext_resource type="Script" path="res://Scripts/Gacha System/GachaGame.cs" id="6_6ps7c"]
+[ext_resource type="Resource" uid="uid://4qorrqwhv7ri" path="res://Resources/Gacha Game Data/Gacha Characters List.tres" id="7_pijha"]
+[ext_resource type="Resource" uid="uid://bkdo7vcfuf1xk" path="res://Resources/GachaBanner.tres" id="8_bmt85"]
+[ext_resource type="Resource" uid="uid://bdvc7bj8667ce" path="res://Resources/Events/OnCharacterPulledEvent.tres" id="9_wqybx"]
+[ext_resource type="Resource" uid="uid://bkll23l0c6di4" path="res://Resources/Events/OnCharacterListUpdated.tres" id="10_8ofgx"]
+[ext_resource type="Script" path="res://Scripts/DateTimeManager.cs" id="11_xhsya"]
+
+[sub_resource type="Resource" id="Resource_koi0c"]
+script = ExtResource("5_281qg")
+character = ExtResource("4_cuorn")
+power = 0
+
+[node name="Game State" type="Node2D" node_paths=PackedStringArray("time", "game")]
+script = ExtResource("1_1csjl")
+premiumCurrency = 99999
+time = NodePath("Date Time")
+allCharacters = Array[Object]([ExtResource("2_3aeg6")])
+ownedCharacters = Array[Object]([])
+game = NodePath("Gacha Game Data")
+
+[node name="Character Power List" type="Node2D" parent="."]
+script = ExtResource("3_yvm2p")
+characterPowers = Array[Object]([SubResource("Resource_koi0c")])
+powerValues = {}
+
+[node name="Gacha Game Data" type="Node2D" parent="."]
+script = ExtResource("6_6ps7c")
+allCharacters = ExtResource("7_pijha")
+ownedCharacters = Array[Object]([])
+currentBanner = ExtResource("8_bmt85")
+OnCharacterPulled = ExtResource("9_wqybx")
+OnAccountListUpdated = ExtResource("10_8ofgx")
+
+[node name="Date Time" type="Node2D" parent="."]
+script = ExtResource("11_xhsya")

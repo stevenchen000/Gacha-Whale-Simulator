@@ -13,18 +13,21 @@
 script = ExtResource("3_pggh8")
 emotion = ExtResource("1_epw2i")
 portrait = ExtResource("2_xahfv")
+size = Vector2(0, 0)
 offset = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_x3i0g"]
 script = ExtResource("3_pggh8")
 emotion = ExtResource("4_db66d")
 portrait = ExtResource("5_cj7kk")
+size = Vector2(0, 0)
 offset = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_7sm4t"]
 script = ExtResource("3_pggh8")
 emotion = ExtResource("6_s4o3u")
 portrait = ExtResource("7_mwxtx")
+size = Vector2(0, 0)
 offset = Vector2(0, 0)
 
 [resource]

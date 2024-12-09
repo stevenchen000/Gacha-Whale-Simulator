@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://4do7obn4i8bk"]
+[gd_scene load_steps=19 format=3 uid="uid://4do7obn4i8bk"]
 
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_ae8wl"]
 [ext_resource type="PackedScene" uid="uid://b03rovv6s5qxh" path="res://Scenes/player.tscn" id="2_vfac5"]
@@ -13,6 +13,8 @@
 [ext_resource type="Resource" uid="uid://cu7680288j8ng" path="res://Resources/World Events/load_battle_scene.tres" id="11_s2m0u"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs" id="12_p0cry"]
 [ext_resource type="Resource" uid="uid://b0m6ieolpexmm" path="res://Resources/Trigger Effects/hello_world_dialogue_trigger.tres" id="13_tya8q"]
+[ext_resource type="PackedScene" uid="uid://dhy4vi30p0fpw" path="res://Scenes/game_state.tscn" id="14_n3dod"]
+[ext_resource type="PackedScene" uid="uid://b2v6id0iclus1" path="res://Scenes/UI/Time UI.tscn" id="15_83ld3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sanx0"]
 
@@ -27,9 +29,10 @@ description = ""
 [node name="Town" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_vfac5")]
+position = Vector2(-613, -89)
 
 [node name="Whalefred Battle" type="CharacterBody2D" parent="."]
-position = Vector2(342, 307)
+position = Vector2(-999, -239)
 script = ExtResource("4_p600j")
 
 [node name="Battle Trigger" type="Area2D" parent="Whalefred Battle"]
@@ -51,17 +54,8 @@ texture = ExtResource("1_ae8wl")
 scale = Vector2(3.155, 3.155)
 shape = SubResource("CircleShape2D_cnrdg")
 
-[node name="Dialogue Manager" parent="." instance=ExtResource("7_swxyr")]
-
-[node name="Scene Manager" parent="." instance=ExtResource("5_1syl0")]
-
-[node name="World Event Manager" type="Node2D" parent="."]
-script = ExtResource("8_unumg")
-OnDialogueEndEvent = ExtResource("9_lhf61")
-dialogueEvents = Array[Resource]([SubResource("Resource_ecj3w")])
-
 [node name="Whalefred Talker" type="CharacterBody2D" parent="."]
-position = Vector2(724, 313)
+position = Vector2(-438, -239)
 script = ExtResource("4_p600j")
 
 [node name="Battle Trigger" type="Area2D" parent="Whalefred Talker"]
@@ -82,3 +76,16 @@ texture = ExtResource("1_ae8wl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Whalefred Talker"]
 scale = Vector2(3.155, 3.155)
 shape = SubResource("CircleShape2D_cnrdg")
+
+[node name="Dialogue Manager" parent="." instance=ExtResource("7_swxyr")]
+
+[node name="Scene Manager" parent="." instance=ExtResource("5_1syl0")]
+
+[node name="World Event Manager" type="Node2D" parent="."]
+script = ExtResource("8_unumg")
+OnDialogueEndEvent = ExtResource("9_lhf61")
+dialogueEvents = Array[Resource]([SubResource("Resource_ecj3w")])
+
+[node name="Game State" parent="." instance=ExtResource("14_n3dod")]
+
+[node name="TimeUi" parent="." instance=ExtResource("15_83ld3")]

@@ -19,6 +19,7 @@ nodeWhitelist = Array[String](["Game State"])
 loadScreen = NodePath("CanvasLayer/Load Screen")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
 
 [node name="Load Screen" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("loadScreen")]
 layout_mode = 3
@@ -38,6 +39,7 @@ OnSceneLoad = ExtResource("8_du7bo")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Load Screen"]
 modulate = Color(0, 0, 0, 1)
 top_level = true
+z_index = -4096
 layout_mode = 0
 offset_left = 99999.0
 offset_top = 99999.0
