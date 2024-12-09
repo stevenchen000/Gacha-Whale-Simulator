@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="VoidEvent" load_steps=2 format=3 uid="uid://b05f45vitglph"]
+
+[ext_resource type="Script" path="res://Scripts/Event System/VoidEvent.cs" id="1_8my06"]
+
+[resource]
+script = ExtResource("1_8my06")
+description = ""
+debug = true

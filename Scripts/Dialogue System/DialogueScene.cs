@@ -6,10 +6,10 @@ namespace DialogueSystem
     [GlobalClass]
     public partial class DialogueScene : Resource
     {
-        [Export] private string dialogue = "";
-        [Export] private Tag emotion;
-        [Export] private Actor actor;
-        [Export] private Vector2 actorLocation;
+        [Export] public string dialogue = "";
+        [Export] public Tag emotion;
+        [Export] public Actor actor;
+        [Export] public Vector2 actorLocation;
 
         public Texture2D GetPortrait()
         {

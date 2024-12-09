@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueEvent" load_steps=2 format=3 uid="uid://kispt6u5xvkx"]
+
+[ext_resource type="Script" path="res://Scripts/Event System/DialogueEvent.cs" id="1_ey70y"]
+
+[resource]
+script = ExtResource("1_ey70y")
+description = "Called when the dialogue box first appears"
+debug = true

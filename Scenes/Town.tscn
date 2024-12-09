@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://4do7obn4i8bk"]
 
-[ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="1_ae8wl"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_ae8wl"]
 [ext_resource type="PackedScene" uid="uid://b03rovv6s5qxh" path="res://Scenes/player.tscn" id="2_vfac5"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger.cs" id="3_vpeca"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/NPC.cs" id="4_p600j"]
 [ext_resource type="PackedScene" uid="uid://denrkd823yp0d" path="res://Scenes/scene_manager.tscn" id="5_1syl0"]
-[ext_resource type="Resource" uid="uid://b246ptvb5bsm0" path="res://Resources/Trigger Effects/load_battle_effect.tres" id="6_qirjp"]
+[ext_resource type="Resource" uid="uid://chko8lym7whks" path="res://Resources/Trigger Effects/dialogue_trigger.tres" id="5_l3d3q"]
 [ext_resource type="PackedScene" uid="uid://ci0dbx4pjavqo" path="res://Scenes/dialogue_manager.tscn" id="7_swxyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sanx0"]
@@ -17,9 +17,9 @@
 [node name="Scene Manager" parent="." instance=ExtResource("5_1syl0")]
 
 [node name="Player" parent="." instance=ExtResource("2_vfac5")]
-visible = false
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(342, 307)
 script = ExtResource("4_p600j")
 
 [node name="Battle Trigger" type="Area2D" parent="CharacterBody2D"]
@@ -28,8 +28,7 @@ scale = Vector2(0.76, 0.76)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_vpeca")
-ActivatesOnEnter = true
-effects = Array[Resource]([ExtResource("6_qirjp")])
+effects = Array[Resource]([ExtResource("5_l3d3q")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Battle Trigger"]
 scale = Vector2(8.095, 8.095)

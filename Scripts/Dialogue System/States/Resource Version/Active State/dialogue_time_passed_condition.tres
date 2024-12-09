@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueStateTimePassedCondition" load_steps=2 format=3 uid="uid://cb44j170ld3gr"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue System/States/Resource Version/DialogueStateTimePassedCondition.cs" id="1_xlghp"]
+
+[resource]
+script = ExtResource("1_xlghp")
+timePassed = 2.0

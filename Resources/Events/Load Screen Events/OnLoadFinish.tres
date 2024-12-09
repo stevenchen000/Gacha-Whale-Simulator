@@ -4,3 +4,5 @@
 
 [resource]
 script = ExtResource("1_4ccof")
+description = ""
+debug = true

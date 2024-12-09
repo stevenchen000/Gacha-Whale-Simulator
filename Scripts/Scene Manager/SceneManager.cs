@@ -18,12 +18,15 @@ public partial class SceneManager : Node
 	private bool loadScene = false;
 	private bool loadingStarted = true;
 
+	private bool frameZero = true;
+
 	public override void _Ready()
 	{
 		if (instance == null)
 		{
 			instance = this;
 			rootNode = FindRootNode();
+			//rootNode.AddChild(this);
 			loadScreen.Init();
 			OnFadeOutFinished?.SubscribeEvent(() => loadScene = true);
 			OnFadeInFinished?.SubscribeEvent(() => loadingStarted = false);
@@ -36,6 +39,13 @@ public partial class SceneManager : Node
 
 	public override void _Process(double delta)
 	{
+        if (frameZero)
+        {
+			Reparent(rootNode);
+			//GetParent().RemoveChild(this);
+			frameZero = false;
+		}
+
 		if (loadScene)
 		{
 			loadScene = false;
@@ -85,7 +95,7 @@ public partial class SceneManager : Node
 	{
 		Node result = null;
 
-		result = GetTree().Root.GetChild(0);
+		result = GetTree().Root;
 
 		return result;
 	}

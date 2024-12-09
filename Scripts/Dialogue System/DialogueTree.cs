@@ -9,11 +9,35 @@ namespace DialogueSystem
     {
         [Export] private Array<DialogueScene> tree;
 
-        public Array<DialogueScene> GetDialogue()
+        public DialogueScene GetDialogueAtIndex(int index)
         {
-            var result = new Array<DialogueScene>();
-            result.AddRange(tree);
+            if (index < tree.Count)
+                return tree[index];
+            else
+                return null;
+        }
+
+        public DialogueScene GetNextScene(DialogueScene scene)
+        {
+            DialogueScene result = null;
+
+            for(int i = 0; i < tree.Count; i++)
+            {
+                DialogueScene currScene = tree[i];
+                if(scene == currScene && i+1 < tree.Count)
+                {
+                    result = tree[i + 1];
+                    break;
+                }
+            }
+
             return result;
         }
+
+        public DialogueScene GetDialogueStart()
+        {
+            return tree[0];
+        }
+
     }
 }

@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://b03rovv6s5qxh"]
+[gd_scene load_steps=14 format=3 uid="uid://b03rovv6s5qxh"]
 
-[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Player.cs" id="1_sequw"]
-[ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="2_2dsr3"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Player Scripts/Player.cs" id="1_sequw"]
+[ext_resource type="Resource" uid="uid://b3qrg4t1fux6d" path="res://Resources/Events/Player Events/OnPlayerMovementLocked.tres" id="2_1kbea"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="2_2dsr3"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs" id="3_7qh1w"]
-[ext_resource type="Resource" uid="uid://bv8d1vsuuw2b5" path="res://Resources/Events/OnSceneLoad.tres" id="4_vjbnk"]
+[ext_resource type="Resource" uid="uid://c0vp8plwj0j5m" path="res://Resources/Events/Player Events/OnPlayerMovementUnlocked.tres" id="3_ikxhl"]
+[ext_resource type="Resource" uid="uid://bv8d1vsuuw2b5" path="res://Resources/Events/Load Screen Events/OnSceneLoad.tres" id="4_vjbnk"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Player Scripts/PlayerEventManager.cs" id="7_yt15k"]
+[ext_resource type="Resource" uid="uid://kispt6u5xvkx" path="res://Resources/Events/Dialogue Events/OnDialogueStart.tres" id="8_fynhe"]
+[ext_resource type="Resource" uid="uid://ccvcce25eqkfb" path="res://Resources/Events/Dialogue Events/OnDialogueEnd.tres" id="9_65cfp"]
+[ext_resource type="Resource" uid="uid://ciqnn2r7ohuhm" path="res://Resources/Events/Load Screen Events/OnFadeOutStarted.tres" id="10_j3yj4"]
+[ext_resource type="Resource" uid="uid://taecbqpnrvvr" path="res://Resources/Events/Load Screen Events/OnFadeInFinished.tres" id="11_7xj8s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mt627"]
 
@@ -12,13 +19,15 @@
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(546, 352)
 script = ExtResource("1_sequw")
+OnPlayerMovementLocked = ExtResource("2_1kbea")
+OnPlayerMovementUnlocked = ExtResource("3_ikxhl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Player Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -16.85)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_2dsr3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Player Collision" type="CollisionShape2D" parent="."]
 scale = Vector2(3.37, 3.37)
 shape = SubResource("CircleShape2D_mt627")
 
@@ -33,6 +42,13 @@ scale = Vector2(6.355, 6.355)
 shape = SubResource("CircleShape2D_dpw0o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player Events" type="Node2D" parent="."]
+script = ExtResource("7_yt15k")
+OnDialogueStart = ExtResource("8_fynhe")
+OnDialogueStop = ExtResource("9_65cfp")
+OnLoadStart = ExtResource("10_j3yj4")
+OnLoadStop = ExtResource("11_7xj8s")
 
 [connection signal="area_entered" from="Trigger Detector" to="Trigger Detector" method="OnTriggerEnter"]
 [connection signal="area_exited" from="Trigger Detector" to="Trigger Detector" method="OnTriggerExit"]

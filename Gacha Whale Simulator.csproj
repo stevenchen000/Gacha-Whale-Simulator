@@ -10,4 +10,8 @@
     <Compile Remove="Scripts\Gacha System\Skill System\SkillEffects\**" />
     <EmbeddedResource Remove="Scripts\Gacha System\Skill System\SkillEffects\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\State System\Node-Based States\" />
+    <Folder Include="Scripts\State System\Resource-Based States\" />
+  </ItemGroup>
 </Project>

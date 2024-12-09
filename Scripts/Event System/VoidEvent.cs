@@ -8,6 +8,7 @@ namespace EventSystem
     {
         public delegate void EventDelegate();
         private event EventDelegate OnEvent;
+        [Export] private string description;
         [Export] private bool debug = false;
 
         public void RaiseEvent()

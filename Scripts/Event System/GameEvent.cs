@@ -6,6 +6,8 @@ namespace EventSystem{
     {
         public delegate void EventDelegate(T character);
         private event EventDelegate OnEvent;
+        [Export] protected string description;
+        [Export] protected bool debug = false;
 
         public void RaiseEvent(T parameter)
         {
@@ -13,6 +15,7 @@ namespace EventSystem{
             {
                 OnEvent(parameter);
             }
+            if (debug) GD.Print($"{ResourcePath.TrimSuffix(".tres")} was called");
         }
 
         public void SubscribeEvent(EventDelegate func)

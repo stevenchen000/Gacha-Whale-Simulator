@@ -1,6 +1,7 @@
 using Godot;
 using System;
-using static System.Net.Mime.MediaTypeNames;
+using EventSystem;
+using StateSystem;
 
 namespace DialogueSystem
 {
@@ -17,40 +18,64 @@ namespace DialogueSystem
 		[Export] private Color disabledColor;
 		[Export] private int charactersPerSecond = 30;
 
-		[Export] private DialogueTree dialogue;
+		[Export] private VoidEvent OnDialogueStart;
+		[Export] private VoidEvent OnDialogueEnd;
 
-		[Export] private string textToDisplay = "";
+		[Export] public DialogueTree dialogue;
+		public DialogueScene currDialogue { get; set; }
+
 		private DialogueState state = DialogueState.INACTIVE;
 
 		private float numOfCharsDisplayed = 0;
+
+		
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
 			if(instance == null)
 			{
+				base._Ready();
 				instance = this;
-				if(dialogue == null)
-				{
-					ChangeState(DialogueState.INACTIVE);
-				}
-				else
-				{
-					ChangeState(DialogueState.ACTIVATING);
-				}
 			}
 		}
 
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _Process(double delta)
 		{
-			
+			//RunState(delta);
+			base._Process(delta);
 		}
 
-		public static void SetText(string text)
+		public static void PlayDialogue(DialogueTree dialogue)
 		{
-			instance.textToDisplay = text;
+			if (instance.dialogue == null && dialogue != null)
+			{
+				instance.dialogue = dialogue;
+				//instance.ChangeState(DialogueState.ACTIVATING);
+				instance.OnDialogueStart?.RaiseEvent();
+			}
 		}
+
+		public void Deactivate()
+        {
+			dialogueBox.Visible = false;
+        }
+
+		public void Activate()
+        {
+			dialogueBox.Visible = true;
+        }
+
+		public void SetText(string text)
+        {
+			textLabel.Text = text;
+        }
+
+		public void EndDialogue()
+        {
+			dialogue = null;
+        }
 
 
 		/****************
@@ -64,17 +89,20 @@ namespace DialogueSystem
 				case DialogueState.INACTIVE:
 					break;
 				case DialogueState.ACTIVATING:
+					ChangeState(DialogueState.REVEALING_TEXT);
 					break;
 				case DialogueState.REVEALING_TEXT:
 					RevealTextState(delta);
 					break;
 				case DialogueState.TEXT_DISPLAYED:
+					TextDisplayedState(delta);
 					break;
 			}
 		}
 
 		private void ChangeState(DialogueState newState)
 		{
+			GD.Print(newState);
 			switch (state)
 			{
 				case DialogueState.INACTIVE:
@@ -91,33 +119,41 @@ namespace DialogueSystem
 			{
 				case DialogueState.INACTIVE:
 					dialogueBox.Visible = false;
+					dialogue = null;
+					OnDialogueEnd?.RaiseEvent();
 					break;
 				case DialogueState.ACTIVATING:
 					dialogueBox.Visible = true;
+					currDialogue = dialogue.GetDialogueStart();
 					break;
 				case DialogueState.REVEALING_TEXT:
 					break;
 				case DialogueState.TEXT_DISPLAYED:
-					numOfCharsDisplayed = 0;
 					break;
 			}
+
+			state = newState;
 		}
 
 		private void RevealTextState(double delta)
 		{
+			string textToDisplay = currDialogue.dialogue;
+
 			if (Input.IsActionJustPressed("ui_accept"))
 			{
 				textLabel.Text = textToDisplay;
 				ChangeState(DialogueState.TEXT_DISPLAYED);
 			}
-
-			numOfCharsDisplayed += (float)delta * charactersPerSecond;
-			string substring = textToDisplay.Substr(0, (int)numOfCharsDisplayed);
-			textLabel.Text = substring;
-
-			if (substring == textToDisplay)
+			else
 			{
-				ChangeState(DialogueState.TEXT_DISPLAYED);
+				numOfCharsDisplayed += (float)delta * charactersPerSecond;
+				string substring = textToDisplay.Substr(0, (int)numOfCharsDisplayed);
+				textLabel.Text = substring;
+
+				if (substring == textToDisplay)
+				{
+					ChangeState(DialogueState.TEXT_DISPLAYED);
+				}
 			}
 		}
 
@@ -125,7 +161,16 @@ namespace DialogueSystem
 		{
 			if (Input.IsActionJustPressed("ui_accept"))
 			{
-				ChangeState(DialogueState.REVEALING_TEXT);
+				numOfCharsDisplayed = 0;
+				currDialogue = dialogue.GetNextScene(currDialogue);
+				if (currDialogue != null)
+				{
+					ChangeState(DialogueState.REVEALING_TEXT);
+                }
+                else
+                {
+					ChangeState(DialogueState.INACTIVE);
+                }
 			}
 		}
 
@@ -134,10 +179,18 @@ namespace DialogueSystem
 		 * Helper
 		 * ***************/
 
-		private void SetName(string name)
+		private void SetName()
 		{
-			if(nameLabel != null)
-				nameLabel.Text = name;
+			if (nameLabel != null)
+				nameLabel.Text = currDialogue.GetActorName();
 		}
+
+
+		private void UpdateCurrentDialogue()
+        {
+			currDialogue = dialogue.GetNextScene(currDialogue);
+			SetName();
+			//UpdateImage();
+        }
 	}
 }

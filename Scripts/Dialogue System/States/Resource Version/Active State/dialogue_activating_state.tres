@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueActivatingState" load_steps=2 format=3 uid="uid://n0pq7u2nq8gc"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue System/States/Resource Version/DialogueActivatingState.cs" id="1_lmrsi"]
+
+[resource]
+script = ExtResource("1_lmrsi")
+stateConditions = null

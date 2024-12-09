@@ -7,7 +7,7 @@ namespace GachaSystem{
     {
         [Export] private string currencyName;
         [Export] private Texture2D currencyIcon;
-
+        [Export] private string description;
 
     }
 }

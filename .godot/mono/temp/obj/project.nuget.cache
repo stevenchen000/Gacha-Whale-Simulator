@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7vdsvDOh5b0=",
+  "dgSpecHash": "qZ1pCC5rxIC12sph0eC8ymfuKDX2ZJe/ofmiSMabw7TnCZiIEUXPVWPlLl23f8YgOtYudmAlimkzws1GczJ/kA==",
   "success": true,
-  "projectFilePath": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
+  "projectFilePath": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chens\\.nuget\\packages\\godot.sourcegenerators\\4.3.0\\godot.sourcegenerators.4.3.0.nupkg.sha512",
     "C:\\Users\\chens\\.nuget\\packages\\godotsharp\\4.3.0\\godotsharp.4.3.0.nupkg.sha512",
-    "C:\\Users\\chens\\.nuget\\packages\\godotsharpeditor\\4.3.0\\godotsharpeditor.4.3.0.nupkg.sha512",
-    "C:\\Users\\chens\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\chens\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\chens\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+    "C:\\Users\\chens\\.nuget\\packages\\godotsharpeditor\\4.3.0\\godotsharpeditor.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
