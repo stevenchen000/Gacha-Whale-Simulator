@@ -11,9 +11,10 @@ public partial class GameState : Node
 	[Export] public int premiumCurrency = 0;
 	[Export] public int upgradeCurrency = 0;
 	[Export] private DateTimeManager time;
+	[Export] private GameFlags flags;
 	
 	
-	[Export] public int money = 10_000;
+	[Export] private int money = 10_000;
 	[Export] public int salary = 5_000;
 	[Export] public GachaCharacter[] allCharacters;
 	[Export] public GachaCharacter[] ownedCharacters;
@@ -158,7 +159,67 @@ public partial class GameState : Node
 		return state.time.minute;
     }
 
-	
+	/**************
+	 * Money
+	 * ***********/
+
+	public static void AddMoney(int amount)
+    {
+		if(amount > 0)
+			state.money += amount;
+    }
+
+	public static bool TakeMoney(int amount)
+    {
+		bool isEnough = state.money >= amount;
+
+		if(isEnough)
+        {
+			state.money -= amount;
+        }
+
+		return isEnough;
+    }
+
+	public static int GetMoney()
+    {
+		return state.money;
+    }
+
+	/**************
+	 * Flags
+	 * *************/
+
+	public static bool CheckFlag(string flag)
+	{
+		return state.flags.CheckFlag(flag);
+	}
+
+	public static int GetFlagAmount(string flag)
+	{
+		return state.flags.GetFlagAmount(flag);
+	}
+
+	public static void ResetFlag(string flag)
+	{
+		state.flags.ResetFlag(flag);
+	}
+
+	public static void SetFlag(string flag, int amount)
+	{
+		state.flags.SetFlag(flag, amount);
+	}
+
+	public static void AddFlag(string flag, int amount = 1)
+	{
+		state.flags.AddFlag(flag, amount);
+	}
+
+	public static void RemoveFlag(string flag, int amount = 1)
+	{
+		state.flags.RemoveFlag(flag, amount);
+	}
+
 	/*****************
 	* Mood-Related Functions
 	******************/

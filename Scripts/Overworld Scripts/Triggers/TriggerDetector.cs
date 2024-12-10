@@ -24,7 +24,7 @@ public partial class TriggerDetector : Area2D
 		{
 			if(triggers.Count > 0)
 			{
-				triggers[0].ActivateTrigger();
+				triggers[0].ActivateTrigger(this);
 			}
 		}
 	}
@@ -36,7 +36,7 @@ public partial class TriggerDetector : Area2D
 			Trigger trigger = (Trigger)area;
 			if (trigger.ActivatesOnEnter)
 			{
-				trigger.ActivateTrigger();
+				trigger.ActivateTrigger(this);
 			}
 			else
 			{

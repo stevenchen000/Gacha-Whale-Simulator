@@ -9,6 +9,9 @@ public partial class DateTimeManager : Node
     [Export] private int secondsPerUpdate = 10;
     [Export] private int minutesPerUpdate = 5;
 
+    [Export] private TimePassedEvent OnTimeUpdate;
+    [Export] private TimePassedEvent OnTimeSkipped;
+
     private double seconds = 0;
     private int timeLock = 0;
 
@@ -47,13 +50,22 @@ public partial class DateTimeManager : Node
         seconds += delta;
         if(seconds > secondsPerUpdate)
         {
-            minute += minutesPerUpdate;
-            seconds -= secondsPerUpdate;
-            hour += minute / 60;
-            minute = minute % 60;
-
-            day += hour / 24;
-            hour %= 24;
+            var timeData = new TimeData();
+            timeData.SetPrevTime(day, hour, minute);
+            IncrementTime();
+            timeData.SetNewTime(day, hour, minute);
+            OnTimeUpdate?.RaiseEvent(timeData);
         }
+    }
+
+    private void IncrementTime()
+    {
+        minute += minutesPerUpdate;
+        seconds -= secondsPerUpdate;
+        hour += minute / 60;
+        minute = minute % 60;
+
+        day += hour / 24;
+        hour %= 24;
     }
 }

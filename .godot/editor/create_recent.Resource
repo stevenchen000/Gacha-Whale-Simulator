@@ -1,3 +1,5 @@
+DeleteObjectTriggerEffect
+TimePassedEvent
 TriggerDialogue
 DialogueTree
 LoadSceneWorldEffect
@@ -11,4 +13,3 @@ Tag
 Actor
 TriggerLoadScene
 StatContainer
-CharacterSkill

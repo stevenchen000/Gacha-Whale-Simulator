@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhy4vi30p0fpw"]
+[gd_scene load_steps=15 format=3 uid="uid://dhy4vi30p0fpw"]
 
 [ext_resource type="Script" path="res://Scripts/GameState.cs" id="1_1csjl"]
 [ext_resource type="Resource" uid="uid://cuclr7vjvjjld" path="res://Resources/Gacha Characters/corner_jeraldeen.tres" id="2_3aeg6"]
@@ -10,17 +10,20 @@
 [ext_resource type="Resource" uid="uid://bkdo7vcfuf1xk" path="res://Resources/GachaBanner.tres" id="8_bmt85"]
 [ext_resource type="Resource" uid="uid://bdvc7bj8667ce" path="res://Resources/Events/OnCharacterPulledEvent.tres" id="9_wqybx"]
 [ext_resource type="Resource" uid="uid://bkll23l0c6di4" path="res://Resources/Events/OnCharacterListUpdated.tres" id="10_8ofgx"]
-[ext_resource type="Script" path="res://Scripts/DateTimeManager.cs" id="11_xhsya"]
+[ext_resource type="Script" path="res://Scripts/Time System/DateTimeManager.cs" id="11_xhsya"]
+[ext_resource type="Resource" uid="uid://dr3mkcpjwitlp" path="res://Resources/Events/Time Events/OnTimeUpdate.tres" id="12_ty07c"]
+[ext_resource type="Script" path="res://Scripts/GameFlags.cs" id="13_jy7fi"]
 
 [sub_resource type="Resource" id="Resource_koi0c"]
 script = ExtResource("5_281qg")
 character = ExtResource("4_cuorn")
 power = 0
 
-[node name="Game State" type="Node2D" node_paths=PackedStringArray("time", "game")]
+[node name="Game State" type="Node2D" node_paths=PackedStringArray("time", "flags", "game")]
 script = ExtResource("1_1csjl")
 premiumCurrency = 99999
 time = NodePath("Date Time")
+flags = NodePath("Flags")
 allCharacters = Array[Object]([ExtResource("2_3aeg6")])
 ownedCharacters = Array[Object]([])
 game = NodePath("Gacha Game Data")
@@ -40,3 +43,7 @@ OnAccountListUpdated = ExtResource("10_8ofgx")
 
 [node name="Date Time" type="Node2D" parent="."]
 script = ExtResource("11_xhsya")
+OnTimeUpdate = ExtResource("12_ty07c")
+
+[node name="Flags" type="Node2D" parent="."]
+script = ExtResource("13_jy7fi")

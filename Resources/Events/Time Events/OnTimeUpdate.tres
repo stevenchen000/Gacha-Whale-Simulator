@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TimePassedEvent" load_steps=2 format=3 uid="uid://dr3mkcpjwitlp"]
+
+[ext_resource type="Script" path="res://Scripts/Time System/TimePassedEvent.cs" id="1_hul2r"]
+
+[resource]
+script = ExtResource("1_hul2r")
+description = ""
+debug = false
