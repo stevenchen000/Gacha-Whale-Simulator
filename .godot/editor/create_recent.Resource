@@ -1,3 +1,9 @@
+BaseQuest
+WorldEffectGiveQuest
+Quest
+InventoryChangeEvent
+ItemResource
+SkipTimeTriggerEffect
 DeleteObjectTriggerEffect
 TimePassedEvent
 TriggerDialogue
@@ -7,9 +13,3 @@ VoidEvent
 DialogueEvent
 DialogueStateDialogueNotNullCondition
 DialogueStateTimePassedCondition
-DialogueStateChangeData
-UpgradeCurrency
-Tag
-Actor
-TriggerLoadScene
-StatContainer

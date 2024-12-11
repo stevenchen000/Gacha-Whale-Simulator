@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://4do7obn4i8bk"]
+[gd_scene load_steps=31 format=3 uid="uid://4do7obn4i8bk"]
 
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_ae8wl"]
 [ext_resource type="PackedScene" uid="uid://b03rovv6s5qxh" path="res://Scenes/player.tscn" id="2_vfac5"]
@@ -6,17 +6,21 @@
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/NPC.cs" id="4_p600j"]
 [ext_resource type="PackedScene" uid="uid://denrkd823yp0d" path="res://Scenes/scene_manager.tscn" id="5_1syl0"]
 [ext_resource type="Resource" uid="uid://chko8lym7whks" path="res://Resources/Trigger Effects/dialogue_to_battle_trigger.tres" id="5_l3d3q"]
+[ext_resource type="Resource" uid="uid://d1ykfx2k01hwf" path="res://Resources/Dialogue/test_battle_dialogue.tres" id="6_hto1v"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs" id="7_ebddk"]
 [ext_resource type="PackedScene" uid="uid://ci0dbx4pjavqo" path="res://Scenes/dialogue_manager.tscn" id="7_swxyr"]
+[ext_resource type="Resource" uid="uid://dgq5hmflm5k76" path="res://Resources/Trigger Effects/skip_to_morning.tres" id="8_dtp3t"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/World Events/WorldEventManager.cs" id="8_unumg"]
 [ext_resource type="Resource" uid="uid://ccvcce25eqkfb" path="res://Resources/Events/Dialogue Events/OnDialogueEnd.tres" id="9_lhf61"]
-[ext_resource type="Resource" uid="uid://x1st2gj86p70" path="res://Resources/Dialogue/test_battle_dialogue.tres" id="10_3a1c1"]
+[ext_resource type="Resource" uid="uid://x1st2gj86p70" path="res://Resources/Dialogue/test_quest_dialogue.tres" id="10_3a1c1"]
 [ext_resource type="Resource" uid="uid://cu7680288j8ng" path="res://Resources/World Events/load_battle_scene.tres" id="11_s2m0u"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs" id="12_p0cry"]
 [ext_resource type="Resource" uid="uid://b0m6ieolpexmm" path="res://Resources/Trigger Effects/hello_world_dialogue_trigger.tres" id="13_tya8q"]
 [ext_resource type="PackedScene" uid="uid://dhy4vi30p0fpw" path="res://Scenes/game_state.tscn" id="14_n3dod"]
 [ext_resource type="PackedScene" uid="uid://b2v6id0iclus1" path="res://Scenes/UI/Time UI.tscn" id="15_83ld3"]
 [ext_resource type="Script" path="res://Scripts/Test.cs" id="16_aoqv8"]
-[ext_resource type="Resource" uid="uid://dr3mkcpjwitlp" path="res://Resources/Events/Time Events/OnTimeUpdate.tres" id="17_kcfy6"]
+[ext_resource type="Resource" uid="uid://dduk6k6n62t6a" path="res://Resources/World Events/get_cans_quest_world_event.tres" id="17_13kba"]
+[ext_resource type="Resource" uid="uid://cp7gs0vqnr3wc" path="res://Resources/Events/Time Events/OnTimeSkipped.tres" id="17_fsj36"]
 [ext_resource type="PackedScene" uid="uid://whlnpairs4d0" path="res://Scenes/UI/info_display.tscn" id="18_h0s8j"]
 [ext_resource type="PackedScene" uid="uid://b5vyxdlknt5e2" path="res://Scenes/tin_can.tscn" id="19_gk6hj"]
 
@@ -24,10 +28,25 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cnrdg"]
 
+[sub_resource type="Resource" id="Resource_gwfdh"]
+script = ExtResource("7_ebddk")
+dialogue = ExtResource("10_3a1c1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_k53bm"]
+font_size = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7mwo"]
+
 [sub_resource type="Resource" id="Resource_ecj3w"]
 script = ExtResource("12_p0cry")
-afterDialogue = ExtResource("10_3a1c1")
+afterDialogue = ExtResource("6_hto1v")
 effect = ExtResource("11_s2m0u")
+description = ""
+
+[sub_resource type="Resource" id="Resource_vi66n"]
+script = ExtResource("12_p0cry")
+afterDialogue = ExtResource("10_3a1c1")
+effect = ExtResource("17_13kba")
 description = ""
 
 [node name="Town" type="Node2D"]
@@ -62,6 +81,33 @@ scale = Vector2(8.095, 8.095)
 shape = SubResource("CircleShape2D_sanx0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="--------NPCs------------/Whalefred Battle"]
+visible = false
+scale = Vector2(3.155, 3.155)
+shape = SubResource("CircleShape2D_cnrdg")
+
+[node name="Whalefred Quest" type="CharacterBody2D" parent="--------NPCs------------"]
+position = Vector2(-361, 48)
+script = ExtResource("4_p600j")
+
+[node name="Sprite2D" type="Sprite2D" parent="--------NPCs------------/Whalefred Quest"]
+position = Vector2(0, -30.425)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("1_ae8wl")
+
+[node name="Battle Trigger" type="Area2D" parent="--------NPCs------------/Whalefred Quest"]
+visible = false
+position = Vector2(0, -30.425)
+scale = Vector2(0.76, 0.76)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_vpeca")
+effects = Array[Resource]([SubResource("Resource_gwfdh")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="--------NPCs------------/Whalefred Quest/Battle Trigger"]
+scale = Vector2(8.095, 8.095)
+shape = SubResource("CircleShape2D_sanx0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="--------NPCs------------/Whalefred Quest"]
 visible = false
 scale = Vector2(3.155, 3.155)
 shape = SubResource("CircleShape2D_cnrdg")
@@ -110,20 +156,46 @@ position = Vector2(-1121, -599)
 [node name="TinCan5" parent="--------Objects------------" instance=ExtResource("19_gk6hj")]
 position = Vector2(-736, -677)
 
+[node name="Bed" type="Node2D" parent="--------Objects------------"]
+position = Vector2(-852, 36)
+
+[node name="Bed2" type="Sprite2D" parent="--------Objects------------/Bed"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_ae8wl")
+
+[node name="Label" type="Label" parent="--------Objects------------/Bed"]
+offset_left = -47.0
+offset_top = -35.0
+offset_right = 46.0
+offset_bottom = 34.0
+text = "Bed"
+label_settings = SubResource("LabelSettings_k53bm")
+
+[node name="Area2D" type="Area2D" parent="--------Objects------------/Bed"]
+visible = false
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_vpeca")
+effects = Array[Resource]([ExtResource("8_dtp3t")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="--------Objects------------/Bed/Area2D"]
+scale = Vector2(6.17, 6.17)
+shape = SubResource("RectangleShape2D_u7mwo")
+
 [node name="----------Misc----------" type="Node2D" parent="."]
+
+[node name="Game State" parent="----------Misc----------" instance=ExtResource("14_n3dod")]
 
 [node name="Scene Manager" parent="----------Misc----------" instance=ExtResource("5_1syl0")]
 
 [node name="World Event Manager" type="Node2D" parent="----------Misc----------"]
 script = ExtResource("8_unumg")
 OnDialogueEndEvent = ExtResource("9_lhf61")
-dialogueEvents = Array[Resource]([SubResource("Resource_ecj3w")])
-
-[node name="Game State" parent="----------Misc----------" instance=ExtResource("14_n3dod")]
+dialogueEvents = Array[Resource]([SubResource("Resource_ecj3w"), SubResource("Resource_vi66n")])
 
 [node name="Test" type="Node2D" parent="----------Misc----------"]
 script = ExtResource("16_aoqv8")
-OnTimeUpdate = ExtResource("17_kcfy6")
+OnTimeUpdate = ExtResource("17_fsj36")
 
 [node name="--------UI------------" type="Node2D" parent="."]
 

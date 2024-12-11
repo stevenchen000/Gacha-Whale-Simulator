@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DialogueEvent" load_steps=2 format=3 uid="uid://ccvcce25eqkfb"]
 
-[ext_resource type="Script" path="res://Scripts/Event System/DialogueEvent.cs" id="1_vctvs"]
+[ext_resource type="Script" path="res://Scripts/Event System/Custom Game Events/DialogueEvent.cs" id="1_vctvs"]
 
 [resource]
 script = ExtResource("1_vctvs")

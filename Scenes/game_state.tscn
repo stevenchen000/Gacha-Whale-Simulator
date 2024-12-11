@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhy4vi30p0fpw"]
+[gd_scene load_steps=22 format=3 uid="uid://dhy4vi30p0fpw"]
 
 [ext_resource type="Script" path="res://Scripts/GameState.cs" id="1_1csjl"]
 [ext_resource type="Resource" uid="uid://cuclr7vjvjjld" path="res://Resources/Gacha Characters/corner_jeraldeen.tres" id="2_3aeg6"]
@@ -13,17 +13,31 @@
 [ext_resource type="Script" path="res://Scripts/Time System/DateTimeManager.cs" id="11_xhsya"]
 [ext_resource type="Resource" uid="uid://dr3mkcpjwitlp" path="res://Resources/Events/Time Events/OnTimeUpdate.tres" id="12_ty07c"]
 [ext_resource type="Script" path="res://Scripts/GameFlags.cs" id="13_jy7fi"]
+[ext_resource type="Resource" uid="uid://cp7gs0vqnr3wc" path="res://Resources/Events/Time Events/OnTimeSkipped.tres" id="13_mk5nl"]
+[ext_resource type="Script" path="res://Scripts/Quest System/QuestManager.cs" id="15_u3q2k"]
+[ext_resource type="Script" path="res://Scripts/Inventory System/Inventory.cs" id="16_n8140"]
+[ext_resource type="Resource" uid="uid://3t581paqpkcl" path="res://Resources/Items/cans.tres" id="17_j8wke"]
+[ext_resource type="Script" path="res://Scripts/Inventory System/InventorySlot.cs" id="18_7kcay"]
+[ext_resource type="Resource" uid="uid://bnka8sgyiscsr" path="res://Resources/Events/Inventory Events/OnInventoryUpdate.tres" id="19_361pm"]
 
 [sub_resource type="Resource" id="Resource_koi0c"]
 script = ExtResource("5_281qg")
 character = ExtResource("4_cuorn")
 power = 0
 
-[node name="Game State" type="Node2D" node_paths=PackedStringArray("time", "flags", "game")]
+[sub_resource type="Resource" id="Resource_aoisc"]
+script = ExtResource("18_7kcay")
+item = ExtResource("17_j8wke")
+amount = 10
+
+[node name="Game State" type="Node2D" node_paths=PackedStringArray("time", "flags", "playerInventory", "quests", "game")]
 script = ExtResource("1_1csjl")
 premiumCurrency = 99999
 time = NodePath("Date Time")
 flags = NodePath("Flags")
+playerInventory = NodePath("Player Inventory")
+quests = NodePath("Quest Manager")
+money = 0
 allCharacters = Array[Object]([ExtResource("2_3aeg6")])
 ownedCharacters = Array[Object]([])
 game = NodePath("Gacha Game Data")
@@ -44,6 +58,15 @@ OnAccountListUpdated = ExtResource("10_8ofgx")
 [node name="Date Time" type="Node2D" parent="."]
 script = ExtResource("11_xhsya")
 OnTimeUpdate = ExtResource("12_ty07c")
+OnTimeSkipped = ExtResource("13_mk5nl")
 
 [node name="Flags" type="Node2D" parent="."]
 script = ExtResource("13_jy7fi")
+
+[node name="Quest Manager" type="Node2D" parent="."]
+script = ExtResource("15_u3q2k")
+
+[node name="Player Inventory" type="Node2D" parent="."]
+script = ExtResource("16_n8140")
+slots = Array[Object]([SubResource("Resource_aoisc")])
+OnInventoryChange = ExtResource("19_361pm")

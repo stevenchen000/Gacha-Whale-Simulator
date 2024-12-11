@@ -1,34 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5vyxdlknt5e2"]
+[gd_scene load_steps=8 format=3 uid="uid://b5vyxdlknt5e2"]
 
 [ext_resource type="Texture2D" uid="uid://cq4rs7rq6x6fc" path="res://Art Assets/Objects/Tin_Can.png" id="1_ggief"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger.cs" id="2_8sat3"]
 [ext_resource type="Resource" uid="uid://bx8hj7p3da86j" path="res://Resources/Trigger Effects/delete_object_trigger_effect.tres" id="3_keb1h"]
-[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/AddMoneyTriggerEffect.cs" id="4_b876r"]
-[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/ChangeFlagTriggerEffect.cs" id="5_aem03"]
+[ext_resource type="Resource" uid="uid://3t581paqpkcl" path="res://Resources/Items/cans.tres" id="4_5nw6u"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger Effects/AddItemTriggerEffect.cs" id="5_dfniw"]
 
-[sub_resource type="Resource" id="Resource_meegv"]
-script = ExtResource("4_b876r")
-money = 1
-
-[sub_resource type="Resource" id="Resource_is5fm"]
-script = ExtResource("5_aem03")
-flagName = "cans_collected"
-changeAmount = 1
-setValue = false
+[sub_resource type="Resource" id="Resource_ef7kd"]
+script = ExtResource("5_dfniw")
+item = ExtResource("4_5nw6u")
+baseAmount = 1
+maxAmount = 5
+randomAmount = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75cu8"]
 
 [node name="TinCan" type="Sprite2D"]
+z_index = -1
+y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_ggief")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
+z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_8sat3")
-ActivatesOnEnter = true
-effects = Array[Resource]([ExtResource("3_keb1h"), SubResource("Resource_meegv"), SubResource("Resource_is5fm")])
+effects = Array[Resource]([ExtResource("3_keb1h"), SubResource("Resource_ef7kd")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(17.105, 17.105)

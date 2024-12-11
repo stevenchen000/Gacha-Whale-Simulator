@@ -2,6 +2,8 @@ using Godot;
 using System;
 using GachaSystem;
 using Godot.Collections;
+using InventorySystem;
+using QuestSystem;
 
 public partial class GameState : Node
 {
@@ -12,7 +14,10 @@ public partial class GameState : Node
 	[Export] public int upgradeCurrency = 0;
 	[Export] private DateTimeManager time;
 	[Export] private GameFlags flags;
-	
+	[Export] private Inventory playerInventory;
+	[Export] private QuestManager quests;
+
+	private Random rng;
 	
 	[Export] private int money = 10_000;
 	[Export] public int salary = 5_000;
@@ -30,6 +35,7 @@ public partial class GameState : Node
 		if(state == null)
         {
 			state = this;
+			rng = new Random(Guid.NewGuid().GetHashCode());
         }
 	}
 
@@ -159,6 +165,50 @@ public partial class GameState : Node
 		return state.time.minute;
     }
 
+	public static void SkipTime(int hours, int minutes)
+    {
+		state.time.SkipTime(hours, minutes);
+    }
+
+	public static void SkipToTime(int hour, int minute)
+    {
+		state.time.SkipToTime(hour, minute);
+    }
+
+	public static void PauseTime()
+    {
+		state.time.PauseTime();
+    }
+
+	public static void UnpauseTime()
+    {
+		state.time.UnpauseTime();
+    }
+
+	/**************
+	 * Inventory
+	 * *************/
+
+	public static void AddItemToPlayerInventory(ItemResource item, int amount = 1)
+    {
+		var inventory = state.playerInventory;
+		inventory.AddItem(item, amount);
+		GD.Print($"Added {amount} {item.itemName} to inventory");
+    }
+
+	public static bool RemoveItemFromPlayerInventory(ItemResource item, int amount = 1)
+    {
+		var inventory = state.playerInventory;
+		bool result = inventory.RemoveItem(item, amount);
+		return result;
+    }
+
+	public static int GetAmountOfItemInPlayerInventory(ItemResource item)
+    {
+		var inventory = state.playerInventory;
+		return inventory.GetItemCount(item);
+    }
+
 	/**************
 	 * Money
 	 * ***********/
@@ -219,6 +269,41 @@ public partial class GameState : Node
 	{
 		state.flags.RemoveFlag(flag, amount);
 	}
+
+	/**************
+	 * Random
+	 * **************/
+
+	/// <summary>
+	/// Gets a random number inclusive
+	/// </summary>
+	/// <param name="min"></param>
+	/// <param name="max"></param>
+	/// <returns></returns>
+	public static int GetRandomNumber(int min, int max)
+    {
+		int value = state.rng.Next();
+		int size = max - min + 1;
+		return (value % size) + min;
+    }
+
+	/**************
+	 * Quests
+	 * ************/
+	public static void AddQuest(BaseQuest quest)
+    {
+		var questManager = state.quests;
+		if (!questManager.HasQuest(quest))
+		{
+			questManager.AddQuest(quest);
+		}
+    }
+
+	public static bool PlayerHasQuest(BaseQuest quest)
+    {
+		var questManager = state.quests;
+		return questManager.HasQuest(quest);
+    }
 
 	/*****************
 	* Mood-Related Functions

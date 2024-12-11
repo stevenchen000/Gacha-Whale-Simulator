@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DeleteObjectTriggerEffect" load_steps=2 format=3 uid="uid://bx8hj7p3da86j"]
 
-[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/DeleteObjectTriggerEffect.cs" id="1_rvaxy"]
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger Effects/DeleteObjectTriggerEffect.cs" id="1_rvaxy"]
 
 [resource]
 script = ExtResource("1_rvaxy")

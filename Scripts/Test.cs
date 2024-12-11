@@ -9,6 +9,7 @@ public partial class Test : Node2D
 	public override void _Ready()
 	{
 		OnTimeUpdate.SubscribeEvent(TestFunc);
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,13 +19,13 @@ public partial class Test : Node2D
 
 	private void TestFunc(TimeData time)
     {
-		if(time.IsTimeInRange(8, 5))
+		if(time.IsTimeInRange(13,15))
         {
-			GD.Print("It's 8:05 AM");
+			GD.Print("Skipped past time 1:15 PM");
         }
-        if (time.IsTimeInRange(1,8,5))
+        if (time.IsTimeInRange(8, 0))
         {
-			GD.Print("It's Day 1 at 8:05 AM");
+			GD.Print("Ring ring, time to wake up!");
         }
     }
 }

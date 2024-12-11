@@ -6,7 +6,8 @@ namespace InventorySystem
     [GlobalClass]
     public partial class ItemResource : Resource
     {
-        [Export] private Texture2D icon;
-        [Export] private string itemName;
+        [Export] public Texture2D icon { get; private set; }
+        [Export] public string itemName { get; private set; }
+        [Export] public string description { get; private set; }
     }
 }

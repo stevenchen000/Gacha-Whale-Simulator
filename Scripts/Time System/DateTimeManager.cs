@@ -23,6 +23,25 @@ public partial class DateTimeManager : Node
         }
     }
 
+    public void SkipTime(int hours, int minutes)
+    {
+        var timeData = new TimeData();
+        timeData.SetPrevTime(day, hour, minute);
+        IncrementTime(hours * 60 + minutes);
+        seconds = 0;
+        timeData.SetNewTime(day, hour, minute);
+        OnTimeSkipped?.RaiseEvent(timeData);
+    }
+
+    public void SkipToTime(int newHour, int newMinute)
+    {
+        var timeData = new TimeData();
+        timeData.SetPrevTime(day, hour, minute);
+        SetTimeTo(newHour, newMinute);
+        timeData.SetNewTime(day, hour, minute);
+        OnTimeSkipped?.RaiseEvent(timeData);
+    }
+
     public void SpeedupTime()
     {
 
@@ -51,21 +70,38 @@ public partial class DateTimeManager : Node
         if(seconds > secondsPerUpdate)
         {
             var timeData = new TimeData();
+            seconds -= secondsPerUpdate;
             timeData.SetPrevTime(day, hour, minute);
-            IncrementTime();
+            IncrementTime(minutesPerUpdate);
             timeData.SetNewTime(day, hour, minute);
             OnTimeUpdate?.RaiseEvent(timeData);
         }
     }
 
-    private void IncrementTime()
+    private void IncrementTime(int minutes)
     {
-        minute += minutesPerUpdate;
-        seconds -= secondsPerUpdate;
+        minute += minutes;
         hour += minute / 60;
         minute = minute % 60;
 
         day += hour / 24;
         hour %= 24;
+    }
+
+    private void SetTimeTo(int newHour, int newMinute)
+    {
+        if(!TimeIsInFuture(newHour, newMinute))
+        {
+            day++;
+        }
+        hour = newHour;
+        minute = newMinute;
+    }
+
+    private bool TimeIsInFuture(int hour, int minute)
+    {
+        long currTime = 60 * this.hour + this.minute;
+        long newTime = 60 * hour + minute;
+        return newTime > currTime;
     }
 }

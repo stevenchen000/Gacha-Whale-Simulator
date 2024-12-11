@@ -17,6 +17,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dpw0o"]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(546, 352)
 script = ExtResource("1_sequw")
 OnPlayerMovementLocked = ExtResource("2_1kbea")

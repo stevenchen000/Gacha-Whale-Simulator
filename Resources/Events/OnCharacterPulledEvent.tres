@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GachaCharacterEvent" load_steps=2 format=3 uid="uid://bdvc7bj8667ce"]
 
-[ext_resource type="Script" path="res://Scripts/Event System/GachaCharacterEvent.cs" id="1_508hr"]
+[ext_resource type="Script" path="res://Scripts/Event System/Custom Game Events/GachaCharacterEvent.cs" id="1_508hr"]
 
 [resource]
 script = ExtResource("1_508hr")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InventoryChangeEvent" load_steps=2 format=3 uid="uid://bnka8sgyiscsr"]
+
+[ext_resource type="Script" path="res://Scripts/Event System/Custom Game Events/InventoryChangeEvent.cs" id="1_fgtk8"]
+
+[resource]
+script = ExtResource("1_fgtk8")
+description = "Called when the inventory changes"
+debug = true

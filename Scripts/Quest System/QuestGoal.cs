@@ -1,0 +1,21 @@
+using Godot;
+using System;
+using InventorySystem;
+
+namespace QuestSystem
+{
+    
+    public partial class QuestGoal : Resource
+    {
+        [Export] public int goalAmount { get; protected set; } = 1;
+        [Export] public int currAmount { get; protected set; } = 0;
+
+
+        public virtual void SetupListeners() { }
+
+        public virtual void RemoveListeners() { }
+
+        public bool IsCompleted() { return currAmount >= goalAmount; }
+
+    }
+}
