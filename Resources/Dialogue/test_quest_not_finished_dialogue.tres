@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueTree" load_steps=7 format=3 uid="uid://ca1wbxwv25omg"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueTree.cs" id="1_iw5n6"]
+[ext_resource type="Resource" uid="uid://dan74vwixd5uq" path="res://Resources/Dialogue/Actors/whalefred.tres" id="2_878ee"]
+[ext_resource type="Resource" uid="uid://ddgdexvd8s0gs" path="res://Resources/Tags/happy_emotion.tres" id="3_ccpcp"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueScene.cs" id="4_56nuh"]
+
+[sub_resource type="Resource" id="Resource_2f7i8"]
+script = ExtResource("4_56nuh")
+dialogue = "Hey, there's still cans all over the place!"
+emotion = ExtResource("3_ccpcp")
+actor = ExtResource("2_878ee")
+actorLocation = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_8xc0h"]
+script = ExtResource("4_56nuh")
+dialogue = "Quit slacking!"
+emotion = ExtResource("3_ccpcp")
+actor = ExtResource("2_878ee")
+actorLocation = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_iw5n6")
+tree = Array[Object]([SubResource("Resource_2f7i8"), SubResource("Resource_8xc0h")])

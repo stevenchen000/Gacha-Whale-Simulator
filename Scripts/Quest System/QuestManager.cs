@@ -45,6 +45,17 @@ namespace QuestSystem
             return quest != null;
         }
 
+        public bool QuestFinished(BaseQuest baseQuest)
+        {
+            var quest = GetQuest(baseQuest);
+            bool result = false;
+            if(quest != null)
+            {
+                result = quest.IsQuestCompleted();
+            }
+            return result;
+        }
+
         private Quest GetQuest(BaseQuest quest)
         {
             Quest result = null;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://4do7obn4i8bk"]
+[gd_scene load_steps=32 format=3 uid="uid://4do7obn4i8bk"]
 
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_ae8wl"]
 [ext_resource type="PackedScene" uid="uid://b03rovv6s5qxh" path="res://Scenes/player.tscn" id="2_vfac5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/NPC.cs" id="4_p600j"]
 [ext_resource type="PackedScene" uid="uid://denrkd823yp0d" path="res://Scenes/scene_manager.tscn" id="5_1syl0"]
 [ext_resource type="Resource" uid="uid://chko8lym7whks" path="res://Resources/Trigger Effects/dialogue_to_battle_trigger.tres" id="5_l3d3q"]
+[ext_resource type="Resource" uid="uid://dmqviiygl20kj" path="res://Resources/Dialogue/Character Dialogue Pickers/test_quest_dialogue_picker.tres" id="6_bchg1"]
 [ext_resource type="Resource" uid="uid://d1ykfx2k01hwf" path="res://Resources/Dialogue/test_battle_dialogue.tres" id="6_hto1v"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs" id="7_ebddk"]
 [ext_resource type="PackedScene" uid="uid://ci0dbx4pjavqo" path="res://Scenes/dialogue_manager.tscn" id="7_swxyr"]
@@ -30,7 +31,7 @@
 
 [sub_resource type="Resource" id="Resource_gwfdh"]
 script = ExtResource("7_ebddk")
-dialogue = ExtResource("10_3a1c1")
+dialogues = ExtResource("6_bchg1")
 
 [sub_resource type="LabelSettings" id="LabelSettings_k53bm"]
 font_size = 50

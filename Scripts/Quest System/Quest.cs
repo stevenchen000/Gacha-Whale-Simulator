@@ -18,7 +18,7 @@ namespace QuestSystem
             goals = new Array<QuestGoal>();
             foreach(var goal in newGoals)
             {
-                goals.Add((QuestGoal)goal.Duplicate(true));
+                goals.Add((QuestGoal)goal.Duplicate(false));
             }
         }
 

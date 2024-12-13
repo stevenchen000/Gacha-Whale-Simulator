@@ -13,6 +13,14 @@ namespace QuestSystem
         [Export] private ItemResource itemToCollect;
         [Export] private bool cumulative = false;
 
+        public override void OnQuestStart()
+        {
+            if (!cumulative)
+            {
+                
+            }
+        }
+
         public override void SetupListeners()
         {
             OnInventoryChange.SubscribeEvent(ListenForEvent);
@@ -28,13 +36,13 @@ namespace QuestSystem
             if (cumulative)
             {
                 int change = inventoryData.amountChanged;
-                currAmount += change;
-                GD.Print($"{currAmount}/{goalAmount}");
+                progress += change;
+                //GD.Print($"{currAmount}/{goalAmount}");
             }
             else
             {
                 int amountInInventory = inventoryData.newAmount;
-                currAmount = amountInInventory;
+                progress = amountInInventory;
             }
         }
     }

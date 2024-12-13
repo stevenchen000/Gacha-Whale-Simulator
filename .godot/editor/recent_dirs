@@ -1,3 +1,5 @@
+res://Resources/Dialogue/Character Dialogue Pickers
+res://Resources/Dialogue
 res://Resources/Quests
 res://Resources/World Events
 res://Resources/Events/Inventory Events
@@ -5,7 +7,6 @@ res://Resources/Items
 res://Resources/Trigger Effects
 res://Scenes
 res://Resources/Events/Time Events
-res://Resources/Dialogue
 res://Resources/Events/Player Events
 res://Resources/Events/Dialogue Events
 res://Scripts/Dialogue System/States
@@ -19,5 +20,4 @@ res://Scenes/Battle
 res://Resources
 res://Resources/Gacha Game Data
 res://Scenes/UI/Gacha Window
-res://Resources/Gacha Characters
 C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE

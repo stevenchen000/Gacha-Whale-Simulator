@@ -11,6 +11,11 @@ namespace DialogueSystem
         [Export] public Actor actor;
         [Export] public Vector2 actorLocation;
 
+        public virtual void RunScene()
+        {
+
+        }
+
         public Texture2D GetPortrait()
         {
             return actor.GetEmotion(emotion).portrait;

@@ -240,7 +240,7 @@ public partial class GameState : Node
 	 * Flags
 	 * *************/
 
-	public static bool CheckFlag(string flag)
+	public static bool GetFlag(string flag)
 	{
 		return state.flags.CheckFlag(flag);
 	}
@@ -303,6 +303,12 @@ public partial class GameState : Node
     {
 		var questManager = state.quests;
 		return questManager.HasQuest(quest);
+    }
+
+	public static bool PlayerCompletedQuest(BaseQuest quest)
+    {
+		var questManager = state.quests;
+		return questManager.QuestFinished(quest);
     }
 
 	/*****************
