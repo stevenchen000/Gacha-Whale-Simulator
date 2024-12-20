@@ -22,6 +22,10 @@ namespace CombatSystem
         private GridSpace previousAttackSpace = null;
         private Array<GridSpace> previousAttackArea = null;
 
+        public CharacterSkill currSkill { get; private set; }
+        public Array<BattleCharacter> targets { get; private set; }
+
+
         public override void _Ready()
         {
             stats = new BattleStats(savedStats);
@@ -30,7 +34,8 @@ namespace CombatSystem
 
         public void StartCharacterTurn(BattleManager battle, BattleGrid grid)
         {
-
+            currSkill = null;
+            targets = new Array<BattleCharacter>();
         }
 
         public bool ControlCharacter(double delta, BattleManager battle, BattleGrid grid)
@@ -44,7 +49,8 @@ namespace CombatSystem
 
             if (Input.IsActionJustPressed("ui_accept"))
             {
-                AttackTarget(battle, grid);
+                currSkill = skill;
+                //AttackTarget(battle, grid);
                 selectedAction = true;
             }
 
@@ -57,6 +63,8 @@ namespace CombatSystem
         }
 
         public bool IsDead() { return stats.IsDead(); }
+
+        
 
 
         /***************

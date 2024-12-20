@@ -1,14 +1,14 @@
+Camera2D
+Sprite2D
 Node2D
+TextureRect
 CollisionShape2D
 Polygon2D
 Area2D
 Label
-Sprite2D
 CanvasLayer
 HBoxContainer
 MarginContainer
 NinePatchRect
 Control
 ColorRect
-TextureRect
-Panel

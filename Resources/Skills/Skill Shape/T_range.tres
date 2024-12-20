@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GridShape" load_steps=2 format=3 uid="uid://cmtkcvyvs20ya"]
 
-[ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/Grid/GridShape.cs" id="1_lh5yq"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Grid/GridShape.cs" id="1_lh5yq"]
 
 [resource]
 script = ExtResource("1_lh5yq")

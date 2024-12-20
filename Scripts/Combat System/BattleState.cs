@@ -10,6 +10,8 @@ namespace CombatSystem
 
         public Array<BattleCharacter> playerParty { get; set; }
         public Array<BattleCharacter> enemyParty { get; set; }
+        public Array<Vector2I> playerStartingPositions;
+        public Array<Vector2I> enemyStartingPositions;
 
         public bool enemyPartyIsDead = false;
         public bool playerPartyIsDead = false;

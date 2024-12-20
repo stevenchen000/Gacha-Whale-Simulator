@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://ci0dbx4pjavqo"]
 
 [ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueManager.cs" id="1_wvqxo"]
-[ext_resource type="Texture2D" uid="uid://bqt263q3jfhxd" path="res://Art Assets/Placeholder Characters/Husbandos/Angeal.png" id="2_5il3j"]
+[ext_resource type="Texture2D" uid="uid://bqt263q3jfhxd" path="res://Angeal.png" id="2_5il3j"]
 [ext_resource type="Texture2D" uid="uid://biv7cid2nku43" path="res://Art Assets/Portrait Circle/Avatar Circle Background.png" id="2_fsnsp"]
 [ext_resource type="Texture2D" uid="uid://ewr1v1e4tbpp" path="res://Art Assets/Textbox/Blue Box.png" id="2_v0r26"]
 [ext_resource type="Texture2D" uid="uid://ckthnfqactwlq" path="res://Art Assets/Portrait Circle/Avatar Circle Border.png" id="4_g4sk3"]

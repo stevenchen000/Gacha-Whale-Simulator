@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnuodvla63kph"]
 
-[ext_resource type="Texture2D" uid="uid://cb4d130t6c7wm" path="res://icon.svg" id="1_hv8qs"]
-[ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/BattleCharacter.cs" id="2_2776m"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_hv8qs"]
+[ext_resource type="Script" path="res://Scripts/Combat System/BattleCharacter.cs" id="2_2776m"]
 [ext_resource type="Resource" uid="uid://dyor6oc038qua" path="res://Resources/Skills/basic_attack.tres" id="2_uhp2l"]
 [ext_resource type="Resource" uid="uid://dc24e2v6r5xpm" path="res://Resources/Character Stats/ally_stats.tres" id="3_bw3t0"]
 

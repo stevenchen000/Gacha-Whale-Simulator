@@ -23,7 +23,7 @@ namespace CombatSystem
             return turnOrder[0];
         }
 
-        public BattleCharacter SetupNextTurn(Vector2I newPosition)
+        public BattleCharacter SetupNextTurn()
         {
             turnOrder.Add(turnOrder[0]);
             turnOrder.RemoveAt(0);

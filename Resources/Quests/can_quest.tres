@@ -11,7 +11,7 @@ OnInventoryChange = ExtResource("1_jpg7q")
 itemToCollect = ExtResource("2_sw2xm")
 cumulative = true
 goalAmount = 3
-currAmount = 0
+progress = 0
 
 [resource]
 script = ExtResource("1_vmcli")

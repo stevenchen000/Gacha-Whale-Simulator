@@ -1,10 +1,25 @@
-[gd_resource type="Resource" script_class="CharacterSkill" load_steps=3 format=3 uid="uid://dyor6oc038qua"]
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=8 format=3 uid="uid://dyor6oc038qua"]
 
-[ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/Skill System/CharacterSkill.cs" id="1_05drs"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Skill System/CharacterSkill.cs" id="1_05drs"]
+[ext_resource type="PackedScene" uid="uid://b5vyxdlknt5e2" path="res://Scenes/tin_can.tscn" id="1_ih8nh"]
 [ext_resource type="Resource" uid="uid://b68h5nh2inr2b" path="res://Resources/Skills/Skill Shape/single_range.tres" id="1_qqqkr"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationElementCreateObjectAtTarget.cs" id="2_uwhn7"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs" id="3_fhxsf"]
+
+[sub_resource type="Resource" id="Resource_jjn8h"]
+script = ExtResource("2_uwhn7")
+castObject = ExtResource("1_ih8nh")
+delay = 1.0
+duration = 0.0
+ignoreDuration = false
+
+[sub_resource type="Resource" id="Resource_ek5vx"]
+script = ExtResource("3_fhxsf")
+animations = Array[Resource]([SubResource("Resource_jjn8h")])
 
 [resource]
 script = ExtResource("1_05drs")
+animation = SubResource("Resource_ek5vx")
 effects = Array[Object]([])
 duration = 2.0
 potency = 100

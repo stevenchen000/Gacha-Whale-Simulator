@@ -3,13 +3,18 @@ using System;
 
 public partial class Test : Node2D
 {
-	[Export] private TimePassedEvent OnTimeUpdate;
+	[Export] private InfiniNumber a;
+	[Export] private InfiniNumber b;
+	[Export] private TextureRect imageDisplay;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		OnTimeUpdate.SubscribeEvent(TestFunc);
-		
+		/*GD.Print(a.GetNumberAsString());
+		GD.Print(b.GetNumberAsString());
+		var c = a * b;
+		GD.Print(c.GetNumberAsString());
+		*/
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,13 +24,6 @@ public partial class Test : Node2D
 
 	private void TestFunc(TimeData time)
     {
-		if(time.IsTimeInRange(13,15))
-        {
-			GD.Print("Skipped past time 1:15 PM");
-        }
-        if (time.IsTimeInRange(8, 0))
-        {
-			GD.Print("Ring ring, time to wake up!");
-        }
+		
     }
 }

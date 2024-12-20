@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqt263q3jfhxd"
-path="res://.godot/imported/Angeal.png-876147664d27e5925aaf42fde1bc2cbc.ctex"
+path="res://.godot/imported/Angeal.png-76d6a2a881c1dd23fbfbb64e1951de74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Placeholder Characters/Husbandos/Angeal.png"
-dest_files=["res://.godot/imported/Angeal.png-876147664d27e5925aaf42fde1bc2cbc.ctex"]
+source_file="res://Angeal.png"
+dest_files=["res://.godot/imported/Angeal.png-76d6a2a881c1dd23fbfbb64e1951de74.ctex"]
 
 [params]
 

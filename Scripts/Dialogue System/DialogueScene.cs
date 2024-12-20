@@ -11,9 +11,9 @@ namespace DialogueSystem
         [Export] public Actor actor;
         [Export] public Vector2 actorLocation;
 
-        public virtual void RunScene()
+        public virtual bool RunScene(DialogueManager dm)
         {
-
+            return true;
         }
 
         public Texture2D GetPortrait()

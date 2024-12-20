@@ -18,12 +18,17 @@ namespace CombatSystem
 
         [Export] private PackedScene roomScene;
 
+        [Export] public SkillCaster skillCaster;
+
         private BattleCharacter currentCharacter;
         private Vector2I currentPosition;
         private Vector2I attackPosition;
         public BattleStateEnum battleState = BattleStateEnum.PREBATTLE;
         private TurnOrderManager turnOrder;
         private Array<Vector2I> walkableSpaces;
+
+        public BattleSkillCastData castData;
+        
 
         private double timeSinceStateStarted = 0;
 
@@ -41,7 +46,7 @@ namespace CombatSystem
 
         public override void _Process(double delta)
         {
-            switch (battleState)
+            /*switch (battleState)
             {
                 case BattleStateEnum.PREBATTLE:
                     PreBattleState();
@@ -60,7 +65,7 @@ namespace CombatSystem
                     break;
             }
 
-            timeSinceStateStarted += delta;
+            timeSinceStateStarted += delta;*/
         }
 
         public Array<BattleCharacter> FindCharactersInRange(Array<Vector2I> attackArea, BattleCharacter caster)
@@ -80,6 +85,44 @@ namespace CombatSystem
             }
 
             return result;
+        }
+
+        public bool IsPartyDead()
+        {
+            GD.Print("Party dead function hasn't been implemented yet!");
+            return false;
+        }
+
+        public bool IsPartyVictor()
+        {
+            GD.Print("Party Victor function hasn't been implemented yet!");
+            return true;
+        }
+
+        public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, CharacterSkill skill)
+        {
+            castData = new BattleSkillCastData(caster, targets, skill);
+        }
+
+
+
+        /*****************
+         * Public Functions
+         * **************/
+
+        public BattleCharacter GetCurrentCharacter()
+        {
+            return turnOrder.GetCurrentCharacter();
+        }
+
+        public void ProgressTurn()
+        {
+            turnOrder.SetupNextTurn();
+        }
+
+        public BattleGrid GetGrid()
+        {
+            return grid;
         }
 
 
@@ -166,7 +209,7 @@ namespace CombatSystem
                 case BattleStateEnum.CHARACTER_ATTACK:
                     //GD.Print($"{currentCharacter.Name} is now attacking");
                     grid.SetAllSpacesToDefault();
-                    turnOrder.SetupNextTurn(currentPosition);
+                    turnOrder.SetupNextTurn();
                     break;
                 case BattleStateEnum.BATTLE_OVER:
                     break;
@@ -250,7 +293,7 @@ namespace CombatSystem
             }
         }
 
-        private void UpdateAllWalkableAreas()
+        public void UpdateAllWalkableAreas()
         {
             int movement = currentCharacter.movableSpaces;
             currentPosition = currentCharacter.currentPosition;

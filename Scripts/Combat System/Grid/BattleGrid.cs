@@ -36,6 +36,17 @@ namespace CombatSystem {
             
         }
 
+
+		public void UpdateAllWalkableAreas(BattleCharacter character)
+		{
+			int movement = character.movableSpaces;
+			var currentPosition = character.currentPosition;
+
+			GD.Print($"{character.Name} starting at {currentPosition}");
+			var walkableSpaces = RevealAllWalkableAreas(currentPosition, movement);
+		}
+
+
 		/*********************
 		 * Public functions
 		 * *************/
@@ -79,14 +90,14 @@ namespace CombatSystem {
 
 		public Vector2I CalculateNearestGridSpace(Vector2 position)
 		{
-			float baseY = startingPoint.Y;
+			float baseY = GlobalPosition.Y;
 			float currY = position.Y;
 			float diffY = baseY - currY;
 			float verticalOffsetDistance = MathF.Abs(verticalOffset.Y);
 
 			int vertical = (int)MathF.Round(diffY / verticalOffsetDistance);
 
-			float baseX = startingPoint.X;
+			float baseX = GlobalPosition.X;
 			float currX = position.X;
 			float horizontalOffsetDistance = horizontalOffset.X;
 			float horizontalOffsetBasedOnVertical = vertical * verticalOffset.X;

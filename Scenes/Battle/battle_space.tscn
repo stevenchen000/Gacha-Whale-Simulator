@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhysvr23m0r0i"]
 
-[ext_resource type="Script" path="res://Scripts/Gacha System/Combat System/Grid/GridSpace.cs" id="1_rnsyo"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Grid/GridSpace.cs" id="1_rnsyo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_sbn80"]
 
