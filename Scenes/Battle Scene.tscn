@@ -16,6 +16,7 @@
 [node name="BattleScene" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 offset_right = 837.0
 offset_bottom = 1139.0
 texture = SubResource("CanvasTexture_85dyr")

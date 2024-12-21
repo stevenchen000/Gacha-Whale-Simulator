@@ -16,7 +16,7 @@ namespace CombatSystem
 
         [Export] private Sprite2D colliderSprite;
         [Export] private Sprite2D spaceSprite;
-        private BattleCharacter characterOnSpace { get; set; }
+        public BattleCharacter characterOnSpace { get; set; }
 
         private bool isWalkable;
 
@@ -84,6 +84,18 @@ namespace CombatSystem
 
         public bool IsOccupied() { return characterOnSpace != null; }
 
+        public void OccupySpace(BattleCharacter character)
+        {
+            if(characterOnSpace == null)
+            {
+                characterOnSpace = character;
+            }
+        }
+
+        public void EmptySpace()
+        {
+            characterOnSpace = null;
+        }
 
 
         /****************

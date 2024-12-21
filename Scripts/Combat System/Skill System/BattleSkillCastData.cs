@@ -20,7 +20,10 @@ namespace CombatSystem
                                    Array<BattleCharacter> targets,
                                    CharacterSkill skill)
         {
-
+            this.caster = caster;
+            this.targets = new Array<BattleCharacter>();
+            this.targets.AddRange(targets);
+            this.skill = skill;
         }
 
         public void Tick(double delta)

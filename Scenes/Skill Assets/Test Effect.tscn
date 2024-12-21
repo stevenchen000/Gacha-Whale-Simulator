@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvoadaaadxes2"]
+
+[ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Art Assets/Gacha Frames/Character Frame.png" id="1_rs7xr"]
+[ext_resource type="Script" path="res://Scripts/DeleteParentAfterTime.cs" id="2_bceth"]
+[ext_resource type="Texture2D" uid="uid://fofk2m4mbnn1" path="res://Art Assets/Particles/Particle.png" id="3_bax1s"]
+[ext_resource type="Script" path="res://Scripts/ParticleStart.cs" id="4_dt1yc"]
+
+[sub_resource type="Gradient" id="Gradient_08wtp"]
+colors = PackedColorArray(0.971828, 0.386946, 7.70092e-07, 1, 0.883443, 0.0753144, 0.181862, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tobcp"]
+gradient = SubResource("Gradient_08wtp")
+
+[sub_resource type="Curve" id="Curve_3484j"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.384615), -1.49573, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qvqut"]
+curve = SubResource("Curve_3484j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5kr8f"]
+lifetime_randomness = 0.27
+particle_flag_disable_z = true
+angular_velocity_min = -203.87
+angular_velocity_max = 376.69
+gravity = Vector3(150.215, -318.56, 0)
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_qvqut")
+color_ramp = SubResource("GradientTexture1D_tobcp")
+turbulence_enabled = true
+turbulence_noise_strength = 3.94
+turbulence_noise_scale = 6.11
+
+[node name="TestEffect" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_rs7xr")
+
+[node name="Auto Deleter" type="Node2D" parent="."]
+script = ExtResource("2_bceth")
+waitTime = 3.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.533333)
+emitting = false
+amount = 11
+process_material = SubResource("ParticleProcessMaterial_5kr8f")
+texture = ExtResource("3_bax1s")
+lifetime = 1.5
+one_shot = true
+trail_lifetime = 7.93
+script = ExtResource("4_dt1yc")

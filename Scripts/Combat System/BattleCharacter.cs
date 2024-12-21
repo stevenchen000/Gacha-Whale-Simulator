@@ -50,7 +50,7 @@ namespace CombatSystem
             if (Input.IsActionJustPressed("ui_accept"))
             {
                 currSkill = skill;
-                //AttackTarget(battle, grid);
+                targets.AddRange(GetTargetsInRange(battle, grid));
                 selectedAction = true;
             }
 
@@ -80,6 +80,13 @@ namespace CombatSystem
                 int potency = skill.potency;
                 target.stats.TakeDamage(stats, potency);
             }
+        }
+
+        private Array<BattleCharacter> GetTargetsInRange(BattleManager battle, BattleGrid grid)
+        {
+            var attackPositions = skill.attackArea.GetPositionsInRange(currentPosition, isFacingLeft);
+            var targets = battle.FindCharactersInRange(attackPositions, this);
+            return targets;
         }
 
         private Vector2 GetMovementDirection()
