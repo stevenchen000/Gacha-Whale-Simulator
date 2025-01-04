@@ -17,13 +17,13 @@ namespace CombatSystem {
 		[Export] private int horizontalGrids = 7;
 		[Export] private int verticalGrids = 3;
 
-		private string spaceScenePath = "";
+		public Array<Vector2I> CurrentWalkableSpaces { get; private set; }
+
+
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
-			GD.Print("Battle Grid running");
-			InitScenePath();
 			InitBattleSpaces();
 			InitBoundarySpaces();
 			SetAllSpacesToDefault();
@@ -37,13 +37,10 @@ namespace CombatSystem {
         }
 
 
-		public void UpdateAllWalkableAreas(BattleCharacter character)
+		public void UpdateAllWalkableAreas(BattleManager battle, BattleCharacter character)
 		{
-			int movement = character.movableSpaces;
-			var currentPosition = character.currentPosition;
-
-			GD.Print($"{character.Name} starting at {currentPosition}");
-			var walkableSpaces = RevealAllWalkableAreas(currentPosition, movement);
+			CurrentWalkableSpaces = GetAllWalkableAreas(battle, character);
+			SetSpacesWalkable(CurrentWalkableSpaces, character);
 		}
 
 
@@ -63,23 +60,12 @@ namespace CombatSystem {
 
 			return result;
 		}
-
 		public GridSpace GetSpaceFromCoords(Vector2I pos)
         {
 			int x = pos.X;
 			int y = pos.Y;
 			return GetSpaceFromCoords(x, y);
         }
-
-		public void SetAllSpacesToDefault()
-		{
-			foreach (var space in battleSpaces)
-			{
-				space.SetState(GridState.DEFAULT);
-			}
-			GD.Print("Reset all spaces");
-		}
-
 		public GridSpace GetNearestSpace(Vector2 position)
         {
 			GridSpace result = null;
@@ -87,7 +73,6 @@ namespace CombatSystem {
 			result = GetSpaceFromCoords(nearestCoord);
 			return result;
         }
-
 		public Vector2I CalculateNearestGridSpace(Vector2 position)
 		{
 			float baseY = GlobalPosition.Y;
@@ -105,12 +90,194 @@ namespace CombatSystem {
 
 			int horizontal = (int)MathF.Round(diffX / horizontalOffsetDistance);
 
-			//GD.Print($"{horizontal}, {vertical}");
-
 			return new Vector2I(horizontal, vertical);
 		}
+		public Vector2I GetNearestSpaceToCharacter(BattleCharacter character)
+        {
+			var pos = character.Position;
+			return CalculateNearestGridSpace(pos);
+        }
+		public Vector2I GetNearestWalkableSpace(BattleCharacter character)
+        {
+			var charPos = character.Position;
+			var nearestSpace =  CalculateNearestGridSpace(charPos);
+            if (!CurrentWalkableSpaces.Contains(nearestSpace))
+            {
+				nearestSpace = CheckNearestNeighbors(nearestSpace, character);
+            }
+			return nearestSpace;
+        }
 
-		public Array<Vector2I> RevealAllWalkableAreas(Vector2I position, int movableSpaces)
+		private Vector2I CheckNearestNeighbors(Vector2I nearestSpace, BattleCharacter character)
+        {
+			var allCoords = new Array<Vector2I>();
+			allCoords.Add(nearestSpace - new Vector2I(1, 0));
+			allCoords.Add(nearestSpace + new Vector2I(1, 0));
+			allCoords.Add(nearestSpace - new Vector2I(0, 1));
+			allCoords.Add(nearestSpace + new Vector2I(0, 1));
+
+			float nearestDistance = 9999;
+			Vector2I result = new Vector2I(0,0);
+			foreach(var coord in allCoords)
+            {
+                if (CurrentWalkableSpaces.Contains(coord))
+                {
+					var space = GetSpaceFromCoords(coord);
+					float dist = (space.GlobalPosition - character.GlobalPosition).Length();
+					if(dist < nearestDistance)
+                    {
+						nearestDistance = dist;
+						result = coord;
+                    }
+                }
+            }
+			return result;
+        }
+
+		public Array<BattleCharacter> GetTargetsInRange(BattleManager battle, BattleCharacter character, GridShape attackShape)
+        {
+			var charPos = GetNearestSpaceToCharacter(character);
+			var direction = character.facingDirection;
+			var targetPositions = attackShape.GetPositionsInRange(charPos, direction);
+			var allTargets = PositionsToTargets(targetPositions);
+			return GetValidTarget(battle, allTargets, character);
+        }
+
+		private Array<BattleCharacter> PositionsToTargets(Array<Vector2I> coords)
+        {
+			var result = new Array<BattleCharacter>();
+			foreach(var coord in coords)
+            {
+				var space = GetSpaceFromCoords(coord);
+				var target = space.characterOnSpace;
+				if (target != null) result.Add(target);
+            }
+			return result;
+        }
+
+		private Array<BattleCharacter> GetValidTarget(BattleManager battle, Array<BattleCharacter> targets, BattleCharacter character)
+        {
+			var result = new Array<BattleCharacter>();
+
+			foreach(var target in targets)
+            {
+				bool isEnemy = !battle.IsInSameParty(target, character);
+				if (isEnemy) result.Add(target);
+            }
+
+			return result;
+        }
+
+		/******************
+		 * Occupy and unoccupy spaces
+		 * ****************/
+
+		public void OccupySpace(BattleCharacter character)
+        {
+			var coords = GetNearestSpaceToCharacter(character);
+			var space = GetSpaceFromCoords(coords);
+			if(space != null)
+            {
+				UnoccupyPreviousSpace(character);
+				space.OccupySpace(character);
+            }
+        }
+		private void UnoccupyPreviousSpace(BattleCharacter character)
+        {
+			foreach (var tempCoord in CurrentWalkableSpaces)
+			{
+				var tempSpace = GetSpaceFromCoords(tempCoord);
+				if (tempSpace.characterOnSpace == character)
+				{
+					tempSpace.EmptySpace();
+					break;
+				}
+			}
+		}
+
+		public void TemporarilyOccupy(BattleCharacter character)
+        {
+			foreach(var walkableCoord in CurrentWalkableSpaces)
+            {
+				var walkableSpace = GetSpaceFromCoords(walkableCoord);
+				walkableSpace.SetState(GridState.ALLY_MOVEABLE);
+            }
+			var coords = GetNearestWalkableSpace(character);
+			var space = GetSpaceFromCoords(coords);
+			if(space != null)
+            {
+				space.SetState(GridState.ALLY_STANDING);
+            }
+        }
+
+		public void SetSpaceState(Vector2I coord, GridState state)
+        {
+			var space = GetSpaceFromCoords(coord);
+			if(space != null)
+            {
+				space.SetState(state);
+            }
+        }
+
+		/*********************
+		 * Walkable Spaces
+		 * *****************/
+
+		public Array<Vector2I> GetAllWalkableAreas(BattleManager battle, BattleCharacter character)
+        {
+			var position = GetNearestSpaceToCharacter(character);
+			int movement = character.movableSpaces;
+			var walkableSpaces = GetWalkableSpacesIgnoringObstacles(position, movement);
+			walkableSpaces = RemoveSpacesWithEnemies(battle, character, walkableSpaces);
+			walkableSpaces = RemoveDisconnectedSpaces(walkableSpaces, character);
+			return walkableSpaces;
+		}
+		public bool CheckIfSpaceIsWalkable(Vector2I position)
+        {
+			return CurrentWalkableSpaces.Contains(position);
+        }
+		public bool CheckIfSpaceIsWalkable(GridSpace space)
+        {
+			return space.IsWalkable();
+        }
+
+		/*******************
+		 * Change Space State
+		 * ****************/
+
+		public void SetAllSpacesToDefault()
+		{
+			foreach (var space in battleSpaces)
+			{
+				space.SetState(GridState.DEFAULT);
+			}
+		}
+		public void SetSpacesWalkable(Array<Vector2I> positions, BattleCharacter character)
+		{
+			foreach (var position in positions)
+			{
+				var space = GetSpaceFromCoords(position);
+				space.SetState(GridState.ALLY_MOVEABLE);
+			}
+		}
+		public void UpdateCharacterTemporaryPosition(BattleCharacter character)
+        {
+			var charPos = character.Position;
+			var coords = CalculateNearestGridSpace(charPos);
+			if (CurrentWalkableSpaces.Contains(coords))
+            {
+				SetSpacesWalkable(CurrentWalkableSpaces, character);
+				var space = GetSpaceFromCoords(coords);
+				space.SetState(GridState.ALLY_STANDING);
+			}
+		}
+
+
+		/****************
+		* Helper Functions
+		* **************/
+
+		private Array<Vector2I> GetWalkableSpacesIgnoringObstacles(Vector2I position, int movableSpaces)
         {
 			int x = position.X;
 			int y = position.Y;
@@ -118,8 +285,6 @@ namespace CombatSystem {
 			int upperX = x + movableSpaces;
 			int lowerY = y - movableSpaces;
 			int upperY = y + movableSpaces;
-			GD.Print($"{movableSpaces} movable spaces");
-			GD.Print($"Starting at ({position})");
 
 			var walkableSpaces = new Array<Vector2I>();
 
@@ -132,40 +297,85 @@ namespace CombatSystem {
 					int distance = distX + distY;
 					var space = GetSpaceFromCoords(i, j);
 					if (space == null) continue;
-
-					if(distance == 0)
-                    {
-						space.SetState(GridState.ALLY_STANDING);
-						//GD.Print("Default space revealed");
-                    }else if (distance <= movableSpaces)
-					{
-						space.SetState(GridState.ALLY_MOVEABLE);
-						//GD.Print("New space revealed");
-					}
-
-					walkableSpaces.Add(new Vector2I(i, j));
+					if(distance <= movableSpaces)
+						walkableSpaces.Add(new Vector2I(i, j));
 				}
 			}
-			GD.Print("Walkable areas revealed");
 
 			return walkableSpaces;
+        }
+
+		private Array<Vector2I> RemoveSpacesWithEnemies(BattleManager battle, BattleCharacter character, Array<Vector2I> spaces)
+        {
+			Array<Vector2I> result = new Array<Vector2I>();
+
+			foreach (var coord in spaces)
+			{
+				var space = GetSpaceFromCoords(coord);
+				var spaceCharacter = space.characterOnSpace;
+				if (spaceCharacter != null)
+				{
+					if(battle.IsInSameParty(character, spaceCharacter))
+                    {
+						result.Add(coord);
+                    }
+                }
+                else
+                {
+					result.Add(coord);
+                }
+			}
+			return result;
+        }
+
+		private Array<Vector2I> RemoveDisconnectedSpaces(Array<Vector2I> spaces, BattleCharacter character)
+        {
+			var currPos = GetNearestSpaceToCharacter(character);
+			var result = new Array<Vector2I>();
+			result.Add(currPos);
+
+			AddAllWalkableNeighbors(currPos, spaces, result);
+			return result;
+        }
+
+		private void AddAllWalkableNeighbors(Vector2I currSpace, Array<Vector2I> originalSpaces, Array<Vector2I> finalSpaces)
+        {
+			int x = currSpace.X;
+			int y = currSpace.Y;
+			//left neighbor
+			var left = new Vector2I(x-1, y);
+			var right = new Vector2I(x + 1, y);
+			var up = new Vector2I(x, y + 1);
+			var down = new Vector2I(x, y - 1);
+
+			if(SpaceNeedsToBeChecked(left, originalSpaces, finalSpaces))
+            {
+				finalSpaces.Add(left);
+				AddAllWalkableNeighbors(left, originalSpaces, finalSpaces);
+            }
+			if(SpaceNeedsToBeChecked(right, originalSpaces, finalSpaces))
+			{
+				finalSpaces.Add(right);
+				AddAllWalkableNeighbors(right, originalSpaces, finalSpaces);
+			}
+			if(SpaceNeedsToBeChecked(up, originalSpaces, finalSpaces))
+            {
+				finalSpaces.Add(up);
+				AddAllWalkableNeighbors(up, originalSpaces, finalSpaces);
+			}
+			if(SpaceNeedsToBeChecked(down, originalSpaces, finalSpaces))
+            {
+				finalSpaces.Add(down);
+				AddAllWalkableNeighbors(down, originalSpaces, finalSpaces);
+			}
+
 		}
 
-		public bool CheckIfSpaceIsWalkable(Vector2I position)
+		private bool SpaceNeedsToBeChecked(Vector2I space, Array<Vector2I> originalSpaces, Array<Vector2I> finalSpaces)
         {
-			var space = GetSpaceFromCoords(position);
-			return space.IsWalkable();
-        }
+			return originalSpaces.Contains(space) && !finalSpaces.Contains(space);
 
-		public bool CheckIfSpaceIsWalkable(GridSpace space)
-        {
-			return space.IsWalkable();
-        }
-
-
-		/****************
-		* Helper Functions
-		* **************/
+		}
 
 		private void InitBattleSpaces()
 		{
@@ -212,8 +422,7 @@ namespace CombatSystem {
 
 		private GridSpace InstantiateBattleSpace()
         {
-			var scene = ResourceLoader.Load<PackedScene>(spaceScenePath);
-			var space = scene.Instantiate<GridSpace>();
+			var space = (GridSpace)GodotHelper.InstantiateCopy(spaceScene);
 			AddChild(space);
 			
 			return space;
@@ -227,11 +436,5 @@ namespace CombatSystem {
 			//GD.Print(position);
 			space.Position = position;
 		}
-
-
-		private void InitScenePath()
-        {
-			spaceScenePath = spaceScene.ResourcePath;
-        }
 	}
 }

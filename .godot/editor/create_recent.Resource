@@ -1,3 +1,4 @@
+Element
 DialoguePickerQuest
 DialogueTree
 DialoguePicker
@@ -12,4 +13,3 @@ TriggerDialogue
 LoadSceneWorldEffect
 VoidEvent
 DialogueEvent
-DialogueStateDialogueNotNullCondition

@@ -18,7 +18,6 @@ C:\Users\chens\Documents\Godot\Gacha Whale Simulator\.godot\mono\temp\obj\Debug\
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Debug\Gacha Whale Simulator.deps.json
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Debug\Gacha Whale Simulator.runtimeconfig.json
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Debug\Gacha Whale Simulator.dll
-C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Debug\ref\Gacha Whale Simulator.dll
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Debug\Gacha Whale Simulator.pdb
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Debug\GodotSharp.dll
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
@@ -27,7 +26,6 @@ C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.AssemblyInfoInputs.cache
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.AssemblyInfo.cs
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.csproj.CoreCompileInputs.cache
-C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.csproj.CopyComplete
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.dll
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\ref\Gacha Whale Simulator.dll
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.pdb
@@ -50,3 +48,6 @@ E:\Godot Projects\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\refint\Gacha 
 E:\Godot Projects\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.pdb
 E:\Godot Projects\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.genruntimeconfig.cache
 E:\Godot Projects\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\ref\Gacha Whale Simulator.dll
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Whale Simulator.sourcelink.json
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\Gacha Wh.177F99FA.Up2Date
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\Debug\refint\Gacha Whale Simulator.dll

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_cga83")
-currentHealth = 1
+currentHealth = 20
 maxHealth = 100
 attack = 20
 defense = 5

@@ -20,7 +20,7 @@ namespace CombatSystem
 
             if (completed) return true;
 
-            if (prevFrame <= delay && currFrame > delay)
+            if (prevFrame <= 0 && currFrame > 0)
             {
                 _StartElement(data);
             }
@@ -30,7 +30,7 @@ namespace CombatSystem
                 _EndElement(data);
                 completed = true;
             }
-            else if(currFrame > delay)
+            else if(currFrame > 0)
             {
                 completed = _RunElement(data);
                 if (completed) _EndElement(data);

@@ -29,13 +29,9 @@ public partial class OwnedGachaCharactersMenu : Control
 
 	public void UpdateUI()
     {
-		GD.Print(1);
 		AddAllMissingRows();
-		GD.Print(2);
 		RevealProperNumberOfBoxes();
-		GD.Print(3);
 		UpdateAllPortraits();
-		GD.Print(4);
 	}
 
 	private void UpdateAllPortraits(){

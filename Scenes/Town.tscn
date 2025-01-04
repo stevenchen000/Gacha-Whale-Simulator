@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://4do7obn4i8bk"]
+[gd_scene load_steps=29 format=3 uid="uid://4do7obn4i8bk"]
 
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_ae8wl"]
 [ext_resource type="PackedScene" uid="uid://b03rovv6s5qxh" path="res://Scenes/player.tscn" id="2_vfac5"]
@@ -19,11 +19,8 @@
 [ext_resource type="Resource" uid="uid://b0m6ieolpexmm" path="res://Resources/Trigger Effects/hello_world_dialogue_trigger.tres" id="13_tya8q"]
 [ext_resource type="PackedScene" uid="uid://dhy4vi30p0fpw" path="res://Scenes/game_state.tscn" id="14_n3dod"]
 [ext_resource type="PackedScene" uid="uid://b2v6id0iclus1" path="res://Scenes/UI/Time UI.tscn" id="15_83ld3"]
-[ext_resource type="Script" path="res://Scripts/Test.cs" id="16_aoqv8"]
 [ext_resource type="Resource" uid="uid://dduk6k6n62t6a" path="res://Resources/World Events/get_cans_quest_world_event.tres" id="17_13kba"]
-[ext_resource type="PackedScene" uid="uid://whlnpairs4d0" path="res://Scenes/UI/info_display.tscn" id="18_h0s8j"]
-[ext_resource type="PackedScene" uid="uid://b5vyxdlknt5e2" path="res://Scenes/tin_can.tscn" id="19_gk6hj"]
-[ext_resource type="Script" path="res://Scripts/InfiniNumber.cs" id="21_jfswh"]
+[ext_resource type="PackedScene" uid="uid://b5vyxdlknt5e2" path="res://Scenes/UI/Pickupable Items/tin_can.tscn" id="19_gk6hj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sanx0"]
 
@@ -49,16 +46,6 @@ script = ExtResource("12_p0cry")
 afterDialogue = ExtResource("10_3a1c1")
 effect = ExtResource("17_13kba")
 description = ""
-
-[sub_resource type="Resource" id="Resource_rl38b"]
-script = ExtResource("21_jfswh")
-number = Array[int]([9])
-negative = false
-
-[sub_resource type="Resource" id="Resource_aw7id"]
-script = ExtResource("21_jfswh")
-number = Array[int]([976, 345, 752, 123, 768])
-negative = false
 
 [node name="Town" type="Node2D"]
 
@@ -204,23 +191,8 @@ script = ExtResource("8_unumg")
 OnDialogueEndEvent = ExtResource("9_lhf61")
 dialogueEvents = Array[Resource]([SubResource("Resource_ecj3w"), SubResource("Resource_vi66n")])
 
-[node name="Test" type="Node2D" parent="----------Misc----------" node_paths=PackedStringArray("imageDisplay")]
-script = ExtResource("16_aoqv8")
-a = SubResource("Resource_rl38b")
-b = SubResource("Resource_aw7id")
-imageDisplay = NodePath("TextureRect")
-
-[node name="TextureRect" type="TextureRect" parent="----------Misc----------/Test"]
-offset_left = -815.0
-offset_top = -342.0
-offset_right = -369.0
-offset_bottom = 194.0
-expand_mode = 2
-
 [node name="--------UI------------" type="Node2D" parent="."]
 
 [node name="Dialogue Manager" parent="--------UI------------" instance=ExtResource("7_swxyr")]
 
 [node name="TimeUi" parent="--------UI------------" instance=ExtResource("15_83ld3")]
-
-[node name="Info Display" parent="--------UI------------" instance=ExtResource("18_h0s8j")]

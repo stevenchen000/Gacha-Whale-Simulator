@@ -3,7 +3,7 @@ using System;
 
 namespace StateSystem
 {
-    public partial class StateNode : Node
+    public partial class StateNode : Node2D
     {
         public bool active {
             get { return _active; } 

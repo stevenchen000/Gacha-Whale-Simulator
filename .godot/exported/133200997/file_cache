@@ -1,0 +1,96 @@
+res://Resources/Character Stats/ally_stats.tres::1eb5e525837225960d03d3fde16271f3::1734853541::res://.godot/exported/133200997/export-16558e8c4b9ae391cc885d9c792b5759-ally_stats.res
+res://Resources/Character Stats/enemy_stats.tres::829439b9bf7223f36d2951fa0dcc1964::1734401182::res://.godot/exported/133200997/export-d39fee4277f7536a3467c2669896828e-enemy_stats.res
+res://Resources/Dialogue/Actors/whalefred.tres::41a654ce8676074aa20b47fe4e1f8af6::1735983028::res://.godot/exported/133200997/export-2e094047af75f810e63b032a573fc19c-whalefred.res
+res://Resources/Dialogue/Actors/whalema.tres::8d8026046a9334fb2c0b3af388a6a6af::1733963715::res://.godot/exported/133200997/export-03be205894752329d307f62700344a1c-whalema.res
+res://Resources/Dialogue/Character Dialogue Pickers/test_quest_dialogue_picker.tres::cf3a4206fa45c90874b33e1fa6e2678e::1734066100::res://.godot/exported/133200997/export-8dcbf988913dc6fc2d4055d8f0abb7a5-test_quest_dialogue_picker.res
+res://Resources/Dialogue/Character Dialogue Pickers/test_quest_giver.tres::94cb73b3c8e5a06d4761d860e3fe1bed::1734062998::res://.godot/exported/133200997/export-734958c6488dfb25f0ee8d97fca8b044-test_quest_giver.res
+res://Resources/Dialogue/test_battle_dialogue.tres::eebfb51f4326c0f9eaf576dab53b2230::1735983029::res://.godot/exported/133200997/export-85b429c37f0da4274f0c2e9484d9aa6a-test_battle_dialogue.res
+res://Resources/Dialogue/test_quest_dialogue.tres::2f890884f17736828e1f1a7079c90b23::1735983028::res://.godot/exported/133200997/export-f70fd996467ccb4468bb5faea08a2d4c-test_quest_dialogue.res
+res://Resources/Dialogue/test_quest_finished_dialogue.tres::50c05963861651a7003a9544537d2383::1735983029::res://.godot/exported/133200997/export-ebba7a9e81fd2e56f4c14f94ff5baea2-test_quest_finished_dialogue.res
+res://Resources/Dialogue/test_quest_not_finished_dialogue.tres::4d3b735ea65f03530e92cb4bd180fe46::1735983029::res://.godot/exported/133200997/export-15178b632688e37ea3b45e9683a9b1f3-test_quest_not_finished_dialogue.res
+res://Resources/Dialogue/test_random_dialogue.tres::00ee69a68326867cd104975bfed131ec::1733963715::res://.godot/exported/133200997/export-52f8eedc7fb11d17836d065b9cf62620-test_random_dialogue.res
+res://Resources/Events/Dialogue Events/OnDialogueEnd.tres::13e4cf466d26c2e40e04850661d908e7::1733906163::res://.godot/exported/133200997/export-d51d3f22c43aac2557a836ce889421fa-OnDialogueEnd.res
+res://Resources/Events/Dialogue Events/OnDialogueStart.tres::0c7d8853779ff0914d559cd561cc1936::1733906163::res://.godot/exported/133200997/export-30a98b87a6de8a1c791e23e959e99ffd-OnDialogueStart.res
+res://Resources/Events/Inventory Events/OnInventoryUpdate.tres::eb9de3f885388c48a8915770c826f2b3::1733906163::res://.godot/exported/133200997/export-e875c0265ab89140e1871d2dfe343a3c-OnInventoryUpdate.res
+res://Resources/Events/Load Screen Events/OnFadeInFinished.tres::6e755964247acfaea5c70d619b4bb3d4::1733715819::res://.godot/exported/133200997/export-aeabfd2b9dbc14fefb29fa0711f0f149-OnFadeInFinished.res
+res://Resources/Events/Load Screen Events/OnFadeInStarted.tres::578c0f3e56dd53d3f1550785d0e93228::1733715819::res://.godot/exported/133200997/export-81a41ce1e601c77405204c54e8f326e3-OnFadeInStarted.res
+res://Resources/Events/Load Screen Events/OnFadeOutFinished.tres::8f1ded107eb071bc4dfe2096237e11ab::1733715819::res://.godot/exported/133200997/export-0fa1b437c08e8535c98ed63e1d8a1153-OnFadeOutFinished.res
+res://Resources/Events/Load Screen Events/OnFadeOutStarted.tres::e2d9cdf749768080a534912e6999d193::1733715819::res://.godot/exported/133200997/export-3eeac23ffb22f3e3415fbb64f7f9b9e5-OnFadeOutStarted.res
+res://Resources/Events/Load Screen Events/OnLoadFinish.tres::35ede2f31b168c8362c35b69effa2ae9::1733715819::res://.godot/exported/133200997/export-0fd4aacf3b601039883c7d383cffbdd3-OnLoadFinish.res
+res://Resources/Events/Load Screen Events/OnLoadStart.tres::dba73d9ca5ba0304cc57523f10e703d6::1733715819::res://.godot/exported/133200997/export-70fc845c91591880688b842803d76475-OnLoadStart.res
+res://Resources/Events/Load Screen Events/OnSceneLoad.tres::25a478494fcb2f48b82ef53eaa0deade::1733715819::res://.godot/exported/133200997/export-7c9c6f145652e24f6e862f1bc2588ad3-OnSceneLoad.res
+res://Resources/Events/Player Events/OnPlayerMovementLocked.tres::a7fb4744920c651dd45b87c9348bcca0::1733697244::res://.godot/exported/133200997/export-728e5a1820443d9458af2529806f4fde-OnPlayerMovementLocked.res
+res://Resources/Events/Player Events/OnPlayerMovementUnlocked.tres::5a221dc5d1b4d369df96e30ea85b6dc1::1733697244::res://.godot/exported/133200997/export-c4875d6baa1aa46777143ce023241971-OnPlayerMovementUnlocked.res
+res://Resources/Events/Time Events/OnTimeSkipped.tres::bd07b852f2250dcbc184fdf0f1f013fa::1733833824::res://.godot/exported/133200997/export-0b5dd9b59f9899283cbf4702b20c9e8f-OnTimeSkipped.res
+res://Resources/Events/Time Events/OnTimeUpdate.tres::378ea2f7f6d9c6c60b183bbee029298c::1733815922::res://.godot/exported/133200997/export-5e54d576449202bbf5ff305214346d05-OnTimeUpdate.res
+res://Resources/Events/OnCharacterListUpdated.tres::803d0647791cd020e8b37d36452f8684::1732520329::res://.godot/exported/133200997/export-e8ede520e15e983ae49e5bf9f741c44e-OnCharacterListUpdated.res
+res://Resources/Events/OnCharacterPulledEvent.tres::c17394ddcee06cf8e4978cb1a5d87ae9::1733906163::res://.godot/exported/133200997/export-1ac64f71252dec384a31e682800f3d2a-OnCharacterPulledEvent.res
+res://Resources/Gacha Characters/Angealfish.tres::df5c4e8de1ba1b7f9ac89b00d2890d82::1734670460::res://.godot/exported/133200997/export-740314e6bc903dee2f7bd7c7d89c937e-Angealfish.res
+res://Resources/Gacha Characters/Aranea.tres::a7c7b61ac3bfe43739ef0289530f4151::1732247303::res://.godot/exported/133200997/export-3d44bed1c7103a830c0a05e0894f43f3-Aranea.res
+res://Resources/Gacha Characters/Beatrix.tres::a67e413063937a7c94532ff6ef901d5f::1732247303::res://.godot/exported/133200997/export-24ecea91007a9ca5403db0b1b0a77c33-Beatrix.res
+res://Resources/Gacha Characters/corner_jeraldeen.tres::243135e116897f4cc19c23395d870ed1::1732167624::res://.godot/exported/133200997/export-5e3e22524441a0f49908d252a395a3c6-corner_jeraldeen.res
+res://Resources/Gacha Characters/cor_leonfish.tres::605533c43d7fab0ad9a55738065462d2::1732491320::res://.godot/exported/133200997/export-df76e313024c14f19e0db9bef85bf902-cor_leonfish.res
+res://Resources/Gacha Characters/Ignis.tres::e13a4316c6a2c5dd14ac9f84576c584e::1732247079::res://.godot/exported/133200997/export-6c16ef96a5640c2cd9e66843a85f4f1e-Ignis.res
+res://Resources/Gacha Characters/Locke.tres::73400df3c015aaddd0e0d9be040399ff::1732247303::res://.godot/exported/133200997/export-0bebe361480eae716fa399d45d6c9b0f-Locke.res
+res://Resources/Gacha Characters/Reno.tres::5258be8c9000f98a35d80cfc0a5386f7::1732247303::res://.godot/exported/133200997/export-2c62e8dabb53049d2ffb0bb5c672afb4-Reno.res
+res://Resources/Gacha Characters/Rude.tres::4029f5f71a9e18db629d57add5394f2a::1732247303::res://.godot/exported/133200997/export-2354baad948d22804beeb2333a447095-Rude.res
+res://Resources/Gacha Characters/Weiss.tres::9f3331c4886db69b9a876d82c5a6e744::1732247303::res://.godot/exported/133200997/export-ac247832f9697b86b90ead8aa9503c12-Weiss.res
+res://Resources/Gacha Game Data/Currencies/pearls.tres::5c79fa584c327a3fd26dcead49924d81::1733219740::res://.godot/exported/133200997/export-de9ff08df230b136c3f5cbac6059032e-pearls.res
+res://Resources/Gacha Game Data/Gacha Characters List.tres::fff4122ba3b31b52deaad56dd0b07cd6::1732405991::res://.godot/exported/133200997/export-ac53eec28363ee938473010a3e352d6a-Gacha Characters List.res
+res://Resources/Gacha Game Data/Gacha Game.tres::a27e2c8e4967a10874493891e5c78a54::1732520270::res://.godot/exported/133200997/export-80f424967476f17805fec75d9dc43fe3-Gacha Game.res
+res://Resources/Items/cans.tres::f7c8d847c1e4c2e98407672e29252908::1733903574::res://.godot/exported/133200997/export-24da836ea6fe98ecc9b52b6bb4657b7b-cans.res
+res://Resources/Quests/can_quest.tres::aa403041a95ac23a337cefbb32e905e7::1735983028::res://.godot/exported/133200997/export-25053bba85fb730ab614bf1bd861eb33-can_quest.res
+res://Resources/Skills/Skill Shape/single_range.tres::ff93ab879098ae7aa0e7a42fd18e227b::1734401182::res://.godot/exported/133200997/export-885ff160a0eb21639fa8c369f477f57f-single_range.res
+res://Resources/Skills/Skill Shape/two_spaces_away.tres::1ed9dd24ec5c4294b84f64fb050d472c::1734401182::res://.godot/exported/133200997/export-3b6cf71f001244e859491ace4b70f95f-two_spaces_away.res
+res://Resources/Skills/Skill Shape/T_range.tres::c2373c6c7ca61af58661089fd6590913::1734401182::res://.godot/exported/133200997/export-331420819d81633bc609567babf30473-T_range.res
+res://Resources/Skills/basic_attack.tres::4903d3c6578aa1b33eb8a1086b07437c::1735983029::res://.godot/exported/133200997/export-696b7412981284f2c03f43caa7bb15c4-basic_attack.res
+res://Resources/Tags/default_emotion.tres::f4d8eb01bc4103e9b5f361dad752a605::1733046220::res://.godot/exported/133200997/export-b0fbba6d583c3091733fd2268c0a417e-default_emotion.res
+res://Resources/Tags/happy_emotion.tres::e5e45e0d80a85310b008939d0b8639fd::1733046220::res://.godot/exported/133200997/export-414a50b69bb7a5b001ce1f62d51026c6-happy_emotion.res
+res://Resources/Tags/sad_emotion.tres::b318c129a4a5ba0410848c6df5af719b::1733046220::res://.godot/exported/133200997/export-449e7fc7e1398bb0104db9d4790390f0-sad_emotion.res
+res://Resources/Trigger Effects/delete_object_trigger_effect.tres::55a440e18ff9003eaef58385a9b86dc5::1733834662::res://.godot/exported/133200997/export-8b2906e3ccfdb7ea525a0e7d5cf3b305-delete_object_trigger_effect.res
+res://Resources/Trigger Effects/dialogue_to_battle_trigger.tres::6d2d43d8d22b4391ea00de402ab816ca::1733911583::res://.godot/exported/133200997/export-083a96f8d7814bd54663b9d0603e5190-dialogue_to_battle_trigger.res
+res://Resources/Trigger Effects/hello_world_dialogue_trigger.tres::57ae2335b08bd507baada9d7a4649223::1733834674::res://.godot/exported/133200997/export-350a7c3d09cecc47d0c64a12463e3862-hello_world_dialogue_trigger.res
+res://Resources/Trigger Effects/load_battle_effect.tres::698959cc992d6b1c984ba08a17afd7cd::1733834667::res://.godot/exported/133200997/export-4d85d7bba5aa5127d569633c8b6925e5-load_battle_effect.res
+res://Resources/Trigger Effects/skip_to_morning.tres::2954ebeb98f866e673f25fc3c3983fd2::1733835069::res://.godot/exported/133200997/export-58ef924f8952b58fdcb597315dbb5927-skip_to_morning.res
+res://Resources/World Events/get_cans_quest_world_event.tres::bb8e7d15e84256320193f4b678bcc7d4::1733911689::res://.godot/exported/133200997/export-d9ccb8b710dab94eb71dd21da604a698-get_cans_quest_world_event.res
+res://Resources/World Events/load_battle_scene.tres::9cb93324e98a0d33cab84b1719e6ca5c::1733910703::res://.godot/exported/133200997/export-972e68c25ea2d2814534acb0619132eb-load_battle_scene.res
+res://Resources/GachaBanner.tres::3650a12103e34fe60c48bbefe0a19b36::1732251153::res://.godot/exported/133200997/export-b0be5196f0c264b2cc22b0f8f0c9fc98-GachaBanner.res
+res://Resources/StartDate.tres::dfe19834d922d686f3577619b8214f65::1732177426::res://.godot/exported/133200997/export-b15c60f9d9d9664ec933fec7d6b141a1-StartDate.res
+res://Scenes/Battle/battle_character.tscn::32fe02bf8a6f47748aeae2a0afbafab0::1735991525::res://.godot/exported/133200997/export-8c7a1671e5f379e35d79519cab85c518-battle_character.scn
+res://Scenes/Battle/battle_character_2.tscn::a56019ac006c014949096836877f6955::1732960362::res://.godot/exported/133200997/export-6acca60f167ccfa3dd70c0f21e40441e-battle_character_2.scn
+res://Scenes/Battle/battle_space.tscn::c66ea48da3b513147d506b150b540a4d::1734401182::res://.godot/exported/133200997/export-11714a4caf3cb2d5e30b1d4d5bfabbff-battle_space.scn
+res://Scenes/Battle/Damage Number.tscn::e9c0d1807dea6a4b47a2c0e0b690226c::1734783980::res://.godot/exported/133200997/export-c0c07ca159f1a24092af9401c3a6c41d-Damage Number.scn
+res://Scenes/Character Editor/Character Editor.tscn::c6e2ac89f42fbe48170db698dc6839d8::1734765649::res://.godot/exported/133200997/export-4b5c964c27e330754688b18d038ce72a-Character Editor.scn
+res://Scenes/Skill Assets/Test Effect.tscn::3a9cc30097fd61e7b512d8a15bc0190d::1734771857::res://.godot/exported/133200997/export-1ac74a69092a03f2de7a8ee1ad1f6315-Test Effect.scn
+res://Scenes/UI/Gacha Window/Window Elements/Character Box Display.tscn::59784df4dcdde8d679f1e72637b6e13d::1735950642::res://.godot/exported/133200997/export-d616de99034cefb4af3b8b1ac84f126c-Character Box Display.scn
+res://Scenes/UI/Gacha Window/Window Elements/gacha_display_row.tscn::37c267534c9ab69bf8fea30b6d438076::1732521334::res://.godot/exported/133200997/export-223e7d0d3ffb183acc87ed85209303da-gacha_display_row.scn
+res://Scenes/UI/Gacha Window/Banners Window.tscn::dd8549860216a17a825d832f025b162c::1732521483::res://.godot/exported/133200997/export-45e1b62d42dafdac122371cc57ccd244-Banners Window.scn
+res://Scenes/UI/Gacha Window/Gacha Window.tscn::e09c83da6882065dc7d8bb7028d718f5::1733220579::res://.godot/exported/133200997/export-91068d8f3673fb38b9193f8d00eac9ab-Gacha Window.scn
+res://Scenes/UI/Gacha Window/Lobby Window.tscn::684325c3398179492ef71eaba04bfe2d::1733220579::res://.godot/exported/133200997/export-abcf4c37c4cabd08def1f875b9a56997-Lobby Window.scn
+res://Scenes/UI/Pickupable Items/tin_can.tscn::7c6503b0a22c50ff92b4c80b30aa06e1::1734684085::res://.godot/exported/133200997/export-e50f94cd7c14dfe91ec033307e03f3d1-tin_can.scn
+res://Scenes/UI/Test Scenes/Portrait Tester.tscn::22ee33e87ae5d013014d6038031fd67c::1733816193::res://.godot/exported/133200997/export-86bfdcacdc5096987770590f00f7ce63-Portrait Tester.scn
+res://Scenes/UI/Gacha Menu Bar.tscn::815d31a112c5f7fca591da3b004a214b::1733220579::res://.godot/exported/133200997/export-25fb5fea8e0fe0aa21062bab9617128d-Gacha Menu Bar.scn
+res://Scenes/UI/Phone.tscn::3356051f775b3d500dbd72a5f3863402::1732343414::res://.godot/exported/133200997/export-f0976a4025b67141bb03c3030efd7174-Phone.scn
+res://Scenes/UI/Time UI.tscn::6148e6cade90875ec43f437f6e8ed054::1733815502::res://.godot/exported/133200997/export-10cc18a9ed8b1cfa11895422573be4fe-Time UI.scn
+res://Scenes/Battle Scene.tscn::98baf4b190deb49dfe1a24cd58d89e5a::1735991525::res://.godot/exported/133200997/export-fd333af84d4a24b9232edba1bc2872f2-Battle Scene.scn
+res://Scenes/Calendar.tscn::20e8da2caf9e78592f086ea9b54ff041::1732343414::res://.godot/exported/133200997/export-63e96ef1f385ba117997f51240c04b2a-Calendar.scn
+res://Scenes/dialogue_manager.tscn::72c9e7d44be0d8fdb0cc7b6b7442c864::1734670460::res://.godot/exported/133200997/export-8a55e1b32a36e15bc662be0fc8183fc0-dialogue_manager.scn
+res://Scenes/game_state.tscn::cb48fe769cd77b9cb23f5689a05bb6bc::1734684085::res://.godot/exported/133200997/export-e9417d2201cd5a17040b3058bcf05d73-game_state.scn
+res://Scenes/player.tscn::69a13a6c1e7af603737cddff201797ea::1735991525::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
+res://Scenes/Room.tscn::fb3db73720646937948266f255fd59dd::1734782703::res://.godot/exported/133200997/export-7c31d2772cdc11eef0f80fa43a26c696-Room.scn
+res://Scenes/scene_manager.tscn::f8e899b0e78f3082bdcfda6521aa896c::1733816193::res://.godot/exported/133200997/export-a2e5bd5653c6cd1be3764594a7c5e679-scene_manager.scn
+res://Scenes/Town.tscn::7a6bed0b6fdaa68f469f547a5b2a19f5::1735991525::res://.godot/exported/133200997/export-30341b890103567faf13e2a04bff6988-Town.scn
+res://Scripts/Dialogue System/States/Resource Version/Active State/dialogue_activating_state.tres::e2eafcbb59020b83c8c0dbe21ea8136f::1733578603::res://.godot/exported/133200997/export-f06454f55918a0eace702d967ac29a4c-dialogue_activating_state.res
+res://Scripts/Dialogue System/States/Resource Version/Active State/dialogue_time_passed_condition.tres::d529536f2fbebc514e6ac0ed773afad5::1733578618::res://.godot/exported/133200997/export-736b8e60fd9ecabf6b59a745bfc884f7-dialogue_time_passed_condition.res
+res://Scripts/Dialogue System/States/Resource Version/Inactive State/dialogue_inactive_state.tres::5f363ff87cf5cebf21e1e5ba49d83549::1733584573::res://.godot/exported/133200997/export-4a078c51b3334cc13e4dea1695aa1950-dialogue_inactive_state.res
+res://Scripts/Dialogue System/States/Resource Version/Inactive State/dialogue_not_null.tres::6430501186c405ab2dcd0c79412d78c5::1733578616::res://.godot/exported/133200997/export-668fea269c9ef39e357c7d62958e3353-dialogue_not_null.res
+res://Scripts/Dialogue System/States/Resource Version/Inactive State/inactive_to_activating.tres::cf8f063262ab0312ccd928db90afac1e::1733578628::res://.godot/exported/133200997/export-18d808457785f602d998d388f051ba18-inactive_to_activating.res
+res://Scenes/Character Editor/Portrait Upload Tester.tscn::a03d66ef8aa43f89ad070c9acf05fb0b::1735991525::res://.godot/exported/133200997/export-e4aa2fe9703616a3817cac68552e3d1b-Portrait Upload Tester.scn
+res://Scenes/Character Editor/Character Creator Menu.tscn::3c5a5bfa1f8f64f6e937cc90d80d2713::1735991526::res://.godot/exported/133200997/export-e417542131fb324a8402ac82b6a031d4-Character Creator Menu.scn
+res://Scenes/Character Editor/Edit Character Display.tscn::b6331ba3f8337fa1d21db8fae8c259c6::1735798936::res://.godot/exported/133200997/export-e7deb380195a5ce47f82ac0f1d394738-Edit Character Display.scn
+res://Resources/Skills/Elements/fire_element.tres::f4ec2babb2bbf48177714bb97358b19b::1735623821::res://.godot/exported/133200997/export-495947bfebe60e36fb4304785340bc18-fire_element.res
+res://Resources/Skills/Elements/thunder_element.tres::907b195a41c7f53cd97d57c23b8a2e7e::1735623821::res://.godot/exported/133200997/export-2bde58815a1561725c568c00d563fe74-thunder_element.res
+res://Resources/Skills/Elements/water_element.tres::d63c174ea9da77996a227e137562a7f0::1735623821::res://.godot/exported/133200997/export-a36c5c8c9447c5f9a3760fbd43d4439b-water_element.res
+res://Scenes/Character Editor/character_display.tscn::c7ebd86be6b0e691e1dc5dfecc428108::1735988848::res://.godot/exported/133200997/export-28ad0151b04a38bfcdba758a8c363077-character_display.scn
+res://Scenes/Character Editor/portrait_preview.tscn::05ae25409d3d907ecfb898f2f3cb92c0::1735624032::res://.godot/exported/133200997/export-8be0fc1cfe367ae0e6d7343e1128c29b-portrait_preview.scn
+res://Scenes/Character Editor/number_of_photos_selection.tscn::222e56d179c06a2b988b17e861fc94de::1735991526::res://.godot/exported/133200997/export-ee6194f8d31935fb411051650227c79b-number_of_photos_selection.scn

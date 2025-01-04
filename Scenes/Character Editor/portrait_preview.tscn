@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwembdyqg2pyg"]
+
+[ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Art Assets/Gacha Frames/Character Frame.png" id="1_o1i2g"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/CharacterCreatorPreview.cs" id="2_mylsh"]
+[ext_resource type="Texture2D" uid="uid://bsd0q4di11vk0" path="res://Art Assets/Gacha Frames/Character Frame Border.png" id="3_8fmr6"]
+
+[node name="Preview Background" type="TextureRect" node_paths=PackedStringArray("characterPortrait")]
+clip_children = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -389.0
+offset_top = -384.0
+offset_right = -269.0
+offset_bottom = -264.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+texture = ExtResource("1_o1i2g")
+script = ExtResource("2_mylsh")
+characterPortrait = NodePath("Preview Character")
+
+[node name="Preview Character" type="Sprite2D" parent="."]
+position = Vector2(57, 65.3333)
+
+[node name="Preview Border" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+texture = ExtResource("3_8fmr6")

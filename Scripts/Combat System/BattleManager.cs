@@ -18,14 +18,10 @@ namespace CombatSystem
 
         [Export] private PackedScene roomScene;
 
-        [Export] public SkillCaster skillCaster;
-
-        private BattleCharacter currentCharacter;
-        private Vector2I currentPosition;
-        private Vector2I attackPosition;
         public BattleStateEnum battleState = BattleStateEnum.PREBATTLE;
         private TurnOrderManager turnOrder;
         private Array<Vector2I> walkableSpaces;
+        [Export] private TurnDataManager turnDataManager;
 
         public BattleSkillCastData castData;
         
@@ -39,64 +35,35 @@ namespace CombatSystem
             SetupStartingPositions(enemyParty, enemyStartingPositions);
 
             turnOrder = new TurnOrderManager(playerParty, enemyParty);
-            currentCharacter = turnOrder.GetCurrentCharacter();
-            currentPosition = currentCharacter.currentPosition;
-
         }
 
         public override void _Process(double delta)
         {
-            /*switch (battleState)
-            {
-                case BattleStateEnum.PREBATTLE:
-                    PreBattleState();
-                    break;
-                case BattleStateEnum.CHARACTER_TURN:
-                    CharacterTurnState(delta);
-                    break;
-                case BattleStateEnum.CHARACTER_SELECT_ATTACK:
-
-                    break;
-                case BattleStateEnum.CHARACTER_ATTACK:
-                    CharacterAttackState();
-                    break;
-                case BattleStateEnum.BATTLE_OVER:
-                    BattleOverState();
-                    break;
-            }
-
-            timeSinceStateStarted += delta;*/
+           
         }
 
-        public Array<BattleCharacter> FindCharactersInRange(Array<Vector2I> attackArea, BattleCharacter caster)
+        public bool IsPlayerPartyDead()
         {
-            var characters = new Array<BattleCharacter>();
-            characters.AddRange(playerParty);
-            characters.AddRange(enemyParty);
-            var result = new Array<BattleCharacter>();
+            return IsPartyDead(playerParty);
+        }
 
-            foreach(var character in characters)
+        public bool IsEnemyPartyDead()
+        {
+            return IsPartyDead(enemyParty);
+        }
+
+        private bool IsPartyDead(Array<BattleCharacter> party)
+        {
+            bool result = true;
+            foreach(var ally in party)
             {
-                var characterPosition = character.currentPosition;
-                if (attackArea.Contains(characterPosition))
+                if (!ally.IsDead())
                 {
-                    result.Add(character);
+                    result = false;
+                    break;
                 }
             }
-
             return result;
-        }
-
-        public bool IsPartyDead()
-        {
-            GD.Print("Party dead function hasn't been implemented yet!");
-            return false;
-        }
-
-        public bool IsPartyVictor()
-        {
-            GD.Print("Party Victor function hasn't been implemented yet!");
-            return true;
         }
 
         public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, CharacterSkill skill)
@@ -118,6 +85,8 @@ namespace CombatSystem
         public void ProgressTurn()
         {
             turnOrder.SetupNextTurn();
+            turnDataManager.AddTurnData(castData);
+            castData = null;
         }
 
         public BattleGrid GetGrid()
@@ -125,100 +94,26 @@ namespace CombatSystem
             return grid;
         }
 
-
-        /*****************
-		* Battle States
-		* *************/
-
-        private void PreBattleState()
+        public bool IsInSameParty(BattleCharacter character, BattleCharacter target)
         {
-            GD.Print("Battle has started");
-            ChangeState(BattleStateEnum.CHARACTER_TURN);
+            var party = GetCharacterParty(character);
+            return party.Contains(target);
         }
 
-        private void CharacterTurnState(double delta)
+        public Array<BattleCharacter> GetCharacterParty(BattleCharacter character)
         {
-            CheckCharacterMovement(delta);
-        }
+            Array<BattleCharacter> result = null;
 
-        private void CharacterMoveState()
-        {
-            //move character
-            //select attack button
-            //turn skip button
-        }
-
-        private void CharacterAttackState()
-        {
-            if (timeSinceStateStarted > 2)
+            if (playerParty.Contains(character))
             {
-                bool playerPartyIsDead = CheckIfPartyIsDead(playerParty);
-                bool enemyPartyIsDead = CheckIfPartyIsDead(enemyParty);
-                GD.Print(playerPartyIsDead);
-                GD.Print(enemyPartyIsDead);
-                if (playerPartyIsDead)
-                {
-                    GD.Print("lol, u suk");
-                    ChangeState(BattleStateEnum.BATTLE_OVER);
-                }else if (enemyPartyIsDead)
-                {
-                    GD.Print("Congrats, you won!");
-                    ChangeState(BattleStateEnum.BATTLE_OVER);
-                }
-                else
-                {
-                    ChangeState(BattleStateEnum.CHARACTER_TURN);
-                }
-            }
-        }
-
-        private void BattleOverState()
-        {
-            SceneManager.LoadScene("res://Scenes/Room.tscn");
-        }
-
-        /**********************
-		 * State Transitions
-		 * *******************/
-
-        private void ChangeState(BattleStateEnum newState)
-        {
-            switch (battleState)
+                result = playerParty;
+            }else if (enemyParty.Contains(character))
             {
-                case BattleStateEnum.PREBATTLE:
-                    break;
-                case BattleStateEnum.CHARACTER_TURN:
-                    break;
-                case BattleStateEnum.CHARACTER_ATTACK:
-                    break;
-                case BattleStateEnum.BATTLE_OVER:
-                    break;
+                result = enemyParty;
             }
 
-            switch (newState)
-            {
-                case BattleStateEnum.PREBATTLE:
-                    break;
-                case BattleStateEnum.CHARACTER_TURN:
-                    currentCharacter = turnOrder.GetCurrentCharacter();
-                    currentPosition = currentCharacter.currentPosition;
-
-                    UpdateAllWalkableAreas();
-                    //GD.Print($"{currentCharacter.Name} is taking their turn");
-                    break;
-                case BattleStateEnum.CHARACTER_ATTACK:
-                    //GD.Print($"{currentCharacter.Name} is now attacking");
-                    grid.SetAllSpacesToDefault();
-                    turnOrder.SetupNextTurn();
-                    break;
-                case BattleStateEnum.BATTLE_OVER:
-                    break;
-            }
-
-            timeSinceStateStarted = 0;
-            battleState = newState;
+            return result;
         }
-
 
         /******************
          * Starting Positions
@@ -243,8 +138,8 @@ namespace CombatSystem
                 var character = party[i];
                 var startingPosition = startingPositions[i];
                 var space = grid.GetSpaceFromCoords(startingPosition);
+                space.OccupySpace(character);
 
-                character.currentPosition = startingPosition;
                 character.Position = space.GlobalPosition;
             }
         }
@@ -253,60 +148,6 @@ namespace CombatSystem
         /*****************
          * Helper functions
          * ***************/
-
-        private bool CheckIfPartyIsDead(Array<BattleCharacter> party)
-        {
-            bool result = true;
-            foreach(var character in party)
-            {
-                GD.Print($"{character.Name}");
-                if (!character.IsDead())
-                {
-                    result = false;
-                    break;
-                }
-            }
-            return result;
-        }
-
-        private void CheckCharacterMovement(double delta)
-        {
-            bool turnFinished = currentCharacter.ControlCharacter(delta, this, grid);
-            if (turnFinished)
-            {
-                currentCharacter.EndTurn(delta, this, grid);
-                ChangeState(BattleStateEnum.CHARACTER_ATTACK);
-            }
-        }
-
-        private void UpdateSpace(int x, int y)
-        {
-            bool isWalkable = CheckIfSpaceIsWalkable(x, y);
-
-            if (isWalkable)
-            {
-                var space = grid.GetSpaceFromCoords(x, y);
-                //GD.Print($"{x}, {y}");
-                //GD.Print(space.Position);
-                currentCharacter.Position = space.GlobalPosition;
-                currentPosition = new Vector2I(x, y);
-            }
-        }
-
-        public void UpdateAllWalkableAreas()
-        {
-            int movement = currentCharacter.movableSpaces;
-            currentPosition = currentCharacter.currentPosition;
-
-            GD.Print($"{currentCharacter.Name} starting at {currentPosition}");
-            walkableSpaces = grid.RevealAllWalkableAreas(currentPosition, movement);
-        }
-
-        private bool CheckIfSpaceIsWalkable(int x, int y)
-        {
-            var coords = new Vector2I(x, y);
-            return walkableSpaces.Contains(coords);
-        }
 
     }
 }

@@ -16,7 +16,7 @@ namespace CombatSystem
 
         [Export] private Sprite2D colliderSprite;
         [Export] private Sprite2D spaceSprite;
-        public BattleCharacter characterOnSpace { get; set; }
+        public BattleCharacter characterOnSpace { get; private set; }
 
         private bool isWalkable;
 

@@ -12,14 +12,10 @@ namespace CombatSystem
         [Export] public int defense { get; set; }
 
 
-        public void TakeDamage(StatContainer enemyStats, int skillPotency)
+        public void TakeDamage(int damage)
         {
-            int enemyAttack = enemyStats.attack;
-            int baseDamage = enemyAttack - defense / 2;
-            int totalDamage = baseDamage * skillPotency / 100;
-
-            currentHealth -= totalDamage;
-            GD.Print($"Took {totalDamage} damage");
+            currentHealth -= damage;
+            GD.Print($"Took {damage} damage");
             if (IsDead()) GD.Print("Target has died");
         }
 

@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmcbt7du1gju2"]
+[gd_scene load_steps=5 format=3 uid="uid://dmcbt7du1gju2"]
 
-[ext_resource type="PackedScene" uid="uid://d3l8173j7xgql" path="res://Scenes/UI/menu.tscn" id="1_4hc3r"]
 [ext_resource type="PackedScene" uid="uid://dhy4vi30p0fpw" path="res://Scenes/game_state.tscn" id="1_k66j3"]
-[ext_resource type="PackedScene" uid="uid://whlnpairs4d0" path="res://Scenes/UI/info_display.tscn" id="3_1iltf"]
 [ext_resource type="Texture2D" uid="uid://bbirdxkrbp1x8" path="res://Art Assets/Phone/Phone Screen.png" id="5_lnqtj"]
 [ext_resource type="Texture2D" uid="uid://dfj7k5fe8bmcw" path="res://Art Assets/Phone/Phone Border.png" id="7_n2mf7"]
 [ext_resource type="PackedScene" uid="uid://b4058rclqtcjo" path="res://Scenes/UI/Gacha Menu Bar.tscn" id="12_pahwf"]
@@ -11,14 +9,6 @@
 position = Vector2(1041, 20)
 
 [node name="Game State" parent="." instance=ExtResource("1_k66j3")]
-
-[node name="Menu" parent="." instance=ExtResource("1_4hc3r")]
-offset_left = -338.0
-offset_top = 8.0
-offset_right = -298.0
-offset_bottom = 48.0
-
-[node name="Info Display" parent="." instance=ExtResource("3_1iltf")]
 
 [node name="Phone Screen" type="TextureRect" parent="."]
 offset_left = -228.17

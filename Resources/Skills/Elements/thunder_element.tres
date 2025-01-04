@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Element" load_steps=2 format=3 uid="uid://04u2tigv8q45"]
+
+[ext_resource type="Script" path="res://Scripts/Combat System/Element.cs" id="1_tneqd"]
+
+[resource]
+script = ExtResource("1_tneqd")
+name = "Thunder"

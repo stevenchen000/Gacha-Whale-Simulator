@@ -11,16 +11,15 @@ namespace CombatSystem
 
         protected override void OnStateActivated()
         {
-            GD.Print("Dealt damage");
+            
         }
 
         protected override void RunState(double delta)
         {
             //run damage animations
             if (timeInState < 2) return;
-            ChangeState(turnNode);
 
-            if (battle.IsPartyDead())
+            if (battle.IsPlayerPartyDead() || battle.IsEnemyPartyDead())
             {
                 ChangeState(finishedNode);
             }

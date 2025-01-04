@@ -1,0 +1,253 @@
+[gd_scene load_steps=9 format=3 uid="uid://cotgta0ltok1r"]
+
+[ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="1_215lf"]
+[ext_resource type="Script" path="res://Scenes/Character Editor/StretchToBottomOfScreen.gd" id="1_atrvm"]
+[ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Art Assets/Gacha Frames/Character Frame White.png" id="1_lvjug"]
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/character_display.tscn" id="1_uk651"]
+[ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Art Assets/Gacha Frames/Character Frame Border White.png" id="2_1ymm2"]
+[ext_resource type="PackedScene" uid="uid://b8euqy04igiyx" path="res://Scenes/Character Editor/number_of_photos_selection.tscn" id="5_ork1u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fj5p1"]
+line_spacing = 0.0
+font_size = 90
+font_color = Color(0.593298, 0.834372, 1, 1)
+outline_size = 20
+outline_color = Color(0.150133, 0, 0.975298, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kgpuk"]
+font_size = 90
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="CharacterCreatorMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="====UI====" type="CanvasLayer" parent="."]
+
+[node name="Filter Button" type="Button" parent="====UI===="]
+offset_left = 874.0
+offset_top = 956.0
+offset_right = 1061.0
+offset_bottom = 1033.0
+theme_override_font_sizes/font_size = 50
+text = "Filter"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="====UI===="]
+offset_left = 17.0
+offset_top = 1054.0
+offset_right = 1077.0
+offset_bottom = 1923.0
+horizontal_scroll_mode = 0
+script = ExtResource("1_atrvm")
+
+[node name="Character Grid" type="GridContainer" parent="====UI====/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 214
+theme_override_constants/v_separation = 214
+columns = 5
+
+[node name="Add Picture Button" type="Control" parent="====UI====/ScrollContainer/Character Grid"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="====UI====/ScrollContainer/Character Grid/Add Picture Button"]
+self_modulate = Color(0.373206, 0.741374, 1, 1)
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 190.0
+mouse_filter = 1
+icon = ExtResource("1_lvjug")
+flat = true
+expand_icon = true
+
+[node name="+" type="Label" parent="====UI====/ScrollContainer/Character Grid/Add Picture Button"]
+self_modulate = Color(1, 1, 1, 0.45098)
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 190.0
+text = "+"
+label_settings = SubResource("LabelSettings_fj5p1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="====UI====/ScrollContainer/Character Grid/Add Picture Button"]
+self_modulate = Color(0.118515, 0.6391, 0.955489, 1)
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 190.0
+mouse_filter = 2
+texture = ExtResource("2_1ymm2")
+
+[node name="Character" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character2" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character3" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character4" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character5" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character6" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character7" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character8" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character9" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character10" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character11" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character12" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character13" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character14" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character15" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character16" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character17" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character18" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character19" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character20" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character21" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character22" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character23" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character24" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character25" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character26" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character27" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character28" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character29" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character30" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character31" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character32" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character33" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character34" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="Character35" parent="====UI====/ScrollContainer/Character Grid" instance=ExtResource("1_uk651")]
+layout_mode = 2
+
+[node name="====Character Display====" type="CanvasLayer" parent="."]
+
+[node name="Full Sprite" type="TextureRect" parent="====Character Display===="]
+offset_left = 30.0
+offset_top = 21.0
+offset_right = 1051.0
+offset_bottom = 931.0
+texture = ExtResource("1_215lf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Edit Button" type="Button" parent="====Character Display===="]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -207.585
+offset_top = 20.555
+offset_right = -20.585
+offset_bottom = 172.555
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 80
+text = "Edit"
+
+[node name="Edit Button2" type="Button" parent="====Character Display===="]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1068.0
+offset_top = 21.0
+offset_right = -881.0
+offset_bottom = 173.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 80
+text = "<"
+
+[node name="Character Name + Title" type="VBoxContainer" parent="====Character Display===="]
+offset_left = 2.0
+offset_top = 792.0
+offset_right = 1082.0
+offset_bottom = 1044.0
+alignment = 2
+
+[node name="Character Name" type="Label" parent="====Character Display====/Character Name + Title"]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+text = "Cor Leonis"
+label_settings = SubResource("LabelSettings_kgpuk")
+horizontal_alignment = 1
+clip_text = true
+text_overrun_behavior = 4
+max_lines_visible = 2
+
+[node name="Variant Name" type="Label" parent="====Character Display====/Character Name + Title"]
+visible = false
+layout_mode = 2
+text = "(Summer)"
+label_settings = SubResource("LabelSettings_kgpuk")
+horizontal_alignment = 1
+
+[node name="====Import Menu====" type="CanvasLayer" parent="."]
+
+[node name="NumberOfPhotosSelection" parent="====Import Menu====" instance=ExtResource("5_ork1u")]
+offset_left = 10963.0
+offset_top = 249.0
+offset_right = 10963.0
+offset_bottom = 249.0
+
+[connection signal="button_up" from="====UI====/ScrollContainer/Character Grid/Add Picture Button/Button" to="====Import Menu====/NumberOfPhotosSelection" method="_make_visible"]

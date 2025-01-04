@@ -10,7 +10,7 @@ namespace CombatSystem {
         //+Y is up, +X is right
         [Export] private Array<Vector2I> spaces;
 
-        public Array<Vector2I> GetPositionsInRange(Vector2I position, bool facingLeft = false)
+        public Array<Vector2I> GetPositionsInRange(Vector2I position, CharacterDirection direction)
         {
             var result = new Array<Vector2I>();
 
@@ -19,7 +19,7 @@ namespace CombatSystem {
                 int xOffset = space.X;
                 int yOffset = space.Y;
 
-                if (facingLeft) xOffset = -xOffset;
+                if (direction == CharacterDirection.LEFT) xOffset = -xOffset;
                 int posX = position.X;
                 int posY = position.Y;
                 var newPosition = new Vector2I(posX + xOffset, posY + yOffset);

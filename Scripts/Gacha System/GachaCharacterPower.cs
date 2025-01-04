@@ -45,11 +45,8 @@ namespace GachaSystem {
         {
             if(list != null)
             {
-                GD.Print(1);
                 var SSRCharacters = list.allSSRCharacters;
-                GD.Print(2);
                 AddAllCharactersFromList(SSRCharacters);
-                GD.Print(3);
             }
         }
 

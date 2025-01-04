@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://spaepna0v12s"]
+
+[ext_resource type="Script" path="res://Scripts/Combat System/Damage Numbers/DamageNumber.cs" id="1_534ll"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bt5yu"]
+font_size = 40
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="DamageNumber" type="Control" node_paths=PackedStringArray("textLabel")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_534ll")
+textLabel = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -23.0
+offset_right = 35.0
+offset_bottom = 19.0
+text = "9999"
+label_settings = SubResource("LabelSettings_bt5yu")
+horizontal_alignment = 1
+vertical_alignment = 1

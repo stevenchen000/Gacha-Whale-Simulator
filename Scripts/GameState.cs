@@ -7,7 +7,7 @@ using QuestSystem;
 
 public partial class GameState : Node
 {
-	public static GameState state;
+	private static GameState state = null;
 
 	[Export] public int currentPower = 0;
 	[Export] public int premiumCurrency = 0;
@@ -48,21 +48,6 @@ public partial class GameState : Node
 			if(state == this)
 				GodotHelper.MoveNodeToRoot(this);
         }
-	}
-
-	//Called when object is about to get deleted
-	public override void _Notification(int what)
-	{
-		if(what == NotificationPredelete)
-		{
-
-		}
-	}
-
-	public GameState(){
-		if(state == null){
-			state = this;
-		}
 	}
 
 

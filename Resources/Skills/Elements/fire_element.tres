@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Element" load_steps=2 format=3 uid="uid://b1wdi00bg4amd"]
+
+[ext_resource type="Script" path="res://Scripts/Combat System/Element.cs" id="1_x7yay"]
+
+[resource]
+script = ExtResource("1_x7yay")
+name = "Fire"

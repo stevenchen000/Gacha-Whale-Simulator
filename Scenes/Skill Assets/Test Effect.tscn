@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://dvoadaaadxes2"]
 
 [ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Art Assets/Gacha Frames/Character Frame.png" id="1_rs7xr"]
-[ext_resource type="Script" path="res://Scripts/DeleteParentAfterTime.cs" id="2_bceth"]
+[ext_resource type="Script" path="res://Scripts/Misc/DeleteParentAfterTime.cs" id="2_bceth"]
 [ext_resource type="Texture2D" uid="uid://fofk2m4mbnn1" path="res://Art Assets/Particles/Particle.png" id="3_bax1s"]
-[ext_resource type="Script" path="res://Scripts/ParticleStart.cs" id="4_dt1yc"]
+[ext_resource type="Script" path="res://Scripts/Misc/ParticleStart.cs" id="4_dt1yc"]
 
 [sub_resource type="Gradient" id="Gradient_08wtp"]
 colors = PackedColorArray(0.971828, 0.386946, 7.70092e-07, 1, 0.883443, 0.0753144, 0.181862, 1)

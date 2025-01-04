@@ -15,6 +15,9 @@ namespace CombatSystem
         public double prevFrame { get; private set;  } = 0;
         public double currFrame { get; private set; } = 0;
 
+        public int totalDamageDealt { get; private set; } = 0;
+        public int totalAmountHealed { get; private set; } = 0;
+
 
         public BattleSkillCastData(BattleCharacter caster,
                                    Array<BattleCharacter> targets,
@@ -23,13 +26,29 @@ namespace CombatSystem
             this.caster = caster;
             this.targets = new Array<BattleCharacter>();
             this.targets.AddRange(targets);
-            this.skill = skill;
+            this.skill = skill.GetDuplicate();
+        }
+
+        public void AddDamage(int damage)
+        {
+            totalDamageDealt += damage;
+        }
+
+        public void AddHealing(int heal)
+        {
+            totalAmountHealed += heal;
         }
 
         public void Tick(double delta)
         {
             prevFrame = currFrame;
             currFrame += delta;
+        }
+
+        public void ResetTime()
+        {
+            prevFrame = 0;
+            currFrame = 0;
         }
 
         

@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfx5i0me7a7s8"]
+
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_gnvt5"]
+[ext_resource type="Texture2D" uid="uid://bqt263q3jfhxd" path="res://Angeal.png" id="2_i3cdw"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/UI GDScript/ScaleSpriteToScreen.gd" id="3_ur00i"]
+[ext_resource type="PackedScene" uid="uid://dwembdyqg2pyg" path="res://Scenes/Character Editor/portrait_preview.tscn" id="4_o0yfu"]
+
+[node name="EditCharacterDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+texture = ExtResource("2_i3cdw")
+script = ExtResource("3_ur00i")
+
+[node name="====UI====" type="CanvasLayer" parent="."]
+
+[node name="Return Button" type="Button" parent="====UI===="]
+offset_left = 25.0
+offset_top = 29.0
+offset_right = 161.0
+offset_bottom = 165.0
+icon = ExtResource("1_gnvt5")
+
+[node name="Preview Background" parent="====UI====" instance=ExtResource("4_o0yfu")]
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -687.0
+offset_top = 28.0
+offset_right = -567.0
+offset_bottom = 148.0
+grow_vertical = 1
+scale = Vector2(2, 2)
+
+[node name="Character Name Edit" type="TextEdit" parent="====UI===="]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 121.0
+offset_top = -1897.0
+offset_right = 527.0
+offset_bottom = -1812.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Character Name"
+
+[connection signal="texture_changed" from="MarginContainer/Sprite2D" to="MarginContainer/Sprite2D" method="_on_texture_changed"]

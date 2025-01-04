@@ -10,9 +10,9 @@ namespace CombatSystem
         [Export] private GachaCharacterData characterData;
         [Export] public int movableSpaces { get; set; } = 2;
         private Vector2I previousPosition { get; set; }
-        public Vector2I currentPosition { get; set; }
-        public bool isFacingLeft { get; set; }
+        public CharacterDirection facingDirection { get; private set; }
         [Export] public float speed = 5;
+        [Export] private CollisionShape2D collider;
         //[Export] private GridShape attackShape;
         [Export] public CharacterSkill skill { get; set; }
         [Export] private StatContainer savedStats { get; set; }
@@ -29,6 +29,7 @@ namespace CombatSystem
         public override void _Ready()
         {
             stats = new BattleStats(savedStats);
+            DisableCollider();
         }
 
 
@@ -44,13 +45,11 @@ namespace CombatSystem
             var movement = CalculateMovementVector();
             SetFacingDirection(movement);
             MoveCharacter(movement);
-            UpdateNearestSpaceColor(grid);
-            ShowSkillArea(grid);
 
             if (Input.IsActionJustPressed("ui_accept"))
             {
                 currSkill = skill;
-                targets.AddRange(GetTargetsInRange(battle, grid));
+                targets.AddRange(grid.GetTargetsInRange(battle, this, currSkill.attackArea));
                 selectedAction = true;
             }
 
@@ -64,30 +63,21 @@ namespace CombatSystem
 
         public bool IsDead() { return stats.IsDead(); }
 
-        
+
+        public void DisableCollider()
+        {
+            collider.Disabled = true;
+        }
+
+        public void EnableCollider()
+        {
+            collider.Disabled = false;
+        }
 
 
         /***************
          * Helper Functions
          * ****************/
-        private void AttackTarget(BattleManager battle, BattleGrid grid)
-        {
-            var attackPositions = skill.attackArea.GetPositionsInRange(currentPosition, isFacingLeft);
-            var targets = battle.FindCharactersInRange(attackPositions, this);
-            GD.Print(targets.Count);
-            foreach(var target in targets)
-            {
-                int potency = skill.potency;
-                target.stats.TakeDamage(stats, potency);
-            }
-        }
-
-        private Array<BattleCharacter> GetTargetsInRange(BattleManager battle, BattleGrid grid)
-        {
-            var attackPositions = skill.attackArea.GetPositionsInRange(currentPosition, isFacingLeft);
-            var targets = battle.FindCharactersInRange(attackPositions, this);
-            return targets;
-        }
 
         private Vector2 GetMovementDirection()
         {
@@ -114,39 +104,16 @@ namespace CombatSystem
             return new Vector2(horizontal, vertical);
         }
         
-        private void UpdateNearestSpaceColor(BattleGrid grid)
-        {
-            Vector2I newPosition = grid.CalculateNearestGridSpace(Position);
-            var newSpace = grid.GetSpaceFromCoords(newPosition);
-
-            if (newSpace != null && !newSpace.IsWalkable())
-            {
-                return;
-            }
-
-            if(previousNearestSpace != null)
-            {
-                previousNearestSpace.SetState(GridState.ALLY_MOVEABLE);
-            }
-            previousNearestSpace = newSpace;
-            previousNearestSpace.SetState(GridState.ALLY_STANDING);
-
-            previousPosition = currentPosition;
-            currentPosition = newPosition;
-        }
-
         private void SetFacingDirection(Vector2 movement)
         {
             float x = movement.X;
             if(x > 0)
             {
-                isFacingLeft = false;
+                facingDirection = CharacterDirection.RIGHT;
             }else if(x < 0)
             {
-                isFacingLeft = true;
+                facingDirection = CharacterDirection.LEFT;
             }
-
-            //GD.Print($"X Vel: {x}; Facing left: {isFacingLeft}");
         }
 
         private void MoveCharacter(Vector2 movement)
@@ -160,32 +127,6 @@ namespace CombatSystem
             var direction = GetMovementDirection();
             var movement = direction.Normalized() * speed;
             return movement;
-        }
-
-        private void ShowSkillArea(BattleGrid grid)
-        {
-            var attackArea = skill.attackArea;
-            var attackPositions = attackArea.GetPositionsInRange(currentPosition, isFacingLeft);
-
-            if(previousAttackArea != null)
-            {
-                foreach(var space in previousAttackArea)
-                {
-                    if (space.IsWalkable()) space.SetState(GridState.ALLY_MOVEABLE);
-                    else space.SetState(GridState.DEFAULT);
-                }
-            }
-
-            previousAttackArea = new Array<GridSpace>();
-            foreach(var position in attackPositions)
-            {
-                var space = grid.GetSpaceFromCoords(position);
-                if(space != null)
-                {
-                    previousAttackArea.Add(space);
-                    space.SetState(GridState.ALLY_ATTACK);
-                }
-            }
         }
     }
 }

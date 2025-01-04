@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8euqy04igiyx"]
+
+[ext_resource type="Script" path="res://Scripts/Character Creator/ImageImporter.gd" id="1_airpq"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="2_xh6qk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nhp0n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hbkxc"]
+line_spacing = 0.0
+font_size = 50
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="NumberOfPhotosSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_airpq")
+
+[node name="Background Button" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 0.839216)
+layout_mode = 0
+offset_left = -3802.0
+offset_top = -3271.0
+offset_right = 3789.0
+offset_bottom = 3296.0
+icon = SubResource("CanvasTexture_nhp0n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 118.0
+offset_top = 793.0
+offset_right = 968.0
+offset_bottom = 1093.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 250
+alignment = 1
+
+[node name="Single Image Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+icon = ExtResource("2_xh6qk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Single Image Button"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 308.0
+offset_right = 318.0
+offset_bottom = 389.0
+text = "Import Image"
+label_settings = SubResource("LabelSettings_hbkxc")
+horizontal_alignment = 1
+
+[node name="Multiple Images Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+icon = ExtResource("2_xh6qk")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Multiple Images Button"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = 308.0
+offset_right = 349.0
+offset_bottom = 446.0
+text = "Import Multiple
+Images"
+label_settings = SubResource("LabelSettings_hbkxc")
+horizontal_alignment = 1
+
+[connection signal="button_up" from="Background Button" to="." method="_make_invisible"]
+[connection signal="button_up" from="HBoxContainer/Single Image Button" to="." method="_import_image"]
+[connection signal="button_up" from="HBoxContainer/Single Image Button" to="." method="_make_invisible"]
+[connection signal="button_up" from="HBoxContainer/Multiple Images Button" to="." method="_import_multiple_images"]
+[connection signal="button_up" from="HBoxContainer/Multiple Images Button" to="." method="_make_invisible"]
