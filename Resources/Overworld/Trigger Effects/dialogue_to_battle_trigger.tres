@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TriggerDialogue" load_steps=3 format=3 uid="uid://chko8lym7whks"]
+
+[ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs" id="1_auokj"]
+[ext_resource type="Resource" uid="uid://d1ykfx2k01hwf" path="res://Resources/Overworld/Dialogue/test_battle_dialogue.tres" id="1_wxmmm"]
+
+[resource]
+script = ExtResource("1_auokj")
+dialogue = ExtResource("1_wxmmm")

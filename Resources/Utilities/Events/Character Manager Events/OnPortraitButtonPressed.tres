@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterPortraitEvent" load_steps=2 format=3 uid="uid://4s2ufn05677l"]
+
+[ext_resource type="Script" path="res://Scripts/Event System/Custom Game Events/CharacterPortraitEvent.cs" id="1_irwcy"]
+
+[resource]
+script = ExtResource("1_irwcy")
+description = ""
+debug = false

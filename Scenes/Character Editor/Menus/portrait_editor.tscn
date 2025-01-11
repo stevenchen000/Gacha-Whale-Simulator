@@ -1,0 +1,158 @@
+[gd_scene load_steps=13 format=3 uid="uid://cr2qhdqndnhyv"]
+
+[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/PortraitEditorMenu.cs" id="1_qcped"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/ImageCropper.cs" id="1_wcu8w"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorIdleState.cs" id="2_npyh6"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorCropState.cs" id="3_7ow0t"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorAdjustCropState.cs" id="4_hfi4h"]
+[ext_resource type="Texture2D" uid="uid://wdgy25x7fcji" path="res://Art Assets/Placeholder Characters/Waifus/Aranea.png" id="5_1e3mk"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/TouchHandler.cs" id="6_b2aec"]
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="7_26bvy"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/CameraController.cs" id="8_dh4da"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="8_ptrib"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tcckp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5hfmi"]
+
+[node name="Portrait Editor" type="Control" node_paths=PackedStringArray("cropper")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qcped")
+cropper = NodePath("Image Cropper")
+
+[node name="=========UI==========" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="=========UI=========="]
+offset_left = 34.0
+offset_top = 37.0
+offset_right = 244.0
+offset_bottom = 331.0
+theme_override_constants/separation = 30
+
+[node name="Return" type="Button" parent="=========UI==========/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "<-"
+
+[node name="Save Button" type="Button" parent="=========UI==========/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "Save"
+
+[node name="Image Cropper" type="Node2D" parent="." node_paths=PackedStringArray("spriteToEdit", "secondSprite", "cropBox", "cropCover", "cropStartCorner", "cropEndCorner", "cam", "preview", "touches")]
+script = ExtResource("1_wcu8w")
+spriteToEdit = NodePath("../Sprite To Edit")
+secondSprite = NodePath("../Cropper/Crop Box/Second Sprite")
+cropBox = NodePath("../Cropper/Crop Box")
+cropCover = NodePath("../Cropper/Crop Cover")
+cropStartCorner = NodePath("../Cropper/Start Corner")
+cropEndCorner = NodePath("../Cropper/End Corner")
+cam = NodePath("../Camera2D")
+preview = NodePath("../====Preview=====/Character")
+touches = NodePath("../Touch Handler")
+
+[node name="States" type="Node2D" parent="Image Cropper"]
+
+[node name="Idle State" type="Node2D" parent="Image Cropper/States" node_paths=PackedStringArray("cropState")]
+script = ExtResource("2_npyh6")
+cropState = NodePath("../Initial Crop State")
+IsInitialState = true
+
+[node name="Initial Crop State" type="Node2D" parent="Image Cropper/States" node_paths=PackedStringArray("spriteToEdit", "adjustState")]
+script = ExtResource("3_7ow0t")
+spriteToEdit = NodePath("../../../Sprite To Edit")
+adjustState = NodePath("../Adjust Crop State")
+
+[node name="Adjust Crop State" type="Node2D" parent="Image Cropper/States" node_paths=PackedStringArray("spriteToEdit", "cropBox", "idleState", "cropState")]
+script = ExtResource("4_hfi4h")
+spriteToEdit = NodePath("../../../Sprite To Edit")
+cropBox = NodePath("../../../Cropper/Crop Box")
+idleState = NodePath("../Idle State")
+cropState = NodePath("../Initial Crop State")
+
+[node name="Touch Handler" type="Node2D" parent="."]
+script = ExtResource("6_b2aec")
+
+[node name="=====Background====" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="=====Background===="]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite To Edit" type="Sprite2D" parent="."]
+
+[node name="Cropper" type="Control" parent="."]
+self_modulate = Color(0, 0, 0, 0.623529)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1e+07
+offset_bottom = 1e+07
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crop Cover" type="TextureRect" parent="Cropper"]
+self_modulate = Color(0, 0, 0, 0.623529)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.05e+06
+offset_top = -5.05e+06
+offset_right = 4.95e+06
+offset_bottom = 4.95e+06
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_tcckp")
+
+[node name="Crop Box" type="TextureRect" parent="Cropper"]
+self_modulate = Color(1, 1, 1, 0.701961)
+clip_children = 2
+layout_mode = 0
+offset_left = -15.0
+offset_top = -19.0
+offset_right = 26.0
+offset_bottom = 19.0
+texture = SubResource("CanvasTexture_5hfmi")
+
+[node name="Second Sprite" type="Sprite2D" parent="Cropper/Crop Box"]
+position = Vector2(165, 177)
+texture = ExtResource("5_1e3mk")
+
+[node name="Start Corner" type="Sprite2D" parent="Cropper"]
+position = Vector2(-14, -19)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_ptrib")
+
+[node name="End Corner" type="Sprite2D" parent="Cropper"]
+position = Vector2(26, 18)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_ptrib")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("8_dh4da")
+
+[node name="====Preview=====" type="CanvasLayer" parent="."]
+
+[node name="Character" parent="====Preview=====" instance=ExtResource("7_26bvy")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -378.0
+offset_top = -385.0
+offset_right = -258.0
+offset_bottom = -265.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+
+[connection signal="button_up" from="=========UI==========/VBoxContainer/Return" to="." method="ReturnToDisplayMenu"]
+[connection signal="button_up" from="=========UI==========/VBoxContainer/Save Button" to="." method="SaveAndReturn"]

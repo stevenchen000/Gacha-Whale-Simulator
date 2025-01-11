@@ -51,7 +51,7 @@ namespace DialogueSystem
 			if (instance.dialogue == null && dialogue != null)
 			{
 				instance.dialogue = dialogue;
-				instance.OnDialogueStart?.RaiseEvent();
+				instance.OnDialogueStart?.RaiseEvent(instance);
 			}
 		}
 

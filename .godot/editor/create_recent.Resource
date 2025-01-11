@@ -1,3 +1,7 @@
+PortraitBorder
+VoidEvent
+CharacterPortrait
+CharacterPortraitEvent
 Element
 DialoguePickerQuest
 DialogueTree
@@ -9,7 +13,3 @@ ItemResource
 SkipTimeTriggerEffect
 DeleteObjectTriggerEffect
 TimePassedEvent
-TriggerDialogue
-LoadSceneWorldEffect
-VoidEvent
-DialogueEvent

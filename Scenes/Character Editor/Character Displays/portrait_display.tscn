@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb46q6v0oilqx"]
+
+[ext_resource type="Script" path="res://Scripts/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_1mduf"]
+[ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="2_7ykq3"]
+[ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="3_4f4d7"]
+[ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="4_crdia"]
+
+[node name="Character" type="Control" node_paths=PackedStringArray("portraitElement", "nameElement")]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_1mduf")
+portraitElement = NodePath("Background/Portrait")
+nameElement = NodePath("")
+
+[node name="Background" type="Button" parent="."]
+self_modulate = Color(0.219375, 0.696733, 1, 1)
+clip_children = 2
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 190.0
+mouse_filter = 1
+icon = ExtResource("2_7ykq3")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Portrait" type="Sprite2D" parent="Background"]
+position = Vector2(78, 105)
+texture = ExtResource("3_4f4d7")
+
+[node name="Border" type="TextureRect" parent="."]
+self_modulate = Color(0.0880069, 0.494096, 1, 1)
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 190.0
+mouse_filter = 2
+texture = ExtResource("4_crdia")
+
+[connection signal="button_up" from="Background" to="." method="Test"]
+[connection signal="gui_input" from="Background" to="." method="OnButtonInputEvent"]

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Godot Projects\\Gacha-Whale-Simulator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|e:\\godot projects\\gacha-whale-simulator\\scripts\\dialogue system\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\dialogue system\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|e:\\godot projects\\gacha-whale-simulator\\scripts\\dialogue system\\dialoguetree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\dialogue system\\dialoguetree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,10 +23,6 @@
       "RelativeMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\dialogue system\\actoremotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|e:\\godot projects\\gacha-whale-simulator\\scripts\\dialogue system\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\dialogue system\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|e:\\godot projects\\gacha-whale-simulator\\scripts\\dialogue system\\dialoguestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C935D007-0DC6-4E6F-A0F0-6BA0938926E7}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\dialogue system\\dialoguestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ActorEmotion.cs",
               "DocumentMoniker": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Scripts\\Dialogue System\\ActorEmotion.cs",
               "RelativeDocumentMoniker": "Scripts\\Dialogue System\\ActorEmotion.cs",
@@ -46,12 +46,11 @@
               "RelativeToolTip": "Scripts\\Dialogue System\\ActorEmotion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T06:37:58.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T06:37:58.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Actor.cs",
               "DocumentMoniker": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Scripts\\Dialogue System\\Actor.cs",
               "RelativeDocumentMoniker": "Scripts\\Dialogue System\\Actor.cs",
@@ -59,12 +58,11 @@
               "RelativeToolTip": "Scripts\\Dialogue System\\Actor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T06:28:55.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T06:28:55.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DialogueTree.cs",
               "DocumentMoniker": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Scripts\\Dialogue System\\DialogueTree.cs",
               "RelativeDocumentMoniker": "Scripts\\Dialogue System\\DialogueTree.cs",
@@ -77,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DialogueScene.cs",
               "DocumentMoniker": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Scripts\\Dialogue System\\DialogueScene.cs",
               "RelativeDocumentMoniker": "Scripts\\Dialogue System\\DialogueScene.cs",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "Scripts\\Dialogue System\\DialogueScene.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T06:20:49.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T06:20:49.896Z"
             },
             {
               "$type": "Document",
@@ -98,18 +95,17 @@
               "RelativeToolTip": "Scripts\\Dialogue System\\DialogueState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T06:02:37.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T06:02:37.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "DialogueManager.cs",
               "DocumentMoniker": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Scripts\\Dialogue System\\DialogueManager.cs",
               "RelativeDocumentMoniker": "Scripts\\Dialogue System\\DialogueManager.cs",
               "ToolTip": "E:\\Godot Projects\\Gacha-Whale-Simulator\\Scripts\\Dialogue System\\DialogueManager.cs",
               "RelativeToolTip": "Scripts\\Dialogue System\\DialogueManager.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAcwFMAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwHkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T05:39:51.918Z",
               "EditorCaption": ""

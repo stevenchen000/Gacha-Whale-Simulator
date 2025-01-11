@@ -22,7 +22,7 @@ namespace DialogueSystem
             {
                 var currDialogue = dialogue.dialogue;
                 ChangeState(activatingState);
-                OnDialogueStart?.RaiseEvent(currDialogue);
+                OnDialogueStart?.RaiseEvent(this,currDialogue);
             }
         }
 

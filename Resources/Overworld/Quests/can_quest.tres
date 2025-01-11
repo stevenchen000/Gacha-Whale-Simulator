@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseQuest" load_steps=6 format=3 uid="uid://3upvmrfs45vb"]
+
+[ext_resource type="Resource" uid="uid://bnka8sgyiscsr" path="res://Resources/Utilities/Events/Inventory Events/OnInventoryUpdate.tres" id="1_6itnk"]
+[ext_resource type="Resource" uid="uid://3t581paqpkcl" path="res://Resources/Items/cans.tres" id="2_vufyu"]
+[ext_resource type="Script" path="res://Scripts/Quest System/Custom Quest Goals/QuestGoalItemPickup.cs" id="3_grvdt"]
+[ext_resource type="Script" path="res://Scripts/Quest System/BaseQuest.cs" id="4_v8571"]
+
+[sub_resource type="Resource" id="Resource_qs4rt"]
+script = ExtResource("3_grvdt")
+OnInventoryChange = ExtResource("1_6itnk")
+itemToCollect = ExtResource("2_vufyu")
+cumulative = true
+goalAmount = 3
+progress = 0
+
+[resource]
+script = ExtResource("4_v8571")
+name = "Park Cleanup"
+description = "Pick up 5 cans."
+goals = Array[Resource]([SubResource("Resource_qs4rt")])

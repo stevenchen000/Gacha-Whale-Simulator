@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PortraitBorder" load_steps=4 format=3 uid="uid://ddy3pmdwpa5rj"]
+
+[ext_resource type="Texture2D" uid="uid://bqxm2s67d0tdp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Blue Character Frame.png" id="1_2ospv"]
+[ext_resource type="Texture2D" uid="uid://dqoagb8qyidu8" path="res://Resources/UI/Portrait Boxes/Frame Icons/Blue Character Frame Border.png" id="2_kxgpl"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Character Portraits/PortraitBorder.cs" id="3_0v5oj"]
+
+[resource]
+script = ExtResource("3_0v5oj")
+Background = ExtResource("1_2ospv")
+Border = ExtResource("2_kxgpl")

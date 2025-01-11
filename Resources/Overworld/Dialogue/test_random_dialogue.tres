@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogueTree" load_steps=10 format=3 uid="uid://f5tpxoqlmqs8"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueTree.cs" id="1_65d0n"]
+[ext_resource type="Resource" uid="uid://bd4x7elt884pp" path="res://Resources/Overworld/Dialogue/Actors/whalema.tres" id="2_nop1a"]
+[ext_resource type="Resource" uid="uid://dwriatxrjmb2b" path="res://Resources/Utilities/Tags/default_emotion.tres" id="3_uutq0"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueScene.cs" id="4_55ry5"]
+[ext_resource type="Resource" uid="uid://b0p4c5j6gi1px" path="res://Resources/Utilities/Tags/sad_emotion.tres" id="5_327ly"]
+[ext_resource type="Resource" uid="uid://ddgdexvd8s0gs" path="res://Resources/Utilities/Tags/happy_emotion.tres" id="6_7f2ly"]
+
+[sub_resource type="Resource" id="Resource_pl88h"]
+script = ExtResource("4_55ry5")
+dialogue = "Hello, ocean!"
+emotion = ExtResource("3_uutq0")
+actor = ExtResource("2_nop1a")
+actorLocation = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_v4r7b"]
+script = ExtResource("4_55ry5")
+dialogue = "What's that? It's supposed to be \"Hello, world\"?"
+emotion = ExtResource("5_327ly")
+actor = ExtResource("2_nop1a")
+actorLocation = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_hnntr"]
+script = ExtResource("4_55ry5")
+dialogue = "What's a \"world\"?"
+emotion = ExtResource("6_7f2ly")
+actor = ExtResource("2_nop1a")
+actorLocation = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_65d0n")
+tree = Array[Object]([SubResource("Resource_pl88h"), SubResource("Resource_v4r7b"), SubResource("Resource_hnntr")])

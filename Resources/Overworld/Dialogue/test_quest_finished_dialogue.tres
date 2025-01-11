@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueTree" load_steps=7 format=3 uid="uid://cij5jb0jqx3oq"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueTree.cs" id="1_2srq2"]
+[ext_resource type="Resource" uid="uid://dan74vwixd5uq" path="res://Resources/Overworld/Dialogue/Actors/whalefred.tres" id="2_tow88"]
+[ext_resource type="Resource" uid="uid://ddgdexvd8s0gs" path="res://Resources/Utilities/Tags/happy_emotion.tres" id="3_i2o0j"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueScene.cs" id="4_cfjm3"]
+
+[sub_resource type="Resource" id="Resource_yik6x"]
+script = ExtResource("4_cfjm3")
+dialogue = "Wow, it's so much cleaner now!"
+emotion = ExtResource("3_i2o0j")
+actor = ExtResource("2_tow88")
+actorLocation = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_pmhsh"]
+script = ExtResource("4_cfjm3")
+dialogue = "If only more people were like you."
+emotion = ExtResource("3_i2o0j")
+actor = ExtResource("2_tow88")
+actorLocation = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_2srq2")
+tree = Array[Object]([SubResource("Resource_yik6x"), SubResource("Resource_pmhsh")])

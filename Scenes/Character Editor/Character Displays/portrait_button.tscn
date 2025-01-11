@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://beou0hywm4ebk"]
+
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="1_vdiid"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/Character Portraits/Displays/EditorPortraitDisplay.cs" id="1_xbit8"]
+[ext_resource type="Resource" uid="uid://ddy3pmdwpa5rj" path="res://Resources/UI/Portrait Boxes/portrait_border.tres" id="2_3nnn1"]
+[ext_resource type="Resource" uid="uid://150emt5bvsil" path="res://Resources/UI/Portrait Boxes/character_border.tres" id="3_humc8"]
+
+[node name="Portrait Button" type="Button" node_paths=PackedStringArray("display")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(190, 190)
+offset_right = 190.0
+offset_bottom = 190.0
+mouse_filter = 1
+script = ExtResource("1_xbit8")
+display = NodePath("Character")
+portraitBorder = ExtResource("2_3nnn1")
+characterBorder = ExtResource("3_humc8")
+
+[node name="Character" parent="." instance=ExtResource("1_vdiid")]
+scale = Vector2(1.583, 1.583)

@@ -4,32 +4,68 @@ using System.IO;
 
 public partial class ImageSaver : Node
 {
-    [Export] private Sprite2D spriteToEdit;
-    [Export] private Sprite2D secondSprite;
     private string path;
 
     public override void _Ready()
     {
-        GD.Print("Ready");
+        path = ProjectSettings.GlobalizePath("user://Images");
+        CreatePathIfDoesNotExist("user://Images");
+        CreatePathIfDoesNotExist("user://Portraits");
+        CreatePathIfDoesNotExist("user://Characters");
     }
+
+    private void CreatePathIfDoesNotExist(string relativePath)
+    {
+        string path = ProjectSettings.GlobalizePath(relativePath);
+        if (!Directory.Exists(path))
+        {
+            DirAccess.MakeDirRecursiveAbsolute(path);
+        }
+    }
+
+    public void SaveSpriteToFile(Node node)
+    {
+        if(node is Sprite2D)
+        {
+            var sprite = (Sprite2D)node;
+            var texture = sprite.Texture;
+            string filename = CreateFileName();
+            var newTexture = FileManager.SaveImage(texture);
+            var portrait = new CustomCharacterPortrait(newTexture);
+            FileManager.SavePortrait(portrait);
+        }
+    }
+
+
 
     public void SaveImage()
     {
-        path = "user://TestCharacter";
-        DirAccess.MakeDirRecursiveAbsolute(path);
-        GD.Print("Directory created");
-        spriteToEdit.Texture.GetImage().SavePng(path + "//test.png");
-        GD.Print("Saved image");
+        
     }
 
     public void LoadImage()
     {
-        path = "user://TestCharacter//test.png";
-        var image = Image.LoadFromFile(path);
-        var texture = ImageTexture.CreateFromImage(image);
-        spriteToEdit.Texture = texture;
-        secondSprite.Texture = texture;
-        GD.Print("Loaded image");
+
     }
 
+    public string CreateFileName()
+    {
+        var now = System.DateTime.Now;
+        var year = now.Year;
+        var month = now.Month;
+        var day = now.Day;
+        var hour = now.Hour;
+        var minute = now.Minute;
+        var seconds = now.Second;
+        var milliseconds = now.Millisecond;
+
+        string result = $"{year}-{month}-{day}_{hour}-{minute}-{seconds}-{milliseconds}.png";
+        //GD.Print("\n\n" + result + "\n\n");
+        if (File.Exists(result))
+        {
+            GD.PrintErr("File already exists!");
+        }
+
+        return result;
+    }
 }

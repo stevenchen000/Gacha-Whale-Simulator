@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogueTree" load_steps=10 format=3 uid="uid://d1ykfx2k01hwf"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueTree.cs" id="1_ugsf7"]
+[ext_resource type="Resource" uid="uid://dan74vwixd5uq" path="res://Resources/Overworld/Dialogue/Actors/whalefred.tres" id="2_tfp5b"]
+[ext_resource type="Resource" uid="uid://dwriatxrjmb2b" path="res://Resources/Utilities/Tags/default_emotion.tres" id="3_opqmr"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/DialogueScene.cs" id="4_hjeya"]
+[ext_resource type="Resource" uid="uid://ddgdexvd8s0gs" path="res://Resources/Utilities/Tags/happy_emotion.tres" id="5_6q0xq"]
+[ext_resource type="Resource" uid="uid://b0p4c5j6gi1px" path="res://Resources/Utilities/Tags/sad_emotion.tres" id="6_tlntj"]
+
+[sub_resource type="Resource" id="Resource_8sgw4"]
+script = ExtResource("4_hjeya")
+dialogue = "Hold it right there!"
+emotion = ExtResource("3_opqmr")
+actor = ExtResource("2_tfp5b")
+actorLocation = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_t0oyb"]
+script = ExtResource("4_hjeya")
+dialogue = "I see that you're a gachamon player, just like me."
+emotion = ExtResource("5_6q0xq")
+actor = ExtResource("2_tfp5b")
+actorLocation = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_5bejy"]
+script = ExtResource("4_hjeya")
+dialogue = "Let's have a battle!"
+emotion = ExtResource("6_tlntj")
+actor = ExtResource("2_tfp5b")
+actorLocation = Vector2(0, 0)
+
+[resource]
+script = ExtResource("1_ugsf7")
+tree = Array[Object]([SubResource("Resource_8sgw4"), SubResource("Resource_t0oyb"), SubResource("Resource_5bejy")])

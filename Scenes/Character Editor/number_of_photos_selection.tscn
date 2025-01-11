@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8euqy04igiyx"]
+[gd_scene load_steps=12 format=3 uid="uid://b8euqy04igiyx"]
 
-[ext_resource type="Script" path="res://Scripts/Character Creator/ImageImporter.gd" id="1_airpq"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/UI GDScript/ImageImporter.gd" id="1_airpq"]
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="2_xh6qk"]
+[ext_resource type="Script" path="res://Scripts/Character Creator/UI GDScript/media_permission_explanation_ui.gd" id="3_k8ck6"]
+[ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="4_k808q"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nhp0n"]
 
@@ -11,10 +13,28 @@ font_size = 50
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
-[node name="NumberOfPhotosSelection" type="Control"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_mrwnb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2tcsw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5720"]
+font_size = 50
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 13
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_04key"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0tmpe"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0.117082, 0.189605, 1, 1)
+
+[node name="NumberOfPhotosSelection" type="Control" node_paths=PackedStringArray("explanationUI")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_airpq")
+explanationUI = NodePath("Explanation UI")
 
 [node name="Background Button" type="Button" parent="."]
 self_modulate = Color(0, 0, 0, 0.839216)
@@ -78,8 +98,99 @@ Images"
 label_settings = SubResource("LabelSettings_hbkxc")
 horizontal_alignment = 1
 
+[node name="Explanation UI" type="Control" parent="." node_paths=PackedStringArray("importerUI")]
+anchors_preset = 0
+offset_left = 4034.0
+offset_top = 3948.0
+offset_right = 4074.0
+offset_bottom = 3988.0
+script = ExtResource("3_k8ck6")
+importerUI = NodePath("..")
+
+[node name="Explanation Background" type="TextureRect" parent="Explanation UI"]
+layout_mode = 0
+offset_left = -1212.0
+offset_top = -364.0
+offset_right = 2262.0
+offset_bottom = 2595.0
+
+[node name="Explanation UI" type="TextureRect" parent="Explanation UI"]
+self_modulate = Color(0.000380233, 0.306235, 0.943406, 1)
+layout_mode = 0
+offset_left = 92.0
+offset_top = 855.0
+offset_right = 1021.0
+offset_bottom = 1301.0
+texture = SubResource("CanvasTexture_mrwnb")
+
+[node name="TextureRect" type="TextureRect" parent="Explanation UI/Explanation UI"]
+self_modulate = Color(0.261678, 0.551268, 1, 1)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 915.0
+offset_bottom = 432.0
+texture = SubResource("CanvasTexture_2tcsw")
+
+[node name="Explanation Text" type="Label" parent="Explanation UI/Explanation UI/TextureRect"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 899.0
+offset_bottom = 363.0
+text = "Media access is needed to import pictures for creating characters. Please enable the permission in the app info."
+label_settings = SubResource("LabelSettings_l5720")
+autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Explanation UI/Explanation UI/TextureRect"]
+self_modulate = Color(0.0437918, 0.262254, 0.954058, 1)
+layout_mode = 0
+offset_left = 353.0
+offset_top = 306.0
+offset_right = 542.0
+offset_bottom = 400.0
+texture = ExtResource("4_k808q")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Explanation UI/Explanation UI/TextureRect"]
+self_modulate = Color(0.331772, 0.533254, 0.99371, 1)
+offset_left = 363.0
+offset_top = 316.0
+offset_right = 531.0
+offset_bottom = 389.0
+texture = ExtResource("4_k808q")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Button" type="Button" parent="Explanation UI/Explanation UI/TextureRect/NinePatchRect2"]
+self_modulate = Color(0.247059, 0.721569, 1, 0)
+layout_mode = 0
+offset_left = -5.0
+offset_top = -3.0
+offset_right = 173.0
+offset_bottom = 78.0
+text = "Okay"
+icon = SubResource("CanvasTexture_04key")
+
+[node name="Label" type="Label" parent="Explanation UI/Explanation UI/TextureRect/NinePatchRect2"]
+layout_mode = 0
+offset_left = 13.0
+offset_right = 151.0
+offset_bottom = 69.0
+text = "Okay"
+label_settings = SubResource("LabelSettings_0tmpe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="button_up" from="Background Button" to="." method="_make_invisible"]
 [connection signal="button_up" from="HBoxContainer/Single Image Button" to="." method="_import_image"]
 [connection signal="button_up" from="HBoxContainer/Single Image Button" to="." method="_make_invisible"]
 [connection signal="button_up" from="HBoxContainer/Multiple Images Button" to="." method="_import_multiple_images"]
 [connection signal="button_up" from="HBoxContainer/Multiple Images Button" to="." method="_make_invisible"]
+[connection signal="button_up" from="Explanation UI/Explanation UI/TextureRect/NinePatchRect2/Button" to="Explanation UI" method="_hide"]
+[connection signal="button_up" from="Explanation UI/Explanation UI/TextureRect/NinePatchRect2/Button" to="Explanation UI" method="_close_importer_ui"]

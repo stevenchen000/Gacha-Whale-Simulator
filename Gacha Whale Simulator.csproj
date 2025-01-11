@@ -6,4 +6,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>GachaWhaleSimulator</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\Character Creator\Characters\Skill Sets\" />
+  </ItemGroup>
 </Project>

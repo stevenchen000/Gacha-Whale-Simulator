@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cq4rs7rq6x6fc" path="res://Art Assets/Objects/Tin_Can.png" id="1_ggief"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger.cs" id="2_8sat3"]
-[ext_resource type="Resource" uid="uid://bx8hj7p3da86j" path="res://Resources/Trigger Effects/delete_object_trigger_effect.tres" id="3_keb1h"]
+[ext_resource type="Resource" uid="uid://bx8hj7p3da86j" path="res://Resources/Overworld/Trigger Effects/delete_object_trigger_effect.tres" id="3_keb1h"]
 [ext_resource type="Resource" uid="uid://3t581paqpkcl" path="res://Resources/Items/cans.tres" id="4_5nw6u"]
 [ext_resource type="Script" path="res://Scripts/Overworld Scripts/Triggers/Trigger Effects/AddItemTriggerEffect.cs" id="5_dfniw"]
 

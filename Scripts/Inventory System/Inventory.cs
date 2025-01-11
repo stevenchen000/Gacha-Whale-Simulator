@@ -108,7 +108,7 @@ namespace InventorySystem
         private void RaiseEvent(ItemResource item, int newAmount, int change, bool addedItem)
         {
             var eventData = new InventoryChangeData(item, change, newAmount, addedItem);
-            OnInventoryChange.RaiseEvent(eventData);
+            OnInventoryChange.RaiseEvent(this, eventData);
             
         }
 

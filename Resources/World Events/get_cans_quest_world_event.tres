@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="WorldEffectGiveQuest" load_steps=3 format=3 uid="uid://dduk6k6n62t6a"]
-
-[ext_resource type="Script" path="res://Scripts/Overworld Scripts/World Events/Custom World Events/WorldEffectGiveQuest.cs" id="1_36phq"]
-[ext_resource type="Resource" uid="uid://3upvmrfs45vb" path="res://Resources/Quests/can_quest.tres" id="1_on70o"]
-
-[resource]
-script = ExtResource("1_36phq")
-quest = ExtResource("1_on70o")
-description = ""

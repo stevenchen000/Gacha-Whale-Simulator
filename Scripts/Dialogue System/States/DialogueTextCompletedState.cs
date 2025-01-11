@@ -32,7 +32,7 @@ namespace DialogueSystem
                     dialogue.EndDialogue();
 
                     GD.Print(dialogueTree.ResourceName);
-                    OnDialogueEnd?.RaiseEvent(dialogueTree);
+                    OnDialogueEnd?.RaiseEvent(this,dialogueTree);
                 }
                 else
                 {

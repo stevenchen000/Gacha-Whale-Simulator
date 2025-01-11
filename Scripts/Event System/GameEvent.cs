@@ -1,5 +1,5 @@
 using Godot;
-using System;
+using System.IO;
 
 namespace EventSystem{ 
     public partial class GameEvent<T> : Resource
@@ -9,13 +9,17 @@ namespace EventSystem{
         [Export] protected string description;
         [Export] protected bool debug = false;
 
-        public void RaiseEvent(T parameter)
+        public void RaiseEvent(Node node, T parameter)
         {
-            if(OnEvent != null)
+            if (debug)
+            {
+                string filename = Path.GetFileNameWithoutExtension(ResourcePath);
+                GodotHelper.Print(node, $"{filename} was called");
+            }
+            if (OnEvent != null)
             {
                 OnEvent(parameter);
             }
-            if (debug) GD.Print($"{ResourcePath.TrimSuffix(".tres")} was called");
         }
 
         public void SubscribeEvent(EventDelegate func)

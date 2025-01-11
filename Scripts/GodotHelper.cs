@@ -24,4 +24,32 @@ public class GodotHelper
         var texture = ImageTexture.CreateFromImage(image);
         return texture;
     }
+
+    public static void Print(Node node, object message)
+    {
+        GD.Print($"{node.GetType()}: \n\t{message}");
+    }
+
+    public static T FindParentOfType<T>(Node node) where T : Node
+    {
+        T result = null;
+        var currNode = node;
+
+        while(result == null)
+        {
+            var parent = currNode.GetParent();
+            if(parent == null)
+            {
+                break;
+            }
+            else if(parent is T)
+            {
+                result = (T)parent;
+                break;
+            }
+            currNode = parent;
+        }
+
+        return result;
+    }
 }

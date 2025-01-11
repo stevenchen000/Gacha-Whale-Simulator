@@ -59,7 +59,7 @@ public partial class SceneManager : Node
 		var sceneNode = scene.Instantiate();
 		instance.RemoveAllNodes();
 		instance.AddNode(sceneNode);
-		OnSceneLoad?.RaiseEvent();
+		OnSceneLoad?.RaiseEvent(this);
 	}
 
 	public static void LoadScene(string path)

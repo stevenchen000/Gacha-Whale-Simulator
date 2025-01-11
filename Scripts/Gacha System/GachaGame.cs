@@ -71,7 +71,7 @@ namespace GachaSystem{
 
         public GachaCharacter PullRandomCharacter(){
             var character = currentBanner.PullRandomCharacter(allCharacters);
-            OnCharacterPulled.RaiseEvent(character);
+            OnCharacterPulled.RaiseEvent(this, character);
 
             return character;
         }
@@ -90,7 +90,7 @@ namespace GachaSystem{
             }
 
             if(OnAccountListUpdated != null)
-                OnAccountListUpdated.RaiseEvent();
+                OnAccountListUpdated.RaiseEvent(this);
         }
 
         public GachaCharacterData GetDataIfCharacterOwned(GachaCharacter character)

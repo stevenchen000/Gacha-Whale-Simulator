@@ -1,22 +1,13 @@
+res://Scenes/Character Editor/Menus
+res://Scenes/Character Editor/Character Displays
+res://Resources/UI/Portrait Boxes
+res://Resources
 res://Scenes/Character Editor
-res://Resources/Skills/Elements
 C:/Users/chens/Documents/Godot
 C:/Program Files/Android
 C:/Program Files/Eclipse Adoptium
 C:/Android
-res://Resources/Dialogue/Character Dialogue Pickers
-res://Resources/Dialogue
-res://Resources/Quests
-res://Resources/World Events
-res://Resources/Events/Inventory Events
 res://Resources/Items
-res://Resources/Trigger Effects
 res://Scenes
-res://Resources/Events/Time Events
-res://Resources/Events/Player Events
-res://Resources/Events/Dialogue Events
 res://Scripts/Dialogue System/States
 res://Resources/Gacha Game Data/Currencies
-res://Resources/Tags
-res://Resources/Dialogue/Actors
-res://Resources/Events

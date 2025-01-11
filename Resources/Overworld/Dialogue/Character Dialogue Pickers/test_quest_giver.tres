@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="DialoguePicker" load_steps=15 format=3 uid="uid://xj8vhlgi0fvt"]
+
+[ext_resource type="Resource" uid="uid://3upvmrfs45vb" path="res://Resources/Overworld/Quests/can_quest.tres" id="1_gompf"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/Dialogue Picker/DialoguePicker.cs" id="1_rftr3"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionHasQuest.cs" id="2_11dic"]
+[ext_resource type="Resource" uid="uid://x1st2gj86p70" path="res://Resources/Overworld/Dialogue/test_quest_dialogue.tres" id="3_14xwp"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/Dialogue Picker/DialogueAndCondition.cs" id="4_nqj8n"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionQuestFinished.cs" id="5_mvcaw"]
+[ext_resource type="Resource" uid="uid://ca1wbxwv25omg" path="res://Resources/Overworld/Dialogue/test_quest_not_finished_dialogue.tres" id="6_7oc5f"]
+[ext_resource type="Resource" uid="uid://cij5jb0jqx3oq" path="res://Resources/Overworld/Dialogue/test_quest_finished_dialogue.tres" id="7_p4r8u"]
+
+[sub_resource type="Resource" id="Resource_sj6q5"]
+script = ExtResource("2_11dic")
+quest = ExtResource("1_gompf")
+oppositeCondition = true
+
+[sub_resource type="Resource" id="Resource_2slej"]
+script = ExtResource("4_nqj8n")
+dialogue = ExtResource("3_14xwp")
+conditions = Array[Resource]([SubResource("Resource_sj6q5")])
+
+[sub_resource type="Resource" id="Resource_t2o58"]
+script = ExtResource("5_mvcaw")
+quest = ExtResource("1_gompf")
+oppositeCondition = true
+
+[sub_resource type="Resource" id="Resource_mmt42"]
+script = ExtResource("4_nqj8n")
+dialogue = ExtResource("6_7oc5f")
+conditions = Array[Resource]([SubResource("Resource_t2o58")])
+
+[sub_resource type="Resource" id="Resource_e4731"]
+script = ExtResource("5_mvcaw")
+quest = ExtResource("1_gompf")
+oppositeCondition = false
+
+[sub_resource type="Resource" id="Resource_wswxj"]
+script = ExtResource("4_nqj8n")
+dialogue = ExtResource("7_p4r8u")
+conditions = Array[Resource]([SubResource("Resource_e4731")])
+
+[resource]
+script = ExtResource("1_rftr3")
+dialogueList = Array[Object]([SubResource("Resource_2slej"), SubResource("Resource_mmt42"), SubResource("Resource_wswxj")])

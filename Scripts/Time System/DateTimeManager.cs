@@ -30,7 +30,7 @@ public partial class DateTimeManager : Node
         IncrementTime(hours * 60 + minutes);
         seconds = 0;
         timeData.SetNewTime(day, hour, minute);
-        OnTimeSkipped?.RaiseEvent(timeData);
+        OnTimeSkipped?.RaiseEvent(this,timeData);
     }
 
     public void SkipToTime(int newHour, int newMinute)
@@ -39,7 +39,7 @@ public partial class DateTimeManager : Node
         timeData.SetPrevTime(day, hour, minute);
         SetTimeTo(newHour, newMinute);
         timeData.SetNewTime(day, hour, minute);
-        OnTimeSkipped?.RaiseEvent(timeData);
+        OnTimeSkipped?.RaiseEvent(this,timeData);
     }
 
     public void SpeedupTime()
@@ -74,7 +74,7 @@ public partial class DateTimeManager : Node
             timeData.SetPrevTime(day, hour, minute);
             IncrementTime(minutesPerUpdate);
             timeData.SetNewTime(day, hour, minute);
-            OnTimeUpdate?.RaiseEvent(timeData);
+            OnTimeUpdate?.RaiseEvent(this,timeData);
         }
     }
 

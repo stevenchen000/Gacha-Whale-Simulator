@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://denrkd823yp0d"]
 
 [ext_resource type="Script" path="res://Scripts/Scene Manager/SceneManager.cs" id="1_c15ao"]
-[ext_resource type="Resource" uid="uid://b05f45vitglph" path="res://Resources/Events/Load Screen Events/OnFadeOutFinished.tres" id="3_40kel"]
+[ext_resource type="Resource" uid="uid://b05f45vitglph" path="res://Resources/Utilities/Events/Load Screen Events/OnFadeOutFinished.tres" id="3_40kel"]
 [ext_resource type="Script" path="res://Scripts/Scene Manager/LoadScreen.cs" id="4_f2nut"]
-[ext_resource type="Resource" uid="uid://ciqnn2r7ohuhm" path="res://Resources/Events/Load Screen Events/OnFadeOutStarted.tres" id="5_nc5br"]
-[ext_resource type="Resource" uid="uid://bxm0n3yf7s5du" path="res://Resources/Events/Load Screen Events/OnFadeInStarted.tres" id="6_pclxh"]
-[ext_resource type="Resource" uid="uid://taecbqpnrvvr" path="res://Resources/Events/Load Screen Events/OnFadeInFinished.tres" id="7_cuttu"]
-[ext_resource type="Resource" uid="uid://bv8d1vsuuw2b5" path="res://Resources/Events/Load Screen Events/OnSceneLoad.tres" id="8_du7bo"]
+[ext_resource type="Resource" uid="uid://ciqnn2r7ohuhm" path="res://Resources/Utilities/Events/Load Screen Events/OnFadeOutStarted.tres" id="5_nc5br"]
+[ext_resource type="Resource" uid="uid://bxm0n3yf7s5du" path="res://Resources/Utilities/Events/Load Screen Events/OnFadeInStarted.tres" id="6_pclxh"]
+[ext_resource type="Resource" uid="uid://taecbqpnrvvr" path="res://Resources/Utilities/Events/Load Screen Events/OnFadeInFinished.tres" id="7_cuttu"]
+[ext_resource type="Resource" uid="uid://bv8d1vsuuw2b5" path="res://Resources/Utilities/Events/Load Screen Events/OnSceneLoad.tres" id="8_du7bo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_41ro7"]
 

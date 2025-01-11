@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialoguePickerQuest" load_steps=6 format=3 uid="uid://dmqviiygl20kj"]
+
+[ext_resource type="Resource" uid="uid://3upvmrfs45vb" path="res://Resources/Overworld/Quests/can_quest.tres" id="1_2jhyv"]
+[ext_resource type="Script" path="res://Scripts/Dialogue System/Dialogue Picker/Custom Dialogue Picker/DialoguePickerQuest.cs" id="1_fy4hy"]
+[ext_resource type="Resource" uid="uid://x1st2gj86p70" path="res://Resources/Overworld/Dialogue/test_quest_dialogue.tres" id="2_3xk3r"]
+[ext_resource type="Resource" uid="uid://cij5jb0jqx3oq" path="res://Resources/Overworld/Dialogue/test_quest_finished_dialogue.tres" id="3_ymefy"]
+[ext_resource type="Resource" uid="uid://ca1wbxwv25omg" path="res://Resources/Overworld/Dialogue/test_quest_not_finished_dialogue.tres" id="4_urn31"]
+
+[resource]
+script = ExtResource("1_fy4hy")
+quest = ExtResource("1_2jhyv")
+questFlag = "can_quest_finished"
+questDialogue = ExtResource("2_3xk3r")
+questNotFinishedDialogue = ExtResource("4_urn31")
+questFinishedDialogue = ExtResource("3_ymefy")
+dialogueList = null

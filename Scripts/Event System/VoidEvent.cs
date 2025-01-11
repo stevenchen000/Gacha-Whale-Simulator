@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.IO;
 
 namespace EventSystem
 {
@@ -11,13 +12,17 @@ namespace EventSystem
         [Export] private string description;
         [Export] private bool debug = false;
 
-        public void RaiseEvent()
+        public void RaiseEvent(Node node)
         {
+            if (debug)
+            {
+                string filename = Path.GetFileNameWithoutExtension(ResourcePath);
+                GodotHelper.Print(node, $"{filename} was called");
+            }
             if (OnEvent != null)
             {
                 OnEvent();
             }
-            if (debug) GD.Print($"{ResourcePath.TrimSuffix(".tres")} was called");
         }
 
         public void SubscribeEvent(EventDelegate func)

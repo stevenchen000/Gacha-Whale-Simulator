@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ewr1v1e4tbpp" path="res://Art Assets/Textbox/Blue Box.png" id="2_v0r26"]
 [ext_resource type="Texture2D" uid="uid://ckthnfqactwlq" path="res://Art Assets/Portrait Circle/Avatar Circle Border.png" id="4_g4sk3"]
 [ext_resource type="Script" path="res://Scripts/Dialogue System/States/DialogueInactiveState.cs" id="6_f1cts"]
-[ext_resource type="Resource" uid="uid://kispt6u5xvkx" path="res://Resources/Events/Dialogue Events/OnDialogueStart.tres" id="7_bfap3"]
+[ext_resource type="Resource" uid="uid://kispt6u5xvkx" path="res://Resources/Utilities/Events/Dialogue Events/OnDialogueStart.tres" id="7_bfap3"]
 [ext_resource type="Script" path="res://Scripts/Dialogue System/States/DialogueActivatingState.cs" id="8_ge88j"]
 [ext_resource type="Script" path="res://Scripts/Dialogue System/States/DialogueTextUpdatingState.cs" id="11_y6i67"]
-[ext_resource type="Resource" uid="uid://ccvcce25eqkfb" path="res://Resources/Events/Dialogue Events/OnDialogueEnd.tres" id="11_y832n"]
+[ext_resource type="Resource" uid="uid://ccvcce25eqkfb" path="res://Resources/Utilities/Events/Dialogue Events/OnDialogueEnd.tres" id="11_y832n"]
 [ext_resource type="Script" path="res://Scripts/Dialogue System/States/DialogueTextCompletedState.cs" id="12_61and"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jakdi"]

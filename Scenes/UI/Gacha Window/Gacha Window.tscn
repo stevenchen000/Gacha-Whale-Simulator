@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs" id="1_vbyk4"]
 [ext_resource type="PackedScene" uid="uid://dqircsi2jaxqm" path="res://Scenes/UI/Gacha Window/Window Elements/gacha_display_row.tscn" id="2_mwijw"]
-[ext_resource type="Resource" uid="uid://bkll23l0c6di4" path="res://Resources/Events/OnCharacterListUpdated.tres" id="2_veip7"]
+[ext_resource type="Resource" uid="uid://bkll23l0c6di4" path="res://Resources/Utilities/Events/OnCharacterListUpdated.tres" id="2_veip7"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ikcno"]
 

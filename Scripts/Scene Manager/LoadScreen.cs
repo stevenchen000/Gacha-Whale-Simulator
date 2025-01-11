@@ -79,18 +79,18 @@ public partial class LoadScreen : Node
         switch (newState)
         {
             case LoadScreenState.FADING_OUT:
-                OnFadeOutStarted?.RaiseEvent();
+                OnFadeOutStarted?.RaiseEvent(this);
                 break;
             case LoadScreenState.FADING_IN:
-                OnFadeInStarted?.RaiseEvent();
+                OnFadeInStarted?.RaiseEvent(this);
                 break;
             case LoadScreenState.LOADING_SCENE:
-                OnFadeOutFinished?.RaiseEvent();
+                OnFadeOutFinished?.RaiseEvent(this);
                 SetScreenColor(loadScreenColor);
                 transitionTimer = 0;
                 break;
             case LoadScreenState.INACTIVE:
-                OnFadeInFinished?.RaiseEvent();
+                OnFadeInFinished?.RaiseEvent(this);
                 SetScreenColor(loadScreenDisabledColor);
                 transitionTimer = 0;
                 break;

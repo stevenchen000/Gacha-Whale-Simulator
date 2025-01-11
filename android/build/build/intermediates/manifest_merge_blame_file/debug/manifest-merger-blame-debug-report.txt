@@ -27,36 +27,36 @@
 20        android:required="true" />
 20-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:16:9-32
 21
-22    <uses-permission android:name="android.permission.CAMERA" />
-22-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:11:5-65
-22-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:11:22-62
-23    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-23-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:12:5-80
-23-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:12:22-77
-24    <uses-permission android:name="android.permission.INTERNET" />
-24-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:13:5-67
-24-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:13:22-64
-25
-26    <uses-feature
-26-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:5-132
-27        android:name="android.hardware.vulkan.level"
-27-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:40-84
-28        android:required="false"
-28-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:85-109
-29        android:version="1" />
-29-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:110-129
-30    <uses-feature
-30-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:15:5-140
-31        android:name="android.hardware.vulkan.version"
-31-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:15:40-86
-32        android:required="true"
-32-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:15:87-110
-33        android:version="0x400003" />
-33-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:15:111-137
-34
-35    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-35-->[GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:8:5-76
-35-->[GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:8:22-73
+22    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+22-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:11:5-80
+22-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:11:22-77
+23    <uses-permission android:name="android.permission.INTERNET" />
+23-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:12:5-67
+23-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:12:22-64
+24
+25    <uses-feature
+25-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:13:5-132
+26        android:name="android.hardware.vulkan.level"
+26-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:13:40-84
+27        android:required="false"
+27-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:13:85-109
+28        android:version="1" />
+28-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:13:110-129
+29    <uses-feature
+29-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:5-140
+30        android:name="android.hardware.vulkan.version"
+30-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:40-86
+31        android:required="true"
+31-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:87-110
+32        android:version="0x400003" />
+32-->C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:14:111-137
+33
+34    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+34-->[GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:8:5-76
+34-->[GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:8:22-73
+35    <uses-permission android:name="android.permission.CAMERA" />
+35-->[GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:9:5-65
+35-->[GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:9:22-62
 36
 37    <uses-feature
 37-->[GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:11:5-13:35

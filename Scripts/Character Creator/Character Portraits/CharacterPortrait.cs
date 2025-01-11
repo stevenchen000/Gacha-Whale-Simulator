@@ -1,45 +1,78 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.IO;
 
 [GlobalClass]
 public partial class CharacterPortrait : Resource
 {
     [Export] private Texture2D portrait;
-    [Export] private string filename = "";
-    [Export] private bool customFile = false;
-    [Export] private Vector2 startArea;
-    [Export] private float size = 0;
+    [Export] public Vector2 startArea;
+    [Export] public float size = 0;
+
+    public CharacterPortrait()
+    {
+
+    }
+
+
+    /****************
+     * Getters/Setters
+    *****************/
+
+    public virtual Texture2D GetPortrait()
+    {
+        return portrait;
+    }
+
+
+
+
+
+
+    
+
 
     public void SetupPortrait(Control box, Sprite2D spriteElement, float borderSize = 0)
     {
-        var size = box.Size;
-
+        spriteElement.Texture = GetPortrait();
+        UpdatePortrait(box, spriteElement, borderSize);
     }
 
     public void UpdatePortrait(Control box, Sprite2D spriteElement, float borderSize = 0)
     {
-        if(portrait == null)
-        {
-            //Try to load portrait file
-            LoadPortrait();
-        }
-
-        if (portrait != null)
+        if (GetPortrait() != null)
         {
             float previewSize = box.Size.X - borderSize * 2;
-            float sizeScale = previewSize / size;
-            spriteElement.Scale = new Vector2(sizeScale, sizeScale);
-            var newPos = ConvertUIPosToSpritePos(box, sizeScale, borderSize);
 
-            spriteElement.Position = newPos;
-            //first scale portrait so that the cropped area matches the new area
-            //convert startPos and size into an offset
-            //position + half of size to shift anchor of UI element to center
-            //multiply result by size scale from earlier
-            //Take half the size of the new box to show the image in and subtract the
-            //converted position to get the new offset
-            //scale of the box is irrelevant, so easy to manage
+            if (size != 0)
+            {
+                float sizeScale = previewSize / size;
+                spriteElement.Scale = new Vector2(sizeScale, sizeScale);
+                var newPos = ConvertUIPosToSpritePos(box, sizeScale, borderSize);
+
+                spriteElement.Position = newPos;
+                //first scale portrait so that the cropped area matches the new area
+                //convert startPos and size into an offset
+                //position + half of size to shift anchor of UI element to center
+                //multiply result by size scale from earlier
+                //Take half the size of the new box to show the image in and subtract the
+                //converted position to get the new offset
+                //scale of the box is irrelevant, so easy to manage
+            }
+            else
+            {
+                float textureX = GetPortrait().GetSize().X;
+                float textureY = GetPortrait().GetSize().Y;
+                float maxSize = MathF.Max(textureX, textureY);
+                float sizeScale = previewSize / maxSize;
+                spriteElement.Position = box.Size / 2;
+                spriteElement.Scale = new Vector2(sizeScale, sizeScale);
+            }
+        }
+        else
+        {
+            spriteElement.Texture = null;
         }
     }
 
@@ -50,8 +83,4 @@ public partial class CharacterPortrait : Resource
         return boxSize / 2 - (startArea + cropBoxOffset) * sizeScale;
     }
 
-    private void LoadPortrait()
-    {
-        GD.Print("LoadPortrait() in CharacterPortrait.cs has not been implemented");
-    }
 }

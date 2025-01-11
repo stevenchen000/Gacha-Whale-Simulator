@@ -6,7 +6,7 @@ namespace CombatSystem
     [GlobalClass]
     public partial class Element : Resource
     {
-        [Export] private string name;
-        [Export] private Texture2D icon;
+        [Export] private string Name;
+        [Export] private Texture2D Texture;
     }
 }

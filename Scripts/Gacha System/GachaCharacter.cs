@@ -6,7 +6,7 @@ namespace GachaSystem{
     public partial class GachaCharacter : Resource
     {
         [Export] public string characterName;
-        [Export] private string title;
+        [Export] public string title; //used for variant
         [Export] public CharacterPortrait portrait;
     }
 }
