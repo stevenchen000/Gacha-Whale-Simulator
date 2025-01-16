@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr2qhdqndnhyv"]
+[gd_scene load_steps=12 format=3 uid="uid://cr2qhdqndnhyv"]
 
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/PortraitEditorMenu.cs" id="1_qcped"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/ImageCropper.cs" id="1_wcu8w"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorIdleState.cs" id="2_npyh6"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorCropState.cs" id="3_7ow0t"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorAdjustCropState.cs" id="4_hfi4h"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/PortraitEditorMenu.cs" id="1_qcped"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/ImageCropper.cs" id="1_wcu8w"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorIdleState.cs" id="2_npyh6"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorCropState.cs" id="3_7ow0t"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorAdjustCropState.cs" id="4_hfi4h"]
 [ext_resource type="Texture2D" uid="uid://wdgy25x7fcji" path="res://Art Assets/Placeholder Characters/Waifus/Aranea.png" id="5_1e3mk"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/TouchHandler.cs" id="6_b2aec"]
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="7_26bvy"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/CameraController.cs" id="8_dh4da"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/CameraController.cs" id="8_dh4da"]
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="8_ptrib"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tcckp"]
@@ -40,7 +39,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 90
 text = "Save"
 
-[node name="Image Cropper" type="Node2D" parent="." node_paths=PackedStringArray("spriteToEdit", "secondSprite", "cropBox", "cropCover", "cropStartCorner", "cropEndCorner", "cam", "preview", "touches")]
+[node name="Image Cropper" type="Node2D" parent="." node_paths=PackedStringArray("spriteToEdit", "secondSprite", "cropBox", "cropCover", "cropStartCorner", "cropEndCorner", "cam", "preview")]
 script = ExtResource("1_wcu8w")
 spriteToEdit = NodePath("../Sprite To Edit")
 secondSprite = NodePath("../Cropper/Crop Box/Second Sprite")
@@ -50,13 +49,13 @@ cropStartCorner = NodePath("../Cropper/Start Corner")
 cropEndCorner = NodePath("../Cropper/End Corner")
 cam = NodePath("../Camera2D")
 preview = NodePath("../====Preview=====/Character")
-touches = NodePath("../Touch Handler")
 
 [node name="States" type="Node2D" parent="Image Cropper"]
 
-[node name="Idle State" type="Node2D" parent="Image Cropper/States" node_paths=PackedStringArray("cropState")]
+[node name="Idle State" type="Node2D" parent="Image Cropper/States" node_paths=PackedStringArray("cropState", "adjustCropState")]
 script = ExtResource("2_npyh6")
 cropState = NodePath("../Initial Crop State")
+adjustCropState = NodePath("../Adjust Crop State")
 IsInitialState = true
 
 [node name="Initial Crop State" type="Node2D" parent="Image Cropper/States" node_paths=PackedStringArray("spriteToEdit", "adjustState")]
@@ -70,9 +69,6 @@ spriteToEdit = NodePath("../../../Sprite To Edit")
 cropBox = NodePath("../../../Cropper/Crop Box")
 idleState = NodePath("../Idle State")
 cropState = NodePath("../Initial Crop State")
-
-[node name="Touch Handler" type="Node2D" parent="."]
-script = ExtResource("6_b2aec")
 
 [node name="=====Background====" type="CanvasLayer" parent="."]
 
@@ -96,6 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Crop Cover" type="TextureRect" parent="Cropper"]
+visible = false
 self_modulate = Color(0, 0, 0, 0.623529)
 layout_mode = 1
 anchors_preset = 8

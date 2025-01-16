@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bucspuw6nymcd"]
+
+[ext_resource type="Script" path="res://Scripts/Combat System/Grid/GridSpace.cs" id="1_tvxqq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c2g2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbl0y"]
+size = Vector2(188, 190)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5lym7"]
+
+[node name="Battle Space" type="Node2D" node_paths=PackedStringArray("colliderSprite", "spaceSprite")]
+modulate = Color(0.250899, 0.352187, 0.635431, 0.486275)
+position = Vector2(168, 356)
+script = ExtResource("1_tvxqq")
+defaultColor = Color(0.380392, 0.380392, 0.380392, 0.537255)
+allyColor = Color(0.0701451, 0.307947, 1, 0.635294)
+allyAttackColor = Color(0.611761, 0.172918, 0.692959, 0.909804)
+allyCurrentTileColor = Color(0.227451, 0.45098, 1, 1)
+enemyColor = Color(0.588235, 0, 0, 0.67451)
+colliderSprite = NodePath("ColliderSprite")
+spaceSprite = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(190, 190)
+texture = SubResource("CanvasTexture_c2g2s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_bbl0y")
+
+[node name="ColliderSprite" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.714271, 0.000389282, 0.714266, 1)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CanvasTexture_5lym7")

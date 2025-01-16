@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://d03a0qxnl7jjs"]
+
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterNameField.cs" id="1_503aw"]
+
+[node name="Name Field" type="Control" node_paths=PackedStringArray("textField")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_503aw")
+textField = NodePath("Character Name Text")
+
+[node name="Character Name Text" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 199.0
+offset_right = 912.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 90
+placeholder_text = "Character Name"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 52.0
+offset_right = 971.0
+offset_bottom = 162.0
+theme_override_font_sizes/font_size = 80
+text = "Enter Character Name:"

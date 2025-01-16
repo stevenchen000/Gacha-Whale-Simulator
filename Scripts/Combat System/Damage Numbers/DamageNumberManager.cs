@@ -39,7 +39,7 @@ namespace CombatSystem
 
         private static DamageNumber CreateCopy(int damage)
         {
-            var result = (DamageNumber)GodotHelper.InstantiateCopy(instance.scene);
+            var result = (DamageNumber)Utils.InstantiateCopy(instance.scene);
             result.SetValue(damage);
             return result;
         }

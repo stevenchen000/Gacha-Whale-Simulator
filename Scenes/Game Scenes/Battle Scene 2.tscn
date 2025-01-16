@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://8ssh07hfd56t"]
+
+[ext_resource type="Script" path="res://Scripts/Combat System/BattleManager.cs" id="1_w405p"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs" id="2_s8eow"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Grid/BattleGrid.cs" id="2_tbgor"]
+[ext_resource type="PackedScene" uid="uid://bucspuw6nymcd" path="res://Scenes/Battle/battle_space_square.tscn" id="3_binbm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ija6g"]
+
+[node name="BattleScene" type="Control" node_paths=PackedStringArray("playerParty", "enemyParty", "grid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w405p")
+playerParty = [null]
+enemyParty = []
+grid = NodePath("Grid")
+playerStartingPositions = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)])
+
+[node name="Touch Handler" type="Node2D" parent="."]
+script = ExtResource("2_s8eow")
+
+[node name="Grid" type="Node2D" parent="."]
+position = Vector2(76, 204)
+script = ExtResource("2_tbgor")
+spaceScene = ExtResource("3_binbm")
+startingPoint = Vector2(110, 0)
+horizontalOffset = Vector2(200, 0)
+verticalOffset = Vector2(0, 200)
+horizontalGrids = 4
+verticalGrids = 6
+
+[node name="====Skills====" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="====Skills===="]
+modulate = Color(0.230315, 0.230315, 0.230315, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -723.0
+offset_top = -345.0
+offset_right = 723.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_ija6g")
+
+[node name="Skills" type="HBoxContainer" parent="====Skills===="]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -495.0
+offset_top = -300.0
+offset_right = 495.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="Skill 1" type="Button" parent="====Skills====/Skills"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Skill 2" type="Button" parent="====Skills====/Skills"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Skill 3" type="Button" parent="====Skills====/Skills"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Ultimate Skill" type="Button" parent="====Skills====/Skills"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2

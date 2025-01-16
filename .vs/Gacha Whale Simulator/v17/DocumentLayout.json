@@ -3,8 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\godot\\gacha-whale-simulator\\scripts\\character creator\\character portraits\\displays\\editorportraitdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\character creator\\character portraits\\displays\\editorportraitdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\CharacterCreatorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Game Menu\\Character Creator\\CharacterCreatorManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Image Manager\\FileManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Game Menu\\Character Creator\\Image Manager\\FileManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\godot\\gacha-whale-simulator\\gacha whale simulator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:gacha whale simulator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Combat System\\BattleManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\CharacterGridManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Game Menu\\Character Creator\\CharacterGridManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleCharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Combat System\\BattleCharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Menus\\SelectionMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Game Menu\\Character Creator\\Menus\\SelectionMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Menus\\Portrait Editor\\PortraitEditorMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Game Menu\\Character Creator\\Menus\\Portrait Editor\\PortraitEditorMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\UI\\BattleSkillButton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Combat System\\UI\\BattleSkillButton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Grid\\GridSpace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Combat System\\Grid\\GridSpace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Grid\\BattleGrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Combat System\\Grid\\BattleGrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\MainGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Game Menu\\MainGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\GameState.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\GameState.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\GameMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Game Menu\\GameMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +66,190 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditorPortraitDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Character Creator\\Character Portraits\\Displays\\EditorPortraitDisplay.cs",
-              "RelativeDocumentMoniker": "Scripts\\Character Creator\\Character Portraits\\Displays\\EditorPortraitDisplay.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Character Creator\\Character Portraits\\Displays\\EditorPortraitDisplay.cs",
-              "RelativeToolTip": "Scripts\\Character Creator\\Character Portraits\\Displays\\EditorPortraitDisplay.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDEAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BattleManager.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat System\\BattleManager.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleManager.cs",
+              "RelativeToolTip": "Scripts\\Combat System\\BattleManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T13:36:41.023Z",
+              "WhenOpened": "2025-01-14T03:08:02.29Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BattleCharacter.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleCharacter.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat System\\BattleCharacter.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleCharacter.cs",
+              "RelativeToolTip": "Scripts\\Combat System\\BattleCharacter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T05:51:10.454Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Gacha Whale Simulator",
+              "DocumentMoniker": "C:\\USERS\\CHENS\\DOCUMENTS\\GODOT\\GACHA-WHALE-SIMULATOR\\Gacha Whale Simulator.csproj",
+              "RelativeDocumentMoniker": "Gacha Whale Simulator.csproj",
+              "ToolTip": "C:\\USERS\\CHENS\\DOCUMENTS\\GODOT\\GACHA-WHALE-SIMULATOR\\Gacha Whale Simulator.csproj",
+              "RelativeToolTip": "Gacha Whale Simulator.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-16T13:48:27.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FileManager.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Image Manager\\FileManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Character Creator\\Image Manager\\FileManager.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Image Manager\\FileManager.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Character Creator\\Image Manager\\FileManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T13:27:38.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CharacterCreatorManager.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\CharacterCreatorManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Character Creator\\CharacterCreatorManager.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\CharacterCreatorManager.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Character Creator\\CharacterCreatorManager.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAwA4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T13:24:08.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SelectionMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Menus\\SelectionMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Character Creator\\Menus\\SelectionMenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Menus\\SelectionMenu.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Character Creator\\Menus\\SelectionMenu.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T13:18:54.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PortraitEditorMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Menus\\Portrait Editor\\PortraitEditorMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Character Creator\\Menus\\Portrait Editor\\PortraitEditorMenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Menus\\Portrait Editor\\PortraitEditorMenu.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Character Creator\\Menus\\Portrait Editor\\PortraitEditorMenu.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwAcAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T15:28:11.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CharacterGridManager.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\CharacterGridManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Character Creator\\CharacterGridManager.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\CharacterGridManager.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Character Creator\\CharacterGridManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T09:21:02.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BattleSkillButton.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\UI\\BattleSkillButton.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat System\\UI\\BattleSkillButton.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\UI\\BattleSkillButton.cs",
+              "RelativeToolTip": "Scripts\\Combat System\\UI\\BattleSkillButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T05:40:39.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GridSpace.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Grid\\GridSpace.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat System\\Grid\\GridSpace.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Grid\\GridSpace.cs",
+              "RelativeToolTip": "Scripts\\Combat System\\Grid\\GridSpace.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T04:09:44.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BattleGrid.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Grid\\BattleGrid.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat System\\Grid\\BattleGrid.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Grid\\BattleGrid.cs",
+              "RelativeToolTip": "Scripts\\Combat System\\Grid\\BattleGrid.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T21:12:20.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainGame.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\MainGame.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\MainGame.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\MainGame.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\MainGame.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T20:50:47.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\GameState.cs",
+              "RelativeDocumentMoniker": "Scripts\\GameState.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\GameState.cs",
+              "RelativeToolTip": "Scripts\\GameState.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T04:06:16.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GameMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\GameMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\GameMenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\GameMenu.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\GameMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T04:05:03.374Z",
               "EditorCaption": ""
             }
           ]

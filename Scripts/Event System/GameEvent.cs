@@ -14,7 +14,7 @@ namespace EventSystem{
             if (debug)
             {
                 string filename = Path.GetFileNameWithoutExtension(ResourcePath);
-                GodotHelper.Print(node, $"{filename} was called");
+                Utils.Print(node, $"{filename} was called");
             }
             if (OnEvent != null)
             {

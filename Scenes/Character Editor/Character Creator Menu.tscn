@@ -1,24 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cotgta0ltok1r"]
+[gd_scene load_steps=7 format=3 uid="uid://cotgta0ltok1r"]
 
-[ext_resource type="Script" path="res://Scripts/Character Creator/CharacterCreatorManager.cs" id="1_lnv76"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/CharacterCreatorManager.cs" id="1_lnv76"]
+[ext_resource type="Resource" uid="uid://dqot8vvd2m5k4" path="res://Resources/Utilities/Events/Character Manager Events/OnEditorPortraitChanged.tres" id="3_a57hk"]
 [ext_resource type="PackedScene" uid="uid://4yrkv70qp5xd" path="res://Scenes/Character Editor/Menus/selection_menu.tscn" id="5_50n3e"]
 [ext_resource type="PackedScene" uid="uid://cr2qhdqndnhyv" path="res://Scenes/Character Editor/Menus/portrait_editor.tscn" id="6_52n1y"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Image Manager/FileManager.cs" id="7_gt6h7"]
+[ext_resource type="PackedScene" uid="uid://b43nu8dco1xr2" path="res://Scenes/file_manager.tscn" id="6_c824a"]
 [ext_resource type="Resource" uid="uid://b61covecvbvyq" path="res://Resources/Utilities/Events/Character Manager Events/OnPortraitAdded.tres" id="11_qqlyr"]
 
-[node name="CharacterCreatorMenu" type="Control" node_paths=PackedStringArray("displayMenu", "editPortraitMenu")]
+[node name="CharacterCreatorMenu" type="Control" node_paths=PackedStringArray("currMenu")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_lnv76")
 OnPortraitAdded = ExtResource("11_qqlyr")
-displayMenu = NodePath("Selection Menu")
-editPortraitMenu = NodePath("Portrait Editor")
+OnEditorPortraitChanged = ExtResource("3_a57hk")
+displayMenuScene = ExtResource("5_50n3e")
+editPortraitMenuScene = ExtResource("6_52n1y")
+currMenu = NodePath("Selection Menu")
 
-[node name="File Manager" type="Node2D" parent="."]
-script = ExtResource("7_gt6h7")
-OnPortraitAdded = ExtResource("11_qqlyr")
-OnCharacterAdded = ExtResource("11_qqlyr")
+[node name="File Manager" parent="." instance=ExtResource("6_c824a")]
 
 [node name="Selection Menu" parent="." instance=ExtResource("5_50n3e")]
-
-[node name="Portrait Editor" parent="." instance=ExtResource("6_52n1y")]

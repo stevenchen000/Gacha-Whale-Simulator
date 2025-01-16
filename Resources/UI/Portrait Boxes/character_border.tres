@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PortraitBorder" load_steps=4 format=3 uid="uid://150emt5bvsil"]
 
-[ext_resource type="Script" path="res://Scripts/Character Creator/Character Portraits/PortraitBorder.cs" id="1_0fnn6"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs" id="1_0fnn6"]
 [ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png" id="1_i6grt"]
 [ext_resource type="Texture2D" uid="uid://bsd0q4di11vk0" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border.png" id="2_8xk8s"]
 

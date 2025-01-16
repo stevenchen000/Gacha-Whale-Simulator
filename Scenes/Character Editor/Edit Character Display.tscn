@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_gnvt5"]
 [ext_resource type="Texture2D" uid="uid://bqt263q3jfhxd" path="res://Angeal.png" id="2_i3cdw"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/UI GDScript/ScaleSpriteToScreen.gd" id="3_ur00i"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/UI GDScript/ScaleSpriteToScreen.gd" id="3_ur00i"]
 [ext_resource type="PackedScene" uid="uid://dwembdyqg2pyg" path="res://Scenes/Character Editor/portrait_preview.tscn" id="4_o0yfu"]
 
 [node name="EditCharacterDisplay" type="Control"]

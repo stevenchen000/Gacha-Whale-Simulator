@@ -21,7 +21,7 @@ namespace CombatSystem
             foreach(var target in targets)
             {
                 //GD.Print($"Instantiating at target: {target.Name}");
-                var newObject = (Node2D)GodotHelper.InstantiateCopy(castObject);
+                var newObject = (Node2D)Utils.InstantiateCopy(castObject);
                 target.AddChild(newObject);
                 newObject.Position = offset;
                 newObject.Scale = scale;

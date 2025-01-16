@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://b8euqy04igiyx"]
 
-[ext_resource type="Script" path="res://Scripts/Character Creator/UI GDScript/ImageImporter.gd" id="1_airpq"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/UI GDScript/ImageImporter.gd" id="1_airpq"]
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="2_xh6qk"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/UI GDScript/media_permission_explanation_ui.gd" id="3_k8ck6"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/UI GDScript/media_permission_explanation_ui.gd" id="3_k8ck6"]
 [ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="4_k808q"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nhp0n"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://r1juqq5m6o18"]
 
 [ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png" id="1_6uxl8"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_37y4a"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_37y4a"]
 
 [resource]
 script = ExtResource("1_37y4a")

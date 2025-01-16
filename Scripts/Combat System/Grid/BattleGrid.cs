@@ -422,7 +422,7 @@ namespace CombatSystem {
 
 		private GridSpace InstantiateBattleSpace()
         {
-			var space = (GridSpace)GodotHelper.InstantiateCopy(spaceScene);
+			var space = (GridSpace)Utils.InstantiateCopy(spaceScene);
 			AddChild(space);
 			
 			return space;

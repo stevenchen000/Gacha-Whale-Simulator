@@ -20,6 +20,32 @@ namespace CombatSystem
 
         private bool isWalkable;
 
+        private BattleManager battle;
+
+
+        public override void _Ready()
+        {
+            battle = Utils.FindParentOfType<BattleManager>(this);
+
+        }
+
+
+        public override void _UnhandledInput(InputEvent @event)
+        {
+            if(@event is InputEventScreenDrag)
+            {
+                var dragEvent = (InputEventScreenDrag) @event;
+                
+            }else if(@event is InputEventScreenTouch)
+            {
+                var touchEvent = (InputEventScreenTouch) @event;
+                
+            }
+        }
+
+
+
+
 
         public bool IsWalkable()
         {

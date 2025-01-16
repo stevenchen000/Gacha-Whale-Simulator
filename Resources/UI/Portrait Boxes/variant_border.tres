@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://268ssaa1vjvv" path="res://Resources/UI/Portrait Boxes/Frame Icons/Green Character Frame.png" id="1_8h261"]
 [ext_resource type="Texture2D" uid="uid://bpk48iommfw1s" path="res://Resources/UI/Portrait Boxes/Frame Icons/Green Character Frame Border.png" id="2_cu1lc"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/Character Portraits/PortraitBorder.cs" id="3_n7v17"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs" id="3_n7v17"]
 
 [resource]
 script = ExtResource("3_n7v17")

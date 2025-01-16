@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClass" load_steps=3 format=3 uid="uid://hjkwfoigbu81"]
+
+[ext_resource type="Texture2D" uid="uid://b8tqrb7x237fj" path="res://Art Assets/Character Assets/Weapon Icons/BowT1.png" id="1_hqppb"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs" id="2_stqtn"]
+
+[resource]
+script = ExtResource("2_stqtn")
+Name = "Ranger"
+Texture = ExtResource("1_hqppb")

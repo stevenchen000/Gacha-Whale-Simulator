@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterRole" load_steps=3 format=3 uid="uid://cta0py0mhsput"]
+
+[ext_resource type="Texture2D" uid="uid://dot04mqxqng7h" path="res://Art Assets/Character Assets/Role Icons/StaffIcon.png" id="1_8vndi"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs" id="2_iridv"]
+
+[resource]
+script = ExtResource("2_iridv")
+Name = "Supporter"
+Texture = ExtResource("1_8vndi")
+Description = "Supporters help the party by increasing damage dealt or keeping healing damage received."

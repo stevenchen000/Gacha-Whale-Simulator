@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfom6ofevr8xw"]
+
+[ext_resource type="Script" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
+[ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Character Editor/Character Creator Menu.tscn" id="2_vfyon"]
+[ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Game Scenes/Battle Scene 2.tscn" id="3_cpb4x"]
+[ext_resource type="PackedScene" uid="uid://b43nu8dco1xr2" path="res://Scenes/file_manager.tscn" id="4_506lw"]
+
+[node name="MainGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qiwpt")
+characterCreatorScene = ExtResource("2_vfyon")
+battleScene = ExtResource("3_cpb4x")
+
+[node name="File Manager" parent="." instance=ExtResource("4_506lw")]

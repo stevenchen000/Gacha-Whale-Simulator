@@ -5,7 +5,7 @@ using GachaSystem;
 
 namespace CombatSystem
 {
-    public partial class BattleManager : Node
+    public partial class BattleManager : GameMenu
     {
         private Array<GachaCharacterData> playerPartyData { get; set; }
         private Array<GachaCharacterData> enemyPartyData { get; set; }

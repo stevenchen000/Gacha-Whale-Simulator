@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://4yrkv70qp5xd"]
+[gd_scene load_steps=15 format=3 uid="uid://4yrkv70qp5xd"]
 
-[ext_resource type="Script" path="res://Scripts/Character Creator/Menus/SelectionMenu.cs" id="1_4ob3o"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/UI GDScript/StretchToBottomOfScreen.gd" id="1_aqpoy"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/ImageSaver.cs" id="2_qrk3s"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/CharacterGridManager.cs" id="2_y0g8g"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/SelectionMenu.cs" id="1_4ob3o"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/UI GDScript/StretchToBottomOfScreen.gd" id="1_aqpoy"]
+[ext_resource type="Resource" uid="uid://dqot8vvd2m5k4" path="res://Resources/Utilities/Events/Character Manager Events/OnEditorPortraitChanged.tres" id="2_ccn0l"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/ImageSaver.cs" id="2_qrk3s"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/CharacterGridManager.cs" id="2_y0g8g"]
 [ext_resource type="PackedScene" uid="uid://beou0hywm4ebk" path="res://Scenes/Character Editor/Character Displays/portrait_button.tscn" id="3_5cxa3"]
 [ext_resource type="Resource" uid="uid://b61covecvbvyq" path="res://Resources/Utilities/Events/Character Manager Events/OnPortraitAdded.tres" id="4_wkho8"]
 [ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="5_d5d1j"]
 [ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="6_kjhoa"]
-[ext_resource type="Script" path="res://Scripts/Character Creator/CharacterDisplayUi.cs" id="7_rs365"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/CharacterDisplayUi.cs" id="7_rs365"]
 [ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="8_jp27u"]
 [ext_resource type="PackedScene" uid="uid://b8euqy04igiyx" path="res://Scenes/Character Editor/number_of_photos_selection.tscn" id="9_cmjyh"]
 
@@ -24,13 +25,15 @@ font_size = 90
 shadow_size = 20
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Selection Menu" type="Control" node_paths=PackedStringArray("display")]
+[node name="Selection Menu" type="Control" node_paths=PackedStringArray("display", "grid")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_4ob3o")
 display = NodePath("====Character Display====")
+OnEditorPortraitChanged = ExtResource("2_ccn0l")
+grid = NodePath("====UI====/ScrollContainer/Character Grid")
 IsDefault = true
 
 [node name="Image Saver" type="Node2D" parent="."]
@@ -122,17 +125,36 @@ texture = ExtResource("8_jp27u")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Edit Button" type="Button" parent="====Character Display===="]
+[node name="Buttons" type="VBoxContainer" parent="====Character Display===="]
+custom_minimum_size = Vector2(0, 100)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -207.585
-offset_top = 20.555
-offset_right = -20.585
-offset_bottom = 172.555
+offset_left = -280.0
+offset_top = 27.0
+offset_right = -21.0
+offset_bottom = 267.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 80
+theme_override_constants/separation = 30
+
+[node name="Edit Button" type="Button" parent="====Character Display====/Buttons"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Edit"
+
+[node name="Delete Button" type="Button" parent="====Character Display====/Buttons"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Delete"
+
+[node name="Create Character Button" type="Button" parent="====Character Display====/Buttons"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Create
+Character"
 
 [node name="Return Button" type="Button" parent="====Character Display===="]
 anchors_preset = 1
@@ -179,5 +201,8 @@ offset_right = 10963.0
 offset_bottom = 249.0
 
 [connection signal="button_up" from="====UI====/ScrollContainer/Character Grid/Add Picture Button/Button" to="====Import Menu====/NumberOfPhotosSelection" method="_make_visible"]
-[connection signal="button_up" from="====Character Display====/Edit Button" to="." method="OpenPortraitEditor"]
+[connection signal="button_up" from="====Character Display====/Buttons/Edit Button" to="." method="OpenPortraitEditor"]
+[connection signal="button_up" from="====Character Display====/Buttons/Delete Button" to="." method="DeleteCurrentObject"]
+[connection signal="button_up" from="====Character Display====/Buttons/Delete Button" to="." method="ResetDisplay"]
+[connection signal="button_up" from="====Character Display====/Buttons/Create Character Button" to="." method="CreateCharacterFromPortrait"]
 [connection signal="child_entered_tree" from="====Import Menu====/NumberOfPhotosSelection" to="Image Saver" method="SaveSpriteToFile"]

@@ -1,5 +1,7 @@
-PortraitBorder
+CharacterClass
+CharacterRole
 VoidEvent
+PortraitBorder
 CharacterPortrait
 CharacterPortraitEvent
 Element
@@ -11,5 +13,3 @@ WorldEffectGiveQuest
 InventoryChangeEvent
 ItemResource
 SkipTimeTriggerEffect
-DeleteObjectTriggerEffect
-TimePassedEvent

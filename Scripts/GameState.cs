@@ -46,7 +46,7 @@ public partial class GameState : Node
         {
 			frameZero = false;
 			if(state == this)
-				GodotHelper.MoveNodeToRoot(this);
+				Utils.MoveNodeToRoot(this);
         }
 	}
 

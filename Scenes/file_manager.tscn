@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b43nu8dco1xr2"]
+
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Image Manager/FileManager.cs" id="1_5ks0i"]
+[ext_resource type="Resource" uid="uid://b61covecvbvyq" path="res://Resources/Utilities/Events/Character Manager Events/OnPortraitAdded.tres" id="2_d0lw7"]
+
+[node name="File Manager" type="Node2D"]
+script = ExtResource("1_5ks0i")
+OnPortraitAdded = ExtResource("2_d0lw7")
+OnCharacterAdded = ExtResource("2_d0lw7")

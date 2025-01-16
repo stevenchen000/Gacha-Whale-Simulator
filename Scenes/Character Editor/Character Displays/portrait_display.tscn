@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cb46q6v0oilqx"]
 
-[ext_resource type="Script" path="res://Scripts/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_1mduf"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_1mduf"]
 [ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="2_7ykq3"]
 [ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="3_4f4d7"]
 [ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="4_crdia"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterRole" load_steps=3 format=3 uid="uid://ch2f8nppud3k7"]
+
+[ext_resource type="Texture2D" uid="uid://b2rfwf3ecnsmo" path="res://Art Assets/Character Assets/Role Icons/ShieldIcon.png" id="1_j5u8v"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs" id="1_ngqpr"]
+
+[resource]
+script = ExtResource("1_ngqpr")
+Name = "Defender"
+Texture = ExtResource("1_j5u8v")
+Description = "Defenders protect allies, keeping them safe from enemy attacks."

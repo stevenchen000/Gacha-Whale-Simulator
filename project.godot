@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Character Editor/Character Creator Menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TouchHandler="*res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs"
+
 [dialogue_manager]
 
 general/uses_dotnet=true

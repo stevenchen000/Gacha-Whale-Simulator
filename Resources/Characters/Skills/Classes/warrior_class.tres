@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClass" load_steps=3 format=3 uid="uid://bj5xnm0nbmfui"]
+
+[ext_resource type="Texture2D" uid="uid://catng7u5euwid" path="res://Art Assets/Character Assets/Weapon Icons/Greatsword.png" id="1_y27g7"]
+[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs" id="2_qi8n2"]
+
+[resource]
+script = ExtResource("2_qi8n2")
+Name = "Warrior"
+Texture = ExtResource("1_y27g7")

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_826su")
 description = ""
-debug = true
+debug = false
