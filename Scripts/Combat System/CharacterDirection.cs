@@ -11,6 +11,7 @@ namespace CombatSystem
         UP,
         DOWN,
         LEFT,
-        RIGHT
+        RIGHT,
+        NONE
     }
 }

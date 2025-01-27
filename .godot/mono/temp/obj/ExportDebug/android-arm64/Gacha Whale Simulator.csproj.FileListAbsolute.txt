@@ -175,10 +175,6 @@ C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Export
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\netstandard.dll
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.IO.Compression.Native.so
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Native.so
-C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Security.Cryptography.Native.OpenSsl.so
-C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libcoreclr.so
-C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libhostfxr.so
-C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libhostpolicy.so
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\ExportDebug\android-arm64\Gacha Whale Simulator.dll
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\ExportDebug\android-arm64\ref\Gacha Whale Simulator.dll
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\obj\ExportDebug\android-arm64\Gacha Whale Simulator.pdb
@@ -196,3 +192,18 @@ C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\Export
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-hot_reload-static.a
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-hot_reload-stub-static.a
 C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmonosgen-2.0.a
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Globalization.Native.a
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Globalization.Native.so
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.IO.Compression.Native.a
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Native.a
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Security.Cryptography.Native.Android.a
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Security.Cryptography.Native.Android.dex
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Security.Cryptography.Native.Android.jar
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libSystem.Security.Cryptography.Native.Android.so
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-debugger.so
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-diagnostics_tracing.so
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-hot_reload.so
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-marshal-ilgen-static.a
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-marshal-ilgen-stub-static.a
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmono-component-marshal-ilgen.so
+C:\Users\chens\Documents\Godot\Gacha-Whale-Simulator\.godot\mono\temp\bin\ExportDebug\android-arm64\libmonosgen-2.0.so

@@ -6,7 +6,7 @@ namespace CombatSystem
     public partial class GridSpace : Node2D
     {
         private GridState state;
-        [Export] private CollisionPolygon2D collider;
+        [Export] private CollisionShape2D collider;
         [Export] private Color defaultColor;
         [Export] private Color allyColor;
         [Export] private Color allyAttackColor;
@@ -16,7 +16,16 @@ namespace CombatSystem
 
         [Export] private Sprite2D colliderSprite;
         [Export] private Sprite2D spaceSprite;
+
+        [Export] private Button upButton;
+        [Export] private Button downButton;
+        [Export] private Button leftButton;
+        [Export] private Button rightButton;
+
+
         public BattleCharacter characterOnSpace { get; private set; }
+        public Vector2I coords { get; private set; }
+
 
         private bool isWalkable;
 
@@ -29,21 +38,72 @@ namespace CombatSystem
 
         }
 
-
-        public override void _UnhandledInput(InputEvent @event)
+        public void InitSpace(Vector2I coords)
         {
-            if(@event is InputEventScreenDrag)
-            {
-                var dragEvent = (InputEventScreenDrag) @event;
-                
-            }else if(@event is InputEventScreenTouch)
-            {
-                var touchEvent = (InputEventScreenTouch) @event;
-                
-            }
+            this.coords = coords;
+            HideButtons();
         }
 
 
+        public void OnClick()
+        {
+            if (isWalkable)
+            {
+                battle.SelectSpace(this);
+            }
+        }
+
+        public void Test()
+        {
+            Utils.Print(this, coords);
+        }
+
+
+        public void SelectSpace()
+        {
+            if (isWalkable)
+            {
+                battle.SelectSpace(this);
+            }
+        }
+
+        public void ShowButtons(SkillDirection direction)
+        {
+            switch (direction)
+            {
+                case SkillDirection.ALL:
+                    ShowAllButtons();
+                    break;
+                case SkillDirection.HORIZONTAL:
+                    ShowHorizontalButtons();
+                    break;
+                case SkillDirection.VERTICAL:
+                    ShowVerticalButtons();
+                    break;
+                case SkillDirection.NONE:
+                    break;
+            }
+        }
+
+        public void UpButtonClicked()
+        {
+
+        }
+
+        public void DownButtonClicked()
+        {
+
+        }
+
+        public void LeftButtonClicked()
+        {
+
+        }
+
+        public void RightButtonClicked()
+        {
+
+        }
 
 
 
@@ -58,12 +118,12 @@ namespace CombatSystem
 
             if (walkable)
             {
-                collider.Disabled = true;
+                //collider.Disabled = false;
                 //colliderSprite.Visible = false;
             }
             else
             {
-                collider.Disabled = false;
+                //collider.Disabled = true;
                 //colliderSprite.Visible = true;
             }
         }
@@ -131,6 +191,51 @@ namespace CombatSystem
         private void SetColor(Color newColor)
         {
             spaceSprite.Modulate = newColor;
+        }
+
+        private void HideButtons()
+        {
+            DisableButton(upButton);
+            DisableButton(downButton);
+            DisableButton(leftButton);
+            DisableButton(rightButton);
+        }
+
+
+        private void ShowAllButtons()
+        {
+            ShowHorizontalButtons();
+            ShowVerticalButtons();
+        }
+
+        private void ShowHorizontalButtons()
+        {
+            EnableButton(leftButton);
+            EnableButton(rightButton);
+        }
+
+        private void ShowVerticalButtons()
+        {
+            EnableButton(upButton);
+            EnableButton(downButton);
+        }
+
+        private void DisableButton(Button button)
+        {
+            if (button != null)
+            {
+                button.Disabled = true;
+                button.Visible = false;
+            }
+        }
+
+        private void EnableButton(Button button)
+        {
+            if (button != null)
+            {
+                button.Disabled = false;
+                button.Visible = true;
+            }
         }
     }
 }

@@ -15,8 +15,12 @@ namespace CombatSystem
 
         protected override void RunState(double delta)
         {
-            GD.Print("Combat has started!");
-            ChangeState(turnNode);
+            Utils.Print(this, "Combat has started!");
+        }
+
+        protected override StateNode CheckStateChange()
+        {
+            return turnNode;
         }
 
         protected override void OnStateDeactivated()

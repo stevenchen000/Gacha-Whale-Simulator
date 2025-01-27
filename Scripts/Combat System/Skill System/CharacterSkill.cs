@@ -6,11 +6,13 @@ namespace CombatSystem {
     [GlobalClass]
     public partial class CharacterSkill : Resource
     {
-        [Export] public SkillAnimation animation;
-        [Export] public Array<SkillEffect> effects;
-        [Export] public float duration = 2f;
-        [Export] public int potency = 100;
-        [Export] public GridShape attackArea;
+        [Export] public Texture2D Icon { get; private set; }
+        [Export] public SkillAnimation animation { get; private set; }
+        [Export] public Array<SkillEffect> effects { get; private set; }
+        [Export] public float duration { get; private set; } = 2f;
+        [Export] public int potency { get; private set; } = 100;
+        [Export] public GridShape attackArea { get; private set; }
+        [Export] public SkillDirection direction { get; private set; }
 
         public CharacterSkill GetDuplicate()
         {
@@ -24,12 +26,12 @@ namespace CombatSystem {
             return newSkill;
         }
 
-        public bool PlayAnimation(BattleSkillCastData data, double delta)
+        public bool PlayAnimation(TurnData data, TimeHandler time, double delta)
         {
-            return animation.PlayAnimation(data, delta);
+            return animation.PlayAnimation(data, time, delta);
         }
 
-        public bool RunEffects(BattleSkillCastData data, double delta)
+        public bool RunEffects(TurnData data, double delta)
         {
             return true;
         }

@@ -1,3 +1,4 @@
+GameCharacter
 CharacterClass
 CharacterRole
 VoidEvent
@@ -12,4 +13,3 @@ BaseQuest
 WorldEffectGiveQuest
 InventoryChangeEvent
 ItemResource
-SkipTimeTriggerEffect

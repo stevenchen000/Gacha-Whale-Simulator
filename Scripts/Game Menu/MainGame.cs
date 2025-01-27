@@ -1,15 +1,23 @@
 using CombatSystem;
 using Godot;
 using System;
+using Godot.Collections;
 
 public partial class MainGame : Node
 {
     [Export] private PackedScene characterCreatorScene;
     [Export] private PackedScene battleScene;
+    [Export] public Array<GameCharacter> playerParty;
+    [Export] public Array<GameCharacter> enemyParty;
 
     private GameMenu currMenu;
 
     public override void _Ready()
+    {
+        CallDeferred(MethodName.InitMenu);
+    }
+
+    private void InitMenu()
     {
         currMenu = (GameMenu)Utils.InstantiateCopy(battleScene);
         AddChild(currMenu);

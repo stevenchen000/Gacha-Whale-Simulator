@@ -15,10 +15,10 @@
     <application android:label="@string/godot_project_name_string"
         android:allowBackup="false"
         android:icon="@mipmap/icon"
-        android:appCategory="game"
         android:isGame="true"
         android:hasFragileUserData="false"
         android:requestLegacyExternalStorage="true"
+        android:appCategory="game"
         tools:replace="android:allowBackup,android:appCategory,android:isGame,android:hasFragileUserData,android:requestLegacyExternalStorage"
         tools:ignore="GoogleAppIndexingWarning">
 

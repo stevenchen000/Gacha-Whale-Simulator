@@ -12,7 +12,7 @@ namespace CombatSystem
         [Export] private Vector2 scale = new Vector2(1,1);
         private Array<Node2D> tempObjects;
 
-        public override void _StartElement(BattleSkillCastData data)
+        public override void _StartElement(TurnData data, TimeHandler time)
         {
             GD.Print("Starting instantiation");
             tempObjects = new Array<Node2D>();
@@ -30,13 +30,13 @@ namespace CombatSystem
             }
         }
 
-        public override bool _RunElement(BattleSkillCastData data)
+        public override bool _RunElement(TurnData data, TimeHandler time)
         {
             //GD.Print("Nothing happening");
             return false;
         }
 
-        public override void _EndElement(BattleSkillCastData data)
+        public override void _EndElement(TurnData data, TimeHandler time)
         {
             //GD.Print("Animatiion element ended");
             foreach(var obj in tempObjects)

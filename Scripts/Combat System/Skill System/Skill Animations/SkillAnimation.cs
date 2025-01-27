@@ -32,13 +32,12 @@ namespace CombatSystem
 
 
         //Returns true when the animation is finished
-        public bool PlayAnimation(BattleSkillCastData data, double delta)
+        public bool PlayAnimation(TurnData data, TimeHandler time, double delta)
         {
-            data.Tick(delta);
             bool animationFinished = true;
             foreach(var animation in animations)
             {
-                animationFinished &= animation.RunElement(data);
+                animationFinished &= animation.RunElement(data, time);
             }
             return animationFinished;
         }

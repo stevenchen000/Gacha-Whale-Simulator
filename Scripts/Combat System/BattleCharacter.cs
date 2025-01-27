@@ -2,18 +2,20 @@
 using Godot;
 using GachaSystem;
 using Godot.Collections;
+using CharacterCreator;
 
 namespace CombatSystem
 {
     public partial class BattleCharacter : CharacterBody2D
     {
-        [Export] private GachaCharacterData characterData;
+        private GameCharacter characterData;
+        [Export] private CharacterPortraitDisplay portrait;
+        //[Export] private GachaCharacterData characterData;
         [Export] public int movableSpaces { get; set; } = 2;
-        private Vector2I previousPosition { get; set; }
+        public Vector2I previousPosition { get; private set; }
         public CharacterDirection facingDirection { get; private set; }
         [Export] public float speed = 5;
         [Export] private CollisionShape2D collider;
-        //[Export] private GridShape attackShape;
         [Export] public CharacterSkill skill { get; set; }
         [Export] private StatContainer savedStats { get; set; }
         public BattleStats stats { get; set; }
@@ -24,12 +26,24 @@ namespace CombatSystem
 
         public CharacterSkill currSkill { get; private set; }
         public Array<BattleCharacter> targets { get; private set; }
+        public Vector2I tempPosition { get; private set; }
 
 
         public override void _Ready()
         {
-            stats = new BattleStats(savedStats);
-            DisableCollider();
+            //stats = new BattleStats(savedStats);
+            //DisableCollider();
+        }
+
+        public void InitCharacter(GameCharacter character, Vector2I startPosition)
+        {
+            previousPosition = startPosition;
+            characterData = character;
+            skill = character.GetBasicAttack();
+            //var charPortrait = character.GetPortrait();
+            var charPortrait = FileManager.GetRandomPortrait();
+            portrait.UpdatePortrait(charPortrait);
+            //Utils.Print(this, "Using random portrait");
         }
 
 
@@ -37,6 +51,7 @@ namespace CombatSystem
         {
             currSkill = null;
             targets = new Array<BattleCharacter>();
+            tempPosition = previousPosition;
         }
 
         public bool ControlCharacter(double delta, BattleManager battle, BattleGrid grid)
@@ -56,9 +71,11 @@ namespace CombatSystem
             return selectedAction;
         }
 
+
         public void EndTurn(double delta, BattleManager battle, BattleGrid grid)
         {
-            Position = Position.Lerp(previousNearestSpace.GlobalPosition, 1f);
+            //Position = Position.Lerp(previousNearestSpace.GlobalPosition, 1f);
+            previousPosition = tempPosition;
         }
 
         public bool IsDead() { return stats.IsDead(); }
@@ -66,12 +83,18 @@ namespace CombatSystem
 
         public void DisableCollider()
         {
-            collider.Disabled = true;
+            //collider.Disabled = true;
         }
 
         public void EnableCollider()
         {
-            collider.Disabled = false;
+            //collider.Disabled = false;
+        }
+
+        public void SetPosition(GridSpace space)
+        {
+            Position = space.GlobalPosition;
+            tempPosition = space.coords;
         }
 
 

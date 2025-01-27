@@ -1,13 +1,15 @@
 using System.IO;
 using EventSystem;
-using Godot.Collections;
 using Godot;
+using System.Linq;
+using System;
+using System.Collections.Generic;
 
 public partial class FileManager : Node2D
 {
     private static FileManager _instance;
 
-    private Dictionary<string, Texture2D> _textures;
+    private Dictionary<string, WeakReference> _textures;
     public static string imageSaveLocation { get; private set; }
     private Dictionary<string, CustomCharacterPortrait> _portraits;
     public static string portraitSaveLocation { get; private set; }
@@ -45,15 +47,14 @@ public partial class FileManager : Node2D
 
     private void Init()
     {
-        Utils.Print(this, "Remember to implement weak references for performance");
         imageSaveLocation = ProjectSettings.GlobalizePath("user://Images");
         portraitSaveLocation = ProjectSettings.GlobalizePath("user://Portraits");
         characterSaveLocation = ProjectSettings.GlobalizePath("user://Characters");
 
         if (!Directory.Exists(imageSaveLocation))
             DirAccess.MakeDirRecursiveAbsolute(imageSaveLocation);
-        _textures = new Dictionary<string, Texture2D>();
-        LoadAllSavedImages();
+        _textures = new Dictionary<string, WeakReference>();
+        //LoadAllSavedImages();
 
         if (!Directory.Exists(portraitSaveLocation))
             DirAccess.MakeDirRecursiveAbsolute(portraitSaveLocation);
@@ -76,7 +77,19 @@ public partial class FileManager : Node2D
 
         if (_instance._textures.ContainsKey(filename))
         {
-            result = _instance._textures[filename];
+            var reference = _instance._textures[filename];
+            if (reference.IsAlive)
+            {
+                result = (Texture2D)reference.Target;
+            }
+            else
+            {
+                result = _instance.LoadImage(filename);
+            }
+        }
+        else if(File.Exists(filename))
+        {
+            result = _instance.LoadImage(filename);
         }
 
         return result;
@@ -112,23 +125,25 @@ public partial class FileManager : Node2D
         image.SavePng(filepath);
         var imageTexture = ImageTexture.CreateFromImage(image);
         imageTexture.ResourcePath = filepath;
-        _instance._textures[filepath] = imageTexture;
+        _instance._textures[filepath] = new WeakReference(imageTexture);
         return imageTexture;
     }
 
     public static void DeleteImage(string path)
     {
-        File.Delete(path);
-        _instance._textures.Remove(path);
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            _instance._textures.Remove(path);
+        }
     }
 
-    public void LoadImage(string filename)
+    public Texture2D LoadImage(string filename)
     {
-        //GodotHelper.Print(_instance, filename);
         var image = Image.LoadFromFile(filename);
         var texture = ImageTexture.CreateFromImage(image);
-        _textures[filename] = texture;
-        //GodotHelper.Print(_instance, "File loaded!");
+        _textures[filename] = new WeakReference(texture);
+        return texture;
     }
 
     private void LoadAllSavedImages()
@@ -200,13 +215,29 @@ public partial class FileManager : Node2D
         //GodotHelper.Print(this, $"{_portraits.Count} files loaded");
     }
 
-    public static Array<CustomCharacterPortrait> GetAllPortraits()
+    public static List<CustomCharacterPortrait> GetAllPortraits()
     {
         var values = _instance._portraits.Values;
-        var result = new Array<CustomCharacterPortrait>();
+        var result = new List<CustomCharacterPortrait>();
         result.AddRange(values);
         //GodotHelper.Print(_instance, $"{values.Count}, {result.Count}");
         return result;
+    }
+
+    public static CharacterPortrait GetRandomPortrait()
+    {
+        var portraits = _instance._portraits.Values.ToList();
+        var count = portraits.Count;
+
+        if (count > 0)
+        {
+            int rand = GameState.GetRandomNumber(0, count - 1);
+            return portraits[rand];
+        }
+        else
+        {
+            return null;
+        }
     }
 
 
@@ -252,10 +283,10 @@ public partial class FileManager : Node2D
         _instance._characters.Remove(path);
     }
 
-    public static Array<CustomGameCharacter> GetAllCharacters()
+    public static List<CustomGameCharacter> GetAllCharacters()
     {
         var values = _instance._characters.Values;
-        var result = new Array<CustomGameCharacter>();
+        var result = new List<CustomGameCharacter>();
         result.AddRange(values);
         return result;
     }

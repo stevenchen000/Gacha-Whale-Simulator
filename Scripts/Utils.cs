@@ -37,6 +37,11 @@ public class Utils
         GD.Print($"{node.GetType()}: \n\t{message}");
     }
 
+    public static void Print(Resource resource, object message)
+    {
+        GD.Print($"{resource.GetType()}: \n\t{message}");
+    }
+
     public static T FindParentOfType<T>(Node node) where T : Node
     {
         T result = null;

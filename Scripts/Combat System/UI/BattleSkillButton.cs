@@ -6,21 +6,40 @@ namespace CombatSystem
     public partial class BattleSkillButton : Button
     {
         public CharacterSkill skill { get; private set; }
+        private BattleManager battle;
 
-
-        public override void _GuiInput(InputEvent @event)
+        public override void _Ready()
         {
-            if(@event is InputEventScreenTouch)
+            battle = Utils.FindParentOfType<BattleManager>(this);
+        }
+
+        public void SetSkill(CharacterSkill skill)
+        {
+            this.skill = skill;
+            if (skill != null)
             {
-                var touchEvent = @event as InputEventScreenTouch;
-                bool pressed = touchEvent.Pressed;
-
-                if (!pressed)
-                {
-
-                }
+                Icon = skill.Icon;
+            }
+            else
+            {
+                Icon = null;
             }
         }
 
+        public void OnClick()
+        {
+            if (skill != null)
+            {
+                var selectedSkill = battle.SelectedSkill;
+                if (skill != selectedSkill)
+                {
+                    battle.SetSelectedSkill(skill);
+                }
+                else
+                {
+                    battle.SetSelectedSkill(null);
+                }
+            }
+        }
     }
 }

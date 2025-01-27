@@ -6,7 +6,7 @@ namespace CombatSystem
 {
     public partial class SkillCaster : Node
     {
-        private BattleSkillCastData data;
+        private TurnData data;
 
         public override void _Ready()
         {
@@ -27,7 +27,7 @@ namespace CombatSystem
         public void CastSkill(BattleCharacter caster, CharacterSkill skill,
                               Array<BattleCharacter> targets)
         {
-            data = new BattleSkillCastData(caster, targets, skill);
+            data = new TurnData(caster, targets, skill);
         }
 
     }

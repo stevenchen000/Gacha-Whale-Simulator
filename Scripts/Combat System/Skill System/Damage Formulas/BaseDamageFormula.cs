@@ -15,7 +15,7 @@ namespace CombatSystem
             int def = targetStats.defense;
             int baseDamage = atk - def / 2;
             int totalDamage = (int)(baseDamage * potency / 100);
-            GD.Print("Damage isn't calculated yet");
+            Utils.Print(this, "Damage isn't calculated yet");
             return totalDamage;
         }
     }

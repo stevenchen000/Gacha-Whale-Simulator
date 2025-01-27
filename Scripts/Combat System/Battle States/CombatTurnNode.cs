@@ -12,15 +12,15 @@ namespace CombatSystem
         private Vector2I prevCoords;
         private Vector2I currCoords;
 
+        private bool turnFinished = false;
+
         protected override void OnStateActivated()
         {
-            character = battle.GetCurrentCharacter();
+            Utils.Print(this, "Turn started");
+            Utils.Print(this, battle);
+            battle.StartTurn();
             grid = battle.GetGrid();
-            grid.UpdateAllWalkableAreas(battle, character);
-            character.StartCharacterTurn(battle, grid);
-            character.EnableCollider();
-            prevCoords = grid.GetNearestSpaceToCharacter(character);
-            currCoords = prevCoords;
+            character = battle.GetCurrentCharacter();
         }
 
         protected override void RunState(double delta)
@@ -32,17 +32,27 @@ namespace CombatSystem
             grid.SetSpaceState(currCoords, GridState.ALLY_STANDING);
             if (turnFinished)
             {
-                //character.EndTurn(delta, battle, grid);
                 SetupAction();
-                ChangeState(transitionNode);
             }
+        }
+
+        protected override StateNode CheckStateChange()
+        {
+            StateNode result = null;
+
+            if (turnFinished)
+            {
+                result = transitionNode;
+            }
+
+            return result;
         }
 
         protected override void OnStateDeactivated()
         {
             grid.SetAllSpacesToDefault();
             grid.OccupySpace(character);
-            character.DisableCollider();
+            turnFinished = false;
         }
 
         /*****************
@@ -51,7 +61,7 @@ namespace CombatSystem
 
         private void SetupAction()
         {
-            var skill = character.currSkill;
+            var skill = battle.SelectedSkill;
             var targets = character.targets;
             battle.SelectAction(character, targets, skill);
         }

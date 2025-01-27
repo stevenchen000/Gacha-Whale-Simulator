@@ -38,6 +38,8 @@ namespace StateSystem
             {
                 Tick(delta);
                 RunState(delta);
+                var newState = CheckStateChange();
+                if (newState != null) { ChangeState(newState); }
             }
         }
 
@@ -56,7 +58,18 @@ namespace StateSystem
 
         }
 
+        /// <summary>
+        /// Override to change state after process call
+        /// </summary>
+        /// <returns></returns>
+        protected virtual StateNode CheckStateChange() { return null; }
+
         protected void ChangeState(StateNode node)
+        {
+            CallDeferred("_ChangeState", node);
+        }
+
+        private void _ChangeState(StateNode node)
         {
             active = false;
             node.active = true;

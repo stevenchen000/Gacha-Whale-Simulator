@@ -1,13 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://8ssh07hfd56t"]
+[gd_scene load_steps=18 format=3 uid="uid://8ssh07hfd56t"]
 
-[ext_resource type="Script" path="res://Scripts/Combat System/BattleManager.cs" id="1_w405p"]
-[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs" id="2_s8eow"]
-[ext_resource type="Script" path="res://Scripts/Combat System/Grid/BattleGrid.cs" id="2_tbgor"]
-[ext_resource type="PackedScene" uid="uid://bucspuw6nymcd" path="res://Scenes/Battle/battle_space_square.tscn" id="3_binbm"]
+[ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat System/BattleManager.cs" id="1_w405p"]
+[ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
+[ext_resource type="Script" uid="uid://y6uj5g2l8l0n" path="res://Scripts/Combat System/Grid/BattleGrid.cs" id="2_tbgor"]
+[ext_resource type="PackedScene" uid="uid://bucspuw6nymcd" path="res://Scenes/Battle/Battle Space/battle_space_square.tscn" id="3_binbm"]
+[ext_resource type="Script" uid="uid://bikiac63fc22y" path="res://Scripts/Combat System/Battle States/CombatTurnNode.cs" id="3_iplpb"]
+[ext_resource type="Script" uid="uid://bfoxjp8ndtsr" path="res://Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs" id="4_yci0l"]
+[ext_resource type="Script" uid="uid://ciphn1edo3jcp" path="res://Scripts/Combat System/Battle States/CombatAnimationNode.cs" id="5_5ipmr"]
+[ext_resource type="Script" uid="uid://c7drwxdavjnfx" path="res://Scripts/Combat System/TurnDataManager.cs" id="5_yhfgv"]
+[ext_resource type="Script" uid="uid://np2dkxg5chus" path="res://Scripts/Combat System/Battle States/CombatDamageNode.cs" id="6_0grf5"]
+[ext_resource type="Script" uid="uid://bfd3pdxsrk2ty" path="res://Scripts/Combat System/Battle States/CombatFinishedNode.cs" id="7_u0d3x"]
+[ext_resource type="Script" uid="uid://dtbuhyihehpy7" path="res://Scripts/Combat System/Damage Numbers/DamageNumberManager.cs" id="12_fl4d0"]
+[ext_resource type="Script" uid="uid://bbmewgskhadp2" path="res://Scripts/Combat System/UI/SkillSelection.cs" id="12_iplpb"]
+[ext_resource type="PackedScene" uid="uid://spaepna0v12s" path="res://Scenes/Battle/Damage Number.tscn" id="13_otywn"]
+[ext_resource type="Script" uid="uid://bqbrfdufvqdun" path="res://Scripts/Combat System/UI/BattleSkillButton.cs" id="13_yci0l"]
+[ext_resource type="PackedScene" uid="uid://dhy4vi30p0fpw" path="res://Scenes/game_state.tscn" id="14_iv2px"]
+[ext_resource type="PackedScene" uid="uid://cen0vf3wpj18o" path="res://Scenes/Battle/battle_character_2.tscn" id="15_iplpb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ija6g"]
 
-[node name="BattleScene" type="Control" node_paths=PackedStringArray("playerParty", "enemyParty", "grid")]
+[node name="BattleScene" type="Control" node_paths=PackedStringArray("playerParty", "enemyParty", "grid", "skillUI", "turnDataManager")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,25 +27,60 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w405p")
-playerParty = [null]
+battleCharacterScene = ExtResource("15_iplpb")
+playerParty = []
 enemyParty = []
 grid = NodePath("Grid")
 playerStartingPositions = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)])
+enemyStartingPositions = Array[Vector2i]([Vector2i(1, 5)])
+skillUI = NodePath("====Skills====")
+turnDataManager = NodePath("Turn Data Manager")
 
-[node name="Touch Handler" type="Node2D" parent="."]
-script = ExtResource("2_s8eow")
+[node name="States" type="Node2D" parent="."]
+
+[node name="Activating State" type="Node2D" parent="States" node_paths=PackedStringArray("turnNode")]
+script = ExtResource("2_e03jm")
+turnNode = NodePath("../Turn State")
+IsInitialState = true
+
+[node name="Turn State" type="Node2D" parent="States" node_paths=PackedStringArray("transitionNode")]
+script = ExtResource("3_iplpb")
+transitionNode = NodePath("../Combat Animation State")
+
+[node name="Turn Transition State" type="Node2D" parent="States" node_paths=PackedStringArray("animationNode")]
+visible = false
+script = ExtResource("4_yci0l")
+animationNode = NodePath("../Combat Animation State")
+
+[node name="Combat Animation State" type="Node2D" parent="States" node_paths=PackedStringArray("damageCalculationNode")]
+script = ExtResource("5_5ipmr")
+damageCalculationNode = NodePath("../Damage State")
+
+[node name="Damage State" type="Node2D" parent="States" node_paths=PackedStringArray("turnNode", "finishedNode")]
+script = ExtResource("6_0grf5")
+turnNode = NodePath("../Turn State")
+finishedNode = NodePath("../Battle End State")
+
+[node name="Battle End State" type="Node2D" parent="States"]
+script = ExtResource("7_u0d3x")
 
 [node name="Grid" type="Node2D" parent="."]
-position = Vector2(76, 204)
+position = Vector2(26, 1330)
 script = ExtResource("2_tbgor")
 spaceScene = ExtResource("3_binbm")
 startingPoint = Vector2(110, 0)
 horizontalOffset = Vector2(200, 0)
-verticalOffset = Vector2(0, 200)
-horizontalGrids = 4
+verticalOffset = Vector2(0, -200)
+horizontalGrids = 5
 verticalGrids = 6
 
-[node name="====Skills====" type="CanvasLayer" parent="."]
+[node name="Turn Data Manager" type="Node2D" parent="."]
+script = ExtResource("5_yhfgv")
+
+[node name="====Skills====" type="CanvasLayer" parent="." node_paths=PackedStringArray("skillButtons", "skillButtonUltimate")]
+script = ExtResource("12_iplpb")
+skillButtons = [NodePath("Skills/Skill 1"), NodePath("Skills/Skill 2"), NodePath("Skills/Skill 3")]
+skillButtonUltimate = NodePath("Skills/Ultimate Skill")
 
 [node name="Background" type="TextureRect" parent="====Skills===="]
 modulate = Color(0.230315, 0.230315, 0.230315, 1)
@@ -66,17 +113,34 @@ theme_override_constants/separation = 30
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 8
+script = ExtResource("13_yci0l")
 
 [node name="Skill 2" type="Button" parent="====Skills====/Skills"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 8
+script = ExtResource("13_yci0l")
 
 [node name="Skill 3" type="Button" parent="====Skills====/Skills"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 8
+script = ExtResource("13_yci0l")
 
 [node name="Ultimate Skill" type="Button" parent="====Skills====/Skills"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
+script = ExtResource("13_yci0l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(540, 960)
+
+[node name="Damage Number Manager" type="Node2D" parent="."]
+script = ExtResource("12_fl4d0")
+scene = ExtResource("13_otywn")
+offset = Vector2(-50, -100)
+randomness = 80.0
+
+[node name="Game State" parent="." instance=ExtResource("14_iv2px")]
+
+[connection signal="button_up" from="====Skills====/Skills/Skill 1" to="====Skills====/Skills/Skill 1" method="OnClick"]

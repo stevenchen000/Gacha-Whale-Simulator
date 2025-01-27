@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=5 format=3 uid="uid://csyib1t6sh40y"]
+
+[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/warrior_class.tres" id="1_vdxvn"]
+[ext_resource type="Resource" uid="uid://ch2f8nppud3k7" path="res://Resources/Characters/Skills/Roles/defender_role.tres" id="2_vdxvn"]
+[ext_resource type="Resource" uid="uid://dyor6oc038qua" path="res://Resources/Characters/Skills/basic_attack.tres" id="3_mupip"]
+[ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="3_qi4o1"]
+
+[resource]
+script = ExtResource("3_qi4o1")
+Name = ""
+Title = ""
+Description = ""
+World = ""
+Class = ExtResource("1_vdxvn")
+Role = ExtResource("2_vdxvn")
+basicAttack = ExtResource("3_mupip")
+metadata/_custom_type_script = ExtResource("3_qi4o1")

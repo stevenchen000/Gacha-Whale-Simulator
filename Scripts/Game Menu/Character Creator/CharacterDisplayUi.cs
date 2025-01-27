@@ -26,14 +26,14 @@ namespace CharacterCreator
 
 
 
-		public void UpdateDisplay(CustomCharacterPortrait portrait)
+		public void UpdateDisplay(CharacterPortrait portrait)
 		{
 			spriteRect.Texture = portrait.GetPortrait();
 		}
 
-		public void UpdateDisplay(CustomGameCharacter character)
+		public void UpdateDisplay(GameCharacter character)
 		{
-			var portrait = (CustomCharacterPortrait)character.GetPortrait();
+			var portrait = character.GetPortrait();
 			UpdateDisplay(portrait);
 			nameText.Text = character.Name;
 		}

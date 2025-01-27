@@ -14,46 +14,39 @@ namespace CombatSystem
 
         private bool completed = false;
 
-        public bool RunElement(BattleSkillCastData data)
+        public bool RunElement(TurnData data, TimeHandler time)
         {
-            UpdateTime(data);
-
             if (completed) return true;
 
             if (prevFrame <= 0 && currFrame > 0)
             {
-                _StartElement(data);
+                _StartElement(data, time);
             }
 
             if (!ignoreDuration && currFrame > duration)
             {
-                _EndElement(data);
+                _EndElement(data, time);
                 completed = true;
             }
             else if(currFrame > 0)
             {
-                completed = _RunElement(data);
-                if (completed) _EndElement(data);
+                completed = _RunElement(data, time);
+                if (completed) _EndElement(data, time);
             }
             return completed;
         }
 
-        public virtual void _StartElement(BattleSkillCastData data)
+        public virtual void _StartElement(TurnData data, TimeHandler time)
         {
         }
 
         //Returns true when the animation is finished
-        public virtual bool _RunElement(BattleSkillCastData data)
+        public virtual bool _RunElement(TurnData data, TimeHandler time)
         {
             return true;
         }
 
-        public virtual void _EndElement(BattleSkillCastData data) { } 
+        public virtual void _EndElement(TurnData data, TimeHandler time) { } 
 
-        protected void UpdateTime(BattleSkillCastData data)
-        {
-            prevFrame = data.prevFrame - delay;
-            currFrame = data.currFrame - delay;
-        }
     }
 }

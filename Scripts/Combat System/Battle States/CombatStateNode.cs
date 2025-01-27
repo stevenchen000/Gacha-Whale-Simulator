@@ -11,7 +11,7 @@ namespace CombatSystem
         public override void _Ready()
         {
             base._Ready();
-            battle = (BattleManager)FindParent("Battle Manager");
+            battle = Utils.FindParentOfType<BattleManager>(this);
         }
 
         protected override void OnStateActivated()

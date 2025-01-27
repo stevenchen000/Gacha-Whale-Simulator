@@ -4,6 +4,7 @@ using GachaSystem;
 using Godot.Collections;
 using InventorySystem;
 using QuestSystem;
+using System.Runtime.CompilerServices;
 
 public partial class GameState : Node
 {
@@ -42,12 +43,7 @@ public partial class GameState : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        if (frameZero)
-        {
-			frameZero = false;
-			if(state == this)
-				Utils.MoveNodeToRoot(this);
-        }
+        
 	}
 
 
@@ -178,7 +174,7 @@ public partial class GameState : Node
     {
 		var inventory = state.playerInventory;
 		inventory.AddItem(item, amount);
-		GD.Print($"Added {amount} {item.itemName} to inventory");
+		Utils.Print(state, $"Added {amount} {item.itemName} to inventory");
     }
 
 	public static bool RemoveItemFromPlayerInventory(ItemResource item, int amount = 1)

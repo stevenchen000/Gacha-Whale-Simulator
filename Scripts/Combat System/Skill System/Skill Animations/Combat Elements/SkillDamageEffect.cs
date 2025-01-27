@@ -11,12 +11,12 @@ namespace CombatSystem
         [Export] private int numberOfHits = 1;
         [Export] private double delayBetweenHits = 0.5;
 
-        public override void _StartElement(BattleSkillCastData data)
+        public override void _StartElement(TurnData data, TimeHandler time)
         {
             GD.Print("Started dealing damage");
         }
 
-        public override bool _RunElement(BattleSkillCastData data)
+        public override bool _RunElement(TurnData data, TimeHandler time)
         {
             int prevHitCount = (int)(prevFrame/delayBetweenHits);
             int currHitCount = (int)(currFrame / delayBetweenHits);
@@ -33,12 +33,12 @@ namespace CombatSystem
             return currHitCount >= numberOfHits;
         }
 
-        public override void _EndElement(BattleSkillCastData data)
+        public override void _EndElement(TurnData data, TimeHandler time)
         {
             var totalDamage = data.totalDamageDealt;
         }
 
-        private void DealDamageToAllTargets(BattleSkillCastData data, BattleCharacter caster, Array<BattleCharacter> targets)
+        private void DealDamageToAllTargets(TurnData data, BattleCharacter caster, Array<BattleCharacter> targets)
         {
             foreach(var target in targets)
             {
@@ -46,7 +46,7 @@ namespace CombatSystem
             }
         }
 
-        private void DealDamage(BattleSkillCastData data, BattleCharacter caster, BattleCharacter target)
+        private void DealDamage(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
             var casterStats = caster.stats;
             var targetStats = target.stats;

@@ -14,10 +14,10 @@ public partial class GameCharacter : Resource
     [Export] public Element Element { get; protected set; }
     [Export] public CharacterClass Class { get; protected set; }
     [Export] public CharacterRole Role { get; protected set; }
-    private CharacterSkill basicAttack;
-    private CharacterSkill skill1;
-    private CharacterSkill skill2;
-    private CharacterSkill ultimateSkill;
+    [Export] private CharacterSkill basicAttack;
+    [Export] private CharacterSkill skill1;
+    [Export] private CharacterSkill skill2;
+    [Export] private CharacterSkill ultimateSkill;
 
 
     public virtual CharacterPortrait GetPortrait()

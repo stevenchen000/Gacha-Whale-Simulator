@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=9 format=3 uid="uid://cfom6ofevr8xw"]
 
-[ext_resource type="Script" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
+[ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
 [ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Character Editor/Character Creator Menu.tscn" id="2_vfyon"]
-[ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Game Scenes/Battle Scene 2.tscn" id="3_cpb4x"]
+[ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Game Scenes/Battle Scene 2.tscn" id="3_f8l6p"]
 [ext_resource type="PackedScene" uid="uid://b43nu8dco1xr2" path="res://Scenes/file_manager.tscn" id="4_506lw"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/caster.tres" id="4_f8l6p"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/healer.tres" id="5_ah32c"]
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/tank.tres" id="6_572h4"]
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/warrior.tres" id="7_mxwxv"]
 
 [node name="MainGame" type="Control"]
 layout_mode = 3
@@ -14,6 +18,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qiwpt")
 characterCreatorScene = ExtResource("2_vfyon")
-battleScene = ExtResource("3_cpb4x")
+battleScene = ExtResource("3_f8l6p")
+playerParty = Array[Object]([ExtResource("4_f8l6p"), ExtResource("5_ah32c"), ExtResource("6_572h4"), ExtResource("7_mxwxv")])
+enemyParty = Array[Object]([ExtResource("6_572h4")])
 
 [node name="File Manager" parent="." instance=ExtResource("4_506lw")]

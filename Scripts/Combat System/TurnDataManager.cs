@@ -6,22 +6,22 @@ namespace CombatSystem
 {
     public partial class TurnDataManager : Node
     {
-        private List<BattleSkillCastData> turnData;
-        public BattleSkillCastData currentTurn { get; private set; }
+        private List<TurnData> turnData;
+        public TurnData currentTurn { get; private set; }
 
         public override void _Ready()
         {
-            turnData = new List<BattleSkillCastData>();
+            turnData = new List<TurnData>();
         }
 
-        public void AddTurnData(BattleSkillCastData data)
+        public void AddTurnData(TurnData data)
         {
             turnData.Add(data);
         }
 
-        public BattleSkillCastData GetTurnData(int turnNumber)
+        public TurnData GetTurnData(int turnNumber)
         {
-            BattleSkillCastData result = null;
+            TurnData result = null;
             if(turnData.Count > turnNumber)
             {
                 result = turnData[turnNumber];
@@ -29,14 +29,14 @@ namespace CombatSystem
             return result;
         }
 
-        public List<BattleSkillCastData> GetAllTurnData()
+        public List<TurnData> GetAllTurnData()
         {
-            var result = new List<BattleSkillCastData>();
+            var result = new List<TurnData>();
             result.AddRange(turnData);
             return result;
         }
 
-        public void AddNewTurn(BattleSkillCastData data)
+        public void AddNewTurn(TurnData data)
         {
             turnData.Add(data);
         }

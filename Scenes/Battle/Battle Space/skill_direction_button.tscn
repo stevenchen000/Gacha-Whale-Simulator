@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2njhbj4uiopi"]
+
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_c2jw6"]
+
+[node name="Up Button" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 100)
+offset_left = -74.0
+offset_top = -46.0
+offset_right = 76.0
+offset_bottom = 54.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(74, 46)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("1_c2jw6")

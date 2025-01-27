@@ -25,9 +25,9 @@ namespace CombatSystem {
 		public override void _Ready()
 		{
 			InitBattleSpaces();
-			InitBoundarySpaces();
+			//InitBoundarySpaces();
 			SetAllSpacesToDefault();
-			GD.Print(battleSpaces.Count);
+			//Utils.Print(this, battleSpaces.Count);
 		}
 
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -391,6 +391,7 @@ namespace CombatSystem {
 					battleSpaces.Add(space);
 					var position = new Vector2I(i, j);
 					gridPositions[position] = space;
+					space.InitSpace(position);
 				}
 			}
 		}
@@ -418,6 +419,7 @@ namespace CombatSystem {
 			SetupGridspacePosition(space, x, y);
 			space.SetState(GridState.BOUNDARY);
 			borderSpaces.Add(space);
+			
 		}
 
 		private GridSpace InstantiateBattleSpace()

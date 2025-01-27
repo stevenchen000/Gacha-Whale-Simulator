@@ -12,9 +12,9 @@ namespace CombatSystem {
             return true;
         }
 
-        protected virtual void _StartEffect(BattleSkillCastData data) { }
+        protected virtual void _StartEffect(TurnData data) { }
 
-        protected virtual bool _RunEffect(BattleSkillCastData data) { return true; }
-        protected virtual void _EndEffect(BattleSkillCastData data) { }
+        protected virtual bool _RunEffect(TurnData data) { return true; }
+        protected virtual void _EndEffect(TurnData data) { }
     }
 }

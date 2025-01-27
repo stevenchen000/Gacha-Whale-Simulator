@@ -7,9 +7,7 @@ namespace CombatSystem
 {
     public partial class BattleManager : GameMenu
     {
-        private Array<GachaCharacterData> playerPartyData { get; set; }
-        private Array<GachaCharacterData> enemyPartyData { get; set; }
-
+        [Export] private PackedScene battleCharacterScene;
         [Export] private Array<BattleCharacter> playerParty;
         [Export] private Array<BattleCharacter> enemyParty;
         [Export] private BattleGrid grid;
@@ -21,20 +19,33 @@ namespace CombatSystem
         public BattleStateEnum battleState = BattleStateEnum.PREBATTLE;
         private TurnOrderManager turnOrder;
         private Array<Vector2I> walkableSpaces;
+        [Export] private SkillSelection skillUI;
         [Export] private TurnDataManager turnDataManager;
 
-        public BattleSkillCastData castData;
+        public TurnData castData;
         
 
         private double timeSinceStateStarted = 0;
 
+        public CharacterSkill SelectedSkill { get; private set; }
+
+
         public override void _Ready()
         {
-            InitStartingPositions();
-            SetupStartingPositions(playerParty, playerStartingPositions);
-            SetupStartingPositions(enemyParty, enemyStartingPositions);
+            base._Ready();
+            var playerCharacters = game.playerParty;
+            var enemyCharacters = game.enemyParty;
+            playerParty = new Array<BattleCharacter>();
+            enemyParty = new Array<BattleCharacter>();
+            InitCharacters(playerCharacters, playerParty, playerStartingPositions);
+            InitCharacters(enemyCharacters, enemyParty, enemyStartingPositions);
 
             turnOrder = new TurnOrderManager(playerParty, enemyParty);
+        }
+
+        public override void _ExitTree()
+        {
+            
         }
 
         public override void _Process(double delta)
@@ -68,10 +79,15 @@ namespace CombatSystem
 
         public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, CharacterSkill skill)
         {
-            castData = new BattleSkillCastData(caster, targets, skill);
+            castData = new TurnData(caster, targets, skill);
         }
 
 
+        public void SetSelectedSkill(CharacterSkill skill)
+        {
+            SelectedSkill = skill;
+            Utils.Print(this, "Selected skill, make sure to connect event");
+        }
 
         /*****************
          * Public Functions
@@ -82,6 +98,21 @@ namespace CombatSystem
             return turnOrder.GetCurrentCharacter();
         }
 
+        /****************
+         * Turn Functions
+         * **************/
+
+        #region Turn Functions
+
+        public void StartTurn()
+        {
+            var currentCharacter = GetCurrentCharacter();
+            castData = new TurnData(currentCharacter);
+            grid.UpdateAllWalkableAreas(this, currentCharacter);
+            currentCharacter.StartCharacterTurn(this, grid);
+            skillUI.SetupButtons(currentCharacter);
+        }
+
         public void ProgressTurn()
         {
             turnOrder.SetupNextTurn();
@@ -89,10 +120,6 @@ namespace CombatSystem
             castData = null;
         }
 
-        public BattleGrid GetGrid()
-        {
-            return grid;
-        }
 
         public bool IsInSameParty(BattleCharacter character, BattleCharacter target)
         {
@@ -115,39 +142,54 @@ namespace CombatSystem
             return result;
         }
 
+        public void SelectSpace(GridSpace space)
+        {
+            var currChar = GetCurrentCharacter();
+            currChar.SetPosition(space);
+        }
+
+        #endregion
+
         /******************
          * Starting Positions
          * ****************/
+        #region Starting Positions
 
-        private void InitStartingPositions()
+        private void InitCharacters(Array<GameCharacter> characters, 
+                                    Array<BattleCharacter> party, 
+                                    Array<Vector2I> startingPositions)
         {
-            playerStartingPositions = new Array<Vector2I>();
-            playerStartingPositions.Add(new Vector2I(0, 0));
-            playerStartingPositions.Add(new Vector2I(0, 1));
-            playerStartingPositions.Add(new Vector2I(0, 2));
-
-            enemyStartingPositions = new Array<Vector2I>();
-            enemyStartingPositions.Add(new Vector2I(3, 0));
-            enemyStartingPositions.Add(new Vector2I(5, 1));
-        }
-
-        private void SetupStartingPositions(Array<BattleCharacter> party, Array<Vector2I> startingPositions)
-        {
-            for(int i = 0; i < party.Count; i++)
+            for (int i = 0; i < characters.Count; i++)
             {
-                var character = party[i];
-                var startingPosition = startingPositions[i];
-                var space = grid.GetSpaceFromCoords(startingPosition);
-                space.OccupySpace(character);
+                var character = characters[i];
+                var tempChar = Utils.InstantiateCopy<BattleCharacter>(battleCharacterScene);
+                var startPos = startingPositions[i];
+                tempChar.InitCharacter(character, startPos);
+                OccupySpace(startPos, tempChar);
 
-                character.Position = space.GlobalPosition;
+                AddChild(tempChar);
+                party.Add(tempChar);
             }
         }
 
+        #endregion
 
         /*****************
          * Helper functions
          * ***************/
 
+
+        private void OccupySpace(Vector2I coords, BattleCharacter character)
+        {
+            var space = grid.GetSpaceFromCoords(coords);
+            space.OccupySpace(character);
+            character.Position = space.GlobalPosition;
+        }
+
+
+        public BattleGrid GetGrid()
+        {
+            return grid;
+        }
     }
 }

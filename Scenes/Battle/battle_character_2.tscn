@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://cen0vf3wpj18o"]
+[gd_scene load_steps=4 format=3 uid="uid://cen0vf3wpj18o"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" uid="uid://c0mged6cixh87" path="res://Scripts/Combat System/BattleCharacter.cs" id="1_qqxuj"]
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="2_ow1ui"]
+[ext_resource type="Resource" uid="uid://dc24e2v6r5xpm" path="res://Resources/Characters/Character Stats/ally_stats.tres" id="2_yggvi"]
+
+[node name="Battle Character" type="CharacterBody2D" node_paths=PackedStringArray("portrait")]
+script = ExtResource("1_qqxuj")
+portrait = NodePath("Character2")
+savedStats = ExtResource("2_yggvi")
+
+[node name="Character2" parent="." instance=ExtResource("2_ow1ui")]
+offset_left = -95.0
+offset_top = -95.0
+offset_right = 25.0
+offset_bottom = 25.0
+scale = Vector2(1.583, 1.583)
