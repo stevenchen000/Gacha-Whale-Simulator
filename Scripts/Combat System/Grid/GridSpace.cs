@@ -7,12 +7,12 @@ namespace CombatSystem
     {
         private GridState state;
         [Export] private CollisionShape2D collider;
-        [Export] private Color defaultColor;
-        [Export] private Color allyColor;
-        [Export] private Color allyAttackColor;
-        [Export] private Color allyCurrentTileColor;
-        [Export] private Color enemyColor;
-        [Export] private Color boundaryColor;
+        [Export] public Color defaultColor { get; private set; }
+        [Export] public Color allyColor { get; private set; }
+        [Export] public Color allyAttackColor { get; private set; }
+        [Export] public Color allyCurrentTileColor { get; private set; }
+        [Export] public Color enemyColor { get; private set; }
+        [Export] public Color boundaryColor { get; private set; }
 
         [Export] private Sprite2D colliderSprite;
         [Export] private Sprite2D spaceSprite;
@@ -27,7 +27,10 @@ namespace CombatSystem
         public Vector2I coords { get; private set; }
 
 
-        private bool isWalkable;
+        public bool IsWalkable { get; private set; }
+        public int PartyIndex { get; private set; }
+        public bool CanTarget { get; private set; }
+        public bool HasSelectedTarget { get; private set; }
 
         private BattleManager battle;
 
@@ -47,7 +50,7 @@ namespace CombatSystem
 
         public void OnClick()
         {
-            if (isWalkable)
+            if (IsWalkable)
             {
                 battle.SelectSpace(this);
             }
@@ -61,7 +64,7 @@ namespace CombatSystem
 
         public void SelectSpace()
         {
-            if (isWalkable)
+            if (IsWalkable)
             {
                 battle.SelectSpace(this);
             }
@@ -105,16 +108,9 @@ namespace CombatSystem
 
         }
 
-
-
-        public bool IsWalkable()
-        {
-            return isWalkable;
-        }
-
         private void SetWalkable(bool walkable)
         {
-            isWalkable = walkable;
+            IsWalkable = walkable;
 
             if (walkable)
             {
@@ -183,15 +179,15 @@ namespace CombatSystem
             characterOnSpace = null;
         }
 
+        public void SetColor(Color newColor)
+        {
+            spaceSprite.SelfModulate = newColor;
+        }
 
         /****************
          * Helpers
          * ****************/
 
-        private void SetColor(Color newColor)
-        {
-            spaceSprite.Modulate = newColor;
-        }
 
         private void HideButtons()
         {

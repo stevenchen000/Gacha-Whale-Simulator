@@ -1,3 +1,4 @@
+Node2D
 Control
 CollisionShape2D
 Area2D
@@ -7,7 +8,6 @@ TextureRect
 CanvasLayer
 CharacterBody2D
 HBoxContainer
-Node2D
 CollisionPolygon2D
 GridMap
 Label

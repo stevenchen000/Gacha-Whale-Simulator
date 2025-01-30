@@ -1,3 +1,4 @@
+CharacterSkillEvent
 GameCharacter
 CharacterClass
 CharacterRole
@@ -12,4 +13,3 @@ DialoguePicker
 BaseQuest
 WorldEffectGiveQuest
 InventoryChangeEvent
-ItemResource

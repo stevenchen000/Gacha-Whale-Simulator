@@ -2,12 +2,16 @@ using Godot;
 using System;
 using Godot.Collections;
 using GachaSystem;
+using EventSystem;
 
 namespace CombatSystem
 {
     public partial class BattleManager : GameMenu
     {
         [Export] private PackedScene battleCharacterScene;
+
+        [Export] private CharacterSkillEvent OnSkillSelect;
+
         [Export] private Array<BattleCharacter> playerParty;
         [Export] private Array<BattleCharacter> enemyParty;
         [Export] private BattleGrid grid;
@@ -77,17 +81,7 @@ namespace CombatSystem
             return result;
         }
 
-        public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, CharacterSkill skill)
-        {
-            castData = new TurnData(caster, targets, skill);
-        }
 
-
-        public void SetSelectedSkill(CharacterSkill skill)
-        {
-            SelectedSkill = skill;
-            Utils.Print(this, "Selected skill, make sure to connect event");
-        }
 
         /*****************
          * Public Functions
@@ -142,11 +136,33 @@ namespace CombatSystem
             return result;
         }
 
+        #endregion
+
+        /****************
+         * Turn Actions
+         * ***************/
+
+        #region Turn Actions
+
         public void SelectSpace(GridSpace space)
         {
             var currChar = GetCurrentCharacter();
             currChar.SetPosition(space);
         }
+
+
+        public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, CharacterSkill skill)
+        {
+            castData = new TurnData(caster, targets, skill);
+        }
+
+        public void SetSelectedSkill(CharacterSkill skill)
+        {
+            SelectedSkill = skill;
+            //OnSkillSelect.RaiseEvent(this, skill);
+            //Get current space
+        }
+
 
         #endregion
 

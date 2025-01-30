@@ -43,10 +43,21 @@ namespace CombatSystem {
 			SetSpacesWalkable(CurrentWalkableSpaces, character);
 		}
 
+		
+
 
 		/*********************
 		 * Public functions
 		 * *************/
+
+
+		public void ShowAllTargetableAreas(BattleManager battle, 
+										   BattleCharacter caster, 
+										   CharacterSkill skill)
+		{
+			
+		}
+
 
 		public GridSpace GetSpaceFromCoords(int x, int y)
 		{
@@ -238,7 +249,7 @@ namespace CombatSystem {
         }
 		public bool CheckIfSpaceIsWalkable(GridSpace space)
         {
-			return space.IsWalkable();
+			return space.IsWalkable;
         }
 
 		/*******************

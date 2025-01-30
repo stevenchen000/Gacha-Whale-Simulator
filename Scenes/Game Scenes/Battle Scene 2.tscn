@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://8ssh07hfd56t"]
+[gd_scene load_steps=19 format=3 uid="uid://8ssh07hfd56t"]
 
 [ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat System/BattleManager.cs" id="1_w405p"]
 [ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
 [ext_resource type="Script" uid="uid://y6uj5g2l8l0n" path="res://Scripts/Combat System/Grid/BattleGrid.cs" id="2_tbgor"]
+[ext_resource type="Resource" uid="uid://4srl4i4h13k2" path="res://Resources/Utilities/Events/Combat Events/OnSkillSelected.tres" id="3_5ipmr"]
 [ext_resource type="PackedScene" uid="uid://bucspuw6nymcd" path="res://Scenes/Battle/Battle Space/battle_space_square.tscn" id="3_binbm"]
 [ext_resource type="Script" uid="uid://bikiac63fc22y" path="res://Scripts/Combat System/Battle States/CombatTurnNode.cs" id="3_iplpb"]
 [ext_resource type="Script" uid="uid://bfoxjp8ndtsr" path="res://Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs" id="4_yci0l"]
@@ -28,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w405p")
 battleCharacterScene = ExtResource("15_iplpb")
+OnSkillSelect = ExtResource("3_5ipmr")
 playerParty = []
 enemyParty = []
 grid = NodePath("Grid")

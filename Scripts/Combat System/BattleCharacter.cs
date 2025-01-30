@@ -64,7 +64,7 @@ namespace CombatSystem
             if (Input.IsActionJustPressed("ui_accept"))
             {
                 currSkill = skill;
-                targets.AddRange(grid.GetTargetsInRange(battle, this, currSkill.attackArea));
+                targets.AddRange(grid.GetTargetsInRange(battle, this, currSkill.AttackArea));
                 selectedAction = true;
             }
 

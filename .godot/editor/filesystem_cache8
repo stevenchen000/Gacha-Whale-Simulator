@@ -1,23 +1,23 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1737835388.0
+::res://::1738126401
 Angeal.png::CompressedTexture2D::3550361574299600229::1731881659::1734670461::1::::<><><>db3b186359417cc8c214f28d95d3b9e1<>res://.godot/imported/Angeal.png-76d6a2a881c1dd23fbfbb64e1951de74.ctex::
 export_presets.cfg::TextFile::-1::1735994715::0::1::::<><><><>::
 icon.svg::CompressedTexture2D::8968916899071090119::1731550235::1733220835::1::::<><><>88421697f9892874cd66f4804d9d1e0f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://addons/::1734926093.0
-::res://addons/GodotGetImage/::1737037225.0
+::res://addons/::1734926093
+::res://addons/GodotGetImage/::1737037225
 export_plugin.gd::GDScript::986237550209411713::1702024377::0::1::::<>EditorPlugin<><><>::
 plugin.cfg::TextFile::-1::1702024377::0::1::::<><><><>::
-::res://addons/GodotGetImage/bin/::1702024377.0
-::res://addons/GodotGetImage/bin/debug/::1702024377.0
-::res://addons/GodotGetImage/bin/release/::1702024377.0
-::res://android/::1737060515.0
-::res://Art Assets/::1736661917.0
-::res://Art Assets/Character Assets/::1736662602.0
-::res://Art Assets/Character Assets/Role Icons/::1736662650.0
+::res://addons/GodotGetImage/bin/::1702024377
+::res://addons/GodotGetImage/bin/debug/::1702024377
+::res://addons/GodotGetImage/bin/release/::1702024377
+::res://android/::1737060515
+::res://Art Assets/::1736661917
+::res://Art Assets/Character Assets/::1736662602
+::res://Art Assets/Character Assets/Role Icons/::1736662650
 ShieldIcon.png::CompressedTexture2D::4316957062224952566::1736662388::1736662650::1::::<><><>695e57e155bf831f7b684c3234ac5573<>res://.godot/imported/ShieldIcon.png-dca807b77e964f6374e317c4d8ced292.ctex::
 StaffIcon.png::CompressedTexture2D::8182699408245283367::1736662561::1736662650::1::::<><><>04897e0b768fd644d41adf0ce1080df7<>res://.godot/imported/StaffIcon.png-d6fc4202a67da3a134714aa69e3a64d5.ctex::
 SwordIcon.png::CompressedTexture2D::5820842975947761769::1736662641::1736662650::1::::<><><>8dde6173e004cf56bdab669dbd186b5d<>res://.godot/imported/SwordIcon.png-1d253d72ce553663a4c59a2320cca53b.ctex::
-::res://Art Assets/Character Assets/Weapon Icons/::1736663534.0
+::res://Art Assets/Character Assets/Weapon Icons/::1736663534
 2.png::CompressedTexture2D::1366026759978942482::1683279453::1736662651::1::::<><><>2a0ae979c8055fa97e5bdb2d3f343f80<>res://.godot/imported/2.png-b42e4ad57b7eec1a5fc5e46e345f3aba.ctex::
 4.png::CompressedTexture2D::5414439081560484263::1683279453::1736662651::1::::<><><>5557af7152004556c337b2ba085fd266<>res://.godot/imported/4.png-c8a1b81c304aeaa260462ea33b288ac5.ctex::
 5.png::CompressedTexture2D::3273184386640023599::1683279453::1736662651::1::::<><><>c83d5cf0cc7b81c7abc1b82f056601c9<>res://.godot/imported/5.png-88686d0a7a8d3e8b63649602263e4e0f.ctex::
@@ -70,15 +70,15 @@ Scythe.png::CompressedTexture2D::4824111819977791205::1683279452::1736662997::1:
 Staff.png::CompressedTexture2D::1057020360945802514::1683279452::1736663216::1::::<><><>9dc417784597d470788b2608a6d10d14<>res://.godot/imported/Staff.png-7ab01a03dfd7fc40d32724e681fff2b7.ctex::
 Trident.png::CompressedTexture2D::8746302540232617529::1683279452::1736663032::1::::<><><>48f954b58903be153782b4eb5a69f386<>res://.godot/imported/Trident.png-d8d2976bfff55d6f800ad576adb44344.ctex::
 WandT2.png::CompressedTexture2D::6235184155254891617::1736663278::1736663278::1::::<><><>c7ca58dbc887a6e5aaaa8be184381123<>res://.godot/imported/WandT2.png-b2d58ac1639164c32875feeb71ac4629.ctex::
-::res://Art Assets/Objects/::1733817822.0
+::res://Art Assets/Objects/::1733817822
 Tin_Can.png::CompressedTexture2D::5956795861407984656::1733817775::1733817818::1::::<><><>cd155f700d6b8f4cc893f5353ce1c0f6<>res://.godot/imported/Tin_Can.png-f1595a03157274e139e36db30f6c0333.ctex::
-::res://Art Assets/Particles/::1734765240.0
+::res://Art Assets/Particles/::1734765240
 Particle.png::CompressedTexture2D::380168387651705072::1734765194::1734765240::1::::<><><>fed6bbceb0e8e6010c5994c43fa67700<>res://.godot/imported/Particle.png-604816422a5630f1dad6dba048ae3a82.ctex::
-::res://Art Assets/Phone/::1733108641.0
+::res://Art Assets/Phone/::1733108641
 Phone Border.png::CompressedTexture2D::7530748054413999330::1732175420::1733108641::1::::<><><>69f1e4e77035904b0fdf1b261a7c28d6<>res://.godot/imported/Phone Border.png-17d32c639b705f0e0db277f887211e45.ctex::
 Phone Screen.png::CompressedTexture2D::2474163319881812671::1732175212::1733108641::1::::<><><>fb56c4d53dd5cd4570ef7f17708b58f6<>res://.godot/imported/Phone Screen.png-8704ff2f3a0cd3b7968c7b84b28a5340.ctex::
-::res://Art Assets/Placeholder Characters/::1732070303.0
-::res://Art Assets/Placeholder Characters/Husbandos/::1734670460.0
+::res://Art Assets/Placeholder Characters/::1732070303
+::res://Art Assets/Placeholder Characters/Husbandos/::1734670460
 Cor.png::CompressedTexture2D::4475285901161592937::1731881623::1731882105::1::::<><><>d46cfb779b5a3fcc0c55122f07e193c1<>res://.godot/imported/Cor.png-f7f953961206e4223cbedc0d40959709.ctex::
 Edge.png::CompressedTexture2D::1073985158893555227::1731881619::1731882105::1::::<><><>3838b72452112e0f192a26594122bbb1<>res://.godot/imported/Edge.png-ee42f9fb43c444cb0402774684377f34.ctex::
 Ignis.png::CompressedTexture2D::3086620148600509343::1731881632::1731882105::1::::<><><>cc70b7c88babe1182f4f084eb676b388<>res://.godot/imported/Ignis.png-6903c1be696aac8582057fc8bc8f1f32.ctex::
@@ -86,7 +86,7 @@ Locke.png::CompressedTexture2D::8111589144395199699::1731881636::1731882105::1::
 Reno.png::CompressedTexture2D::1646218008515673370::1731881629::1731882105::1::::<><><>0b21a1657e54cd0f0519a348f0cc3fc2<>res://.godot/imported/Reno.png-b76dfea1d23dd764e1515340b8dbdd81.ctex::
 Rude.png::CompressedTexture2D::9187311071610670626::1731881626::1731882105::1::::<><><>7fa05130f95f1678ba37b8a2f67589cb<>res://.godot/imported/Rude.png-e7aba1253e9428082e2d18ba2673536c.ctex::
 Weiss.png::CompressedTexture2D::7017251483615721995::1731881773::1731882105::1::::<><><>248a0241745307388092a291b3f090ce<>res://.godot/imported/Weiss.png-c5a4911373677149c63b34f21b03678d.ctex::
-::res://Art Assets/Placeholder Characters/Waifus/::1732070305.0
+::res://Art Assets/Placeholder Characters/Waifus/::1732070305
 Aranea.png::CompressedTexture2D::1550756319871771082::1731882019::1731882101::1::::<><><>c61b1faa2a86c92659833274680c0034<>res://.godot/imported/Aranea.png-02a33705c7a2246a7e961a41376cceb1.ctex::
 Arciela.png::CompressedTexture2D::6971332944205803881::1731882028::1731882101::1::::<><><>7b609f1c68ed8199951483e3004d0c9e<>res://.godot/imported/Arciela.png-5aad4bc404b7144934f0771e79026f41.ctex::
 Beatrix.png::CompressedTexture2D::5524372288452101990::1731882025::1731882101::1::::<><><>adb1bbdb1eec3a77a0cc2ffc220a9255<>res://.godot/imported/Beatrix.png-c6e922cae2c6eb1414d969b01e8b82fe.ctex::
@@ -95,25 +95,25 @@ Jessie.png::CompressedTexture2D::3752927138559396830::1731882013::1731882101::1:
 Leila.png::CompressedTexture2D::3512410193776107992::1731882016::1731882101::1::::<><><>69d55b361eec7aeece634fd4104096bc<>res://.godot/imported/Leila.png-77c6fd5f1e4f1bdf70c60655edc6d58d.ctex::
 Lulu.png::CompressedTexture2D::2443413714073669340::1731882035::1731882101::1::::<><><>b834ebc1b6fabb8cd765efd4779ad3b7<>res://.godot/imported/Lulu.png-a662ac687d71d8a6cbd723eafc41bc56.ctex::
 Ultimecia.png::CompressedTexture2D::1559815289216482657::1731882032::1731882101::1::::<><><>f243eb6bbe3d378d1f949ec82740f067<>res://.godot/imported/Ultimecia.png-216cf409ecac5d057cf4f05bf841fcc2.ctex::
-::res://Art Assets/Portrait Circle/::1733109741.0
+::res://Art Assets/Portrait Circle/::1733109741
 Avatar Circle Background.png::CompressedTexture2D::2993230307054712454::1733109494::1733109567::1::::<><><>97768f0af02abde6684e0f14b1d3b397<>res://.godot/imported/Avatar Circle Background.png-74fee06d067de10e069c3bb9b2395dd5.ctex::
 Avatar Circle Border.png::CompressedTexture2D::5514401502700857238::1733109739::1733109741::1::::<><><>36d73d305f47b4220d8289c98327d267<>res://.godot/imported/Avatar Circle Border.png-412930c6aca17ed9212f17158c24af49.ctex::
-::res://Art Assets/Textbox/::1733121929.0
+::res://Art Assets/Textbox/::1733121929
 Blue Box.png::CompressedTexture2D::327251448036513529::1733121927::1733121929::1::::<><><>f44d633f89c94a6a5c6348099e2668d7<>res://.godot/imported/Blue Box.png-b5b8f4f97d0be2d0c7ce79396447dddd.ctex::
-::res://Resources/::1736741052.0
+::res://Resources/::1736741052
 GachaBanner.tres::Resource/GachaBanner::3095410542973384456::1732251153::0::1::::<><><><>::res://Scripts/Gacha System/GachaBanner.cs
 StartDate.tres::Resource/DateTime::4551553344925301809::1732177426::0::1::::<><><><>::res://Scripts/UI/Calendar/DateTime.cs
 test_portrait.tres::Resource/CharacterPortrait::1247467198735908037::1736741052::0::1::::<><><><>::uid://hdm2us0pmnaq::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png<>res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs
-::res://Resources/Characters/::1737175477.0
-::res://Resources/Characters/Character Stats/::1734853541.0
+::res://Resources/Characters/::1737175477
+::res://Resources/Characters/Character Stats/::1734853541
 ally_stats.tres::Resource/StatContainer::7357147325684597638::1734853541::0::1::::<><><><>::res://Scripts/Combat System/Skill System/StatContainer.cs
 enemy_stats.tres::Resource/StatContainer::3450589308702017698::1734401182::0::1::::<><><><>::res://Scripts/Combat System/Skill System/StatContainer.cs
-::res://Resources/Characters/Characters/::1737834642.0
+::res://Resources/Characters/Characters/::1737834642
 caster.tres::Resource/GameCharacter::9174747589123892423::1737834642::0::1::::<><><><>::uid://dnkp8jmxhbt8a::::res://Resources/Characters/Skills/Classes/caster_class.tres<>uid://cnmga8on2vcdy::::res://Resources/Characters/Skills/Roles/attacker_role.tres<>uid://dyor6oc038qua::::res://Resources/Characters/Skills/basic_attack.tres<>uid://gdabyn413d1c::::res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs
 healer.tres::Resource/GameCharacter::5897469962301702881::1737232219::0::1::::<><><><>::uid://dnkp8jmxhbt8a::::res://Resources/Characters/Skills/Classes/caster_class.tres<>uid://cta0py0mhsput::::res://Resources/Characters/Skills/Roles/supporter_role.tres<>uid://gdabyn413d1c::::res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs<>uid://dyor6oc038qua::::res://Resources/Characters/Skills/basic_attack.tres
 tank.tres::Resource/GameCharacter::6086274537095505622::1737232219::0::1::::<><><><>::uid://bj5xnm0nbmfui::::res://Resources/Characters/Skills/Classes/warrior_class.tres<>uid://ch2f8nppud3k7::::res://Resources/Characters/Skills/Roles/defender_role.tres<>uid://dyor6oc038qua::::res://Resources/Characters/Skills/basic_attack.tres<>uid://gdabyn413d1c::::res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs
 warrior.tres::Resource/GameCharacter::8786758247941576579::1737232218::0::1::::<><><><>::uid://gdabyn413d1c::::res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs<>uid://bj5xnm0nbmfui::::res://Resources/Characters/Skills/Classes/warrior_class.tres<>uid://cnmga8on2vcdy::::res://Resources/Characters/Skills/Roles/attacker_role.tres<>uid://dyor6oc038qua::::res://Resources/Characters/Skills/basic_attack.tres
-::res://Resources/Characters/Gacha Characters/::1734670460.0
+::res://Resources/Characters/Gacha Characters/::1734670460
 Angealfish.tres::Resource/GachaCharacter::1932001303700419177::1734670460::0::1::::<><><><>::uid://bqt263q3jfhxd::::res://Angeal.png<>res://Scripts/Gacha System/GachaCharacter.cs
 Aranea.tres::Resource/GachaCharacter::2483484689205110272::1732247303::0::1::::<><><><>::uid://wdgy25x7fcji::::res://Art Assets/Placeholder Characters/Waifus/Aranea.png<>res://Scripts/Gacha System/GachaCharacter.cs
 Beatrix.tres::Resource/GachaCharacter::250516185916305876::1732247303::0::1::::<><><><>::uid://ckybus1c527os::::res://Art Assets/Placeholder Characters/Waifus/Beatrix.png<>res://Scripts/Gacha System/GachaCharacter.cs
@@ -124,62 +124,62 @@ Locke.tres::Resource/GachaCharacter::8300954749688599615::1732247303::0::1::::<>
 Reno.tres::Resource/GachaCharacter::9080768804748754366::1732247303::0::1::::<><><><>::uid://xpo78ohh3v51::::res://Art Assets/Placeholder Characters/Husbandos/Reno.png<>res://Scripts/Gacha System/GachaCharacter.cs
 Rude.tres::Resource/GachaCharacter::5518986824222238178::1732247303::0::1::::<><><><>::uid://d35nw20ukeca1::::res://Art Assets/Placeholder Characters/Husbandos/Rude.png<>res://Scripts/Gacha System/GachaCharacter.cs
 Weiss.tres::Resource/GachaCharacter::8758830973574162886::1732247303::0::1::::<><><><>::uid://c68hdvl2tc6qp::::res://Art Assets/Placeholder Characters/Husbandos/Weiss.png<>res://Scripts/Gacha System/GachaCharacter.cs
-::res://Resources/Characters/Skills/::1737834642.0
-basic_attack.tres::Resource/CharacterSkill::8873783875028128976::1737834642::0::1::::<><><><>::uid://djopsu18jnynm::::res://Scripts/Combat System/Skill System/CharacterSkill.cs<>uid://dvoadaaadxes2::::res://Scenes/Skill Assets/Test Effect.tscn<>uid://d01u0sdo6f624::::res://icon.svg<>uid://b68h5nh2inr2b::::res://Resources/Characters/Skills/Skill Shape/single_range.tres<>uid://bytq6ww1y1oc::::res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationElementCreateObjectAtTarget.cs<>uid://cda4us0wqygxy::::res://Scripts/Combat System/Skill System/Skill Animations/Combat Elements/SkillDamageEffect.cs<>uid://dkofljjxhtlfe::::res://Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs
-::res://Resources/Characters/Skills/Classes/::1736741052.0
+::res://Resources/Characters/Skills/::1738126401
+basic_attack.tres::Resource/CharacterSkill::8873783875028128976::1738126401::0::1::::<><><><>::uid://djopsu18jnynm::::res://Scripts/Combat System/Skill System/CharacterSkill.cs<>uid://dvoadaaadxes2::::res://Scenes/Skill Assets/Test Effect.tscn<>uid://d01u0sdo6f624::::res://icon.svg<>uid://b68h5nh2inr2b::::res://Resources/Characters/Skills/Skill Shape/H_single_range.tres<>uid://bytq6ww1y1oc::::res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationElementCreateObjectAtTarget.cs<>uid://cda4us0wqygxy::::res://Scripts/Combat System/Skill System/Skill Animations/Combat Elements/SkillDamageEffect.cs<>uid://dkofljjxhtlfe::::res://Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs
+::res://Resources/Characters/Skills/Classes/::1736741052
 caster_class.tres::Resource/CharacterClass::8093330974306916230::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs<>uid://cu3mtpkpm3lqv::::res://Art Assets/Character Assets/Weapon Icons/WandT2.png
 ranger_class.tres::Resource/CharacterClass::510548047261914548::1736741052::0::1::::<><><><>::uid://b8tqrb7x237fj::::res://Art Assets/Character Assets/Weapon Icons/BowT1.png<>res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs
 warrior_class.tres::Resource/CharacterClass::3081471984704365204::1736741052::0::1::::<><><><>::uid://catng7u5euwid::::res://Art Assets/Character Assets/Weapon Icons/Greatsword.png<>res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs
-::res://Resources/Characters/Skills/Elements/::1735623821.0
+::res://Resources/Characters/Skills/Elements/::1735623821
 fire_element.tres::Resource/Element::4256944717959254339::1735623821::0::1::::<><><><>::res://Scripts/Combat System/Element.cs
 thunder_element.tres::Resource/Element::1815851612713384784::1735623821::0::1::::<><><><>::res://Scripts/Combat System/Element.cs
 water_element.tres::Resource/Element::8753452126553962215::1735623821::0::1::::<><><><>::res://Scripts/Combat System/Element.cs
-::res://Resources/Characters/Skills/Roles/::1736741052.0
+::res://Resources/Characters/Skills/Roles/::1736741052
 attacker_role.tres::Resource/CharacterRole::5710434925211325182::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs<>uid://co6woy8qx2ijp::::res://Art Assets/Character Assets/Role Icons/SwordIcon.png
 defender_role.tres::Resource/CharacterRole::5320264695058763484::1736741052::0::1::::<><><><>::uid://b2rfwf3ecnsmo::::res://Art Assets/Character Assets/Role Icons/ShieldIcon.png<>res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs
 supporter_role.tres::Resource/CharacterRole::6107975407972371255::1736741052::0::1::::<><><><>::uid://dot04mqxqng7h::::res://Art Assets/Character Assets/Role Icons/StaffIcon.png<>res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs
-::res://Resources/Characters/Skills/Skill Shape/::1734401182.0
-single_range.tres::Resource/GridShape::4630878589977751139::1734401182::0::1::::<><><><>::res://Scripts/Combat System/Grid/GridShape.cs
+::res://Resources/Characters/Skills/Skill Shape/::1738126401
+H_single_range.tres::Resource/GridShape::4630878589977751139::1734401182::0::1::::<><><><>::res://Scripts/Combat System/Grid/GridShape.cs
+H_T_range.tres::Resource/GridShape::5654942550930148780::1734401182::0::1::::<><><><>::res://Scripts/Combat System/Grid/GridShape.cs
 two_spaces_away.tres::Resource/GridShape::4677569659968074120::1734401182::0::1::::<><><><>::res://Scripts/Combat System/Grid/GridShape.cs
-T_range.tres::Resource/GridShape::5654942550930148780::1734401182::0::1::::<><><><>::res://Scripts/Combat System/Grid/GridShape.cs
-::res://Resources/Gacha Game Data/::1736400814.0
+::res://Resources/Gacha Game Data/::1736400814
 Gacha Characters List.tres::Resource/GachaCharacterList::2069387824586629026::1736400814::0::1::::<><><><>::uid://bbnavojdyrhq3::::res://Resources/Characters/Gacha Characters/Aranea.tres<>uid://dtl72rvcs237::::res://Resources/Characters/Gacha Characters/Beatrix.tres<>uid://2r41q02byvxx::::res://Resources/Characters/Gacha Characters/Angealfish.tres<>uid://cuclr7vjvjjld::::res://Resources/Characters/Gacha Characters/corner_jeraldeen.tres<>uid://cm0sdvgmtwjx8::::res://Resources/Characters/Gacha Characters/cor_leonfish.tres<>uid://d3dl2lsyul7td::::res://Resources/Characters/Gacha Characters/Ignis.tres<>uid://dqjbrn2np3lv0::::res://Resources/Characters/Gacha Characters/Locke.tres<>uid://d2m162o1x3f2e::::res://Resources/Characters/Gacha Characters/Reno.tres<>uid://ckvo53dnth6mg::::res://Resources/Characters/Gacha Characters/Rude.tres<>uid://dw13wwoj4o6v7::::res://Resources/Characters/Gacha Characters/Weiss.tres<>res://Scripts/Gacha System/GachaCharacterList.cs
 Gacha Game.tres::Resource/GachaGame::8555413963217339696::1732520270::0::1::::<><><><>::res://Scripts/Gacha System/GachaGame.cs<>uid://bkdo7vcfuf1xk::::res://Resources/GachaBanner.tres<>uid://4qorrqwhv7ri::::res://Resources/Gacha Game Data/Gacha Characters List.tres
-::res://Resources/Gacha Game Data/Currencies/::1733219740.0
+::res://Resources/Gacha Game Data/Currencies/::1733219740
 pearls.tres::Resource/UpgradeCurrency::2024765713862098587::1733219740::0::1::::<><><><>::uid://cb4d130t6c7wm::::res://icon.svg<>res://Scripts/Gacha System/UpgradeCurrency.cs
-::res://Resources/Items/::1733903574.0
+::res://Resources/Items/::1733903574
 cans.tres::Resource/ItemResource::2006392628975050543::1733903574::0::1::::<><><><>::uid://cq4rs7rq6x6fc::::res://Art Assets/Objects/Tin_Can.png<>res://Scripts/Inventory System/ItemResource.cs
-::res://Resources/Overworld/::1736400992.0
-::res://Resources/Overworld/Dialogue/::1736567137.0
+::res://Resources/Overworld/::1736400992
+::res://Resources/Overworld/Dialogue/::1736567137
 test_battle_dialogue.tres::Resource/DialogueTree::9034334400898334829::1736567137::0::1::::<><><><>::res://Scripts/Dialogue System/DialogueTree.cs<>uid://dan74vwixd5uq::::res://Resources/Overworld/Dialogue/Actors/whalefred.tres<>uid://dwriatxrjmb2b::::res://Resources/Utilities/Tags/default_emotion.tres<>res://Scripts/Dialogue System/DialogueScene.cs<>uid://ddgdexvd8s0gs::::res://Resources/Utilities/Tags/happy_emotion.tres<>uid://b0p4c5j6gi1px::::res://Resources/Utilities/Tags/sad_emotion.tres
 test_quest_dialogue.tres::Resource/DialogueTree::1669145489087823549::1736567137::0::1::::<><><><>::res://Scripts/Dialogue System/DialogueTree.cs<>uid://dan74vwixd5uq::::res://Resources/Overworld/Dialogue/Actors/whalefred.tres<>uid://dwriatxrjmb2b::::res://Resources/Utilities/Tags/default_emotion.tres<>res://Scripts/Dialogue System/DialogueScene.cs<>uid://ddgdexvd8s0gs::::res://Resources/Utilities/Tags/happy_emotion.tres<>uid://b0p4c5j6gi1px::::res://Resources/Utilities/Tags/sad_emotion.tres
 test_quest_finished_dialogue.tres::Resource/DialogueTree::5354769189779834740::1736567137::0::1::::<><><><>::res://Scripts/Dialogue System/DialogueTree.cs<>uid://dan74vwixd5uq::::res://Resources/Overworld/Dialogue/Actors/whalefred.tres<>uid://ddgdexvd8s0gs::::res://Resources/Utilities/Tags/happy_emotion.tres<>res://Scripts/Dialogue System/DialogueScene.cs
 test_quest_not_finished_dialogue.tres::Resource/DialogueTree::4827853991640694550::1736567137::0::1::::<><><><>::res://Scripts/Dialogue System/DialogueTree.cs<>uid://dan74vwixd5uq::::res://Resources/Overworld/Dialogue/Actors/whalefred.tres<>uid://ddgdexvd8s0gs::::res://Resources/Utilities/Tags/happy_emotion.tres<>res://Scripts/Dialogue System/DialogueScene.cs
 test_random_dialogue.tres::Resource/DialogueTree::414057190989563861::1736400996::0::1::::<><><><>::res://Scripts/Dialogue System/DialogueTree.cs<>uid://bd4x7elt884pp::::res://Resources/Overworld/Dialogue/Actors/whalema.tres<>uid://dwriatxrjmb2b::::res://Resources/Utilities/Tags/default_emotion.tres<>res://Scripts/Dialogue System/DialogueScene.cs<>uid://b0p4c5j6gi1px::::res://Resources/Utilities/Tags/sad_emotion.tres<>uid://ddgdexvd8s0gs::::res://Resources/Utilities/Tags/happy_emotion.tres
-::res://Resources/Overworld/Dialogue/Actors/::1736567137.0
+::res://Resources/Overworld/Dialogue/Actors/::1736567137
 whalefred.tres::Resource/Actor::7188094831044271672::1736567137::0::1::::<><><><>::res://Scripts/Dialogue System/Actor.cs<>uid://bqt263q3jfhxd::::res://Angeal.png<>uid://dwriatxrjmb2b::::res://Resources/Utilities/Tags/default_emotion.tres<>res://Scripts/Dialogue System/ActorEmotion.cs<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>uid://ddgdexvd8s0gs::::res://Resources/Utilities/Tags/happy_emotion.tres<>uid://pkim4yxl8ikp::::res://Art Assets/Placeholder Characters/Husbandos/Edge.png<>uid://b0p4c5j6gi1px::::res://Resources/Utilities/Tags/sad_emotion.tres
 whalema.tres::Resource/Actor::2658308033708469433::1736400996::0::1::::<><><><>::uid://dwriatxrjmb2b::::res://Resources/Utilities/Tags/default_emotion.tres<>uid://wdgy25x7fcji::::res://Art Assets/Placeholder Characters/Waifus/Aranea.png<>res://Scripts/Dialogue System/ActorEmotion.cs<>uid://ddgdexvd8s0gs::::res://Resources/Utilities/Tags/happy_emotion.tres<>uid://btp7fq48q103s::::res://Art Assets/Placeholder Characters/Waifus/Jessie.png<>uid://b0p4c5j6gi1px::::res://Resources/Utilities/Tags/sad_emotion.tres<>uid://bqbo5aordwmbg::::res://Art Assets/Placeholder Characters/Waifus/Leila.png<>res://Scripts/Dialogue System/Actor.cs
-::res://Resources/Overworld/Dialogue/Character Dialogue Pickers/::1736400992.0
+::res://Resources/Overworld/Dialogue/Character Dialogue Pickers/::1736400992
 test_quest_dialogue_picker.tres::Resource/DialoguePickerQuest::8035848019550492937::1736400992::0::1::::<><><><>::uid://3upvmrfs45vb::::res://Resources/Overworld/Quests/can_quest.tres<>res://Scripts/Dialogue System/Dialogue Picker/Custom Dialogue Picker/DialoguePickerQuest.cs<>uid://x1st2gj86p70::::res://Resources/Overworld/Dialogue/test_quest_dialogue.tres<>uid://cij5jb0jqx3oq::::res://Resources/Overworld/Dialogue/test_quest_finished_dialogue.tres<>uid://ca1wbxwv25omg::::res://Resources/Overworld/Dialogue/test_quest_not_finished_dialogue.tres
 test_quest_giver.tres::Resource/DialoguePicker::1634964350835170873::1736400992::0::1::::<><><><>::uid://3upvmrfs45vb::::res://Resources/Overworld/Quests/can_quest.tres<>res://Scripts/Dialogue System/Dialogue Picker/DialoguePicker.cs<>res://Scripts/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionHasQuest.cs<>uid://x1st2gj86p70::::res://Resources/Overworld/Dialogue/test_quest_dialogue.tres<>res://Scripts/Dialogue System/Dialogue Picker/DialogueAndCondition.cs<>res://Scripts/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionQuestFinished.cs<>uid://ca1wbxwv25omg::::res://Resources/Overworld/Dialogue/test_quest_not_finished_dialogue.tres<>uid://cij5jb0jqx3oq::::res://Resources/Overworld/Dialogue/test_quest_finished_dialogue.tres
-::res://Resources/Overworld/Quests/::1736567137.0
+::res://Resources/Overworld/Quests/::1736567137
 can_quest.tres::Resource/BaseQuest::2007524090303885227::1736567137::0::1::::<><><><>::uid://bnka8sgyiscsr::::res://Resources/Utilities/Events/Inventory Events/OnInventoryUpdate.tres<>uid://3t581paqpkcl::::res://Resources/Items/cans.tres<>res://Scripts/Quest System/Custom Quest Goals/QuestGoalItemPickup.cs<>res://Scripts/Quest System/BaseQuest.cs
-::res://Resources/Overworld/Trigger Effects/::1736400992.0
+::res://Resources/Overworld/Trigger Effects/::1736400992
 delete_object_trigger_effect.tres::Resource/DeleteObjectTriggerEffect::4069331349541838747::1733834662::0::1::::<><><><>::res://Scripts/Overworld Scripts/Triggers/Trigger Effects/DeleteObjectTriggerEffect.cs
 dialogue_to_battle_trigger.tres::Resource/TriggerDialogue::5285716634911637170::1736400992::0::1::::<><><><>::res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs<>uid://d1ykfx2k01hwf::::res://Resources/Overworld/Dialogue/test_battle_dialogue.tres
 hello_world_dialogue_trigger.tres::Resource/TriggerDialogue::4167811053060308848::1736400992::0::1::::<><><><>::uid://f5tpxoqlmqs8::::res://Resources/Overworld/Dialogue/test_random_dialogue.tres<>res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs
 load_battle_effect.tres::Resource/TriggerLoadScene::4343296460942174273::1733834667::0::1::::<><><><>::uid://bu2spse3qae4c::::res://Scenes/Battle Scene.tscn<>res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerLoadScene.cs
 skip_to_morning.tres::Resource/SkipTimeTriggerEffect::7615259805834023383::1733835069::0::1::::<><><><>::res://Scripts/Overworld Scripts/Triggers/Trigger Effects/SkipTimeTriggerEffect.cs
-::res://Resources/Overworld/World Events/::1736400979.0
+::res://Resources/Overworld/World Events/::1736400979
 get_cans_quest_world_event.tres::Resource/WorldEffectGiveQuest::7411779240368921746::1736400979::0::1::::<><><><>::res://Scripts/Overworld Scripts/World Events/Custom World Events/WorldEffectGiveQuest.cs<>uid://3upvmrfs45vb::::res://Resources/Overworld/Quests/can_quest.tres
 load_battle_scene.tres::Resource/LoadSceneWorldEffect::6244620842588717820::1733910703::0::1::::<><><><>::res://Scripts/Overworld Scripts/World Events/Custom World Events/LoadSceneWorldEffect.cs<>uid://bu2spse3qae4c::::res://Scenes/Battle Scene.tscn
-::res://Resources/UI/::1736401018.0
-::res://Resources/UI/Portrait Boxes/::1736741052.0
+::res://Resources/UI/::1736401018
+::res://Resources/UI/Portrait Boxes/::1736741052
 character_border.tres::Resource/PortraitBorder::1888366996202147611::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs<>uid://hdm2us0pmnaq::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png<>uid://bsd0q4di11vk0::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border.png
 enemy_border.tres::Resource/PortraitBorder::1303171493820933349::1736741052::0::1::::<><><><>::uid://d04lqg6swa7qk::::res://Resources/UI/Portrait Boxes/Frame Icons/Red Character Frame.png<>uid://bosvuowhbwg1i::::res://Resources/UI/Portrait Boxes/Frame Icons/Red Character Frame Border.png<>res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs
 portrait_border.tres::Resource/PortraitBorder::7421101146731143987::1736741052::0::1::::<><><><>::uid://bqxm2s67d0tdp::::res://Resources/UI/Portrait Boxes/Frame Icons/Blue Character Frame.png<>uid://dqoagb8qyidu8::::res://Resources/UI/Portrait Boxes/Frame Icons/Blue Character Frame Border.png<>res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs
 variant_border.tres::Resource/PortraitBorder::7953795273967855776::1736741052::0::1::::<><><><>::uid://268ssaa1vjvv::::res://Resources/UI/Portrait Boxes/Frame Icons/Green Character Frame.png<>uid://bpk48iommfw1s::::res://Resources/UI/Portrait Boxes/Frame Icons/Green Character Frame Border.png<>res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs
-::res://Resources/UI/Portrait Boxes/Frame Icons/::1736405851.0
+::res://Resources/UI/Portrait Boxes/Frame Icons/::1736405851
 Blue Character Frame Border.png::CompressedTexture2D::8311195656869340885::1736405603::1736405707::1::::<><><>5da7b423d84978d3e518124aa7bf5a55<>res://.godot/imported/Blue Character Frame Border.png-968dc0f787871515b355f4eb68c72e53.ctex::
 Blue Character Frame.png::CompressedTexture2D::3557700685361810553::1736405621::1736405707::1::::<><><>88135f83b8da70c7dd6968f250f6815c<>res://.godot/imported/Blue Character Frame.png-c4e1c8c3e2eabaef317710115c68500b.ctex::
 Character Frame Border White.png::CompressedTexture2D::8537916176076427713::1735981601::1736401078::1::::<><><>0e2eff7bd402868ce0b41d4e393f9a78<>res://.godot/imported/Character Frame Border White.png-38382204783a9ba8e16c022fb55e7c63.ctex::
@@ -190,20 +190,22 @@ Green Character Frame Border.png::CompressedTexture2D::3461717282168820550::1736
 Green Character Frame.png::CompressedTexture2D::1961131239110192715::1736405679::1736405707::1::::<><><>7639d3884a8570f74d1c1273e4493d31<>res://.godot/imported/Green Character Frame.png-07c3a62489a00726b11b2874b029f33c.ctex::
 Red Character Frame Border.png::CompressedTexture2D::3407534836557680052::1736405839::1736405851::1::::<><><>5f9e0f2264529a1527a0dc99ef138437<>res://.godot/imported/Red Character Frame Border.png-318a492c5257b4e2b14eb1235c69d668.ctex::
 Red Character Frame.png::CompressedTexture2D::8974546920397068042::1736405830::1736405851::1::::<><><>8ac55a565ecd1d29d068e9edce031823<>res://.godot/imported/Red Character Frame.png-dc3993d5034ede9c7a6234f5cddf8abc.ctex::
-::res://Resources/Utilities/::1736400996.0
-::res://Resources/Utilities/Events/::1736647689.0
+::res://Resources/Utilities/::1736400996
+::res://Resources/Utilities/Events/::1738118363
 OnCharacterListUpdated.tres::Resource/VoidEvent::3111734867510378801::1732520329::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnCharacterPulledEvent.tres::Resource/GachaCharacterEvent::2640517794801583888::1733906163::0::1::::<><><><>::res://Scripts/Event System/Custom Game Events/GachaCharacterEvent.cs
-::res://Resources/Utilities/Events/Character Manager Events/::1737034461.0
+::res://Resources/Utilities/Events/Character Manager Events/::1737034461
 OnEditorPortraitChanged.tres::Resource/VoidEvent::8312398527510222361::1736647711::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnPortraitAdded.tres::Resource/VoidEvent::4616096202466429612::1737034460::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnPortraitButtonPressed.tres::Resource/CharacterPortraitEvent::2074310623635247875::1736250465::0::1::::<><><><>::res://Scripts/Event System/Custom Game Events/CharacterPortraitEvent.cs
-::res://Resources/Utilities/Events/Dialogue Events/::1733906163.0
+::res://Resources/Utilities/Events/Combat Events/::1738118449
+OnSkillSelected.tres::Resource/CharacterSkillEvent::2073688634549624639::1738118449::0::1::::<><><><>::res://Scripts/Event System/Custom Game Events/CharacterSkillEvent.cs
+::res://Resources/Utilities/Events/Dialogue Events/::1733906163
 OnDialogueEnd.tres::Resource/DialogueEvent::4956696246243033363::1733906163::0::1::::<><><><>::res://Scripts/Event System/Custom Game Events/DialogueEvent.cs
 OnDialogueStart.tres::Resource/DialogueEvent::719524197973488663::1733906163::0::1::::<><><><>::res://Scripts/Event System/Custom Game Events/DialogueEvent.cs
-::res://Resources/Utilities/Events/Inventory Events/::1733906163.0
+::res://Resources/Utilities/Events/Inventory Events/::1733906163
 OnInventoryUpdate.tres::Resource/InventoryChangeEvent::3319579315517961741::1733906163::0::1::::<><><><>::res://Scripts/Event System/Custom Game Events/InventoryChangeEvent.cs
-::res://Resources/Utilities/Events/Load Screen Events/::1733715819.0
+::res://Resources/Utilities/Events/Load Screen Events/::1733715819
 OnFadeInFinished.tres::Resource/VoidEvent::1333834546621308647::1733715819::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnFadeInStarted.tres::Resource/VoidEvent::4027079268556280610::1733715819::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnFadeOutFinished.tres::Resource/VoidEvent::4203430088783298129::1733715819::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
@@ -211,71 +213,71 @@ OnFadeOutStarted.tres::Resource/VoidEvent::5368196142647215010::1733715819::0::1
 OnLoadFinish.tres::Resource/VoidEvent::4489629458873585039::1733715819::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnLoadStart.tres::Resource/VoidEvent::8169519749126934143::1733715819::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnSceneLoad.tres::Resource/VoidEvent::3928740579328744092::1733715819::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
-::res://Resources/Utilities/Events/Player Events/::1733697244.0
+::res://Resources/Utilities/Events/Player Events/::1733697244
 OnPlayerMovementLocked.tres::Resource/VoidEvent::4385782806980677997::1733697244::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
 OnPlayerMovementUnlocked.tres::Resource/VoidEvent::6571884883118326660::1733697244::0::1::::<><><><>::res://Scripts/Event System/VoidEvent.cs
-::res://Resources/Utilities/Events/Time Events/::1733833824.0
+::res://Resources/Utilities/Events/Time Events/::1733833824
 OnTimeSkipped.tres::Resource/TimePassedEvent::5892131902603174390::1733833824::0::1::::<><><><>::res://Scripts/Time System/TimePassedEvent.cs
 OnTimeUpdate.tres::Resource/TimePassedEvent::8411021560549195473::1733815922::0::1::::<><><><>::res://Scripts/Time System/TimePassedEvent.cs
-::res://Resources/Utilities/Tags/::1733046220.0
+::res://Resources/Utilities/Tags/::1733046220
 default_emotion.tres::Resource/Tag::8738997803136220779::1733046220::0::1::::<><><><>::res://Scripts/Tag.cs
 happy_emotion.tres::Resource/Tag::7382405383330765954::1733046220::0::1::::<><><><>::res://Scripts/Tag.cs
 sad_emotion.tres::Resource/Tag::4173873396353449789::1733046220::0::1::::<><><><>::res://Scripts/Tag.cs
-::res://Scenes/::1737835337.0
+::res://Scenes/::1738097260
 Battle Scene.tscn::PackedScene::3847056401484831596::1737364970::0::1::::<><><><>::uid://gif33acrjfq::::res://Scripts/Combat System/BattleManager.cs<>uid://y6uj5g2l8l0n::::res://Scripts/Combat System/Grid/BattleGrid.cs<>uid://bhysvr23m0r0i::::res://Scenes/Battle/Battle Space/battle_space.tscn<>uid://cnuodvla63kph::::res://Scenes/Battle/battle_character.tscn<>uid://denrkd823yp0d::::res://Scenes/scene_manager.tscn<>uid://ciphn1edo3jcp::::res://Scripts/Combat System/Battle States/CombatAnimationNode.cs<>uid://bfoxjp8ndtsr::::res://Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs<>uid://doh268gk7cnr8::::res://Scripts/Combat System/Battle States/CombatActivatingNode.cs<>uid://np2dkxg5chus::::res://Scripts/Combat System/Battle States/CombatDamageNode.cs<>uid://bikiac63fc22y::::res://Scripts/Combat System/Battle States/CombatTurnNode.cs<>uid://bfd3pdxsrk2ty::::res://Scripts/Combat System/Battle States/CombatFinishedNode.cs<>uid://c7drwxdavjnfx::::res://Scripts/Combat System/TurnDataManager.cs<>uid://dtbuhyihehpy7::::res://Scripts/Combat System/Damage Numbers/DamageNumberManager.cs<>uid://spaepna0v12s::::res://Scenes/Battle/Damage Number.tscn<>uid://dhy4vi30p0fpw::::res://Scenes/game_state.tscn
 Calendar.tscn::PackedScene::5804744087901366379::1732343414::0::1::::<><><><>::
 dialogue_manager.tscn::PackedScene::5386146750644124466::1736400995::0::1::::<><><><>::res://Scripts/Dialogue System/DialogueManager.cs<>uid://bqt263q3jfhxd::::res://Angeal.png<>uid://biv7cid2nku43::::res://Art Assets/Portrait Circle/Avatar Circle Background.png<>uid://ewr1v1e4tbpp::::res://Art Assets/Textbox/Blue Box.png<>uid://ckthnfqactwlq::::res://Art Assets/Portrait Circle/Avatar Circle Border.png<>res://Scripts/Dialogue System/States/DialogueInactiveState.cs<>uid://kispt6u5xvkx::::res://Resources/Utilities/Events/Dialogue Events/OnDialogueStart.tres<>res://Scripts/Dialogue System/States/DialogueActivatingState.cs<>res://Scripts/Dialogue System/States/DialogueTextUpdatingState.cs<>uid://ccvcce25eqkfb::::res://Resources/Utilities/Events/Dialogue Events/OnDialogueEnd.tres<>res://Scripts/Dialogue System/States/DialogueTextCompletedState.cs
 file_manager.tscn::PackedScene::4480526501109372521::1736933685::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Image Manager/FileManager.cs<>uid://b61covecvbvyq::::res://Resources/Utilities/Events/Character Manager Events/OnPortraitAdded.tres
 game_state.tscn::PackedScene::7701927781703439104::1736400995::0::1::::<><><><>::res://Scripts/GameState.cs<>uid://cuclr7vjvjjld::::res://Resources/Characters/Gacha Characters/corner_jeraldeen.tres<>res://Scripts/Gacha System/GachaCharacterPower.cs<>uid://2r41q02byvxx::::res://Resources/Characters/Gacha Characters/Angealfish.tres<>res://Scripts/Gacha System/GachaValuePair.cs<>res://Scripts/Gacha System/GachaGame.cs<>uid://4qorrqwhv7ri::::res://Resources/Gacha Game Data/Gacha Characters List.tres<>uid://bkdo7vcfuf1xk::::res://Resources/GachaBanner.tres<>uid://bdvc7bj8667ce::::res://Resources/Utilities/Events/OnCharacterPulledEvent.tres<>uid://bkll23l0c6di4::::res://Resources/Utilities/Events/OnCharacterListUpdated.tres<>res://Scripts/Time System/DateTimeManager.cs<>uid://dr3mkcpjwitlp::::res://Resources/Utilities/Events/Time Events/OnTimeUpdate.tres<>res://Scripts/GameFlags.cs<>uid://cp7gs0vqnr3wc::::res://Resources/Utilities/Events/Time Events/OnTimeSkipped.tres<>res://Scripts/Quest System/QuestManager.cs<>res://Scripts/Inventory System/Inventory.cs<>uid://3t581paqpkcl::::res://Resources/Items/cans.tres<>res://Scripts/Inventory System/InventorySlot.cs<>uid://bnka8sgyiscsr::::res://Resources/Utilities/Events/Inventory Events/OnInventoryUpdate.tres
-Main Game.tscn::PackedScene::5153471580918886208::1737835337::0::1::::<><><><>::uid://b7x76m0ttykkg::::res://Scripts/Game Menu/MainGame.cs<>uid://cotgta0ltok1r::::res://Scenes/Character Editor/Character Creator Menu.tscn<>uid://dtmo7upnvn4o7::::res://Scenes/Game Scenes/Battle Scene 3.tscn<>uid://b43nu8dco1xr2::::res://Scenes/file_manager.tscn<>uid://d3yk0tyglrs1t::::res://Resources/Characters/Characters/caster.tres<>uid://cqa1p600e7x4l::::res://Resources/Characters/Characters/healer.tres<>uid://csyib1t6sh40y::::res://Resources/Characters/Characters/tank.tres<>uid://dxgmviatu4y56::::res://Resources/Characters/Characters/warrior.tres
+Main Game.tscn::PackedScene::5153471580918886208::1738097260::0::1::::<><><><>::uid://b7x76m0ttykkg::::res://Scripts/Game Menu/MainGame.cs<>uid://cotgta0ltok1r::::res://Scenes/Character Editor/Character Creator Menu.tscn<>uid://8ssh07hfd56t::::res://Scenes/Game Scenes/Battle Scene 2.tscn<>uid://b43nu8dco1xr2::::res://Scenes/file_manager.tscn<>uid://d3yk0tyglrs1t::::res://Resources/Characters/Characters/caster.tres<>uid://cqa1p600e7x4l::::res://Resources/Characters/Characters/healer.tres<>uid://csyib1t6sh40y::::res://Resources/Characters/Characters/tank.tres<>uid://dxgmviatu4y56::::res://Resources/Characters/Characters/warrior.tres
 player.tscn::PackedScene::4200002678614279173::1736541401::0::1::::<><><><>::res://Scripts/Overworld Scripts/Player Scripts/Player.cs<>uid://b3qrg4t1fux6d::::res://Resources/Utilities/Events/Player Events/OnPlayerMovementLocked.tres<>uid://d01u0sdo6f624::::res://icon.svg<>res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs<>uid://c0vp8plwj0j5m::::res://Resources/Utilities/Events/Player Events/OnPlayerMovementUnlocked.tres<>uid://bv8d1vsuuw2b5::::res://Resources/Utilities/Events/Load Screen Events/OnSceneLoad.tres<>res://Scripts/Overworld Scripts/Player Scripts/PlayerEventManager.cs<>uid://kispt6u5xvkx::::res://Resources/Utilities/Events/Dialogue Events/OnDialogueStart.tres<>uid://ccvcce25eqkfb::::res://Resources/Utilities/Events/Dialogue Events/OnDialogueEnd.tres<>uid://ciqnn2r7ohuhm::::res://Resources/Utilities/Events/Load Screen Events/OnFadeOutStarted.tres<>uid://taecbqpnrvvr::::res://Resources/Utilities/Events/Load Screen Events/OnFadeInFinished.tres
 Room.tscn::PackedScene::8005753263646088823::1737380930::0::1::::<><><><>::uid://dhy4vi30p0fpw::::res://Scenes/game_state.tscn<>uid://bxcbhqjbjrpv7::::res://Scripts/Test.cs<>uid://bbirdxkrbp1x8::::res://Art Assets/Phone/Phone Screen.png<>uid://dfj7k5fe8bmcw::::res://Art Assets/Phone/Phone Border.png<>uid://b4058rclqtcjo::::res://Scenes/UI/Gacha Menu Bar.tscn
 scene_manager.tscn::PackedScene::7467904593064020145::1736400995::0::1::::<><><><>::res://Scripts/Scene Manager/SceneManager.cs<>uid://b05f45vitglph::::res://Resources/Utilities/Events/Load Screen Events/OnFadeOutFinished.tres<>res://Scripts/Scene Manager/LoadScreen.cs<>uid://ciqnn2r7ohuhm::::res://Resources/Utilities/Events/Load Screen Events/OnFadeOutStarted.tres<>uid://bxm0n3yf7s5du::::res://Resources/Utilities/Events/Load Screen Events/OnFadeInStarted.tres<>uid://taecbqpnrvvr::::res://Resources/Utilities/Events/Load Screen Events/OnFadeInFinished.tres<>uid://bv8d1vsuuw2b5::::res://Resources/Utilities/Events/Load Screen Events/OnSceneLoad.tres
 Town.tscn::PackedScene::2042577519570278944::1736541401::0::1::::<><><><>::uid://d01u0sdo6f624::::res://icon.svg<>uid://b03rovv6s5qxh::::res://Scenes/player.tscn<>res://Scripts/Overworld Scripts/Triggers/Trigger.cs<>res://Scripts/Overworld Scripts/NPC.cs<>uid://denrkd823yp0d::::res://Scenes/scene_manager.tscn<>uid://chko8lym7whks::::res://Resources/Overworld/Trigger Effects/dialogue_to_battle_trigger.tres<>uid://dmqviiygl20kj::::res://Resources/Overworld/Dialogue/Character Dialogue Pickers/test_quest_dialogue_picker.tres<>uid://d1ykfx2k01hwf::::res://Resources/Overworld/Dialogue/test_battle_dialogue.tres<>res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs<>uid://ci0dbx4pjavqo::::res://Scenes/dialogue_manager.tscn<>uid://dgq5hmflm5k76::::res://Resources/Overworld/Trigger Effects/skip_to_morning.tres<>res://Scripts/Overworld Scripts/World Events/WorldEventManager.cs<>uid://ccvcce25eqkfb::::res://Resources/Utilities/Events/Dialogue Events/OnDialogueEnd.tres<>uid://x1st2gj86p70::::res://Resources/Overworld/Dialogue/test_quest_dialogue.tres<>uid://cu7680288j8ng::::res://Resources/Overworld/World Events/load_battle_scene.tres<>res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs<>uid://b0m6ieolpexmm::::res://Resources/Overworld/Trigger Effects/hello_world_dialogue_trigger.tres<>uid://dhy4vi30p0fpw::::res://Scenes/game_state.tscn<>uid://b2v6id0iclus1::::res://Scenes/UI/Time UI.tscn<>uid://dduk6k6n62t6a::::res://Resources/Overworld/World Events/get_cans_quest_world_event.tres<>uid://b5vyxdlknt5e2::::res://Scenes/UI/Pickupable Items/tin_can.tscn
-::res://Scenes/Battle/::1737380930.0
+::res://Scenes/Battle/::1737380930
 battle_character.tscn::PackedScene::5727440405068004413::1736541401::0::1::::<><><><>::uid://d01u0sdo6f624::::res://icon.svg<>res://Scripts/Combat System/BattleCharacter.cs<>uid://dyor6oc038qua::::res://Resources/Characters/Skills/basic_attack.tres<>uid://dc24e2v6r5xpm::::res://Resources/Characters/Character Stats/ally_stats.tres
 battle_character_2.tscn::PackedScene::5081989386123556816::1737380930::0::1::::<><><><>::uid://c0mged6cixh87::::res://Scripts/Combat System/BattleCharacter.cs<>uid://g4cq8iht4otw::::res://Scenes/Character Editor/Character Displays/character_display.tscn<>uid://dc24e2v6r5xpm::::res://Resources/Characters/Character Stats/ally_stats.tres
 Damage Number.tscn::PackedScene::1294372802938073480::1734783980::0::1::::<><><><>::res://Scripts/Combat System/Damage Numbers/DamageNumber.cs
-::res://Scenes/Battle/Battle Space/::1737835337.0
+::res://Scenes/Battle/Battle Space/::1738097260
 battle_space.tscn::PackedScene::2928418998694464230::1734401182::0::1::::<><><><>::res://Scripts/Combat System/Grid/GridSpace.cs
-battle_space_square.tscn::PackedScene::3795447090619765863::1737835337::0::1::::<><><><>::uid://c5lpmutqbgb5l::::res://Scripts/Combat System/Grid/GridSpace.cs<>uid://c2njhbj4uiopi::::res://Scenes/Battle/Battle Space/skill_direction_button.tscn
+battle_space_square.tscn::PackedScene::3795447090619765863::1738097260::0::1::::<><><><>::uid://c5lpmutqbgb5l::::res://Scripts/Combat System/Grid/GridSpace.cs<>uid://c2njhbj4uiopi::::res://Scenes/Battle/Battle Space/skill_direction_button.tscn
 skill_direction_button.tscn::PackedScene::6695336077679361054::1737365341::0::1::::<><><><>::uid://d01u0sdo6f624::::res://icon.svg
-::res://Scenes/Character Editor/::1737272043.0
+::res://Scenes/Character Editor/::1737272043
 Character Creator Menu.tscn::PackedScene::5795106626832436205::1737272043::0::1::::<><><><>::uid://c8g104qrmuudm::::res://Scripts/Game Menu/Character Creator/CharacterCreatorManager.cs<>uid://dqot8vvd2m5k4::::res://Resources/Utilities/Events/Character Manager Events/OnEditorPortraitChanged.tres<>uid://4yrkv70qp5xd::::res://Scenes/Character Editor/Menus/selection_menu.tscn<>uid://cr2qhdqndnhyv::::res://Scenes/Character Editor/Menus/portrait_editor.tscn<>uid://b43nu8dco1xr2::::res://Scenes/file_manager.tscn<>uid://b61covecvbvyq::::res://Resources/Utilities/Events/Character Manager Events/OnPortraitAdded.tres
 Character Editor.tscn::PackedScene::8318010654650525853::1734765649::0::1::::<><><><>::uid://bqt263q3jfhxd::::res://Angeal.png
 Edit Character Display.tscn::PackedScene::2786682718206819589::1737034756::0::1::::<><><><>::uid://d01u0sdo6f624::::res://icon.svg<>uid://bqt263q3jfhxd::::res://Angeal.png<>res://Scripts/Game Menu/Character Creator/UI GDScript/ScaleSpriteToScreen.gd<>uid://dwembdyqg2pyg::::res://Scenes/Character Editor/portrait_preview.tscn
 number_of_photos_selection.tscn::PackedScene::4712154247831294199::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/UI GDScript/ImageImporter.gd<>uid://d01u0sdo6f624::::res://icon.svg<>res://Scripts/Game Menu/Character Creator/UI GDScript/media_permission_explanation_ui.gd<>uid://besukoqkd2nym::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png
 portrait_preview.tscn::PackedScene::8712404707220777770::1736741052::0::1::::<><><><>::uid://hdm2us0pmnaq::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png<>res://Scripts/Game Menu/Character Creator/Display Overrides/CharacterCreatorPreview.cs<>uid://bsd0q4di11vk0::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border.png
 Test Scene.tscn::PackedScene::7287428515253205349::1736781636::0::1::::<><><><>::res://Scripts/Test2.cs
-::res://Scenes/Character Editor/Character Displays/::1736741052.0
+::res://Scenes/Character Editor/Character Displays/::1736741052
 character_display.tscn::PackedScene::481151769357524172::1736741052::0::1::::<><><><>::uid://hdm2us0pmnaq::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png<>res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>uid://4s2ufn05677l::::res://Resources/Utilities/Events/Character Manager Events/OnPortraitButtonPressed.tres<>uid://bsd0q4di11vk0::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border.png
 portrait_button.tscn::PackedScene::2697336737260535972::1736741052::0::1::::<><><><>::uid://g4cq8iht4otw::::res://Scenes/Character Editor/Character Displays/character_display.tscn<>res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/EditorPortraitDisplay.cs<>uid://ddy3pmdwpa5rj::::res://Resources/UI/Portrait Boxes/portrait_border.tres<>uid://150emt5bvsil::::res://Resources/UI/Portrait Boxes/character_border.tres
 portrait_display.tscn::PackedScene::4904809627189875939::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs<>uid://besukoqkd2nym::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>uid://dtv3h5hd0pqvp::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png
-::res://Scenes/Character Editor/Menus/::1737034756.0
+::res://Scenes/Character Editor/Menus/::1737034756
 Character Creator.tscn::PackedScene::1349320404961624141::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/CreateCharacterMenu.cs<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>uid://d03a0qxnl7jjs::::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/name_field.tscn<>uid://chb37wf6q83c0::::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/title_field.tscn
 portrait_editor.tscn::PackedScene::6022774063916074777::1737034756::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/PortraitEditorMenu.cs<>res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/ImageCropper.cs<>res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorIdleState.cs<>res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorCropState.cs<>res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorAdjustCropState.cs<>uid://wdgy25x7fcji::::res://Art Assets/Placeholder Characters/Waifus/Aranea.png<>uid://g4cq8iht4otw::::res://Scenes/Character Editor/Character Displays/character_display.tscn<>res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/CameraController.cs<>uid://d01u0sdo6f624::::res://icon.svg
 selection_menu.tscn::PackedScene::2086072731998438945::1737034756::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Menus/SelectionMenu.cs<>res://Scripts/Game Menu/Character Creator/UI GDScript/StretchToBottomOfScreen.gd<>uid://dqot8vvd2m5k4::::res://Resources/Utilities/Events/Character Manager Events/OnEditorPortraitChanged.tres<>res://Scripts/Game Menu/Character Creator/ImageSaver.cs<>res://Scripts/Game Menu/Character Creator/CharacterGridManager.cs<>uid://beou0hywm4ebk::::res://Scenes/Character Editor/Character Displays/portrait_button.tscn<>uid://b61covecvbvyq::::res://Resources/Utilities/Events/Character Manager Events/OnPortraitAdded.tres<>uid://besukoqkd2nym::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png<>uid://dtv3h5hd0pqvp::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png<>res://Scripts/Game Menu/Character Creator/CharacterDisplayUi.cs<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png<>uid://b8euqy04igiyx::::res://Scenes/Character Editor/number_of_photos_selection.tscn
-::res://Scenes/Game Scenes/::1737835337.0
-Battle Scene 2.tscn::PackedScene::2354497408897653489::1737835337::0::1::::<><><><>::uid://gif33acrjfq::::res://Scripts/Combat System/BattleManager.cs<>uid://doh268gk7cnr8::::res://Scripts/Combat System/Battle States/CombatActivatingNode.cs<>uid://y6uj5g2l8l0n::::res://Scripts/Combat System/Grid/BattleGrid.cs<>uid://bucspuw6nymcd::::res://Scenes/Battle/Battle Space/battle_space_square.tscn<>uid://bikiac63fc22y::::res://Scripts/Combat System/Battle States/CombatTurnNode.cs<>uid://bfoxjp8ndtsr::::res://Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs<>uid://ciphn1edo3jcp::::res://Scripts/Combat System/Battle States/CombatAnimationNode.cs<>uid://c7drwxdavjnfx::::res://Scripts/Combat System/TurnDataManager.cs<>uid://np2dkxg5chus::::res://Scripts/Combat System/Battle States/CombatDamageNode.cs<>uid://bfd3pdxsrk2ty::::res://Scripts/Combat System/Battle States/CombatFinishedNode.cs<>uid://dtbuhyihehpy7::::res://Scripts/Combat System/Damage Numbers/DamageNumberManager.cs<>uid://bbmewgskhadp2::::res://Scripts/Combat System/UI/SkillSelection.cs<>uid://spaepna0v12s::::res://Scenes/Battle/Damage Number.tscn<>uid://bqbrfdufvqdun::::res://Scripts/Combat System/UI/BattleSkillButton.cs<>uid://dhy4vi30p0fpw::::res://Scenes/game_state.tscn<>uid://cen0vf3wpj18o::::res://Scenes/Battle/battle_character_2.tscn
+::res://Scenes/Game Scenes/::1738118659
+Battle Scene 2.tscn::PackedScene::2354497408897653489::1738118659::0::1::::<><><><>::uid://gif33acrjfq::::res://Scripts/Combat System/BattleManager.cs<>uid://doh268gk7cnr8::::res://Scripts/Combat System/Battle States/CombatActivatingNode.cs<>uid://y6uj5g2l8l0n::::res://Scripts/Combat System/Grid/BattleGrid.cs<>uid://4srl4i4h13k2::::res://Resources/Utilities/Events/Combat Events/OnSkillSelected.tres<>uid://bucspuw6nymcd::::res://Scenes/Battle/Battle Space/battle_space_square.tscn<>uid://bikiac63fc22y::::res://Scripts/Combat System/Battle States/CombatTurnNode.cs<>uid://bfoxjp8ndtsr::::res://Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs<>uid://ciphn1edo3jcp::::res://Scripts/Combat System/Battle States/CombatAnimationNode.cs<>uid://c7drwxdavjnfx::::res://Scripts/Combat System/TurnDataManager.cs<>uid://np2dkxg5chus::::res://Scripts/Combat System/Battle States/CombatDamageNode.cs<>uid://bfd3pdxsrk2ty::::res://Scripts/Combat System/Battle States/CombatFinishedNode.cs<>uid://dtbuhyihehpy7::::res://Scripts/Combat System/Damage Numbers/DamageNumberManager.cs<>uid://bbmewgskhadp2::::res://Scripts/Combat System/UI/SkillSelection.cs<>uid://spaepna0v12s::::res://Scenes/Battle/Damage Number.tscn<>uid://bqbrfdufvqdun::::res://Scripts/Combat System/UI/BattleSkillButton.cs<>uid://dhy4vi30p0fpw::::res://Scenes/game_state.tscn<>uid://cen0vf3wpj18o::::res://Scenes/Battle/battle_character_2.tscn
 Battle Scene 3.tscn::PackedScene::8518530870812660616::1737379686::0::1::::<><><><>::uid://gif33acrjfq::::res://Scripts/Combat System/BattleManager.cs<>uid://cen0vf3wpj18o::::res://Scenes/Battle/battle_character_2.tscn<>uid://doh268gk7cnr8::::res://Scripts/Combat System/Battle States/CombatActivatingNode.cs<>uid://bikiac63fc22y::::res://Scripts/Combat System/Battle States/CombatTurnNode.cs<>uid://bfoxjp8ndtsr::::res://Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs<>uid://ciphn1edo3jcp::::res://Scripts/Combat System/Battle States/CombatAnimationNode.cs<>uid://np2dkxg5chus::::res://Scripts/Combat System/Battle States/CombatDamageNode.cs<>uid://bfd3pdxsrk2ty::::res://Scripts/Combat System/Battle States/CombatFinishedNode.cs<>uid://y6uj5g2l8l0n::::res://Scripts/Combat System/Grid/BattleGrid.cs<>uid://bucspuw6nymcd::::res://Scenes/Battle/Battle Space/battle_space_square.tscn<>uid://c7drwxdavjnfx::::res://Scripts/Combat System/TurnDataManager.cs<>uid://dtbuhyihehpy7::::res://Scripts/Combat System/Damage Numbers/DamageNumberManager.cs<>uid://spaepna0v12s::::res://Scenes/Battle/Damage Number.tscn<>uid://dhy4vi30p0fpw::::res://Scenes/game_state.tscn<>uid://bxcbhqjbjrpv7::::res://Scripts/Test.cs
-::res://Scenes/Skill Assets/::1736401077.0
+::res://Scenes/Skill Assets/::1736401077
 Test Effect.tscn::PackedScene::8662134413421453047::1736401077::0::1::::<><><><>::uid://hdm2us0pmnaq::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png<>res://Scripts/Misc/DeleteParentAfterTime.cs<>uid://fofk2m4mbnn1::::res://Art Assets/Particles/Particle.png<>res://Scripts/Misc/ParticleStart.cs
-::res://Scenes/UI/::1736781615.0
+::res://Scenes/UI/::1736781615
 Gacha Menu Bar.tscn::PackedScene::4475387930537871808::1733220579::0::1::::<><><><>::res://Scripts/UI/GachaBottomBar.cs<>uid://bbywqghbhxtw1::::res://Scenes/UI/Gacha Window/Gacha Window.tscn<>uid://dpw1nf6qhmgi4::::res://Scenes/UI/Gacha Window/Banners Window.tscn
 Phone.tscn::PackedScene::5496014406275182847::1732343414::0::1::::<><><><>::uid://dfj7k5fe8bmcw::::res://Art Assets/Phone/Phone Border.png<>uid://bbirdxkrbp1x8::::res://Art Assets/Phone/Phone Screen.png
 Time UI.tscn::PackedScene::4326768104439003270::1733815502::0::1::::<><><><>::uid://ewr1v1e4tbpp::::res://Art Assets/Textbox/Blue Box.png<>res://Scripts/UI/Calendar/CalendarUI.cs
-::res://Scenes/UI/Gacha Window/::1736400995.0
+::res://Scenes/UI/Gacha Window/::1736400995
 Banners Window.tscn::PackedScene::8259113184614283349::1732521483::0::1::::<><><><>::res://Scripts/UI/Banners Display/BannersWindow.cs
 Gacha Window.tscn::PackedScene::2507519265981356890::1736400995::0::1::::<><><><>::res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs<>uid://dqircsi2jaxqm::::res://Scenes/UI/Gacha Window/Window Elements/gacha_display_row.tscn<>uid://bkll23l0c6di4::::res://Resources/Utilities/Events/OnCharacterListUpdated.tres
 Lobby Window.tscn::PackedScene::6025537448354271276::1733220579::0::1::::<><><><>::
-::res://Scenes/UI/Gacha Window/Window Elements/::1736741052.0
+::res://Scenes/UI/Gacha Window/Window Elements/::1736741052
 Character Box Display.tscn::PackedScene::284469620107739606::1736741052::0::1::::<><><><>::uid://hdm2us0pmnaq::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png<>res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterBoxDisplay.cs<>uid://bsd0q4di11vk0::::res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border.png<>uid://b404kmrss01xl::::res://Art Assets/Placeholder Characters/Husbandos/Cor.png
 gacha_display_row.tscn::PackedScene::8299835290802687736::1732521334::0::1::::<><><><>::uid://eb2f5c2h3f5w::::res://Scenes/UI/Gacha Window/Window Elements/Character Box Display.tscn
-::res://Scenes/UI/Pickupable Items/::1736400975.0
+::res://Scenes/UI/Pickupable Items/::1736400975
 tin_can.tscn::PackedScene::4536936381790942851::1736400975::0::1::::<><><><>::uid://cq4rs7rq6x6fc::::res://Art Assets/Objects/Tin_Can.png<>res://Scripts/Overworld Scripts/Triggers/Trigger.cs<>uid://bx8hj7p3da86j::::res://Resources/Overworld/Trigger Effects/delete_object_trigger_effect.tres<>uid://3t581paqpkcl::::res://Resources/Items/cans.tres<>res://Scripts/Overworld Scripts/Triggers/Trigger Effects/AddItemTriggerEffect.cs
-::res://Scenes/UI/Test Scenes/::1735615102.0
+::res://Scenes/UI/Test Scenes/::1735615102
 Portrait Tester.tscn::PackedScene::7413092545826725574::1733816193::0::1::::<><><><>::uid://ckthnfqactwlq::::res://Art Assets/Portrait Circle/Avatar Circle Border.png<>uid://biv7cid2nku43::::res://Art Assets/Portrait Circle/Avatar Circle Background.png<>uid://pkim4yxl8ikp::::res://Art Assets/Placeholder Characters/Husbandos/Edge.png
-::res://Scripts/::1737380992.0
+::res://Scripts/::1737380992
 GameFlags.cs::CSharpScript::4745596927199292602::1733823426::0::1::::<>Node<><><>::
 GameState.cs::CSharpScript::6894975065724006667::1737354682::0::1::::<>Node<><><>::
 InfiniNumber.cs::CSharpScript::1014183416658837164::1734237223::0::1::::InfiniNumber<>Resource<><><>::
@@ -285,9 +287,9 @@ Test.cs::CSharpScript::4004966914761056926::1737380992::0::1::::<>Node<><><>::
 TimeHandler.cs::CSharpScript::5942651786052178392::1734780325::0::1::::<><><><>::
 TouchInputManager.cs::CSharpScript::2983681059330810168::1736236639::0::1::::<>Node<><><>::
 Utils.cs::CSharpScript::2928458039062146967::1737354771::0::1::::<><><><>::
-::res://Scripts/Combat System/::1737835204.0
+::res://Scripts/Combat System/::1738098132
 BattleCharacter.cs::CSharpScript::6552706642079409494::1737834837::0::1::::<>CharacterBody2D<><><>::
-BattleManager.cs::CSharpScript::12882445347693958::1737835204::0::1::::<>Control<><><>::
+BattleManager.cs::CSharpScript::12882445347693958::1738098132::0::1::::<>Control<><><>::
 BattleParty.cs::CSharpScript::8673008306379191440::1735327909::0::1::::<><><><>::
 BattleState.cs::CSharpScript::8594667011283691091::1734447193::0::1::::<><><><>::
 BattleStateEnum.cs::CSharpScript::5248129831653194777::1732832834::0::1::::<><><><>::
@@ -295,12 +297,12 @@ CharacterDirection.cs::CSharpScript::1873195006001209367::1737176869::0::1::::<>
 Element.cs::CSharpScript::4675261001108596535::1736243968::0::1::::Element<>Resource<><><>::
 TurnDataManager.cs::CSharpScript::7026150186108253901::1737695563::0::1::::<>Node<><><>::
 TurnOrderManager.cs::CSharpScript::2847769574252069093::1734846169::0::1::::<><><><>::
-::res://Scripts/Combat System/Affiliation/::1737037226.0
+::res://Scripts/Combat System/Affiliation/::1737037226
 CharacterAffiliation.cs::CSharpScript::2531075665913954019::1734848537::0::1::::CharacterAffiliation<>Resource<><><>::
-::res://Scripts/Combat System/Battle Initializer/::1737037226.0
+::res://Scripts/Combat System/Battle Initializer/::1737037226
 BattleData.cs::CSharpScript::5083323279894041644::1735328978::0::1::::<><><><>::
 BattleDataResource.cs::CSharpScript::5883617958523725819::1735328761::0::1::::BattleDataResource<>Resource<><><>::
-::res://Scripts/Combat System/Battle States/::1737835015.0
+::res://Scripts/Combat System/Battle States/::1737835015
 _CombatNodeTemplate.cs::CSharpScript::43110033380381310::1734580182::0::1::::<>Node2D<><><>::
 CombatActivatingNode.cs::CSharpScript::8158052967742513767::1737834827::0::1::::<>Node2D<><><>::
 CombatAnimationNode.cs::CSharpScript::5365767389013934103::1737702711::0::1::::<>Node2D<><><>::
@@ -309,63 +311,63 @@ CombatFinishedNode.cs::CSharpScript::2745285091793009002::1734642853::0::1::::<>
 CombatStateNode.cs::CSharpScript::1816178327846757991::1737354447::0::1::::<>Node2D<><><>::
 CombatTurnNode.cs::CSharpScript::2969061100494711098::1737835015::0::1::::<>Node2D<><><>::
 CombatTurnTransitionNode.cs::CSharpScript::81402340965973769::1734904521::0::1::::<>Node2D<><><>::
-::res://Scripts/Combat System/Damage Numbers/::1737037226.0
+::res://Scripts/Combat System/Damage Numbers/::1737037226
 DamageNumber.cs::CSharpScript::5730516775655856252::1734782986::0::1::::<>Control<><><>::
 DamageNumberManager.cs::CSharpScript::8496142571611167204::1736630977::0::1::::<>Node<><><>::
-::res://Scripts/Combat System/Grid/::1737834851.0
-BattleGrid.cs::CSharpScript::1749759955901201187::1737834851::0::1::::<>Node2D<><><>::
-GridShape.cs::CSharpScript::3180821895727911671::1734898909::0::1::::GridShape<>Resource<><><>::
+::res://Scripts/Combat System/Grid/::1738125426
+BattleGrid.cs::CSharpScript::1749759955901201187::1738122725::0::1::::<>Node2D<><><>::
+GridShape.cs::CSharpScript::3180821895727911671::1738125426::0::1::::GridShape<>Resource<><><>::
 GridSpace.cs::CSharpScript::6902148096787014795::1737406402::0::1::::<>Node2D<><><>::
 GridState.cs::CSharpScript::6647318165519794501::1732869206::0::1::::<><><><>::
-::res://Scripts/Combat System/Skill System/::1737702577.0
+::res://Scripts/Combat System/Skill System/::1737835389
 BattleStats.cs::CSharpScript::4869570432057200125::1734769616::0::1::::<><><><>::
 CharacterSkill.cs::CSharpScript::7820806923704069438::1737702577::0::1::::CharacterSkill<>Resource<><><>::
 SkillCaster.cs::CSharpScript::7053712880477196061::1737695562::0::1::::<>Node<><><>::
 SkillDirection.cs::CSharpScript::-1::1737363531::0::1::::<><><><>::
 StatContainer.cs::CSharpScript::1213698040166557119::1734769555::0::1::::StatContainer<>Resource<><><>::
 TurnData.cs::CSharpScript::5690265484844061350::1737695562::0::1::::<><><><>::
-::res://Scripts/Combat System/Skill System/Damage Formulas/::1737354714.0
+::res://Scripts/Combat System/Skill System/Damage Formulas/::1737354714
 BaseDamageFormula.cs::CSharpScript::1410144943491820761::1737354714::0::1::::BaseDamageFormula<>Resource<><><>::
-::res://Scripts/Combat System/Skill System/Skill Animations/::1737702548.0
+::res://Scripts/Combat System/Skill System/Skill Animations/::1737702548
 SkillAnimation.cs::CSharpScript::7890375492381769858::1737702548::0::1::::SkillAnimation<>Resource<><><>::
 SkillAnimationElement.cs::CSharpScript::3369320766837446510::1737702441::0::1::::<>Resource<><><>::
-::res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/::1737702530.0
+::res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/::1737702530
 SkillAnimationElementCreateObjectAtTarget.cs::CSharpScript::120917768545357670::1737702530::0::1::::SkillAnimationElementCreateObjectAtTarget<>Resource<><><>::
 SkillAnimationElementMoveCaster.cs::CSharpScript::7398364490114692558::1737702519::0::1::::SkillAnimationElementMoveCaster<>Resource<><><>::
-::res://Scripts/Combat System/Skill System/Skill Animations/Combat Elements/::1737702501.0
+::res://Scripts/Combat System/Skill System/Skill Animations/Combat Elements/::1737702501
 SkillDamageEffect.cs::CSharpScript::4985205392030949374::1737702501::0::1::::SkillDamageEffect<>Resource<><><>::
-::res://Scripts/Combat System/Skill System/Skill Effects/::1737695562.0
+::res://Scripts/Combat System/Skill System/Skill Effects/::1737695562
 SkillEffect.cs::CSharpScript::7239546073080000164::1737695562::0::1::::SkillEffect<>Resource<><><>::
-::res://Scripts/Combat System/UI/::1737835144.0
+::res://Scripts/Combat System/UI/::1737835699
 BattleSkillButton.cs::CSharpScript::3512547866224245297::1737690456::0::1::::<>Button<><><>::
-SkillSelection.cs::CSharpScript::2481664559227117269::1737835144::0::1::::<>Node<><><>::
-::res://Scripts/Dialogue System/::1737037226.0
+SkillSelection.cs::CSharpScript::2481664559227117269::1737835699::0::1::::<>Node<><><>::
+::res://Scripts/Dialogue System/::1737037226
 Actor.cs::CSharpScript::6557619814899725847::1733046220::0::1::::Actor<>Resource<><><>::
 ActorEmotion.cs::CSharpScript::6890845213059589874::1733719447::0::1::::ActorEmotion<>Resource<><><>::
 DialogueManager.cs::CSharpScript::5945344132755970207::1736601933::0::1::::<>CanvasLayer<><><>::
 DialogueScene.cs::CSharpScript::6627162436796135907::1734072467::0::1::::DialogueScene<>Resource<><><>::
 DialogueState.cs::CSharpScript::205428250323331433::1733046220::0::1::::<><><><>::
 DialogueTree.cs::CSharpScript::3243514743970817817::1733585220::0::1::::DialogueTree<>Resource<><><>::
-::res://Scripts/Dialogue System/Dialogue Picker/::1737037226.0
+::res://Scripts/Dialogue System/Dialogue Picker/::1737037226
 DialogueAndCondition.cs::CSharpScript::173677324867995668::1734063108::0::1::::DialogueAndCondition<>Resource<><><>::
 DialogueCondition.cs::CSharpScript::4902439124915284524::1734060863::0::1::::<>Resource<><><>::
 DialoguePicker.cs::CSharpScript::5057302878912942851::1734065960::0::1::::DialoguePicker<>Resource<><><>::
-::res://Scripts/Dialogue System/Dialogue Picker/Custom Dialogue Picker/::1737037226.0
+::res://Scripts/Dialogue System/Dialogue Picker/Custom Dialogue Picker/::1737037226
 DialoguePickerQuest.cs::CSharpScript::8100739590445028615::1734065987::0::1::::DialoguePickerQuest<>DialoguePicker<><><>::
-::res://Scripts/Dialogue System/Dialogue Picker/Dialogue Conditions/::1737037226.0
+::res://Scripts/Dialogue System/Dialogue Picker/Dialogue Conditions/::1737037226
 DialogueConditionFlagSet.cs::CSharpScript::783960004128096228::1734060911::0::1::::DialogueConditionFlagSet<>Resource<><><>::
 DialogueConditionHasQuest.cs::CSharpScript::4447085170613447177::1734060919::0::1::::DialogueConditionHasQuest<>Resource<><><>::
 DialogueConditionOrCondition.cs::CSharpScript::5099200369019747814::1734060930::0::1::::DialogueConditionOrCondition<>Resource<><><>::
 DialogueConditionQuestFinished.cs::CSharpScript::3470166216811431213::1734061319::0::1::::DialogueConditionQuestFinished<>Resource<><><>::
-::res://Scripts/Dialogue System/Dialogue Scenes/::1737037226.0
+::res://Scripts/Dialogue System/Dialogue Scenes/::1737037226
 DialogueSceneText.cs::CSharpScript::2488314446134765164::1734072532::0::1::::DialogueSceneText<>DialogueScene<><><>::
-::res://Scripts/Dialogue System/States/::1737037226.0
+::res://Scripts/Dialogue System/States/::1737037226
 DialogueActivatingState.cs::CSharpScript::8923843374559383493::1733719774::0::1::::<>Node2D<><><>::
 DialogueInactiveState.cs::CSharpScript::1688957247323170730::1736602055::0::1::::<>Node2D<><><>::
 DialogueStateNode.cs::CSharpScript::1831723591742420175::1733579300::0::1::::<>Node2D<><><>::
 DialogueTextCompletedState.cs::CSharpScript::990512807730618257::1736602008::0::1::::<>Node2D<><><>::
 DialogueTextUpdatingState.cs::CSharpScript::954803428678195997::1733719819::0::1::::<>Node2D<><><>::
-::res://Scripts/Dialogue System/States/Resource Version/::1737037226.0
+::res://Scripts/Dialogue System/States/Resource Version/::1737037226
 DialogueActivatingStateResource.cs::CSharpScript::6252249289684425916::1733583197::0::1::::DialogueActivatingStateResource<>Resource<><><>::
 DialogueDisplayingTextStateResource.cs::CSharpScript::2448538578118829095::1733579344::0::1::::DialogueDisplayingTextStateResource<>Resource<><><>::
 DialogueFinishedDisplayingTextStateResource.cs::CSharpScript::97200633480671903::1733579348::0::1::::DialogueFinishedDisplayingTextStateResource<>Resource<><><>::
@@ -375,24 +377,25 @@ DialogueStateData.cs::CSharpScript::113437184274454431::1733577817::0::1::::<><>
 DialogueStateDialogueNotNullCondition.cs::CSharpScript::1529065811808951131::1733578306::0::1::::DialogueStateDialogueNotNullCondition<>Resource<><><>::
 DialogueStateResource.cs::CSharpScript::214352420692524956::1733579207::0::1::::<>Resource<><><>::
 DialogueStateTimePassedCondition.cs::CSharpScript::4694104085493857309::1733578288::0::1::::DialogueStateTimePassedCondition<>Resource<><><>::
-::res://Scripts/Dialogue System/States/Resource Version/Active State/::1733578618.0
+::res://Scripts/Dialogue System/States/Resource Version/Active State/::1733578618
 dialogue_activating_state.tres::Resource/DialogueActivatingState::965005451627979650::1733578603::0::1::::<><><><>::res://Scripts/Dialogue System/States/Resource Version/DialogueActivatingState.cs
 dialogue_time_passed_condition.tres::Resource/DialogueStateTimePassedCondition::4904675447018920373::1733578618::0::1::::<><><><>::res://Scripts/Dialogue System/States/Resource Version/DialogueStateTimePassedCondition.cs
-::res://Scripts/Dialogue System/States/Resource Version/Inactive State/::1733584573.0
+::res://Scripts/Dialogue System/States/Resource Version/Inactive State/::1733584573
 dialogue_inactive_state.tres::Resource::6438047062288343745::1733584573::0::1::::<><><><>::
 dialogue_not_null.tres::Resource/DialogueStateDialogueNotNullCondition::8526856783543708099::1733578616::0::1::::<><><><>::res://Scripts/Dialogue System/States/Resource Version/DialogueStateDialogueNotNullCondition.cs
 inactive_to_activating.tres::Resource/DialogueStateChangeData::3828305777384304951::1733578628::0::1::::<><><><>::uid://dtqqc507wuwx4::::res://Scripts/Dialogue System/States/Resource Version/Inactive State/dialogue_not_null.tres<>res://Scripts/Dialogue System/States/Resource Version/DialogueStateChangeData.cs<>uid://n0pq7u2nq8gc::::res://Scripts/Dialogue System/States/Resource Version/Active State/dialogue_activating_state.tres
-::res://Scripts/Dragable Elements/::1735041305.0
-::res://Scripts/Event System/::1737037226.0
+::res://Scripts/Dragable Elements/::1735041305
+::res://Scripts/Event System/::1737037226
 EventManager.cs::CSharpScript::1598892518164883673::1732517782::0::1::::<>Node<><><>::
 GameEvent.cs::CSharpScript::5809123194046116257::1736630976::0::1::::<><><><>::
 VoidEvent.cs::CSharpScript::5154592715772098101::1736630977::0::1::::VoidEvent<>Resource<><><>::
-::res://Scripts/Event System/Custom Game Events/::1737037226.0
+::res://Scripts/Event System/Custom Game Events/::1738126395
 CharacterPortraitEvent.cs::CSharpScript::7618837113652663745::1736066226::0::1::::CharacterPortraitEvent<>Resource<><><>::
+CharacterSkillEvent.cs::CSharpScript::-1::1738097986::0::1::::CharacterSkillEvent<>Resource<><><>::
 DialogueEvent.cs::CSharpScript::2494134983836762759::1733695596::0::1::::DialogueEvent<>Resource<><><>::
 GachaCharacterEvent.cs::CSharpScript::7429478596525371474::1733695581::0::1::::GachaCharacterEvent<>Resource<><><>::
 InventoryChangeEvent.cs::CSharpScript::7877664032636880853::1733905738::0::1::::InventoryChangeEvent<>Resource<><><>::
-::res://Scripts/Gacha System/::1737037226.0
+::res://Scripts/Gacha System/::1737037226
 CustomGachaCharacter.cs::CSharpScript::1664328705085300156::1736117440::0::1::::CustomGachaCharacter<>GachaCharacter<><><>::
 GachaBanner.cs::CSharpScript::1481293424449729084::1732517928::0::1::::GachaBanner<>Resource<><><>::
 GachaCharacter.cs::CSharpScript::9121784421636064321::1736161036::0::1::::GachaCharacter<>Resource<><><>::
@@ -404,92 +407,92 @@ GachaData.cs::CSharpScript::503079802733161829::1732246887::0::1::::<><><><>::
 GachaGame.cs::CSharpScript::6326183499639061648::1736601981::0::1::::GachaGame<>Node<><><>::
 GachaValuePair.cs::CSharpScript::2373343628442689209::1732405487::0::1::::GachaValuePair<>Resource<><><>::
 UpgradeCurrency.cs::CSharpScript::4800906009073312123::1733219672::0::1::::UpgradeCurrency<>Resource<><><>::
-::res://Scripts/Gacha System/Dungeons/::1737037226.0
+::res://Scripts/Gacha System/Dungeons/::1737037226
 Dungeon.cs::CSharpScript::9040907344121586710::1731885536::0::1::::Dungeon<>Resource<><><>::
 GachaDungeons.cs::CSharpScript::8783982996657471388::1731885067::0::1::::<>Resource<><><>::
-::res://Scripts/Game Menu/::1737381225.0
+::res://Scripts/Game Menu/::1737381225
 GameMenu.cs::CSharpScript::2102102399345633896::1737355362::0::1::::<>Control<><><>::
 MainGame.cs::CSharpScript::4681943341623021586::1737381225::0::1::::<>Node<><><>::
-::res://Scripts/Game Menu/Character Creator/::1737273068.0
+::res://Scripts/Game Menu/Character Creator/::1737273068
 CharacterCreatorManager.cs::CSharpScript::7103084309308452290::1737035648::0::1::::<>Control<><><>::
 CharacterDisplayUi.cs::CSharpScript::5315384529102665763::1737273068::0::1::::<>CanvasLayer<><><>::
 CharacterGridManager.cs::CSharpScript::2479198325455508555::1737034443::0::1::::<>GridContainer<><><>::
 ImageSaver.cs::CSharpScript::2087173161429242650::1736608387::0::1::::<>Node<><><>::
 ScaleScrollContainerToBottom.cs::CSharpScript::6516456806664999526::1736080997::0::1::::<>Node<><><>::
-::res://Scripts/Game Menu/Character Creator/Character Portraits/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Character Portraits/::1737037226
 CharacterPortrait.cs::CSharpScript::1849119289383717495::1736078671::0::1::::CharacterPortrait<>Resource<><><>::
 CustomCharacterPortrait.cs::CSharpScript::8828310828336896230::1736117874::0::1::::<>CharacterPortrait<><><>::
 PortraitBorder.cs::CSharpScript::6584480632433893224::1736391759::0::1::::PortraitBorder<>Resource<><><>::
-::res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/::1737037226
 CharacterBoxDisplay.cs::CSharpScript::7185630696055987779::1735949366::0::1::::<>Control<><><>::
 CharacterPortraitDisplay.cs::CSharpScript::7811181839291433937::1736575024::0::1::::<>Control<><><>::
 EditorPortraitDisplay.cs::CSharpScript::2444459442361960719::1736655846::0::1::::<>Button<><><>::
-::res://Scripts/Game Menu/Character Creator/Characters/::1737175759.0
+::res://Scripts/Game Menu/Character Creator/Characters/::1737175759
 CustomGameCharacter.cs::CSharpScript::155663851997177448::1736932451::0::1::::<>GameCharacter<><><>::
 GameCharacter.cs::CSharpScript::427329262880616290::1737175759::0::1::::GameCharacter<>Resource<><><>::
-::res://Scripts/Game Menu/Character Creator/Characters/Classes/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Characters/Classes/::1737037226
 CharacterClass.cs::CSharpScript::3589497142126262795::1736663809::0::1::::CharacterClass<>Resource<><><>::
 CharacterRole.cs::CSharpScript::3785845260098635289::1736663812::0::1::::CharacterRole<>Resource<><><>::
-::res://Scripts/Game Menu/Character Creator/Characters/Skill Sets/::1736306105.0
-::res://Scripts/Game Menu/Character Creator/Characters/Worlds/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Characters/Skill Sets/::1736306105
+::res://Scripts/Game Menu/Character Creator/Characters/Worlds/::1737037226
 CharacterWorld.cs::CSharpScript::1998961473238658511::1736117695::0::1::::CharacterWorld<>Resource<><><>::
 CustomCharacterWorld.cs::CSharpScript::6192097003369697779::1736117866::0::1::::<>CharacterWorld<><><>::
-::res://Scripts/Game Menu/Character Creator/Display Overrides/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Display Overrides/::1737037226
 CharacterCreatorPreview.cs::CSharpScript::3852696487225870489::1736495393::0::1::::<>TextureRect<><><>::
 CharacterEditorPortrait.cs::CSharpScript::1990763336329362337::1736409190::0::1::::<>Control<><><>::
-::res://Scripts/Game Menu/Character Creator/Image Manager/::1737356034.0
+::res://Scripts/Game Menu/Character Creator/Image Manager/::1737356034
 FileManager.cs::CSharpScript::7294435509770381648::1737356034::0::1::::<>Node2D<><><>::
-::res://Scripts/Game Menu/Character Creator/Menus/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Menus/::1737037226
 _CharacterCreatorMenuTemplate.cs::CSharpScript::3990389296006507554::1736667163::0::1::::<>Control<><><>::
 CharacterCreatorMenu.cs::CSharpScript::7900459046723905633::1737033399::0::1::::<>Control<><><>::
 SelectionMenu.cs::CSharpScript::5749408060457536368::1737033831::0::1::::<>Control<><><>::
-::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/::1737037226
 CharacterFieldMenu.cs::CSharpScript::6554495241570209232::1736669764::0::1::::<>Control<><><>::
 CreateCharacterMenu.cs::CSharpScript::5384132526108724112::1736671475::0::1::::<>Control<><><>::
-::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/::1737037226
 CharacterNameField.cs::CSharpScript::1655202373243538950::1736670924::0::1::::<>Control<><><>::
 CharacterTitleField.cs::CSharpScript::1587342725784606976::1736673354::0::1::::<>Control<><><>::
 CharacterWorldField.cs::CSharpScript::3273810088567515186::1736673444::0::1::::<>Control<><><>::
-::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/::1736741052.0
+::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/::1736741052
 name_field.tscn::PackedScene::8971831240502141432::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterNameField.cs
 title_field.tscn::PackedScene::5267986036477840501::1736741052::0::1::::<><><><>::res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterTitleField.cs
-::res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/::1737037226
 CameraController.cs::CSharpScript::463583858652182988::1736606095::0::1::::<>Camera2D<><><>::
 ImageCropper.cs::CSharpScript::2922702811074636272::1736919324::0::1::::<>Node<><><>::
 PortraitEditorMenu.cs::CSharpScript::2939535833622191604::1736645824::0::1::::<>Control<><><>::
 TouchHandler.cs::CSharpScript::906486206697382367::1736919479::0::1::::<>Node<><><>::
-::res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/::1737037226
 _CharacterCreatorStateTemplate.cs::CSharpScript::9025679702404414552::1735432304::0::1::::<>Node2D<><><>::
 CharacterCreatorAdjustCropState.cs::CSharpScript::8038982111914953159::1736919578::0::1::::<>Node2D<><><>::
 CharacterCreatorCropState.cs::CSharpScript::7652032244054163327::1736919502::0::1::::<>Node2D<><><>::
 CharacterCreatorIdleState.cs::CSharpScript::6724359130724237553::1736630978::0::1::::<>Node2D<><><>::
 CharacterCreatorState.cs::CSharpScript::3430490312581667059::1736596272::0::1::::<>Node2D<><><>::
 CropStateEnum.cs::CSharpScript::5462669888179174592::1736597137::0::1::::<><><><>::
-::res://Scripts/Game Menu/Character Creator/UI GDScript/::1737037226.0
+::res://Scripts/Game Menu/Character Creator/UI GDScript/::1737037226
 ImageImporter.gd::GDScript::8406464190734154024::1737030377::0::1::::<>Control<><><>::
 media_permission_explanation_ui.gd::GDScript::5167036276716982844::1735999231::0::1::::<>Control<><><>::
 ScaleSpriteToScreen.gd::GDScript::3684704287886964358::1735617324::0::1::::<>Sprite2D<><><>::
 StretchToBottomOfScreen.gd::GDScript::4937096744027025161::1736080441::0::1::::<>ScrollContainer<><><>::
-::res://Scripts/Inventory System/::1737037226.0
+::res://Scripts/Inventory System/::1737037226
 Inventory.cs::CSharpScript::6012037250068355675::1736601998::0::1::::<>Node<><><>::
 InventoryChangeData.cs::CSharpScript::644064480919428447::1733905681::0::1::::<><><><>::
 InventorySlot.cs::CSharpScript::1284539759578955808::1733903405::0::1::::InventorySlot<>Resource<><><>::
 ItemResource.cs::CSharpScript::5612667606531260163::1733904942::0::1::::ItemResource<>Resource<><><>::
-::res://Scripts/Menus/::1737037226.0
+::res://Scripts/Menus/::1737037226
 GachaMenu.cs::CSharpScript::8581578156571859545::1733046220::0::1::::<>Control<><><>::
-::res://Scripts/Misc/::1737037226.0
+::res://Scripts/Misc/::1737037226
 DeleteParentAfterTime.cs::CSharpScript::7545547584756622079::1734764809::0::1::::<>Node<><><>::
 ParticleStart.cs::CSharpScript::1135547935119889149::1734766469::0::1::::<>GpuParticles2D<><><>::
-::res://Scripts/Overworld Scripts/::1737037226.0
+::res://Scripts/Overworld Scripts/::1737037226
 NPC.cs::CSharpScript::9159478984255480553::1734060108::0::1::::<>CharacterBody2D<><><>::
-::res://Scripts/Overworld Scripts/Player Scripts/::1737037226.0
+::res://Scripts/Overworld Scripts/Player Scripts/::1737037226
 Player.cs::CSharpScript::4004236292159019492::1736601991::0::1::::<>CharacterBody2D<><><>::
 PlayerEventManager.cs::CSharpScript::4580519857363045189::1733697862::0::1::::<>Node<><><>::
-::res://Scripts/Overworld Scripts/Triggers/::1737037226.0
+::res://Scripts/Overworld Scripts/Triggers/::1737037226
 Trigger.cs::CSharpScript::46687318637997297::1733819839::0::1::::<>Area2D<><><>::
 TriggerDetector.cs::CSharpScript::4062639340668270062::1733819796::0::1::::<>Area2D<><><>::
 TriggerEffect.cs::CSharpScript::6002156165550307232::1733819678::0::1::::<>Resource<><><>::
-::res://Scripts/Overworld Scripts/Triggers/Trigger Effects/::1737037226.0
+::res://Scripts/Overworld Scripts/Triggers/Trigger Effects/::1737037226
 AddItemTriggerEffect.cs::CSharpScript::8513392014716663071::1733904418::0::1::::AddItemTriggerEffect<>Resource<><><>::
 AddMoneyTriggerEffect.cs::CSharpScript::4006598473689919782::1733820710::0::1::::AddMoneyTriggerEffect<>Resource<><><>::
 ChangeFlagTriggerEffect.cs::CSharpScript::5113539906687587631::1733824724::0::1::::ChangeFlagTriggerEffect<>Resource<><><>::
@@ -497,47 +500,47 @@ DeleteObjectTriggerEffect.cs::CSharpScript::7743355426458769987::1733819940::0::
 SkipTimeTriggerEffect.cs::CSharpScript::3824553648536416814::1733834753::0::1::::SkipTimeTriggerEffect<>Resource<><><>::
 TriggerDialogue.cs::CSharpScript::2959818810095739545::1734060192::0::1::::TriggerDialogue<>Resource<><><>::
 TriggerLoadScene.cs::CSharpScript::2765758800408896134::1733819691::0::1::::TriggerLoadScene<>Resource<><><>::
-::res://Scripts/Overworld Scripts/World Events/::1737037226.0
+::res://Scripts/Overworld Scripts/World Events/::1737037226
 WorldEventDialogueEvent.cs::CSharpScript::4923188070550795334::1733715052::0::1::::WorldEventDialogueEvent<>Resource<><><>::
 WorldEventEffect.cs::CSharpScript::496516038576583197::1733714914::0::1::::<>Resource<><><>::
 WorldEventManager.cs::CSharpScript::1404358053470583707::1733715727::0::1::::<>Node<><><>::
-::res://Scripts/Overworld Scripts/World Events/Custom World Events/::1737037226.0
+::res://Scripts/Overworld Scripts/World Events/Custom World Events/::1737037226
 LoadSceneWorldEffect.cs::CSharpScript::8500652445411022969::1733714972::0::1::::LoadSceneWorldEffect<>Resource<><><>::
 WorldEffectGiveQuest.cs::CSharpScript::2537119958485778812::1733963801::0::1::::WorldEffectGiveQuest<>Resource<><><>::
-::res://Scripts/Quest System/::1737037226.0
+::res://Scripts/Quest System/::1737037226
 BaseQuest.cs::CSharpScript::5941425574403497035::1733909972::0::1::::BaseQuest<>Resource<><><>::
 Quest.cs::CSharpScript::3516249372238265585::1733963654::0::1::::<><><><>::
 QuestData.cs::CSharpScript::3357405577603068326::1733899037::0::1::::<><><><>::
 QuestGoal.cs::CSharpScript::690624076579750413::1733963990::0::1::::<>Resource<><><>::
 QuestManager.cs::CSharpScript::5826742474187104040::1734061174::0::1::::<>Node<><><>::
-::res://Scripts/Quest System/Custom Quest Goals/::1737037226.0
+::res://Scripts/Quest System/Custom Quest Goals/::1737037226
 QuestGoalItemPickup.cs::CSharpScript::6235639879875387652::1733963997::0::1::::QuestGoalItemPickup<>Resource<><><>::
-::res://Scripts/Save System/::1737037226.0
+::res://Scripts/Save System/::1737037226
 FileSaver.cs::CSharpScript::2075964258821158729::1734669490::0::1::::<>Node<><><>::
-::res://Scripts/Scene Manager/::1737037226.0
+::res://Scripts/Scene Manager/::1737037226
 LoadScreen.cs::CSharpScript::330521560776953774::1736602023::0::1::::<>Node<><><>::
 LoadScreenState.cs::CSharpScript::4521441989598450273::1733002976::0::1::::<><><><>::
 SceneManager.cs::CSharpScript::3523346161116837537::1736602030::0::1::::<>Node<><><>::
-::res://Scripts/State System/::1733578783.0
-::res://Scripts/State System/Node-Based States/::1737694450.0
+::res://Scripts/State System/::1733578783
+::res://Scripts/State System/Node-Based States/::1737694450
 StateNode.cs::CSharpScript::3985224510252133350::1737694450::0::1::::<>Node2D<><><>::
-::res://Scripts/State System/Resource-Based States/::1737037226.0
+::res://Scripts/State System/Resource-Based States/::1737037226
 StateChangeCondition.cs::CSharpScript::378590348204820104::1733574481::0::1::::<><><><>::
 StateChangeData.cs::CSharpScript::1715896097315788271::1733576888::0::1::::<><><><>::
 StateObject.cs::CSharpScript::64789691812215337::1733577764::0::1::::<><><><>::
 StateResource.cs::CSharpScript::311675208363651304::1733574972::0::1::::<><><><>::
-::res://Scripts/Time System/::1737037226.0
+::res://Scripts/Time System/::1737037226
 DateTimeManager.cs::CSharpScript::6256519584049984984::1736602048::0::1::::<>Node<><><>::
 TimeData.cs::CSharpScript::7791394575014513767::1733815372::0::1::::<><><><>::
 TimePassedEvent.cs::CSharpScript::7026773822783513874::1733814519::0::1::::TimePassedEvent<>Resource<><><>::
-::res://Scripts/UI/::1737037226.0
+::res://Scripts/UI/::1737037226
 GachaBottomBar.cs::CSharpScript::7920147938694651461::1732515600::0::1::::<>Control<><><>::
-::res://Scripts/UI/Banners Display/::1737037226.0
+::res://Scripts/UI/Banners Display/::1737037226
 BannersWindow.cs::CSharpScript::491810086906904600::1732520099::0::1::::<>Control<><><>::
-::res://Scripts/UI/Calendar/::1737037226.0
+::res://Scripts/UI/Calendar/::1737037226
 CalendarUI.cs::CSharpScript::4254862589440226182::1733730058::0::1::::<>CanvasLayer<><><>::
 DateTime.cs::CSharpScript::6502914222852107976::1732177502::0::1::::DateTime<>Resource<><><>::
-::res://Scripts/UI/Gacha Display/::1737037226.0
+::res://Scripts/UI/Gacha Display/::1737037226
 OwnedGachaCharactersMenu.cs::CSharpScript::1971866102852714189::1734904924::0::1::::<>Control<><><>::
-::res://Scripts/UI/GUI Overrides/::1737037226.0
+::res://Scripts/UI/GUI Overrides/::1737037226
 ScrollableButton.cs::CSharpScript::4778186145714593849::1735985306::0::1::::<>Control<><><>::

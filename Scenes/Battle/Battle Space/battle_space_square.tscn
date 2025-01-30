@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bucspuw6nymcd"]
+[gd_scene load_steps=6 format=3 uid="uid://bucspuw6nymcd"]
 
 [ext_resource type="Script" uid="uid://c5lpmutqbgb5l" path="res://Scripts/Combat System/Grid/GridSpace.cs" id="1_fh1l7"]
 [ext_resource type="PackedScene" uid="uid://c2njhbj4uiopi" path="res://Scenes/Battle/Battle Space/skill_direction_button.tscn" id="2_abohb"]
+[ext_resource type="Script" uid="uid://duc7g8yt6wcxc" path="res://Scripts/Combat System/Grid/States/GridStateDefault.cs" id="3_o2aie"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Grid/States/GridStateAllyWalkable.cs" id="4_sugmo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c2g2s"]
 
 [node name="Battle Space" type="Node2D" node_paths=PackedStringArray("spaceSprite", "upButton", "downButton", "leftButton", "rightButton")]
-position = Vector2(168, 356)
 script = ExtResource("1_fh1l7")
 defaultColor = Color(0.380392, 0.380392, 0.380392, 0.537255)
 allyColor = Color(0.0701451, 0.307947, 1, 0.635294)
@@ -69,5 +70,14 @@ offset_top = 76.0
 offset_right = -68.0
 offset_bottom = 176.0
 rotation = -1.5708
+
+[node name="====States====" type="Node2D" parent="."]
+
+[node name="Default State" type="Node2D" parent="====States====" node_paths=PackedStringArray("allyWalkableState")]
+script = ExtResource("3_o2aie")
+allyWalkableState = NodePath("../Ally Walkable")
+
+[node name="Ally Walkable" type="Node2D" parent="====States===="]
+script = ExtResource("4_sugmo")
 
 [connection signal="button_up" from="Button" to="." method="OnClick"]

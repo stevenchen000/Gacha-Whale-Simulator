@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterSkillEvent" load_steps=2 format=3 uid="uid://4srl4i4h13k2"]
+
+[ext_resource type="Script" path="res://Scripts/Event System/Custom Game Events/CharacterSkillEvent.cs" id="1_lwqqr"]
+
+[resource]
+script = ExtResource("1_lwqqr")
+description = ""
+debug = false
+metadata/_custom_type_script = ExtResource("1_lwqqr")
