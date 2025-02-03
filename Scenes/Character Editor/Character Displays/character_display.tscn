@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://g4cq8iht4otw"]
+[gd_scene load_steps=6 format=3 uid="uid://g4cq8iht4otw"]
 
 [ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png" id="1_jxrhd"]
-[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_kcr6r"]
+[ext_resource type="Script" uid="uid://djj2a2mevrxmf" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_kcr6r"]
 [ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="2_0e68g"]
-[ext_resource type="Resource" uid="uid://4s2ufn05677l" path="res://Resources/Utilities/Events/Character Manager Events/OnPortraitButtonPressed.tres" id="2_o365b"]
 [ext_resource type="Texture2D" uid="uid://bsd0q4di11vk0" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border.png" id="3_wkehh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c8q5g"]
@@ -11,23 +10,22 @@ font_size = 30
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Character" type="Control" node_paths=PackedStringArray("background", "border", "portraitElement", "nameElement")]
+[node name="Character" type="Control" node_paths=PackedStringArray("background", "border", "portraitElement")]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 3
 anchors_preset = 0
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_kcr6r")
 background = NodePath("Background")
 border = NodePath("Border")
 portraitElement = NodePath("Background/Portrait")
-nameElement = NodePath("Background/Name")
-OnPortraitButton = ExtResource("2_o365b")
 
 [node name="Background" type="TextureRect" parent="."]
 clip_children = 2
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 120.0
+mouse_filter = 2
 texture = ExtResource("1_jxrhd")
 
 [node name="Portrait" type="Sprite2D" parent="Background"]

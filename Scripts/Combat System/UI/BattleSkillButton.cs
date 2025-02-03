@@ -28,6 +28,7 @@ namespace CombatSystem
 
         public void OnClick()
         {
+            Utils.Print(this, skill.ResourcePath);
             if (skill != null)
             {
                 var selectedSkill = battle.SelectedSkill;

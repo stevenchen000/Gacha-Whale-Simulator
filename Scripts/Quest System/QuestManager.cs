@@ -18,7 +18,7 @@ namespace QuestSystem
             var newQuest = new Quest(quest);
             currentQuests.Add(newQuest);
             newQuest.ActivateQuest();
-            GD.Print($"Quest added: {quest.name}");
+            Utils.Print(this, $"Quest added: {quest.name}");
         }
 
         public void RemoveQuest(int index)
@@ -35,7 +35,7 @@ namespace QuestSystem
             {
                 currentQuests.Remove(result);
                 result.DeactivateQuest();
-                GD.Print($"Quest removed: {result.name}");
+                Utils.Print(this, $"Quest removed: {result.name}");
             }
         }
 

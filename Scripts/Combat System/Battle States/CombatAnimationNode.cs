@@ -15,28 +15,28 @@ namespace CombatSystem
 
         protected override void OnStateActivated()
         {
-            time = new TimeHandler();
-            turnData = battle.castData;
+            /*time = new TimeHandler();
+            turnData = battle.turnData;
             skill = battle.SelectedSkill.GetDuplicate();
-            Utils.Print(this, "Playing animation...");
+            Utils.Print(this, "Playing animation...");*/
         }
 
         protected override void RunState(double delta)
         {
-            time.Tick(delta);
-            finishedCast = skill.PlayAnimation(turnData, time, delta);
+            //time.Tick(delta);
+            //finishedCast = skill.PlayAnimation(turnData, time, delta);
         }
 
         protected override StateNode CheckStateChange()
         {
-            StateNode result = null;
+            /*StateNode result = null;
 
             if (finishedCast)
             {
                 result = damageCalculationNode;
-            }
+            }*/
 
-            return result;
+            return damageCalculationNode;
         }
 
         protected override void OnStateDeactivated()

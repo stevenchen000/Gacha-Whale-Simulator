@@ -13,7 +13,6 @@ namespace DialogueSystem
         public bool ConditionsMet()
         {
             bool result = true;
-            //GD.Print(dialogue.ResourcePath);
             foreach(var condition in conditions)
             {
                 if (!condition.ConditionMet())

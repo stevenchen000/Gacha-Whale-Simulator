@@ -27,10 +27,6 @@ namespace CombatSystem
         {
             turnOrder.Add(turnOrder[0]);
             turnOrder.RemoveAt(0);
-            foreach(var character in turnOrder)
-            {
-                GD.Print($"{character.Name}");
-            }
             return turnOrder[0];
         }
 

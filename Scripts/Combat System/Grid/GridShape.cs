@@ -28,6 +28,7 @@ namespace CombatSystem {
                 int y = position.Y;
                 space.X += x;
                 space.Y += y;
+                spaces[i] = space;
             }
         }
 
@@ -45,6 +46,7 @@ namespace CombatSystem {
             }
             else
             {
+                result = new Array<Vector2I>();
                 result.AddRange(spaces);
             }
 

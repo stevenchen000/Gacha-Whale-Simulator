@@ -65,11 +65,11 @@ public partial class ScrollableButton : Control
         if (hasScrolled)
         {
 			hasScrolled = false;
-			GD.Print("Event canceled, was scrolling");
+            Utils.Print(this, "Event canceled, was scrolling");
 		}
         else
         {
-			GD.Print("Portrait button was pressed");
+            Utils.Print(this, "Portrait button was pressed");
 		}
     }
 

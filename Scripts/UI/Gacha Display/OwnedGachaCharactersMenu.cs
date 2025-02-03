@@ -77,7 +77,6 @@ public partial class OwnedGachaCharactersMenu : Control
 	private void AddAllMissingRows()
     {
 		int numOfCharacters = GameState.GetNumberOfCharacters();
-		GD.Print(5);
 		int numOfBoxes = boxes.Count;
 		int numOfMissingBoxes = numOfCharacters - numOfBoxes;
 
@@ -85,7 +84,6 @@ public partial class OwnedGachaCharactersMenu : Control
         {
 			AddRow();
         }
-		GD.Print(6);
 	}
 
 	private void AddAllChildrenNodes()

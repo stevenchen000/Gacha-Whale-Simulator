@@ -10,7 +10,7 @@ public partial class DeleteParentAfterTime : Node
     {
         if(time >= waitTime && time > 0)
         {
-            GD.Print("Deleting object");
+            Utils.Print(this, "Deleting object");
             GetParent().QueueFree();
         }
         time += delta;

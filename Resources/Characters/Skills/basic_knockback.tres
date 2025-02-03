@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=13 format=3 uid="uid://bf1ygfo7sc2i4"]
+
+[ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_0bye3"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="2_abqcb"]
+[ext_resource type="PackedScene" uid="uid://dvoadaaadxes2" path="res://Scenes/Skill Assets/Test Effect.tscn" id="3_n14kx"]
+[ext_resource type="Script" uid="uid://bytq6ww1y1oc" path="res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationElementCreateObjectAtTarget.cs" id="4_scugn"]
+[ext_resource type="Script" uid="uid://dkofljjxhtlfe" path="res://Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs" id="5_1kysj"]
+[ext_resource type="Script" uid="uid://cwc5oieqpw3k" path="res://Scripts/Combat System/Skill System/Skill Effects/Custom Effects/DealDamageEffect.cs" id="6_pw32j"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Skill System/Skill Effects/Custom Effects/KnockbackEffect.cs" id="7_abqcb"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat System/Skill System/CharacterSkill.cs" id="7_yxcrb"]
+
+[sub_resource type="Resource" id="Resource_jjn8h"]
+script = ExtResource("4_scugn")
+castObject = ExtResource("3_n14kx")
+offset = Vector2(0, -50)
+scale = Vector2(10, 10)
+delay = 0.0
+duration = 3.0
+ignoreDuration = false
+
+[sub_resource type="Resource" id="Resource_ek5vx"]
+script = ExtResource("5_1kysj")
+animations = Array[Resource]([SubResource("Resource_jjn8h")])
+
+[sub_resource type="Resource" id="Resource_dwxpx"]
+script = ExtResource("6_pw32j")
+potency = 100.0
+duration = 0.2
+delay = 0.0
+metadata/_custom_type_script = ExtResource("6_pw32j")
+
+[sub_resource type="Resource" id="Resource_n14kx"]
+script = ExtResource("7_abqcb")
+duration = 0.5
+knockInSkillDirection = true
+numofSpaces = 2
+delay = 0.0
+metadata/_custom_type_script = ExtResource("7_abqcb")
+
+[resource]
+script = ExtResource("7_yxcrb")
+Icon = ExtResource("2_abqcb")
+animation = SubResource("Resource_ek5vx")
+effects = Array[Object]([SubResource("Resource_dwxpx"), SubResource("Resource_n14kx")])
+duration = 2.0
+potency = 100
+AttackArea = ExtResource("1_0bye3")
+direction = 1
+targetType = 1

@@ -28,8 +28,13 @@ namespace StateSystem
         {
             if (IsInitialState)
             {
-                active = true;
+                CallDeferred(MethodName._InitNode);
             }
+        }
+
+        private void _InitNode()
+        {
+            active = true;
         }
 
         public override void _Process(double delta)

@@ -61,10 +61,10 @@ public partial class ImageSaver : Node
         var milliseconds = now.Millisecond;
 
         string result = $"{year}-{month}-{day}_{hour}-{minute}-{seconds}-{milliseconds}.png";
-        //GD.Print("\n\n" + result + "\n\n");
+        
         if (File.Exists(result))
         {
-            GD.PrintErr("File already exists!");
+            Utils.Print(this, "File already exists!");
         }
 
         return result;

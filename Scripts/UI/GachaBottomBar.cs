@@ -15,7 +15,7 @@ public partial class GachaBottomBar : Control
 	public override void _Ready()
 	{
 		phoneScreen = (Control)FindParent("Phone Screen");
-		GD.Print(phoneScreen.Name);
+        Utils.Print(this, phoneScreen.Name);
 		
 	}
 

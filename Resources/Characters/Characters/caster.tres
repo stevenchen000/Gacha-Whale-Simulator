@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dnkp8jmxhbt8a" path="res://Resources/Characters/Skills/Classes/caster_class.tres" id="1_rt11t"]
 [ext_resource type="Resource" uid="uid://cnmga8on2vcdy" path="res://Resources/Characters/Skills/Roles/attacker_role.tres" id="2_3up74"]
-[ext_resource type="Resource" uid="uid://dyor6oc038qua" path="res://Resources/Characters/Skills/basic_attack.tres" id="3_3up74"]
+[ext_resource type="Resource" uid="uid://bf1ygfo7sc2i4" path="res://Resources/Characters/Skills/basic_knockback.tres" id="3_3up74"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="3_eitd7"]
 
 [resource]

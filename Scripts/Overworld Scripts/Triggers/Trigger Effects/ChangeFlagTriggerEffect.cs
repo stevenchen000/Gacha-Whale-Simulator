@@ -18,6 +18,5 @@ public partial class ChangeFlagTriggerEffect : TriggerEffect
         {
             GameState.AddFlag(flagName, changeAmount);
         }
-        //GD.Print($"{flagName} = {GameState.GetFlagAmount(flagName)}");
     }
 }

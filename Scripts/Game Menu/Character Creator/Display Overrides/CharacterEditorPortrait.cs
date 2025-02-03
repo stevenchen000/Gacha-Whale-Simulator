@@ -37,12 +37,9 @@ public partial class CharacterEditorPortrait : Control
         if (hasScrolled)
         {
 			hasScrolled = false;
-			//GD.Print("Event canceled, was scrolling");
 		}
         else
         {
-			
-			//GD.Print("Portrait button was pressed");
 		}
     }
 

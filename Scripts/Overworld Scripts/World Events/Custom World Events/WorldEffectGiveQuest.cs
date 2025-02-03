@@ -16,7 +16,7 @@ public partial class WorldEffectGiveQuest : WorldEventEffect
         }
         else
         {
-            GD.Print("You already have that quest!");
+            Utils.Print(this, "You already have that quest!");
         }
     }
 }

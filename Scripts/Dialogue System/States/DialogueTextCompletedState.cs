@@ -24,14 +24,14 @@ namespace DialogueSystem
                 var currDialogue = dialogue.currDialogue;
                 dialogue.currDialogue = dialogue.dialogue.GetNextScene(currDialogue);
                 currDialogue = dialogue.currDialogue;
-                GD.Print(dialogueTree.ResourceName);
+                Utils.Print(this, dialogueTree.ResourceName);
                 
                 if(currDialogue == null)
                 {
                     ChangeState(inactiveState);
                     dialogue.EndDialogue();
 
-                    GD.Print(dialogueTree.ResourceName);
+                    Utils.Print(this, dialogueTree.ResourceName);
                     OnDialogueEnd?.RaiseEvent(this,dialogueTree);
                 }
                 else

@@ -19,13 +19,10 @@ public partial class WorldEventManager : Node
 
     private void RunDialogueEffect(DialogueTree dialogue)
     {
-        //GD.Print("Searching for dialogue event...");
-        //GD.Print(dialogue.ResourcePath);
         if (_dialogueEvents.ContainsKey(dialogue))
         {
             var dialogueEvent = _dialogueEvents[dialogue];
             dialogueEvent.effect.ActivateEffect();
-            //GD.Print("Dialogue Event found!");
         }
     }
 

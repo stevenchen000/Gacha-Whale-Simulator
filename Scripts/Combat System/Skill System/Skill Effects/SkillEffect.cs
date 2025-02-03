@@ -5,16 +5,24 @@ namespace CombatSystem {
     [GlobalClass]
     public partial class SkillEffect : Resource
     {
-        [Export] private float delay = 0f;
+        [Export] protected float delay = 0f;
 
-        public bool RunEffect() {
+        public bool RunEffect(TurnData data, TimeHandler timer) {
+            bool finished = false;
+            
+            if (timer.TimeIsBetween(delay))
+                _StartEffect(data);
+            if(timer.TimeIsUp(delay))
+                finished = _RunEffect(data, timer);
 
-            return true;
+            if(finished) _EndEffect(data);
+
+            return finished;
         }
 
         protected virtual void _StartEffect(TurnData data) { }
 
-        protected virtual bool _RunEffect(TurnData data) { return true; }
+        protected virtual bool _RunEffect(TurnData data, TimeHandler timer) { return true; }
         protected virtual void _EndEffect(TurnData data) { }
     }
 }

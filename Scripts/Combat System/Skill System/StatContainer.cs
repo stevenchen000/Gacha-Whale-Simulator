@@ -15,8 +15,8 @@ namespace CombatSystem
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
-            GD.Print($"Took {damage} damage");
-            if (IsDead()) GD.Print("Target has died");
+            Utils.Print(this, $"Took {damage} damage");
+            if (IsDead()) Utils.Print(this, "Target has died");
         }
 
         public bool IsDead()

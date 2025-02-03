@@ -42,7 +42,7 @@ public partial class TriggerDetector : Area2D
 			{
 				triggers.Add(trigger);
 			}
-			GD.Print("Entered trigger");
+            Utils.Print(this, "Entered trigger");
 		}
 	}
 
@@ -52,7 +52,7 @@ public partial class TriggerDetector : Area2D
         {
             Trigger trigger = (Trigger)area;
             triggers.Remove(trigger);
-            GD.Print("Exited trigger");
+            Utils.Print(this, "Exited trigger");
         }
     }
 

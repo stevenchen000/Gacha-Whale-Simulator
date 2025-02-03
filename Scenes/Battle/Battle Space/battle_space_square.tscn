@@ -1,24 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bucspuw6nymcd"]
+[gd_scene load_steps=7 format=3 uid="uid://bucspuw6nymcd"]
 
 [ext_resource type="Script" uid="uid://c5lpmutqbgb5l" path="res://Scripts/Combat System/Grid/GridSpace.cs" id="1_fh1l7"]
-[ext_resource type="PackedScene" uid="uid://c2njhbj4uiopi" path="res://Scenes/Battle/Battle Space/skill_direction_button.tscn" id="2_abohb"]
 [ext_resource type="Script" uid="uid://duc7g8yt6wcxc" path="res://Scripts/Combat System/Grid/States/GridStateDefault.cs" id="3_o2aie"]
-[ext_resource type="Script" path="res://Scripts/Combat System/Grid/States/GridStateAllyWalkable.cs" id="4_sugmo"]
+[ext_resource type="Script" uid="uid://daq8ixfim4qrn" path="res://Scripts/Combat System/Grid/States/GridStateAllyTargetable.cs" id="4_o2aie"]
+[ext_resource type="Script" uid="uid://cx0si78a0r7jq" path="res://Scripts/Combat System/Grid/States/GridStateAllyWalkable.cs" id="4_sugmo"]
+[ext_resource type="Script" path="res://Scripts/Combat System/Grid/States/GridStateAllyTargeting.cs" id="5_sugmo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c2g2s"]
 
-[node name="Battle Space" type="Node2D" node_paths=PackedStringArray("spaceSprite", "upButton", "downButton", "leftButton", "rightButton")]
+[node name="Battle Space" type="Node2D" node_paths=PackedStringArray("spaceSprite")]
 script = ExtResource("1_fh1l7")
 defaultColor = Color(0.380392, 0.380392, 0.380392, 0.537255)
 allyColor = Color(0.0701451, 0.307947, 1, 0.635294)
-allyAttackColor = Color(0.611761, 0.172918, 0.692959, 0.909804)
-allyCurrentTileColor = Color(0.227451, 0.45098, 1, 1)
+allyAttackColor = Color(0.690196, 0.211765, 0.352941, 0.67451)
+allyTargetColor = Color(0.517894, 0.539682, 0.148605, 0.72549)
+allyCurrentTileColor = Color(0.227451, 0.45098, 1, 0.694118)
 enemyColor = Color(0.588235, 0, 0, 0.67451)
 spaceSprite = NodePath("Sprite")
-upButton = NodePath("====Direction Buttons====/Up Button2")
-downButton = NodePath("====Direction Buttons====/Down Button2")
-leftButton = NodePath("====Direction Buttons====/Left Button2")
-rightButton = NodePath("====Direction Buttons====/Right Button2")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 self_modulate = Color(0.0716846, 0.406058, 1, 0.270588)
@@ -33,51 +31,32 @@ offset_top = -95.0
 offset_right = 95.0
 offset_bottom = 95.0
 
-[node name="====Direction Buttons====" type="Control" parent="."]
-z_index = 4
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Up Button2" parent="====Direction Buttons====" instance=ExtResource("2_abohb")]
-layout_mode = 0
-offset_left = -75.0
-offset_top = -215.0
-offset_right = 75.0
-offset_bottom = -115.0
-
-[node name="Down Button2" parent="====Direction Buttons====" instance=ExtResource("2_abohb")]
-layout_mode = 0
-offset_left = 81.0
-offset_top = 219.0
-offset_right = 231.0
-offset_bottom = 319.0
-rotation = 3.14159
-
-[node name="Right Button2" parent="====Direction Buttons====" instance=ExtResource("2_abohb")]
-layout_mode = 0
-offset_left = 224.0
-offset_top = -70.0
-offset_right = 374.0
-offset_bottom = 30.0
-rotation = 1.5708
-
-[node name="Left Button2" parent="====Direction Buttons====" instance=ExtResource("2_abohb")]
-layout_mode = 0
-offset_left = -218.0
-offset_top = 76.0
-offset_right = -68.0
-offset_bottom = 176.0
-rotation = -1.5708
-
 [node name="====States====" type="Node2D" parent="."]
 
-[node name="Default State" type="Node2D" parent="====States====" node_paths=PackedStringArray("allyWalkableState")]
+[node name="Default State" type="Node2D" parent="====States====" node_paths=PackedStringArray("allyWalkableState", "allyTargetableState", "allyTargetingState")]
 script = ExtResource("3_o2aie")
-allyWalkableState = NodePath("../Ally Walkable")
+allyWalkableState = NodePath("../====Ally States====/Ally Walkable")
+allyTargetableState = NodePath("../====Ally States====/Ally Targetable")
+allyTargetingState = NodePath("../====Ally States====/Ally Targeting")
+IsInitialState = true
 
-[node name="Ally Walkable" type="Node2D" parent="====States===="]
+[node name="====Ally States====" type="Node2D" parent="====States===="]
+
+[node name="Ally Walkable" type="Node2D" parent="====States====/====Ally States====" node_paths=PackedStringArray("defaultState", "allyTargetable", "allySelectedSkill")]
 script = ExtResource("4_sugmo")
+defaultState = NodePath("../../Default State")
+allyTargetable = NodePath("../Ally Targetable")
+allySelectedSkill = NodePath("../Ally Targeting")
+
+[node name="Ally Targetable" type="Node2D" parent="====States====/====Ally States====" node_paths=PackedStringArray("defaultState", "allySelectedSkill")]
+script = ExtResource("4_o2aie")
+defaultState = NodePath("../../Default State")
+allySelectedSkill = NodePath("../Ally Targeting")
+
+[node name="Ally Targeting" type="Node2D" parent="====States====/====Ally States====" node_paths=PackedStringArray("allyTargetable")]
+script = ExtResource("5_sugmo")
+allyTargetable = NodePath("../Ally Targetable")
+
+[node name="====Enemy States====" type="Node2D" parent="====States===="]
 
 [connection signal="button_up" from="Button" to="." method="OnClick"]

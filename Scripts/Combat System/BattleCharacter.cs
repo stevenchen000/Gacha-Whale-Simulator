@@ -8,42 +8,71 @@ namespace CombatSystem
 {
     public partial class BattleCharacter : CharacterBody2D
     {
+        private WeakReference<BattleManager> _battle;
+        private BattleManager battle
+        {
+            get
+            {
+                BattleManager result = null;
+                _battle.TryGetTarget(out result);
+                return result;
+            }
+            set
+            {
+                _battle = new WeakReference<BattleManager>(value);
+            }
+        }
+
         private GameCharacter characterData;
         [Export] private CharacterPortraitDisplay portrait;
         //[Export] private GachaCharacterData characterData;
         [Export] public int movableSpaces { get; set; } = 2;
-        public Vector2I previousPosition { get; private set; }
+        public Vector2I turnStartPosition { get; private set; } = Vector2I.MinValue;
         public CharacterDirection facingDirection { get; private set; }
         [Export] public float speed = 5;
         [Export] private CollisionShape2D collider;
         [Export] public CharacterSkill skill { get; set; }
         [Export] private StatContainer savedStats { get; set; }
-        public BattleStats stats { get; set; }
+        public BattleStats stats { get; private set; }
 
-        private GridSpace previousNearestSpace = null;
-        private GridSpace previousAttackSpace = null;
-        private Array<GridSpace> previousAttackArea = null;
+        //private GridSpace previousNearestSpace = null;
+        //private GridSpace previousAttackSpace = null;
+        //private Array<GridSpace> previousAttackArea = null;
 
         public CharacterSkill currSkill { get; private set; }
         public Array<BattleCharacter> targets { get; private set; }
-        public Vector2I tempPosition { get; private set; }
+        public Vector2I currPosition { get; private set; } = Vector2I.MinValue;
+        public int PartyIndex { get; private set; }
+
 
 
         public override void _Ready()
         {
-            //stats = new BattleStats(savedStats);
-            //DisableCollider();
+            battle = Utils.FindParentOfType<BattleManager>(this);
         }
 
-        public void InitCharacter(GameCharacter character, Vector2I startPosition)
+        public override void _Process(double delta)
         {
-            previousPosition = startPosition;
+            MoveTowardsPosition(delta);
+        }
+
+        private void MoveTowardsPosition(double delta)
+        {
+            var space = battle.GetGrid().GetSpaceFromCoords(currPosition);
+            Position = Position.MoveToward(space.GlobalPosition, (float)delta * 3000);
+        }
+
+
+        public void InitCharacter(GameCharacter character, Vector2I startPosition, int partyIndex)
+        {
+            PartyIndex = partyIndex;
+            turnStartPosition = startPosition;
+            currPosition = startPosition;
             characterData = character;
+            InitStats();
             skill = character.GetBasicAttack();
-            //var charPortrait = character.GetPortrait();
             var charPortrait = FileManager.GetRandomPortrait();
             portrait.UpdatePortrait(charPortrait);
-            //Utils.Print(this, "Using random portrait");
         }
 
 
@@ -51,105 +80,58 @@ namespace CombatSystem
         {
             currSkill = null;
             targets = new Array<BattleCharacter>();
-            tempPosition = previousPosition;
-        }
-
-        public bool ControlCharacter(double delta, BattleManager battle, BattleGrid grid)
-        {
-            bool selectedAction = false;
-            var movement = CalculateMovementVector();
-            SetFacingDirection(movement);
-            MoveCharacter(movement);
-
-            if (Input.IsActionJustPressed("ui_accept"))
-            {
-                currSkill = skill;
-                targets.AddRange(grid.GetTargetsInRange(battle, this, currSkill.AttackArea));
-                selectedAction = true;
-            }
-
-            return selectedAction;
+            currPosition = turnStartPosition;
         }
 
 
         public void EndTurn(double delta, BattleManager battle, BattleGrid grid)
         {
-            //Position = Position.Lerp(previousNearestSpace.GlobalPosition, 1f);
-            previousPosition = tempPosition;
+            turnStartPosition = currPosition;
         }
 
         public bool IsDead() { return stats.IsDead(); }
 
 
-        public void DisableCollider()
-        {
-            //collider.Disabled = true;
-        }
-
-        public void EnableCollider()
-        {
-            //collider.Disabled = false;
-        }
-
         public void SetPosition(GridSpace space)
         {
-            Position = space.GlobalPosition;
-            tempPosition = space.coords;
+            //Position = space.GlobalPosition;
+            currPosition = space.Coords;
+        }
+
+        public bool IsEnemy(BattleCharacter target)
+        {
+            return target.PartyIndex != PartyIndex;
+        }
+
+        public bool MoveAndUpdate(Vector2I position)
+        {
+            bool moved = battle.OccupySpace(position, this);
+            if (moved)
+            {
+                currPosition = position;
+                turnStartPosition = position;
+            }
+
+            return moved;
         }
 
 
         /***************
          * Helper Functions
          * ****************/
-
-        private Vector2 GetMovementDirection()
-        {
-            float horizontal = 0;
-            float vertical = 0;
-
-            if (Input.IsActionPressed("ui_left"))
-            {
-                horizontal += -1;
-            }
-            if (Input.IsActionPressed("ui_right"))
-            {
-                horizontal += 1;
-            }
-            if (Input.IsActionPressed("ui_up"))
-            {
-                vertical += -1;
-            }
-            if (Input.IsActionPressed("ui_down"))
-            {
-                vertical += 1;
-            }
-
-            return new Vector2(horizontal, vertical);
-        }
         
-        private void SetFacingDirection(Vector2 movement)
+        private void InitStats()
         {
-            float x = movement.X;
-            if(x > 0)
-            {
-                facingDirection = CharacterDirection.RIGHT;
-            }else if(x < 0)
-            {
-                facingDirection = CharacterDirection.LEFT;
-            }
-        }
+            var role = characterData.Role;
+            var roleStats = role.stats;
+            stats = new BattleStats();
 
-        private void MoveCharacter(Vector2 movement)
-        {
-            Velocity = movement;
-            MoveAndSlide();
-        }
+            stats.maxHealth = roleStats.GetMaxHealth(10);
+            stats.currentHealth = stats.maxHealth;
 
-        private Vector2 CalculateMovementVector()
-        {
-            var direction = GetMovementDirection();
-            var movement = direction.Normalized() * speed;
-            return movement;
+            stats.attack = roleStats.GetAttack(10);
+            stats.defense = roleStats.GetDefense(10);
+            stats.speed = roleStats.GetSpeed(10);
         }
     }
 }

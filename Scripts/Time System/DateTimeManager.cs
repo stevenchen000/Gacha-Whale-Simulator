@@ -56,7 +56,7 @@ public partial class DateTimeManager : Node
     {
         timeLock--;
         if(timeLock < 0) 
-            GD.PrintErr("WARNING: Time lock is negative");
+            Utils.Print(this, "WARNING: Time lock is negative");
     }
 
     private bool IsTimePaused()

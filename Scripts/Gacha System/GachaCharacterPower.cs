@@ -26,11 +26,11 @@ namespace GachaSystem {
                     addAllCharacters = false;
                     var allCharacters = gs.game.allCharacters;
 
-                    GD.Print(4);
+                    Utils.Print(this, 4);
                     if (rng == null)
                     {
 
-                        GD.Print(5);
+                        Utils.Print(this, 5);
                         rng = new Random(Guid.NewGuid().GetHashCode());
                     }
 

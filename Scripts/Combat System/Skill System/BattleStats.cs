@@ -9,6 +9,12 @@ namespace CombatSystem
         public int maxHealth;
         public int attack;
         public int defense;
+        public int speed;
+
+        public BattleStats()
+        {
+
+        }
 
         public BattleStats(StatContainer stats)
         {
@@ -21,8 +27,13 @@ namespace CombatSystem
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
-            GD.Print($"Took {damage} damage");
-            if (IsDead()) GD.Print("Target has died");
+            currentHealth = Math.Max(currentHealth, 0);
+        }
+
+        public void HealHealth(int healing)
+        {
+            currentHealth += healing;
+            currentHealth = Math.Min(currentHealth, maxHealth);
         }
 
         public bool IsDead()

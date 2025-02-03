@@ -14,31 +14,27 @@ namespace CombatSystem
 
         public override void _StartElement(TurnData data, TimeHandler time)
         {
-            GD.Print("Starting instantiation");
+            Utils.Print(this, "Starting instantiation");
             tempObjects = new Array<Node2D>();
             var targets = data.targets;
 
             foreach(var target in targets)
             {
-                //GD.Print($"Instantiating at target: {target.Name}");
                 var newObject = (Node2D)Utils.InstantiateCopy(castObject);
                 target.AddChild(newObject);
                 newObject.Position = offset;
                 newObject.Scale = scale;
-                //GD.Print($"Object created: {newObject.Name} at {newObject.GlobalPosition}");
                 tempObjects.Add(newObject);
             }
         }
 
         public override bool _RunElement(TurnData data, TimeHandler time)
         {
-            //GD.Print("Nothing happening");
             return false;
         }
 
         public override void _EndElement(TurnData data, TimeHandler time)
         {
-            //GD.Print("Animatiion element ended");
             foreach(var obj in tempObjects)
             {
                 //obj.QueueFree();

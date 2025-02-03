@@ -1,16 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2njhbj4uiopi"]
+[gd_scene load_steps=3 format=3 uid="uid://c2njhbj4uiopi"]
 
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_c2jw6"]
+[ext_resource type="Script" uid="uid://ccs5bb55tdd8d" path="res://Scripts/Combat System/UI/DirectionSelectionButton.cs" id="1_f2e6x"]
 
 [node name="Up Button" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 4096
 custom_minimum_size = Vector2(150, 100)
 offset_left = -74.0
 offset_top = -46.0
 offset_right = 76.0
 offset_bottom = 54.0
+script = ExtResource("1_f2e6x")
+Debug = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(74, 46)
 scale = Vector2(0.49, 0.49)
 texture = ExtResource("1_c2jw6")
+
+[connection signal="button_up" from="." to="." method="OnClick"]

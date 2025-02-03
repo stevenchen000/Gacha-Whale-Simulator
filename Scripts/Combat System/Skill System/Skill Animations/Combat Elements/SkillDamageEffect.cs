@@ -13,7 +13,7 @@ namespace CombatSystem
 
         public override void _StartElement(TurnData data, TimeHandler time)
         {
-            GD.Print("Started dealing damage");
+            Utils.Print(this, "Started dealing damage");
         }
 
         public override bool _RunElement(TurnData data, TimeHandler time)

@@ -37,7 +37,6 @@ namespace QuestSystem
             {
                 int change = inventoryData.amountChanged;
                 progress += change;
-                //GD.Print($"{currAmount}/{goalAmount}");
             }
             else
             {

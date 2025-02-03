@@ -5,11 +5,10 @@ namespace CombatSystem
 {
     public partial class GridSpace : Node2D
     {
-        private GridState state;
-        [Export] private CollisionShape2D collider;
         [Export] public Color defaultColor { get; private set; }
         [Export] public Color allyColor { get; private set; }
         [Export] public Color allyAttackColor { get; private set; }
+        [Export] public Color allyTargetColor { get; private set; }
         [Export] public Color allyCurrentTileColor { get; private set; }
         [Export] public Color enemyColor { get; private set; }
         [Export] public Color boundaryColor { get; private set; }
@@ -17,14 +16,24 @@ namespace CombatSystem
         [Export] private Sprite2D colliderSprite;
         [Export] private Sprite2D spaceSprite;
 
-        [Export] private Button upButton;
-        [Export] private Button downButton;
-        [Export] private Button leftButton;
-        [Export] private Button rightButton;
 
+        private WeakReference _charRef;
 
-        public BattleCharacter characterOnSpace { get; private set; }
-        public Vector2I coords { get; private set; }
+        public BattleCharacter CharacterOnSpace {
+            get {
+                if (_charRef != null)
+                    return (BattleCharacter)_charRef.Target;
+                else
+                    return null;
+            }
+            private set {
+                if (value != null)
+                    _charRef = new WeakReference(value);
+                else
+                    _charRef = null;
+            } 
+        }
+        public Vector2I Coords { get; private set; }
 
 
         public bool IsWalkable { get; private set; }
@@ -32,19 +41,30 @@ namespace CombatSystem
         public bool CanTarget { get; private set; }
         public bool HasSelectedTarget { get; private set; }
 
-        private BattleManager battle;
+        private WeakReference<BattleManager> _battleRef;
+        private BattleManager battle
+        {
+            get
+            {
+                BattleManager result = null;
+                _battleRef.TryGetTarget(out result);
+                return result;
+            }
+            set
+            {
+                _battleRef = new WeakReference<BattleManager>(value);
+            }
+        }
 
 
         public override void _Ready()
         {
             battle = Utils.FindParentOfType<BattleManager>(this);
-
         }
 
         public void InitSpace(Vector2I coords)
         {
-            this.coords = coords;
-            HideButtons();
+            Coords = coords;
         }
 
 
@@ -58,7 +78,7 @@ namespace CombatSystem
 
         public void Test()
         {
-            Utils.Print(this, coords);
+            
         }
 
 
@@ -70,45 +90,8 @@ namespace CombatSystem
             }
         }
 
-        public void ShowButtons(SkillDirection direction)
-        {
-            switch (direction)
-            {
-                case SkillDirection.ALL:
-                    ShowAllButtons();
-                    break;
-                case SkillDirection.HORIZONTAL:
-                    ShowHorizontalButtons();
-                    break;
-                case SkillDirection.VERTICAL:
-                    ShowVerticalButtons();
-                    break;
-                case SkillDirection.NONE:
-                    break;
-            }
-        }
 
-        public void UpButtonClicked()
-        {
-
-        }
-
-        public void DownButtonClicked()
-        {
-
-        }
-
-        public void LeftButtonClicked()
-        {
-
-        }
-
-        public void RightButtonClicked()
-        {
-
-        }
-
-        private void SetWalkable(bool walkable)
+        public void SetWalkable(bool walkable)
         {
             IsWalkable = walkable;
 
@@ -124,59 +107,26 @@ namespace CombatSystem
             }
         }
 
-        public void SetState(GridState newState)
-        {
-            //GD.Print($"State set: {newState}");
-            switch (newState)
-            {
-                case GridState.DEFAULT:
-                    SetColor(defaultColor);
-                    SetWalkable(false);
-                    break;
-                case GridState.ALLY_MOVEABLE:
-                    SetColor(allyColor);
-                    SetWalkable(true);
-                    break;
-                case GridState.ALLY_STANDING:
-                    SetColor(allyCurrentTileColor);
-                    SetWalkable(true);
-                    break;
-                case GridState.ALLY_ATTACK:
-                    SetColor(allyAttackColor);
-                    break;
-                case GridState.ALLY_SUPPORT:
-                    break;
-                case GridState.ENEMY_MOVEABLE:
-                    SetColor(enemyColor);
-                    SetWalkable(true);
-                    break;
-                case GridState.ENEMY_STANDING:
-                    break;
-                case GridState.ENEMY_ATTACK:
-                    break;
-                case GridState.ENEMY_SUPPORT:
-                    break;
-                case GridState.BOUNDARY:
-                    SetColor(boundaryColor);
-                    SetWalkable(false);
-                    break;
-            }
-            state = newState;
-        }
+        
 
-        public bool IsOccupied() { return characterOnSpace != null; }
+        public bool IsOccupied() { return CharacterOnSpace != null; }
 
         public void OccupySpace(BattleCharacter character)
         {
-            if(characterOnSpace == null)
+            if(CharacterOnSpace == null)
             {
-                characterOnSpace = character;
+                CharacterOnSpace = character;
             }
+        }
+
+        public void UnoccupySpace()
+        {
+            CharacterOnSpace = null;
         }
 
         public void EmptySpace()
         {
-            characterOnSpace = null;
+            UnoccupySpace();
         }
 
         public void SetColor(Color newColor)
@@ -184,37 +134,30 @@ namespace CombatSystem
             spaceSprite.SelfModulate = newColor;
         }
 
+        public void ResetSpace()
+        {
+            IsWalkable = false;
+            CanTarget = false;
+            HasSelectedTarget = false;
+        }
+
+        public void SetCanTarget(bool canTarget)
+        {
+            CanTarget = canTarget;
+        }
+
+        public void SetHasSelectedTarget(bool hasSelectedTarget)
+        {
+            HasSelectedTarget = hasSelectedTarget;
+        }
+
+
+
         /****************
          * Helpers
          * ****************/
 
 
-        private void HideButtons()
-        {
-            DisableButton(upButton);
-            DisableButton(downButton);
-            DisableButton(leftButton);
-            DisableButton(rightButton);
-        }
-
-
-        private void ShowAllButtons()
-        {
-            ShowHorizontalButtons();
-            ShowVerticalButtons();
-        }
-
-        private void ShowHorizontalButtons()
-        {
-            EnableButton(leftButton);
-            EnableButton(rightButton);
-        }
-
-        private void ShowVerticalButtons()
-        {
-            EnableButton(upButton);
-            EnableButton(downButton);
-        }
 
         private void DisableButton(Button button)
         {

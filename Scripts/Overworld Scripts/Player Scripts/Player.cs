@@ -39,7 +39,7 @@ public partial class Player : CharacterBody2D
         {
 			OnPlayerMovementLocked.RaiseEvent(this);
         }
-		GD.Print($"Locked: {movementLock} locks in place");
+        Utils.Print(this, $"Locked: {movementLock} locks in place");
     }
 
 	public void UnlockMovement()
@@ -47,12 +47,12 @@ public partial class Player : CharacterBody2D
 		movementLock--;
 		if(movementLock < 0)
         {
-			GD.Print("WARNING: There is a negative number of locks on character movement");
+            Utils.Print(this, "WARNING: There is a negative number of locks on character movement");
         }else if(movementLock == 0)
         {
 			OnPlayerMovementUnlocked.RaiseEvent(this);
 		}
-		GD.Print($"Unlocked: {movementLock} locks in place");
+        Utils.Print(this, $"Unlocked: {movementLock} locks in place");
 	}
 
 	public bool IsMovementLocked()

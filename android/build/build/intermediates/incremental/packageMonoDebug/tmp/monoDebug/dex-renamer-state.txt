@@ -1,9 +1,9 @@
-#Mon Jan 20 02:52:55 PST 2025
-base.2=C\:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\android\\build\\build\\intermediates\\dex\\monoDebug\\mergeProjectDexMonoDebug\\6\\classes.dex
+#Sat Feb 01 23:11:54 PST 2025
+base.2=C\:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\android\\build\\build\\intermediates\\dex\\monoDebug\\mergeProjectDexMonoDebug\\6\\classes.dex
 path.2=6/classes.dex
-base.1=C\:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\android\\build\\build\\intermediates\\dex\\monoDebug\\mergeProjectDexMonoDebug\\0\\classes.dex
+base.1=C\:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\android\\build\\build\\intermediates\\dex\\monoDebug\\mergeProjectDexMonoDebug\\0\\classes.dex
 path.1=0/classes.dex
-base.0=C\:\\Users\\chens\\Documents\\Godot\\Gacha-Whale-Simulator\\android\\build\\build\\intermediates\\dex\\monoDebug\\mergeExtDexMonoDebug\\classes.dex
+base.0=C\:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\android\\build\\build\\intermediates\\dex\\monoDebug\\mergeExtDexMonoDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex

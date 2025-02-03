@@ -18,6 +18,13 @@ namespace CombatSystem
             
         }
 
+        protected override StateNode CheckStateChange()
+        {
+            StateNode result = null;
+
+            return result;
+        }
+
         protected override void OnStateDeactivated()
         {
             

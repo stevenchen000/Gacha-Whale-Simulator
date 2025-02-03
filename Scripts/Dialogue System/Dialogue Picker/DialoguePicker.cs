@@ -22,16 +22,16 @@ namespace DialogueSystem
             for(int i = 0; i < dialogueList.Count; i++)
             {
                 var dialogueCondition = dialogueList[i];
-                GD.Print("Checking conditions");
-                GD.Print($"Broken?: {broken} {i}");
+                Utils.Print(this, "Checking conditions");
+                Utils.Print(this, $"Broken?: {broken} {i}");
                 if (dialogueCondition.ConditionsMet())
                 {
                     result = dialogueCondition.GetDialogue();
-                    GD.Print("Break!");
+                    Utils.Print(this, "Break!");
                     broken = true;
                     break;
                 }
-                GD.Print("Should not see this after a break");
+                Utils.Print(this, "Should not see this after a break");
             }
 
             return result;

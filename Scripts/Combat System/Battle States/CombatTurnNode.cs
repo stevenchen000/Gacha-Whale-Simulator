@@ -8,7 +8,8 @@ namespace CombatSystem
     {
         private BattleCharacter character;
         private BattleGrid grid;
-        [Export] private CombatStateNode transitionNode;
+        [Export] private CombatStateNode animationNode;
+        [Export] private CombatStateNode checkVictoryNode;
         private Vector2I prevCoords;
         private Vector2I currCoords;
 
@@ -25,7 +26,7 @@ namespace CombatSystem
 
         protected override void RunState(double delta)
         {
-            bool turnFinished = character.ControlCharacter(delta, battle, grid);
+            /*bool turnFinished = character.ControlCharacter(delta, battle, grid);
             prevCoords = currCoords;
             currCoords = grid.GetNearestWalkableSpace(character);
             grid.SetSpaceState(prevCoords, GridState.ALLY_MOVEABLE);
@@ -33,16 +34,22 @@ namespace CombatSystem
             if (turnFinished)
             {
                 SetupAction();
-            }
+            }*/
         }
 
         protected override StateNode CheckStateChange()
         {
             StateNode result = null;
 
-            if (turnFinished)
+            if (battle.TurnConfirmed)
             {
-                result = transitionNode;
+                if (battle.SelectedSkill != null)
+                    result = animationNode;
+                else
+                {
+                    battle.EndTurn();
+                    result = this;
+                }
             }
 
             return result;
@@ -51,7 +58,7 @@ namespace CombatSystem
         protected override void OnStateDeactivated()
         {
             grid.SetAllSpacesToDefault();
-            grid.OccupySpace(character);
+            //grid.OccupySpace(character);
             turnFinished = false;
         }
 

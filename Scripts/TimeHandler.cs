@@ -21,7 +21,12 @@ public class TimeHandler
 
     public bool TimeIsUp(double time)
     {
-        return time >= currFrame;
+        return currFrame >= time;
+    }
+
+    public bool TimePassed(double time)
+    {
+        return prevFrame >= time;
     }
 
     public int IntervalsBetween(double interval)

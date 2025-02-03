@@ -6,12 +6,20 @@ namespace CombatSystem
 {
     public partial class GridStateNode : StateNode
     {
-        protected GridSpace space;
+        protected WeakReference spaceRef;
+        protected GridSpace Space 
+        {
+            get 
+            {
+                return (GridSpace)spaceRef.Target;
+            }
+        }
 
         public override void _Ready()
         {
             base._Ready();
-            space = Utils.FindParentOfType<GridSpace>(this);
+            var space = Utils.FindParentOfType<GridSpace>(this);
+            spaceRef = new WeakReference(space);
         }
 
         protected override void OnStateActivated()

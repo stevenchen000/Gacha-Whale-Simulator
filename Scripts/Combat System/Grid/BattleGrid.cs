@@ -24,11 +24,13 @@ namespace CombatSystem {
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
-			InitBattleSpaces();
-			//InitBoundarySpaces();
-			SetAllSpacesToDefault();
-			//Utils.Print(this, battleSpaces.Count);
 		}
+
+		public void InitGrid()
+        {
+            InitBattleSpaces();
+            SetAllSpacesToDefault();
+        }
 
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _Process(double delta)
@@ -51,15 +53,53 @@ namespace CombatSystem {
 		 * *************/
 
 
-		public void ShowAllTargetableAreas(BattleManager battle, 
-										   BattleCharacter caster, 
-										   CharacterSkill skill)
+		public void ShowAllTargetableAreas(Dictionary<CharacterDirection, Array<GridSpace>> spaces)
 		{
-			
+			foreach(var list in spaces.Values)
+			{
+				foreach(var space in list)
+				{
+					space.SetCanTarget(true);
+				}
+			}
 		}
 
+		public void ResetCanTarget()
+		{
+			foreach(var space in battleSpaces)
+			{
+				space.SetCanTarget(false);
+			}
+		}
 
-		public GridSpace GetSpaceFromCoords(int x, int y)
+		public void ResetHasSelectedTarget()
+		{
+			foreach(var space in battleSpaces)
+				space.SetHasSelectedTarget(false);
+		}
+
+		public void ResetSpaces()
+		{
+			foreach (var space in battleSpaces)
+				space.ResetSpace();
+		}
+
+		public void ReapplyWalkableState()
+		{
+			foreach(var coord in CurrentWalkableSpaces)
+			{
+				var space = GetSpaceFromCoords(coord);
+				space.SetWalkable(true);
+			}
+		}
+
+		/******************
+		 * Get Space
+		 * ***************/
+
+        #region Get Space
+
+        public GridSpace GetSpaceFromCoords(int x, int y)
 		{
 			Vector2I coords = new Vector2I(x, y);
 			GridSpace result = null;
@@ -84,6 +124,14 @@ namespace CombatSystem {
 			result = GetSpaceFromCoords(nearestCoord);
 			return result;
         }
+
+		#endregion
+
+		/// <summary>
+		/// Defunct, was for a system with continuous movement
+		/// </summary>
+		/// <param name="position"></param>
+		/// <returns></returns>
 		public Vector2I CalculateNearestGridSpace(Vector2 position)
 		{
 			float baseY = GlobalPosition.Y;
@@ -103,11 +151,12 @@ namespace CombatSystem {
 
 			return new Vector2I(horizontal, vertical);
 		}
-		public Vector2I GetNearestSpaceToCharacter(BattleCharacter character)
-        {
-			var pos = character.Position;
-			return CalculateNearestGridSpace(pos);
-        }
+
+		/// <summary>
+		/// Defunct, was for continuous movement
+		/// </summary>
+		/// <param name="character"></param>
+		/// <returns></returns>
 		public Vector2I GetNearestWalkableSpace(BattleCharacter character)
         {
 			var charPos = character.Position;
@@ -118,6 +167,9 @@ namespace CombatSystem {
             }
 			return nearestSpace;
         }
+
+
+
 
 		private Vector2I CheckNearestNeighbors(Vector2I nearestSpace, BattleCharacter character)
         {
@@ -147,7 +199,7 @@ namespace CombatSystem {
 
 		public Array<BattleCharacter> GetTargetsInRange(BattleManager battle, BattleCharacter character, GridShape attackShape)
         {
-			var charPos = GetNearestSpaceToCharacter(character);
+			var charPos = character.turnStartPosition;
 			var direction = character.facingDirection;
 			var targetPositions = attackShape.GetPositionsInRange(charPos, direction);
 			var allTargets = PositionsToTargets(targetPositions);
@@ -160,7 +212,7 @@ namespace CombatSystem {
 			foreach(var coord in coords)
             {
 				var space = GetSpaceFromCoords(coord);
-				var target = space.characterOnSpace;
+				var target = space.CharacterOnSpace;
 				if (target != null) result.Add(target);
             }
 			return result;
@@ -183,52 +235,7 @@ namespace CombatSystem {
 		 * Occupy and unoccupy spaces
 		 * ****************/
 
-		public void OccupySpace(BattleCharacter character)
-        {
-			var coords = GetNearestSpaceToCharacter(character);
-			var space = GetSpaceFromCoords(coords);
-			if(space != null)
-            {
-				UnoccupyPreviousSpace(character);
-				space.OccupySpace(character);
-            }
-        }
-		private void UnoccupyPreviousSpace(BattleCharacter character)
-        {
-			foreach (var tempCoord in CurrentWalkableSpaces)
-			{
-				var tempSpace = GetSpaceFromCoords(tempCoord);
-				if (tempSpace.characterOnSpace == character)
-				{
-					tempSpace.EmptySpace();
-					break;
-				}
-			}
-		}
 
-		public void TemporarilyOccupy(BattleCharacter character)
-        {
-			foreach(var walkableCoord in CurrentWalkableSpaces)
-            {
-				var walkableSpace = GetSpaceFromCoords(walkableCoord);
-				walkableSpace.SetState(GridState.ALLY_MOVEABLE);
-            }
-			var coords = GetNearestWalkableSpace(character);
-			var space = GetSpaceFromCoords(coords);
-			if(space != null)
-            {
-				space.SetState(GridState.ALLY_STANDING);
-            }
-        }
-
-		public void SetSpaceState(Vector2I coord, GridState state)
-        {
-			var space = GetSpaceFromCoords(coord);
-			if(space != null)
-            {
-				space.SetState(state);
-            }
-        }
 
 		/*********************
 		 * Walkable Spaces
@@ -236,7 +243,7 @@ namespace CombatSystem {
 
 		public Array<Vector2I> GetAllWalkableAreas(BattleManager battle, BattleCharacter character)
         {
-			var position = GetNearestSpaceToCharacter(character);
+			var position = character.turnStartPosition;//GetNearestSpaceToCharacter(character);
 			int movement = character.movableSpaces;
 			var walkableSpaces = GetWalkableSpacesIgnoringObstacles(position, movement);
 			walkableSpaces = RemoveSpacesWithEnemies(battle, character, walkableSpaces);
@@ -260,7 +267,7 @@ namespace CombatSystem {
 		{
 			foreach (var space in battleSpaces)
 			{
-				space.SetState(GridState.DEFAULT);
+				space.ResetSpace();
 			}
 		}
 		public void SetSpacesWalkable(Array<Vector2I> positions, BattleCharacter character)
@@ -268,7 +275,7 @@ namespace CombatSystem {
 			foreach (var position in positions)
 			{
 				var space = GetSpaceFromCoords(position);
-				space.SetState(GridState.ALLY_MOVEABLE);
+				space.SetWalkable(true);
 			}
 		}
 		public void UpdateCharacterTemporaryPosition(BattleCharacter character)
@@ -278,8 +285,6 @@ namespace CombatSystem {
 			if (CurrentWalkableSpaces.Contains(coords))
             {
 				SetSpacesWalkable(CurrentWalkableSpaces, character);
-				var space = GetSpaceFromCoords(coords);
-				space.SetState(GridState.ALLY_STANDING);
 			}
 		}
 
@@ -320,10 +325,10 @@ namespace CombatSystem {
         {
 			Array<Vector2I> result = new Array<Vector2I>();
 
-			foreach (var coord in spaces)
+            foreach (var coord in spaces)
 			{
 				var space = GetSpaceFromCoords(coord);
-				var spaceCharacter = space.characterOnSpace;
+				var spaceCharacter = space.CharacterOnSpace;
 				if (spaceCharacter != null)
 				{
 					if(battle.IsInSameParty(character, spaceCharacter))
@@ -336,12 +341,13 @@ namespace CombatSystem {
 					result.Add(coord);
                 }
 			}
+
 			return result;
         }
 
 		private Array<Vector2I> RemoveDisconnectedSpaces(Array<Vector2I> spaces, BattleCharacter character)
         {
-			var currPos = GetNearestSpaceToCharacter(character);
+			var currPos = character.turnStartPosition;
 			var result = new Array<Vector2I>();
 			result.Add(currPos);
 
@@ -365,18 +371,18 @@ namespace CombatSystem {
 				AddAllWalkableNeighbors(left, originalSpaces, finalSpaces);
             }
 			if(SpaceNeedsToBeChecked(right, originalSpaces, finalSpaces))
-			{
-				finalSpaces.Add(right);
+            {
+                finalSpaces.Add(right);
 				AddAllWalkableNeighbors(right, originalSpaces, finalSpaces);
 			}
 			if(SpaceNeedsToBeChecked(up, originalSpaces, finalSpaces))
             {
-				finalSpaces.Add(up);
+                finalSpaces.Add(up);
 				AddAllWalkableNeighbors(up, originalSpaces, finalSpaces);
 			}
 			if(SpaceNeedsToBeChecked(down, originalSpaces, finalSpaces))
             {
-				finalSpaces.Add(down);
+                finalSpaces.Add(down);
 				AddAllWalkableNeighbors(down, originalSpaces, finalSpaces);
 			}
 
@@ -428,7 +434,7 @@ namespace CombatSystem {
         {
 			var space = InstantiateBattleSpace();
 			SetupGridspacePosition(space, x, y);
-			space.SetState(GridState.BOUNDARY);
+			//space.SetState(GridState.BOUNDARY);
 			borderSpaces.Add(space);
 			
 		}
@@ -446,7 +452,6 @@ namespace CombatSystem {
 			Vector2 position = startingPoint;
 			position += x * horizontalOffset;
 			position += y * verticalOffset;
-			//GD.Print(position);
 			space.Position = position;
 		}
 	}

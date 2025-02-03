@@ -10,22 +10,21 @@ namespace CombatSystem
         public Vector2I casterStartPosition;
         public Vector2I casterPosition; //position where caster was standing at cast time
         public Vector2I targetLocation; //position where skill is cast
-        public SkillDirection direction; //direction facing
+        public CharacterDirection direction = CharacterDirection.NONE; //direction facing
         public CharacterSkill skill;
         
         public Array<BattleCharacter> targets;
         public BattleGrid grid;
-        public double prevFrame { get; private set;  } = 0;
-        public double currFrame { get; private set; } = 0;
 
         public int totalDamageDealt { get; private set; } = 0;
         public int totalAmountHealed { get; private set; } = 0;
 
 
+
         public TurnData(BattleCharacter caster)
         {
             this.caster = caster;
-            casterStartPosition = caster.previousPosition;
+            casterStartPosition = caster.turnStartPosition;
         }
 
         public TurnData(BattleCharacter caster,
@@ -48,16 +47,18 @@ namespace CombatSystem
             totalAmountHealed += heal;
         }
 
-        public void Tick(double delta)
+        public void SetTargets(Array<GridSpace> spaces)
         {
-            prevFrame = currFrame;
-            currFrame += delta;
-        }
+            targets = new Array<BattleCharacter>();
 
-        public void ResetTime()
-        {
-            prevFrame = 0;
-            currFrame = 0;
+            foreach(var space in spaces)
+            {
+                var target = space.CharacterOnSpace;
+                if(target != null && skill.IsValidTarget(caster, target))
+                {
+                    targets.Add(target);
+                }
+            }
         }
 
         

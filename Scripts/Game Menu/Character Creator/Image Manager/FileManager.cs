@@ -189,7 +189,6 @@ public partial class FileManager : Node2D
         //GodotHelper.Print(_instance, path);
         var portrait = ResourceLoader.Load<CustomCharacterPortrait>(path);
         _instance._portraits[path] = portrait;
-        //GD.Print(portrait);
         //_instance.PrintFileContents(path);
 
         //GodotHelper.Print(_instance, "Loaded portrait!");

@@ -11,9 +11,10 @@ namespace CombatSystem
         [Export] private GridStateNode allySelectedSkill;
         [Export] private GridStateNode enemyWalkableState;
 
+
         protected override void OnStateActivated()
         {
-            space.SetColor(space.allyColor);
+            Space.SetColor(Space.allyColor);
         }
 
         protected override void RunState(double delta)
@@ -25,16 +26,16 @@ namespace CombatSystem
         {
             StateNode result = null;
 
-            if (space.IsWalkable && space.PartyIndex == 1)
+            if (Space.IsWalkable && Space.PartyIndex == 1)
                 result = enemyWalkableState;
-            else if(space.PartyIndex == 0)
+            else if(Space.IsWalkable && Space.PartyIndex == 0)
             {
-                if (space.HasSelectedTarget)
+                if (Space.HasSelectedTarget)
                     result = allySelectedSkill;
-                else if (space.CanTarget)
+                else if (Space.CanTarget)
                     result = allyTargetable;
             }
-            else if(!space.IsWalkable)
+            else if(!Space.IsWalkable)
                 result = defaultState;
 
             return result;

@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat System/Skill System/CharacterSkill.cs" id="1_05drs"]
 [ext_resource type="PackedScene" uid="uid://dvoadaaadxes2" path="res://Scenes/Skill Assets/Test Effect.tscn" id="1_72f07"]
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_dwxpx"]
-[ext_resource type="Resource" uid="uid://b68h5nh2inr2b" path="res://Resources/Characters/Skills/Skill Shape/H_single_range.tres" id="1_qqqkr"]
+[ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_s6vs3"]
 [ext_resource type="Script" uid="uid://bytq6ww1y1oc" path="res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationElementCreateObjectAtTarget.cs" id="2_uwhn7"]
-[ext_resource type="Script" uid="uid://cda4us0wqygxy" path="res://Scripts/Combat System/Skill System/Skill Animations/Combat Elements/SkillDamageEffect.cs" id="3_au6rl"]
 [ext_resource type="Script" uid="uid://dkofljjxhtlfe" path="res://Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs" id="3_fhxsf"]
+[ext_resource type="Script" uid="uid://cwc5oieqpw3k" path="res://Scripts/Combat System/Skill System/Skill Effects/Custom Effects/DealDamageEffect.cs" id="6_dwxpx"]
 
 [sub_resource type="Resource" id="Resource_jjn8h"]
 script = ExtResource("2_uwhn7")
@@ -17,25 +17,24 @@ delay = 0.0
 duration = 3.0
 ignoreDuration = false
 
-[sub_resource type="Resource" id="Resource_6tlb7"]
-script = ExtResource("3_au6rl")
-totalPotency = 100.0
-numberOfHits = 5
-delayBetweenHits = 0.1
-delay = 0.3
-duration = 0.0
-ignoreDuration = true
-
 [sub_resource type="Resource" id="Resource_ek5vx"]
 script = ExtResource("3_fhxsf")
-animations = Array[Resource]([SubResource("Resource_jjn8h"), SubResource("Resource_6tlb7")])
+animations = Array[Resource]([SubResource("Resource_jjn8h")])
+
+[sub_resource type="Resource" id="Resource_dwxpx"]
+script = ExtResource("6_dwxpx")
+potency = 100.0
+duration = 0.2
+delay = 0.0
+metadata/_custom_type_script = ExtResource("6_dwxpx")
 
 [resource]
 script = ExtResource("1_05drs")
 Icon = ExtResource("1_dwxpx")
 animation = SubResource("Resource_ek5vx")
-effects = Array[Object]([])
+effects = Array[Object]([SubResource("Resource_dwxpx")])
 duration = 2.0
 potency = 100
-attackArea = ExtResource("1_qqqkr")
-direction = 0
+AttackArea = ExtResource("1_s6vs3")
+direction = 1
+targetType = 1

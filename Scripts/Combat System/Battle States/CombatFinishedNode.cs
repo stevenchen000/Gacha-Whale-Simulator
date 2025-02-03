@@ -11,7 +11,6 @@ namespace CombatSystem
         protected override void OnStateActivated()
         {
             //check victor
-            GD.Print("Combat over");
         }
 
         protected override void RunState(double delta)

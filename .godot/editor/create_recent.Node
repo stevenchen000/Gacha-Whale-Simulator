@@ -1,8 +1,9 @@
 Node2D
+Label
+Button
 Control
 CollisionShape2D
 Area2D
-Button
 Sprite2D
 TextureRect
 CanvasLayer
@@ -10,5 +11,4 @@ CharacterBody2D
 HBoxContainer
 CollisionPolygon2D
 GridMap
-Label
 MarginContainer

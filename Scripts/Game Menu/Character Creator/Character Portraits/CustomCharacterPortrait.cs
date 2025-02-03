@@ -31,7 +31,6 @@ public partial class CustomCharacterPortrait : CharacterPortrait
         string filename = Path.GetFileNameWithoutExtension(portraitFile);
         string path = ProjectSettings.GlobalizePath("user://Portraits");
         ResourcePath = $"{path}/{filename}.tres";
-        //GD.Print(ResourcePath);
         ResourceSaver.Save(this);
     }
 }

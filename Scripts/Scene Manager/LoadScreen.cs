@@ -97,7 +97,7 @@ public partial class LoadScreen : Node
         }
 
         state = newState;
-        GD.Print(state);
+        Utils.Print(this, state);
     }
 
 

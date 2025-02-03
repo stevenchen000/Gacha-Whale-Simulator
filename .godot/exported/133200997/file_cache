@@ -5,7 +5,7 @@ res://Resources/Items/cans.tres::f7c8d847c1e4c2e98407672e29252908::1733903574::r
 res://Resources/GachaBanner.tres::3650a12103e34fe60c48bbefe0a19b36::1732251153::res://.godot/exported/133200997/export-b0be5196f0c264b2cc22b0f8f0c9fc98-GachaBanner.res
 res://Resources/StartDate.tres::dfe19834d922d686f3577619b8214f65::1732177426::res://.godot/exported/133200997/export-b15c60f9d9d9664ec933fec7d6b141a1-StartDate.res
 res://Scenes/Battle/battle_character.tscn::7ebb5369ddf0c75ddb4b2a71f204558f::1736541401::res://.godot/exported/133200997/export-8c7a1671e5f379e35d79519cab85c518-battle_character.scn
-res://Scenes/Battle/battle_character_2.tscn::2570f2e31bb47d1d5616836b54f65bc1::1737370360::res://.godot/exported/133200997/export-6acca60f167ccfa3dd70c0f21e40441e-battle_character_2.scn
+res://Scenes/Battle/battle_character_2.tscn::c0e5080ab7ff68ac21b5b28ffd07b3d2::1738480248::res://.godot/exported/133200997/export-6acca60f167ccfa3dd70c0f21e40441e-battle_character_2.scn
 res://Scenes/Battle/Damage Number.tscn::e9c0d1807dea6a4b47a2c0e0b690226c::1734783980::res://.godot/exported/133200997/export-c0c07ca159f1a24092af9401c3a6c41d-Damage Number.scn
 res://Scenes/Character Editor/Character Editor.tscn::c6e2ac89f42fbe48170db698dc6839d8::1734765649::res://.godot/exported/133200997/export-4b5c964c27e330754688b18d038ce72a-Character Editor.scn
 res://Scenes/Skill Assets/Test Effect.tscn::6b1fcceee5a0f9fa6cfeb8bf90380345::1736401077::res://.godot/exported/133200997/export-1ac74a69092a03f2de7a8ee1ad1f6315-Test Effect.scn
@@ -24,7 +24,7 @@ res://Scenes/Calendar.tscn::20e8da2caf9e78592f086ea9b54ff041::1732343414::res://
 res://Scenes/dialogue_manager.tscn::b01c368a70a0f6d66e309f2d6723ec86::1736400995::res://.godot/exported/133200997/export-8a55e1b32a36e15bc662be0fc8183fc0-dialogue_manager.scn
 res://Scenes/game_state.tscn::3c87c88fd100dd9abeb0966e6b39f277::1736400995::res://.godot/exported/133200997/export-e9417d2201cd5a17040b3058bcf05d73-game_state.scn
 res://Scenes/player.tscn::a128c636c0a2ea3117555dc561d528e5::1736541401::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
-res://Scenes/Room.tscn::fb3db73720646937948266f255fd59dd::1734782703::res://.godot/exported/133200997/export-7c31d2772cdc11eef0f80fa43a26c696-Room.scn
+res://Scenes/Room.tscn::0fca169133ce1cf782a16c392d3135ea::1737380930::res://.godot/exported/133200997/export-7c31d2772cdc11eef0f80fa43a26c696-Room.scn
 res://Scenes/scene_manager.tscn::e81058def11a822b084e5ae1fbb706dc::1736400995::res://.godot/exported/133200997/export-a2e5bd5653c6cd1be3764594a7c5e679-scene_manager.scn
 res://Scenes/Town.tscn::ce9f8dc6cac01688ce83b599cfb238f9::1736541401::res://.godot/exported/133200997/export-30341b890103567faf13e2a04bff6988-Town.scn
 res://Scripts/Dialogue System/States/Resource Version/Active State/dialogue_activating_state.tres::e2eafcbb59020b83c8c0dbe21ea8136f::1733578603::res://.godot/exported/133200997/export-f06454f55918a0eace702d967ac29a4c-dialogue_activating_state.res
@@ -52,10 +52,7 @@ res://Resources/Characters/Gacha Characters/Weiss.tres::9f3331c4886db69b9a876d82
 res://Resources/Characters/Skills/Elements/fire_element.tres::f4ec2babb2bbf48177714bb97358b19b::1735623821::res://.godot/exported/133200997/export-ef14a85ec8a8bf3e04c23bd457e2d830-fire_element.res
 res://Resources/Characters/Skills/Elements/thunder_element.tres::907b195a41c7f53cd97d57c23b8a2e7e::1735623821::res://.godot/exported/133200997/export-8beb6be6cf067d973a56d5ae639b634a-thunder_element.res
 res://Resources/Characters/Skills/Elements/water_element.tres::d63c174ea9da77996a227e137562a7f0::1735623821::res://.godot/exported/133200997/export-a3705b87526f2db53f9df71373630157-water_element.res
-res://Resources/Characters/Skills/Skill Shape/single_range.tres::ff93ab879098ae7aa0e7a42fd18e227b::1734401182::res://.godot/exported/133200997/export-88d924958c5ff13ddb3fa6c3c7565c54-single_range.res
-res://Resources/Characters/Skills/Skill Shape/two_spaces_away.tres::1ed9dd24ec5c4294b84f64fb050d472c::1734401182::res://.godot/exported/133200997/export-7a21ed8c51188117075dc6b1117cb5df-two_spaces_away.res
-res://Resources/Characters/Skills/Skill Shape/T_range.tres::c2373c6c7ca61af58661089fd6590913::1734401182::res://.godot/exported/133200997/export-7a38580eacbefd54be9e95a6a05da6dc-T_range.res
-res://Resources/Characters/Skills/basic_attack.tres::90ca2d58822db16a580626750c11b0fb::1737272042::res://.godot/exported/133200997/export-8cb584623c133414cca093640ce17c74-basic_attack.res
+res://Resources/Characters/Skills/basic_attack.tres::57bcefdfe5ecb3e69ed54f9516e06376::1738474955::res://.godot/exported/133200997/export-8cb584623c133414cca093640ce17c74-basic_attack.res
 res://Resources/Overworld/Dialogue/Actors/whalefred.tres::469d8ef0562e86444fec56e455d4ff36::1736567137::res://.godot/exported/133200997/export-84775e05472c760daefd9867a27889ab-whalefred.res
 res://Resources/Overworld/Dialogue/Actors/whalema.tres::b71592837ff733302641750ad2661f15::1736400996::res://.godot/exported/133200997/export-eae160d184fbbcaa6db7c73d8de7816a-whalema.res
 res://Resources/Overworld/Dialogue/Character Dialogue Pickers/test_quest_dialogue_picker.tres::f74edd8927a6c26c1d8f9c1134c3d4ac::1736400992::res://.godot/exported/133200997/export-05f6ef6b1499018bf20b43fe0659866a-test_quest_dialogue_picker.res
@@ -98,7 +95,7 @@ res://Resources/Utilities/Events/OnCharacterPulledEvent.tres::c17394ddcee06cf8e4
 res://Resources/Utilities/Tags/default_emotion.tres::f4d8eb01bc4103e9b5f361dad752a605::1733046220::res://.godot/exported/133200997/export-b6b134f536f9fcc46ebe5d1e3a6fdad7-default_emotion.res
 res://Resources/Utilities/Tags/happy_emotion.tres::e5e45e0d80a85310b008939d0b8639fd::1733046220::res://.godot/exported/133200997/export-22e7a15e494d4c58508367207dac7b08-happy_emotion.res
 res://Resources/Utilities/Tags/sad_emotion.tres::b318c129a4a5ba0410848c6df5af719b::1733046220::res://.godot/exported/133200997/export-67b8bc5a1692f77c7ef73e5ab023a2e2-sad_emotion.res
-res://Scenes/Character Editor/Character Displays/character_display.tscn::b0a07753726dfc0813936ee34ed644f2::1736741052::res://.godot/exported/133200997/export-3ef6ec31c3ece22ea3a33e004f2ba033-character_display.scn
+res://Scenes/Character Editor/Character Displays/character_display.tscn::f266052a414d33d9f4e4acfa6b07b851::1738480249::res://.godot/exported/133200997/export-3ef6ec31c3ece22ea3a33e004f2ba033-character_display.scn
 res://Scenes/Character Editor/Character Displays/portrait_button.tscn::6d08fe6268fbaf0c125c3402ac07b2ad::1736741052::res://.godot/exported/133200997/export-05732f329a8eeb824ea5e48ca70b7def-portrait_button.scn
 res://Scenes/Character Editor/Character Displays/portrait_display.tscn::377e86c1dde5199339be9d0babf7ad3d::1736741052::res://.godot/exported/133200997/export-3288dc5b24c174b4baa691699ce511a0-portrait_display.scn
 res://Scenes/Character Editor/Menus/selection_menu.tscn::5a05dbe19a4410c6cae87ba47fd3aee8::1737034756::res://.godot/exported/133200997/export-cfa0dcfd63cdc1f39cbad60a03cc0e3e-selection_menu.scn
@@ -112,15 +109,21 @@ res://Resources/Characters/Skills/Roles/defender_role.tres::a2fc6cea63c6a4d54e03
 res://Resources/Characters/Skills/Roles/supporter_role.tres::df37194dbc399fa28757358c3beb4c70::1736741052::res://.godot/exported/133200997/export-9046defa90a1411f608b9f4734285d06-supporter_role.res
 res://Scenes/Character Editor/Menus/Character Creator.tscn::2e0e3b13816529368435baf4d87dc076::1736741052::res://.godot/exported/133200997/export-02f9c48baf86dd00269a479a3929b7bd-Character Creator.scn
 res://Scenes/Character Editor/Test Scene.tscn::a3f0bdcc8049315d8c3850908c8216ea::1736781636::res://.godot/exported/133200997/export-2411d3f7e187eb2b1601d04578ae1b38-Test Scene.scn
-res://Scenes/Game Scenes/Battle Scene 2.tscn::7cfb0b9025547dda2063d2c032dec6a3::1737370360::res://.godot/exported/133200997/export-3260e61ab21d2b67d45f622eef4c5f69-Battle Scene 2.scn
+res://Scenes/Game Scenes/Battle Scene 2.tscn::88e0546479d70d9db752e1ed310f63b3::1738480248::res://.godot/exported/133200997/export-3260e61ab21d2b67d45f622eef4c5f69-Battle Scene 2.scn
 res://Scenes/file_manager.tscn::e4ac549d9592219db8011f1986705144::1736933685::res://.godot/exported/133200997/export-45cf39a61189953fac88646a231f6c1b-file_manager.scn
-res://Scenes/Main Game.tscn::bcf0e1481abe6c7f6a94886df471b88a::1737370360::res://.godot/exported/133200997/export-e5a96673c0c141d6cce52191e670d1e5-Main Game.scn
+res://Scenes/Main Game.tscn::36b428582918804775f4b4d0590ed40f::1738480248::res://.godot/exported/133200997/export-e5a96673c0c141d6cce52191e670d1e5-Main Game.scn
 res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/name_field.tscn::aae71daecaf6ca18d8b8797fe696f593::1736741052::res://.godot/exported/133200997/export-8bb109fee1ada32e1a55b4f775bc8272-name_field.scn
 res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/title_field.tscn::afd646f0f0c5ac48839acff9617011d0::1736741052::res://.godot/exported/133200997/export-f0feb2b8ca69172d168fb4c1d6508f3a-title_field.scn
-res://Resources/Characters/Characters/caster.tres::7a2a693869c82abff5cdc9efc5dc6315::1737232219::res://.godot/exported/133200997/export-eeaab3486c76a8da6dc7709285433264-caster.res
+res://Resources/Characters/Characters/caster.tres::7a2a693869c82abff5cdc9efc5dc6315::1737834642::res://.godot/exported/133200997/export-eeaab3486c76a8da6dc7709285433264-caster.res
 res://Resources/Characters/Characters/healer.tres::657c5d0ee641b65189209e341d89468f::1737232219::res://.godot/exported/133200997/export-661c2208c5922b53487ef380e5edc252-healer.res
 res://Resources/Characters/Characters/tank.tres::796179933f59c88ea342f83a4811986b::1737232219::res://.godot/exported/133200997/export-e01b287d9e962ff8522c0582123ec9ca-tank.res
 res://Resources/Characters/Characters/warrior.tres::832938029df140c01c46f492ef876e5a::1737232218::res://.godot/exported/133200997/export-0ddb720437649fffab1cc846bf057c00-warrior.res
 res://Scenes/Battle/Battle Space/battle_space.tscn::c66ea48da3b513147d506b150b540a4d::1734401182::res://.godot/exported/133200997/export-8dd5fbba9de3b08f0f86c5909042c6d6-battle_space.scn
-res://Scenes/Battle/Battle Space/battle_space_square.tscn::f02c5804aa6a25e867ad575711405cc4::1737370361::res://.godot/exported/133200997/export-a78bfefd8e2f482d7f551bf0d63675a4-battle_space_square.scn
-res://Scenes/Battle/Battle Space/skill_direction_button.tscn::d6f781db089ce2ce5fe9a3b08e8cd43e::1737365341::res://.godot/exported/133200997/export-98cb2591afdb569ddf4405ede1a7adc0-skill_direction_button.scn
+res://Scenes/Battle/Battle Space/battle_space_square.tscn::86dbb0f24fc0e5a14bdd209af0dfc9e2::1738480248::res://.godot/exported/133200997/export-a78bfefd8e2f482d7f551bf0d63675a4-battle_space_square.scn
+res://Scenes/Battle/Battle Space/skill_direction_button.tscn::30063a0fbb6d2b7921eac66030af0524::1738475601::res://.godot/exported/133200997/export-98cb2591afdb569ddf4405ede1a7adc0-skill_direction_button.scn
+res://Resources/Characters/Skills/Skill Shape/H_single_range.tres::ff93ab879098ae7aa0e7a42fd18e227b::1734401182::res://.godot/exported/133200997/export-468069100da1146ce7feb68e88e9c6a2-H_single_range.res
+res://Resources/Characters/Skills/Skill Shape/H_two_spaces_away.tres::e1884a37a14f02b44724cb921c6d4488::1738218615::res://.godot/exported/133200997/export-a51549c58e5c5bc57639b2d59cfe48c9-H_two_spaces_away.res
+res://Resources/Characters/Skills/Skill Shape/H_T_range.tres::5b16f7a28454d7873955865eee208534::1738218615::res://.godot/exported/133200997/export-17d5745d30fcd9ad3204803bf3f7b444-H_T_range.res
+res://Resources/Characters/Skills/Skill Shape/V_single_range.tres::8da0eedcf1003d8c61dcc6cb36b040ab::1738458728::res://.godot/exported/133200997/export-688f282a151794cbffb136599811fd7f-V_single_range.res
+res://Resources/Utilities/Events/Combat Events/OnSkillSelected.tres::ff6da5c7a9cfca0dce53d81736e6d7c5::1738118449::res://.godot/exported/133200997/export-dd8f2e3c198561eec9c3388813b2015f-OnSkillSelected.res
+res://Scenes/Game Scenes/Battle Scene 3.tscn::d33cef27dc4e716ee4fcebd6c2a50dc5::1737379686::res://.godot/exported/133200997/export-f6bea4619455f31e21f76af6fcd0eae0-Battle Scene 3.scn
