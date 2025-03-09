@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dyyvr0bgstxn8"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_jguhd"]
+[ext_resource type="Texture2D" uid="uid://cewisnwmb0lfr" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0008_wizard_goblin_woman_01.png" id="2_8me4h"]
+
+[resource]
+script = ExtResource("1_jguhd")
+portrait = ExtResource("2_8me4h")
+Position = Vector2(-2, 147)
+Scale = 0.4
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_jguhd")

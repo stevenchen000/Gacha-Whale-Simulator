@@ -8,24 +8,41 @@ public partial class TouchHandler : Node
 {
     private static TouchHandler _instance;
 
-    public static Dictionary<int, Vector2> touchPositions { get; private set; }
-    private static Dictionary<int, Vector2> _prevTouchPositions;
-    public static Dictionary<int, Vector2> dragDistance { get; private set; }
-    
 
-    public static float pinchDistance { get; private set; } = 0;
-    public static float pinchDelta { get; private set; } = 0;
-    public static Vector2 pinchPosition { get; private set; }
-    public static Vector2 pinchMovement { get; private set; }
+    public static int NumOfTouches { get { return TouchPositions.Count; } }
+
+    /// <summary>
+    /// Positions on screen where all touches are
+    /// </summary>
+    public static Dictionary<int, Vector2> TouchPositions { get; private set; }
+    private static Dictionary<int, Vector2> _PrevTouchPositions;
+    /// <summary>
+    /// Distance touch traveled since previous touch
+    /// </summary>
+    public static Dictionary<int, Vector2> DragDistance { get; private set; }
+
+    
+    /// <summary>
+    /// Number of pixels between first two touches
+    /// 0 if not pinching
+    /// </summary>
+    public static float PinchDistance { get; private set; } = 0;
+    /// <summary>
+    /// Size change of distance between two touches since last frame
+    /// 0 if not pinching
+    /// </summary>
+    public static float PinchDelta { get; private set; } = 0;
+    public static Vector2 PinchPosition { get; private set; }
+    public static Vector2 PinchMovement { get; private set; }
 
     public override void _Ready()
     {
         if (_instance == null)
         {
             _instance = this;
-            _prevTouchPositions = new Dictionary<int, Vector2>();
-            touchPositions = new Dictionary<int, Vector2>();
-            dragDistance = new Dictionary<int, Vector2>();
+            _PrevTouchPositions = new Dictionary<int, Vector2>();
+            TouchPositions = new Dictionary<int, Vector2>();
+            DragDistance = new Dictionary<int, Vector2>();
         }
         else
         {
@@ -36,46 +53,46 @@ public partial class TouchHandler : Node
     public override void _Process(double delta)
     {
         //handles pinch variables
-        if(touchPositions.ContainsKey(0) && touchPositions.ContainsKey(1))
+        if(TouchPositions.ContainsKey(0) && TouchPositions.ContainsKey(1))
         {
-            var touch1 = touchPositions[0];
-            var touch2 = touchPositions[1];
+            var touch1 = TouchPositions[0];
+            var touch2 = TouchPositions[1];
             var pinchCenter = (touch1 + touch2) / 2;
             float distance = (touch1 - touch2).Length();
-            if (pinchDistance != 0)
+            if (PinchDistance != 0)
             {
-                pinchDelta = distance - pinchDistance;
+                PinchDelta = distance - PinchDistance;
             }
 
-            if(pinchPosition != Vector2.Zero)
+            if(PinchPosition != Vector2.Zero)
             {
-                pinchMovement = pinchCenter - pinchPosition;
+                PinchMovement = pinchCenter - PinchPosition;
             }
-            pinchDistance = distance;
-            pinchPosition = pinchCenter;
+            PinchDistance = distance;
+            PinchPosition = pinchCenter;
         }
         else
         {
-            pinchDistance = 0;
-            pinchDelta = 0;
-            pinchPosition = new Vector2(0, 0);
-            pinchMovement = new Vector2(0, 0);
+            PinchDistance = 0;
+            PinchDelta = 0;
+            PinchPosition = new Vector2(0, 0);
+            PinchMovement = new Vector2(0, 0);
         }
 
-        if (touchPositions.ContainsKey(0))
+        if (TouchPositions.ContainsKey(0))
         {
-            if (_prevTouchPositions.ContainsKey(0))
+            if (_PrevTouchPositions.ContainsKey(0))
             {
-                var currTouch = touchPositions[0];
-                var prevTouch = _prevTouchPositions[0];
-                dragDistance[0] = currTouch - prevTouch;
+                var currTouch = TouchPositions[0];
+                var prevTouch = _PrevTouchPositions[0];
+                DragDistance[0] = currTouch - prevTouch;
             }
             else
             {
-                dragDistance[0] = Vector2.Zero;
+                DragDistance[0] = Vector2.Zero;
             }
         }
-        _prevTouchPositions = touchPositions.Duplicate();
+        _PrevTouchPositions = TouchPositions.Duplicate();
     }
 
     public override void _Input(InputEvent @event)
@@ -89,12 +106,12 @@ public partial class TouchHandler : Node
 
             if (pressed)
             {
-                touchPositions[index] = touchPos;
+                TouchPositions[index] = touchPos;
             }
             else
             {
-                touchPositions.Remove(index);
-                dragDistance.Remove(index);
+                TouchPositions.Remove(index);
+                DragDistance.Remove(index);
             }
         }
         else if(@event is InputEventScreenDrag)
@@ -102,9 +119,9 @@ public partial class TouchHandler : Node
             var dragEvent = @event as InputEventScreenDrag;
             int index = dragEvent.Index;
             var touchPos = dragEvent.Position;
-            var distance = touchPos - touchPositions[index];
+            var distance = touchPos - TouchPositions[index];
 
-            touchPositions[index] = touchPos;
+            TouchPositions[index] = touchPos;
         }
     }
 }

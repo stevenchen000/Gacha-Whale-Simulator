@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://d22rmyt4c3hoh"]
+
+[ext_resource type="Script" uid="uid://b4684yi2t5ns" path="res://Scripts/Game Menu/Party Menu/PartyCharacterBox.cs" id="1_43l80"]
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="2_15kkm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_43l80"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 13
+shadow_color = Color(0, 0, 0, 0.447059)
+
+[node name="Character Party Display" type="Control" node_paths=PackedStringArray("display", "nameBox", "copiesBox")]
+custom_minimum_size = Vector2(217, 267)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 217.0
+offset_bottom = 267.0
+script = ExtResource("1_43l80")
+display = NodePath("Character")
+nameBox = NodePath("Name Box")
+copiesBox = NodePath("Copies Text")
+
+[node name="Character" parent="." instance=ExtResource("2_15kkm")]
+scale = Vector2(1.8, 1.8)
+
+[node name="Name Box" type="Label" parent="."]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 219.0
+offset_right = 226.0
+offset_bottom = 297.0
+text = "Wizard"
+label_settings = SubResource("LabelSettings_43l80")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Copies Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 4.0
+offset_right = 272.0
+offset_bottom = 46.0
+text = "+10"
+label_settings = SubResource("LabelSettings_43l80")
+horizontal_alignment = 1

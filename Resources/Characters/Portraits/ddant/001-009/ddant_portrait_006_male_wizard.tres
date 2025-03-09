@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://j6vyjc4h4ewb"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_aq5wr"]
+[ext_resource type="Texture2D" uid="uid://cccqmahp1oaks" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0005_wizard_human_man_03.png" id="2_1q38l"]
+
+[resource]
+script = ExtResource("1_aq5wr")
+portrait = ExtResource("2_1q38l")
+Position = Vector2(6, 246)
+Scale = 0.55
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_aq5wr")

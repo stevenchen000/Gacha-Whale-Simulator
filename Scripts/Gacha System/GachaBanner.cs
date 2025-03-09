@@ -6,48 +6,97 @@ namespace GachaSystem{
     [GlobalClass]
     public partial class GachaBanner : Resource
     {
-        [Export] private GachaCharacter rateUpCharacter;
-        [Export] private float chanceForRateUpCharacter = 0.05f;
+        [Export] public Array<GachaCharacterList> FullGacha { get; private set; }
+        [Export] public Array<GachaCharacterList> MultiPullBonus { get; private set; }
+        private DateTime expirationDate;
+        [Export] public int SinglePullCost { get; private set; } = 300;
+        [Export] public int MultiPullCost { get; private set; } = 3000;
 
-        [Export] private float chanceForSSR = 0.1f;
-        [Export] private float chanceForSR = 0.3f;
-        private Random rng;
 
+        public Array<GameCharacter> GetMultiPull()
+        {
+            Array<GameCharacter> result = null;
 
-        public GachaCharacter PullRandomCharacter(GachaCharacterList characterList){
-            InitRNGIfNull();
+            if (GameState.HasEnoughPremiumCurrency(MultiPullCost))
+            {
+                result = new Array<GameCharacter>();
 
-            GachaCharacter result = null;
-
-            float rand = (float)rng.NextDouble();
-            if(rand < chanceForSSR){
-                if(rand < chanceForRateUpCharacter){
-                    result = rateUpCharacter;
-                }else{
-                    result = PullCharacterFromList(characterList.allSSRCharacters);
+                for(int i = 0; i < 9; i++)
+                {
+                    var pulledChar = PullRandomCharacter(FullGacha);
+                    result.Add(pulledChar);
+                    GameState.AddCharacterToAccount(pulledChar);
                 }
-            }else if(rand < chanceForSSR + chanceForSR){
-                result = PullCharacterFromList(characterList.allSRCharacters);
-            }else{
-                result = PullCharacterFromList(characterList.allRCharacters);
+
+                var extraPull = PullRandomCharacter(MultiPullBonus);
+                result.Add(extraPull);
+                GameState.AddCharacterToAccount(extraPull);
+
+                GameState.UsePremiumCurrency(MultiPullCost);
             }
 
             return result;
         }
 
-        private void InitRNGIfNull(){
-            if(rng == null){
-                rng = new Random(Guid.NewGuid().GetHashCode());
+        public GameCharacter GetSinglePull()
+        {
+            GameCharacter result = null;
+
+            if (GameState.HasEnoughPremiumCurrency(SinglePullCost))
+            {
+                GameState.UsePremiumCurrency(SinglePullCost);
+                result = PullRandomCharacter(FullGacha);
+                GameState.AddCharacterToAccount(result);
             }
+
+            return result;
         }
 
-        private GachaCharacter PullCharacterFromList(Array<GachaCharacter> characterList){
-            float rand = (float)rng.NextDouble();
-            int listSize = characterList.Count;
-            float chance = 1f/listSize;
-            int randIndex = (int)(rand/chance);
 
-            return characterList[randIndex];
+
+        private GameCharacter PullRandomCharacter(Array<GachaCharacterList> characterLists)
+        {
+            GameCharacter result = null;
+            var randList = GetRandomList(characterLists);
+            result = randList.GetRandomCharacter();
+
+            return result;
         }
+
+        private GachaCharacterList GetRandomList(Array<GachaCharacterList> lists)
+        {
+            int weight = GetTotalWeight(lists);
+            double rand = GameState.GetRandomNumber(0, weight - 1);
+            GachaCharacterList result = null;
+
+            for (int i = 0; i < lists.Count; i++)
+            {
+                var currList = lists[i];
+                double chance = currList.Weight;
+                rand -= chance;
+
+                if (rand < 0)
+                {
+                    result = currList;
+                    break;
+                }
+            }
+
+            return result;
+        }
+
+        private int GetTotalWeight(Array<GachaCharacterList> characterLists)
+        {
+            int totalWeight = 0;
+
+            foreach (var list in characterLists)
+            {
+                totalWeight += list.Weight;
+            }
+
+            return totalWeight;
+        }
+
+        
     }
 }

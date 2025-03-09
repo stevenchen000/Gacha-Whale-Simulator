@@ -39,7 +39,7 @@ public partial class OwnedGachaCharactersMenu : Control
 		var characters = GameState.GetAllOwnedCharacters();
 		for(int i = 0; i < numOfCharacters; i++)
         {
-			boxes[i].UpdatePortrait(characters[i]);
+			//boxes[i].UpdatePortrait(characters[i]);
         }
 	}
 

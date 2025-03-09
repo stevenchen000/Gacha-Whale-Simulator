@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 using EventSystem;
 using CombatSystem;
@@ -6,18 +7,33 @@ using CombatSystem;
 [GlobalClass]
 public partial class GameCharacter : Resource
 {
-	private CharacterPortrait portrait;
+    [Export] public int ID { get; protected set; }
+	[Export] private CharacterPortrait portrait { get; set; }
+    [Export] public CharacterRarity BaseRarity { get; protected set; }
     [Export] public string Name { get; protected set; }
     [Export] public string Title { get; protected set; }
     [Export] public string Description { get; protected set; }
     [Export] public string World { get; protected set; }
     [Export] public Element Element { get; protected set; }
     [Export] public CharacterClass Class { get; protected set; }
-    [Export] public CharacterRole Role { get; protected set; }
-    [Export] private CharacterSkill basicAttack;
-    [Export] private CharacterSkill skill1;
-    [Export] private CharacterSkill skill2;
-    [Export] private CharacterSkill ultimateSkill;
+    [Export] public SkillLoadout SkillSet { get; protected set; }
+    
+    public WeaponType Weapon 
+    { 
+        get
+        {
+            return Class.Weapon;
+        }
+    }
+    public CharacterRole Role
+    {
+        get
+        {
+            return Class.Role;
+        }
+    }
+
+    [Export] private int movement;
 
 
     public virtual CharacterPortrait GetPortrait()
@@ -25,8 +41,20 @@ public partial class GameCharacter : Resource
         return portrait;
     }
 
-    public virtual CharacterSkill GetBasicAttack() { return basicAttack; }
-    public virtual CharacterSkill GetSkill1() { return skill1; }
-    public virtual CharacterSkill GetSkill2() { return skill2; }
-    public virtual CharacterSkill GetUltimateSkill() { return ultimateSkill; }
+
+    public int GetHealth(int level) { return Role.stats.GetMaxHealth(level); }
+    public int GetAttack(int level) { return Role.stats.GetAttack(level); }
+    public int GetDefense(int level) { return Role.stats.GetDefense(level); }
+    public int GetSpeed(int level) { return Role.stats.GetSpeed(level); }
+    public int GetMovement() { return movement; }
+
+
+
+    public virtual Array<CharacterSkill> GetSkills()
+    {
+        if (SkillSet != null)
+            return SkillSet.GetSkillsAtLevel(0);
+        else
+            return null;
+    }
 }

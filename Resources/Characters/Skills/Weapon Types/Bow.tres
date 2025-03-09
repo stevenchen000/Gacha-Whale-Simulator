@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponType" load_steps=3 format=3 uid="uid://e5q7nfc2wdpn"]
+
+[ext_resource type="Texture2D" uid="uid://dtos0xqtopnod" path="res://Art Assets/Character Assets/Weapon Icons/Bow.png" id="1_bxmlg"]
+[ext_resource type="Script" uid="uid://dwcp7elvgql0g" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/WeaponType.cs" id="2_775af"]
+
+[resource]
+script = ExtResource("2_775af")
+Name = "Bow"
+Texture = ExtResource("1_bxmlg")
+Description = ""
+metadata/_custom_type_script = ExtResource("2_775af")

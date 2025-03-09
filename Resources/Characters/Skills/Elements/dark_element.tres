@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://dsmxegoikjnkm"]
+
+[ext_resource type="Texture2D" uid="uid://bhvsrrlqkfvyo" path="res://Art Assets/Character Assets/Element Icons/460_Air_Gust.png" id="1_ryvea"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="2_atioy"]
+
+[resource]
+script = ExtResource("2_atioy")
+Name = "Wind"
+Texture = ExtResource("1_ryvea")

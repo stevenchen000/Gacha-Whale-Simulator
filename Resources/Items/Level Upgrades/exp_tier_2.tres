@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://7m0x0bs2kwc8"]
+
+[ext_resource type="Texture2D" uid="uid://c4ix7s51j5tfr" path="res://Art Assets/Inventory/Level Upgrades/PotionGreen.png" id="1_8bls5"]
+[ext_resource type="Script" uid="uid://cl722yw1v47w6" path="res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs" id="1_wqrmt"]
+
+[resource]
+script = ExtResource("1_wqrmt")
+icon = ExtResource("1_8bls5")
+itemName = "Mid Exp Potion"
+description = "A potion that grants 1000 experience points to a character."
+metadata/_custom_type_script = ExtResource("1_wqrmt")

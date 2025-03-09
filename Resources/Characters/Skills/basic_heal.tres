@@ -1,25 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterSkill" load_steps=11 format=3 uid="uid://courgpip1ivkj"]
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=6 format=3 uid="uid://courgpip1ivkj"]
 
 [ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_yok7t"]
-[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="2_wknqb"]
-[ext_resource type="PackedScene" uid="uid://dvoadaaadxes2" path="res://Scenes/Skill Assets/Test Effect.tscn" id="3_fxj5v"]
-[ext_resource type="Script" uid="uid://bytq6ww1y1oc" path="res://Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationElementCreateObjectAtTarget.cs" id="4_huqmg"]
-[ext_resource type="Script" uid="uid://dkofljjxhtlfe" path="res://Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs" id="5_rmcia"]
-[ext_resource type="Script" path="res://Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealEffect.cs" id="6_yok7t"]
-[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat System/Skill System/CharacterSkill.cs" id="7_s4qso"]
-
-[sub_resource type="Resource" id="Resource_jjn8h"]
-script = ExtResource("4_huqmg")
-castObject = ExtResource("3_fxj5v")
-offset = Vector2(0, -50)
-scale = Vector2(10, 10)
-delay = 0.0
-duration = 3.0
-ignoreDuration = false
-
-[sub_resource type="Resource" id="Resource_ek5vx"]
-script = ExtResource("5_rmcia")
-animations = Array[Resource]([SubResource("Resource_jjn8h")])
+[ext_resource type="Texture2D" uid="uid://cu3mtpkpm3lqv" path="res://Art Assets/Character Assets/Weapon Icons/WandT2.png" id="2_yok7t"]
+[ext_resource type="Script" uid="uid://bbrl5cbuw6sh8" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealEffect.cs" id="6_yok7t"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="7_s4qso"]
 
 [sub_resource type="Resource" id="Resource_wknqb"]
 script = ExtResource("6_yok7t")
@@ -30,10 +14,12 @@ metadata/_custom_type_script = ExtResource("6_yok7t")
 
 [resource]
 script = ExtResource("7_s4qso")
-Icon = ExtResource("2_wknqb")
-animation = SubResource("Resource_ek5vx")
-effects = Array[Object]([SubResource("Resource_wknqb")])
+Icon = ExtResource("2_yok7t")
+SkillName = "Heal"
 duration = 2.0
+InfiniteUses = false
+Uses = 3
+effects = Array[Object]([SubResource("Resource_wknqb")])
 potency = 100
 AttackArea = ExtResource("1_yok7t")
 direction = 1

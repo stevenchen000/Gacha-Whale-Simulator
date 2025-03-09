@@ -20,7 +20,7 @@ public partial class CustomCharacterPortrait : CharacterPortrait
 
     public override Texture2D GetPortrait()
     {
-        return FileManager.GetCustomTexture(portraitFile);
+        return CustomCharacterManager.GetCustomTexture(portraitFile);
     }
 
 

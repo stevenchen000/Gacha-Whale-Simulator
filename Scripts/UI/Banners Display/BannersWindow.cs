@@ -18,7 +18,7 @@ public partial class BannersWindow : Control
 		var game = GameState.GetGame();
 		if (game.HasEnoughPremiumCurrency(1000))
 		{
-			var pulledCharacter = game.PullRandomCharacter();
+			//var pulledCharacter = game.PullRandomCharacter();
 			
 		}
     }

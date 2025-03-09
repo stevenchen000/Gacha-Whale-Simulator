@@ -30,7 +30,7 @@ namespace GachaSystem{
             else
             {
                 string filename = skinPortraitFiles[skin];
-                result = FileManager.GetCustomPortrait(filename);
+                result = CustomCharacterManager.GetCustomPortrait(filename);
             }
 
             return result;
@@ -43,7 +43,7 @@ namespace GachaSystem{
             if(skinPortraitFiles.Count != 0)
             {
                 string filename = skinPortraitFiles[0];
-                result = FileManager.GetCustomPortrait(filename);
+                result = CustomCharacterManager.GetCustomPortrait(filename);
             }
 
             return result;

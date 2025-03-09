@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat system\\battlecharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat system\\battlecharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Skill System\\Skill Animations\\Animation Elements\\SkillAnimationMoveCaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Combat Scripts\\Combat System\\Skill System\\Skill Animations\\Animation Elements\\SkillAnimationMoveCaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat system\\battlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat system\\battlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\overworld scripts\\overworld menu\\party menu\\ui\\selectpartymembersubmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\overworld scripts\\overworld menu\\party menu\\ui\\selectpartymembersubmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat system\\skill system\\turndata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat system\\skill system\\turndata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\game menu\\party menu\\partymenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\game menu\\party menu\\partymenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\battle data\\characterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\battle data\\characterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\battle data\\characterexpcurve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\battle data\\characterexpcurve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\overworld scripts\\overworld menu\\party menu\\ui\\partycharacterdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\overworld scripts\\overworld menu\\party menu\\ui\\partycharacterdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\battle states\\end of combat\\combatvictorynode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\battle states\\end of combat\\combatvictorynode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\battle components\\battlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\battle components\\battlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\game menu\\maingame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\game menu\\maingame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,45 +50,115 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BattleManager.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\Combat System\\BattleManager.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleManager.cs",
-              "RelativeToolTip": "Scripts\\Combat System\\BattleManager.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAowFcAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "MainGame.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\MainGame.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\MainGame.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\MainGame.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\MainGame.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowCAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T03:08:02.29Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-03-06T03:09:22.167Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BattleState.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
+              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAtwF0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T01:32:01.321Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SkillAnimationMoveCaster.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Skill System\\Skill Animations\\Animation Elements\\SkillAnimationMoveCaster.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Skill System\\Skill Animations\\Animation Elements\\SkillAnimationMoveCaster.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Skill System\\Skill Animations\\Animation Elements\\SkillAnimationMoveCaster.cs",
+              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Skill System\\Skill Animations\\Animation Elements\\SkillAnimationMoveCaster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T10:56:33.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SelectPartyMemberSubmenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\SelectPartyMemberSubmenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\SelectPartyMemberSubmenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\SelectPartyMemberSubmenu.cs",
+              "RelativeToolTip": "Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\SelectPartyMemberSubmenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T08:33:17.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TurnData.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Skill System\\TurnData.cs",
-              "RelativeDocumentMoniker": "Scripts\\Combat System\\Skill System\\TurnData.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat System\\Skill System\\TurnData.cs",
-              "RelativeToolTip": "Scripts\\Combat System\\Skill System\\TurnData.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAmwDgAAABIAAAAAAAAAA==",
+              "Title": "PartyMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Party Menu\\PartyMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Party Menu\\PartyMenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Party Menu\\PartyMenu.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Party Menu\\PartyMenu.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwDkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T03:34:17.146Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T08:33:09.466Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BattleCharacter.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleCharacter.cs",
-              "RelativeDocumentMoniker": "Scripts\\Combat System\\BattleCharacter.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat System\\BattleCharacter.cs",
-              "RelativeToolTip": "Scripts\\Combat System\\BattleCharacter.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAlwD0AAABRAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CharacterExpCurve.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterExpCurve.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterExpCurve.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterExpCurve.cs",
+              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterExpCurve.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T07:32:32.859Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T08:09:19.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CharacterData.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAQwBQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T08:03:54.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PartyCharacterDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\PartyCharacterDisplay.cs",
+              "RelativeDocumentMoniker": "Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\PartyCharacterDisplay.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\PartyCharacterDisplay.cs",
+              "RelativeToolTip": "Scripts\\Overworld Scripts\\Overworld Menu\\Party Menu\\UI\\PartyCharacterDisplay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T07:57:32.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CombatVictoryNode.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle States\\End Of Combat\\CombatVictoryNode.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Battle States\\End Of Combat\\CombatVictoryNode.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle States\\End Of Combat\\CombatVictoryNode.cs",
+              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Battle States\\End Of Combat\\CombatVictoryNode.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T07:53:26.494Z"
             }
           ]
         }

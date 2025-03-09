@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://chievkas7hxxp"]
+
+[ext_resource type="Script" uid="uid://bqbrfdufvqdun" path="res://Scripts/Combat Scripts/Combat System/UI/BattleSkillButton.cs" id="1_u1pkv"]
+[ext_resource type="Texture2D" uid="uid://c3kd8uc75x007" path="res://Art Assets/Character Assets/Element Icons/467_Earth_Pierce.png" id="2_av5dd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jms7u"]
+line_spacing = -10.0
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 0.509804)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4wbt3"]
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Skill 1" type="Control" node_paths=PackedStringArray("button", "nameLabel", "usesLabel", "elementIcon")]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
+size_flags_vertical = 8
+script = ExtResource("1_u1pkv")
+button = NodePath("Button")
+nameLabel = NodePath("Skill Name")
+usesLabel = NodePath("Uses Label")
+elementIcon = NodePath("Element Icon")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+flat = true
+expand_icon = true
+
+[node name="Skill Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 144.0
+offset_right = 201.0
+offset_bottom = 227.0
+text = "A very long Skill Name"
+label_settings = SubResource("LabelSettings_jms7u")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Uses Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = -2.0
+offset_right = 195.0
+offset_bottom = 47.0
+text = "5"
+label_settings = SubResource("LabelSettings_4wbt3")
+horizontal_alignment = 2
+
+[node name="Element Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 47.0
+offset_bottom = 47.0
+texture = ExtResource("2_av5dd")
+
+[connection signal="button_up" from="Button" to="." method="OnClick"]

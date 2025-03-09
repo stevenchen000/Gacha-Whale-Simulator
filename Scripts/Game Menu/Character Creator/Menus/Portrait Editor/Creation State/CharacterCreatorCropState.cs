@@ -10,7 +10,7 @@ namespace CharacterCreator
         [Export] private CharacterCreatorAdjustCropState adjustState;
         private bool startedCrop = false;
         private bool triedToZoom = false;
-
+        /*
         protected override void OnStateActivated()
         {
             Utils.Print(this, "Crop state");
@@ -90,5 +90,6 @@ namespace CharacterCreator
             cropper.CenterCamera();
             startedCrop = false;
         }
+        */
     }
 }

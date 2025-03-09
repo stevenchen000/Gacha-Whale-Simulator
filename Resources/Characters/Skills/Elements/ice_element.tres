@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://b0np0gbb25x2s"]
+
+[ext_resource type="Texture2D" uid="uid://d38uwlpvx7ab" path="res://Art Assets/Character Assets/Element Icons/486_Ice_Snow.png" id="1_aapca"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="2_6sfam"]
+
+[resource]
+script = ExtResource("2_6sfam")
+Name = "Ice"
+Texture = ExtResource("1_aapca")

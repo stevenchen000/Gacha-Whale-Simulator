@@ -89,7 +89,7 @@ namespace CharacterCreator
             var portrait = creator.GetPortrait();
             if(portrait != null)
             {
-                FileManager.DeletePortrait(portrait);
+                CustomCharacterManager.DeletePortrait(portrait);
                 creator.Reload();
             }
 

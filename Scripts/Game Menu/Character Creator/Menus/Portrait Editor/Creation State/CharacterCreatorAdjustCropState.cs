@@ -16,7 +16,7 @@ namespace CharacterCreator
         /**********************
         * Main Functions
         * *******************/
-
+        /*
         #region Main Functions
 
         protected override void OnStateActivated()
@@ -104,11 +104,11 @@ namespace CharacterCreator
         }
 
         #endregion
-
+        */
         /*************
          * Zoom & Pan
          * ***********/
-
+        /*
         #region Zoom & Pan
 
         private void UpdatePreview()
@@ -142,11 +142,11 @@ namespace CharacterCreator
         }
 
         #endregion
-
+        */
         /*****************
          * Helpers
          * ****************/
-
+        /*
         private bool TouchIsInsideCropBox()
         {
             var touchPosition = TouchHandler.touchPositions[0];
@@ -190,5 +190,6 @@ namespace CharacterCreator
 
             return distance <= cornerSize;
         }
+        */
     }
 }

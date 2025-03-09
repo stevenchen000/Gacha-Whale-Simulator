@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://d1angj0e5dnj1"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_bty32"]
+[ext_resource type="Texture2D" uid="uid://b885q6mx6j16n" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0000_wizard_human_woman_04.png" id="2_bty32"]
+
+[resource]
+script = ExtResource("1_bty32")
+portrait = ExtResource("2_bty32")
+Position = Vector2(-32, 218)
+Scale = 0.505
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_bty32")

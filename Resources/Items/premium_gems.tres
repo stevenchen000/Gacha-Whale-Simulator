@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bu0eun0hmtjh1"]
+
+[ext_resource type="Script" uid="uid://cl722yw1v47w6" path="res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs" id="1_b5kcp"]
+[ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="1_ou76i"]
+
+[resource]
+script = ExtResource("1_b5kcp")
+icon = ExtResource("1_ou76i")
+itemName = "Rubies"
+description = "A rare, crimson stone used to summon adventurers and demons alike to join your ranks."
+metadata/_custom_type_script = ExtResource("1_b5kcp")

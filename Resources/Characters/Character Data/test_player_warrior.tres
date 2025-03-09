@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://vkjf1hjsu2ex"]
+
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="1_lfmu7"]
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="2_7cp8q"]
+
+[resource]
+script = ExtResource("2_7cp8q")
+Character = ExtResource("1_lfmu7")
+Level = 15
+LevelCap = 50
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+metadata/_custom_type_script = ExtResource("2_7cp8q")

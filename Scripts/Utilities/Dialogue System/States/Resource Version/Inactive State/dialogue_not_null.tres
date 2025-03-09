@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="DialogueStateDialogueNotNullCondition" load_steps=2 format=3 uid="uid://dtqqc507wuwx4"]
+
+[ext_resource type="Script" uid="uid://v1xqxbpd53i2" path="res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateDialogueNotNullCondition.cs" id="1_amlbj"]
+
+[resource]
+script = ExtResource("1_amlbj")

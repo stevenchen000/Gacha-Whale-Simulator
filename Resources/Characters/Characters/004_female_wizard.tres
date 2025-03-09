@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=5 format=3 uid="uid://dxgmviatu4y56"]
+
+[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/Attackers/warrior_class.tres" id="1_1lidx"]
+[ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_rqu2j"]
+[ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_r3g78"]
+[ext_resource type="Resource" uid="uid://cj5cd28778se6" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_004_female_wizard.tres" id="5_4u7n3"]
+
+[resource]
+script = ExtResource("4_r3g78")
+ID = 4
+portrait = ExtResource("5_4u7n3")
+BaseRarity = 1
+Name = "Wizard 4"
+Title = ""
+Description = ""
+World = ""
+Class = ExtResource("1_1lidx")
+SkillSet = ExtResource("2_rqu2j")
+movement = 3
+metadata/_custom_type_script = ExtResource("4_r3g78")

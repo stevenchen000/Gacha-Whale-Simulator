@@ -1,0 +1,307 @@
+[gd_scene load_steps=27 format=3 uid="uid://8ssh07hfd56t"]
+
+[ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs" id="1_w405p"]
+[ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
+[ext_resource type="Script" uid="uid://y6uj5g2l8l0n" path="res://Scripts/Combat Scripts/Combat System/Grid/BattleGrid.cs" id="2_tbgor"]
+[ext_resource type="PackedScene" uid="uid://bucspuw6nymcd" path="res://Scenes/Battle/Battle Space/battle_space_square.tscn" id="3_binbm"]
+[ext_resource type="AudioStream" uid="uid://gc1tyohd5sie" path="res://Resources/Characters/Characters/Audio Assets/BGM/Will_you_still_cry.mp3" id="3_bjbhn"]
+[ext_resource type="Script" uid="uid://bikiac63fc22y" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnNode.cs" id="3_iplpb"]
+[ext_resource type="PackedScene" uid="uid://c6vuwdkfl52jl" path="res://Scenes/Battle/Backgrounds/OceanView.tscn" id="3_wwl16"]
+[ext_resource type="Script" uid="uid://bfoxjp8ndtsr" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs" id="4_yci0l"]
+[ext_resource type="Script" uid="uid://ciphn1edo3jcp" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatAnimationNode.cs" id="5_5ipmr"]
+[ext_resource type="Script" uid="uid://dupk5663cjtod" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleState.cs" id="5_h7u6w"]
+[ext_resource type="Script" uid="uid://c7drwxdavjnfx" path="res://Scripts/Combat Scripts/Combat System/Battle Components/TurnDataManager.cs" id="5_yhfgv"]
+[ext_resource type="Script" uid="uid://np2dkxg5chus" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatDamageNode.cs" id="6_0grf5"]
+[ext_resource type="Script" uid="uid://dxchwut777wmn" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatCheckVictoryStatus.cs" id="9_iv2px"]
+[ext_resource type="Script" uid="uid://bfphb573syt7a" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatVictoryNode.cs" id="10_xtcro"]
+[ext_resource type="Script" uid="uid://bw5n5245v8p8k" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatLossNode.cs" id="11_dfb8x"]
+[ext_resource type="Script" uid="uid://dtbuhyihehpy7" path="res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumberManager.cs" id="12_fl4d0"]
+[ext_resource type="Script" uid="uid://bbmewgskhadp2" path="res://Scripts/Combat Scripts/Combat System/UI/SkillSelection.cs" id="12_iplpb"]
+[ext_resource type="PackedScene" uid="uid://spaepna0v12s" path="res://Scenes/Battle/Damage Number.tscn" id="13_otywn"]
+[ext_resource type="Script" uid="uid://b07dlb8fe31iv" path="res://Scripts/Combat Scripts/Combat System/UI/SkipTurnButton.cs" id="15_0grf5"]
+[ext_resource type="PackedScene" uid="uid://cen0vf3wpj18o" path="res://Scenes/Battle/battle_character_2.tscn" id="15_iplpb"]
+[ext_resource type="PackedScene" uid="uid://chievkas7hxxp" path="res://Scenes/Battle/Skill Selection/skill_button.tscn" id="15_pxkmk"]
+[ext_resource type="Script" uid="uid://bcik8tdi0x2ki" path="res://Scripts/Combat Scripts/Combat System/UI/DirectionButtonUI.cs" id="16_fl4d0"]
+[ext_resource type="PackedScene" uid="uid://c2njhbj4uiopi" path="res://Scenes/Battle/Battle Space/skill_direction_button.tscn" id="16_u0d3x"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ija6g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pxkmk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwl16"]
+font_size = 90
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="BattleScene" type="Control" node_paths=PackedStringArray("grid", "skillUI", "directionUI", "turnDataManager", "State")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w405p")
+grid = NodePath("Grid")
+skillUI = NodePath("====Skills====")
+directionUI = NodePath("====Direction Buttons====")
+turnDataManager = NodePath("Turn Data Manager")
+State = NodePath("Battle State")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bjbhn")
+volume_db = -22.899
+autoplay = true
+
+[node name="OceanView" parent="." instance=ExtResource("3_wwl16")]
+layout_mode = 1
+offset_left = -8.0
+offset_top = 21.0
+offset_right = -8.0
+offset_bottom = 21.0
+
+[node name="Grid" type="Node2D" parent="."]
+position = Vector2(26, 1330)
+script = ExtResource("2_tbgor")
+spaceScene = ExtResource("3_binbm")
+startingPoint = Vector2(110, 0)
+horizontalOffset = Vector2(200, 0)
+verticalOffset = Vector2(0, -200)
+horizontalGrids = 5
+verticalGrids = 6
+
+[node name="Battle State" type="Node2D" parent="." node_paths=PackedStringArray("Grid")]
+script = ExtResource("5_h7u6w")
+Grid = NodePath("../Grid")
+battleCharacterScene = ExtResource("15_iplpb")
+
+[node name="States" type="Node2D" parent="."]
+
+[node name="====Start of Combat====" type="Node2D" parent="States"]
+
+[node name="Activating State" type="Node2D" parent="States/====Start of Combat====" node_paths=PackedStringArray("turnNode")]
+script = ExtResource("2_e03jm")
+turnNode = NodePath("../../====Combat====/Turn State")
+IsInitialState = true
+
+[node name="====Combat====" type="Node2D" parent="States"]
+
+[node name="Turn State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode")]
+script = ExtResource("3_iplpb")
+animationNode = NodePath("../Combat Animation State")
+
+[node name="Turn Transition State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode")]
+visible = false
+script = ExtResource("4_yci0l")
+animationNode = NodePath("../Combat Animation State")
+
+[node name="Combat Animation State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("damageCalculationNode")]
+script = ExtResource("5_5ipmr")
+damageCalculationNode = NodePath("../Damage State")
+
+[node name="Damage State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheckNode")]
+script = ExtResource("6_0grf5")
+victoryCheckNode = NodePath("../Victory Check")
+
+[node name="Victory Check" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnNode", "victoryNode", "lossNode")]
+script = ExtResource("9_iv2px")
+turnNode = NodePath("../Turn State")
+victoryNode = NodePath("../../====End of Combat====/Victory State")
+lossNode = NodePath("../../====End of Combat====/Loss State")
+
+[node name="====End of Combat====" type="Node2D" parent="States"]
+
+[node name="Victory State" type="Node2D" parent="States/====End of Combat===="]
+script = ExtResource("10_xtcro")
+
+[node name="Loss State" type="Node2D" parent="States/====End of Combat===="]
+script = ExtResource("11_dfb8x")
+
+[node name="Turn Data Manager" type="Node2D" parent="."]
+script = ExtResource("5_yhfgv")
+
+[node name="====Skills====" type="CanvasLayer" parent="." node_paths=PackedStringArray("skillButtons", "confirmButton", "cancelButton", "skipButton")]
+script = ExtResource("12_iplpb")
+skillButtons = [NodePath("Skills/Skill 1"), NodePath("Skills/Skill 2"), NodePath("Skills/Skill 3"), NodePath("Skills/Skill 4")]
+confirmButton = NodePath("Confirmation Buttons/Confirm Button")
+cancelButton = NodePath("Confirmation Buttons/Cancel Button")
+skipButton = NodePath("Skip Turn")
+
+[node name="Background" type="TextureRect" parent="====Skills===="]
+modulate = Color(0.230315, 0.230315, 0.230315, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -723.0
+offset_top = -271.0
+offset_right = 723.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_ija6g")
+
+[node name="Skills" type="HBoxContainer" parent="====Skills===="]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -465.0
+offset_top = -237.0
+offset_right = 425.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="Skill 1" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+layout_mode = 2
+
+[node name="Skill 2" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+layout_mode = 2
+
+[node name="Skill 3" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+layout_mode = 2
+
+[node name="Skill 4" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+layout_mode = 2
+
+[node name="Skip Turn" type="Button" parent="====Skills===="]
+offset_left = 901.0
+offset_top = 1532.0
+offset_right = 1030.0
+offset_bottom = 1623.0
+theme_override_font_sizes/font_size = 60
+text = "Skip"
+script = ExtResource("15_0grf5")
+
+[node name="Confirmation Buttons" type="Control" parent="====Skills===="]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Confirm Button" type="Button" parent="====Skills====/Confirmation Buttons"]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 1533.0
+offset_right = 1030.0
+offset_bottom = 1624.0
+theme_override_font_sizes/font_size = 60
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="====Skills====/Confirmation Buttons/Confirm Button"]
+self_modulate = Color(0, 1, 0.3, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_pxkmk")
+
+[node name="Label" type="Label" parent="====Skills====/Confirmation Buttons/Confirm Button"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -7.0
+offset_right = 100.0
+offset_bottom = 117.0
+text = "✓"
+label_settings = SubResource("LabelSettings_wwl16")
+
+[node name="Cancel Button" type="Button" parent="====Skills====/Confirmation Buttons"]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 1533.0
+offset_right = 888.0
+offset_bottom = 1624.0
+theme_override_font_sizes/font_size = 60
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="====Skills====/Confirmation Buttons/Cancel Button"]
+self_modulate = Color(1, 0, 0.0166664, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_pxkmk")
+
+[node name="Label" type="Label" parent="====Skills====/Confirmation Buttons/Cancel Button"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -15.0
+offset_right = 103.0
+offset_bottom = 109.0
+text = "X"
+label_settings = SubResource("LabelSettings_wwl16")
+
+[node name="====Direction Buttons====" type="Control" parent="." node_paths=PackedStringArray("buttons", "cancelButton")]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4865.0
+offset_top = -3463.0
+offset_right = -4825.0
+offset_bottom = -3423.0
+script = ExtResource("16_fl4d0")
+buttons = [NodePath("Up Button2"), NodePath("Down Button2"), NodePath("Right Button2"), NodePath("Left Button2")]
+cancelButton = NodePath("Cancel Button")
+
+[node name="Cancel Button" type="Button" parent="====Direction Buttons===="]
+layout_mode = 0
+offset_left = -2296.0
+offset_top = -2368.0
+offset_right = 2317.0
+offset_bottom = 2355.0
+disabled = true
+flat = true
+
+[node name="Up Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -240.0
+offset_right = 78.0
+offset_bottom = -140.0
+
+[node name="Down Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 240.0
+offset_right = 231.0
+offset_bottom = 340.0
+rotation = 3.14159
+direction = 1
+
+[node name="Right Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
+layout_mode = 0
+offset_left = 240.0
+offset_top = -70.0
+offset_right = 390.0
+offset_bottom = 30.0
+rotation = 1.5708
+direction = 3
+
+[node name="Left Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
+layout_mode = 0
+offset_left = -240.0
+offset_top = 76.0
+offset_right = -90.0
+offset_bottom = 176.0
+rotation = -1.5708
+direction = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(540, 960)
+
+[node name="Damage Number Manager" type="Node2D" parent="."]
+script = ExtResource("12_fl4d0")
+scene = ExtResource("13_otywn")
+offset = Vector2(-50, -100)
+randomness = 80.0
+
+[connection signal="button_up" from="====Skills====/Skip Turn" to="====Skills====/Skip Turn" method="OnClick"]
+[connection signal="button_up" from="====Skills====/Confirmation Buttons/Confirm Button" to="====Skills====" method="ConfirmAction"]
+[connection signal="button_up" from="====Skills====/Confirmation Buttons/Cancel Button" to="====Skills====" method="CancelAction"]
+[connection signal="button_up" from="====Direction Buttons====/Cancel Button" to="====Direction Buttons====" method="CancelMenu"]

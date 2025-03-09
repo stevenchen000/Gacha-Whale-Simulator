@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dq3spyhismwj6"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_7ewdm"]
+[ext_resource type="Texture2D" uid="uid://upwsd5ngmbnk" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0015_warrior_human_woman_04.png" id="2_7ewdm"]
+
+[resource]
+script = ExtResource("1_7ewdm")
+portrait = ExtResource("2_7ewdm")
+Position = Vector2(24, 197)
+Scale = 0.455
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_7ewdm")

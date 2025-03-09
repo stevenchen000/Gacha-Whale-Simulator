@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponType" load_steps=3 format=3 uid="uid://cxgabkkeu3e2a"]
+
+[ext_resource type="Texture2D" uid="uid://dovgw02sq2bax" path="res://Art Assets/Character Assets/Weapon Icons/Spear.png" id="1_yacua"]
+[ext_resource type="Script" uid="uid://dwcp7elvgql0g" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/WeaponType.cs" id="2_0iym7"]
+
+[resource]
+script = ExtResource("2_0iym7")
+Name = "Spear"
+Texture = ExtResource("1_yacua")
+Description = ""
+metadata/_custom_type_script = ExtResource("2_0iym7")

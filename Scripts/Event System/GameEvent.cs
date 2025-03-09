@@ -1,7 +1,7 @@
 using Godot;
 using System.IO;
 
-namespace EventSystem{ 
+namespace EventSystem{
     public partial class GameEvent<T> : Resource
     {
         public delegate void EventDelegate(T character);

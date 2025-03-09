@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqqa05wypaxiq"]
+
+[ext_resource type="Script" uid="uid://d1o4sx4it6fxl" path="res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectionMenu.cs" id="1_olvwh"]
+[ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="1_r20pm"]
+[ext_resource type="PackedScene" uid="uid://umkn3hlqwl0r" path="res://Scenes/Overworld/Stage Selection/stage_selection_button.tscn" id="3_yjsmd"]
+[ext_resource type="Resource" uid="uid://beeikrtu3ncsq" path="res://Resources/Overworld/Battles/basic_stage.tres" id="3_ypb73"]
+[ext_resource type="Resource" uid="uid://dxvomwaqkk0h6" path="res://Resources/Overworld/Battles/basic_stage_2.tres" id="4_d66lc"]
+
+[node name="StageSelectionMenu" type="Control" node_paths=PackedStringArray("grid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_olvwh")
+stageSelectButtonScene = ExtResource("3_yjsmd")
+stages = Array[Object]([ExtResource("3_ypb73"), ExtResource("4_d66lc")])
+grid = NodePath("GridContainer")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 313.0
+offset_right = 1023.0
+offset_bottom = 1525.0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 30
+columns = 4
+
+[node name="Stage Selection" parent="GridContainer" instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+
+[node name="Stage Selection2" parent="GridContainer" instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+
+[node name="Stage Selection3" parent="GridContainer" instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+
+[node name="Stage Selection4" parent="GridContainer" instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+
+[node name="Stage Selection5" parent="GridContainer" instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+
+[node name="OverworldMenu" parent="." instance=ExtResource("1_r20pm")]
+layout_mode = 1
+currentMenuIndex = 5

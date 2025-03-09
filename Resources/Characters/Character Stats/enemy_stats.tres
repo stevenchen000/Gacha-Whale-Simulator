@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StatContainer" load_steps=2 format=3 uid="uid://bpfqx4iv0xi2e"]
 
-[ext_resource type="Script" path="res://Scripts/Combat System/Skill System/StatContainer.cs" id="1_2ivr3"]
+[ext_resource type="Script" uid="uid://rj6ouncca6bb" path="res://Scripts/Combat Scripts/Combat System/Skill System/StatContainer.cs" id="1_2ivr3"]
 
 [resource]
 script = ExtResource("1_2ivr3")

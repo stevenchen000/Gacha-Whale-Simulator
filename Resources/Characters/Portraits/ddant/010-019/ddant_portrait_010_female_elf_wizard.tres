@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://ci1pphlh5kcsm"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_ose8q"]
+[ext_resource type="Texture2D" uid="uid://3e67xxs6epok" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0009_wizard_elve_woman_02.png" id="2_ose8q"]
+
+[resource]
+script = ExtResource("1_ose8q")
+portrait = ExtResource("2_ose8q")
+Position = Vector2(-40, 203)
+Scale = 0.5
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_ose8q")

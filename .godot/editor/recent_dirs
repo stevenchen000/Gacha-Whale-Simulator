@@ -1,18 +1,22 @@
-res://Resources/Utilities/Events/Combat Events
-res://Scenes/Battle/Battle Space
-res://Scripts
-res://Resources/Characters/Characters
+res://Resources/Overworld/Battles/Conditions
+C:/Users/chens/Documents/Sighborg Studios/Gacha-Whale-Simulator/Resources/Room
+res://Resources/Room/Events
+res://Resources/Room/Items
+res://Resources/Room
 res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor
-res://Scripts/Game Menu/Character Creator/Image Manager
-res://Scenes
-res://Resources/Characters/Skills/Classes
-res://Resources/Characters/Skills/Roles
-res://Resources/Utilities/Events/Character Manager Events
-res://Scenes/Character Editor/Menus
-res://Scenes/Character Editor/Character Displays
-res://Resources/UI/Portrait Boxes
-res://Resources
-res://Scenes/Character Editor
+res://
+res://Scenes/Overworld/Party Menu/UI
+res://Scenes/Overworld/Party Menu
+res://Resources/Characters/Character Data/001_player
+res://Scenes/Battle/Skill Selection
+res://Scenes/Overworld/Upgrade Menu
+res://Resources/Items/Level Upgrades
+res://Scenes/Overworld/Stage Selection
+res://Scenes/Overworld/Gacha Menu
+res://Scenes/Overworld
+res://Resources/Overworld/Battles/Rewards
 res://Resources/Items
-res://Scripts/Dialogue System/States
-res://Resources/Gacha Game Data/Currencies
+res://Resources/Characters/Skills/Weapon Types
+res://Resources/Characters/Portraits
+res://Resources/Characters/Character Data
+res://Resources/Utilities/Events/Combat Events

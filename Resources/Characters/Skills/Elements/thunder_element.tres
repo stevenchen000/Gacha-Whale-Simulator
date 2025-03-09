@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Element" load_steps=2 format=3 uid="uid://04u2tigv8q45"]
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://04u2tigv8q45"]
 
-[ext_resource type="Script" path="res://Scripts/Combat System/Element.cs" id="1_tneqd"]
+[ext_resource type="Texture2D" uid="uid://16c2ndyjyx2" path="res://Art Assets/Character Assets/Element Icons/474_Lightning_Thunder.png" id="1_dyjq7"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="1_tneqd"]
 
 [resource]
 script = ExtResource("1_tneqd")
-name = "Thunder"
+Name = "Thunder"
+Texture = ExtResource("1_dyjq7")

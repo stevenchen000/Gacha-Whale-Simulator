@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueStateChangeData" load_steps=4 format=3 uid="uid://buspvwgaitlsp"]
+
+[ext_resource type="Resource" uid="uid://dtqqc507wuwx4" path="res://Scripts/Utilities/Dialogue System/States/Resource Version/Inactive State/dialogue_not_null.tres" id="1_21ofj"]
+[ext_resource type="Script" uid="uid://bckjjywur48sf" path="res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateChangeData.cs" id="2_mwrlq"]
+[ext_resource type="Resource" uid="uid://n0pq7u2nq8gc" path="res://Scripts/Utilities/Dialogue System/States/Resource Version/Active State/dialogue_activating_state.tres" id="3_4r86x"]
+
+[resource]
+script = ExtResource("2_mwrlq")
+stateToChangeTo = ExtResource("3_4r86x")
+conditions = Array[Resource]([ExtResource("1_21ofj")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GachaGame" load_steps=3 format=3 uid="uid://dt5kohhtiglqu"]
+
+[ext_resource type="Script" uid="uid://cwepk2ttshtci" path="res://Scripts/Utilities/Game State/Data/GachaGame.cs" id="1_m8dhc"]
+[ext_resource type="Resource" uid="uid://bkdo7vcfuf1xk" path="res://Resources/GachaBanner.tres" id="1_pmgav"]
+
+[resource]
+script = ExtResource("1_m8dhc")
+gameName = ""
+accountPower = 0
+currentPower = 0
+premiumCurrency = 0
+upgradeCurrency = 0
+ownedCharacters = Array[Object]([])
+currentBanner = ExtResource("1_pmgav")
+updateNumber = 0

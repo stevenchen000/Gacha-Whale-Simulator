@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://thvd0c0qd3iv"]
+[gd_scene load_steps=5 format=3 uid="uid://thvd0c0qd3iv"]
 
-[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Menus/Character Editor/CreateCharacterMenu.cs" id="1_dil6x"]
-[ext_resource type="Texture2D" uid="uid://b404kmrss01xl" path="res://Art Assets/Placeholder Characters/Husbandos/Cor.png" id="1_x0o6g"]
+[ext_resource type="Script" uid="uid://ciyd410goteea" path="res://Scripts/Game Menu/Character Creator/Menus/Character Editor/CreateCharacterMenu.cs" id="1_dil6x"]
 [ext_resource type="PackedScene" uid="uid://d03a0qxnl7jjs" path="res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/name_field.tscn" id="3_nh7ks"]
 [ext_resource type="PackedScene" uid="uid://chb37wf6q83c0" path="res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Scenes/title_field.tscn" id="4_81li6"]
 
@@ -16,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dil6x")
-_fieldsMenus = [NodePath("")]
+_fieldsMenus = [null]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -24,7 +23,6 @@ offset_left = 37.0
 offset_top = 403.0
 offset_right = 1047.0
 offset_bottom = 1702.0
-texture = ExtResource("1_x0o6g")
 expand_mode = 4
 stretch_mode = 5
 

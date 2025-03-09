@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxmigm2ofyi8j"]
+
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="1_3oqa1"]
+[ext_resource type="Script" uid="uid://dfddgcffwd0s2" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/PartyMemberSelectionButton.cs" id="1_gb515"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gb515"]
+line_spacing = -10.0
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.564706)
+shadow_offset = Vector2(3, 3)
+
+[node name="Character Button" type="Control" node_paths=PackedStringArray("display")]
+custom_minimum_size = Vector2(226, 226)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 226.0
+offset_bottom = 226.0
+script = ExtResource("1_gb515")
+display = NodePath("Character")
+
+[node name="Character" parent="." instance=ExtResource("1_3oqa1")]
+scale = Vector2(1.9, 1.9)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 169.0
+offset_right = 237.0
+offset_bottom = 259.0
+text = "Magician"
+label_settings = SubResource("LabelSettings_gb515")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 224.0
+
+[connection signal="button_up" from="Button" to="." method="SelectCharacter"]

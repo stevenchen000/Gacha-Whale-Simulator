@@ -21,14 +21,12 @@ public partial class GachaMenu : Control
 
 	public void _on_upgrades_button_up(){
 		if(GameState.UseUpgradeCurrency(1000)){
-			GameState.AddPower(100);
 		}
 	}
 
 	public void _on_banners_button_up(){
 		if(GameState.HasEnoughPremiumCurrency(1000)){
 			GameState.UsePremiumCurrency(1000);
-			GameState.AddPower(1000);
 		}
 	}
 

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://wismfg5tyquq"]
+
+[ext_resource type="Texture2D" uid="uid://bsuf4lk883evo" path="res://Art Assets/Shapes/Star (3).png" id="1_7nbl7"]
+[ext_resource type="Script" uid="uid://bef1rm6xxsm1l" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/RarityStar.cs" id="1_px4l2"]
+[ext_resource type="Texture2D" uid="uid://c5ne6kvnvwqka" path="res://Art Assets/Shapes/Star (2).png" id="2_px4l2"]
+
+[node name="Star" type="Control" node_paths=PackedStringArray("activeStar", "inactiveStar")]
+clip_children = 2
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_px4l2")
+activeStar = NodePath("Active Star")
+inactiveStar = NodePath("Inactive Star")
+isActive = true
+
+[node name="Active Star" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+clip_children = 2
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_7nbl7")
+
+[node name="Highlight" type="TextureRect" parent="Active Star"]
+self_modulate = Color(0.49, 0.204167, 0, 0.356863)
+layout_mode = 0
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 109.0
+offset_bottom = 109.0
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_px4l2")
+
+[node name="Inactive Star" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(0.1, 0.1, 0.1, 1)
+clip_children = 2
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_7nbl7")
+
+[node name="Highlight" type="TextureRect" parent="Inactive Star"]
+self_modulate = Color(0.230315, 0.230315, 0.230315, 0.513726)
+layout_mode = 0
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 109.0
+offset_bottom = 109.0
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_px4l2")

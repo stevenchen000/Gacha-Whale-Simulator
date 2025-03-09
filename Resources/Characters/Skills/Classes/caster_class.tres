@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="CharacterClass" load_steps=3 format=3 uid="uid://dnkp8jmxhbt8a"]
-
-[ext_resource type="Script" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs" id="1_lqsas"]
-[ext_resource type="Texture2D" uid="uid://cu3mtpkpm3lqv" path="res://Art Assets/Character Assets/Weapon Icons/WandT2.png" id="1_nu8ex"]
-
-[resource]
-script = ExtResource("1_lqsas")
-Name = "Caster"
-Texture = ExtResource("1_nu8ex")

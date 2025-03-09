@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnowmh5245e2g"]
+
+[ext_resource type="Script" uid="uid://bmn18skr435xy" path="res://Scripts/Overworld Scripts/Overworld Menu/Home Menu/HomeMenu.cs" id="1_3tb56"]
+[ext_resource type="PackedScene" uid="uid://bxkk5567kit0w" path="res://Scenes/Overworld/Backgrounds/BannerBackground.tscn" id="2_5pf24"]
+[ext_resource type="Texture2D" uid="uid://luqf3yhtaw7p" path="res://Art Assets/Character Assets/ddant Characters/ddant__0036_warrior_dwarf_man_02.png" id="2_n5usi"]
+[ext_resource type="AudioStream" uid="uid://x8ucd0cuuhrh" path="res://Resources/Characters/Characters/Audio Assets/BGM/Action 1.mp3" id="2_sp7lu"]
+[ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="3_n5usi"]
+
+[sub_resource type="Animation" id="Animation_5pf24"]
+resource_name = "Idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite 1/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1.86607, 1, 2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -159), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sp7lu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite 1/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_roi4q"]
+_data = {
+&"Idle": SubResource("Animation_5pf24"),
+&"RESET": SubResource("Animation_sp7lu")
+}
+
+[node name="HomeMenu" type="Control" node_paths=PackedStringArray("homescreenSprite")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3tb56")
+homescreenSprite = NodePath("Sprite 1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sp7lu")
+volume_db = -8.587
+autoplay = true
+
+[node name="BannerBackground" parent="." instance=ExtResource("2_5pf24")]
+layout_mode = 1
+
+[node name="Sprite 1" type="Node2D" parent="."]
+position = Vector2(509, 1083)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite 1"]
+libraries = {
+&"": SubResource("AnimationLibrary_roi4q")
+}
+autoplay = "Idle"
+speed_scale = 0.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sprite 1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite 1"]
+texture = ExtResource("2_n5usi")
+
+[node name="OverworldMenu" parent="." instance=ExtResource("3_n5usi")]
+layout_mode = 1
+
+[node name="Debug Save Button" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 137.0
+offset_top = 1553.0
+offset_right = 137.0
+offset_bottom = 1553.0
+
+[node name="Button" type="Button" parent="Debug Save Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Save"
+
+[connection signal="button_up" from="Debug Save Button/Button" to="." method="DebugSave"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://rrq3oi4xyutq"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_1i0lh"]
+[ext_resource type="Texture2D" uid="uid://v0b8v635o8p0" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0030_warrior_halfork_woman_01.png" id="2_1i0lh"]
+
+[resource]
+script = ExtResource("1_1i0lh")
+portrait = ExtResource("2_1i0lh")
+Position = Vector2(0.431965, 190.929)
+Scale = 0.455
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_1i0lh")

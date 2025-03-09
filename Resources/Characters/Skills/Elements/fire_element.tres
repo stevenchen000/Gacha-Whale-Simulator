@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Element" load_steps=2 format=3 uid="uid://b1wdi00bg4amd"]
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://b1wdi00bg4amd"]
 
-[ext_resource type="Script" path="res://Scripts/Combat System/Element.cs" id="1_x7yay"]
+[ext_resource type="Texture2D" uid="uid://bc38rnuxeaobd" path="res://Art Assets/Character Assets/Element Icons/456_Fire_Ball.png" id="1_tx6a3"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="1_x7yay"]
 
 [resource]
 script = ExtResource("1_x7yay")
-name = "Fire"
+Name = "Fire"
+Texture = ExtResource("1_tx6a3")

@@ -4,3 +4,7 @@ android/build/build/outputs/apk/debug/android_debug.apk
 *.apk
 android/build/build/intermediates/merged_jni_libs/monoDebug/out/godot-lib.template_debug.aar
 *.aar
+*.aar
+*.aar
+*.aar
+*.jar

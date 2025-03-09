@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://kly5ymoofofr"]
+
+[ext_resource type="Script" uid="uid://pqws50itboxh" path="res://Scripts/Game Menu/Gacha Menu/GachaBannerUI.cs" id="1_37qan"]
+[ext_resource type="Texture2D" uid="uid://6gpkh0y7jw21" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0016_warrior_human_woman_03.png" id="2_0h2l3"]
+[ext_resource type="Resource" uid="uid://g4qtq3qm5r2d" path="res://Resources/Overworld/Gacha Game Data/Banners/permanent_banner.tres" id="2_oynkw"]
+[ext_resource type="Texture2D" uid="uid://cpodta7vp6j1m" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0017_warrior_human_woman_02.png" id="3_oynkw"]
+[ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="4_6s18s"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cv8pc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gpigy"]
+font_size = 90
+
+[node name="Gacha Banner" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_37qan")
+banner = ExtResource("2_oynkw")
+
+[node name="Banner Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 351.0
+offset_right = 1011.0
+offset_bottom = 1202.0
+texture = SubResource("CanvasTexture_cv8pc")
+
+[node name="Banner Clip" type="TextureRect" parent="Banner Icon"]
+clip_children = 1
+layout_mode = 0
+offset_top = -311.0
+offset_right = 963.0
+offset_bottom = 851.0
+texture = SubResource("CanvasTexture_cv8pc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Banner Icon/Banner Clip"]
+position = Vector2(842, 1014)
+rotation = 0.0872665
+scale = Vector2(1.65, 1.65)
+texture = ExtResource("2_0h2l3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Banner Icon/Banner Clip"]
+position = Vector2(189, 1006)
+rotation = -0.0523599
+scale = Vector2(1.65, 1.65)
+texture = ExtResource("3_oynkw")
+
+[node name="Pull Buttons" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 1288.0
+offset_right = 902.0
+offset_bottom = 1488.0
+theme_override_constants/separation = 50
+
+[node name="Single Pull Button" type="Button" parent="Pull Buttons"]
+custom_minimum_size = Vector2(325, 200)
+layout_mode = 2
+
+[node name="Gem Icon" type="TextureRect" parent="Pull Buttons/Single Pull Button"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 23.0
+offset_right = 157.0
+offset_bottom = 189.0
+texture = ExtResource("4_6s18s")
+
+[node name="Cost Text" type="Label" parent="Pull Buttons/Single Pull Button"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 42.0
+offset_right = 298.0
+offset_bottom = 179.0
+text = "300"
+label_settings = SubResource("LabelSettings_gpigy")
+
+[node name="Multi Pull Button2" type="Button" parent="Pull Buttons"]
+custom_minimum_size = Vector2(364.315, 200)
+layout_mode = 2
+
+[node name="Gem Icon" type="TextureRect" parent="Pull Buttons/Multi Pull Button2"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 23.0
+offset_right = 157.0
+offset_bottom = 189.0
+texture = ExtResource("4_6s18s")
+
+[node name="Cost Text" type="Label" parent="Pull Buttons/Multi Pull Button2"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 42.0
+offset_right = 298.0
+offset_bottom = 179.0
+text = "3000"
+label_settings = SubResource("LabelSettings_gpigy")
+
+[connection signal="button_up" from="Pull Buttons/Single Pull Button" to="." method="SinglePull"]
+[connection signal="button_up" from="Pull Buttons/Multi Pull Button2" to="." method="MultiPull"]

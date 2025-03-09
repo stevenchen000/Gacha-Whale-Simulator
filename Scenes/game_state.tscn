@@ -1,72 +1,192 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhy4vi30p0fpw"]
+[gd_scene load_steps=48 format=3 uid="uid://dhy4vi30p0fpw"]
 
-[ext_resource type="Script" path="res://Scripts/GameState.cs" id="1_1csjl"]
-[ext_resource type="Resource" uid="uid://cuclr7vjvjjld" path="res://Resources/Characters/Gacha Characters/corner_jeraldeen.tres" id="2_3aeg6"]
-[ext_resource type="Script" path="res://Scripts/Gacha System/GachaCharacterPower.cs" id="3_yvm2p"]
-[ext_resource type="Resource" uid="uid://2r41q02byvxx" path="res://Resources/Characters/Gacha Characters/Angealfish.tres" id="4_cuorn"]
-[ext_resource type="Script" path="res://Scripts/Gacha System/GachaValuePair.cs" id="5_281qg"]
-[ext_resource type="Script" path="res://Scripts/Gacha System/GachaGame.cs" id="6_6ps7c"]
-[ext_resource type="Resource" uid="uid://4qorrqwhv7ri" path="res://Resources/Gacha Game Data/Gacha Characters List.tres" id="7_pijha"]
-[ext_resource type="Resource" uid="uid://bkdo7vcfuf1xk" path="res://Resources/GachaBanner.tres" id="8_bmt85"]
-[ext_resource type="Resource" uid="uid://bdvc7bj8667ce" path="res://Resources/Utilities/Events/OnCharacterPulledEvent.tres" id="9_wqybx"]
-[ext_resource type="Resource" uid="uid://bkll23l0c6di4" path="res://Resources/Utilities/Events/OnCharacterListUpdated.tres" id="10_8ofgx"]
-[ext_resource type="Script" path="res://Scripts/Time System/DateTimeManager.cs" id="11_xhsya"]
-[ext_resource type="Resource" uid="uid://dr3mkcpjwitlp" path="res://Resources/Utilities/Events/Time Events/OnTimeUpdate.tres" id="12_ty07c"]
-[ext_resource type="Script" path="res://Scripts/GameFlags.cs" id="13_jy7fi"]
-[ext_resource type="Resource" uid="uid://cp7gs0vqnr3wc" path="res://Resources/Utilities/Events/Time Events/OnTimeSkipped.tres" id="13_mk5nl"]
-[ext_resource type="Script" path="res://Scripts/Quest System/QuestManager.cs" id="15_u3q2k"]
-[ext_resource type="Script" path="res://Scripts/Inventory System/Inventory.cs" id="16_n8140"]
-[ext_resource type="Resource" uid="uid://3t581paqpkcl" path="res://Resources/Items/cans.tres" id="17_j8wke"]
-[ext_resource type="Script" path="res://Scripts/Inventory System/InventorySlot.cs" id="18_7kcay"]
+[ext_resource type="Script" uid="uid://c5h8h5fd4fdsd" path="res://Scripts/Utilities/Game State/GameState.cs" id="1_1csjl"]
+[ext_resource type="Script" uid="uid://bo7pxpc8yx3v6" path="res://Scripts/Room Scripts/Time/GameTimeManager.cs" id="2_8igk3"]
+[ext_resource type="Script" uid="uid://b1o3g2mpmiirv" path="res://Scripts/Room Scripts/PlayerRankManager.cs" id="2_waiek"]
+[ext_resource type="Resource" uid="uid://dbdv0f3e6px7t" path="res://Resources/Room/Events/OnRankChanged.tres" id="3_ac2g0"]
+[ext_resource type="Resource" uid="uid://bc3mvqbjfdyki" path="res://Resources/Room/Events/OnTimeChanged.tres" id="3_idyri"]
+[ext_resource type="Resource" uid="uid://du06mxg461xfx" path="res://Resources/Room/Events/OnStaminaChanged.tres" id="5_3scac"]
+[ext_resource type="Script" uid="uid://bpaoa56qe5k5e" path="res://Scripts/Utilities/Flags/GameFlags.cs" id="5_017w6"]
+[ext_resource type="Script" uid="uid://cwepk2ttshtci" path="res://Scripts/Utilities/Game State/Data/GachaGame.cs" id="6_6ps7c"]
+[ext_resource type="Script" uid="uid://bpgy5xnv2vpso" path="res://Scripts/Utilities/Flags/GameStringFlags.cs" id="6_017w6"]
+[ext_resource type="Resource" uid="uid://ckuk24b61wpg8" path="res://Resources/Items/Level Upgrades/exp_tier_1.tres" id="8_4mo12"]
+[ext_resource type="Resource" uid="uid://7m0x0bs2kwc8" path="res://Resources/Items/Level Upgrades/exp_tier_2.tres" id="10_gyq6b"]
+[ext_resource type="Resource" uid="uid://bqkvuxcl77wcr" path="res://Resources/Items/Level Upgrades/exp_tier_3.tres" id="11_bwm1f"]
+[ext_resource type="Resource" uid="uid://g4qtq3qm5r2d" path="res://Resources/Overworld/Gacha Game Data/Banners/permanent_banner.tres" id="12_73fjw"]
+[ext_resource type="Resource" uid="uid://ccucd11jl0yi5" path="res://Resources/Items/Level Upgrades/exp_tier_4.tres" id="12_v75l8"]
+[ext_resource type="Script" uid="uid://tl82ibilaxhs" path="res://Scripts/Save System/OwnedCharacterData.cs" id="14_4mo12"]
+[ext_resource type="Script" uid="uid://cparukonr4gds" path="res://Scripts/Overworld Scripts/Quest System/QuestManager.cs" id="15_u3q2k"]
+[ext_resource type="Script" uid="uid://crwjm0wp0dttb" path="res://Scripts/Overworld Scripts/Inventory System/Inventory.cs" id="16_n8140"]
+[ext_resource type="Script" uid="uid://booj8f3hwcnco" path="res://Scripts/Utilities/Game State/Data/CharacterDictionary.cs" id="17_0rwfx"]
+[ext_resource type="Script" uid="uid://dg6hi4clsmqht" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/PartySetup.cs" id="17_ig1aq"]
+[ext_resource type="Script" uid="uid://skiggt44ln0s" path="res://Scripts/Overworld Scripts/Inventory System/InventorySlot.cs" id="18_7kcay"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_female_wizard.tres" id="18_ig1aq"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="19_017w6"]
 [ext_resource type="Resource" uid="uid://bnka8sgyiscsr" path="res://Resources/Utilities/Events/Inventory Events/OnInventoryUpdate.tres" id="19_361pm"]
-
-[sub_resource type="Resource" id="Resource_koi0c"]
-script = ExtResource("5_281qg")
-character = ExtResource("4_cuorn")
-power = 0
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="20_48wcd"]
+[ext_resource type="Resource" uid="uid://cbk1w2gmifv02" path="res://Resources/Room/Events/OnGemCountChanged.tres" id="21_3scac"]
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="21_8igk3"]
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="21_t4ncp"]
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="22_idyri"]
+[ext_resource type="Resource" uid="uid://gpsfrrd8vtvh" path="res://Resources/Characters/Characters/006_male_wizard.tres" id="23_ac2g0"]
+[ext_resource type="Script" uid="uid://cwaua4ghmll6u" path="res://Scripts/Room Scripts/Stamina System/StaminaManager.cs" id="28_idyri"]
+[ext_resource type="Script" uid="uid://du8pvqj4ocmqm" path="res://Scripts/Event System/VoidEventHandler.cs" id="29_ac2g0"]
+[ext_resource type="Script" uid="uid://nn74iw3js7tw" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterExpCurve.cs" id="31_waiek"]
 
 [sub_resource type="Resource" id="Resource_aoisc"]
 script = ExtResource("18_7kcay")
-item = ExtResource("17_j8wke")
-amount = 10
+item = ExtResource("8_4mo12")
+amount = 500
 
-[node name="Game State" type="Node2D" node_paths=PackedStringArray("time", "flags", "playerInventory", "quests", "game")]
+[sub_resource type="Resource" id="Resource_1dcmr"]
+script = ExtResource("18_7kcay")
+item = ExtResource("10_gyq6b")
+amount = 50
+metadata/_custom_type_script = ExtResource("18_7kcay")
+
+[sub_resource type="Resource" id="Resource_5lkyx"]
+script = ExtResource("18_7kcay")
+item = ExtResource("11_bwm1f")
+amount = 10
+metadata/_custom_type_script = ExtResource("18_7kcay")
+
+[sub_resource type="Resource" id="Resource_3bjbp"]
+script = ExtResource("18_7kcay")
+item = ExtResource("12_v75l8")
+amount = 5
+metadata/_custom_type_script = ExtResource("18_7kcay")
+
+[sub_resource type="Resource" id="Resource_gyq6b"]
+script = ExtResource("14_4mo12")
+OwnedCharacters = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("14_4mo12")
+
+[sub_resource type="Resource" id="Resource_017w6"]
+script = ExtResource("17_ig1aq")
+PartyID = 0
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_48wcd"]
+script = ExtResource("17_ig1aq")
+PartyID = 1
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_8igk3"]
+script = ExtResource("17_ig1aq")
+PartyID = 2
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_idyri"]
+script = ExtResource("17_ig1aq")
+PartyID = 3
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_ig1aq"]
+script = ExtResource("17_ig1aq")
+PartyID = 4
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_ac2g0"]
+script = ExtResource("17_ig1aq")
+PartyID = 5
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_3scac"]
+script = ExtResource("17_ig1aq")
+PartyID = 6
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_waiek"]
+script = ExtResource("17_ig1aq")
+PartyID = 7
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_t4ncp"]
+script = ExtResource("17_ig1aq")
+PartyID = 8
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[sub_resource type="Resource" id="Resource_poyn3"]
+script = ExtResource("17_ig1aq")
+PartyID = 9
+Party = Array[ExtResource("21_t4ncp")]([])
+metadata/_custom_type_script = ExtResource("17_ig1aq")
+
+[node name="Game State" type="Node2D" node_paths=PackedStringArray("rank", "time", "flags", "stringFlags", "playerInventory", "quests", "game", "stamina")]
 script = ExtResource("1_1csjl")
-premiumCurrency = 99999
-time = NodePath("Date Time")
+rank = NodePath("Player Rank")
+time = NodePath("Time Manager")
 flags = NodePath("Flags")
+stringFlags = NodePath("String Flags")
 playerInventory = NodePath("Player Inventory")
 quests = NodePath("Quest Manager")
+game = NodePath("Gacha Data")
+stamina = NodePath("Stamina Manager")
 money = 0
-allCharacters = Array[Object]([ExtResource("2_3aeg6")])
-ownedCharacters = Array[Object]([])
-game = NodePath("Gacha Game Data")
 
-[node name="Character Power List" type="Node2D" parent="."]
-script = ExtResource("3_yvm2p")
-characterPowers = Array[Object]([SubResource("Resource_koi0c")])
-powerValues = {}
+[node name="Player Rank" type="Node2D" parent="."]
+script = ExtResource("2_waiek")
+ExpToNextRank = Array[int]([0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70])
+OnRankUp = ExtResource("3_ac2g0")
 
-[node name="Gacha Game Data" type="Node2D" parent="."]
-script = ExtResource("6_6ps7c")
-allCharacters = ExtResource("7_pijha")
-ownedCharacters = Array[Object]([])
-currentBanner = ExtResource("8_bmt85")
-OnCharacterPulled = ExtResource("9_wqybx")
-OnAccountListUpdated = ExtResource("10_8ofgx")
+[node name="Stamina Manager" type="Node2D" parent="."]
+script = ExtResource("28_idyri")
+MaxStamina = 10
+CurrentStamina = 7
+OnStaminaChanged = ExtResource("5_3scac")
 
-[node name="Date Time" type="Node2D" parent="."]
-script = ExtResource("11_xhsya")
-OnTimeUpdate = ExtResource("12_ty07c")
-OnTimeSkipped = ExtResource("13_mk5nl")
+[node name="Time Change Event" type="Node2D" parent="Stamina Manager"]
+script = ExtResource("29_ac2g0")
+voidEvent = ExtResource("3_idyri")
+
+[node name="Time Manager" type="Node2D" parent="."]
+script = ExtResource("2_8igk3")
+OnTimeChanged = ExtResource("3_idyri")
 
 [node name="Flags" type="Node2D" parent="."]
-script = ExtResource("13_jy7fi")
+script = ExtResource("5_017w6")
+
+[node name="String Flags" type="Node2D" parent="."]
+script = ExtResource("6_017w6")
 
 [node name="Quest Manager" type="Node2D" parent="."]
 script = ExtResource("15_u3q2k")
 
 [node name="Player Inventory" type="Node2D" parent="."]
 script = ExtResource("16_n8140")
-slots = Array[Object]([SubResource("Resource_aoisc")])
+slots = Array[Object]([SubResource("Resource_aoisc"), SubResource("Resource_1dcmr"), SubResource("Resource_5lkyx"), SubResource("Resource_3bjbp")])
 OnInventoryChange = ExtResource("19_361pm")
+
+[node name="Gacha Data" type="Node2D" parent="." node_paths=PackedStringArray("allCharacters")]
+script = ExtResource("6_6ps7c")
+premiumCurrency = 70000
+allCharacters = NodePath("Character Dictionary")
+currentBanner = ExtResource("12_73fjw")
+characterData = SubResource("Resource_gyq6b")
+PlayerParties = Array[Object]([SubResource("Resource_017w6"), SubResource("Resource_48wcd"), SubResource("Resource_8igk3"), SubResource("Resource_idyri"), SubResource("Resource_ig1aq"), SubResource("Resource_ac2g0"), SubResource("Resource_3scac"), SubResource("Resource_waiek"), SubResource("Resource_t4ncp"), SubResource("Resource_poyn3")])
+OnGemCountChanged = ExtResource("21_3scac")
+
+[node name="Character Dictionary" type="Node2D" parent="Gacha Data"]
+script = ExtResource("17_0rwfx")
+_characters = Dictionary[int, Object]({
+1: ExtResource("18_ig1aq"),
+2: ExtResource("19_017w6"),
+3: ExtResource("20_48wcd"),
+4: ExtResource("21_8igk3"),
+5: ExtResource("22_idyri"),
+6: ExtResource("23_ac2g0")
+})
+
+[node name="Exp Curve" type="Node2D" parent="."]
+script = ExtResource("31_waiek")
+
+[connection signal="MyVoid" from="Stamina Manager/Time Change Event" to="Stamina Manager" method="FillStamina"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IntGameEvent" load_steps=2 format=3 uid="uid://dbdv0f3e6px7t"]
+
+[ext_resource type="Script" uid="uid://ctd5v4cwu6vcu" path="res://Scripts/Event System/Variant Game Events/IntGameEvent.cs" id="1_yi55l"]
+
+[resource]
+script = ExtResource("1_yi55l")
+description = ""
+debug = false
+metadata/_custom_type_script = "uid://cfo6nhuvvp7j2"

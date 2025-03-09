@@ -36,11 +36,12 @@ namespace CharacterCreator
 
         private void SavePortrait()
         {
-            var startPos = cropper.cropStart;
-            float size = cropper.GetCropSize();
-            originalPortrait.startArea = startPos;
-            originalPortrait.size = size;
-            FileManager.SavePortrait(originalPortrait);
+            var scale = cropper.GetSpriteScale();
+            var position = cropper.GetSpriteOffset();
+            originalPortrait.SetScale(Vector2.One * scale);
+            originalPortrait.SetPosition(position);
+
+            CustomCharacterManager.SavePortrait(originalPortrait);
         }
 
         public void ReturnToDisplayMenu()

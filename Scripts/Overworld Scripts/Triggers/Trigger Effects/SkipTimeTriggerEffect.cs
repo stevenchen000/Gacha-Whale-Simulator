@@ -9,6 +9,6 @@ public partial class SkipTimeTriggerEffect : TriggerEffect
 
     public override void ActivateEffect(TriggerDetector activator, Trigger trigger)
     {
-        GameState.SkipToTime(hour, minute);
+        //GameState.SkipToTime(hour, minute);
     }
 }

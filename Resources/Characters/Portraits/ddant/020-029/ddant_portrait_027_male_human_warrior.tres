@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://cjhqb5a35hc0y"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_0etlj"]
+[ext_resource type="Texture2D" uid="uid://cvitps2v04ir" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0026_warrior_human_man_02.png" id="2_0etlj"]
+
+[resource]
+script = ExtResource("1_0etlj")
+portrait = ExtResource("2_0etlj")
+Position = Vector2(-14, 262)
+Scale = 0.6
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_0etlj")

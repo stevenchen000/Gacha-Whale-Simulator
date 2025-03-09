@@ -1,13 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=18 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
-[ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Character Editor/Character Creator Menu.tscn" id="2_vfyon"]
-[ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Game Scenes/Battle Scene 2.tscn" id="3_f8l6p"]
+[ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Game Scenes/Character Creator Menu.tscn" id="2_vfyon"]
+[ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Battle/Battle Scene.tscn" id="3_f8l6p"]
 [ext_resource type="PackedScene" uid="uid://b43nu8dco1xr2" path="res://Scenes/file_manager.tscn" id="4_506lw"]
-[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/caster.tres" id="4_f8l6p"]
-[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/healer.tres" id="5_ah32c"]
-[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/tank.tres" id="6_572h4"]
-[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/warrior.tres" id="7_mxwxv"]
+[ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="4_572h4"]
+[ext_resource type="PackedScene" uid="uid://dnowmh5245e2g" path="res://Scenes/Overworld/Home Menu/Home Menu.tscn" id="4_lay86"]
+[ext_resource type="PackedScene" uid="uid://dl7wql1l8meta" path="res://Scenes/Overworld/Gacha Menu/Gacha Menu.tscn" id="4_mxwxv"]
+[ext_resource type="Resource" uid="uid://c4tahpphjlhfs" path="res://Resources/Characters/Character Data/test_player_healer.tres" id="5_mxwxv"]
+[ext_resource type="PackedScene" uid="uid://hw1mi7nr68ev" path="res://Scenes/Overworld/Party Menu/Party Menu.tscn" id="5_utuun"]
+[ext_resource type="Resource" uid="uid://rd4nkvr3ixkd" path="res://Resources/Characters/Character Data/test_player_tank.tres" id="6_jnj4c"]
+[ext_resource type="PackedScene" uid="uid://cqqa05wypaxiq" path="res://Scenes/Overworld/Stage Selection/Stage Selection Menu.tscn" id="6_u6ta2"]
+[ext_resource type="Resource" uid="uid://vkjf1hjsu2ex" path="res://Resources/Characters/Character Data/test_player_warrior.tres" id="7_u6ta2"]
+[ext_resource type="Resource" uid="uid://beeikrtu3ncsq" path="res://Resources/Overworld/Battles/basic_stage.tres" id="8_572h4"]
+[ext_resource type="PackedScene" uid="uid://b7ad5ckcqdyce" path="res://Scenes/Overworld/Upgrade Menu/Upgrade Menu.tscn" id="8_utuun"]
+[ext_resource type="PackedScene" uid="uid://dhy4vi30p0fpw" path="res://Scenes/game_state.tscn" id="9_ah32c"]
+[ext_resource type="PackedScene" uid="uid://dmcbt7du1gju2" path="res://Scenes/Room/Room.tscn" id="9_xq76o"]
+[ext_resource type="Script" uid="uid://m6dxv4oa631d" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs" id="16_em1yx"]
 
 [node name="MainGame" type="Control"]
 layout_mode = 3
@@ -19,7 +28,18 @@ grow_vertical = 2
 script = ExtResource("1_qiwpt")
 characterCreatorScene = ExtResource("2_vfyon")
 battleScene = ExtResource("3_f8l6p")
-playerParty = Array[Object]([ExtResource("4_f8l6p"), ExtResource("5_ah32c"), ExtResource("6_572h4"), ExtResource("7_mxwxv")])
-enemyParty = Array[Object]([ExtResource("6_572h4")])
+homeScene = ExtResource("4_lay86")
+partyScene = ExtResource("5_utuun")
+gachaScene = ExtResource("4_mxwxv")
+stageSelectionScene = ExtResource("6_u6ta2")
+upgradeMenuScene = ExtResource("8_utuun")
+roomMenuScene = ExtResource("9_xq76o")
+playerParty = Array[Object]([ExtResource("4_572h4"), ExtResource("5_mxwxv"), ExtResource("6_jnj4c"), ExtResource("7_u6ta2")])
+StageData = ExtResource("8_572h4")
 
 [node name="File Manager" parent="." instance=ExtResource("4_506lw")]
+
+[node name="Game State" parent="." instance=ExtResource("9_ah32c")]
+
+[node name="Touch Manager" type="Node2D" parent="."]
+script = ExtResource("16_em1yx")

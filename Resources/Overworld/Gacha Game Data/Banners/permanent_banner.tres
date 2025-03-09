@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="GachaBanner" load_steps=11 format=3 uid="uid://g4qtq3qm5r2d"]
+
+[ext_resource type="Resource" uid="uid://4qorrqwhv7ri" path="res://Resources/Overworld/Gacha Game Data/Gacha Characters List.tres" id="1_3upsp"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_female_wizard.tres" id="1_iysby"]
+[ext_resource type="Script" uid="uid://vdsxlluavxds" path="res://Scripts/Gacha System/GachaBanner.cs" id="1_xa0ob"]
+[ext_resource type="Script" uid="uid://dt2mexu8xpdog" path="res://Scripts/Gacha System/GachaCharacterList.cs" id="2_s7lgf"]
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="2_y4e40"]
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="3_gowcw"]
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="4_qhkb6"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="7_q6iu8"]
+
+[sub_resource type="Resource" id="Resource_o5pkb"]
+script = ExtResource("2_s7lgf")
+Name = ""
+Weight = 90
+Characters = Array[Object]([ExtResource("2_y4e40"), ExtResource("3_gowcw"), ExtResource("4_qhkb6")])
+metadata/_custom_type_script = ExtResource("2_s7lgf")
+
+[sub_resource type="Resource" id="Resource_wfywk"]
+script = ExtResource("2_s7lgf")
+Name = ""
+Weight = 100
+Characters = Array[Object]([ExtResource("1_iysby"), ExtResource("7_q6iu8")])
+metadata/_custom_type_script = ExtResource("2_s7lgf")
+
+[resource]
+script = ExtResource("1_xa0ob")
+FullGacha = Array[Object]([ExtResource("1_3upsp"), SubResource("Resource_o5pkb")])
+MultiPullBonus = Array[Object]([SubResource("Resource_wfywk")])
+SinglePullCost = 300
+MultiPullCost = 3000
+metadata/_custom_type_script = ExtResource("1_xa0ob")

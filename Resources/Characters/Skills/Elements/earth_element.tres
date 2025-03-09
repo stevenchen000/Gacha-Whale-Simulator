@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://bwb46tp8gc6se"]
+
+[ext_resource type="Texture2D" uid="uid://c3kd8uc75x007" path="res://Art Assets/Character Assets/Element Icons/467_Earth_Pierce.png" id="1_u2agw"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="2_vwfel"]
+
+[resource]
+script = ExtResource("2_vwfel")
+Name = "Earth"
+Texture = ExtResource("1_u2agw")

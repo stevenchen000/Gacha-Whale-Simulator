@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VoidEvent" load_steps=2 format=3 uid="uid://du06mxg461xfx"]
+
+[ext_resource type="Script" uid="uid://cfo6nhuvvp7j2" path="res://Scripts/Event System/VoidEvent.cs" id="1_oev4d"]
+
+[resource]
+script = ExtResource("1_oev4d")
+description = "Called when stamina value has changed"
+debug = false
+metadata/_custom_type_script = "uid://cfo6nhuvvp7j2"

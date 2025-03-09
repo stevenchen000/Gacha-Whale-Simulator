@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponType" load_steps=3 format=3 uid="uid://d2esdljxtva8e"]
+
+[ext_resource type="Texture2D" uid="uid://deb4gtmx8ljb" path="res://Art Assets/Character Assets/Weapon Icons/Tome.png" id="1_13wqi"]
+[ext_resource type="Script" uid="uid://dwcp7elvgql0g" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/WeaponType.cs" id="2_grqfb"]
+
+[resource]
+script = ExtResource("2_grqfb")
+Name = "Tome"
+Texture = ExtResource("1_13wqi")
+Description = ""
+metadata/_custom_type_script = ExtResource("2_grqfb")

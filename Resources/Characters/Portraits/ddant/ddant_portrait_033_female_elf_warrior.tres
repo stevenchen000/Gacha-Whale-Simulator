@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://cr1tstasqjxbi"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_gajeu"]
+[ext_resource type="Texture2D" uid="uid://dp3yjx4v07xco" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0032_warrior_elve_woman_01.png" id="2_gajeu"]
+
+[resource]
+script = ExtResource("1_gajeu")
+portrait = ExtResource("2_gajeu")
+Position = Vector2(38.355, 211.033)
+Scale = 0.49
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_gajeu")

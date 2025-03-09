@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bh30tb1rj6iqn"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_paxcx"]
+[ext_resource type="Texture2D" uid="uid://cgm55tt3we6p7" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0035_warrior_elve_man_01.png" id="2_paxcx"]
+
+[resource]
+script = ExtResource("1_paxcx")
+portrait = ExtResource("2_paxcx")
+Position = Vector2(18.1425, 149.892)
+Scale = 0.685
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_paxcx")

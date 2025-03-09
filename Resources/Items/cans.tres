@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://3t581paqpkcl"]
 
 [ext_resource type="Texture2D" uid="uid://cq4rs7rq6x6fc" path="res://Art Assets/Objects/Tin_Can.png" id="1_gilyp"]
-[ext_resource type="Script" path="res://Scripts/Inventory System/ItemResource.cs" id="1_m4kcw"]
+[ext_resource type="Script" uid="uid://cl722yw1v47w6" path="res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs" id="1_m4kcw"]
 
 [resource]
 script = ExtResource("1_m4kcw")

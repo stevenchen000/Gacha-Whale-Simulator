@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmcbt7du1gju2"]
+
+[ext_resource type="Script" uid="uid://bb1qbbgcsj5aj" path="res://Scripts/Room Scripts/RoomMenu.cs" id="1_cg6ad"]
+[ext_resource type="Texture2D" uid="uid://d2t0su28768hj" path="res://Art Assets/Character Assets/MC.png" id="1_oouxv"]
+[ext_resource type="PackedScene" uid="uid://dxowrkolcpeib" path="res://Scenes/Room/Rank UI.tscn" id="2_56bmf"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="5_gev2u"]
+[ext_resource type="Texture2D" uid="uid://bbirdxkrbp1x8" path="res://Art Assets/Phone/Phone Screen.png" id="5_lnqtj"]
+[ext_resource type="Texture2D" uid="uid://dfj7k5fe8bmcw" path="res://Art Assets/Phone/Phone Border.png" id="7_n2mf7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cg6ad"]
+line_spacing = -15.0
+font_size = 30
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.498039)
+shadow_offset = Vector2(3, 3)
+
+[node name="Room" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cg6ad")
+
+[node name="RankUi" parent="." instance=ExtResource("2_56bmf")]
+
+[node name="Main Character" type="Sprite2D" parent="."]
+position = Vector2(538, 1038)
+texture = ExtResource("1_oouxv")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 225.0
+offset_right = 1046.0
+offset_bottom = 621.0
+theme_override_constants/separation = 50
+
+[node name="Game Button" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(128, 218)
+layout_mode = 2
+flat = true
+
+[node name="Phone Screen" type="TextureRect" parent="Buttons/Game Button"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 553.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_lnqtj")
+
+[node name="Phone Border" type="TextureRect" parent="Buttons/Game Button"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 553.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_n2mf7")
+
+[node name="Label" type="Label" parent="Buttons/Game Button"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 181.0
+offset_right = 152.0
+offset_bottom = 260.0
+text = "Return to game"
+label_settings = SubResource("LabelSettings_cg6ad")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Character Creator Button" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Buttons/Character Creator Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_gev2u")
+
+[node name="Label2" type="Label" parent="Buttons/Character Creator Button"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 89.0
+offset_right = 152.0
+offset_bottom = 168.0
+text = "Character
+Editor"
+label_settings = SubResource("LabelSettings_cg6ad")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sleep" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Buttons/Sleep"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_gev2u")
+
+[node name="Label2" type="Label" parent="Buttons/Sleep"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 89.0
+offset_right = 152.0
+offset_bottom = 168.0
+text = "Sleep"
+label_settings = SubResource("LabelSettings_cg6ad")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="button_up" from="Buttons/Game Button" to="." method="ReturnToGame"]
+[connection signal="button_up" from="Buttons/Character Creator Button" to="." method="OpenCharacterEditor"]
+[connection signal="button_up" from="Buttons/Sleep" to="." method="ProgressTime"]

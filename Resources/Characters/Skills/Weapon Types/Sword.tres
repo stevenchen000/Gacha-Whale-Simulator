@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponType" load_steps=3 format=3 uid="uid://courgprqqpgvs"]
+
+[ext_resource type="Texture2D" uid="uid://c8yvkk2q3p5im" path="res://Art Assets/Character Assets/Weapon Icons/Sword.png" id="1_jo6i7"]
+[ext_resource type="Script" uid="uid://dwcp7elvgql0g" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/WeaponType.cs" id="1_x36kw"]
+
+[resource]
+script = ExtResource("1_x36kw")
+Name = "Sword"
+Texture = ExtResource("1_jo6i7")
+Description = ""
+metadata/_custom_type_script = ExtResource("1_x36kw")

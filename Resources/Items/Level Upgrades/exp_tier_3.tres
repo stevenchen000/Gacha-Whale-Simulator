@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bqkvuxcl77wcr"]
+
+[ext_resource type="Texture2D" uid="uid://duwya06viefg2" path="res://Art Assets/Inventory/Level Upgrades/PotionRed.png" id="1_iqjvw"]
+[ext_resource type="Script" uid="uid://cl722yw1v47w6" path="res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs" id="1_om8yj"]
+
+[resource]
+script = ExtResource("1_om8yj")
+icon = ExtResource("1_iqjvw")
+itemName = "High Exp Potion"
+description = "A potion that grants 2500 experience points to a character."
+metadata/_custom_type_script = ExtResource("1_om8yj")

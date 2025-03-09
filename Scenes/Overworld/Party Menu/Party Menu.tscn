@@ -1,0 +1,188 @@
+[gd_scene load_steps=12 format=3 uid="uid://hw1mi7nr68ev"]
+
+[ext_resource type="Script" uid="uid://blvjh6ipudb1k" path="res://Scripts/Game Menu/Party Menu/PartyMenu.cs" id="1_c0xnm"]
+[ext_resource type="AudioStream" uid="uid://ij0s1wo5p3jv" path="res://Resources/Characters/Characters/Audio Assets/BGM/Light Ambience 1.mp3" id="3_1tiv1"]
+[ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="3_c0xnm"]
+[ext_resource type="Texture2D" uid="uid://uv01r8711ffx" path="res://Art Assets/Backgrounds/Ocean_8/6.png" id="4_0hhbr"]
+[ext_resource type="PackedScene" uid="uid://c05wi4urb34et" path="res://Scenes/Overworld/Party Menu/UI/character_party_menu_display.tscn" id="4_lsvsl"]
+[ext_resource type="Script" uid="uid://1dhyjkm0nm4k" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CurrentPartySubmenu.cs" id="6_4p0ch"]
+[ext_resource type="Script" uid="uid://d1ul3n22egc87" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/SelectPartyMemberSubmenu.cs" id="7_p1sl7"]
+[ext_resource type="PackedScene" uid="uid://dxmigm2ofyi8j" path="res://Scenes/Overworld/Party Menu/UI/character_selection.tscn" id="7_q5bjd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hhbr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4p0ch"]
+font_size = 70
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.462745)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_51ohi"]
+
+[node name="PartyMenu" type="Control" node_paths=PackedStringArray("partyMenu", "memberMenu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0xnm")
+partyMenu = NodePath("Current Party Menu")
+memberMenu = NodePath("Select Party Member Menu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1tiv1")
+autoplay = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1186, 973)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("4_0hhbr")
+
+[node name="Current Party Menu" type="Control" parent="." node_paths=PackedStringArray("partyButtonContainer")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_4p0ch")
+partyButtonContainer = NodePath("Party")
+
+[node name="Party Name" type="MarginContainer" parent="Current Party Menu"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 195.0
+offset_right = 327.0
+offset_bottom = 291.0
+
+[node name="TextureRect" type="TextureRect" parent="Current Party Menu/Party Name"]
+self_modulate = Color(0.112705, 0.295214, 0.698728, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_0hhbr")
+
+[node name="MarginContainer" type="MarginContainer" parent="Current Party Menu/Party Name"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Party Name" type="Label" parent="Current Party Menu/Party Name/MarginContainer"]
+layout_mode = 2
+text = "Party 1"
+label_settings = SubResource("LabelSettings_4p0ch")
+metadata/_edit_lock_ = true
+
+[node name="Party" type="VBoxContainer" parent="Current Party Menu"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 305.0
+offset_right = 1051.0
+offset_bottom = 1573.0
+theme_override_constants/separation = 25
+
+[node name="Character Display" parent="Current Party Menu/Party" instance=ExtResource("4_lsvsl")]
+layout_mode = 2
+
+[node name="Character Display2" parent="Current Party Menu/Party" instance=ExtResource("4_lsvsl")]
+layout_mode = 2
+index = 1
+
+[node name="Character Display3" parent="Current Party Menu/Party" instance=ExtResource("4_lsvsl")]
+layout_mode = 2
+index = 2
+
+[node name="Character Display4" parent="Current Party Menu/Party" instance=ExtResource("4_lsvsl")]
+layout_mode = 2
+index = 3
+
+[node name="Character Display5" parent="Current Party Menu/Party" instance=ExtResource("4_lsvsl")]
+layout_mode = 2
+index = 4
+
+[node name="Select Party Member Menu" type="Control" parent="." node_paths=PackedStringArray("characterContainer", "partyDisplayPreview")]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_p1sl7")
+characterContainer = NodePath("GridContainer")
+buttonScene = ExtResource("7_q5bjd")
+partyDisplayPreview = NodePath("Character Display")
+
+[node name="TextureRect" type="TextureRect" parent="Select Party Member Menu"]
+self_modulate = Color(0, 0, 0, 0.470588)
+layout_mode = 1
+offset_left = 32.0
+offset_top = 584.0
+offset_right = 1036.0
+offset_bottom = 1639.0
+texture = SubResource("CanvasTexture_51ohi")
+
+[node name="Character Display" parent="Select Party Member Menu" instance=ExtResource("4_lsvsl")]
+offset_left = 40.0
+offset_top = 285.0
+offset_right = 1042.0
+offset_bottom = 478.0
+index = 1
+
+[node name="GridContainer" type="GridContainer" parent="Select Party Member Menu"]
+layout_mode = 1
+offset_left = 52.0
+offset_top = 614.0
+offset_right = 1044.0
+offset_bottom = 1916.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 30
+columns = 4
+
+[node name="Character Button5" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button6" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button7" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button8" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button9" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button10" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button11" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button12" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button13" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button14" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button15" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button16" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button17" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button18" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button19" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="Character Button20" parent="Select Party Member Menu/GridContainer" instance=ExtResource("7_q5bjd")]
+layout_mode = 2
+
+[node name="OverworldMenu" parent="." instance=ExtResource("3_c0xnm")]
+layout_mode = 1
+currentMenuIndex = 1
+metadata/_edit_lock_ = true

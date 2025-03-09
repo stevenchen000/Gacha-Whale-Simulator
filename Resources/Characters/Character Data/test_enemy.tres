@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://d3ventvjbmecp"]
+
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="1_bhmx8"]
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="2_vddks"]
+
+[resource]
+script = ExtResource("2_vddks")
+Character = ExtResource("1_bhmx8")
+Level = 5
+LevelCap = 50
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+metadata/_custom_type_script = "uid://crt8oipcdvd4l"

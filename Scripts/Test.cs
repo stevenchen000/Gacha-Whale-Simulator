@@ -1,15 +1,10 @@
 using Godot;
 using System;
 using System.IO;
-using System.Net.Http;
 
 public partial class Test : Node
 {
-	
-	public void OnClick(Node viewport, InputEvent @event, int idx)
-	{
-		Utils.Print(this, "clicked");
-	}
+	[Export] private TestData data;
 
 
     // Called when the node enters the scene tree for the first time.

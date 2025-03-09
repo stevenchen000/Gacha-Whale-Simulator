@@ -59,6 +59,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen snackbar_bottom_margin
 dimen splashscreen_icon_mask_size_no_background
 dimen splashscreen_icon_mask_size_with_background
 dimen splashscreen_icon_mask_stroke_no_background
@@ -158,6 +159,8 @@ id report_drawn
 id resumeOverCellular
 id right_icon
 id right_side
+id snackbar_action
+id snackbar_text
 id special_effects_controller_view_tag
 id splashscreen_icon_view
 id statusText
@@ -198,6 +201,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout snackbar
 layout splash_screen_view
 layout status_bar_ongoing_event_progress_bar
 mipmap icon

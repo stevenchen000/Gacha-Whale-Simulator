@@ -3,13 +3,17 @@ meta-data#org.godotengine.editor.version
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:33:9-35:53
 	android:value
 		INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml
+meta-data#org.godotengine.rendering.method
+INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:37:9-39:54
+	android:value
+		INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml
 manifest
-ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:2:1-58:12
-MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:2:1-58:12
+ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:2:1-62:12
+MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:2:1-62:12
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:2:1-33:12
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:2:1-33:12
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:2:1-33:12
-MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:2:1-35:12
+MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:2:1-35:12
 MERGED from [GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:2:1-31:12
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\chens\.gradle\caches\transforms-3\34ec294f6bdde40744063ea74c4e92c4\transformed\fragment-1.7.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.core:core-splashscreen:1.0.1] C:\Users\chens\.gradle\caches\transforms-3\dd89130c4a8ca50a04569d2aa68e9e1e\transformed\jetified-core-splashscreen-1.0.1\AndroidManifest.xml:17:1-24:12
@@ -70,12 +74,12 @@ MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\andr
 	android:required
 		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:16:9-32
 application
-ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:18:5-56:19
-MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:18:5-56:19
-MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:18:5-56:19
+ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:18:5-60:19
+MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:18:5-60:19
+MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:18:5-60:19
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:15:5-32:19
-MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
-MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
+MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
+MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:9:5-33:19
 MERGED from [GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:15:5-29:19
 MERGED from [GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:15:5-29:19
 MERGED from [androidx.core:core:1.8.0] C:\Users\chens\.gradle\caches\transforms-3\245f1aa0863a677574781ac0a1900f6e\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
@@ -122,57 +126,57 @@ ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\andro
 	tools:targetApi
 		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:30:13-33
 activity#com.godot.game.GodotApp
-ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:37:9-54:20
-MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:37:9-54:20
-MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:37:9-54:20
-REJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:49:13-53:29
+ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:41:9-58:20
+MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:41:9-58:20
+MERGED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:41:9-58:20
+REJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:53:13-57:29
 	tools:node
 		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:25:140-172
 	android:screenOrientation
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:44:13-50
-		REJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:44:13-50
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:48:13-50
+		REJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:48:13-50
 	android:label
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:39:13-62
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:39:13-62
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:43:13-62
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:43:13-62
 	android:excludeFromRecents
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:42:13-47
-		REJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:42:13-47
-	android:launchMode
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:41:13-55
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:41:13-55
-	android:exported
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:43:13-36
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:43:13-36
-	android:resizeableActivity
 		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:46:13-47
 		REJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:46:13-47
+	android:launchMode
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:45:13-55
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:45:13-55
+	android:exported
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:47:13-36
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:47:13-36
+	android:resizeableActivity
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:50:13-47
+		REJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:50:13-47
 	tools:ignore
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:47:13-43
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:47:13-43
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:51:13-43
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:51:13-43
 	android:configChanges
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:45:13-141
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:45:13-141
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:49:13-141
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:49:13-141
 	android:theme
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:40:13-55
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:40:13-55
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:44:13-55
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:44:13-55
 	tools:replace
 		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:25:44-139
 	android:name
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:38:13-37
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:42:13-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:49:13-53:29
+ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:53:13-57:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:50:17-69
+ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:54:17-69
 	android:name
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:50:25-66
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:54:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:51:17-76
+ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:55:17-76
 	android:name
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:51:27-73
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:55:27-73
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:52:17-77
+ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:56:17-77
 	android:name
-		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:52:27-74
+		ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\AndroidManifest.xml:56:27-74
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml:11:5-80
 MERGED from [GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:7:5-80
@@ -207,8 +211,8 @@ uses-sdk
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml
 INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml
-MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:7:5-44
-MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:7:5-44
+MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:7:5-44
+MERGED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:7:5-44
 MERGED from [GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:5:5-44
 MERGED from [GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\chens\.gradle\caches\transforms-3\34ec294f6bdde40744063ea74c4e92c4\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
@@ -256,41 +260,41 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\chens\.gradle\cache
 	android:minSdkVersion
 		INJECTED from C:\Users\chens\Documents\Sighborg Studios\Gacha-Whale-Simulator\android\build\src\debug\AndroidManifest.xml
 meta-data#org.godotengine.library.version
-ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:12:9-14:42
+ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:12:9-14:44
 	android:value
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:14:13-39
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:14:13-41
 	android:name
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:13:13-59
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:13:13-59
 service#org.godotengine.godot.GodotDownloaderService
-ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:9-80
+ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:9-80
 	android:name
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:18-77
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:18-77
 activity#org.godotengine.godot.utils.ProcessPhoenix
-ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:9-22:75
+ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:9-22:75
 	android:process
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:21:13-39
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:21:13-39
 	android:exported
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:20:13-37
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:20:13-37
 	android:theme
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:22:13-72
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:22:13-72
 	android:name
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:19:13-70
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:19:13-70
 provider#androidx.core.content.FileProvider
-ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:24:9-32:20
+ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:24:9-32:20
 	android:grantUriPermissions
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:28:13-47
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:28:13-47
 	android:authorities
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:26:13-64
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:26:13-64
 	android:exported
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:27:13-37
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:25:13-62
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:25:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:29:13-31:64
+ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:29:13-31:64
 	android:resource
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:31:17-61
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:31:17-61
 	android:name
-		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\00ece23557fe90b2a62c72ad5075cab8\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:30:17-67
+		ADDED from [godot-lib.template_debug.aar] C:\Users\chens\.gradle\caches\transforms-3\f879531aaefcce2296be48a9103cdb19\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:30:17-67
 uses-permission#android.permission.READ_MEDIA_IMAGES
 ADDED from [GodotGetImage-debug.aar] C:\Users\chens\.gradle\caches\transforms-3\8d91927d1cce960c0e8ab5285974945b\transformed\jetified-GodotGetImage-debug\AndroidManifest.xml:8:5-76
 	android:name

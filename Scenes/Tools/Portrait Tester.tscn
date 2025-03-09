@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddu7s0e6ql2mk"]
+
+[ext_resource type="Texture2D" uid="uid://cgm55tt3we6p7" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0035_warrior_elve_man_01.png" id="1_03j5a"]
+[ext_resource type="Texture2D" uid="uid://chqsw3a7g3im7" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0003_wizard_human_woman_01.png" id="1_lw56o"]
+[ext_resource type="Script" uid="uid://l87osi2sefbc" path="res://Scripts/PortraitEditorTool.cs" id="2_03j5a"]
+[ext_resource type="Resource" uid="uid://bh30tb1rj6iqn" path="res://Resources/Characters/Portraits/ddant/ddant_portrait_036_male_elf_warrior.tres" id="3_s3hsq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vwqdy"]
+
+[node name="PortraitTester" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.315, 2.315)
+
+[node name="Background" type="TextureRect" parent="."]
+clip_children = 2
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = SubResource("CanvasTexture_vwqdy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("previewBox", "previewSprite")]
+position = Vector2(15.9827, 146.868)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("1_03j5a")
+script = ExtResource("2_03j5a")
+portrait = ExtResource("3_s3hsq")
+previewBox = NodePath("../Background3/Background2")
+previewSprite = NodePath("../Background3/Background2/Sprite2D2")
+
+[node name="Background3" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_left = -258.17
+offset_top = -85.935
+offset_right = -128.17
+offset_bottom = 44.065
+scale = Vector2(1.385, 1.385)
+texture = SubResource("CanvasTexture_vwqdy")
+metadata/_edit_lock_ = true
+
+[node name="Background2" type="TextureRect" parent="Background3"]
+clip_children = 2
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 105.0
+offset_bottom = 105.0
+texture = SubResource("CanvasTexture_vwqdy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background3/Background2"]
+position = Vector2(79.1793, 236.242)
+scale = Vector2(0.822, 0.822)
+texture = ExtResource("1_03j5a")
+
+[node name="Reference Sprite" type="Sprite2D" parent="Background3/Background2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.482353)
+position = Vector2(67, 312.66)
+scale = Vector2(0.588, 0.588)
+texture = ExtResource("1_lw56o")

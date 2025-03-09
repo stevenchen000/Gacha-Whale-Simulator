@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bucspuw6nymcd"]
 
-[ext_resource type="Script" uid="uid://c5lpmutqbgb5l" path="res://Scripts/Combat System/Grid/GridSpace.cs" id="1_fh1l7"]
-[ext_resource type="Script" uid="uid://duc7g8yt6wcxc" path="res://Scripts/Combat System/Grid/States/GridStateDefault.cs" id="3_o2aie"]
-[ext_resource type="Script" uid="uid://daq8ixfim4qrn" path="res://Scripts/Combat System/Grid/States/GridStateAllyTargetable.cs" id="4_o2aie"]
-[ext_resource type="Script" uid="uid://cx0si78a0r7jq" path="res://Scripts/Combat System/Grid/States/GridStateAllyWalkable.cs" id="4_sugmo"]
-[ext_resource type="Script" path="res://Scripts/Combat System/Grid/States/GridStateAllyTargeting.cs" id="5_sugmo"]
+[ext_resource type="Script" uid="uid://c5lpmutqbgb5l" path="res://Scripts/Combat Scripts/Combat System/Grid/GridSpace.cs" id="1_fh1l7"]
+[ext_resource type="Script" uid="uid://duc7g8yt6wcxc" path="res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateDefault.cs" id="3_o2aie"]
+[ext_resource type="Script" uid="uid://daq8ixfim4qrn" path="res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateAllyTargetable.cs" id="4_o2aie"]
+[ext_resource type="Script" uid="uid://cx0si78a0r7jq" path="res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateAllyWalkable.cs" id="4_sugmo"]
+[ext_resource type="Script" uid="uid://buv231go0nywg" path="res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateAllyTargeting.cs" id="5_sugmo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c2g2s"]
 

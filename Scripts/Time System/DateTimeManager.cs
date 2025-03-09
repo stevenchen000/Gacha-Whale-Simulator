@@ -17,10 +17,10 @@ public partial class DateTimeManager : Node
 
     public override void _Process(double delta)
     {
-        if (!IsTimePaused())
+        /*if (!IsTimePaused())
         {
             Tick(delta);
-        }
+        }*/
     }
 
     public void SkipTime(int hours, int minutes)

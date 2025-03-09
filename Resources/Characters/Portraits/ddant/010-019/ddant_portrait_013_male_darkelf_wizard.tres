@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dbyecab7r6wsy"]
+
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="1_7ex7m"]
+[ext_resource type="Texture2D" uid="uid://cmsvywdybh8jn" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0012_wizard_darkelve_man_01.png" id="2_7ex7m"]
+
+[resource]
+script = ExtResource("1_7ex7m")
+portrait = ExtResource("2_7ex7m")
+Position = Vector2(-34, 240)
+Scale = 0.54
+startArea = Vector2(0, 0)
+size = 0.0
+metadata/_custom_type_script = ExtResource("1_7ex7m")

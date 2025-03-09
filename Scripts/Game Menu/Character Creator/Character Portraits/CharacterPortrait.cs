@@ -4,9 +4,12 @@ using Godot.Collections;
 using System.IO;
 
 [GlobalClass]
+[Tool]
 public partial class CharacterPortrait : Resource
 {
     [Export] private Texture2D portrait;
+    [Export] public Vector2 Position { get; private set; }
+    [Export] public float Scale { get; private set; } = 1;
     [Export] public Vector2 startArea;
     [Export] public float size = 0;
 
@@ -25,12 +28,25 @@ public partial class CharacterPortrait : Resource
         return portrait;
     }
 
+    public void SetupPortraitSimple(Control box, Sprite2D spriteElement, float borderSize = 0)
+    {
+        spriteElement.Texture = GetPortrait();
+        var boxSize = box.Size.X - borderSize*2;
+        var boxCenterOffset = box.Size / 2;
+        int baseSize = 100;
+        var boxScale = boxSize / baseSize;
+
+        var scale = Scale * boxScale;
+        spriteElement.Scale = new Vector2(scale, scale);
+        spriteElement.Position = Position * boxScale + boxCenterOffset;
+    }
+
+    public void SetPosition(Vector2 newPos) { Position = newPos; }
+    public void SetScale(Vector2 scale) { Scale = scale.X; }
 
 
 
 
-
-    
 
 
     public void SetupPortrait(Control box, Sprite2D spriteElement, float borderSize = 0)

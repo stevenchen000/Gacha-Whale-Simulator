@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 using EventSystem;
 using CombatSystem;
@@ -9,7 +10,7 @@ public partial class CustomGameCharacter : GameCharacter
 
 	public override CharacterPortrait GetPortrait()
     {
-        var result = FileManager.GetCustomPortrait(portraitFilename);
+        var result = CustomCharacterManager.GetCustomPortrait(portraitFilename);
         return result;
     }
     public void SetPortrait(CharacterPortrait portrait)
@@ -28,15 +29,10 @@ public partial class CustomGameCharacter : GameCharacter
     {
         Class = newClass;
     }
-    public void SetRole(CharacterRole newRole)
+
+    /*
+    public override Array<CharacterSkill> GetCharacterSkills()
     {
-        Role = newRole;
-    }
-
-    public override CharacterSkill GetBasicAttack() { return null; }
-    public override CharacterSkill GetSkill1() { return null; }
-    public override CharacterSkill GetSkill2() { return null; }
-    public override CharacterSkill GetUltimateSkill() { return null; }
-
-
+        return 
+    }*/
 }

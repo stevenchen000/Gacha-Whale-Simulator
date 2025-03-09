@@ -15,7 +15,7 @@ namespace CharacterCreator
 
         protected override void RunState(double delta)
         {
-            if (cropper.Enabled)
+            /*if (cropper.Enabled)
             {
                 Utils.Print(this, cropper.cropStart);
                 if (cropper.cropStart == Vector2.Zero)
@@ -26,7 +26,7 @@ namespace CharacterCreator
                 {
                     ChangeState(adjustCropState);
                 }
-            }
+            }*/
         }
 
         protected override void OnStateDeactivated()

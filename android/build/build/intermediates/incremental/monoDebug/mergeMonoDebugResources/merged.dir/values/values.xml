@@ -37,6 +37,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="snackbar_bottom_margin">10dp</dimen>
     <dimen name="splashscreen_icon_mask_size_no_background">410dp</dimen>
     <dimen name="splashscreen_icon_mask_size_with_background">342dp</dimen>
     <dimen name="splashscreen_icon_mask_stroke_no_background">109dp</dimen>
@@ -161,7 +162,7 @@
     </style>
     <style name="GodotAppMainTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">
 		<item name="android:windowDrawsSystemBarBackgrounds">false</item>
-		<item name="android:windowSwipeToDismiss">true</item>
+		<item name="android:windowSwipeToDismiss">false</item>
 	</style>
     <style name="GodotAppSplashTheme" parent="Theme.SplashScreen">
 		

@@ -18,7 +18,7 @@ namespace CharacterCreator
         private List<CustomCharacterPortrait> _portraitList;
         private List<CustomCharacterPortrait> _unusedPortraitList;
 
-        private Godot.Collections.Dictionary<string, CustomGameCharacter> _characterPortraitPaths;
+        private Dictionary<string, CustomGameCharacter> _characterPortraitPaths;
 
         //filtered lists to use
         public List<CustomGameCharacter> characters;
@@ -67,14 +67,14 @@ namespace CharacterCreator
             InitPortraits();
             SetupCharactersList();
             SetupPortraitsList();
-            //OnPortraitAdded.RaiseEvent(this);
+            
             OnPortraitAdded.SubscribeEvent(Reload);
             currMenu?._Init(this);
         }
 
         private void InitPortraits()
         {
-            var tempPortraits = FileManager.GetAllPortraits();
+            var tempPortraits = CustomCharacterManager.GetAllPortraits();
             _portraitList = new List<CustomCharacterPortrait>();
             _portraitList.AddRange(tempPortraits);
             _portraitList = _portraitList.OrderByDescending(x => x.portraitFile).ToList();
@@ -92,11 +92,11 @@ namespace CharacterCreator
 
         private void InitCharacters()
         {
-            var tempCharacters = FileManager.GetAllCharacters();
+            var tempCharacters = CustomCharacterManager.GetAllCharacters();
             _characterList = new List<CustomGameCharacter>();
             _characterList.AddRange(tempCharacters);
             _characterList = _characterList.OrderByDescending(x => x.portraitFilename).ToList();
-            _characterPortraitPaths = new Godot.Collections.Dictionary<string, CustomGameCharacter>();
+            _characterPortraitPaths = new Dictionary<string, CustomGameCharacter>();
 
             foreach(var character in _characterList)
             {

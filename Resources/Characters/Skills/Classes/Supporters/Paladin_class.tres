@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterClass" load_steps=5 format=3 uid="uid://56yh8m4ae0l3"]
+
+[ext_resource type="Resource" uid="uid://cta0py0mhsput" path="res://Resources/Characters/Skills/Roles/supporter_role.tres" id="1_5ge5r"]
+[ext_resource type="Texture2D" uid="uid://catng7u5euwid" path="res://Art Assets/Character Assets/Weapon Icons/Greatsword.png" id="2_bm8ol"]
+[ext_resource type="Resource" uid="uid://courgprqqpgvs" path="res://Resources/Characters/Skills/Weapon Types/Sword.tres" id="3_g4nfn"]
+[ext_resource type="Script" uid="uid://bre1q1qqd03qd" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs" id="4_cpc6p"]
+
+[resource]
+script = ExtResource("4_cpc6p")
+Name = "Knight"
+Texture = ExtResource("2_bm8ol")
+Role = ExtResource("1_5ge5r")
+Weapon = ExtResource("3_g4nfn")
+Description = ""

@@ -1,0 +1,200 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7ad5ckcqdyce"]
+
+[ext_resource type="Script" uid="uid://cslfykb5mpgg7" path="res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/UpgradeMenu.cs" id="1_du8bk"]
+[ext_resource type="Script" uid="uid://d15cnaj0wadml" path="res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/CharacterSelector.cs" id="2_yroo8"]
+[ext_resource type="PackedScene" uid="uid://jdrlgyxwcp8p" path="res://Scenes/Overworld/Upgrade Menu/character_button.tscn" id="3_o7mtf"]
+[ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="4_k0yah"]
+[ext_resource type="Texture2D" uid="uid://bdaxnd8j5nnfc" path="res://Art Assets/Shapes/Arrow (13).png" id="5_j5wmu"]
+[ext_resource type="Texture2D" uid="uid://oqd5m70mqf1h" path="res://Art Assets/Shapes/Arrow (7).png" id="6_74o5l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_74o5l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k5gb6"]
+font_size = 50
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 0.517647)
+
+[node name="UpgradeMenu" type="Control" node_paths=PackedStringArray("grid")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_du8bk")
+grid = NodePath("Grid/GridContainer")
+
+[node name="OverworldMenu" parent="." instance=ExtResource("4_k0yah")]
+layout_mode = 1
+currentMenuIndex = 2
+
+[node name="Grid" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.235294)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -516.0
+offset_top = -1471.0
+offset_right = 518.0
+offset_bottom = -449.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_74o5l")
+
+[node name="GridContainer" type="GridContainer" parent="Grid"]
+self_modulate = Color(0.29219, 0.29219, 0.29219, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -486.5
+offset_top = -482.5
+offset_right = 486.5
+offset_bottom = 482.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 4
+script = ExtResource("2_yroo8")
+buttonScene = ExtResource("3_o7mtf")
+buttonsPerPage = 16
+
+[node name="Portrait Button" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button2" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button3" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button4" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button5" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button6" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button7" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button8" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button9" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button10" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button11" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button12" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button13" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button14" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button15" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Portrait Button16" parent="Grid/GridContainer" instance=ExtResource("3_o7mtf")]
+layout_mode = 2
+
+[node name="Right Arrow" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 913.0
+offset_top = 1524.0
+offset_right = 1053.0
+offset_bottom = 1644.0
+
+[node name="TextureRect" type="TextureRect" parent="Right Arrow"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_j5wmu")
+
+[node name="Button" type="Button" parent="Right Arrow"]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 123.0
+flat = true
+
+[node name="Left Arrow" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 57.0
+offset_top = 1524.0
+offset_right = 197.0
+offset_bottom = 1644.0
+
+[node name="TextureRect" type="TextureRect" parent="Left Arrow"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_j5wmu")
+flip_h = true
+
+[node name="Button" type="Button" parent="Left Arrow"]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 123.0
+flat = true
+
+[node name="Filter Selection" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 764.0
+offset_top = 318.0
+offset_right = 1040.0
+offset_bottom = 469.0
+
+[node name="TextureRect" type="TextureRect" parent="Filter Selection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_74o5l")
+flip_h = true
+
+[node name="Label" type="Label" parent="Filter Selection"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -34.5
+offset_right = -18.0
+offset_bottom = 34.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_k5gb6")
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="Filter Selection"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 37.0
+offset_right = 270.0
+offset_bottom = 114.0
+flat = true
+
+[connection signal="button_up" from="Right Arrow/Button" to="Grid/GridContainer" method="IncrementPage"]
+[connection signal="button_up" from="Left Arrow/Button" to="Grid/GridContainer" method="DecrementPage"]

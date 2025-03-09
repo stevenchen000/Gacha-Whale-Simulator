@@ -1,0 +1,177 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhjsm6nthivlg"]
+
+[ext_resource type="Script" uid="uid://drjml5yaa035y" path="res://Scripts/Overworld Scripts/Overworld Menu/OverworldMenu.cs" id="1_nckim"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_ynnhp"]
+[ext_resource type="Script" uid="uid://mpi6pj4tka4x" path="res://Scripts/Overworld Scripts/Overworld Menu/MainMenuButton.cs" id="3_m082k"]
+[ext_resource type="PackedScene" uid="uid://dxowrkolcpeib" path="res://Scenes/Room/Rank UI.tscn" id="4_m082k"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dd45c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i5ara"]
+line_spacing = -10.0
+font_size = 30
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.470588)
+shadow_offset = Vector2(3, 3)
+
+[node name="OverworldMenu" type="Control" node_paths=PackedStringArray("buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nckim")
+buttons = [NodePath("Menu Bar/HBoxContainer/Home Button"), NodePath("Menu Bar/HBoxContainer/Party Button"), NodePath("Menu Bar/HBoxContainer/Upgrade Button"), NodePath("Menu Bar/HBoxContainer/Exit"), NodePath("Menu Bar/HBoxContainer/Gacha Button"), NodePath("Menu Bar/HBoxContainer/Stages Button")]
+
+[node name="RankUi" parent="." instance=ExtResource("4_m082k")]
+
+[node name="Menu Bar" type="TextureRect" parent="."]
+self_modulate = Color(0.111197, 0.111197, 0.111197, 0.278431)
+z_index = 1000
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -594.48
+offset_top = -234.395
+offset_right = 570.52
+offset_bottom = 25.605
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_dd45c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu Bar"]
+layout_mode = 0
+offset_left = 64.535
+offset_top = 15.0
+offset_right = 1144.54
+offset_bottom = 215.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Home Button" type="Button" parent="Menu Bar/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+icon = ExtResource("1_ynnhp")
+flat = true
+expand_icon = true
+script = ExtResource("3_m082k")
+
+[node name="Label" type="Label" parent="Menu Bar/HBoxContainer/Home Button"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Home"
+label_settings = SubResource("LabelSettings_i5ara")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Party Button" type="Button" parent="Menu Bar/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+icon = ExtResource("1_ynnhp")
+flat = true
+expand_icon = true
+script = ExtResource("3_m082k")
+
+[node name="Label2" type="Label" parent="Menu Bar/HBoxContainer/Party Button"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Party"
+label_settings = SubResource("LabelSettings_i5ara")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Upgrade Button" type="Button" parent="Menu Bar/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+icon = ExtResource("1_ynnhp")
+flat = true
+expand_icon = true
+script = ExtResource("3_m082k")
+
+[node name="Label3" type="Label" parent="Menu Bar/HBoxContainer/Upgrade Button"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Heroes"
+label_settings = SubResource("LabelSettings_i5ara")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Exit" type="Button" parent="Menu Bar/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+icon = ExtResource("1_ynnhp")
+flat = true
+expand_icon = true
+script = ExtResource("3_m082k")
+
+[node name="Label3" type="Label" parent="Menu Bar/HBoxContainer/Exit"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Exit"
+label_settings = SubResource("LabelSettings_i5ara")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Gacha Button" type="Button" parent="Menu Bar/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+icon = ExtResource("1_ynnhp")
+flat = true
+expand_icon = true
+script = ExtResource("3_m082k")
+
+[node name="Label4" type="Label" parent="Menu Bar/HBoxContainer/Gacha Button"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Gacha"
+label_settings = SubResource("LabelSettings_i5ara")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Stages Button" type="Button" parent="Menu Bar/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+icon = ExtResource("1_ynnhp")
+flat = true
+expand_icon = true
+script = ExtResource("3_m082k")
+
+[node name="Label5" type="Label" parent="Menu Bar/HBoxContainer/Stages Button"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Quests"
+label_settings = SubResource("LabelSettings_i5ara")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="button_up" from="Menu Bar/HBoxContainer/Home Button" to="." method="LoadHomeMenu"]
+[connection signal="button_up" from="Menu Bar/HBoxContainer/Party Button" to="." method="LoadPartyMenu"]
+[connection signal="button_up" from="Menu Bar/HBoxContainer/Upgrade Button" to="." method="LoadUpgradeMenu"]
+[connection signal="button_up" from="Menu Bar/HBoxContainer/Exit" to="." method="ReturnToRoom"]
+[connection signal="button_up" from="Menu Bar/HBoxContainer/Gacha Button" to="." method="LoadGachaMenu"]
+[connection signal="button_up" from="Menu Bar/HBoxContainer/Stages Button" to="." method="LoadStageSelection"]

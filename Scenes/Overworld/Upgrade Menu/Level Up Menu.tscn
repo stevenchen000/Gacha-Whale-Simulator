@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01uwd7mhywxf"]
+
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_4e8vw"]
+[ext_resource type="Script" uid="uid://byu4t672l22e4" path="res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Level Up Menu/LevelUpMenu.cs" id="1_cgbdj"]
+
+[node name="LevelUpMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cgbdj")
+
+[node name="Back Button" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 165.0
+offset_bottom = 165.0
+icon = ExtResource("1_4e8vw")

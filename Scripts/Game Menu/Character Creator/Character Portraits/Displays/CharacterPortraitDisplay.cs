@@ -20,7 +20,7 @@ public partial class CharacterPortraitDisplay : Control
 	{
 	}
 
-	public void UpdatePortrait(CharacterPortrait portrait)
+	public void UpdatePortrait(CharacterPortrait portrait, float borderSize = 5)
     {
 		if(portrait == null)
         {
@@ -28,14 +28,16 @@ public partial class CharacterPortraitDisplay : Control
         }
         else
         {
-			portrait.SetupPortrait(background, portraitElement, 5);
+
+			portrait.SetupPortraitSimple(background, portraitElement, borderSize);
         }
     }
 
 	public void SetBorder(PortraitBorder border)
     {
 		background.Texture = border.Background;
-		this.border.Texture = border.Border;
+		if(this.border != null)
+			this.border.Texture = border.Border;
 		CenterBorder();
     }
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cen0vf3wpj18o"]
 
-[ext_resource type="Script" uid="uid://c0mged6cixh87" path="res://Scripts/Combat System/BattleCharacter.cs" id="1_qqxuj"]
+[ext_resource type="Script" uid="uid://c0mged6cixh87" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleCharacter.cs" id="1_qqxuj"]
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="2_ow1ui"]
 [ext_resource type="Resource" uid="uid://dc24e2v6r5xpm" path="res://Resources/Characters/Character Stats/ally_stats.tres" id="2_yggvi"]
-[ext_resource type="Script" uid="uid://b7ubcsp7bhiqn" path="res://Scripts/Combat System/UI/Character/CharacterHealth.cs" id="4_laf4n"]
+[ext_resource type="Script" uid="uid://b7ubcsp7bhiqn" path="res://Scripts/Combat Scripts/Combat System/UI/Character/CharacterHealth.cs" id="4_laf4n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3fiu8"]
 font_size = 33
@@ -12,7 +12,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 13
 shadow_color = Color(0, 0, 0, 0.576471)
 
-[node name="Battle Character" type="CharacterBody2D" node_paths=PackedStringArray("portrait")]
+[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait")]
 script = ExtResource("1_qqxuj")
 portrait = NodePath("Character2")
 savedStats = ExtResource("2_yggvi")
