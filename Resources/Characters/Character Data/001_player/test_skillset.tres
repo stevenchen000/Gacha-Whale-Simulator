@@ -9,4 +9,4 @@
 [resource]
 script = ExtResource("5_l1613")
 SkillList = Array[Object]([ExtResource("1_4pfcv"), ExtResource("2_fk3bs"), ExtResource("3_ibhcu"), ExtResource("4_nnhjo")])
-metadata/_custom_type_script = ExtResource("5_l1613")
+metadata/_custom_type_script = "uid://dshcfn65n67r8"

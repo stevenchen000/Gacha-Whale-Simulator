@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BattleStatsTemplate" load_steps=8 format=3 uid="uid://dcn2ws68n8ud6"]
+
+[ext_resource type="Script" uid="uid://dtfekp4aksu4" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/BattleStatsTemplate.cs" id="1_p6thd"]
+[ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="2_wl153"]
+[ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="3_nk2lq"]
+[ext_resource type="Resource" uid="uid://c7lns7qgbbffi" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/defense.tres" id="4_dj670"]
+[ext_resource type="Resource" uid="uid://dbdtx1lisc55v" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/magic_defense.tres" id="5_tyn4q"]
+[ext_resource type="Resource" uid="uid://3greor3qyttx" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/movement.tres" id="6_3axun"]
+[ext_resource type="Resource" uid="uid://bl10614skdi4f" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/speed.tres" id="6_bgf3b"]
+
+[resource]
+script = ExtResource("1_p6thd")
+Stats = Dictionary[Object, int]({
+ExtResource("2_wl153"): 5.0,
+ExtResource("3_nk2lq"): 1.0,
+ExtResource("4_dj670"): 1.0,
+ExtResource("5_tyn4q"): 1.0,
+ExtResource("6_bgf3b"): 1.0,
+ExtResource("6_3axun"): 2.0
+})
+metadata/_custom_type_script = "uid://dtfekp4aksu4"

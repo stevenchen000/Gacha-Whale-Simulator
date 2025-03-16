@@ -48,15 +48,15 @@ namespace CombatSystem
 
         private void DealDamage(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
-            var casterStats = caster.stats;
-            var targetStats = target.stats;
+            var casterStats = caster.Stats;
+            var targetStats = target.Stats;
 
-            int baseDamage = casterStats.attack - targetStats.defense/2;
+            int baseDamage = casterStats.GetStat("Attack") - targetStats.GetStat("Defense")/2;
             int damage = (int)(baseDamage * totalPotency / numberOfHits / 100);
 
             targetStats.TakeDamage(damage);
             data.AddDamage(damage);
-            DamageNumberManager.ShowDamageNumber(target, damage);
+            DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
         }
     }
 }

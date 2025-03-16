@@ -1,3 +1,8 @@
+AddStatEffect
+StatusEffect
+BattleStatsTemplate
+StatType
+SpriteList
 StageStarCondition
 VoidEvent
 ItemResource
@@ -8,8 +13,3 @@ WeaponType
 GachaBanner
 CharacterPortrait
 StageData
-CharacterData
-CharacterSkillEvent
-GameCharacter
-CharacterClass
-CharacterRole

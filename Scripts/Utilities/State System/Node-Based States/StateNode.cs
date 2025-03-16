@@ -5,6 +5,8 @@ namespace StateSystem
 {
     public partial class StateNode : Node2D
     {
+        [Export(PropertyHint.MultilineText)] protected string Description;
+
         public bool active {
             get { return _active; } 
             set {

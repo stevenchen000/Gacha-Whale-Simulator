@@ -4,6 +4,8 @@ namespace CombatSystem
     public enum TargetType
     {
         Ally,
-        Enemy
+        Enemy,
+        Self,
+        Target
     }
 }

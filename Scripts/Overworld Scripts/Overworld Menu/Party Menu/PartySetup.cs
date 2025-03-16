@@ -7,6 +7,7 @@ using Godot.Collections;
 [GlobalClass]
 public partial class PartySetup : Resource
 {
+    [Export] private string name = "";
     [Export] public int PartyID { get; private set; }
     [Export] public Array<CharacterData> Party = new Array<CharacterData>();
 
@@ -66,6 +67,27 @@ public partial class PartySetup : Resource
     {
         Party[index] = data;
         Utils.Print(this, "Remember to check for duplicate party members");
+    }
+
+    public string GetPartyName()
+    {
+        string result = "";
+
+        if(name == "")
+        {
+            result = $"Party {PartyID+1}";
+        }
+        else
+        {
+            result = name;
+        }
+
+        return result;
+    }
+
+    public void SetPartyName(string newName)
+    {
+        name = newName;
     }
 
 

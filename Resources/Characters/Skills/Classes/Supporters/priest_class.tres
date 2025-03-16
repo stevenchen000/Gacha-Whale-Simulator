@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterClass" load_steps=5 format=3 uid="uid://8p7fsjvqx4ye"]
 
-[ext_resource type="Resource" uid="uid://cta0py0mhsput" path="res://Resources/Characters/Skills/Roles/supporter_role.tres" id="1_xb3ix"]
+[ext_resource type="Resource" uid="uid://cta0py0mhsput" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_role.tres" id="1_xb3ix"]
 [ext_resource type="Texture2D" uid="uid://catng7u5euwid" path="res://Art Assets/Character Assets/Weapon Icons/Greatsword.png" id="2_6ltqu"]
 [ext_resource type="Resource" uid="uid://courgprqqpgvs" path="res://Resources/Characters/Skills/Weapon Types/Sword.tres" id="3_od4xc"]
 [ext_resource type="Script" uid="uid://bre1q1qqd03qd" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs" id="4_nccbx"]

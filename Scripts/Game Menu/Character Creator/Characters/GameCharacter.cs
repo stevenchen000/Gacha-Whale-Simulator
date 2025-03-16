@@ -17,6 +17,7 @@ public partial class GameCharacter : Resource
     [Export] public Element Element { get; protected set; }
     [Export] public CharacterClass Class { get; protected set; }
     [Export] public SkillLoadout SkillSet { get; protected set; }
+    [Export] public CombatAI EnemyAI { get; protected set; }
     
     public WeaponType Weapon 
     { 
@@ -41,11 +42,6 @@ public partial class GameCharacter : Resource
         return portrait;
     }
 
-
-    public int GetHealth(int level) { return Role.stats.GetMaxHealth(level); }
-    public int GetAttack(int level) { return Role.stats.GetAttack(level); }
-    public int GetDefense(int level) { return Role.stats.GetDefense(level); }
-    public int GetSpeed(int level) { return Role.stats.GetSpeed(level); }
     public int GetMovement() { return movement; }
 
 

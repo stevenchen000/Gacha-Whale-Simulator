@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AddStatEffect" load_steps=3 format=3 uid="uid://dbgchronv57pa"]
+
+[ext_resource type="Script" uid="uid://bfitd6h4jc87g" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/AddStatEffect.cs" id="1_taaxj"]
+[ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="2_32ll6"]
+
+[resource]
+script = ExtResource("1_taaxj")
+stat = ExtResource("2_32ll6")
+amount = 10.0
+description = "Generic status effect, Raises attack stat by 10% * level of status effect."
+Timing = 0
+Potency = 10.0
+metadata/_custom_type_script = "uid://bfitd6h4jc87g"

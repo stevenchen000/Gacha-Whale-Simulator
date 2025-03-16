@@ -32,4 +32,9 @@ public partial class HomeMenu : GameMenu
     {
         GameState.SaveData();
     }
+
+    public void ReturnToRoom()
+    {
+        game.Value.OpenRoomMenu();
+    }
 }

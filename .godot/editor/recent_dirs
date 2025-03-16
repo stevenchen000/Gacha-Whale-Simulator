@@ -1,10 +1,13 @@
+res://
+res://Resources/Characters/Skills/Status Effects/Custom Effects
+res://Resources/Characters/Skills/Status Effects
+res://Resources/Room/Player Character
 res://Resources/Overworld/Battles/Conditions
 C:/Users/chens/Documents/Sighborg Studios/Gacha-Whale-Simulator/Resources/Room
 res://Resources/Room/Events
 res://Resources/Room/Items
 res://Resources/Room
 res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor
-res://
 res://Scenes/Overworld/Party Menu/UI
 res://Scenes/Overworld/Party Menu
 res://Resources/Characters/Character Data/001_player
@@ -16,7 +19,3 @@ res://Scenes/Overworld/Gacha Menu
 res://Scenes/Overworld
 res://Resources/Overworld/Battles/Rewards
 res://Resources/Items
-res://Resources/Characters/Skills/Weapon Types
-res://Resources/Characters/Portraits
-res://Resources/Characters/Character Data
-res://Resources/Utilities/Events/Combat Events

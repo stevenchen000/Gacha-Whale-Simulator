@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterSkill" load_steps=6 format=3 uid="uid://courgpip1ivkj"]
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=9 format=3 uid="uid://courgpip1ivkj"]
 
 [ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_yok7t"]
 [ext_resource type="Texture2D" uid="uid://cu3mtpkpm3lqv" path="res://Art Assets/Character Assets/Weapon Icons/WandT2.png" id="2_yok7t"]
+[ext_resource type="Script" uid="uid://dlnccrg4bkgdt" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/ApplyStatusEffect.cs" id="4_w2d0x"]
+[ext_resource type="Resource" uid="uid://fs1ffcnwem76" path="res://Resources/Characters/Skills/Status Effects/attack_up.tres" id="5_yok7t"]
 [ext_resource type="Script" uid="uid://bbrl5cbuw6sh8" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealEffect.cs" id="6_yok7t"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="7_s4qso"]
 
@@ -12,6 +14,12 @@ duration = 0.2
 delay = 0.0
 metadata/_custom_type_script = ExtResource("6_yok7t")
 
+[sub_resource type="Resource" id="Resource_fxj5v"]
+script = ExtResource("4_w2d0x")
+status = ExtResource("5_yok7t")
+delay = 0.0
+metadata/_custom_type_script = "uid://dlnccrg4bkgdt"
+
 [resource]
 script = ExtResource("7_s4qso")
 Icon = ExtResource("2_yok7t")
@@ -19,7 +27,7 @@ SkillName = "Heal"
 duration = 2.0
 InfiniteUses = false
 Uses = 3
-effects = Array[Object]([SubResource("Resource_wknqb")])
+effects = Array[Object]([SubResource("Resource_wknqb"), SubResource("Resource_fxj5v")])
 potency = 100
 AttackArea = ExtResource("1_yok7t")
 direction = 1

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpriteList" load_steps=2 format=3 uid="uid://qox2bq77x55u"]
+
+[ext_resource type="Script" uid="uid://cfxguy24uk0g3" path="res://Scripts/Room Scripts/Player Character/SpriteList.cs" id="1_hd45b"]
+
+[resource]
+script = ExtResource("1_hd45b")
+Textures = Array[Texture2D]([])
+metadata/_custom_type_script = "uid://cfxguy24uk0g3"

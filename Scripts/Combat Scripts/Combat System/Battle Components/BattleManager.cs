@@ -124,7 +124,11 @@ namespace CombatSystem
             TurnConfirmed = false;
         }
 
-
+        public void SkipTurn()
+        {
+            TurnConfirmed = true;
+            SelectedSkill = null;
+        }
 
 
         public bool IsInSameParty(BattleCharacter character, BattleCharacter target)
@@ -173,7 +177,7 @@ namespace CombatSystem
 
             if (SelectedSkill != null)
             {
-                targetableSpaces = SelectedSkill.GetAllTargetSpaces(this, grid, caster);
+                targetableSpaces = SelectedSkill.GetAllTargetSpaces(this, grid, caster, caster.currPosition);
                 grid.ShowAllTargetableAreas(targetableSpaces);
             }
         }
@@ -274,11 +278,6 @@ namespace CombatSystem
             turnData.SetTargets(null);
         }
 
-        public void SkipTurn()
-        {
-            TurnConfirmed = true;
-            SelectedSkill = null;
-        }
 
         #endregion
 

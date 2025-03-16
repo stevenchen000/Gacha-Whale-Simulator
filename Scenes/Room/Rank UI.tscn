@@ -67,56 +67,54 @@ shadow_offset = Vector2(3, 3)
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Rank Bar" type="Control" parent="."]
-layout_mode = 3
+[node name="Portrait" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 967.0
-offset_bottom = 236.0
+offset_top = 6.0
+offset_right = 40.0
+offset_bottom = 46.0
 
-[node name="Portrait Background" type="TextureRect" parent="Rank Bar"]
+[node name="Portrait Background" type="TextureRect" parent="Portrait"]
 self_modulate = Color(0.451193, 0.625771, 1, 1)
 clip_children = 2
 layout_mode = 0
-offset_top = 6.0
 offset_right = 200.0
-offset_bottom = 206.0
+offset_bottom = 200.0
 texture = ExtResource("1_s0tg0")
 
-[node name="Mc" type="Sprite2D" parent="Rank Bar/Portrait Background"]
+[node name="Mc" type="Sprite2D" parent="Portrait/Portrait Background"]
 position = Vector2(103, 150)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("2_goatx")
 
-[node name="Portrait Border" type="TextureRect" parent="Rank Bar"]
+[node name="Portrait Border" type="TextureRect" parent="Portrait"]
 self_modulate = Color(0.22, 0.441, 1, 1)
 layout_mode = 0
-offset_top = 6.0
 offset_right = 200.0
-offset_bottom = 206.0
+offset_bottom = 200.0
 texture = ExtResource("3_w55ot")
 
-[node name="Stamina Bar" type="HBoxContainer" parent="Rank Bar"]
+[node name="Stamina Bar" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 210.0
-offset_top = 25.0
+offset_top = 42.0
 offset_right = 632.0
-offset_bottom = 124.0
+offset_bottom = 141.0
 theme_override_constants/separation = 10
 
-[node name="Rank" type="Control" parent="Rank Bar/Stamina Bar" node_paths=PackedStringArray("rankText")]
+[node name="Rank" type="Control" parent="Stamina Bar" node_paths=PackedStringArray("rankText")]
 custom_minimum_size = Vector2(102, 86.48)
 layout_mode = 2
 script = ExtResource("2_cr0w3")
 rankText = NodePath("Rank Value")
 
-[node name="Background" type="TextureRect" parent="Rank Bar/Stamina Bar/Rank"]
+[node name="Background" type="TextureRect" parent="Stamina Bar/Rank"]
 self_modulate = Color(0, 0, 0, 0.282353)
 layout_mode = 0
 offset_right = 102.0
 offset_bottom = 98.0
 texture = SubResource("CanvasTexture_w55ot")
 
-[node name="Rank Text" type="Label" parent="Rank Bar/Stamina Bar/Rank"]
+[node name="Rank Text" type="Label" parent="Stamina Bar/Rank"]
 layout_mode = 2
 offset_left = -12.0
 offset_right = 112.0
@@ -125,7 +123,7 @@ text = "Rank"
 label_settings = SubResource("LabelSettings_w55ot")
 horizontal_alignment = 1
 
-[node name="Rank Value" type="Label" parent="Rank Bar/Stamina Bar/Rank"]
+[node name="Rank Value" type="Label" parent="Stamina Bar/Rank"]
 layout_mode = 2
 offset_left = 7.0
 offset_top = 25.0
@@ -135,20 +133,20 @@ text = "69"
 label_settings = SubResource("LabelSettings_c75cs")
 horizontal_alignment = 1
 
-[node name="Stamina" type="Control" parent="Rank Bar/Stamina Bar" node_paths=PackedStringArray("staminaText")]
+[node name="Stamina" type="Control" parent="Stamina Bar" node_paths=PackedStringArray("staminaText")]
 custom_minimum_size = Vector2(310.42, 0)
 layout_mode = 2
 script = ExtResource("3_8hw4h")
 staminaText = NodePath("Stamina Count")
 
-[node name="TextureRect" type="TextureRect" parent="Rank Bar/Stamina Bar/Stamina"]
+[node name="TextureRect" type="TextureRect" parent="Stamina Bar/Stamina"]
 self_modulate = Color(0, 0, 0, 0.258824)
 layout_mode = 0
 offset_right = 311.0
 offset_bottom = 79.0
 texture = SubResource("CanvasTexture_tp208")
 
-[node name="Heart2" type="TextureRect" parent="Rank Bar/Stamina Bar/Stamina"]
+[node name="Heart2" type="TextureRect" parent="Stamina Bar/Stamina"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 offset_left = 4.0
@@ -159,7 +157,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_tp208")
 expand_mode = 2
 
-[node name="Heart" type="TextureRect" parent="Rank Bar/Stamina Bar/Stamina"]
+[node name="Heart" type="TextureRect" parent="Stamina Bar/Stamina"]
 self_modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 offset_left = -8.0
@@ -171,7 +169,7 @@ texture = ExtResource("2_tp208")
 expand_mode = 2
 stretch_mode = 3
 
-[node name="Stamina Count" type="Label" parent="Rank Bar/Stamina Bar/Stamina"]
+[node name="Stamina Count" type="Label" parent="Stamina Bar/Stamina"]
 layout_mode = 2
 offset_left = 101.0
 offset_top = 4.0
@@ -181,26 +179,26 @@ text = "999/999"
 label_settings = SubResource("LabelSettings_c75cs")
 horizontal_alignment = 2
 
-[node name="Currency Bar" type="HBoxContainer" parent="Rank Bar"]
+[node name="Currency Bar" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 136.0
-offset_right = 803.0
-offset_bottom = 184.0
+offset_left = 212.0
+offset_top = 154.0
+offset_right = 802.0
+offset_bottom = 202.0
 theme_override_constants/separation = 10
 
-[node name="Coins" type="Control" parent="Rank Bar/Currency Bar"]
+[node name="Coins" type="Control" parent="Currency Bar"]
 custom_minimum_size = Vector2(176.76, 48)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Rank Bar/Currency Bar/Coins"]
+[node name="TextureRect" type="TextureRect" parent="Currency Bar/Coins"]
 self_modulate = Color(0, 0, 0, 0.243137)
 layout_mode = 0
 offset_right = 176.0
 offset_bottom = 48.0
 texture = SubResource("CanvasTexture_c75cs")
 
-[node name="Coin Outline2" type="TextureRect" parent="Rank Bar/Currency Bar/Coins"]
+[node name="Coin Outline2" type="TextureRect" parent="Currency Bar/Coins"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_left = 7.0
@@ -210,7 +208,7 @@ offset_bottom = 44.0
 texture = ExtResource("1_s0tg0")
 expand_mode = 1
 
-[node name="Coin" type="TextureRect" parent="Rank Bar/Currency Bar/Coins"]
+[node name="Coin" type="TextureRect" parent="Currency Bar/Coins"]
 self_modulate = Color(1, 0.8, 0, 1)
 layout_mode = 2
 offset_left = 8.0
@@ -220,7 +218,7 @@ offset_bottom = 42.0
 texture = ExtResource("1_s0tg0")
 expand_mode = 1
 
-[node name="Coin Count" type="Label" parent="Rank Bar/Currency Bar/Coins"]
+[node name="Coin Count" type="Label" parent="Currency Bar/Coins"]
 layout_mode = 2
 offset_left = 36.0
 offset_top = 3.0
@@ -231,20 +229,20 @@ text = "1,999,999"
 label_settings = SubResource("LabelSettings_c75cs")
 horizontal_alignment = 2
 
-[node name="Gem" type="Control" parent="Rank Bar/Currency Bar" node_paths=PackedStringArray("gemText")]
+[node name="Gem" type="Control" parent="Currency Bar" node_paths=PackedStringArray("gemText")]
 custom_minimum_size = Vector2(197, 48)
 layout_mode = 2
 script = ExtResource("7_ve70h")
 gemText = NodePath("Gem Count")
 
-[node name="TextureRect" type="TextureRect" parent="Rank Bar/Currency Bar/Gem"]
+[node name="TextureRect" type="TextureRect" parent="Currency Bar/Gem"]
 self_modulate = Color(0, 0, 0, 0.243137)
 layout_mode = 0
 offset_right = 197.0
 offset_bottom = 48.0
 texture = SubResource("CanvasTexture_c75cs")
 
-[node name="Gem Icon2" type="TextureRect" parent="Rank Bar/Currency Bar/Gem"]
+[node name="Gem Icon2" type="TextureRect" parent="Currency Bar/Gem"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_left = -13.0
@@ -254,7 +252,7 @@ offset_bottom = 70.0
 texture = ExtResource("3_tp208")
 stretch_mode = 5
 
-[node name="Gem Icon" type="TextureRect" parent="Rank Bar/Currency Bar/Gem"]
+[node name="Gem Icon" type="TextureRect" parent="Currency Bar/Gem"]
 layout_mode = 2
 offset_left = -6.0
 offset_top = -15.0
@@ -263,7 +261,7 @@ offset_bottom = 62.0
 texture = ExtResource("3_tp208")
 stretch_mode = 5
 
-[node name="Gem Count" type="Label" parent="Rank Bar/Currency Bar/Gem"]
+[node name="Gem Count" type="Label" parent="Currency Bar/Gem"]
 layout_mode = 2
 offset_left = 52.0
 offset_top = 2.99998
@@ -274,18 +272,18 @@ text = "1,999,999"
 label_settings = SubResource("LabelSettings_c75cs")
 horizontal_alignment = 2
 
-[node name="Money" type="Control" parent="Rank Bar/Currency Bar"]
+[node name="Money" type="Control" parent="Currency Bar"]
 custom_minimum_size = Vector2(197, 48)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Rank Bar/Currency Bar/Money"]
+[node name="TextureRect" type="TextureRect" parent="Currency Bar/Money"]
 self_modulate = Color(0, 0, 0, 0.243137)
 layout_mode = 0
 offset_right = 197.0
 offset_bottom = 48.0
 texture = SubResource("CanvasTexture_c75cs")
 
-[node name="Dollar Sign" type="Label" parent="Rank Bar/Currency Bar/Money"]
+[node name="Dollar Sign" type="Label" parent="Currency Bar/Money"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = -6.0
@@ -294,7 +292,7 @@ offset_bottom = 49.0
 text = "$"
 label_settings = SubResource("LabelSettings_e5l84")
 
-[node name="Gem Count" type="Label" parent="Rank Bar/Currency Bar/Money"]
+[node name="Gem Count" type="Label" parent="Currency Bar/Money"]
 layout_mode = 2
 offset_left = 52.0
 offset_top = 2.99998
@@ -304,6 +302,33 @@ scale = Vector2(0.57, 0.57)
 text = "1,999,999"
 label_settings = SubResource("LabelSettings_c75cs")
 horizontal_alignment = 2
+
+[node name="Name" type="Control" parent="."]
+custom_minimum_size = Vector2(197, 48)
+layout_mode = 2
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 201.0
+offset_right = 202.0
+offset_bottom = 249.0
+
+[node name="TextureRect" type="TextureRect" parent="Name"]
+self_modulate = Color(0, 0, 0, 0.243137)
+layout_mode = 0
+offset_right = 197.0
+offset_bottom = 48.0
+texture = SubResource("CanvasTexture_c75cs")
+
+[node name="Gem Count" type="Label" parent="Name"]
+layout_mode = 2
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 305.0
+offset_bottom = 72.0
+scale = Vector2(0.57, 0.57)
+text = "Sighborg"
+label_settings = SubResource("LabelSettings_c75cs")
+horizontal_alignment = 1
 
 [node name="Stamina Update Event" type="Node2D" parent="."]
 script = ExtResource("7_c75cs")
@@ -421,7 +446,7 @@ horizontal_alignment = 2
 script = ExtResource("7_c75cs")
 voidEvent = ExtResource("13_2pbe6")
 
-[connection signal="MyVoid" from="Stamina Update Event" to="Rank Bar/Stamina Bar/Stamina" method="UpdateText"]
-[connection signal="MyInt" from="Rank Update Event" to="Rank Bar/Stamina Bar/Rank" method="UpdateText"]
-[connection signal="MyVoid" from="GemCount Event" to="Rank Bar/Currency Bar/Gem" method="UpdateText"]
+[connection signal="MyVoid" from="Stamina Update Event" to="Stamina Bar/Stamina" method="UpdateText"]
+[connection signal="MyInt" from="Rank Update Event" to="Stamina Bar/Rank" method="UpdateText"]
+[connection signal="MyVoid" from="GemCount Event" to="Currency Bar/Gem" method="UpdateText"]
 [connection signal="MyVoid" from="TimeChange Event" to="Calendar UI" method="UpdateUI"]

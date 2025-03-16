@@ -17,10 +17,13 @@ namespace CombatSystem
         {
             foreach (var character in characters)
             {
-                var newChar = Utils.InstantiateCopy<BattleCharacter>(battleCharacterScene);
-                newChar.InitCharacter(character, this);
-                state.AddChild(newChar);
-                AddMember(newChar);
+                if (character != null)
+                {
+                    var newChar = Utils.InstantiateCopy<BattleCharacter>(battleCharacterScene);
+                    newChar.InitCharacter(character, this);
+                    state.AddChild(newChar);
+                    AddMember(newChar);
+                }
             }
             
         }

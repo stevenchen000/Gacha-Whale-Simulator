@@ -1,0 +1,157 @@
+[gd_scene load_steps=15 format=3 uid="uid://cen0vf3wpj18o"]
+
+[ext_resource type="Script" uid="uid://c0mged6cixh87" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacter.cs" id="1_6ti8j"]
+[ext_resource type="Resource" uid="uid://dc24e2v6r5xpm" path="res://Resources/Characters/Character Stats/ally_stats.tres" id="2_ki7hi"]
+[ext_resource type="Script" uid="uid://0jvj0y6dgjl5" path="res://Scripts/Utilities/FollowerNode.cs" id="3_vemd7"]
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="4_4wrv8"]
+[ext_resource type="Script" uid="uid://dm47nsarqwuf3" path="res://Scripts/Combat Scripts/Combat System/Stat System/UI/SlidingStatUI.cs" id="5_ki7hi"]
+[ext_resource type="Script" uid="uid://cbm4d4jqdx3c8" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleStatsManager.cs" id="6_jkeof"]
+[ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="6_vemd7"]
+[ext_resource type="Resource" uid="uid://8mo1lvp4wgpf" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/amp.tres" id="7_vemd7"]
+[ext_resource type="Script" uid="uid://cpeb44kqun725" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/EffectManager.cs" id="7_x5cup"]
+[ext_resource type="Script" uid="uid://dx7b8vxcm02oo" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/CharacterStatusList.cs" id="8_mvo7g"]
+[ext_resource type="PackedScene" uid="uid://byxvuvp4q14tr" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/status_icon.tscn" id="9_jkeof"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki7hi"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vemd7"]
+bg_color = Color(0, 1, 0.05, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fiu8"]
+font_size = 33
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 13
+shadow_color = Color(0, 0, 0, 0.576471)
+
+[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait", "characterPos", "Stats", "Status")]
+script = ExtResource("1_6ti8j")
+portrait = NodePath("Follower Node/Character2")
+characterPos = NodePath("Position")
+savedStats = ExtResource("2_ki7hi")
+Stats = NodePath("Stats Container")
+Status = NodePath("Effect Manager")
+
+[node name="Position" type="Node2D" parent="."]
+
+[node name="Follower Node" type="Node2D" parent="." node_paths=PackedStringArray("nodeToFollow")]
+script = ExtResource("3_vemd7")
+nodeToFollow = NodePath("../Position")
+
+[node name="Character2" parent="Follower Node" instance=ExtResource("4_4wrv8")]
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 36.0
+offset_bottom = 36.0
+scale = Vector2(1.4, 1.4)
+
+[node name="HP Bar" type="Control" parent="Follower Node" node_paths=PackedStringArray("bar", "statLabel", "statContainer")]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 86.0
+offset_right = 40.0
+offset_bottom = 126.0
+script = ExtResource("5_ki7hi")
+bar = NodePath("ProgressBar")
+stat = ExtResource("6_vemd7")
+statLabel = NodePath("Health")
+statContainer = NodePath("../../Stats Container")
+
+[node name="ProgressBar" type="ProgressBar" parent="Follower Node/HP Bar"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -9.0
+offset_right = 87.0
+offset_bottom = 11.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ki7hi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vemd7")
+value = 44.56
+show_percentage = false
+
+[node name="Health" type="Label" parent="Follower Node/HP Bar"]
+layout_mode = 0
+offset_left = -130.0
+offset_top = -25.0
+offset_right = 130.0
+offset_bottom = 21.0
+text = "100/100"
+label_settings = SubResource("LabelSettings_3fiu8")
+horizontal_alignment = 1
+
+[node name="Amp" type="Control" parent="Follower Node" node_paths=PackedStringArray("statLabel", "statContainer")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -19.0
+offset_top = -96.0
+offset_right = 21.0
+offset_bottom = -56.0
+script = ExtResource("5_ki7hi")
+showMaxStat = false
+stat = ExtResource("7_vemd7")
+statLabel = NodePath("Label")
+statContainer = NodePath("../../Stats Container")
+
+[node name="Label" type="Label" parent="Follower Node/Amp"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -43.0
+offset_right = 19.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+text = "1000"
+label_settings = SubResource("LabelSettings_3fiu8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status List" type="Control" parent="Follower Node" node_paths=PackedStringArray("characterEffects", "statusList")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_mvo7g")
+characterEffects = NodePath("../../Effect Manager")
+statusList = NodePath("Status List")
+
+[node name="Status List" type="VBoxContainer" parent="Follower Node/Status List"]
+layout_mode = 2
+offset_left = 91.0
+offset_top = -110.0
+offset_right = 126.0
+offset_bottom = 125.0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Status" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+layout_mode = 2
+
+[node name="Status2" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+layout_mode = 2
+
+[node name="Status3" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+layout_mode = 2
+
+[node name="Status4" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+layout_mode = 2
+
+[node name="Status5" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+layout_mode = 2
+
+[node name="Status6" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+layout_mode = 2
+
+[node name="Stats Container" type="Node2D" parent="."]
+script = ExtResource("6_jkeof")
+
+[node name="Effect Manager" type="Node2D" parent="."]
+script = ExtResource("7_x5cup")
+
+[connection signal="StatChanged" from="Stats Container" to="Follower Node/HP Bar" method="UpdateDisplay"]
+[connection signal="OnStatusChanged" from="Effect Manager" to="Follower Node/Status List" method="UpdateUI"]

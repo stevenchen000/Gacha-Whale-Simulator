@@ -49,8 +49,8 @@ namespace CombatSystem
                 if (!knocked)
                 {
                     int damage = data.totalDamageDealt * i / 10;
-                    target.stats.TakeDamage(damage);
-                    DamageNumberManager.ShowDamageNumber(target, damage);
+                    target.Stats.TakeDamage(damage);
+                    DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
                     break;
                 }
             }

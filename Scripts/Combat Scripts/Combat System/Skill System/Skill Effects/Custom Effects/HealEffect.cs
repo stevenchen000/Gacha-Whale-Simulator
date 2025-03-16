@@ -38,12 +38,12 @@ namespace CombatSystem
 
         private void HealTargets(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
-            int casterAttack = caster.stats.attack;
+            int casterAttack = caster.Stats.GetStat("Attack");
 
             int totalHealing = (int)(casterAttack * potency / 100);
-            target.stats.HealHealth(totalHealing);
+            target.Stats.HealHealth(totalHealing);
             data.AddHealing(totalHealing);
-            DamageNumberManager.ShowDamageNumber(target, totalHealing);
+            DamageNumberManager.ShowDamageNumber(target, totalHealing, DamageType.Healing);
             Utils.Print(this, "Healed Health: " + totalHealing);
         }
     }

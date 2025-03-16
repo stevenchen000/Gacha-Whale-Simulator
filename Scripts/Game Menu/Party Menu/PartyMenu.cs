@@ -18,8 +18,30 @@ public partial class PartyMenu : GameMenu
     {
         base._Init();
 
-        CurrentParty = GameState.GetParty(0);
-        Utils.Print(this, CurrentParty);
+        partyIndex = GetSavedPartyIndex();
+        CurrentParty = GameState.GetParty(partyIndex);
+    }
+
+    public override void _Notification(int what)
+    {
+        if(what == NotificationPredelete)
+        {
+            SavePartyIndex();
+            GameState.SetCurrentParty(CurrentParty);
+        }
+    }
+
+
+    private string partyIndexFlag = "current_party_index";
+
+    private void SavePartyIndex()
+    {
+        GameState.SetFlag(partyIndexFlag, partyIndex);
+    }
+
+    private int GetSavedPartyIndex()
+    {
+        return GameState.GetFlagAmount(partyIndexFlag);
     }
 
 

@@ -33,9 +33,9 @@ namespace CombatSystem
 
         private void UpdateHealth()
         {
-            var stats = character.stats;
-            int maxHealth = stats.maxHealth;
-            int currHealth = stats.currentHealth;
+            var stats = character.Stats;
+            int maxHealth = stats.GetStat("Health");
+            int currHealth = stats.GetSlidingStat("Health");
             Text = $"{currHealth} / {maxHealth}";
         }
     }

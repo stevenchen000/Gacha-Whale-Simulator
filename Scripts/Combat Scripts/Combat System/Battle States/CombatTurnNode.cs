@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using Godot;
 using StateSystem;
 
@@ -9,11 +10,15 @@ namespace CombatSystem
         private BattleCharacter character;
         private BattleGrid grid;
         [Export] private CombatStateNode animationNode;
+        [Export] private CombatStateNode turnFinishedNode;
         [Export] private CombatStateNode checkVictoryNode;
         private Vector2I prevCoords;
         private Vector2I currCoords;
 
+        private TimeHandler timer;
         private bool turnFinished = false;
+
+        private CombatActionData enemyAction;
 
         protected override void OnStateActivated()
         {
@@ -22,25 +27,47 @@ namespace CombatSystem
             battle.StartTurn();
             grid = battle.GetGrid();
             character = battle.GetCurrentCharacter();
-            var walkableSpaces = character.WalkableSpaces;
 
-            foreach (var space in walkableSpaces)
+            if (IsEnemyControlled(character))
             {
-                Utils.Print(this, space);
+                timer = new TimeHandler();
+                enemyAction = character.AI.CalculateAction(battle);
             }
         }
 
         protected override void RunState(double delta)
         {
-            /*bool turnFinished = character.ControlCharacter(delta, battle, grid);
-            prevCoords = currCoords;
-            currCoords = grid.GetNearestWalkableSpace(character);
-            grid.SetSpaceState(prevCoords, GridState.ALLY_MOVEABLE);
-            grid.SetSpaceState(currCoords, GridState.ALLY_STANDING);
-            if (turnFinished)
+            if (IsEnemyControlled(character))
             {
-                SetupAction();
-            }*/
+                if (enemyAction != null)
+                {
+                    timer.Tick(delta);
+                    if (timer.TimeIsBetween(0.5))
+                    {
+                        var coords = enemyAction.CoordsToGo;
+                        battle.OccupySpace(coords, character);
+                    }
+                    else if (timer.TimeIsBetween(1))
+                    {
+                        var skill = enemyAction.Skill;
+
+                        battle.SetSelectedSkill(skill);
+                    }
+                    else if (timer.TimeIsBetween(1.5))
+                    {
+                        var direction = enemyAction.Direction;
+                        battle.SelectDirection(direction);
+                    }else if (timer.TimeIsBetween(1.75))
+                    {
+                        battle.ConfirmAction();
+                    }
+                }
+                else
+                {
+                    Utils.Print(this, "Failed to get action");
+                    battle.SkipTurn();
+                }
+            }
         }
 
         protected override StateNode CheckStateChange()
@@ -53,8 +80,7 @@ namespace CombatSystem
                     result = animationNode;
                 else
                 {
-                    battle.EndTurn();
-                    result = this;
+                    result = turnFinishedNode;
                 }
             }
 
@@ -77,6 +103,11 @@ namespace CombatSystem
             var skill = battle.SelectedSkill;
             var targets = character.targets;
             battle.SelectAction(character, targets, skill);
+        }
+
+        private bool IsEnemyControlled(BattleCharacter character)
+        {
+            return character.Party != battle.State.PlayerParty;
         }
     }
 }

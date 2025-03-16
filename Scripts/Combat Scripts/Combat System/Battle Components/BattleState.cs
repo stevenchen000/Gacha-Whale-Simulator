@@ -108,7 +108,6 @@ namespace CombatSystem
                 }
 
                 var character = members[i];
-                Utils.Print(this, space.Coords);
                 character.SetPosition(space);
                 space.OccupySpace(character);
             }

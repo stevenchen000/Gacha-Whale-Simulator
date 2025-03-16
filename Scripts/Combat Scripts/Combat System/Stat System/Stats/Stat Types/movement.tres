@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatType" load_steps=2 format=3 uid="uid://3greor3qyttx"]
+
+[ext_resource type="Script" uid="uid://idb8klbubwjy" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/StatType.cs" id="1_wi37u"]
+
+[resource]
+script = ExtResource("1_wi37u")
+StatName = "Movement"
+BaseAmount = 0
+IsSlidingStat = false
+description = ""
+metadata/_custom_type_script = "uid://idb8klbubwjy"

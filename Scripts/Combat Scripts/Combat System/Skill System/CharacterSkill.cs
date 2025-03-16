@@ -64,7 +64,8 @@ namespace CombatSystem {
 
         public Dictionary<CharacterDirection, Array<GridSpace>> GetAllTargetSpaces(BattleManager battle,
                                                                                    BattleGrid grid, 
-                                                                                   BattleCharacter caster)
+                                                                                   BattleCharacter caster,
+                                                                                   Vector2I position)
         {
             var result = new Dictionary<CharacterDirection, Array<GridSpace>>();
 
@@ -76,18 +77,18 @@ namespace CombatSystem {
             switch (direction)
             {
                 case SkillDirection.VERTICAL:
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, up);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, down);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, up);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, down);
                     break;
                 case SkillDirection.HORIZONTAL:
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, left);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, right);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, left);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, right);
                     break;
                 case SkillDirection.ALL:
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, up);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, down);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, left);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, right);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, up);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, down);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, left);
+                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, right);
                     break;
             }
 
@@ -96,7 +97,7 @@ namespace CombatSystem {
 
         public bool HasTargetInRange(BattleManager battle, BattleGrid grid, BattleCharacter caster)
         {
-            var targetsDict = GetAllTargetSpaces(battle, grid, caster);
+            var targetsDict = GetAllTargetSpaces(battle, grid, caster, caster.currPosition);
             return targetsDict.Count > 0;
         }
 
@@ -104,9 +105,10 @@ namespace CombatSystem {
                                                    BattleManager battle, 
                                                    BattleGrid grid, 
                                                    BattleCharacter caster, 
+                                                   Vector2I position,
                                                    CharacterDirection direction)
         {
-            var results = GetSpacesInDirection(grid, caster, direction);
+            var results = GetSpacesInDirection(grid, caster, position, direction);
             if (HasTargetsInList(battle, caster, results))
                 spaces[direction] = results;
         }
@@ -131,13 +133,14 @@ namespace CombatSystem {
 
         private Array<GridSpace> GetSpacesInDirection(BattleGrid grid, 
                                                     BattleCharacter caster, 
+                                                    Vector2I position,
                                                     CharacterDirection direction)
         {
             Array<GridSpace> result = new Array<GridSpace>();
-            var attackPositions = AttackArea.GetPositionsInRange(caster.currPosition, direction);
-            foreach (var position in attackPositions)
+            var attackPositions = AttackArea.GetPositionsInRange(position, direction);
+            foreach (var currPosition in attackPositions)
             {
-                var space = grid.GetSpaceFromCoords(position);
+                var space = grid.GetSpaceFromCoords(currPosition);
                 if(space != null)
                 {
                     result.Add(space);

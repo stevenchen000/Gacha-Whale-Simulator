@@ -19,6 +19,8 @@ namespace CombatSystem {
 
 		public Array<Vector2I> CurrentWalkableSpaces { get; private set; }
 
+		private Dictionary<BattleCharacter, GridSpace> occupiedSpaces;
+
 
 
 		// Called when the node enters the scene tree for the first time.
@@ -191,7 +193,7 @@ namespace CombatSystem {
 		public Array<Vector2I> GetAllWalkableAreas(BattleCharacter character)
         {
 			var position = character.turnStartPosition;//GetNearestSpaceToCharacter(character);
-			int movement = character.stats.movement;
+			int movement = character.Stats.GetStat("Movement");
 			var walkableSpaces = GetWalkableSpacesIgnoringObstacles(position, movement);
 
 			//if character has Pass effect, skip the enemyspaces check

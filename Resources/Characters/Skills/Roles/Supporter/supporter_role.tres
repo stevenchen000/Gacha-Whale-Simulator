@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterRole" load_steps=7 format=3 uid="uid://cta0py0mhsput"]
+
+[ext_resource type="Texture2D" uid="uid://dot04mqxqng7h" path="res://Art Assets/Character Assets/Role Icons/StaffIcon.png" id="1_8vndi"]
+[ext_resource type="Script" uid="uid://bt65k28bw5if6" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs" id="2_iridv"]
+[ext_resource type="Resource" uid="uid://dy6yltky208af" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_base_stats.tres" id="3_5xjlq"]
+[ext_resource type="Script" uid="uid://bnm4j23bkjybk" path="res://Scripts/Combat Scripts/Combat System/Stat System/RoleStatGrowth.cs" id="3_25emp"]
+[ext_resource type="Resource" uid="uid://duse8andhtccx" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_growth_stats.tres" id="4_su0lj"]
+
+[sub_resource type="Resource" id="Resource_e4gyq"]
+script = ExtResource("3_25emp")
+_baseStats = ExtResource("3_5xjlq")
+_statsPerLevel = ExtResource("4_su0lj")
+metadata/_custom_type_script = ExtResource("3_25emp")
+
+[resource]
+script = ExtResource("2_iridv")
+Name = "Supporter"
+Texture = ExtResource("1_8vndi")
+Description = "Supporters help the party by increasing damage dealt or keeping healing damage received."
+stats = SubResource("Resource_e4gyq")

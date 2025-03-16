@@ -25,7 +25,7 @@ namespace CombatSystem
         }
 
 
-        public static void ShowDamageNumber(BattleCharacter target, int damage, bool isCrit = false)
+        public static void ShowDamageNumber(BattleCharacter target, int damage, DamageType damageType)
         {
             var offset = instance.offset;
             int randX = GameState.GetRandomNumber(0, (int)instance.randomness);
@@ -34,7 +34,7 @@ namespace CombatSystem
 
             var damageText = CreateCopy(damage);
             target.AddChild(damageText);
-            damageText.Position = offset;
+            damageText.GlobalPosition = target.GetPosition() + offset;
         }
 
         private static DamageNumber CreateCopy(int damage)

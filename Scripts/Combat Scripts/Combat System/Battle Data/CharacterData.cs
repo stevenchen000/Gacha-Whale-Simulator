@@ -39,6 +39,7 @@ namespace CombatSystem
 
 
 
+
         public CharacterData()
         {
 
@@ -66,11 +67,6 @@ namespace CombatSystem
 
         public CharacterPortrait GetPortrait() { return Character.GetPortrait(); }
 
-
-        public int GetHealth() { return Character.GetHealth(Level); }
-        public int GetAttack() { return Character.GetAttack(Level); }
-        public int GetDefense() { return Character.GetDefense(Level); }
-        public int GetSpeed() { return Character.GetSpeed(Level); }
 
         public Array<CharacterSkill> GetSkills() { return Character.GetSkills(); }
 

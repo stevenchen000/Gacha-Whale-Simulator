@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\USERS\\CHENS\\DOCUMENTS\\SIGHBORG STUDIOS\\GACHA-WHALE-SIMULATOR\\Gacha Whale Simulator.csproj": {}
+    "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj": {}
   },
   "projects": {
-    "C:\\USERS\\CHENS\\DOCUMENTS\\SIGHBORG STUDIOS\\GACHA-WHALE-SIMULATOR\\Gacha Whale Simulator.csproj": {
+    "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\USERS\\CHENS\\DOCUMENTS\\SIGHBORG STUDIOS\\GACHA-WHALE-SIMULATOR\\Gacha Whale Simulator.csproj",
+        "projectUniqueName": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
         "projectName": "Gacha Whale Simulator",
-        "projectPath": "C:\\USERS\\CHENS\\DOCUMENTS\\SIGHBORG STUDIOS\\GACHA-WHALE-SIMULATOR\\Gacha Whale Simulator.csproj",
+        "projectPath": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
         "packagesPath": "C:\\Users\\chens\\.nuget\\packages\\",
-        "outputPath": "C:\\USERS\\CHENS\\DOCUMENTS\\SIGHBORG STUDIOS\\GACHA-WHALE-SIMULATOR\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

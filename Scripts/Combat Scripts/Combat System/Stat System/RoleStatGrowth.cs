@@ -1,42 +1,27 @@
 ﻿using System;
 using Godot;
+using Godot.Collections;
 
 namespace CombatSystem
 {
     [GlobalClass]
     public partial class RoleStatGrowth : Resource
     {
-        [Export] public int BaseMaxHealth { get; private set; }
-        [Export] public float HealthPerLevel { get; private set; }
-        
-        [Export] public int BaseAttack { get; private set; }
-        [Export] public float AttackPerLevel { get; private set; }
-        
-        [Export] public int BaseDefense { get; private set; }
-        [Export] public float DefensePerLevel { get; private set; }
-        
-        [Export] public int BaseSpeed { get; private set; }
-        [Export] public float SpeedPerLevel { get; private set; }
+        //Stats at level 1
+        [Export] private BattleStatsTemplate _baseStats;
+        [Export] private BattleStatsTemplate _statsPerLevel;
 
-        
-        public int GetMaxHealth(int level)
+        public int GetStatAmount(StatType stat, int level)
         {
-            return (int)(BaseMaxHealth + (level-1) * HealthPerLevel);
+            float baseStat = _baseStats.GetStat(stat);
+            float extraStats = _statsPerLevel.GetStat(stat) * level;
+
+            return (int)(baseStat + extraStats);
         }
 
-        public int GetAttack(int level)
+        public Array<StatType> GetStatNames()
         {
-            return (int)(BaseAttack + (level - 1) * AttackPerLevel);
-        }
-
-        public int GetDefense(int level)
-        {
-            return (int)(BaseDefense + (level - 1) * DefensePerLevel);
-        }
-
-        public int GetSpeed(int level)
-        {
-            return (int)(BaseSpeed + (level - 1) * SpeedPerLevel);
+            return _baseStats.GetStatNames();
         }
     }
 }

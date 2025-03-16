@@ -13,8 +13,8 @@ namespace CombatSystem
         public TurnOrderManager(BattleParty playerParty, BattleParty enemyParty)
         {
             fighters = new Array<BattleCharacter>();
-            fighters.AddRange(playerParty.GetAllLivingMembers());
             fighters.AddRange(enemyParty.GetAllLivingMembers());
+            fighters.AddRange(playerParty.GetAllLivingMembers());
             InitTurnOrder();
         }
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cnv51k2q841gq" path="res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumber.cs" id="1_534ll"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bt5yu"]
-font_size = 40
+font_size = 50
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 
@@ -14,11 +14,18 @@ script = ExtResource("1_534ll")
 textLabel = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = -34.0
-offset_top = -23.0
-offset_right = 35.0
-offset_bottom = 19.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -27.5
+offset_right = 86.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "9999"
 label_settings = SubResource("LabelSettings_bt5yu")
 horizontal_alignment = 1

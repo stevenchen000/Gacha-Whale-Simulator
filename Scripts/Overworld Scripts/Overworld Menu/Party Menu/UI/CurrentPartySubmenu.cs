@@ -8,6 +8,7 @@ namespace PartyMenuSystem
     public partial class CurrentPartySubmenu : Control
     {
         private SimpleWeakRef<PartyMenu> menu;
+        [Export] private Label partyName;
         [Export] private Control partyButtonContainer;
         private Array<PartyCharacterDisplay> characterDisplays;
 
@@ -23,9 +24,10 @@ namespace PartyMenuSystem
         {
             var tempMenu = Utils.FindParentOfType<PartyMenu>(this);
             menu = new SimpleWeakRef<PartyMenu>(tempMenu);
+            var party = menu.Value.CurrentParty;
 
             FindDisplays();
-            SetupDisplays();
+            SetupPartyDisplay();
         }
 
 
@@ -39,7 +41,7 @@ namespace PartyMenuSystem
         {
             Visible = true;
             Position = new Vector2(0, 0);
-            SetupDisplays();
+            SetupPartyDisplay();
         }
 
 
@@ -68,9 +70,14 @@ namespace PartyMenuSystem
             }
         }
 
-        private void SetupDisplays()
+        private void SetupPartyName(PartySetup party)
         {
-            var party = GetCurrentParty();
+            string name = party.GetPartyName();
+            partyName.Text = name;
+        }
+
+        private void SetupDisplays(PartySetup party)
+        {
             var partyMembers = party.Party;
 
             for (int i = 0; i < characterDisplays.Count; i++)
@@ -80,6 +87,29 @@ namespace PartyMenuSystem
 
                 display.SetupDisplay(member);
             }
+        }
+
+        private void SetupPartyDisplay()
+        {
+            var party = menu.Value.CurrentParty;
+            SetupPartyName(party);
+            SetupDisplays(party);
+        }
+
+        /*******************
+         * Flip Pages
+         * *****************/
+
+        public void SwitchNextParty()
+        {
+            var party = menu.Value.SetNextParty();
+            SetupPartyDisplay();
+        }
+
+        public void SwitchPreviousParty()
+        {
+            var party = menu.Value.SetPreviousParty();
+            SetupPartyDisplay();
         }
     }
 }

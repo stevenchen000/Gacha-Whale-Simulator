@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatType" load_steps=2 format=3 uid="uid://8mo1lvp4wgpf"]
+
+[ext_resource type="Script" uid="uid://idb8klbubwjy" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/StatType.cs" id="1_vyi4y"]
+
+[resource]
+script = ExtResource("1_vyi4y")
+StatName = "Amp"
+BaseAmount = 1000
+IsSlidingStat = true
+description = ""
+metadata/_custom_type_script = "uid://idb8klbubwjy"

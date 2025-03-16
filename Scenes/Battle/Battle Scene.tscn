@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://8ssh07hfd56t"]
+[gd_scene load_steps=28 format=3 uid="uid://8ssh07hfd56t"]
 
 [ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs" id="1_w405p"]
 [ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
@@ -7,19 +7,20 @@
 [ext_resource type="AudioStream" uid="uid://gc1tyohd5sie" path="res://Resources/Characters/Characters/Audio Assets/BGM/Will_you_still_cry.mp3" id="3_bjbhn"]
 [ext_resource type="Script" uid="uid://bikiac63fc22y" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnNode.cs" id="3_iplpb"]
 [ext_resource type="PackedScene" uid="uid://c6vuwdkfl52jl" path="res://Scenes/Battle/Backgrounds/OceanView.tscn" id="3_wwl16"]
-[ext_resource type="Script" uid="uid://bfoxjp8ndtsr" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs" id="4_yci0l"]
 [ext_resource type="Script" uid="uid://ciphn1edo3jcp" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatAnimationNode.cs" id="5_5ipmr"]
 [ext_resource type="Script" uid="uid://dupk5663cjtod" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleState.cs" id="5_h7u6w"]
 [ext_resource type="Script" uid="uid://c7drwxdavjnfx" path="res://Scripts/Combat Scripts/Combat System/Battle Components/TurnDataManager.cs" id="5_yhfgv"]
 [ext_resource type="Script" uid="uid://np2dkxg5chus" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatDamageNode.cs" id="6_0grf5"]
 [ext_resource type="Script" uid="uid://dxchwut777wmn" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatCheckVictoryStatus.cs" id="9_iv2px"]
+[ext_resource type="Script" uid="uid://ux07mwiyagrt" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatPreTurnStartNode.cs" id="9_x6kc0"]
 [ext_resource type="Script" uid="uid://bfphb573syt7a" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatVictoryNode.cs" id="10_xtcro"]
 [ext_resource type="Script" uid="uid://bw5n5245v8p8k" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatLossNode.cs" id="11_dfb8x"]
 [ext_resource type="Script" uid="uid://dtbuhyihehpy7" path="res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumberManager.cs" id="12_fl4d0"]
 [ext_resource type="Script" uid="uid://bbmewgskhadp2" path="res://Scripts/Combat Scripts/Combat System/UI/SkillSelection.cs" id="12_iplpb"]
 [ext_resource type="PackedScene" uid="uid://spaepna0v12s" path="res://Scenes/Battle/Damage Number.tscn" id="13_otywn"]
+[ext_resource type="Script" uid="uid://gi2l8bqamr4a" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnFinishedNode.cs" id="13_x6kc0"]
 [ext_resource type="Script" uid="uid://b07dlb8fe31iv" path="res://Scripts/Combat Scripts/Combat System/UI/SkipTurnButton.cs" id="15_0grf5"]
-[ext_resource type="PackedScene" uid="uid://cen0vf3wpj18o" path="res://Scenes/Battle/battle_character_2.tscn" id="15_iplpb"]
+[ext_resource type="PackedScene" uid="uid://cen0vf3wpj18o" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/battle_character_2.tscn" id="15_iplpb"]
 [ext_resource type="PackedScene" uid="uid://chievkas7hxxp" path="res://Scenes/Battle/Skill Selection/skill_button.tscn" id="15_pxkmk"]
 [ext_resource type="Script" uid="uid://bcik8tdi0x2ki" path="res://Scripts/Combat Scripts/Combat System/UI/DirectionButtonUI.cs" id="16_fl4d0"]
 [ext_resource type="PackedScene" uid="uid://c2njhbj4uiopi" path="res://Scenes/Battle/Battle Space/skill_direction_button.tscn" id="16_u0d3x"]
@@ -80,31 +81,43 @@ battleCharacterScene = ExtResource("15_iplpb")
 
 [node name="Activating State" type="Node2D" parent="States/====Start of Combat====" node_paths=PackedStringArray("turnNode")]
 script = ExtResource("2_e03jm")
-turnNode = NodePath("../../====Combat====/Turn State")
+turnNode = NodePath("../../====Combat====/Pre-Turn State")
 IsInitialState = true
 
 [node name="====Combat====" type="Node2D" parent="States"]
 
-[node name="Turn State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode")]
+[node name="Pre-Turn State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnStart")]
+script = ExtResource("9_x6kc0")
+turnStart = NodePath("../Turn State")
+Description = "Start of turn
+Runs all OnTurnStart effects"
+
+[node name="Turn State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode", "turnFinishedNode")]
 script = ExtResource("3_iplpb")
 animationNode = NodePath("../Combat Animation State")
-
-[node name="Turn Transition State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode")]
-visible = false
-script = ExtResource("4_yci0l")
-animationNode = NodePath("../Combat Animation State")
+turnFinishedNode = NodePath("../Turn Finished")
+Description = "Awaits character's actions"
 
 [node name="Combat Animation State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("damageCalculationNode")]
 script = ExtResource("5_5ipmr")
 damageCalculationNode = NodePath("../Damage State")
+Description = "Runs animation for skill"
 
 [node name="Damage State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheckNode")]
 script = ExtResource("6_0grf5")
-victoryCheckNode = NodePath("../Victory Check")
+victoryCheckNode = NodePath("../Turn Finished")
+Description = "Damage applied after animation"
+
+[node name="Knockback State" type="Node2D" parent="States/====Combat===="]
+
+[node name="Turn Finished" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnPreStartNode")]
+script = ExtResource("13_x6kc0")
+turnPreStartNode = NodePath("../Victory Check")
+Description = "Run turn end effects and countdown status effects"
 
 [node name="Victory Check" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnNode", "victoryNode", "lossNode")]
 script = ExtResource("9_iv2px")
-turnNode = NodePath("../Turn State")
+turnNode = NodePath("../Pre-Turn State")
 victoryNode = NodePath("../../====End of Combat====/Victory State")
 lossNode = NodePath("../../====End of Combat====/Loss State")
 
@@ -117,6 +130,7 @@ script = ExtResource("10_xtcro")
 script = ExtResource("11_dfb8x")
 
 [node name="Turn Data Manager" type="Node2D" parent="."]
+visible = false
 script = ExtResource("5_yhfgv")
 
 [node name="====Skills====" type="CanvasLayer" parent="." node_paths=PackedStringArray("skillButtons", "confirmButton", "cancelButton", "skipButton")]

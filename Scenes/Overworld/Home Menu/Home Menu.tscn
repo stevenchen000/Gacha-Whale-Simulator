@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnowmh5245e2g"]
+[gd_scene load_steps=11 format=3 uid="uid://dnowmh5245e2g"]
 
 [ext_resource type="Script" uid="uid://bmn18skr435xy" path="res://Scripts/Overworld Scripts/Overworld Menu/Home Menu/HomeMenu.cs" id="1_3tb56"]
 [ext_resource type="PackedScene" uid="uid://bxkk5567kit0w" path="res://Scenes/Overworld/Backgrounds/BannerBackground.tscn" id="2_5pf24"]
 [ext_resource type="Texture2D" uid="uid://luqf3yhtaw7p" path="res://Art Assets/Character Assets/ddant Characters/ddant__0036_warrior_dwarf_man_02.png" id="2_n5usi"]
 [ext_resource type="AudioStream" uid="uid://x8ucd0cuuhrh" path="res://Resources/Characters/Characters/Audio Assets/BGM/Action 1.mp3" id="2_sp7lu"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="3_n5usi"]
+[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="6_roi4q"]
 
 [sub_resource type="Animation" id="Animation_5pf24"]
 resource_name = "Idle"
@@ -43,6 +44,15 @@ _data = {
 &"Idle": SubResource("Animation_5pf24"),
 &"RESET": SubResource("Animation_sp7lu")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_womjl"]
+line_spacing = -10.0
+font_size = 30
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.470588)
+shadow_offset = Vector2(3, 3)
 
 [node name="HomeMenu" type="Control" node_paths=PackedStringArray("homescreenSprite")]
 layout_mode = 3
@@ -103,4 +113,27 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Save"
 
+[node name="Exit" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 200)
+offset_left = 917.0
+offset_top = 243.0
+offset_right = 1067.0
+offset_bottom = 443.0
+icon = ExtResource("6_roi4q")
+flat = true
+expand_icon = true
+
+[node name="Label3" type="Label" parent="Exit"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Return to
+room"
+label_settings = SubResource("LabelSettings_womjl")
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [connection signal="button_up" from="Debug Save Button/Button" to="." method="DebugSave"]
+[connection signal="button_up" from="Exit" to="." method="ReturnToRoom"]

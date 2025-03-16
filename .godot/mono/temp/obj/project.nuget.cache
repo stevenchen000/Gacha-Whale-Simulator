@@ -1,12 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "L44fSaGC+qw=",
+  "dgSpecHash": "73nBMOC5gl0=",
   "success": true,
-  "projectFilePath": "C:\\USERS\\CHENS\\DOCUMENTS\\SIGHBORG STUDIOS\\GACHA-WHALE-SIMULATOR\\Gacha Whale Simulator.csproj",
+  "projectFilePath": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Gacha Whale Simulator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chens\\.nuget\\packages\\godot.sourcegenerators\\4.4.0\\godot.sourcegenerators.4.4.0.nupkg.sha512",
     "C:\\Users\\chens\\.nuget\\packages\\godotsharp\\4.4.0\\godotsharp.4.4.0.nupkg.sha512",
     "C:\\Users\\chens\\.nuget\\packages\\godotsharpeditor\\4.4.0\\godotsharpeditor.4.4.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }
