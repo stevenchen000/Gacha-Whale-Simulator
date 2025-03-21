@@ -67,11 +67,8 @@ public partial class GameStringFlags : Node
         {
             var file = FileAccess.Open(filename, FileAccess.ModeFlags.Read);
 
-            Utils.Print(this, "Loading game strings...");
             string json = file.GetPascalString();
-            Utils.Print(this, json);
             flags = (Dictionary<string, string>)Json.ParseString(json);
-            Utils.Print(this, flags);
 
             file.Close();
         }

@@ -6,6 +6,7 @@ namespace CombatSystem {
     public partial class SkillEffect : Resource
     {
         [Export] protected float delay = 0f;
+        [Export(PropertyHint.MultilineText)] protected string description;
 
         public bool RunEffect(TurnData data, TimeHandler timer) {
             bool finished = false;

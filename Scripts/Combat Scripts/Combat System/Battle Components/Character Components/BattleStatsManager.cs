@@ -1,6 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 using System;
+using System.Security.Cryptography;
 
 namespace CombatSystem
 {
@@ -47,6 +48,30 @@ namespace CombatSystem
             {
                 _statNames[stat.StatName] = stat;
             }
+        }
+
+        /***************
+         * Amp Damage
+         * *************/
+
+        public int TakeAmpDamage(int damage, bool canBreak = true)
+        {
+            int ampAmount = GetSlidingStat(StatNames.Amp);
+
+            RemoveSlidingStat(StatNames.Amp, damage);
+            
+            return ampAmount;
+        }
+
+        public void AddAmpAmount(int amount)
+        {
+            AddSlidingStat(StatNames.Amp, amount);
+        }
+
+        public void ConsumeAmp(float percent = 100)
+        {
+            int currAmp = (int) (GetSlidingStat(StatNames.Amp) * percent / 100);
+            RemoveSlidingStat(StatNames.Amp, currAmp);
         }
 
 
@@ -155,6 +180,13 @@ namespace CombatSystem
             RemoveSlidingStat(stat, amount);
         }
 
+        public void SetSlidingStat(StatType type, int value)
+        {
+            var stat = _stats[type];
+            stat.SetSlidingStat(value);
+
+            RaiseEvent();
+        }
 
 
         /*****************
@@ -169,6 +201,28 @@ namespace CombatSystem
         private void RaiseEvent()
         {
             EmitSignal(SignalName.StatChanged);
+        }
+
+        /*****************
+         * Debug
+         * ***************/
+
+        public void PrintStats()
+        {
+            foreach(var statName in _stats.Keys)
+            {
+                int amount = GetStat(statName);
+                int slidingAmount = GetSlidingStat(statName);
+
+                if (statName.IsSlidingStat)
+                {
+                    Utils.Print(this, $"{statName.StatName}: {slidingAmount}/{amount}");
+                }
+                else
+                {
+                    Utils.Print(this, $"{statName.StatName}: {amount}");
+                }
+            }
         }
     }
 }

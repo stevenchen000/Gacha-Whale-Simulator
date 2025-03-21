@@ -68,9 +68,42 @@ namespace CombatSystem
         public CharacterPortrait GetPortrait() { return Character.GetPortrait(); }
 
 
-        public Array<CharacterSkill> GetSkills() { return Character.GetSkills(); }
+        /******************
+         * Skills
+         * ***************/
 
+        public Array<CharacterSkill> GetSkills() 
+        {
+            var skills = new Array<CharacterSkill>();
+            var basicSkills = GetBasicSkills();
+            var charSkills = Character.GetSkills(BaseRarity, Rarity, Stars);
 
+            skills.AddRange(basicSkills);
+            skills.AddRange(charSkills);
+
+            return skills;
+        }
+
+        private Array<CharacterSkill> GetBasicSkills()
+        {
+            var result = new Array<CharacterSkill>();
+            int tier = GetRarityDifference();
+            var role = Character.Role;
+
+            var ampAtk = role.AmpAttackBranch.GetSkillAtTier(tier);
+            var hpAtk = role.HpAttackBranch.GetSkillAtTier(tier);
+
+            result.Add(ampAtk);
+            result.Add(hpAtk);
+            Utils.Print(this, $"{role.Name} - {ampAtk.SkillName} - {hpAtk.SkillName}");
+
+            return result;
+        }
+
+        public int GetRarityDifference()
+        {
+            return (int)Rarity - (int)BaseRarity;
+        }
         /***************
          * Experience Functions
          * **************/

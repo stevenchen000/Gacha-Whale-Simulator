@@ -15,8 +15,14 @@ namespace CombatSystem
 
             if (statLabel != null)
             {
-                if (showMaxStat) statLabel.Text = $"{currStat}/{maxStat}";
-                else statLabel.Text = $"{currStat}";
+                if (showMaxStat)
+                {
+                    statLabel.Text = $"{currStat}/{maxStat}";
+                }
+                else
+                {
+                    statLabel.Text = $"{currStat}";
+                }
             }
 
             if (nameLabel != null)

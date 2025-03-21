@@ -53,4 +53,11 @@ public partial class GameCharacter : Resource
         else
             return null;
     }
+
+    public virtual Array<CharacterSkill> GetSkills(CharacterRarity baseRarity,
+                                                   CharacterRarity currRarity,
+                                                   int stars)
+    {
+        return SkillSet.GetSkillsAtLB(baseRarity, currRarity, stars);
+    }
 }

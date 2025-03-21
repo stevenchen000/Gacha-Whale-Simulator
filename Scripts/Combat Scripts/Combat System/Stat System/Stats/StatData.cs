@@ -100,6 +100,17 @@ namespace CombatSystem
             if(slidingAmount < 0) slidingAmount = 0;
         }
 
+        public void SetSlidingStat(float statAmount)
+        {
+            int maxAmount = GetSliderMaxAmount();
+
+            slidingAmount = Mathf.Clamp(statAmount, 0, maxAmount);
+        }
+
+        public void RemoveAllSlidingStat()
+        {
+            slidingAmount = 0;
+        }
 
     }
 }

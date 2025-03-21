@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://du01f4eike5ym"]
+
+[ext_resource type="Texture2D" uid="uid://cf6po10cyltet" path="res://Art Assets/Character Assets/Element Icons/476_Cloud_Cloudy.png" id="1_3bk8a"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="2_w0bmh"]
+
+[resource]
+script = ExtResource("2_w0bmh")
+Name = "Arcane"
+Texture = ExtResource("1_3bk8a")

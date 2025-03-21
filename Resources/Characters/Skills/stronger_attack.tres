@@ -10,6 +10,7 @@ script = ExtResource("6_mc5aw")
 potency = 200.0
 duration = 0.2
 delay = 0.0
+description = ""
 metadata/_custom_type_script = ExtResource("6_mc5aw")
 
 [resource]
@@ -24,3 +25,5 @@ potency = 100
 AttackArea = ExtResource("1_d7d1m")
 direction = 2
 targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100

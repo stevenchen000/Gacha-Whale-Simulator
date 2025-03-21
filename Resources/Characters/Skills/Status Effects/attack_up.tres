@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StatusEffect" load_steps=5 format=3 uid="uid://fs1ffcnwem76"]
 
 [ext_resource type="Script" uid="uid://cy57fc2ou8dvx" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/BaseEffect.cs" id="1_ike50"]
-[ext_resource type="Resource" uid="uid://dbgchronv57pa" path="res://Resources/Characters/Skills/Status Effects/Custom Effects/atk_up_effect.tres" id="2_0hmrs"]
+[ext_resource type="Resource" uid="uid://dbgchronv57pa" path="res://Resources/Characters/Skills/Status Effects/Generic Buffs/atk_up_effect.tres" id="2_0hmrs"]
 [ext_resource type="Script" uid="uid://clra7ofaokdqn" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/StatusEffect.cs" id="2_ml8ub"]
 [ext_resource type="Texture2D" uid="uid://oqd5m70mqf1h" path="res://Art Assets/Shapes/Arrow (7).png" id="3_7m42j"]
 

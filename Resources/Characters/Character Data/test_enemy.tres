@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_vddks")
 Character = ExtResource("1_bhmx8")
-Level = 5
+Level = 1
 LevelCap = 50
 CurrExp = 0
 Rarity = 1

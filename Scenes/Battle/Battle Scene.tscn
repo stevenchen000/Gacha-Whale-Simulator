@@ -1,19 +1,22 @@
-[gd_scene load_steps=28 format=3 uid="uid://8ssh07hfd56t"]
+[gd_scene load_steps=37 format=3 uid="uid://8ssh07hfd56t"]
 
 [ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs" id="1_w405p"]
 [ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
 [ext_resource type="Script" uid="uid://y6uj5g2l8l0n" path="res://Scripts/Combat Scripts/Combat System/Grid/BattleGrid.cs" id="2_tbgor"]
 [ext_resource type="PackedScene" uid="uid://bucspuw6nymcd" path="res://Scenes/Battle/Battle Space/battle_space_square.tscn" id="3_binbm"]
-[ext_resource type="AudioStream" uid="uid://gc1tyohd5sie" path="res://Resources/Characters/Characters/Audio Assets/BGM/Will_you_still_cry.mp3" id="3_bjbhn"]
+[ext_resource type="AudioStream" uid="uid://gc1tyohd5sie" path="res://Audio Assets/BGM/Will_you_still_cry.mp3" id="3_bjbhn"]
 [ext_resource type="Script" uid="uid://bikiac63fc22y" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnNode.cs" id="3_iplpb"]
 [ext_resource type="PackedScene" uid="uid://c6vuwdkfl52jl" path="res://Scenes/Battle/Backgrounds/OceanView.tscn" id="3_wwl16"]
 [ext_resource type="Script" uid="uid://ciphn1edo3jcp" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatAnimationNode.cs" id="5_5ipmr"]
 [ext_resource type="Script" uid="uid://dupk5663cjtod" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleState.cs" id="5_h7u6w"]
 [ext_resource type="Script" uid="uid://c7drwxdavjnfx" path="res://Scripts/Combat Scripts/Combat System/Battle Components/TurnDataManager.cs" id="5_yhfgv"]
 [ext_resource type="Script" uid="uid://np2dkxg5chus" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatDamageNode.cs" id="6_0grf5"]
+[ext_resource type="Resource" uid="uid://dosm0n42kdrkx" path="res://Resources/UI/Portrait Boxes/player_border.tres" id="8_ijdqy"]
 [ext_resource type="Script" uid="uid://dxchwut777wmn" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatCheckVictoryStatus.cs" id="9_iv2px"]
+[ext_resource type="Resource" uid="uid://stjbq8uovsgj" path="res://Resources/UI/Portrait Boxes/enemy_border.tres" id="9_jv4ad"]
 [ext_resource type="Script" uid="uid://ux07mwiyagrt" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatPreTurnStartNode.cs" id="9_x6kc0"]
 [ext_resource type="Script" uid="uid://bfphb573syt7a" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatVictoryNode.cs" id="10_xtcro"]
+[ext_resource type="Script" uid="uid://bgtql4ifrx3an" path="res://Scripts/Combat Scripts/Combat System/Battle Components/TurnOrderManager.cs" id="10_yprcx"]
 [ext_resource type="Script" uid="uid://bw5n5245v8p8k" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatLossNode.cs" id="11_dfb8x"]
 [ext_resource type="Script" uid="uid://dtbuhyihehpy7" path="res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumberManager.cs" id="12_fl4d0"]
 [ext_resource type="Script" uid="uid://bbmewgskhadp2" path="res://Scripts/Combat Scripts/Combat System/UI/SkillSelection.cs" id="12_iplpb"]
@@ -24,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://chievkas7hxxp" path="res://Scenes/Battle/Skill Selection/skill_button.tscn" id="15_pxkmk"]
 [ext_resource type="Script" uid="uid://bcik8tdi0x2ki" path="res://Scripts/Combat Scripts/Combat System/UI/DirectionButtonUI.cs" id="16_fl4d0"]
 [ext_resource type="PackedScene" uid="uid://c2njhbj4uiopi" path="res://Scenes/Battle/Battle Space/skill_direction_button.tscn" id="16_u0d3x"]
+[ext_resource type="Script" uid="uid://cd1ag3d1dvcsb" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderDisplay.cs" id="27_3gaus"]
+[ext_resource type="PackedScene" uid="uid://bw78lro41fpk6" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/character_turn_display.tscn" id="28_yprcx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ija6g"]
 
@@ -34,6 +39,60 @@ font_size = 90
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_jv4ad"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skill UI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3gaus"]
+resource_name = "hide_ui"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skill UI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3.4822, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 363)]
+}
+
+[sub_resource type="Animation" id="Animation_ijdqy"]
+resource_name = "show_ui"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skill UI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 0.148651),
+"update": 0,
+"values": [Vector2(0, 389), Vector2(0, -28.14), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yprcx"]
+_data = {
+&"RESET": SubResource("Animation_jv4ad"),
+&"hide_ui": SubResource("Animation_3gaus"),
+&"show_ui": SubResource("Animation_ijdqy")
+}
+
 [node name="BattleScene" type="Control" node_paths=PackedStringArray("grid", "skillUI", "directionUI", "turnDataManager", "State")]
 layout_mode = 3
 anchors_preset = 15
@@ -43,7 +102,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w405p")
 grid = NodePath("Grid")
-skillUI = NodePath("====Skills====")
+skillUI = NodePath("====Skills====/Skill UI")
 directionUI = NodePath("====Direction Buttons====")
 turnDataManager = NodePath("Turn Data Manager")
 State = NodePath("Battle State")
@@ -70,10 +129,16 @@ verticalOffset = Vector2(0, -200)
 horizontalGrids = 5
 verticalGrids = 6
 
-[node name="Battle State" type="Node2D" parent="." node_paths=PackedStringArray("Grid")]
+[node name="Battle State" type="Node2D" parent="." node_paths=PackedStringArray("TurnOrder", "Grid")]
 script = ExtResource("5_h7u6w")
+TurnOrder = NodePath("Turn Order Manager")
 Grid = NodePath("../Grid")
 battleCharacterScene = ExtResource("15_iplpb")
+playerBorder = ExtResource("8_ijdqy")
+enemyBorder = ExtResource("9_jv4ad")
+
+[node name="Turn Order Manager" type="Node2D" parent="Battle State"]
+script = ExtResource("10_yprcx")
 
 [node name="States" type="Node2D" parent="."]
 
@@ -133,69 +198,85 @@ script = ExtResource("11_dfb8x")
 visible = false
 script = ExtResource("5_yhfgv")
 
-[node name="====Skills====" type="CanvasLayer" parent="." node_paths=PackedStringArray("skillButtons", "confirmButton", "cancelButton", "skipButton")]
+[node name="====Skills====" type="CanvasLayer" parent="."]
+
+[node name="Skill UI" type="Control" parent="====Skills====" node_paths=PackedStringArray("skillButtons", "anim", "confirmButton", "cancelButton", "skipButton")]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("12_iplpb")
-skillButtons = [NodePath("Skills/Skill 1"), NodePath("Skills/Skill 2"), NodePath("Skills/Skill 3"), NodePath("Skills/Skill 4")]
+skillButtons = [NodePath("Skills/Skill 1"), NodePath("Skills/Skill 2"), NodePath("Skills/Skill 3"), NodePath("Skills/Skill 4"), NodePath("Skills/Skill 5")]
+anim = NodePath("../AnimationPlayer")
 confirmButton = NodePath("Confirmation Buttons/Confirm Button")
 cancelButton = NodePath("Confirmation Buttons/Cancel Button")
 skipButton = NodePath("Skip Turn")
+activeColor = Color(1, 1, 1, 1)
 
-[node name="Background" type="TextureRect" parent="====Skills===="]
+[node name="Background" type="TextureRect" parent="====Skills====/Skill UI"]
 modulate = Color(0.230315, 0.230315, 0.230315, 1)
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -723.0
-offset_top = -271.0
-offset_right = 723.0
+offset_left = -149.0
+offset_top = 1675.0
+offset_right = 1297.0
+offset_bottom = 2100.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("CanvasTexture_ija6g")
 
-[node name="Skills" type="HBoxContainer" parent="====Skills===="]
+[node name="Skills" type="HBoxContainer" parent="====Skills====/Skill UI"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -465.0
-offset_top = -237.0
-offset_right = 425.0
-offset_bottom = -37.0
+offset_left = 8.0
+offset_top = 1696.0
+offset_right = 1128.0
+offset_bottom = 1896.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.95, 0.95)
 theme_override_constants/separation = 30
 
-[node name="Skill 1" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+[node name="Skill 1" parent="====Skills====/Skill UI/Skills" instance=ExtResource("15_pxkmk")]
 layout_mode = 2
 
-[node name="Skill 2" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+[node name="Skill 2" parent="====Skills====/Skill UI/Skills" instance=ExtResource("15_pxkmk")]
 layout_mode = 2
 
-[node name="Skill 3" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+[node name="Skill 3" parent="====Skills====/Skill UI/Skills" instance=ExtResource("15_pxkmk")]
 layout_mode = 2
 
-[node name="Skill 4" parent="====Skills====/Skills" instance=ExtResource("15_pxkmk")]
+[node name="Skill 4" parent="====Skills====/Skill UI/Skills" instance=ExtResource("15_pxkmk")]
 layout_mode = 2
 
-[node name="Skip Turn" type="Button" parent="====Skills===="]
-offset_left = 901.0
-offset_top = 1532.0
-offset_right = 1030.0
-offset_bottom = 1623.0
+[node name="Skill 5" parent="====Skills====/Skill UI/Skills" instance=ExtResource("15_pxkmk")]
+layout_mode = 2
+
+[node name="Skip Turn" type="Button" parent="====Skills====/Skill UI"]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 1564.0
+offset_right = 1056.0
+offset_bottom = 1655.0
 theme_override_font_sizes/font_size = 60
 text = "Skip"
 script = ExtResource("15_0grf5")
 
-[node name="Confirmation Buttons" type="Control" parent="====Skills===="]
+[node name="Confirmation Buttons" type="Control" parent="====Skills====/Skill UI"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 26.0
+offset_top = 32.0
+offset_right = 66.0
+offset_bottom = 72.0
 
-[node name="Confirm Button" type="Button" parent="====Skills====/Confirmation Buttons"]
+[node name="Confirm Button" type="Button" parent="====Skills====/Skill UI/Confirmation Buttons"]
 layout_mode = 0
 offset_left = 901.0
 offset_top = 1533.0
@@ -204,7 +285,7 @@ offset_bottom = 1624.0
 theme_override_font_sizes/font_size = 60
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="====Skills====/Confirmation Buttons/Confirm Button"]
+[node name="TextureRect" type="TextureRect" parent="====Skills====/Skill UI/Confirmation Buttons/Confirm Button"]
 self_modulate = Color(0, 1, 0.3, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -214,7 +295,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_pxkmk")
 
-[node name="Label" type="Label" parent="====Skills====/Confirmation Buttons/Confirm Button"]
+[node name="Label" type="Label" parent="====Skills====/Skill UI/Confirmation Buttons/Confirm Button"]
 layout_mode = 0
 offset_left = 33.0
 offset_top = -7.0
@@ -223,7 +304,7 @@ offset_bottom = 117.0
 text = "✓"
 label_settings = SubResource("LabelSettings_wwl16")
 
-[node name="Cancel Button" type="Button" parent="====Skills====/Confirmation Buttons"]
+[node name="Cancel Button" type="Button" parent="====Skills====/Skill UI/Confirmation Buttons"]
 layout_mode = 0
 offset_left = 759.0
 offset_top = 1533.0
@@ -232,7 +313,7 @@ offset_bottom = 1624.0
 theme_override_font_sizes/font_size = 60
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="====Skills====/Confirmation Buttons/Cancel Button"]
+[node name="TextureRect" type="TextureRect" parent="====Skills====/Skill UI/Confirmation Buttons/Cancel Button"]
 self_modulate = Color(1, 0, 0.0166664, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -242,7 +323,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_pxkmk")
 
-[node name="Label" type="Label" parent="====Skills====/Confirmation Buttons/Cancel Button"]
+[node name="Label" type="Label" parent="====Skills====/Skill UI/Confirmation Buttons/Cancel Button"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = -15.0
@@ -250,6 +331,11 @@ offset_right = 103.0
 offset_bottom = 109.0
 text = "X"
 label_settings = SubResource("LabelSettings_wwl16")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="====Skills===="]
+libraries = {
+&"": SubResource("AnimationLibrary_yprcx")
+}
 
 [node name="====Direction Buttons====" type="Control" parent="." node_paths=PackedStringArray("buttons", "cancelButton")]
 z_index = 4
@@ -315,7 +401,48 @@ scene = ExtResource("13_otywn")
 offset = Vector2(-50, -100)
 randomness = 80.0
 
-[connection signal="button_up" from="====Skills====/Skip Turn" to="====Skills====/Skip Turn" method="OnClick"]
-[connection signal="button_up" from="====Skills====/Confirmation Buttons/Confirm Button" to="====Skills====" method="ConfirmAction"]
-[connection signal="button_up" from="====Skills====/Confirmation Buttons/Cancel Button" to="====Skills====" method="CancelAction"]
+[node name="Turn Order Display" type="Control" parent="." node_paths=PackedStringArray("container", "displays")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("27_3gaus")
+container = NodePath("HBox")
+displays = [NodePath("HBox/Character Display"), NodePath("HBox/Character Display2"), NodePath("HBox/Character Display3"), NodePath("HBox/Character Display4"), NodePath("HBox/Character Display5"), NodePath("HBox/Character Display6"), NodePath("HBox/Character Display7"), NodePath("HBox/Character Display8")]
+
+[node name="HBox" type="HBoxContainer" parent="Turn Order Display"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 1543.0
+offset_right = 1056.0
+offset_bottom = 1748.0
+theme_override_constants/separation = 20
+
+[node name="Character Display" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[node name="Character Display2" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[node name="Character Display3" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[node name="Character Display4" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[node name="Character Display5" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[node name="Character Display6" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[node name="Character Display7" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[node name="Character Display8" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
+layout_mode = 2
+
+[connection signal="TurnStart" from="." to="Turn Order Display" method="UpdateDisplay"]
+[connection signal="button_up" from="====Skills====/Skill UI/Skip Turn" to="====Skills====/Skill UI/Skip Turn" method="OnClick"]
+[connection signal="button_up" from="====Skills====/Skill UI/Confirmation Buttons/Confirm Button" to="====Skills====/Skill UI" method="ConfirmAction"]
+[connection signal="button_up" from="====Skills====/Skill UI/Confirmation Buttons/Cancel Button" to="====Skills====/Skill UI" method="CancelAction"]
 [connection signal="button_up" from="====Direction Buttons====/Cancel Button" to="====Direction Buttons====" method="CancelMenu"]

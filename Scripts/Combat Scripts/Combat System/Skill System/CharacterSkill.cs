@@ -22,6 +22,13 @@ namespace CombatSystem {
         [Export] public SkillDirection direction { get; private set; }
         [Export] public TargetType targetType { get; private set; }
 
+
+
+        [ExportCategory("Charge Skill Data")]
+        [Export] public bool IsChargeSkill { get; private set; } = false;
+        [Export] public int ChargeAmount { get; private set; } = 100;
+
+
         public CharacterSkill GetDuplicate()
         {
             var newSkill = new CharacterSkill();

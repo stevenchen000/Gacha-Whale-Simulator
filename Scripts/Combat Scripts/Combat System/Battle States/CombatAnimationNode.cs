@@ -8,13 +8,14 @@ namespace CombatSystem
     {
         [Export] private CombatStateNode damageCalculationNode;
         private TimeHandler time;
-        private CharacterSkill skill;
+        private SkillContainer skill;
         private TurnData turnData;
 
         private bool finishedCast = false;
 
         protected override void OnStateActivated()
         {
+            battle.turnData.skill.ConsumeSkillUse();
             /*time = new TimeHandler();
             turnData = battle.turnData;
             skill = battle.SelectedSkill.GetDuplicate();

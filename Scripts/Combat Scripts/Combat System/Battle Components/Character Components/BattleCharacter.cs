@@ -51,11 +51,17 @@ namespace CombatSystem
 
 
         //Combat Vars
-        [Export] public Array<CharacterSkill> skills { get; set; }
-        [Export] private StatContainer savedStats { get; set; }
+        [Export] public SkillManager Skills { get; private set; }
         [Export] public BattleStatsManager Stats { get; private set; }
         [Export] public EffectManager Status { get; private set; }
+        [Export] public BattleCharacterFlags Flags { get; private set; }
         [Export] public CombatAI AI { get; private set; }
+        public double NextTurnTime {  get; private set; }
+        public int TurnPriority { get; private set; } = 0;
+        //Used for calculating turn count without free turns
+        public int TurnsTaken { get; private set; }
+        //Counts free turns, used for current turn damage counting
+        public int ActionsTaken { get; private set; }
 
 
 
@@ -80,13 +86,37 @@ namespace CombatSystem
             Character = character;
             Party = party;
             Stats._Init(character);
-            skills = character.GetSkills();
+            Skills.Init(character);
             CharacterPortrait charPortrait = character.GetPortrait();
             portrait.UpdatePortrait(charPortrait);
 
             AI = character.Character.EnemyAI;
         }
 
+        /********************
+         * Position
+         * ****************/
+
+        public void RemoveFromField()
+        {
+            battle.GetGrid().UnoccupySpace(this);
+            SetPosition(new Vector2(9999, 9999));
+        }
+
+        public void AddToField()
+        {
+            
+        }
+
+
+        /**************
+         * Appearance
+         * ************/
+
+        public void ChangeBorder(PortraitBorder border)
+        {
+            portrait.SetBorder(border);
+        }
 
 
         /*************
@@ -100,6 +130,8 @@ namespace CombatSystem
             WalkableSpaces = grid.GetAllWalkableAreas(this);
             targets = new Array<BattleCharacter>();
             currPosition = turnStartPosition;
+
+            DecreaseUnbreakCounter();
         }
 
 
@@ -107,6 +139,10 @@ namespace CombatSystem
         {
             WalkableSpaces = null;
             turnStartPosition = currPosition;
+
+            ActionsTaken++;
+            TurnsTaken++;
+            //Need to check if free turn happened
         }
 
         public CombatActionData GetAutomaticAction()
@@ -118,6 +154,22 @@ namespace CombatSystem
 
             return result;
         }
+
+        public void SetTurnTime(double newTurnTime)
+        {
+            NextTurnTime = newTurnTime;
+        }
+
+        public void SetTurnPriority(int priority)
+        {
+            TurnPriority = priority;
+        }
+
+        public void Delay(int numOfTurns)
+        {
+            battle.State.TurnOrder.DelayCharacter(this, numOfTurns);
+        }
+
 
         /*****************
          * Movement
@@ -136,9 +188,122 @@ namespace CombatSystem
             characterPos.GlobalPosition = space.GlobalPosition;
         }
 
+
+        public new void SetPosition(Vector2 newPos)
+        {
+            characterPos.GlobalPosition = newPos;
+        }
+
         public new Vector2 GetPosition()
         {
             return characterPos.GlobalPosition;
+        }
+
+        /**************
+         * Damage
+         * ************/
+
+        public void TakeAmpDamage(int damage, bool isCrit = false)
+        {
+            if (!IsBroken())
+            {
+                Stats.TakeAmpDamage(damage);
+            }
+
+            _ShowDamageNumber(damage, isCrit);
+        }
+
+        private void _ShowDamageNumber(int damage, bool isCrit)
+        {
+            if (!isCrit)
+                DamageNumberManager.ShowDamageNumber(this, damage, DamageType.AmpDamage);
+            else
+                DamageNumberManager.ShowDamageNumber(this, damage, DamageType.CritDamage);
+        }
+
+        public void AddAmp(int amount)
+        {
+            Stats.AddAmpAmount(amount);
+        }
+
+        public void TakeHpDamage(int damage)
+        {
+            Stats.TakeDamage(damage);
+            DamageNumberManager.ShowDamageNumber(this, damage, DamageType.HealthDamage);
+        }
+
+
+        /// <summary>
+        /// Attempts to break the character
+        /// If character gets broken, returns true
+        /// Does not return true if character was still broken
+        /// </summary>
+        /// <returns></returns>
+        public bool BreakCharacter()
+        {
+            bool result = false;
+
+            if (IsBroken())
+            {
+                result = false;
+            }
+            else
+            {
+                //Will need to check if unbreakable here
+                _InflictBreak();
+                result = true;
+            }
+
+            return result;
+        }
+
+        private void _InflictBreak()
+        {
+            Flags.AddFlag(BattleFlagNames.breakFlagName);
+            Flags.SetFlagValue(BattleFlagNames.breakFlagName, 5);
+            Stats.SetSlidingStat(StatNames.Amp, 0);
+            Delay(1);
+        }
+
+
+
+        public void UnbreakCharacter()
+        {
+            Flags.SetFlagValue(BattleFlagNames.breakFlagName, 0);
+        }
+
+        public bool IsBroken()
+        {
+            return Flags.GetFlag(BattleFlagNames.breakFlagName);
+        }
+
+        public int GetTurnsToUnbreak()
+        {
+            return Flags.GetFlagAmount(BattleFlagNames.turnsToUnbreakFlag);
+        }
+
+        private void DecreaseUnbreakCounter()
+        {
+            if (IsBroken())
+            {
+                Flags.RemoveFlag(BattleFlagNames.turnsToUnbreakFlag);
+                if(GetTurnsToUnbreak() <= 0)
+                {
+                    UnbreakCharacter();
+                }
+            }
+        }
+
+        public void UpdateBreakStatus()
+        {
+            DecreaseUnbreakCounter();
+            int currAmp = Stats.GetSlidingStat(StatNames.Amp);
+            int spirit = Stats.GetStat(StatNames.Spirit);
+
+            if(IsBroken() && currAmp >= spirit)
+            {
+                UnbreakCharacter();
+            }
         }
 
         /*******************
@@ -179,25 +344,10 @@ namespace CombatSystem
             Party = party;
         }
 
-        /***************
-         * Helper Functions
-         * ****************/
-        /*
-        private void InitStats()
+        public bool IsPlayer()
         {
-            var role = Character.Character.Role;
-            var roleStats = role.stats;
-            stats = new BattleStats();
-            int level = Character.Level;
+            return battle.State.PlayerParty == Party;
+        }
 
-            stats.maxHealth = roleStats.GetMaxHealth(level);
-            stats.currentHealth = stats.maxHealth;
-
-            stats.attack = roleStats.GetAttack(level);
-            stats.defense = roleStats.GetDefense(level);
-            stats.speed = roleStats.GetSpeed(level);
-
-            stats.movement = Character.Character.GetMovement();
-        }*/
     }
 }

@@ -24,6 +24,9 @@ namespace SkillSystem
             }
         }
 
+        //Used for effects that shouldn't repeat (unlike poison effects)
+        private bool isActive = false;
+
 
         public EffectContainer(BaseEffect effect, StatusContainer status)
         {

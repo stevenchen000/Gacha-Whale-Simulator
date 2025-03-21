@@ -27,12 +27,16 @@ public partial class ImageSaver : Node
     {
         if(node is Sprite2D)
         {
+            Utils.Print(this, "Creating image...");
             var sprite = (Sprite2D)node;
             var texture = sprite.Texture;
             string filename = CreateFileName();
             var newTexture = CustomCharacterManager.SaveImage(texture);
+            Utils.Print(this, 1);
             var portrait = new CustomCharacterPortrait(newTexture);
+            Utils.Print(this, 2);
             CustomCharacterManager.SavePortrait(portrait);
+            Utils.Print(this, 3);
             node.CallDeferred(MethodName.QueueFree);
         }
     }

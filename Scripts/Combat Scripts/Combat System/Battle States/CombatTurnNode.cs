@@ -23,7 +23,6 @@ namespace CombatSystem
         protected override void OnStateActivated()
         {
             Utils.Print(this, "Turn started");
-            Utils.Print(this, battle);
             battle.StartTurn();
             grid = battle.GetGrid();
             character = battle.GetCurrentCharacter();
@@ -32,6 +31,10 @@ namespace CombatSystem
             {
                 timer = new TimeHandler();
                 enemyAction = character.AI.CalculateAction(battle);
+            }
+            else
+            {
+                battle.ShowSkillUI();
             }
         }
 
@@ -92,6 +95,9 @@ namespace CombatSystem
             grid.SetAllSpacesToDefault();
             //grid.OccupySpace(character);
             turnFinished = false;
+
+            if(!IsEnemyControlled(character))
+                battle.HideSkillUI();
         }
 
         /*****************

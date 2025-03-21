@@ -18,7 +18,7 @@ namespace CombatSystem
         protected override void OnStateActivated()
         {
             timer = new TimeHandler();
-            effects = battle.SelectedSkill.effects;
+            effects = battle.SelectedSkill.Skill.effects;
             if (effects != null && effects.Count > 0)
                 currEffect = effects[0];
         }
@@ -56,6 +56,7 @@ namespace CombatSystem
         protected override void OnStateDeactivated()
         {
             Reset();
+            
         }
 
         private void Reset()

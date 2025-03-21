@@ -17,7 +17,6 @@ public partial class OwnedCharacterData : Resource
 
         if (FileAccess.FileExists(filename))
         {
-            Utils.Print(this, "Found save file");
             Load();
         }
 
@@ -113,11 +112,7 @@ public partial class OwnedCharacterData : Resource
         var file = FileAccess.Open(filename, FileAccess.ModeFlags.Read);
         string json = file.GetPascalString();
         
-
-        Utils.Print(this, "json read");
         var data = (Array<string>)Json.ParseString(json);
-        Utils.Print(this, "json parsed");
-        Utils.Print(this, json);
 
         foreach (var item in data)
         {

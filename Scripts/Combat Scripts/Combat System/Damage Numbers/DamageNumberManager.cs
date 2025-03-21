@@ -32,15 +32,15 @@ namespace CombatSystem
             int randY = GameState.GetRandomNumber(0, (int)instance.randomness);
             offset += new Vector2(randX, randY);
 
-            var damageText = CreateCopy(damage);
+            var damageText = CreateCopy(damage, damageType);
             target.AddChild(damageText);
             damageText.GlobalPosition = target.GetPosition() + offset;
         }
 
-        private static DamageNumber CreateCopy(int damage)
+        private static DamageNumber CreateCopy(int damage, DamageType type)
         {
             var result = (DamageNumber)Utils.InstantiateCopy(instance.scene);
-            result.SetValue(damage);
+            result.SetValue(damage, type);
             return result;
         }
     }

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_wvwwa"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="2_y2ug8"]
-[ext_resource type="Resource" uid="uid://c21gaqc7y5i0v" path="res://Resources/Characters/Skills/stronger_attack.tres" id="3_i0lkh"]
+[ext_resource type="Resource" uid="uid://61p44fsftl5h" path="res://Resources/Characters/Skills/basic_hp_attack.tres" id="3_i0lkh"]
 
 [resource]
 script = ExtResource("1_wvwwa")
 skillTiers = Array[ExtResource("2_y2ug8")]([ExtResource("3_i0lkh")])
-metadata/_custom_type_script = ExtResource("1_wvwwa")
+metadata/_custom_type_script = "uid://oi7b31cv68hk"

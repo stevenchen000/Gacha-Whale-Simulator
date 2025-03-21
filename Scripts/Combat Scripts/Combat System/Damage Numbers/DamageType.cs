@@ -11,6 +11,7 @@ namespace CombatSystem
         HealthDamage,
         AmpDamage,
         CritDamage,
-        Healing
+        Healing,
+        Battery
     }
 }

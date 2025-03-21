@@ -1,37 +1,116 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CombatSystem
 {
-    public class TurnOrderManager
+    public partial class TurnOrderManager : Node
     {
-        private Array<BattleCharacter> fighters;
-        private Array<BattleCharacter> turnOrder;
+        private BattleState battleState;
+        public List<CharacterTurnTime> turnOrder { get; private set; }
+
+        private double turnTime = 0;
+
+        [Signal]
+        public delegate void TurnOrderChangedEventHandler;
 
 
-        public TurnOrderManager(BattleParty playerParty, BattleParty enemyParty)
+        public void Init(BattleState state)
         {
-            fighters = new Array<BattleCharacter>();
-            fighters.AddRange(enemyParty.GetAllLivingMembers());
-            fighters.AddRange(playerParty.GetAllLivingMembers());
-            InitTurnOrder();
+            battleState = state;
+
+            turnOrder = new List<CharacterTurnTime>();
+            SetupInitialTurns();
+            CalculateTurnOrder();
+            turnTime = turnOrder[0].TurnTime;
         }
 
 
         public BattleCharacter GetCurrentCharacter()
         {
-            return turnOrder[0];
+            return turnOrder[0].Character;
         }
 
-        public BattleCharacter SetupNextTurn()
+        public double SetupNextTurn()
         {
-            turnOrder.Add(turnOrder[0]);
+            double turnProgress = 0;
+
+            //Update curr character's time
+            var character = turnOrder[0].Character;
+            double charTurnTime = CalculateTurnTime(character);
+            character.SetTurnTime(turnTime + charTurnTime);
+
+
+            //Remove curr turn and recalculate
             turnOrder.RemoveAt(0);
-            return turnOrder[0];
+            CalculateTurnOrder();
+
+            //Get time diff
+            double newTurnTime = turnOrder[0].TurnTime;
+            turnProgress = newTurnTime - turnTime;
+            turnTime = turnOrder[0].TurnTime;
+
+            return turnProgress;
         }
 
-        
+        public void DelayCharacter(BattleCharacter character, int numOfTurns)
+        {
+            double currTime = character.NextTurnTime;
+            int priority = 0;
+            for (int i = 0; i < numOfTurns; i++)
+            {
+                var result = GetDelayedTurnTime(character, currTime);
+                currTime = result.Item1;
+                priority = result.Item2;
+            }
+
+            character.SetTurnTime(currTime);
+            character.SetTurnPriority(priority);
+        }
+
+        private Tuple<double, int> GetDelayedTurnTime(BattleCharacter character, double turnTime)
+        {            
+            var fighters = GetLivingCharacters();
+            double nextTurn = 99999;
+            int priority = 0;
+
+            foreach (var fighter in fighters)
+            {
+                
+                if (fighter != character)
+                {
+                    double temp = GetFirstTurnAfterTime(fighter, turnTime, character.TurnPriority);
+                    if(temp < nextTurn)
+                    {
+                        nextTurn = temp;
+                        priority = fighter.TurnPriority + 1;
+                        Utils.Print(this, $"{fighter.Character.Character.Name} - ({nextTurn},{priority-1})");
+                    }
+                }
+            }
+
+            var result = new Tuple<double, int>(nextTurn, priority);
+            Utils.Print(this, $"{character.Character.Character.Name} - {result}");
+            return result;
+        }
+
+        private double GetFirstTurnAfterTime(BattleCharacter character, double turnTime, int priority)
+        {
+            double nextTurnTime = character.NextTurnTime;
+            double turnSpeed = CalculateTurnTime(character);
+
+            while(nextTurnTime < turnTime)
+            {
+                nextTurnTime += turnSpeed;
+            }
+
+            if (nextTurnTime == turnTime && priority > character.TurnPriority)
+                nextTurnTime += turnSpeed;
+
+            return nextTurnTime;
+        }
 
 
 
@@ -39,12 +118,90 @@ namespace CombatSystem
          * Helper Functions
          * **************/
 
-        private void InitTurnOrder()
+        private void SetupInitialTurns()
         {
-            turnOrder = new Array<BattleCharacter>();
-            turnOrder.AddRange(fighters);
+            var fighters = GetLivingCharacters();
+
+            for(int i = 0; i < fighters.Count; i++)
+            {
+                var fighter = fighters[i];
+                double turnTime = CalculateTurnTime(fighter);
+                fighter.SetTurnTime(turnTime);
+                fighter.SetTurnPriority(i);
+            }
+        }
+
+        private void CalculateTurnOrder()
+        {
+            turnOrder = new List<CharacterTurnTime>();
+            var fighters = GetLivingCharacters();
+
+            foreach(var fighter in fighters)
+            {
+                var turns = GetCharacterTurns(fighter, 3);
+                turnOrder.AddRange(turns);
+            }
+
+            turnOrder = turnOrder.OrderBy(x => x.TurnTime).ThenBy(x => x.Character.TurnPriority).ToList();
+            EmitSignal(SignalName.TurnOrderChanged);
+        }
+
+        private void PrintTurns()
+        {
+            foreach(var turn in turnOrder)
+            {
+                Utils.Print(this, $"{turn.Character.Character.Character.Name} - {turn.TurnTime}");
+            }
+        }
+
+        private List<CharacterTurnTime> GetCharacterTurns(BattleCharacter character, int num)
+        {
+            List<CharacterTurnTime> result = new List<CharacterTurnTime>();
+            double turnTime = CalculateTurnTime(character);
+            double startingTime = character.NextTurnTime;
+
+            for(int i = 0; i < num; i++)
+            {
+                double nextTurnTime = startingTime + turnTime * i;
+                var nextTurn = new CharacterTurnTime(character, i, nextTurnTime);
+                result.Add(nextTurn);
+            }
+
+            return result;
+        }
+
+        private double CalculateTurnTime(BattleCharacter character)
+        {
+            int speed = character.Stats.GetStat(StatNames.Speed);
+
+            return 10_000 / (Mathf.Pow(speed, 1.5));
         }
 
 
+        private Array<BattleCharacter> GetLivingCharacters()
+        {
+            return battleState.GetAllLivingCharacters();
+        }
+
+
+
+
+
+
+
+
+        public class CharacterTurnTime
+        {
+            public BattleCharacter Character { get; private set; }
+            public double TurnTime = 0;
+            public int QueueNumber { get; private set; }
+
+            public CharacterTurnTime(BattleCharacter character, int turnNumber, double turnTime)
+            {
+                Character = character;
+                QueueNumber = turnNumber;
+                TurnTime = turnTime;
+            }
+        }
     }
 }

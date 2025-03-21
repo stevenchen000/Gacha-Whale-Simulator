@@ -16,7 +16,7 @@ namespace CombatSystem
             var character = battle.GetCurrentCharacter();
             var walkableCoords = character.WalkableSpaces;
             var grid = battle.GetGrid();
-            var skills = character.skills;
+            var skills = character.Skills.Skills;
 
             foreach (var coords in walkableCoords)
             {
@@ -35,11 +35,12 @@ namespace CombatSystem
         {
             CombatActionData result = null;
 
-            var skills = character.skills;
+            var skills = character.Skills.Skills;
 
             foreach (var skill in skills)
             {
-                var targetingData = skill.GetAllTargetSpaces(battle, grid, character, position);
+                var baseSkill = skill.Skill;
+                var targetingData = baseSkill.GetAllTargetSpaces(battle, grid, character, position);
                 var directions = new List<CharacterDirection>();
                 directions.AddRange(targetingData.Keys);
 
@@ -51,7 +52,7 @@ namespace CombatSystem
                     if(targets.Count > 0)
                     {
                         result = new CombatActionData(position, skill, direction);
-                        Utils.Print(this, $"{position} - {skill.SkillName} - {direction}");
+                        Utils.Print(this, $"{position} - {baseSkill.SkillName} - {direction}");
                         break;
                     }
                 }

@@ -1,10 +1,8 @@
-[gd_resource type="Resource" script_class="CharacterSkill" load_steps=9 format=3 uid="uid://dyor6oc038qua"]
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=6 format=3 uid="uid://dyor6oc038qua"]
 
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="1_05drs"]
 [ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_s6vs3"]
 [ext_resource type="Texture2D" uid="uid://c8yvkk2q3p5im" path="res://Art Assets/Character Assets/Weapon Icons/Sword.png" id="2_dwxpx"]
-[ext_resource type="Script" uid="uid://dlnccrg4bkgdt" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/ApplyStatusEffect.cs" id="4_4bq2c"]
-[ext_resource type="Resource" uid="uid://fs1ffcnwem76" path="res://Resources/Characters/Skills/Status Effects/attack_up.tres" id="5_dwxpx"]
 [ext_resource type="Script" uid="uid://cwc5oieqpw3k" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/DealDamageEffect.cs" id="6_dwxpx"]
 
 [sub_resource type="Resource" id="Resource_dwxpx"]
@@ -12,14 +10,8 @@ script = ExtResource("6_dwxpx")
 potency = 100.0
 duration = 0.2
 delay = 0.0
+description = ""
 metadata/_custom_type_script = ExtResource("6_dwxpx")
-
-[sub_resource type="Resource" id="Resource_s6vs3"]
-script = ExtResource("4_4bq2c")
-targetType = 2
-status = ExtResource("5_dwxpx")
-delay = 0.0
-metadata/_custom_type_script = "uid://dlnccrg4bkgdt"
 
 [resource]
 script = ExtResource("1_05drs")
@@ -27,9 +19,11 @@ Icon = ExtResource("2_dwxpx")
 SkillName = "Attack"
 duration = 2.0
 InfiniteUses = true
-Uses = 3
-effects = Array[Object]([SubResource("Resource_dwxpx"), SubResource("Resource_s6vs3")])
+Uses = 0
+effects = Array[Object]([SubResource("Resource_dwxpx")])
 potency = 100
 AttackArea = ExtResource("1_s6vs3")
 direction = 1
 targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100

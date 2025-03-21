@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_oy8s6"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="2_syoah"]
-[ext_resource type="Resource" uid="uid://bf1ygfo7sc2i4" path="res://Resources/Characters/Skills/basic_knockback.tres" id="3_oy8s6"]
+[ext_resource type="Resource" uid="uid://ub0fxw54re72" path="res://Resources/Characters/Skills/basic_amp_recover.tres" id="3_oy8s6"]
 
 [resource]
 script = ExtResource("1_oy8s6")
 skillTiers = Array[ExtResource("2_syoah")]([ExtResource("3_oy8s6")])
-metadata/_custom_type_script = ExtResource("1_oy8s6")
+metadata/_custom_type_script = "uid://oi7b31cv68hk"

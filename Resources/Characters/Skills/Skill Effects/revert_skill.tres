@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillRevertEffect" load_steps=2 format=3 uid="uid://bq4fh6x4w3q0u"]
+
+[ext_resource type="Script" uid="uid://f8465h18insw" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/SkillRevertEffect.cs" id="1_uh7u4"]
+
+[resource]
+script = ExtResource("1_uh7u4")
+skillIndex = -1
+delay = 0.0
+description = ""
+metadata/_custom_type_script = "uid://f8465h18insw"

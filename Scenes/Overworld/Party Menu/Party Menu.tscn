@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://hw1mi7nr68ev"]
 
 [ext_resource type="Script" uid="uid://blvjh6ipudb1k" path="res://Scripts/Game Menu/Party Menu/PartyMenu.cs" id="1_c0xnm"]
-[ext_resource type="AudioStream" uid="uid://ij0s1wo5p3jv" path="res://Resources/Characters/Characters/Audio Assets/BGM/Light Ambience 1.mp3" id="3_1tiv1"]
+[ext_resource type="AudioStream" uid="uid://ij0s1wo5p3jv" path="res://Audio Assets/BGM/Light Ambience 1.mp3" id="3_1tiv1"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="3_c0xnm"]
 [ext_resource type="Texture2D" uid="uid://uv01r8711ffx" path="res://Art Assets/Backgrounds/Ocean_8/6.png" id="4_0hhbr"]
 [ext_resource type="PackedScene" uid="uid://c05wi4urb34et" path="res://Scenes/Overworld/Party Menu/UI/character_party_menu_display.tscn" id="4_lsvsl"]

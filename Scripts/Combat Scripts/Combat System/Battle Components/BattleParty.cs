@@ -7,13 +7,16 @@ namespace CombatSystem
 {
     public class BattleParty
     {
-        private List<SimpleWeakRef<BattleCharacter>> LivingMembers = new List<SimpleWeakRef<BattleCharacter>>();
-        private List<SimpleWeakRef<BattleCharacter>> DeadMembers = new List<SimpleWeakRef<BattleCharacter>>();
-        private List<SimpleWeakRef<BattleCharacter>> TempMembers = new List<SimpleWeakRef<BattleCharacter>>();
+        private List<BattleCharacter> LivingMembers = new List<BattleCharacter>();
+        private List<BattleCharacter> DeadMembers = new List<BattleCharacter>();
+        private List<BattleCharacter> TempMembers = new List<BattleCharacter>();
         
         //private Array<> partyBuffs;
 
-        public BattleParty(BattleState state, Array<CharacterData> characters, PackedScene battleCharacterScene)
+        public BattleParty(BattleState state, 
+                           Array<CharacterData> characters, 
+                           PackedScene battleCharacterScene,
+                           PortraitBorder border)
         {
             foreach (var character in characters)
             {
@@ -21,6 +24,7 @@ namespace CombatSystem
                 {
                     var newChar = Utils.InstantiateCopy<BattleCharacter>(battleCharacterScene);
                     newChar.InitCharacter(character, this);
+                    newChar.ChangeBorder(border);
                     state.AddChild(newChar);
                     AddMember(newChar);
                 }
@@ -46,7 +50,7 @@ namespace CombatSystem
 
             foreach(var character in LivingMembers)
             {
-                result.Add(character.Value);
+                result.Add(character);
             }
 
             return result;
@@ -58,11 +62,11 @@ namespace CombatSystem
 
             foreach(var character in LivingMembers)
             {
-                result.Add(character.Value);
+                result.Add(character);
             }
             foreach(var character in DeadMembers)
             {
-                result.Add(character.Value);
+                result.Add(character);
             }
 
             return result;
@@ -96,12 +100,12 @@ namespace CombatSystem
 
             while (index < LivingMembers.Count)
             {
-                var reference = LivingMembers[index];
-                var member = reference.Value;
+                var member = LivingMembers[index];
 
                 if (member.IsDead())
                 {
-                    DeadMembers.Add(reference);
+                    member.RemoveFromField();
+                    DeadMembers.Add(member);
                     LivingMembers.RemoveAt(index);
                 }
                 else
@@ -117,12 +121,11 @@ namespace CombatSystem
 
             while (index < DeadMembers.Count)
             {
-                var reference = DeadMembers[index];
-                var member = reference.Value;
+                var member = DeadMembers[index];
 
                 if (!member.IsDead())
                 {
-                    LivingMembers.Add(reference);
+                    LivingMembers.Add(member);
                     DeadMembers.RemoveAt(index);
                 }
                 else
@@ -139,15 +142,14 @@ namespace CombatSystem
             while (index < LivingMembers.Count)
             {
                 var reference = LivingMembers[index];
-                var member = reference.Value;
+                var member = reference;
 
             }
         }
 
         private void AddMember(BattleCharacter character)
         {
-            var _ref = new SimpleWeakRef<BattleCharacter>(character);
-            LivingMembers.Add(_ref);
+            LivingMembers.Add(character);
         }
     }
 }

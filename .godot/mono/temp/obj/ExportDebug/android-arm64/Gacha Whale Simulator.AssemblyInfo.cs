@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gacha Whale Simulator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("ExportDebug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a0d46554d2432d5c61a29e0feca51bdb5637dd7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa5564aad3caad49061ee609f5f4fea1ddaa3e24")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gacha Whale Simulator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gacha Whale Simulator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

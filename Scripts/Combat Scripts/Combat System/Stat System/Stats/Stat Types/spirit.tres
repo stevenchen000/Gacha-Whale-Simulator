@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatType" load_steps=2 format=3 uid="uid://dbdtx1lisc55v"]
+
+[ext_resource type="Script" uid="uid://idb8klbubwjy" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/StatType.cs" id="1_a5n00"]
+
+[resource]
+script = ExtResource("1_a5n00")
+StatName = "Spirit"
+BaseAmount = 0
+IsSlidingStat = false
+description = "The base amount of amp a character starts with, as well as the amount earned when breaking an enemy."
+metadata/_custom_type_script = "uid://idb8klbubwjy"

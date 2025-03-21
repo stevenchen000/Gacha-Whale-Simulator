@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=5 format=3 uid="uid://mhrekhehc6ok"]
+
+[ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_6o6oc"]
+[ext_resource type="Texture2D" uid="uid://dagl8oftpm4a6" path="res://Art Assets/Character Assets/Weapon Icons/Shield.png" id="2_6o6oc"]
+[ext_resource type="Resource" uid="uid://2a2ybf3dpuaa" path="res://Resources/Characters/Skills/Skill Effects/def_hp_damage_effect.tres" id="3_6o6oc"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="4_l3ofd"]
+
+[resource]
+script = ExtResource("4_l3ofd")
+Icon = ExtResource("2_6o6oc")
+SkillName = "HP Attack"
+duration = 2.0
+InfiniteUses = true
+Uses = 0
+effects = Array[Object]([ExtResource("3_6o6oc")])
+potency = 100
+AttackArea = ExtResource("1_6o6oc")
+direction = 1
+targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100

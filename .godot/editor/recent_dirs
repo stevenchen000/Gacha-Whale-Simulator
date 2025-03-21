@@ -1,5 +1,9 @@
+res://Resources/Characters
+res://Resources/Characters/Skills/Skill Effects
+C:/Users/chens/Documents/Sighborg Studios/Gacha-Whale-Simulator/Resources/Characters/Skills/Elements
+res://Resources/Characters/Skills
+res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI
 res://
-res://Resources/Characters/Skills/Status Effects/Custom Effects
 res://Resources/Characters/Skills/Status Effects
 res://Resources/Room/Player Character
 res://Resources/Overworld/Battles/Conditions
@@ -16,6 +20,3 @@ res://Scenes/Overworld/Upgrade Menu
 res://Resources/Items/Level Upgrades
 res://Scenes/Overworld/Stage Selection
 res://Scenes/Overworld/Gacha Menu
-res://Scenes/Overworld
-res://Resources/Overworld/Battles/Rewards
-res://Resources/Items

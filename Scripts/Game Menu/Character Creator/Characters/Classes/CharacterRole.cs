@@ -11,5 +11,7 @@ public partial class CharacterRole : Resource
 	[Export(PropertyHint.MultilineText)] public string Description { get; private set; }
 
 	[Export] public RoleStatGrowth stats { get; private set; }
+	[Export] public SkillBranch AmpAttackBranch { get; private set; }
+	[Export] public SkillBranch HpAttackBranch { get; private set; }
 
 }

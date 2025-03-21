@@ -4,37 +4,53 @@ using System;
 
 namespace CombatSystem
 {
-    public partial class SkillSelection : Node
+    public partial class SkillSelection : Control
     {
         [Export] private Array<BattleSkillButton> skillButtons;
         [Export] private BattleSkillButton skillButtonUltimate;
+        [Export] private AnimationPlayer anim;
 
         [ExportCategory("Confirmation Buttons")]
         [Export] private Button confirmButton;
         [Export] private Button cancelButton;
         [Export] private Button skipButton;
 
+        [ExportCategory("Show/Hide Colors")]
+        [Export] private Color activeColor;
+        [Export] private Color hiddenColor;
+
 
         private SimpleWeakRef<BattleManager> battle;
+        private bool isActive = false;
 
         public override void _Ready()
         {
             base._Ready();
             var tempBattle = Utils.FindParentOfType<BattleManager>(this);
             battle = new SimpleWeakRef<BattleManager>(tempBattle);
+            Position = new Vector2(0, 9999);
         }
 
 
         public void SetupButtons(BattleCharacter character)
         {
-            var skills = character.skills;
-            SetSkillToButton(skills[0], 0);
-            SetSkillToButton(skills[1], 1);
-            SetSkillToButton(skills[2], 2);
-            SetSkillToButton(skills[3], 3);
+            var skillManager = character.Skills;
+            var skills = skillManager.Skills;
+
+            for (int i = 0; i < skillButtons.Count; i++)
+            {
+                if(skills.Count > i)
+                {
+                    SetSkillToButton(skills[i], i);
+                }
+                else
+                {
+                    SetSkillToButton(null, i);
+                }
+            }
         }
 
-        private void SetSkillToButton(CharacterSkill skill, int index)
+        private void SetSkillToButton(SkillContainer skill, int index)
         {
             skillButtons[index]?.SetSkill(skill);
         }
@@ -49,10 +65,10 @@ namespace CombatSystem
         {
             foreach (var button in skillButtons)
             {
-                var skill = button.skill;
+                var skill = button.Skill;
                 bool usable = false;
 
-                if(skill != null) usable = skill.HasTargetInRange(battle, grid, caster);
+                if(skill != null) usable = skill.Skill.HasTargetInRange(battle, grid, caster);
 
                 if (usable) button.EnableButton();
                 else button.DisableButton();
@@ -85,6 +101,26 @@ namespace CombatSystem
             DisableButton(confirmButton);
             DisableButton(cancelButton);
         }
+
+        public void HideUI()
+        {
+            if (isActive)
+            {
+                anim.Play("hide_ui");
+                isActive = false;
+            }
+        }
+
+        public void ShowUI()
+        {
+            if (!isActive)
+            {
+                anim.Play("show_ui");
+                isActive = true;
+            }
+        }
+
+
 
         private void EnableButton(Button button)
         {

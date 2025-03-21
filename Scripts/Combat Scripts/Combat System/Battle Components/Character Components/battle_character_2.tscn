@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cen0vf3wpj18o"]
+[gd_scene load_steps=19 format=3 uid="uid://cen0vf3wpj18o"]
 
 [ext_resource type="Script" uid="uid://c0mged6cixh87" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacter.cs" id="1_6ti8j"]
-[ext_resource type="Resource" uid="uid://dc24e2v6r5xpm" path="res://Resources/Characters/Character Stats/ally_stats.tres" id="2_ki7hi"]
+[ext_resource type="Resource" uid="uid://6o7bcyw7lixn" path="res://Resources/Characters/default_ai.tres" id="2_s32lp"]
 [ext_resource type="Script" uid="uid://0jvj0y6dgjl5" path="res://Scripts/Utilities/FollowerNode.cs" id="3_vemd7"]
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="4_4wrv8"]
 [ext_resource type="Script" uid="uid://dm47nsarqwuf3" path="res://Scripts/Combat Scripts/Combat System/Stat System/UI/SlidingStatUI.cs" id="5_ki7hi"]
@@ -10,7 +10,11 @@
 [ext_resource type="Resource" uid="uid://8mo1lvp4wgpf" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/amp.tres" id="7_vemd7"]
 [ext_resource type="Script" uid="uid://cpeb44kqun725" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/EffectManager.cs" id="7_x5cup"]
 [ext_resource type="Script" uid="uid://dx7b8vxcm02oo" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/CharacterStatusList.cs" id="8_mvo7g"]
+[ext_resource type="Script" uid="uid://b155jq68jp2a8" path="res://Scripts/Combat Scripts/Combat System/Stat System/UI/BreakStatusUI.cs" id="8_uf5vx"]
 [ext_resource type="PackedScene" uid="uid://byxvuvp4q14tr" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/status_icon.tscn" id="9_jkeof"]
+[ext_resource type="Script" uid="uid://0yqurwny6p2n" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacterFlags.cs" id="10_x5cup"]
+[ext_resource type="Script" uid="uid://ctrr6yltcf071" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillManager.cs" id="12_jkeof"]
+[ext_resource type="Script" uid="uid://c7q4vdnk44ni8" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillCaster.cs" id="13_x5cup"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki7hi"]
 bg_color = Color(1, 0, 0, 1)
@@ -25,13 +29,15 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 13
 shadow_color = Color(0, 0, 0, 0.576471)
 
-[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait", "characterPos", "Stats", "Status")]
+[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait", "characterPos", "Skills", "Stats", "Status", "Flags")]
 script = ExtResource("1_6ti8j")
-portrait = NodePath("Follower Node/Character2")
+portrait = NodePath("Follower Node/Character/Character2")
 characterPos = NodePath("Position")
-savedStats = ExtResource("2_ki7hi")
+Skills = NodePath("Skill Manager")
 Stats = NodePath("Stats Container")
 Status = NodePath("Effect Manager")
+Flags = NodePath("Flag Manager")
+AI = ExtResource("2_s32lp")
 
 [node name="Position" type="Node2D" parent="."]
 
@@ -39,14 +45,18 @@ Status = NodePath("Effect Manager")
 script = ExtResource("3_vemd7")
 nodeToFollow = NodePath("../Position")
 
-[node name="Character2" parent="Follower Node" instance=ExtResource("4_4wrv8")]
+[node name="Character" type="Control" parent="Follower Node"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Character2" parent="Follower Node/Character" instance=ExtResource("4_4wrv8")]
 offset_left = -84.0
 offset_top = -84.0
 offset_right = 36.0
 offset_bottom = 36.0
 scale = Vector2(1.4, 1.4)
 
-[node name="HP Bar" type="Control" parent="Follower Node" node_paths=PackedStringArray("bar", "statLabel", "statContainer")]
+[node name="HP Bar" type="Control" parent="Follower Node/Character" node_paths=PackedStringArray("bar", "statLabel", "statContainer")]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 86.0
@@ -56,9 +66,9 @@ script = ExtResource("5_ki7hi")
 bar = NodePath("ProgressBar")
 stat = ExtResource("6_vemd7")
 statLabel = NodePath("Health")
-statContainer = NodePath("../../Stats Container")
+statContainer = NodePath("../../../Stats Container")
 
-[node name="ProgressBar" type="ProgressBar" parent="Follower Node/HP Bar"]
+[node name="ProgressBar" type="ProgressBar" parent="Follower Node/Character/HP Bar"]
 layout_mode = 0
 offset_left = -90.0
 offset_top = -9.0
@@ -69,7 +79,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vemd7")
 value = 44.56
 show_percentage = false
 
-[node name="Health" type="Label" parent="Follower Node/HP Bar"]
+[node name="Health" type="Label" parent="Follower Node/Character/HP Bar"]
 layout_mode = 0
 offset_left = -130.0
 offset_top = -25.0
@@ -79,7 +89,7 @@ text = "100/100"
 label_settings = SubResource("LabelSettings_3fiu8")
 horizontal_alignment = 1
 
-[node name="Amp" type="Control" parent="Follower Node" node_paths=PackedStringArray("statLabel", "statContainer")]
+[node name="Amp" type="Control" parent="Follower Node/Character" node_paths=PackedStringArray("statLabel", "statContainer")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -19.0
@@ -90,9 +100,9 @@ script = ExtResource("5_ki7hi")
 showMaxStat = false
 stat = ExtResource("7_vemd7")
 statLabel = NodePath("Label")
-statContainer = NodePath("../../Stats Container")
+statContainer = NodePath("../../../Stats Container")
 
-[node name="Label" type="Label" parent="Follower Node/Amp"]
+[node name="Label" type="Label" parent="Follower Node/Character/Amp"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -111,16 +121,26 @@ label_settings = SubResource("LabelSettings_3fiu8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Status List" type="Control" parent="Follower Node" node_paths=PackedStringArray("characterEffects", "statusList")]
+[node name="Break Dimmer" type="Control" parent="Follower Node/Character/Amp" node_paths=PackedStringArray("node", "character")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_uf5vx")
+node = NodePath("..")
+defaultColor = Color(1, 1, 1, 1)
+breakColor = Color(1, 1, 1, 0.643137)
+character = NodePath("../../../..")
+
+[node name="Status List" type="Control" parent="Follower Node/Character" node_paths=PackedStringArray("characterEffects", "statusList")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("8_mvo7g")
-characterEffects = NodePath("../../Effect Manager")
+characterEffects = NodePath("../../../Effect Manager")
 statusList = NodePath("Status List")
 
-[node name="Status List" type="VBoxContainer" parent="Follower Node/Status List"]
+[node name="Status List" type="VBoxContainer" parent="Follower Node/Character/Status List"]
 layout_mode = 2
 offset_left = 91.0
 offset_top = -110.0
@@ -129,29 +149,42 @@ offset_bottom = 125.0
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="Status" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+[node name="Status" parent="Follower Node/Character/Status List/Status List" instance=ExtResource("9_jkeof")]
 layout_mode = 2
 
-[node name="Status2" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+[node name="Status2" parent="Follower Node/Character/Status List/Status List" instance=ExtResource("9_jkeof")]
 layout_mode = 2
 
-[node name="Status3" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+[node name="Status3" parent="Follower Node/Character/Status List/Status List" instance=ExtResource("9_jkeof")]
 layout_mode = 2
 
-[node name="Status4" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+[node name="Status4" parent="Follower Node/Character/Status List/Status List" instance=ExtResource("9_jkeof")]
 layout_mode = 2
 
-[node name="Status5" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+[node name="Status5" parent="Follower Node/Character/Status List/Status List" instance=ExtResource("9_jkeof")]
 layout_mode = 2
 
-[node name="Status6" parent="Follower Node/Status List/Status List" instance=ExtResource("9_jkeof")]
+[node name="Status6" parent="Follower Node/Character/Status List/Status List" instance=ExtResource("9_jkeof")]
 layout_mode = 2
 
 [node name="Stats Container" type="Node2D" parent="."]
 script = ExtResource("6_jkeof")
 
+[node name="Flag Manager" type="Node2D" parent="."]
+script = ExtResource("10_x5cup")
+
 [node name="Effect Manager" type="Node2D" parent="."]
 script = ExtResource("7_x5cup")
 
-[connection signal="StatChanged" from="Stats Container" to="Follower Node/HP Bar" method="UpdateDisplay"]
-[connection signal="OnStatusChanged" from="Effect Manager" to="Follower Node/Status List" method="UpdateUI"]
+[node name="Skill Manager" type="Node2D" parent="."]
+script = ExtResource("12_jkeof")
+
+[node name="Skill Caster" type="Node2D" parent="."]
+script = ExtResource("13_x5cup")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/HP Bar" method="UpdateDisplay"]
+[connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/Amp" method="UpdateDisplay"]
+[connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/Amp/Break Dimmer" method="UpdateStatus"]
+[connection signal="OnStatusChanged" from="Effect Manager" to="Follower Node/Character/Status List" method="UpdateUI"]

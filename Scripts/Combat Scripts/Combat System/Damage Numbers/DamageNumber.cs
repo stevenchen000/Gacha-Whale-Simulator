@@ -12,6 +12,13 @@ namespace CombatSystem
         [Export] private double duration = 2;
         private TimeHandler time;
 
+        [ExportCategory("Damage Colors")]
+        [Export] private Color ampDamageColor;
+        [Export] private Color critAmpDamageColor;
+        [Export] private Color hpDamageColor;
+        [Export] private Color healingDamageColor;
+
+
         public override void _Ready()
         {
             time = new TimeHandler();
@@ -29,9 +36,28 @@ namespace CombatSystem
             time.Tick(delta);
         }
 
-        public void SetValue(int damage)
+        public void SetValue(int damage, DamageType type)
         {
             textLabel.Text = damage.ToString();
+            switch (type)
+            {
+                case DamageType.HealthDamage:
+                    Modulate = hpDamageColor;
+                    Scale = new Vector2(2, 2);
+                    break;
+                case DamageType.AmpDamage:
+                    Modulate = ampDamageColor;
+                    break;
+                case DamageType.CritDamage:
+                    Modulate = critAmpDamageColor;
+                    break;
+                case DamageType.Healing:
+                    Modulate = healingDamageColor;
+                    break;
+                case DamageType.Battery:
+                    Modulate = healingDamageColor;
+                    break;
+            }
         }
 
         

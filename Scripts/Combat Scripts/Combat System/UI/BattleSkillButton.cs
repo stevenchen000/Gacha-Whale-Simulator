@@ -9,7 +9,7 @@ namespace CombatSystem
         [Export] private Label nameLabel;
         [Export] private Label usesLabel;
         [Export] private TextureRect elementIcon;
-        public CharacterSkill skill { get; private set; }
+        public SkillContainer Skill { get; private set; }
         private BattleManager battle;
 
         public override void _Ready()
@@ -24,13 +24,21 @@ namespace CombatSystem
 
         #region Set Skill
 
-        public void SetSkill(CharacterSkill skill)
+        public void SetSkill(SkillContainer skill)
         {
-            this.skill = skill;
+            Skill = skill;
             if (skill != null)
             {
-                SetupUI(skill);
-                button.Disabled = false;
+                if (HasUsesLeft())
+                {
+                    SetupUI(skill);
+                    button.Disabled = false;
+                }
+                else
+                {
+                    SetupUI(skill);
+                    button.Disabled = true;
+                }
             }
             else
             {
@@ -39,13 +47,31 @@ namespace CombatSystem
             }
         }
 
-        private void SetupUI(CharacterSkill skill)
+        private void SetupUI(SkillContainer skill)
         {
-            button.Icon = skill.Icon;
-            nameLabel.Text = skill.SkillName;
-            usesLabel.Text = skill.Uses.ToString();
-            if(skill.SkillElement != null)
-                elementIcon.Texture = skill.SkillElement.Texture;
+            var baseSkill = skill.Skill;
+
+            button.Icon = baseSkill.Icon;
+
+            nameLabel.Text = baseSkill.SkillName;
+
+            SetupUses(skill);
+
+            if(baseSkill.SkillElement != null)
+                elementIcon.Texture = baseSkill.SkillElement.Texture;
+        }
+
+        private void SetupUses(SkillContainer skill)
+        {
+            if (!skill.InfiniteUses)
+            {
+                usesLabel.Text = skill.RemainingUses.ToString();
+                usesLabel.Visible = true;
+            }
+            else
+            {
+                usesLabel.Visible = false;
+            }
         }
 
         private void ResetUI()
@@ -73,10 +99,10 @@ namespace CombatSystem
         {            
             var selectedSkill = battle.SelectedSkill;
 
-            if (selectedSkill != skill)
+            if (selectedSkill != Skill)
             {
                 battle.ResetDirection();
-                battle.SetSelectedSkill(skill);
+                battle.SetSelectedSkill(Skill);
                 int numOfDirections = battle.GetNumberOfTargetableDirections();
                 if (numOfDirections == 1)
                 {//selects direction if there's only one viable direction
@@ -96,6 +122,11 @@ namespace CombatSystem
             //reveal attack on grid
             //select direction if there's only one
             //show direction selector if there's more than one
+        }
+
+        private bool HasUsesLeft()
+        {
+            return Skill.RemainingUses > 0 || Skill.InfiniteUses;
         }
 
 

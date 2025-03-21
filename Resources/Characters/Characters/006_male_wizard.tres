@@ -17,4 +17,4 @@ World = ""
 Class = ExtResource("1_uw0rt")
 SkillSet = ExtResource("2_uw0rt")
 movement = 3
-metadata/_custom_type_script = ExtResource("3_51c7r")
+metadata/_custom_type_script = "uid://gdabyn413d1c"

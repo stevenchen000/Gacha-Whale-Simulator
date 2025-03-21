@@ -6,6 +6,8 @@ namespace CombatSystem
     [GlobalClass]
     public partial class HealEffect : SkillEffect
     {
+        [Export] private StatType statToHeal;
+        [Export] private StatType scalingStat;
         [Export] private float potency;
         [Export] private float duration = 0.2f;
 
@@ -38,13 +40,13 @@ namespace CombatSystem
 
         private void HealTargets(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
-            int casterAttack = caster.Stats.GetStat("Attack");
+            int casterStat = caster.Stats.GetStat(scalingStat);
 
-            int totalHealing = (int)(casterAttack * potency / 100);
-            target.Stats.HealHealth(totalHealing);
-            data.AddHealing(totalHealing);
+            int totalHealing = (int)(casterStat * potency / 100);
+            target.Stats.AddSlidingStat(statToHeal, totalHealing);
+
             DamageNumberManager.ShowDamageNumber(target, totalHealing, DamageType.Healing);
-            Utils.Print(this, "Healed Health: " + totalHealing);
+            Utils.Print(this, $"Healed {scalingStat.StatName}: " + totalHealing);
         }
     }
 }

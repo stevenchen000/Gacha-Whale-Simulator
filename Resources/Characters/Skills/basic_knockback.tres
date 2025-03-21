@@ -11,6 +11,7 @@ script = ExtResource("6_pw32j")
 potency = 100.0
 duration = 0.2
 delay = 0.0
+description = ""
 metadata/_custom_type_script = ExtResource("6_pw32j")
 
 [sub_resource type="Resource" id="Resource_n14kx"]
@@ -19,6 +20,7 @@ duration = 0.5
 knockInSkillDirection = true
 numofSpaces = 2
 delay = 0.0
+description = ""
 metadata/_custom_type_script = ExtResource("7_abqcb")
 
 [resource]
@@ -27,9 +29,11 @@ Icon = ExtResource("2_abqcb")
 SkillName = "Punch"
 duration = 2.0
 InfiniteUses = false
-Uses = 3
+Uses = 5
 effects = Array[Object]([SubResource("Resource_dwxpx"), SubResource("Resource_n14kx")])
 potency = 100
 AttackArea = ExtResource("1_0bye3")
 direction = 1
 targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100

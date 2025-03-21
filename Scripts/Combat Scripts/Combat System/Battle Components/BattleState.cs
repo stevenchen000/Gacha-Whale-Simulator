@@ -18,9 +18,11 @@ namespace CombatSystem
 
         //Turns
         public int TurnCount { get; private set; }
-        public TurnOrderManager TurnOrder { get; private set; }
+        [Export] public TurnOrderManager TurnOrder { get; private set; }
         public TurnDataManager TurnManager { get; private set; }
         public TurnData CurrentTurnData { get; private set; }
+        public CharacterDamageManager DamageManager { get; private set; }
+
 
         //Grid
         [Export] public BattleGrid Grid { get; private set; }
@@ -36,6 +38,8 @@ namespace CombatSystem
         public bool TurnConfirmed { get; private set; }
 
         [Export] private PackedScene battleCharacterScene;
+        [Export] private PortraitBorder playerBorder;
+        [Export] private PortraitBorder enemyBorder;
 
 
 
@@ -46,7 +50,8 @@ namespace CombatSystem
             SetupGrid(data);
             SetupParties(data);
             SetupStartingPositions();
-            TurnOrder = new TurnOrderManager(PlayerParty, EnemyParty);
+            TurnOrder.Init(this);
+            DamageManager = new CharacterDamageManager();
         }
 
         private void SetupGrid(StageData data)
@@ -56,23 +61,43 @@ namespace CombatSystem
             Grid.InitGrid(x, y, this);
         }
 
+
+
+        /*****************
+         * Parties
+         * **************/
+
+        public Array<BattleCharacter> GetAllLivingCharacters()
+        {
+            var result = new Array<BattleCharacter>();
+            result.AddRange(PlayerParty.GetAllLivingMembers());
+            result.AddRange(EnemyParty.GetAllLivingMembers());
+            return result;
+        }
+
+        public void UpdatePartyStatuses()
+        {
+            PlayerParty.CheckPartyHealth();
+            EnemyParty.CheckPartyHealth();
+        }
+
+
+
         private void SetupParties(StageData data)
         {
             if (!data.OverridePlayerParty)
             {
                 var party = GameState.GetCurrentParty();
                 var playerCharacters = party.Party;
-                PlayerParty = new BattleParty(this, playerCharacters, battleCharacterScene);
+                PlayerParty = new BattleParty(this, playerCharacters, battleCharacterScene, playerBorder);
             }
             var enemyCharacters = data.EnemyList;
             var playerStartPos = data.PlayerStartPositions;
             var enemyStartPos = data.EnemyStartPositions;
 
-            EnemyParty = new BattleParty(this, enemyCharacters, battleCharacterScene);
+            EnemyParty = new BattleParty(this, enemyCharacters, battleCharacterScene, enemyBorder);
 
         }
-
-
 
         private void SetupStartingPositions()
         {

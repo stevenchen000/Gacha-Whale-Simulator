@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HealthDamageEffect" load_steps=2 format=3 uid="uid://2a2ybf3dpuaa"]
+
+[ext_resource type="Script" uid="uid://2pad34j5qkxl" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealthDamageEffect.cs" id="1_e5uco"]
+
+[resource]
+script = ExtResource("1_e5uco")
+ampConsumptionPercent = 70.0
+delay = 0.0
+description = "An attack that dumps 70% of amp for damage, providing an extra buffer for defense."
+metadata/_custom_type_script = "uid://2pad34j5qkxl"

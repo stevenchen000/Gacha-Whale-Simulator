@@ -32,15 +32,12 @@ public class Utils
         return texture;
     }
 
-    public static void Print(Node node, object message)
+    public static void Print(object node, object message)
     {
         GD.Print($"{node.GetType()}: \n\t{message}");
     }
 
-    public static void Print(Resource resource, object message)
-    {
-        GD.Print($"{resource.GetType()}: \n\t{message}");
-    }
+
 
     public static T FindParentOfType<T>(Node node) where T : Node
     {

@@ -3,7 +3,7 @@ using System;
 
 namespace CombatSystem
 {
-    public partial class StatUI : Node
+    public partial class StatUI : Control
     {
         [Export] protected StatType stat;
         [Export] protected Label nameLabel;

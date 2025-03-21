@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="1_i2b2x"]
 [ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="2_2kmdg"]
 [ext_resource type="Resource" uid="uid://c7lns7qgbbffi" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/defense.tres" id="3_upyft"]
-[ext_resource type="Resource" uid="uid://dbdtx1lisc55v" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/magic_defense.tres" id="4_mwsxw"]
+[ext_resource type="Resource" uid="uid://dbdtx1lisc55v" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/spirit.tres" id="4_mwsxw"]
 [ext_resource type="Resource" uid="uid://bl10614skdi4f" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/speed.tres" id="5_uc5m7"]
 [ext_resource type="Resource" uid="uid://3greor3qyttx" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/movement.tres" id="6_eqgjp"]
 [ext_resource type="Script" uid="uid://dtfekp4aksu4" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/BattleStatsTemplate.cs" id="7_hfjn0"]
@@ -13,10 +13,10 @@
 script = ExtResource("7_hfjn0")
 Stats = Dictionary[Object, float]({
 ExtResource("1_i2b2x"): 10.0,
-ExtResource("2_2kmdg"): 3.0,
+ExtResource("2_2kmdg"): 35.0,
 ExtResource("3_upyft"): 5.0,
 ExtResource("4_mwsxw"): 5.0,
-ExtResource("5_uc5m7"): 3.0,
+ExtResource("5_uc5m7"): 0.05,
 ExtResource("6_eqgjp"): 0.0,
 ExtResource("7_mux32"): 100.0
 })

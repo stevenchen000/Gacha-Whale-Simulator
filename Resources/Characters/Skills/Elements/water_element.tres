@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Element" load_steps=2 format=3 uid="uid://dwyicv0en0i8n"]
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://dwyicv0en0i8n"]
 
 [ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="1_e5w22"]
+[ext_resource type="Texture2D" uid="uid://bm13fsdmj0jc8" path="res://Art Assets/Character Assets/Element Icons/468_Water_Bubbles.png" id="1_ordh7"]
 
 [resource]
 script = ExtResource("1_e5w22")
-name = "Water"
+Name = "Water"
+Texture = ExtResource("1_ordh7")

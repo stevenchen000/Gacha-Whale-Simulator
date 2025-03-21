@@ -8,4 +8,7 @@
     <Compile Remove="Scripts\Character Creator\**" />
     <EmbeddedResource Remove="Scripts\Character Creator\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\Combat Scripts\Combat System\Grid\Grid Shapes\" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw78lro41fpk6"]
+
+[ext_resource type="Script" uid="uid://dluvj025ncl2w" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderPortrait.cs" id="1_idrax"]
+[ext_resource type="Resource" uid="uid://qlqsjt3jnu1a" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/player_turn_border.tres" id="2_r1ff7"]
+[ext_resource type="Resource" uid="uid://fdwsqaapqq4i" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/enemy_turn_border.tres" id="3_6ntnk"]
+[ext_resource type="Script" uid="uid://djj2a2mevrxmf" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="3_ckmof"]
+[ext_resource type="Texture2D" uid="uid://biv7cid2nku43" path="res://Art Assets/Portrait Circle/Avatar Circle Background.png" id="4_ckmof"]
+[ext_resource type="Texture2D" uid="uid://ckthnfqactwlq" path="res://Art Assets/Portrait Circle/Avatar Circle Border.png" id="5_ikaj4"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="5_r1ff7"]
+
+[node name="Character Display" type="Control" node_paths=PackedStringArray("display")]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_idrax")
+display = NodePath("Character")
+playerBorder = ExtResource("2_r1ff7")
+enemyBorder = ExtResource("3_6ntnk")
+
+[node name="Character" type="Control" parent="." node_paths=PackedStringArray("background", "border", "portraitElement")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_ckmof")
+background = NodePath("Background")
+border = NodePath("Border")
+portraitElement = NodePath("Background/Sprite2D")
+borderSize = 10.0
+
+[node name="Background" type="TextureRect" parent="Character"]
+clip_children = 2
+layout_mode = 0
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 137.0
+offset_bottom = 137.0
+texture = ExtResource("4_ckmof")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Character/Background"]
+position = Vector2(12, 396)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("5_r1ff7")
+
+[node name="Border" type="TextureRect" parent="Character"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 137.0
+offset_bottom = 137.0
+texture = ExtResource("5_ikaj4")
+expand_mode = 1

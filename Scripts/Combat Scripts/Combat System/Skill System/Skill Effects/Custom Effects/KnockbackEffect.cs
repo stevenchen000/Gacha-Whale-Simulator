@@ -48,7 +48,7 @@ namespace CombatSystem
                 bool knocked = _MoveCharacterInDirection(target, offset);
                 if (!knocked)
                 {
-                    int damage = data.totalDamageDealt * i / 10;
+                    int damage = data.totalHpDamageDealt * i / 10;
                     target.Stats.TakeDamage(damage);
                     DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
                     break;

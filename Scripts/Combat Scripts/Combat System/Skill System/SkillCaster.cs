@@ -8,6 +8,10 @@ namespace CombatSystem
     {
         private TurnData data;
 
+        public bool IsCasting { get; private set; } = false;
+
+
+
         public override void _Ready()
         {
             
@@ -24,10 +28,11 @@ namespace CombatSystem
             return false;
         }
 
-        public void CastSkill(BattleCharacter caster, CharacterSkill skill,
+        public void CastSkill(BattleCharacter caster, 
+                              CharacterSkill skill,
                               Array<BattleCharacter> targets)
         {
-            data = new TurnData(caster, targets, skill);
+            //data = new TurnData(caster, targets, skill);
         }
 
     }

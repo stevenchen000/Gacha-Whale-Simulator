@@ -184,6 +184,16 @@ namespace CombatSystem {
 		 * Occupy and unoccupy spaces
 		 * ****************/
 
+		public void UnoccupySpace(BattleCharacter character)
+		{
+			foreach(var space in battleSpaces)
+			{
+				if(space.CharacterOnSpace == character)
+				{
+					space.UnoccupySpace();
+				}
+			}
+		}
 
 
 		/*********************

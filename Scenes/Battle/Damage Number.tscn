@@ -8,10 +8,15 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="DamageNumber" type="Control" node_paths=PackedStringArray("textLabel")]
+z_index = 100
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_534ll")
 textLabel = NodePath("Label")
+ampDamageColor = Color(1, 1, 1, 1)
+critAmpDamageColor = Color(1, 1, 0, 1)
+hpDamageColor = Color(1, 0.466667, 0, 1)
+healingDamageColor = Color(0, 0.9, 0.0749999, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

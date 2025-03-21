@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgloqwxyypvwk" path="res://Scripts/Game Menu/Gacha Menu/GachaMenu.cs" id="1_8p8mu"]
 [ext_resource type="PackedScene" uid="uid://kly5ymoofofr" path="res://Scenes/Overworld/Gacha Menu/gacha_banner.tscn" id="1_cr1j0"]
-[ext_resource type="AudioStream" uid="uid://ij0s1wo5p3jv" path="res://Resources/Characters/Characters/Audio Assets/BGM/Light Ambience 1.mp3" id="2_d47nl"]
+[ext_resource type="AudioStream" uid="uid://ij0s1wo5p3jv" path="res://Audio Assets/BGM/Light Ambience 1.mp3" id="2_d47nl"]
 [ext_resource type="PackedScene" uid="uid://scn4wi83sn0q" path="res://Scenes/Overworld/Backgrounds/Background.tscn" id="2_n6yel"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="3_igni6"]
 

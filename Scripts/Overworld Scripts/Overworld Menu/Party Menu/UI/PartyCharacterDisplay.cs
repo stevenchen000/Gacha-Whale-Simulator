@@ -43,7 +43,7 @@ namespace PartyMenuSystem {
             {
                 var portrait = character.GetPortrait();
 
-                display.UpdatePortrait(portrait, 0);
+                display.UpdatePortrait(portrait);
             }
             else
             {

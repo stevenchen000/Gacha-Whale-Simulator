@@ -150,6 +150,8 @@ label_settings = SubResource("LabelSettings_i5ara")
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="button_up" from="Menu Bar/HBoxContainer/Home Button" to="." method="LoadHomeMenu"]
 [connection signal="button_up" from="Menu Bar/HBoxContainer/Party Button" to="." method="LoadPartyMenu"]
 [connection signal="button_up" from="Menu Bar/HBoxContainer/Upgrade Button" to="." method="LoadUpgradeMenu"]

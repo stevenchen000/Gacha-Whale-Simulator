@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GameCharacter" load_steps=5 format=3 uid="uid://cqa1p600e7x4l"]
 
-[ext_resource type="Resource" uid="uid://dnkp8jmxhbt8a" path="res://Resources/Characters/Skills/Classes/Attackers/caster_class.tres" id="1_qo84a"]
+[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/Attackers/warrior_class.tres" id="1_g0hds"]
 [ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_g0hds"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_2330f"]
 [ext_resource type="Resource" uid="uid://dpb54d4xomaoi" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_002_female_wizard.tres" id="5_6b21g"]
@@ -10,11 +10,11 @@ script = ExtResource("4_2330f")
 ID = 2
 portrait = ExtResource("5_6b21g")
 BaseRarity = 1
-Name = "Wizard 2"
+Name = "Blonde"
 Title = ""
 Description = ""
 World = ""
-Class = ExtResource("1_qo84a")
+Class = ExtResource("1_g0hds")
 SkillSet = ExtResource("2_g0hds")
 movement = 2
-metadata/_custom_type_script = ExtResource("4_2330f")
+metadata/_custom_type_script = "uid://gdabyn413d1c"

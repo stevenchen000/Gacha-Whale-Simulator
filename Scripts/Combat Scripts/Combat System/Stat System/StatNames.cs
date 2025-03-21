@@ -30,6 +30,12 @@ public partial class StatNames : Node
         get { return instance._defense; }
     }
 
+    [Export] private StatType _spirit;
+    public static StatType Spirit
+    {
+        get { return instance._spirit; }
+    }
+
     [Export] private StatType _speed;
     public static StatType Speed
     {

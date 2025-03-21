@@ -47,14 +47,14 @@ public partial class CustomCharacterManager : Node2D
 
     private void Init()
     {
-        imageSaveLocation = ProjectSettings.GlobalizePath("user://Images");
-        portraitSaveLocation = ProjectSettings.GlobalizePath("user://Portraits");
-        characterSaveLocation = ProjectSettings.GlobalizePath("user://Characters");
+        imageSaveLocation = ProjectSettings.GlobalizePath("user://Custom Characters//Images");
+        portraitSaveLocation = ProjectSettings.GlobalizePath("user://Custom Characters//Portraits");
+        characterSaveLocation = ProjectSettings.GlobalizePath("user://Custom Characters//Characters");
 
         if (!Directory.Exists(imageSaveLocation))
             DirAccess.MakeDirRecursiveAbsolute(imageSaveLocation);
         _textures = new Dictionary<string, WeakReference>();
-        //LoadAllSavedImages();
+        LoadAllSavedImages();
 
         if (!Directory.Exists(portraitSaveLocation))
             DirAccess.MakeDirRecursiveAbsolute(portraitSaveLocation);

@@ -35,7 +35,7 @@ namespace CombatSystem
 
         public override void _EndElement(TurnData data, TimeHandler time)
         {
-            var totalDamage = data.totalDamageDealt;
+            var totalDamage = data.totalHpDamageDealt;
         }
 
         private void DealDamageToAllTargets(TurnData data, BattleCharacter caster, Array<BattleCharacter> targets)
@@ -55,7 +55,7 @@ namespace CombatSystem
             int damage = (int)(baseDamage * totalPotency / numberOfHits / 100);
 
             targetStats.TakeDamage(damage);
-            data.AddDamage(damage);
+            data.AddHpDamage(damage);
             DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
         }
     }

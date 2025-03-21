@@ -21,7 +21,7 @@ namespace CombatSystem
         [Export] public BattleState State { get; private set; }
         
 
-        public CharacterSkill SelectedSkill 
+        public SkillContainer SelectedSkill 
         {
             get
             {
@@ -45,6 +45,13 @@ namespace CombatSystem
         }
         public bool TurnConfirmed { get; private set; }
         public Dictionary<CharacterDirection, Array<GridSpace>> targetableSpaces;
+
+
+        [Signal]
+        public delegate void TurnStartEventHandler();
+
+
+
 
 
         public override void _Ready()
@@ -102,6 +109,8 @@ namespace CombatSystem
             //if controlled character
             skillUI.SetupButtons(currentCharacter);
             HideConfirmationAndShowSkipButton();
+
+            EmitSignal(SignalName.TurnStart);
         }
 
         public void ConfirmAction()
@@ -153,7 +162,7 @@ namespace CombatSystem
             OccupySpace(space, currChar);
         }
 
-        public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, CharacterSkill skill)
+        public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, SkillContainer skill)
         {
             turnData = new TurnData(caster, targets, skill);
         }
@@ -162,7 +171,7 @@ namespace CombatSystem
 
         #region Set Skill Button
 
-        public void SetSelectedSkill(CharacterSkill skill)
+        public void SetSelectedSkill(SkillContainer skill)
         {
             if (SelectedSkill == skill) return;
 
@@ -177,10 +186,15 @@ namespace CombatSystem
 
             if (SelectedSkill != null)
             {
-                targetableSpaces = SelectedSkill.GetAllTargetSpaces(this, grid, caster, caster.currPosition);
+                targetableSpaces = skill.Skill.GetAllTargetSpaces(this, grid, caster, caster.currPosition);
                 grid.ShowAllTargetableAreas(targetableSpaces);
             }
         }
+
+
+        /******************
+         * Skill UI
+         * *****************/
 
         public void ShowConfirmationAndHideSkipButton()
         {
@@ -193,6 +207,18 @@ namespace CombatSystem
             skillUI.HideConfirmationButtons();
             skillUI.ShowSkipButton();
         }
+
+        public void ShowSkillUI()
+        {
+            skillUI.ShowUI();
+        }
+
+        public void HideSkillUI()
+        {
+            skillUI.HideUI();
+        }
+
+
 
         public void CancelSelectedSkill()
         {
@@ -282,30 +308,6 @@ namespace CombatSystem
         #endregion
 
 
-        /******************
-         * Starting Positions
-         * ****************/
-        #region Starting Positions
-        /*
-        private void InitCharacters(Array<CharacterData> characters, 
-                                    Array<BattleCharacter> party, 
-                                    int partyIndex,
-                                    Array<Vector2I> startingPositions)
-        {
-            for (int i = 0; i < characters.Count; i++)
-            {
-                var character = characters[i];
-                var tempChar = Utils.InstantiateCopy<BattleCharacter>(battleCharacterScene);
-                var startPos = startingPositions[i];
-                tempChar.InitCharacter(character, startPos, partyIndex);
-                OccupySpace(startPos, tempChar);
-
-                AddChild(tempChar);
-                party.Add(tempChar);
-            }
-        }*/
-
-        #endregion
 
         /*****************
          * Helper functions
@@ -333,6 +335,12 @@ namespace CombatSystem
             }
 
             return result;
+        }
+
+        public void UnoccupySpace(Vector2I coords, BattleCharacter character)
+        {
+            var space = grid.GetSpaceFromCoords(coords);
+            
         }
 
         private bool OccupySpace(GridSpace space, BattleCharacter character)

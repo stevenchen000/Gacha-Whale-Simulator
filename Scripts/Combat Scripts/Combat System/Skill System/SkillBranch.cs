@@ -17,8 +17,18 @@ namespace CombatSystem
             {
                 result = skillTiers[tier];
             }
+            else if(tier < 0)
+            {
+                result = null;
+            }
+            else
+            {
+                int index = skillTiers.Count - 1;
+                result = skillTiers[index];
+            }
 
             return result;
         }
+
     }
 }

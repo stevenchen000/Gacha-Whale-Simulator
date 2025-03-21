@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://4yrkv70qp5xd"]
+[gd_scene load_steps=14 format=3 uid="uid://4yrkv70qp5xd"]
 
 [ext_resource type="Script" uid="uid://cn6b573m8cnxo" path="res://Scripts/Game Menu/Character Creator/Menus/SelectionMenu.cs" id="1_4ob3o"]
-[ext_resource type="Script" uid="uid://cclti5625ajsb" path="res://Scripts/Game Menu/Character Creator/UI GDScript/StretchToBottomOfScreen.gd" id="1_aqpoy"]
 [ext_resource type="Resource" uid="uid://dqot8vvd2m5k4" path="res://Resources/Utilities/Events/Character Manager Events/OnEditorPortraitChanged.tres" id="2_ccn0l"]
 [ext_resource type="Script" uid="uid://40bo4g8qqmjy" path="res://Scripts/Game Menu/Character Creator/ImageSaver.cs" id="2_qrk3s"]
 [ext_resource type="Script" uid="uid://bbk7bfsnftw4r" path="res://Scripts/Game Menu/Character Creator/CharacterGridManager.cs" id="2_y0g8g"]
@@ -55,7 +54,6 @@ offset_top = 1054.0
 offset_right = 1077.0
 offset_bottom = 1923.0
 horizontal_scroll_mode = 0
-script = ExtResource("1_aqpoy")
 
 [node name="Character Grid" type="GridContainer" parent="====UI====/ScrollContainer" node_paths=PackedStringArray("ui")]
 layout_mode = 2

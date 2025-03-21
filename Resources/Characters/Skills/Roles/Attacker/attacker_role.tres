@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterRole" load_steps=7 format=3 uid="uid://cnmga8on2vcdy"]
+[gd_resource type="Resource" script_class="CharacterRole" load_steps=9 format=3 uid="uid://cnmga8on2vcdy"]
 
 [ext_resource type="Script" uid="uid://bt65k28bw5if6" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs" id="1_gtwod"]
 [ext_resource type="Texture2D" uid="uid://co6woy8qx2ijp" path="res://Art Assets/Character Assets/Role Icons/SwordIcon.png" id="1_q1aqp"]
+[ext_resource type="Resource" uid="uid://d3cne32cie1p8" path="res://Resources/Characters/Character Data/000_basic_skills/attacker_amp_branch.tres" id="1_y6xqs"]
+[ext_resource type="Resource" uid="uid://dt0itfsjedyxw" path="res://Resources/Characters/Character Data/000_basic_skills/attacker_hp_branch.tres" id="2_u1a7u"]
 [ext_resource type="Resource" uid="uid://decwfyy1xomdg" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_base_stats.tres" id="3_cprba"]
 [ext_resource type="Script" uid="uid://bnm4j23bkjybk" path="res://Scripts/Combat Scripts/Combat System/Stat System/RoleStatGrowth.cs" id="3_nbqsu"]
 [ext_resource type="Resource" uid="uid://b0e6i8gv1aj0k" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_growth_stats.tres" id="4_f80o1"]
@@ -18,3 +20,5 @@ Name = "Attacker"
 Texture = ExtResource("1_q1aqp")
 Description = "Attackers focus on dealing damage to the enemies."
 stats = SubResource("Resource_pogbw")
+AmpAttackBranch = ExtResource("1_y6xqs")
+HpAttackBranch = ExtResource("2_u1a7u")
