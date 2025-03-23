@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="GachaBanner" load_steps=11 format=3 uid="uid://g4qtq3qm5r2d"]
+[gd_resource type="Resource" script_class="GachaBanner" load_steps=12 format=3 uid="uid://g4qtq3qm5r2d"]
 
+[ext_resource type="Resource" uid="uid://bu0eun0hmtjh1" path="res://Resources/Items/premium_gems.tres" id="1_3slnh"]
 [ext_resource type="Resource" uid="uid://4qorrqwhv7ri" path="res://Resources/Overworld/Gacha Game Data/Gacha Characters List.tres" id="1_3upsp"]
 [ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_female_wizard.tres" id="1_iysby"]
 [ext_resource type="Script" uid="uid://vdsxlluavxds" path="res://Scripts/Gacha System/GachaBanner.cs" id="1_xa0ob"]
@@ -29,4 +30,5 @@ FullGacha = Array[Object]([ExtResource("1_3upsp"), SubResource("Resource_o5pkb")
 MultiPullBonus = Array[Object]([SubResource("Resource_wfywk")])
 SinglePullCost = 300
 MultiPullCost = 3000
-metadata/_custom_type_script = ExtResource("1_xa0ob")
+Currency = ExtResource("1_3slnh")
+metadata/_custom_type_script = "uid://vdsxlluavxds"

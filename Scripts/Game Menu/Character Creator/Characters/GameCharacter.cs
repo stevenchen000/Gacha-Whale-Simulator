@@ -16,6 +16,7 @@ public partial class GameCharacter : Resource
     [Export] public string World { get; protected set; }
     [Export] public Element Element { get; protected set; }
     [Export] public CharacterClass Class { get; protected set; }
+    [Export] public CharacterRole Role { get; private set; }
     [Export] public SkillLoadout SkillSet { get; protected set; }
     [Export] public CombatAI EnemyAI { get; protected set; }
     
@@ -24,13 +25,6 @@ public partial class GameCharacter : Resource
         get
         {
             return Class.Weapon;
-        }
-    }
-    public CharacterRole Role
-    {
-        get
-        {
-            return Class.Role;
         }
     }
 

@@ -8,17 +8,17 @@
 [ext_resource type="Script" uid="uid://bnm4j23bkjybk" path="res://Scripts/Combat Scripts/Combat System/Stat System/RoleStatGrowth.cs" id="3_nbqsu"]
 [ext_resource type="Resource" uid="uid://b0e6i8gv1aj0k" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_growth_stats.tres" id="4_f80o1"]
 
-[sub_resource type="Resource" id="Resource_pogbw"]
+[sub_resource type="Resource" id="Resource_y6xqs"]
 script = ExtResource("3_nbqsu")
 _baseStats = ExtResource("3_cprba")
 _statsPerLevel = ExtResource("4_f80o1")
-metadata/_custom_type_script = ExtResource("3_nbqsu")
+metadata/_custom_type_script = "uid://bnm4j23bkjybk"
 
 [resource]
 script = ExtResource("1_gtwod")
 Name = "Attacker"
 Texture = ExtResource("1_q1aqp")
 Description = "Attackers focus on dealing damage to the enemies."
-stats = SubResource("Resource_pogbw")
+Stats = SubResource("Resource_y6xqs")
 AmpAttackBranch = ExtResource("1_y6xqs")
 HpAttackBranch = ExtResource("2_u1a7u")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bquphtsiogc6m"]
+
+[ext_resource type="Texture2D" uid="uid://dt0gi1lmsr05q" path="res://Art Assets/Dollar.png" id="1_savlh"]
+[ext_resource type="Script" uid="uid://cl722yw1v47w6" path="res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs" id="2_5cpki"]
+
+[resource]
+script = ExtResource("2_5cpki")
+Icon = ExtResource("1_savlh")
+ID = 0
+ItemName = "Money"
+type = 0
+Description = "Just a dollar. Used to buy items from the premium shop. Or you can use it irl for food and stuff I guess, but that would be boring..."
+description = ""
+metadata/_custom_type_script = "uid://cl722yw1v47w6"

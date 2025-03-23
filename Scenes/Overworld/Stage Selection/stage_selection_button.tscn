@@ -1,18 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://umkn3hlqwl0r"]
+[gd_scene load_steps=7 format=3 uid="uid://umkn3hlqwl0r"]
 
-[ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="1_g3w2k"]
 [ext_resource type="Script" uid="uid://bjl2maslcsuuy" path="res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectButton.cs" id="2_t7sqg"]
 [ext_resource type="Resource" uid="uid://beeikrtu3ncsq" path="res://Resources/Overworld/Battles/basic_stage.tres" id="3_cd01d"]
+[ext_resource type="PackedScene" uid="uid://wismfg5tyquq" path="res://Scenes/Overworld/Party Menu/UI/rarity_star.tscn" id="3_pb7ya"]
+[ext_resource type="Texture2D" uid="uid://cnp8h88jxrj3e" path="res://Art Assets/Backgrounds/Ocean_1/1.png" id="4_1quk8"]
 
-[node name="Stage Selection" type="Button"]
-custom_minimum_size = Vector2(230, 230)
-offset_left = 111.0
-offset_top = 280.0
-offset_right = 345.0
-offset_bottom = 512.0
-icon = ExtResource("1_g3w2k")
-expand_icon = true
+[sub_resource type="CanvasTexture" id="CanvasTexture_iyqdh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t130a"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.501961)
+shadow_offset = Vector2(3, 3)
+
+[node name="Stage Selection" type="Control" node_paths=PackedStringArray("stageIcon", "stageName", "clearStars")]
+custom_minimum_size = Vector2(414, 140)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 414.0
+offset_bottom = 140.0
 script = ExtResource("2_t7sqg")
 data = ExtResource("3_cd01d")
+stageIcon = NodePath("Stage Icon")
+stageName = NodePath("Stage Name")
+clearStars = [NodePath("Stars/Star"), NodePath("Stars/Star2"), NodePath("Stars/Star3")]
+heldTimeForDescription = 5.0
 
-[connection signal="button_up" from="." to="." method="OnClick"]
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.321728, 0.321728, 0.321728, 1)
+layout_mode = 0
+offset_right = 414.0
+offset_bottom = 140.0
+texture = SubResource("CanvasTexture_iyqdh")
+
+[node name="Stars" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 96.0
+offset_right = 683.0
+offset_bottom = 224.0
+scale = Vector2(0.3, 0.3)
+
+[node name="Star" parent="Stars" instance=ExtResource("3_pb7ya")]
+layout_mode = 2
+
+[node name="Star2" parent="Stars" instance=ExtResource("3_pb7ya")]
+layout_mode = 2
+
+[node name="Star3" parent="Stars" instance=ExtResource("3_pb7ya")]
+layout_mode = 2
+
+[node name="Stage Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 130.0
+offset_bottom = 128.0
+texture = ExtResource("4_1quk8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Stage Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 4.0
+offset_right = 408.0
+offset_bottom = 91.0
+text = "Battle on the giant bridge with Greg"
+label_settings = SubResource("LabelSettings_t130a")
+horizontal_alignment = 2
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 416.0
+offset_bottom = 140.0
+flat = true
+
+[connection signal="button_down" from="Button" to="." method="StartHolding"]
+[connection signal="button_up" from="Button" to="." method="OnClick"]

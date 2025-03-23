@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="GameCharacter" load_steps=5 format=3 uid="uid://d3yk0tyglrs1t"]
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=7 format=3 uid="uid://d3yk0tyglrs1t"]
 
-[ext_resource type="Resource" uid="uid://dnkp8jmxhbt8a" path="res://Resources/Characters/Skills/Classes/Attackers/caster_class.tres" id="1_3rxdi"]
+[ext_resource type="Resource" uid="uid://dnkp8jmxhbt8a" path="res://Resources/Characters/Skills/Classes/caster_class.tres" id="1_spnhy"]
+[ext_resource type="Resource" uid="uid://cnmga8on2vcdy" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_role.tres" id="2_3rxdi"]
 [ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_x2rxm"]
+[ext_resource type="Resource" uid="uid://uwml6uoq7y07" path="res://Resources/Characters/Skills/Elements/light_element.tres" id="2_xkh2i"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_vv4u2"]
 [ext_resource type="Resource" uid="uid://d1angj0e5dnj1" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_001_wizard_female.tres" id="5_wb7bq"]
 
@@ -14,7 +16,9 @@ Name = "Brown Hair"
 Title = ""
 Description = ""
 World = ""
-Class = ExtResource("1_3rxdi")
+Element = ExtResource("2_xkh2i")
+Class = ExtResource("1_spnhy")
+Role = ExtResource("2_3rxdi")
 SkillSet = ExtResource("2_x2rxm")
 movement = 2
 metadata/_custom_type_script = "uid://gdabyn413d1c"

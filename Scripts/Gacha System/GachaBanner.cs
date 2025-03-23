@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Godot.Collections;
+using InventorySystem;
 
 namespace GachaSystem{
     [GlobalClass]
@@ -11,13 +12,14 @@ namespace GachaSystem{
         private DateTime expirationDate;
         [Export] public int SinglePullCost { get; private set; } = 300;
         [Export] public int MultiPullCost { get; private set; } = 3000;
+        [Export] public ItemResource Currency { get; private set; }
 
 
         public Array<GameCharacter> GetMultiPull()
         {
             Array<GameCharacter> result = null;
 
-            if (GameState.HasEnoughPremiumCurrency(MultiPullCost))
+            if (HasEnoughCurrency(MultiPullCost))
             {
                 result = new Array<GameCharacter>();
 
@@ -32,7 +34,7 @@ namespace GachaSystem{
                 result.Add(extraPull);
                 GameState.AddCharacterToAccount(extraPull);
 
-                GameState.UsePremiumCurrency(MultiPullCost);
+                UseCurrency(MultiPullCost);
             }
 
             return result;
@@ -42,9 +44,9 @@ namespace GachaSystem{
         {
             GameCharacter result = null;
 
-            if (GameState.HasEnoughPremiumCurrency(SinglePullCost))
+            if (HasEnoughCurrency(SinglePullCost))
             {
-                GameState.UsePremiumCurrency(SinglePullCost);
+                UseCurrency(SinglePullCost);
                 result = PullRandomCharacter(FullGacha);
                 GameState.AddCharacterToAccount(result);
             }
@@ -53,6 +55,26 @@ namespace GachaSystem{
         }
 
 
+        /*************
+         * Cost-Related Functions
+         * *************/
+
+        private bool HasEnoughCurrency(int amount)
+        {
+            return GameState.HasEnoughOfItem(Currency, amount);
+        }
+
+        private void UseCurrency(int amount)
+        {
+            GameState.RemoveItemFromPlayerInventory(Currency, amount);
+        }
+
+
+
+
+        /*************
+         * Pull-Related Functions
+         * ***************/
 
         private GameCharacter PullRandomCharacter(Array<GachaCharacterList> characterLists)
         {

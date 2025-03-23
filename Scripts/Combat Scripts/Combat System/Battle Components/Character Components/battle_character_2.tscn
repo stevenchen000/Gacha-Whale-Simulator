@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cen0vf3wpj18o"]
+[gd_scene load_steps=28 format=3 uid="uid://cen0vf3wpj18o"]
 
 [ext_resource type="Script" uid="uid://c0mged6cixh87" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacter.cs" id="1_6ti8j"]
 [ext_resource type="Resource" uid="uid://6o7bcyw7lixn" path="res://Resources/Characters/default_ai.tres" id="2_s32lp"]
@@ -29,7 +29,123 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 13
 shadow_color = Color(0, 0, 0, 0.576471)
 
-[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait", "characterPos", "Skills", "Stats", "Status", "Flags")]
+[sub_resource type="LabelSettings" id="LabelSettings_uf5vx"]
+font_size = 150
+font_color = Color(0.905269, 3.34509e-06, 1.15514e-06, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.501961)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="Animation" id="Animation_w53k8"]
+resource_name = "transition"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.31274),
+"transitions": PackedFloat32Array(1, 0.353553, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ddsrv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7df3"]
+_data = {
+&"RESET": SubResource("Animation_ddsrv"),
+&"transition": SubResource("Animation_w53k8")
+}
+
+[sub_resource type="Animation" id="Animation_uf5vx"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7dcjt"]
+resource_name = "take_damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-32, 0), Vector2(25, 0), Vector2(-20, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tg0p5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wrdih"]
+resource_name = "idle_turn"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -29), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w53k8"]
+_data = {
+&"RESET": SubResource("Animation_tg0p5"),
+&"idle": SubResource("Animation_uf5vx"),
+&"idle_turn": SubResource("Animation_wrdih"),
+&"take_damage": SubResource("Animation_7dcjt")
+}
+
+[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait", "characterPos", "Skills", "Stats", "Status", "Flags", "anim")]
 script = ExtResource("1_6ti8j")
 portrait = NodePath("Follower Node/Character/Character2")
 characterPos = NodePath("Position")
@@ -38,6 +154,7 @@ Stats = NodePath("Stats Container")
 Status = NodePath("Effect Manager")
 Flags = NodePath("Flag Manager")
 AI = ExtResource("2_s32lp")
+anim = NodePath("AnimationPlayer")
 
 [node name="Position" type="Node2D" parent="."]
 
@@ -121,16 +238,6 @@ label_settings = SubResource("LabelSettings_3fiu8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Break Dimmer" type="Control" parent="Follower Node/Character/Amp" node_paths=PackedStringArray("node", "character")]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("8_uf5vx")
-node = NodePath("..")
-defaultColor = Color(1, 1, 1, 1)
-breakColor = Color(1, 1, 1, 0.643137)
-character = NodePath("../../../..")
-
 [node name="Status List" type="Control" parent="Follower Node/Character" node_paths=PackedStringArray("characterEffects", "statusList")]
 layout_mode = 3
 anchors_preset = 0
@@ -167,6 +274,46 @@ layout_mode = 2
 [node name="Status6" parent="Follower Node/Character/Status List/Status List" instance=ExtResource("9_jkeof")]
 layout_mode = 2
 
+[node name="Unbreak Counter" type="Control" parent="Follower Node/Character"]
+anchors_preset = 0
+offset_left = -4.0
+offset_top = 3.0
+offset_right = -4.0
+offset_bottom = 3.0
+
+[node name="Control" type="Control" parent="Follower Node/Character/Unbreak Counter"]
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="Follower Node/Character/Unbreak Counter/Control"]
+visible = false
+modulate = Color(1, 1, 1, 0.447059)
+layout_mode = 0
+offset_left = -37.0
+offset_top = -108.0
+offset_right = 49.0
+offset_bottom = 97.0
+text = "5"
+label_settings = SubResource("LabelSettings_uf5vx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Follower Node/Character/Unbreak Counter"]
+libraries = {
+&"": SubResource("AnimationLibrary_q7df3")
+}
+
+[node name="Break Status Updater" type="Control" parent="Follower Node/Character" node_paths=PackedStringArray("ampNode", "breakTurns", "character", "anim")]
+anchors_preset = 0
+offset_left = -19.0
+offset_top = -96.0
+offset_right = 21.0
+offset_bottom = -56.0
+script = ExtResource("8_uf5vx")
+ampNode = NodePath("../Amp")
+breakTurns = NodePath("../Unbreak Counter/Control/Label")
+defaultColor = Color(1, 1, 1, 1)
+breakColor = Color(1, 1, 1, 0.643137)
+character = NodePath("../../..")
+anim = NodePath("../Unbreak Counter/AnimationPlayer")
+
 [node name="Stats Container" type="Node2D" parent="."]
 script = ExtResource("6_jkeof")
 
@@ -183,8 +330,15 @@ script = ExtResource("12_jkeof")
 script = ExtResource("13_x5cup")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w53k8")
+}
+next/take_damage = &"idle"
+blend_times = [&"idle_turn", &"idle", 0.1, &"idle_turn", &"idle_turn", 0.1, &"idle_turn", &"take_damage", 0.1, &"take_damage", &"idle", 0.1]
 
 [connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/HP Bar" method="UpdateDisplay"]
 [connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/Amp" method="UpdateDisplay"]
-[connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/Amp/Break Dimmer" method="UpdateStatus"]
+[connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/Break Status Updater" method="UpdateStatus"]
+[connection signal="CharacterStateChanged" from="Flag Manager" to="Follower Node/Character/Amp" method="UpdateDisplay"]
+[connection signal="CharacterStateChanged" from="Flag Manager" to="Follower Node/Character/Break Status Updater" method="UpdateStatus"]
 [connection signal="OnStatusChanged" from="Effect Manager" to="Follower Node/Character/Status List" method="UpdateUI"]

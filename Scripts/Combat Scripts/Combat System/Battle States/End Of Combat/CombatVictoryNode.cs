@@ -55,7 +55,6 @@ namespace CombatSystem
         {
             if(timeInState > 5)
             {
-                Utils.Print(this, "Don't forget to add rewards");
                 battle.ReturnToCombatMenu();
             }
         }

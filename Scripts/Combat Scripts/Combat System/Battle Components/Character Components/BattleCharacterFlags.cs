@@ -8,6 +8,9 @@ namespace CombatSystem
     {
         private Dictionary<string, int> _flags = new Dictionary<string, int>();
 
+        [Signal]
+        public delegate void CharacterStateChangedEventHandler();
+
         public bool GetFlag(string flag)
         {
             AddMissingFlag(flag);
@@ -24,18 +27,21 @@ namespace CombatSystem
         {
             AddMissingFlag(flag);
             _flags[flag] += amount;
+            RaiseEvent();
         }
 
         public void RemoveFlag(string flag, int amount = 1)
         {
             AddMissingFlag(flag);
             _flags[flag] -= amount;
+            RaiseEvent();
         }
 
         public void SetFlagValue(string flag, int value)
         {
             AddMissingFlag(flag);
             _flags[flag] = value;
+            RaiseEvent();
         }
 
 
@@ -46,6 +52,15 @@ namespace CombatSystem
             {
                 _flags[flag] = 0;
             }
+        }
+
+        /****************
+         * Event
+         * **************/
+
+        private void RaiseEvent()
+        {
+            EmitSignal(SignalName.CharacterStateChanged);
         }
     }
 }

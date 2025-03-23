@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="GameCharacter" load_steps=7 format=3 uid="uid://d1e88ubtdb4r8"]
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=9 format=3 uid="uid://d1e88ubtdb4r8"]
 
-[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/Attackers/warrior_class.tres" id="1_gpa5h"]
+[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/warrior_class.tres" id="1_enbd5"]
 [ext_resource type="Script" uid="uid://nmxkcq75xw7d" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/BasicAI.cs" id="2_gpa5h"]
+[ext_resource type="Resource" uid="uid://dsmxegoikjnkm" path="res://Resources/Characters/Skills/Elements/dark_element.tres" id="2_ik88e"]
 [ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_no2d6"]
+[ext_resource type="Resource" uid="uid://cnmga8on2vcdy" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_role.tres" id="3_x7iov"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_ik88e"]
 [ext_resource type="Resource" uid="uid://ddpmbsblrglnc" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_005_male_wizard.tres" id="5_gpa5h"]
 
@@ -20,7 +22,9 @@ Name = "Baldie"
 Title = ""
 Description = ""
 World = ""
-Class = ExtResource("1_gpa5h")
+Element = ExtResource("2_ik88e")
+Class = ExtResource("1_enbd5")
+Role = ExtResource("3_x7iov")
 SkillSet = ExtResource("2_no2d6")
 EnemyAI = SubResource("Resource_x7iov")
 movement = 3

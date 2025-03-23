@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqqa05wypaxiq"]
+[gd_scene load_steps=8 format=3 uid="uid://cqqa05wypaxiq"]
 
 [ext_resource type="Script" uid="uid://d1o4sx4it6fxl" path="res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectionMenu.cs" id="1_olvwh"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="1_r20pm"]
 [ext_resource type="PackedScene" uid="uid://umkn3hlqwl0r" path="res://Scenes/Overworld/Stage Selection/stage_selection_button.tscn" id="3_yjsmd"]
 [ext_resource type="Resource" uid="uid://beeikrtu3ncsq" path="res://Resources/Overworld/Battles/basic_stage.tres" id="3_ypb73"]
 [ext_resource type="Resource" uid="uid://dxvomwaqkk0h6" path="res://Resources/Overworld/Battles/basic_stage_2.tres" id="4_d66lc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypb73"]
+bg_color = Color(0.0863162, 0.593837, 0.977843, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.459008, 0.893617, 1)
+
+[sub_resource type="Theme" id="Theme_ypb73"]
+default_font_size = 30
+TabContainer/styles/panel = SubResource("StyleBoxFlat_ypb73")
 
 [node name="StageSelectionMenu" type="Control" node_paths=PackedStringArray("grid")]
 layout_mode = 3
@@ -16,33 +28,97 @@ grow_vertical = 2
 script = ExtResource("1_olvwh")
 stageSelectButtonScene = ExtResource("3_yjsmd")
 stages = Array[Object]([ExtResource("3_ypb73"), ExtResource("4_d66lc")])
-grid = NodePath("GridContainer")
+grid = NodePath("TabContainer/Story/Story")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 313.0
-offset_right = 1023.0
-offset_bottom = 1525.0
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 30
-columns = 4
-
-[node name="Stage Selection" parent="GridContainer" instance=ExtResource("3_yjsmd")]
-layout_mode = 2
-
-[node name="Stage Selection2" parent="GridContainer" instance=ExtResource("3_yjsmd")]
-layout_mode = 2
-
-[node name="Stage Selection3" parent="GridContainer" instance=ExtResource("3_yjsmd")]
-layout_mode = 2
-
-[node name="Stage Selection4" parent="GridContainer" instance=ExtResource("3_yjsmd")]
-layout_mode = 2
-
-[node name="Stage Selection5" parent="GridContainer" instance=ExtResource("3_yjsmd")]
-layout_mode = 2
-
-[node name="OverworldMenu" parent="." instance=ExtResource("1_r20pm")]
+[node name="OverworldMenu" parent="." node_paths=PackedStringArray("buttons") instance=ExtResource("1_r20pm")]
 layout_mode = 1
+buttons = [NodePath("Menu Bar/HBoxContainer/Home Button"), NodePath("Menu Bar/HBoxContainer/Party Button"), NodePath("Menu Bar/HBoxContainer/Upgrade Button"), null, NodePath("Menu Bar/HBoxContainer/Gacha Button"), NodePath("Menu Bar/HBoxContainer/Stages Button")]
 currentMenuIndex = 5
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 325.0
+offset_right = 452.0
+offset_bottom = 1136.0
+theme = SubResource("Theme_ypb73")
+current_tab = 0
+
+[node name="Story" type="ScrollContainer" parent="TabContainer"]
+custom_minimum_size = Vector2(430, 800)
+layout_mode = 2
+horizontal_scroll_mode = 0
+metadata/_tab_index = 0
+
+[node name="Story" type="VBoxContainer" parent="TabContainer/Story"]
+custom_minimum_size = Vector2(420, 780)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 5
+
+[node name="Stage Selection" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection2" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection3" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection4" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection5" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection6" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection7" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection8" parent="TabContainer/Story/Story" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Training" type="ScrollContainer" parent="TabContainer"]
+visible = false
+custom_minimum_size = Vector2(430, 800)
+layout_mode = 2
+horizontal_scroll_mode = 0
+metadata/_tab_index = 1
+
+[node name="Training" type="VBoxContainer" parent="TabContainer/Training"]
+custom_minimum_size = Vector2(420, 780)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 20
+
+[node name="Stage Selection" parent="TabContainer/Training/Training" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection2" parent="TabContainer/Training/Training" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection3" parent="TabContainer/Training/Training" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection4" parent="TabContainer/Training/Training" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []
+
+[node name="Stage Selection5" parent="TabContainer/Training/Training" node_paths=PackedStringArray("clearStars") instance=ExtResource("3_yjsmd")]
+layout_mode = 2
+clearStars = []

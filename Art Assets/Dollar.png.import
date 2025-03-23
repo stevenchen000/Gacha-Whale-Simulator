@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq4rs7rq6x6fc"
-path="res://.godot/imported/Tin_Can.png-f1595a03157274e139e36db30f6c0333.ctex"
+uid="uid://dt0gi1lmsr05q"
+path="res://.godot/imported/Dollar.png-b41378edcdbf5dd68a8b3a61bece7c94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Objects/Tin_Can.png"
-dest_files=["res://.godot/imported/Tin_Can.png-f1595a03157274e139e36db30f6c0333.ctex"]
+source_file="res://Art Assets/Dollar.png"
+dest_files=["res://.godot/imported/Dollar.png-b41378edcdbf5dd68a8b3a61bece7c94.ctex"]
 
 [params]
 

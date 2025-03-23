@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="GameCharacter" load_steps=5 format=3 uid="uid://csyib1t6sh40y"]
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=7 format=3 uid="uid://csyib1t6sh40y"]
 
-[ext_resource type="Resource" uid="uid://duop67bc0ld4r" path="res://Resources/Characters/Skills/Classes/Defenders/knight_class.tres" id="1_gpjd0"]
+[ext_resource type="Resource" uid="uid://duop67bc0ld4r" path="res://Resources/Characters/Skills/Classes/knight_class.tres" id="1_j0fq0"]
 [ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_gpjd0"]
+[ext_resource type="Resource" uid="uid://ch2f8nppud3k7" path="res://Resources/Characters/Skills/Roles/Defender/defender_role.tres" id="2_igyl3"]
+[ext_resource type="Resource" uid="uid://04u2tigv8q45" path="res://Resources/Characters/Skills/Elements/thunder_element.tres" id="2_ybi85"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_ftugo"]
 [ext_resource type="Resource" uid="uid://hq4rn8lrg3lh" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_003_female_wizard.tres" id="5_q6olu"]
 
@@ -14,7 +16,9 @@ Name = "Red Mage"
 Title = ""
 Description = ""
 World = ""
-Class = ExtResource("1_gpjd0")
+Element = ExtResource("2_ybi85")
+Class = ExtResource("1_j0fq0")
+Role = ExtResource("2_igyl3")
 SkillSet = ExtResource("2_gpjd0")
 movement = 3
 metadata/_custom_type_script = "uid://gdabyn413d1c"

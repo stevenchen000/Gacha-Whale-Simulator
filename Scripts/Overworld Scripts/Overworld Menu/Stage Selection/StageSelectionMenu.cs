@@ -7,7 +7,7 @@ public partial class StageSelectionMenu : GameMenu
 {
     [Export] private PackedScene stageSelectButtonScene;
     [Export] private Array<StageData> stages;
-    [Export] private GridContainer grid;
+    [Export] private Node grid;
     private Array<StageSelectButton> StageButtons;
 
     public override void _Ready()

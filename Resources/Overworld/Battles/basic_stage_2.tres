@@ -1,18 +1,20 @@
-[gd_resource type="Resource" script_class="StageData" load_steps=7 format=3 uid="uid://dxvomwaqkk0h6"]
+[gd_resource type="Resource" script_class="StageData" load_steps=9 format=3 uid="uid://dxvomwaqkk0h6"]
 
 [ext_resource type="Resource" uid="uid://d3ventvjbmecp" path="res://Resources/Characters/Character Data/test_enemy.tres" id="1_mm4lg"]
+[ext_resource type="Resource" uid="uid://n0wvo4twsbim" path="res://Resources/Overworld/Battles/Conditions/_clear_condition.tres" id="2_6xivr"]
 [ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="2_52f84"]
 [ext_resource type="Resource" uid="uid://c4tahpphjlhfs" path="res://Resources/Characters/Character Data/test_player_healer.tres" id="3_8er32"]
+[ext_resource type="Resource" uid="uid://bb0o02w1bxs6p" path="res://Resources/Overworld/Battles/Rewards/1000 gems.tres" id="3_p8xrx"]
 [ext_resource type="Resource" uid="uid://rd4nkvr3ixkd" path="res://Resources/Characters/Character Data/test_player_tank.tres" id="4_g36v0"]
 [ext_resource type="Resource" uid="uid://vkjf1hjsu2ex" path="res://Resources/Characters/Character Data/test_player_warrior.tres" id="5_skh7e"]
 [ext_resource type="Script" uid="uid://c6goqmweg7q6a" path="res://Scripts/Combat Scripts/Combat System/Battle Data/StageData.cs" id="6_tcfib"]
 
 [resource]
 script = ExtResource("6_tcfib")
-ID = 0
-StageName = ""
-IsUnlocked = false
-StaminaCost = 10
+ID = 1
+StageName = "Second Bout"
+IsUnlocked = true
+StaminaCost = 1
 isSkippable = true
 RecommendedLevel = 1
 EnemyList = Array[Object]([ExtResource("1_mm4lg"), ExtResource("1_mm4lg")])
@@ -21,6 +23,12 @@ EnemyStartPositions = Array[Vector2i]([Vector2i(0, 2), Vector2i(1, 3), Vector2i(
 GridSize = Vector2i(5, 5)
 ExpGained = 1000
 MaxStars = 3
+OneStarCondition = ExtResource("2_6xivr")
+OneStarReward = ExtResource("3_p8xrx")
+TwoStarCondition = ExtResource("2_6xivr")
+TwoStarReward = ExtResource("3_p8xrx")
+ThreeStarCondition = ExtResource("2_6xivr")
+ThreeStarReward = ExtResource("3_p8xrx")
 Rewards = null
 OverridePlayerParty = false
 PlayerParty = Array[Object]([ExtResource("2_52f84"), ExtResource("3_8er32"), ExtResource("4_g36v0"), ExtResource("5_skh7e")])

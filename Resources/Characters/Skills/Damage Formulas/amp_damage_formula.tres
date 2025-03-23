@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AmpDamageFormula" load_steps=4 format=3 uid="uid://fcukt1cpsimo"]
+
+[ext_resource type="Script" uid="uid://dg7lwsrlldasx" path="res://Scripts/Combat Scripts/Combat System/Skill System/Damage Formulas/AmpDamageFormula.cs" id="1_ag7ae"]
+[ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="1_ogq43"]
+[ext_resource type="Resource" uid="uid://c7lns7qgbbffi" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/defense.tres" id="3_mqfwk"]
+
+[resource]
+script = ExtResource("1_ag7ae")
+casterAttackStat = ExtResource("1_ogq43")
+targetDefenseStat = ExtResource("3_mqfwk")
+metadata/_custom_type_script = "uid://dg7lwsrlldasx"

@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://kly5ymoofofr"]
+[gd_scene load_steps=10 format=3 uid="uid://kly5ymoofofr"]
 
 [ext_resource type="Script" uid="uid://pqws50itboxh" path="res://Scripts/Game Menu/Gacha Menu/GachaBannerUI.cs" id="1_37qan"]
-[ext_resource type="Texture2D" uid="uid://6gpkh0y7jw21" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0016_warrior_human_woman_03.png" id="2_0h2l3"]
 [ext_resource type="Resource" uid="uid://g4qtq3qm5r2d" path="res://Resources/Overworld/Gacha Game Data/Banners/permanent_banner.tres" id="2_oynkw"]
-[ext_resource type="Texture2D" uid="uid://cpodta7vp6j1m" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0017_warrior_human_woman_02.png" id="3_oynkw"]
+[ext_resource type="Texture2D" uid="uid://dyvnfvb66sint" path="res://Art Assets/Backgrounds/Ocean_2/5.png" id="3_6s18s"]
+[ext_resource type="Texture2D" uid="uid://cku1q7yyjiuq" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0033_warrior_elve_man_03.png" id="3_oynkw"]
 [ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="4_6s18s"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="4_gpigy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6s18s"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cv8pc"]
 
@@ -19,13 +22,24 @@ offset_bottom = 40.0
 script = ExtResource("1_37qan")
 banner = ExtResource("2_oynkw")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.466667)
+layout_mode = 0
+offset_left = 63.0
+offset_top = 508.0
+offset_right = 1026.0
+offset_bottom = 1364.0
+texture = SubResource("CanvasTexture_6s18s")
+
 [node name="Banner Icon" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 48.0
-offset_top = 351.0
+offset_top = 499.0
 offset_right = 1011.0
-offset_bottom = 1202.0
-texture = SubResource("CanvasTexture_cv8pc")
+offset_bottom = 1350.0
+texture = ExtResource("3_6s18s")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Banner Clip" type="TextureRect" parent="Banner Icon"]
 clip_children = 1
@@ -35,24 +49,26 @@ offset_right = 963.0
 offset_bottom = 851.0
 texture = SubResource("CanvasTexture_cv8pc")
 
-[node name="Sprite2D" type="Sprite2D" parent="Banner Icon/Banner Clip"]
-position = Vector2(842, 1014)
-rotation = 0.0872665
-scale = Vector2(1.65, 1.65)
-texture = ExtResource("2_0h2l3")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Banner Icon/Banner Clip"]
-position = Vector2(189, 1006)
-rotation = -0.0523599
-scale = Vector2(1.65, 1.65)
+[node name="Left Sprite" type="Sprite2D" parent="Banner Icon/Banner Clip"]
+position = Vector2(292, 941)
+rotation = 0.0785398
+scale = Vector2(1.365, 1.365)
 texture = ExtResource("3_oynkw")
+flip_h = true
+
+[node name="Right Sprite" type="Sprite2D" parent="Banner Icon/Banner Clip"]
+position = Vector2(572, 1022)
+rotation = 0.0872665
+scale = Vector2(1.805, 1.805)
+texture = ExtResource("4_gpigy")
 
 [node name="Pull Buttons" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 163.0
-offset_top = 1288.0
-offset_right = 902.0
-offset_bottom = 1488.0
+offset_left = 298.0
+offset_top = 1404.0
+offset_right = 1037.0
+offset_bottom = 1604.0
+scale = Vector2(0.71, 0.71)
 theme_override_constants/separation = 50
 
 [node name="Single Pull Button" type="Button" parent="Pull Buttons"]
@@ -61,10 +77,10 @@ layout_mode = 2
 
 [node name="Gem Icon" type="TextureRect" parent="Pull Buttons/Single Pull Button"]
 layout_mode = 0
-offset_left = -9.0
-offset_top = 23.0
-offset_right = 157.0
-offset_bottom = 189.0
+offset_left = 17.0
+offset_top = 49.0
+offset_right = 131.0
+offset_bottom = 163.0
 texture = ExtResource("4_6s18s")
 
 [node name="Cost Text" type="Label" parent="Pull Buttons/Single Pull Button"]
@@ -82,10 +98,10 @@ layout_mode = 2
 
 [node name="Gem Icon" type="TextureRect" parent="Pull Buttons/Multi Pull Button2"]
 layout_mode = 0
-offset_left = -9.0
-offset_top = 23.0
-offset_right = 157.0
-offset_bottom = 189.0
+offset_left = 15.0
+offset_top = 47.0
+offset_right = 133.0
+offset_bottom = 165.0
 texture = ExtResource("4_6s18s")
 
 [node name="Cost Text" type="Label" parent="Pull Buttons/Multi Pull Button2"]

@@ -111,10 +111,10 @@ namespace TimeSystem
          * Save and Load
          * ***************/
 
-        private string yearFlag = "";
-        private string monthFlag = "";
-        private string dayFlag = "";
-        private string timeFlag = "";
+        private string yearFlag = "time_year";
+        private string monthFlag = "time_month";
+        private string dayFlag = "time_day";
+        private string timeFlag = "time_of_day";
         
         public void Save()
         {

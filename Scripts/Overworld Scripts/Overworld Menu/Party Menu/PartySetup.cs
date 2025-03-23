@@ -65,8 +65,13 @@ public partial class PartySetup : Resource
 
     public void SetMember(int index, CharacterData data)
     {
+        if (Party.Contains(data))
+        {
+            int characterIndex = GetIndexOfCharacter(data);
+            Party[characterIndex] = Party[index];
+        }
+
         Party[index] = data;
-        Utils.Print(this, "Remember to check for duplicate party members");
     }
 
     public string GetPartyName()
@@ -88,6 +93,26 @@ public partial class PartySetup : Resource
     public void SetPartyName(string newName)
     {
         name = newName;
+    }
+
+    /**************
+     * Helpers
+     * ************/
+
+    private int GetIndexOfCharacter(CharacterData data)
+    {
+        int result = -1;
+
+        for (int i = 0; i < Party.Count; i++)
+        {
+            var character = Party[i];
+            if(character == data)
+            {
+                result = i;
+            }
+        }
+
+        return result;
     }
 
 

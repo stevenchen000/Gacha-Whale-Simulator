@@ -36,7 +36,25 @@ namespace CombatSystem
             {
                 battle.ShowSkillUI();
             }
+
+            RunCharacterTurnStarts();
+            character.PlayAnimation("idle_turn");
         }
+
+        private void RunCharacterTurnStarts()
+        {
+            var fighters = battle.State.GetAllLivingCharacters();
+            foreach(var fighter in fighters)
+            {
+                fighter.AnyCharacterTurnStart(battle.State);
+            }
+        }
+
+
+
+        /******************
+         * Run State
+         * **************/
 
         protected override void RunState(double delta)
         {
@@ -98,6 +116,8 @@ namespace CombatSystem
 
             if(!IsEnemyControlled(character))
                 battle.HideSkillUI();
+
+            character.PlayAnimation("idle");
         }
 
         /*****************

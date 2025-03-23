@@ -25,7 +25,7 @@ namespace CombatSystem
         private void InitRoleStats(CharacterData character)
         {
             var role = character.Character.Role;
-            var growth = role.stats;
+            var growth = role.Stats;
             int level = character.Level;
 
             var statNames = growth.GetStatNames();

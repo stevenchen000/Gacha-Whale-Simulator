@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="AmpDamageEffect" load_steps=2 format=3 uid="uid://b1m2rik3tw6uf"]
+[gd_resource type="Resource" script_class="AmpDamageEffect" load_steps=3 format=3 uid="uid://b1m2rik3tw6uf"]
 
 [ext_resource type="Script" uid="uid://cesrwdrfdj38f" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/AmpDamageEffect.cs" id="1_40ac0"]
+[ext_resource type="Resource" uid="uid://fcukt1cpsimo" path="res://Resources/Characters/Skills/Damage Formulas/amp_damage_formula.tres" id="1_gm41y"]
 
 [resource]
 script = ExtResource("1_40ac0")
 potency = 100.0
 duration = 0.2
 numberOfHits = 1
+formula = ExtResource("1_gm41y")
 delay = 0.0
 description = ""
 metadata/_custom_type_script = "uid://cesrwdrfdj38f"

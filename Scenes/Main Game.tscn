@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=33 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
 [ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Game Scenes/Character Creator Menu.tscn" id="2_vfyon"]
@@ -24,6 +24,14 @@
 [ext_resource type="Resource" uid="uid://c7lns7qgbbffi" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/defense.tres" id="21_0b8tr"]
 [ext_resource type="Resource" uid="uid://bl10614skdi4f" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/speed.tres" id="22_hphdt"]
 [ext_resource type="Resource" uid="uid://dbdtx1lisc55v" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/spirit.tres" id="23_0b8tr"]
+[ext_resource type="Script" uid="uid://b6gqfciepf0vm" path="res://Scripts/Combat Scripts/Combat System/Skill System/ElementChart.cs" id="25_sl7r4"]
+[ext_resource type="Resource" uid="uid://b1wdi00bg4amd" path="res://Resources/Characters/Skills/Elements/fire_element.tres" id="27_0hpn3"]
+[ext_resource type="Resource" uid="uid://dwyicv0en0i8n" path="res://Resources/Characters/Skills/Elements/water_element.tres" id="28_5m6pt"]
+[ext_resource type="Resource" uid="uid://bi6f6w3gybl8u" path="res://Resources/Characters/Skills/Elements/wind_element.tres" id="29_ohcb0"]
+[ext_resource type="Resource" uid="uid://bwb46tp8gc6se" path="res://Resources/Characters/Skills/Elements/earth_element.tres" id="30_n5tqu"]
+[ext_resource type="Resource" uid="uid://uwml6uoq7y07" path="res://Resources/Characters/Skills/Elements/light_element.tres" id="31_hlcih"]
+[ext_resource type="Resource" uid="uid://du01f4eike5ym" path="res://Resources/Characters/Skills/Elements/arcane_element.tres" id="32_pjnjj"]
+[ext_resource type="Resource" uid="uid://dsmxegoikjnkm" path="res://Resources/Characters/Skills/Elements/dark_element.tres" id="33_4iwjo"]
 
 [node name="MainGame" type="Control"]
 layout_mode = 3
@@ -61,3 +69,24 @@ _attack = ExtResource("20_r0cu4")
 _defense = ExtResource("21_0b8tr")
 _spirit = ExtResource("23_0b8tr")
 _speed = ExtResource("22_hphdt")
+
+[node name="Element Chart" type="Node2D" parent="Variables"]
+script = ExtResource("25_sl7r4")
+Weaknesses = {
+ExtResource("27_0hpn3"): ExtResource("28_5m6pt"),
+ExtResource("29_ohcb0"): ExtResource("27_0hpn3"),
+ExtResource("30_n5tqu"): ExtResource("29_ohcb0"),
+ExtResource("28_5m6pt"): ExtResource("30_n5tqu"),
+ExtResource("31_hlcih"): ExtResource("32_pjnjj"),
+ExtResource("33_4iwjo"): ExtResource("31_hlcih"),
+ExtResource("32_pjnjj"): ExtResource("33_4iwjo")
+}
+Resistances = {
+ExtResource("27_0hpn3"): ExtResource("29_ohcb0"),
+ExtResource("29_ohcb0"): ExtResource("33_4iwjo"),
+ExtResource("30_n5tqu"): ExtResource("28_5m6pt"),
+ExtResource("28_5m6pt"): ExtResource("31_hlcih"),
+ExtResource("31_hlcih"): ExtResource("33_4iwjo"),
+ExtResource("33_4iwjo"): ExtResource("32_pjnjj"),
+ExtResource("32_pjnjj"): ExtResource("31_hlcih")
+}

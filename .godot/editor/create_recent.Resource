@@ -1,3 +1,7 @@
+AmpDamageFormula
+ItemResource
+VoidEvent
+StageReward
 BasicAI
 SkillReplaceEffect
 SkillRevertEffect
@@ -9,7 +13,3 @@ CharacterSkill
 AddStatEffect
 StatusEffect
 BattleStatsTemplate
-StatType
-SpriteList
-StageStarCondition
-VoidEvent

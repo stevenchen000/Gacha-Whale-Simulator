@@ -26,8 +26,8 @@ namespace CombatSystem
 
         public override void _Process(double delta)
         {
-            double y = -speed * delta;
-            Position += new Vector2(0, (float)y);
+            /*double y = -speed * delta;
+            Position += new Vector2(0, (float)y);*/
             if (time.TimeIsBetween(duration))
             {
                 QueueFree();

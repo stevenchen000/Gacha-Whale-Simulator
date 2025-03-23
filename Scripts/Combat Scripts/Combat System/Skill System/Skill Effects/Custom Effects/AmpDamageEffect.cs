@@ -9,6 +9,7 @@ namespace CombatSystem
         [Export] private float potency;
         [Export] private float duration = 0.2f;
         [Export] private int numberOfHits = 1;
+        [Export] private BaseDamageFormula formula;
 
         protected override void _StartEffect(TurnData data)
         {
@@ -46,20 +47,13 @@ namespace CombatSystem
 
         private void DealDamageToTarget(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
-            int casterAttack = caster.Stats.GetStat(StatNames.Attack);
-            int targetDefense = caster.Stats.GetStat(StatNames.Defense);
-
-            int baseDamage = casterAttack - targetDefense/2;
-
-            int totalDamage = (int)(baseDamage * potency / 100);
-            totalDamage = Math.Max(totalDamage, 1);
-            int currAmp = caster.Stats.GetSlidingStat(StatNames.Amp);
+            int totalDamage = formula.CalculateDamage(caster, target, potency);
+            int targetAmp = target.Stats.GetSlidingStat(StatNames.Amp);
             
-
             target.TakeAmpDamage(totalDamage);
             caster.AddAmp(totalDamage);
 
-            if (totalDamage > currAmp)
+            if (totalDamage > targetAmp)
             {
                 bool brokeTarget = target.BreakCharacter();
                 if (brokeTarget)

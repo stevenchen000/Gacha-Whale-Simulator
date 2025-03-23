@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 namespace InventorySystem
@@ -37,6 +38,34 @@ namespace InventorySystem
         public bool IsEmpty()
         {
             return amount == 0;
+        }
+
+        /**************
+         * Save and Load
+         * ************/
+
+        public string ToJson()
+        {
+            string resourcePath = item.ResourcePath;
+            int itemAmount = amount;
+
+            var dict = new Dictionary<string, Variant>();
+            dict["item"] = resourcePath;
+            dict["item_amount"] = itemAmount;
+
+            var json = Json.Stringify(dict);
+            
+            return json.ToString();
+        }
+
+        public void FromJson(string json)
+        {
+            var dict = (Dictionary<string, Variant>)Json.ParseString(json);
+            string itemPath = (string)dict["item"];
+            int itemAmount = (int)dict["item_amount"];
+
+            item = ResourceLoader.Load<ItemResource>(itemPath);
+            amount = itemAmount;
         }
     }
 }

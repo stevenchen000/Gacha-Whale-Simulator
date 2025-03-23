@@ -1,3 +1,7 @@
+res://Scripts/Combat Scripts/Combat System/UI/Combat Rewards
+res://Resources/Characters/Skills/Damage Formulas
+res://Resources/Utilities/Events/Inventory Events
+res://Resources/Overworld/Battles/Rewards
 res://Resources/Characters
 res://Resources/Characters/Skills/Skill Effects
 C:/Users/chens/Documents/Sighborg Studios/Gacha-Whale-Simulator/Resources/Characters/Skills/Elements
@@ -16,7 +20,3 @@ res://Scenes/Overworld/Party Menu/UI
 res://Scenes/Overworld/Party Menu
 res://Resources/Characters/Character Data/001_player
 res://Scenes/Battle/Skill Selection
-res://Scenes/Overworld/Upgrade Menu
-res://Resources/Items/Level Upgrades
-res://Scenes/Overworld/Stage Selection
-res://Scenes/Overworld/Gacha Menu

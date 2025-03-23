@@ -12,7 +12,7 @@ namespace CombatSystem
 
         [ExportCategory("Level")]
         [Export] public int Level { get; private set; } = 1;
-        [Export] public int LevelCap { get; private set; } = 50;
+        public int LevelCap { get { return GetLevelCap(); } }
         [Export] public int CurrExp { get; private set; }
         public int ExpToNextLevel 
         { 
@@ -125,6 +125,10 @@ namespace CombatSystem
             CurrExp -= ExpToNextLevel;
         }
 
+        private int GetLevelCap()
+        {
+            return (int)Rarity + 20;
+        }
 
         /*****************
          * Gacha Functions
@@ -183,7 +187,9 @@ namespace CombatSystem
 
 
 
-
+        /**************
+         * Save Load
+         * ***********/
 
 
         public string ToJson()

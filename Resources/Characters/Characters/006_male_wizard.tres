@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GameCharacter" load_steps=5 format=3 uid="uid://gpsfrrd8vtvh"]
 
-[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/Attackers/warrior_class.tres" id="1_uw0rt"]
+[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/warrior_class.tres" id="1_uw0rt"]
 [ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_uw0rt"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="3_51c7r"]
 [ext_resource type="Resource" uid="uid://j6vyjc4h4ewb" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_006_male_wizard.tres" id="4_uw0rt"]

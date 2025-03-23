@@ -3,17 +3,17 @@
 [ext_resource type="Resource" uid="uid://d3ventvjbmecp" path="res://Resources/Characters/Character Data/test_enemy.tres" id="1_qxwlk"]
 [ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="2_ckakm"]
 [ext_resource type="Resource" uid="uid://n0wvo4twsbim" path="res://Resources/Overworld/Battles/Conditions/_clear_condition.tres" id="2_lphig"]
+[ext_resource type="Resource" uid="uid://bb0o02w1bxs6p" path="res://Resources/Overworld/Battles/Rewards/1000 gems.tres" id="3_ckakm"]
 [ext_resource type="Resource" uid="uid://c4tahpphjlhfs" path="res://Resources/Characters/Character Data/test_player_healer.tres" id="3_lphig"]
 [ext_resource type="Resource" uid="uid://rd4nkvr3ixkd" path="res://Resources/Characters/Character Data/test_player_tank.tres" id="4_jwixc"]
 [ext_resource type="Resource" uid="uid://vkjf1hjsu2ex" path="res://Resources/Characters/Character Data/test_player_warrior.tres" id="5_q4l2t"]
-[ext_resource type="Resource" uid="uid://bb0o02w1bxs6p" path="res://Resources/Overworld/Battles/Rewards/100 gems.tres" id="6_d4ux6"]
 [ext_resource type="Script" uid="uid://c6goqmweg7q6a" path="res://Scripts/Combat Scripts/Combat System/Battle Data/StageData.cs" id="7_1kyhe"]
 
 [resource]
 script = ExtResource("7_1kyhe")
 ID = 0
-StageName = ""
-IsUnlocked = false
+StageName = "First Battle"
+IsUnlocked = true
 StaminaCost = 1
 isSkippable = true
 RecommendedLevel = 1
@@ -24,12 +24,12 @@ GridSize = Vector2i(5, 8)
 ExpGained = 1000
 MaxStars = 3
 OneStarCondition = ExtResource("2_lphig")
-OneStarReward = ExtResource("6_d4ux6")
+OneStarReward = ExtResource("3_ckakm")
 TwoStarCondition = ExtResource("2_lphig")
-TwoStarReward = ExtResource("6_d4ux6")
+TwoStarReward = ExtResource("3_ckakm")
 ThreeStarCondition = ExtResource("2_lphig")
-ThreeStarReward = ExtResource("6_d4ux6")
-Rewards = Array[Resource]([ExtResource("6_d4ux6")])
+ThreeStarReward = ExtResource("3_ckakm")
+Rewards = Array[Resource]([ExtResource("3_ckakm")])
 OverridePlayerParty = false
 PlayerParty = Array[Object]([ExtResource("2_ckakm"), ExtResource("3_lphig"), ExtResource("4_jwixc"), ExtResource("5_q4l2t")])
 metadata/_custom_type_script = "uid://c6goqmweg7q6a"

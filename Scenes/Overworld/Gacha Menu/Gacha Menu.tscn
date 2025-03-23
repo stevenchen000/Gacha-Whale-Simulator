@@ -1,10 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl7wql1l8meta"]
+[gd_scene load_steps=10 format=3 uid="uid://dl7wql1l8meta"]
 
 [ext_resource type="Script" uid="uid://cgloqwxyypvwk" path="res://Scripts/Game Menu/Gacha Menu/GachaMenu.cs" id="1_8p8mu"]
 [ext_resource type="PackedScene" uid="uid://kly5ymoofofr" path="res://Scenes/Overworld/Gacha Menu/gacha_banner.tscn" id="1_cr1j0"]
 [ext_resource type="AudioStream" uid="uid://ij0s1wo5p3jv" path="res://Audio Assets/BGM/Light Ambience 1.mp3" id="2_d47nl"]
 [ext_resource type="PackedScene" uid="uid://scn4wi83sn0q" path="res://Scenes/Overworld/Backgrounds/Background.tscn" id="2_n6yel"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="3_igni6"]
+[ext_resource type="Texture2D" uid="uid://bdaxnd8j5nnfc" path="res://Art Assets/Shapes/Arrow (13).png" id="6_8cl0k"]
+
+[sub_resource type="Animation" id="Animation_8cl0k"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(57, 0), Vector2(0, 0), Vector2(57, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a811w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tnnwp"]
+_data = {
+&"RESET": SubResource("Animation_a811w"),
+&"idle": SubResource("Animation_8cl0k")
+}
 
 [node name="GachaMenu" type="Control"]
 layout_mode = 3
@@ -26,6 +64,71 @@ offset_right = -873.0
 
 [node name="Gacha Banner" parent="." instance=ExtResource("1_cr1j0")]
 
-[node name="OverworldMenu" parent="." instance=ExtResource("3_igni6")]
+[node name="OverworldMenu" parent="." node_paths=PackedStringArray("buttons") instance=ExtResource("3_igni6")]
 layout_mode = 1
+buttons = [NodePath("Menu Bar/HBoxContainer/Home Button"), NodePath("Menu Bar/HBoxContainer/Party Button"), NodePath("Menu Bar/HBoxContainer/Upgrade Button"), null, NodePath("Menu Bar/HBoxContainer/Gacha Button"), NodePath("Menu Bar/HBoxContainer/Stages Button")]
 currentMenuIndex = 4
+
+[node name="Right Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 1478.0
+offset_right = 1066.0
+offset_bottom = 1608.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Right Button"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 37.5825
+offset_right = 165.583
+offset_bottom = 128.0
+texture = ExtResource("6_8cl0k")
+
+[node name="TextureRect2" type="TextureRect" parent="Right Button/TextureRect"]
+layout_mode = 0
+offset_left = -1.845
+offset_top = -1.46
+offset_right = 126.155
+offset_bottom = 126.54
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("6_8cl0k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Right Button"]
+libraries = {
+&"": SubResource("AnimationLibrary_tnnwp")
+}
+autoplay = "idle"
+
+[node name="Left Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 1478.0
+offset_right = 203.0
+offset_bottom = 1608.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Left Button"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 54.218
+offset_right = 182.218
+offset_bottom = 128.0
+texture = ExtResource("6_8cl0k")
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="Left Button/TextureRect"]
+layout_mode = 0
+offset_left = -0.127
+offset_top = 0.195
+offset_right = 127.873
+offset_bottom = 128.195
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("6_8cl0k")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Left Button"]
+libraries = {
+&"": SubResource("AnimationLibrary_tnnwp")
+}
+autoplay = "idle"

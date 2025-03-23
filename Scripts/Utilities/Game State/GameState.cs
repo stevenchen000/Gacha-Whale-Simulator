@@ -275,7 +275,7 @@ public partial class GameState : Node
     {
 		var inventory = state.playerInventory;
 		inventory.AddItem(item, amount);
-		Utils.Print(state, $"Added {amount} {item.itemName} to inventory");
+		Utils.Print(state, $"Added {amount} {item.ItemName} to inventory");
     }
 
 	public static bool RemoveItemFromPlayerInventory(ItemResource item, int amount = 1)
@@ -290,6 +290,12 @@ public partial class GameState : Node
 		var inventory = state.playerInventory;
 		return inventory.GetItemCount(item);
     }
+
+	public static bool HasEnoughOfItem(ItemResource item, int amount)
+	{
+		var inventory = state.playerInventory;
+		return inventory.HasEnough(item, amount);
+	}
 
 	/**************
 	 * Money
@@ -442,7 +448,7 @@ public partial class GameState : Node
 
 	public static void SaveData()
 	{
-		state.SaveAllSavables();
+		state.SaveAllChildren(state);
 
 		state.flags.Save();
 		state.stringFlags.Save();
@@ -469,16 +475,22 @@ public partial class GameState : Node
 		}
 	}
 
-	private void SaveAllSavables()
+	private void SaveAllChildren(Node node)
 	{
-        var children = GetChildren();
+        var children = node.GetChildren();
         foreach (var child in children)
         {
-            if (child is ISavable)
-            {
-                var script = child as ISavable;
-                script.Save();
-            }
+            _SaveSavableObject(child);
+			SaveAllChildren(child);
+        }
+    }
+
+	private void _SaveSavableObject(Node node)
+	{
+        if (node is ISavable)
+        {
+            var script = node as ISavable;
+            script.Save();
         }
     }
 }

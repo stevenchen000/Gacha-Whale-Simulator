@@ -14,7 +14,7 @@ namespace CombatSystem
         private double turnTime = 0;
 
         [Signal]
-        public delegate void TurnOrderChangedEventHandler;
+        public delegate void TurnOrderChangedEventHandler();
 
 
         public void Init(BattleState state)
@@ -86,13 +86,11 @@ namespace CombatSystem
                     {
                         nextTurn = temp;
                         priority = fighter.TurnPriority + 1;
-                        Utils.Print(this, $"{fighter.Character.Character.Name} - ({nextTurn},{priority-1})");
                     }
                 }
             }
 
             var result = new Tuple<double, int>(nextTurn, priority);
-            Utils.Print(this, $"{character.Character.Character.Name} - {result}");
             return result;
         }
 

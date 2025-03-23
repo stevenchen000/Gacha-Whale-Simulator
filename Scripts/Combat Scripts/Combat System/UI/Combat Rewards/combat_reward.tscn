@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbp3m0fxmah0k"]
+
+[ext_resource type="Texture2D" uid="uid://hdm2us0pmnaq" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame.png" id="1_sb3nh"]
+[ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="2_a1eyl"]
+[ext_resource type="Texture2D" uid="uid://bsd0q4di11vk0" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border.png" id="3_ooect"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3036x"]
+font_size = 80
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.541176)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="Animation" id="Animation_sb3nh"]
+resource_name = "transition_in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.4),
+"transitions": PackedFloat32Array(1, 0.392292, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a1eyl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ooect"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ooect"]
+_data = {
+&"RESET": SubResource("Animation_a1eyl"),
+&"idle": SubResource("Animation_ooect"),
+&"transition_in": SubResource("Animation_sb3nh")
+}
+
+[node name="Reward" type="Control"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 97.0
+offset_top = 95.0
+offset_right = 137.0
+offset_bottom = 135.0
+
+[node name="Background" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 0
+offset_left = -96.0
+offset_top = -94.0
+offset_right = 94.0
+offset_bottom = 96.0
+texture = ExtResource("1_sb3nh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Item" type="TextureRect" parent="Control/Background"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -84.0
+offset_right = 106.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.881708, 0.881708)
+texture = ExtResource("2_a1eyl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Border" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 0
+offset_left = -96.0
+offset_top = -94.0
+offset_right = 94.0
+offset_bottom = 96.0
+texture = ExtResource("3_ooect")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Amount" type="Label" parent="Control"]
+z_index = 10
+layout_mode = 0
+offset_left = -93.0
+offset_top = 24.0
+offset_right = 124.0
+offset_bottom = 148.0
+text = "10"
+label_settings = SubResource("LabelSettings_3036x")
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ooect")
+}
+autoplay = "transition_in"

@@ -5,7 +5,10 @@
 
 [resource]
 script = ExtResource("1_b5kcp")
-icon = ExtResource("1_ou76i")
-itemName = "Rubies"
-description = "A rare, crimson stone used to summon adventurers and demons alike to join your ranks."
-metadata/_custom_type_script = ExtResource("1_b5kcp")
+Icon = ExtResource("1_ou76i")
+ID = 0
+ItemName = "Bloodstone"
+type = 0
+Description = "A blood-red stone containing a mysterious power. Used to summon heroes to join your side."
+description = ""
+metadata/_custom_type_script = "uid://cl722yw1v47w6"

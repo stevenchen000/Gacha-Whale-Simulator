@@ -97,8 +97,6 @@ namespace PartyMenuSystem
 
             int difference = numOfChars - numOfButtons;
 
-            Utils.Print(this, $"{numOfChars} - {numOfButtons} = {difference}");
-
             if(difference > 0)
             {
                 for(int i = 0; i < difference; i++)

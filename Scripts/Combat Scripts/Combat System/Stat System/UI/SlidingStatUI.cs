@@ -7,21 +7,47 @@ namespace CombatSystem
     {
         [Export] private ProgressBar bar;
         [Export] private bool showMaxStat = true;
+        private double displayedValue = 0;
+        private double currValue = 0;
+        [Export] private double changeSpeed = 10;
+
+
+        public override void _Process(double delta)
+        {
+            if (displayedValue != currValue)
+            {
+                UpdateDisplayedValue(delta);
+                UpdateDisplay();
+            }
+        }
+
+        private void UpdateDisplayedValue(double delta)
+        {
+            displayedValue = Mathf.Lerp(displayedValue, currValue, changeSpeed * delta);
+            if (GetDifference() < 0.5) displayedValue = currValue;
+        }
+
+        private double GetDifference()
+        {
+            return Mathf.Abs(displayedValue - currValue);
+        }
+
+
 
         public override void UpdateDisplay()
         {
             int maxStat = statsList.GetStat(stat);
-            int currStat = statsList.GetSlidingStat(stat);
+            currValue = statsList.GetSlidingStat(stat);
 
             if (statLabel != null)
             {
                 if (showMaxStat)
                 {
-                    statLabel.Text = $"{currStat}/{maxStat}";
+                    statLabel.Text = $"{(int)displayedValue}/{maxStat}";
                 }
                 else
                 {
-                    statLabel.Text = $"{currStat}";
+                    statLabel.Text = $"{(int)displayedValue}";
                 }
             }
 
@@ -32,9 +58,11 @@ namespace CombatSystem
 
             if (bar != null)
             {
-                float percent = (float)currStat / maxStat * 100;
+                float percent = (float)displayedValue / maxStat * 100;
                 bar.Value = percent;
             }
         }
+
+
     }
 }

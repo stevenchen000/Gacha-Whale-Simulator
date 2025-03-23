@@ -53,6 +53,7 @@ namespace CombatSystem
         //Combat Vars
         [Export] public SkillManager Skills { get; private set; }
         [Export] public BattleStatsManager Stats { get; private set; }
+        public Element CharacterElement { get { return Character.Character.Element; } }
         [Export] public EffectManager Status { get; private set; }
         [Export] public BattleCharacterFlags Flags { get; private set; }
         [Export] public CombatAI AI { get; private set; }
@@ -62,6 +63,11 @@ namespace CombatSystem
         public int TurnsTaken { get; private set; }
         //Counts free turns, used for current turn damage counting
         public int ActionsTaken { get; private set; }
+        public bool IsTakingTurn { get { return battle.GetCurrentCharacter() == this; } }
+
+        //Animations
+        [Export] private AnimationPlayer anim;
+
 
 
 
@@ -130,7 +136,15 @@ namespace CombatSystem
             WalkableSpaces = grid.GetAllWalkableAreas(this);
             targets = new Array<BattleCharacter>();
             currPosition = turnStartPosition;
+        }
 
+        /// <summary>
+        /// Run at the start of anyone's turn
+        /// Runs after StartCharacterTurn
+        /// </summary>
+        /// <param name="battleState"></param>
+        public void AnyCharacterTurnStart(BattleState battleState)
+        {
             DecreaseUnbreakCounter();
         }
 
@@ -224,6 +238,7 @@ namespace CombatSystem
         public void AddAmp(int amount)
         {
             Stats.AddAmpAmount(amount);
+            UpdateBreakStatus();
         }
 
         public void TakeHpDamage(int damage)
@@ -260,7 +275,7 @@ namespace CombatSystem
         private void _InflictBreak()
         {
             Flags.AddFlag(BattleFlagNames.breakFlagName);
-            Flags.SetFlagValue(BattleFlagNames.breakFlagName, 5);
+            Flags.SetFlagValue(BattleFlagNames.turnsToUnbreakFlag, 5);
             Stats.SetSlidingStat(StatNames.Amp, 0);
             Delay(1);
         }
@@ -270,6 +285,10 @@ namespace CombatSystem
         public void UnbreakCharacter()
         {
             Flags.SetFlagValue(BattleFlagNames.breakFlagName, 0);
+            if (IsCurrAmpBelowDefault())
+            {
+                SetCurrAmpToDefault();
+            }
         }
 
         public bool IsBroken()
@@ -286,10 +305,13 @@ namespace CombatSystem
         {
             if (IsBroken())
             {
+                Utils.Print(this, $"Decreasing {Character.Character.Name}'s break counter...");
                 Flags.RemoveFlag(BattleFlagNames.turnsToUnbreakFlag);
+                Utils.Print(this, Flags.GetFlagAmount(BattleFlagNames.turnsToUnbreakFlag));
                 if(GetTurnsToUnbreak() <= 0)
                 {
                     UnbreakCharacter();
+                    Utils.Print(this, "Character unbroken");
                 }
             }
         }
@@ -302,8 +324,22 @@ namespace CombatSystem
 
             if(IsBroken() && currAmp >= spirit)
             {
+                Utils.Print(this, "Unbroken! CurrAmp > Spirit!");
                 UnbreakCharacter();
             }
+        }
+
+        public void SetCurrAmpToDefault()
+        {
+            int spirit = Stats.GetStat(StatNames.Spirit);
+            Stats.SetSlidingStat(StatNames.Amp, spirit);
+        }
+
+        private bool IsCurrAmpBelowDefault()
+        {
+            int spirit = Stats.GetStat(StatNames.Spirit);
+            int currAmp = Stats.GetSlidingStat(StatNames.Amp);
+            return currAmp < spirit;
         }
 
         /*******************
@@ -314,6 +350,17 @@ namespace CombatSystem
         {
             Status.AddEffect(caster, effect);
         }
+
+
+        /****************
+         * Animations
+         * *************/
+
+        public void PlayAnimation(string animation)
+        {
+            anim.Play(animation);
+        }
+
 
         /*************
          * Helpers

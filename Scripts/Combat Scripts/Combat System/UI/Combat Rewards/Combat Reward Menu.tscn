@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://byjtr5x2uow5a"]
+
+[ext_resource type="PackedScene" uid="uid://bbp3m0fxmah0k" path="res://Scripts/Combat Scripts/Combat System/UI/Combat Rewards/combat_reward.tscn" id="1_4uudo"]
+[ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="1_a86hx"]
+[ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="2_jqyk1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7dsam"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_urm1e"]
+font_size = 70
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.541176)
+shadow_offset = Vector2(5, 5)
+
+[node name="CombatRewardMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.172549)
+layout_mode = 0
+offset_left = -768.0
+offset_top = -343.0
+offset_right = 2044.0
+offset_bottom = 2329.0
+texture = SubResource("CanvasTexture_7dsam")
+
+[node name="Exp Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 456.0
+offset_right = 1013.0
+offset_bottom = 552.0
+text = "1253 Exp"
+label_settings = SubResource("LabelSettings_urm1e")
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 593.0
+offset_right = 990.0
+offset_bottom = 1313.0
+theme_override_constants/margin_left = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+self_modulate = Color(0.140429, 0.213822, 0.374153, 1)
+layout_mode = 2
+texture = ExtResource("1_a86hx")
+region_rect = Rect2(0, 0, 120, 120)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer"]
+self_modulate = Color(0.0988272, 0.157089, 0.284502, 1)
+layout_mode = 2
+texture = ExtResource("2_jqyk1")
+region_rect = Rect2(0, 0, 120, 120)
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(860, 660)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 30
+columns = 4
+
+[node name="Reward" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward2" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward3" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward4" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward5" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward6" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward7" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward8" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2
+
+[node name="Reward9" parent="MarginContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_4uudo")]
+layout_mode = 2

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="SkillBranch" load_steps=3 format=3 uid="uid://c830gwayrbxbw"]
+[gd_resource type="Resource" script_class="SkillBranch" load_steps=4 format=3 uid="uid://c830gwayrbxbw"]
 
 [ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_3icg6"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="2_3icg6"]
 [ext_resource type="Resource" uid="uid://61p44fsftl5h" path="res://Resources/Characters/Skills/basic_hp_attack.tres" id="3_d01ee"]
 
 [resource]
 script = ExtResource("1_3icg6")
-skillTiers = [ExtResource("3_d01ee")]
+skillTiers = Array[ExtResource("2_3icg6")]([ExtResource("3_d01ee")])
 metadata/_custom_type_script = "uid://oi7b31cv68hk"

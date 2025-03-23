@@ -57,6 +57,7 @@ namespace CombatSystem
             int newStars = CalculateNewStarCount(state);
 
             var rewards = CalculateRewardsForStars(currStars, newStars);
+            rewards.AddRange(Rewards);
             SetStarCount(newStars);
 
             var eventArgs = new StageCompletionData(currStars, newStars, rewards, ExpGained);

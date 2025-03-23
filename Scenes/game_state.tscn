@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dhy4vi30p0fpw"]
+[gd_scene load_steps=38 format=3 uid="uid://dhy4vi30p0fpw"]
 
 [ext_resource type="Script" uid="uid://c5h8h5fd4fdsd" path="res://Scripts/Utilities/Game State/GameState.cs" id="1_1csjl"]
 [ext_resource type="Script" uid="uid://bo7pxpc8yx3v6" path="res://Scripts/Room Scripts/Time/GameTimeManager.cs" id="2_8igk3"]
@@ -9,20 +9,15 @@
 [ext_resource type="Script" uid="uid://bpaoa56qe5k5e" path="res://Scripts/Utilities/Flags/GameFlags.cs" id="5_017w6"]
 [ext_resource type="Script" uid="uid://cwepk2ttshtci" path="res://Scripts/Utilities/Game State/Data/GachaGame.cs" id="6_6ps7c"]
 [ext_resource type="Script" uid="uid://bpgy5xnv2vpso" path="res://Scripts/Utilities/Flags/GameStringFlags.cs" id="6_017w6"]
-[ext_resource type="Resource" uid="uid://ckuk24b61wpg8" path="res://Resources/Items/Level Upgrades/exp_tier_1.tres" id="8_4mo12"]
-[ext_resource type="Resource" uid="uid://7m0x0bs2kwc8" path="res://Resources/Items/Level Upgrades/exp_tier_2.tres" id="10_gyq6b"]
-[ext_resource type="Resource" uid="uid://bqkvuxcl77wcr" path="res://Resources/Items/Level Upgrades/exp_tier_3.tres" id="11_bwm1f"]
 [ext_resource type="Resource" uid="uid://g4qtq3qm5r2d" path="res://Resources/Overworld/Gacha Game Data/Banners/permanent_banner.tres" id="12_73fjw"]
-[ext_resource type="Resource" uid="uid://ccucd11jl0yi5" path="res://Resources/Items/Level Upgrades/exp_tier_4.tres" id="12_v75l8"]
+[ext_resource type="Resource" uid="uid://ctpuj03es8r7i" path="res://Resources/Utilities/Events/Inventory Events/OnInventoryUpdate (Void).tres" id="13_48wcd"]
 [ext_resource type="Script" uid="uid://tl82ibilaxhs" path="res://Scripts/Save System/OwnedCharacterData.cs" id="14_4mo12"]
 [ext_resource type="Script" uid="uid://cparukonr4gds" path="res://Scripts/Overworld Scripts/Quest System/QuestManager.cs" id="15_u3q2k"]
 [ext_resource type="Script" uid="uid://crwjm0wp0dttb" path="res://Scripts/Overworld Scripts/Inventory System/Inventory.cs" id="16_n8140"]
 [ext_resource type="Script" uid="uid://booj8f3hwcnco" path="res://Scripts/Utilities/Game State/Data/CharacterDictionary.cs" id="17_0rwfx"]
 [ext_resource type="Script" uid="uid://dg6hi4clsmqht" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/PartySetup.cs" id="17_ig1aq"]
-[ext_resource type="Script" uid="uid://skiggt44ln0s" path="res://Scripts/Overworld Scripts/Inventory System/InventorySlot.cs" id="18_7kcay"]
 [ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_female_wizard.tres" id="18_ig1aq"]
 [ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="19_017w6"]
-[ext_resource type="Resource" uid="uid://bnka8sgyiscsr" path="res://Resources/Utilities/Events/Inventory Events/OnInventoryUpdate.tres" id="19_361pm"]
 [ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="20_48wcd"]
 [ext_resource type="Resource" uid="uid://cbk1w2gmifv02" path="res://Resources/Room/Events/OnGemCountChanged.tres" id="21_3scac"]
 [ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="21_8igk3"]
@@ -31,29 +26,6 @@
 [ext_resource type="Script" uid="uid://cwaua4ghmll6u" path="res://Scripts/Room Scripts/Stamina System/StaminaManager.cs" id="28_idyri"]
 [ext_resource type="Script" uid="uid://du8pvqj4ocmqm" path="res://Scripts/Event System/VoidEventHandler.cs" id="29_ac2g0"]
 [ext_resource type="Script" uid="uid://nn74iw3js7tw" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterExpCurve.cs" id="31_waiek"]
-
-[sub_resource type="Resource" id="Resource_aoisc"]
-script = ExtResource("18_7kcay")
-item = ExtResource("8_4mo12")
-amount = 500
-
-[sub_resource type="Resource" id="Resource_1dcmr"]
-script = ExtResource("18_7kcay")
-item = ExtResource("10_gyq6b")
-amount = 50
-metadata/_custom_type_script = ExtResource("18_7kcay")
-
-[sub_resource type="Resource" id="Resource_5lkyx"]
-script = ExtResource("18_7kcay")
-item = ExtResource("11_bwm1f")
-amount = 10
-metadata/_custom_type_script = ExtResource("18_7kcay")
-
-[sub_resource type="Resource" id="Resource_3bjbp"]
-script = ExtResource("18_7kcay")
-item = ExtResource("12_v75l8")
-amount = 5
-metadata/_custom_type_script = ExtResource("18_7kcay")
 
 [sub_resource type="Resource" id="Resource_gyq6b"]
 script = ExtResource("14_4mo12")
@@ -136,7 +108,7 @@ rank = NodePath("Player Rank")
 time = NodePath("Time Manager")
 flags = NodePath("Flags")
 stringFlags = NodePath("String Flags")
-playerInventory = NodePath("Player Inventory")
+playerInventory = NodePath("Game Inventory")
 quests = NodePath("Quest Manager")
 game = NodePath("Gacha Data")
 stamina = NodePath("Stamina Manager")
@@ -170,10 +142,9 @@ script = ExtResource("6_017w6")
 [node name="Quest Manager" type="Node2D" parent="."]
 script = ExtResource("15_u3q2k")
 
-[node name="Player Inventory" type="Node2D" parent="."]
+[node name="Game Inventory" type="Node2D" parent="."]
 script = ExtResource("16_n8140")
-slots = Array[Object]([SubResource("Resource_aoisc"), SubResource("Resource_1dcmr"), SubResource("Resource_5lkyx"), SubResource("Resource_3bjbp")])
-OnInventoryChange = ExtResource("19_361pm")
+OnInventoryChange = ExtResource("13_48wcd")
 
 [node name="Gacha Data" type="Node2D" parent="." node_paths=PackedStringArray("allCharacters")]
 script = ExtResource("6_6ps7c")

@@ -15,6 +15,7 @@ namespace CombatSystem
         [Export] private SkillSelection skillUI;
         [Export] private DirectionButtonUI directionUI;
         [Export] private TurnDataManager turnDataManager;
+        [Export] public Camera2D Camera { get; private set; }
 
         public TurnData turnData;
 
