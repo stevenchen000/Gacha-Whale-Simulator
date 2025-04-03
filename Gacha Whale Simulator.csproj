@@ -5,10 +5,9 @@
     <RootNamespace>GachaWhaleSimulator</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="android\**" />
     <Compile Remove="Scripts\Character Creator\**" />
+    <EmbeddedResource Remove="android\**" />
     <EmbeddedResource Remove="Scripts\Character Creator\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\Combat Scripts\Combat System\Grid\Grid Shapes\" />
   </ItemGroup>
 </Project>

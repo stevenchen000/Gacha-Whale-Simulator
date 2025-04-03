@@ -8,7 +8,13 @@ namespace CombatSystem
 {
     public partial class BattleManager : GameMenu
     {
-        [Export] private BattleGrid grid;
+        public BattleGrid Grid
+        {
+            get
+            {
+                return State.Grid;
+            }
+        }
 
         [Export] private PackedScene roomScene;
 
@@ -26,26 +32,15 @@ namespace CombatSystem
         {
             get
             {
-                return turnData.skill;
-            }
-            private set
-            {
-                turnData.skill = value;
-            }
-        }
-        public CharacterDirection Direction
-        {
-            get
-            {
-                return turnData.direction;
-            }
-            private set
-            {
-                turnData.direction = value;
+                var targetData = Grid.CurrentTargetingData;
+                SkillContainer skill = null;
+                skill = targetData?.Skill;
+                return skill;
             }
         }
+        public TargetingData SkillTargeting { get; private set; }
+        public TargetingSelection CurrentTargetSelection { get; private set; }
         public bool TurnConfirmed { get; private set; }
-        public Dictionary<CharacterDirection, Array<GridSpace>> targetableSpaces;
 
 
         [Signal]
@@ -89,9 +84,13 @@ namespace CombatSystem
 
         public BattleCharacter GetCurrentCharacter()
         {
-            BattleCharacter result = State.TurnOrder.GetCurrentCharacter();
-
+            var result = State.TurnOrder.GetCurrentCharacter();
             return result;
+        }
+
+        public bool CharacterInPlayerParty(BattleCharacter character)
+        {
+            return State.PlayerParty.IsInParty(character);
         }
 
         /****************
@@ -102,11 +101,10 @@ namespace CombatSystem
 
         public void StartTurn()
         {
+            Utils.Print(this, GetCurrentCharacter());
             var currentCharacter = GetCurrentCharacter();
-            turnData = new TurnData(currentCharacter);
             currentCharacter.StartCharacterTurn(State);
-            grid.SetSpacesWalkable(currentCharacter);
-            
+
             //if controlled character
             skillUI.SetupButtons(currentCharacter);
             HideConfirmationAndShowSkipButton();
@@ -117,8 +115,8 @@ namespace CombatSystem
         public void ConfirmAction()
         {
             TurnConfirmed = true;
-            grid.ResetSpaces();
-            HideDirectionButtons();
+            SelectAction();
+            Grid.ResetSpaces();
             skillUI.HideConfirmationButtons();
             skillUI.HideSkipButton();
         }
@@ -126,10 +124,10 @@ namespace CombatSystem
         public void EndTurn()
         {
             var character = GetCurrentCharacter();
-            character.EndTurn(0, this, grid);
-            grid.ResetSpaces();
+            character.EndTurn(0, this, Grid);
             State.TurnOrder.SetupNextTurn();
             turnDataManager.AddTurnData(turnData);
+            Grid.ResetGrid();
             turnData = null;
             TurnConfirmed = false;
         }
@@ -137,7 +135,8 @@ namespace CombatSystem
         public void SkipTurn()
         {
             TurnConfirmed = true;
-            SelectedSkill = null;
+            Grid.SetTargetingData(null);
+            Grid.SetTargetingSelection(null);
         }
 
 
@@ -155,17 +154,12 @@ namespace CombatSystem
 
         #region Turn Actions
 
-        public void SelectSpace(GridSpace space)
-        {
-            var currChar = GetCurrentCharacter();
-            grid.ResetHasSelectedTarget();
-            grid.ResetCanTarget();
-            OccupySpace(space, currChar);
-        }
 
-        public void SelectAction(BattleCharacter caster, Array<BattleCharacter> targets, SkillContainer skill)
+        public void SelectAction()
         {
-            turnData = new TurnData(caster, targets, skill);
+            var targeting = Grid.CurrentTargetingData;
+            var selection = Grid.CurrentSelection;
+            turnData = new TurnData(Grid, targeting, selection);
         }
         #endregion
 
@@ -174,25 +168,33 @@ namespace CombatSystem
 
         public void SetSelectedSkill(SkillContainer skill)
         {
-            if (SelectedSkill == skill) return;
-
-            var oldSkill = SelectedSkill;
-            SelectedSkill = skill;
-            var caster = GetCurrentCharacter();
-            var currPos = caster.currPosition;
-            var currSpace = grid.GetSpaceFromCoords(currPos);
-
-            grid.ResetCanTarget();
-            HideDirectionButtons();
-
-            if (SelectedSkill != null)
+            if (skill != null)
             {
-                targetableSpaces = skill.Skill.GetAllTargetSpaces(this, grid, caster, caster.currPosition);
-                grid.ShowAllTargetableAreas(targetableSpaces);
+                var caster = GetCurrentCharacter();
+                var currPos = caster.currPosition;
+                var currSpace = Grid.GetSpaceFromCoords(currPos);
+                var targetingData = skill.GetTargetingData(Grid, caster, currPos);
+
+                Grid.SetTargetingData(targetingData);
+            }
+            else
+            {
+                Grid.SetTargetingData(null);
             }
         }
 
 
+
+        public void SetTargetSelection(TargetingSelection selection)
+        {
+            Grid.SetTargetingSelection(selection);
+        }
+
+
+
+
+
+        #endregion
         /******************
          * Skill UI
          * *****************/
@@ -224,33 +226,15 @@ namespace CombatSystem
         public void CancelSelectedSkill()
         {
             SetSelectedSkill(null);
-            ResetDirection();
-            grid.ResetCanTarget();
-            grid.ResetHasSelectedTarget();
+            //Need to redo this
+            State.Grid.SetTargetingData(null);
+            State.Grid.SetTargetingSelection(null);
+            
             HideConfirmationAndShowSkipButton();
         }
 
-        public void HideDirectionButtons()
-        {
-            directionUI.HideButtons();
-        }
 
-        public void RevealDirectionButtons()
-        {
-            var caster = GetCurrentCharacter();
-            var currPos = caster.currPosition;
-            var currSpace = grid.GetSpaceFromCoords(currPos);
-
-            directionUI.RevealButtons(currSpace, targetableSpaces);
-        }
-
-        public Array<CharacterDirection> GetValidDirections()
-        {
-            var result = new Array<CharacterDirection>();
-            if(targetableSpaces != null)
-                result.AddRange(targetableSpaces.Keys);
-            return result;
-        }
+        
 
         /// <summary>
         /// When a skill has been selected,
@@ -260,53 +244,25 @@ namespace CombatSystem
         /// <returns></returns>
         public int GetNumberOfTargetableDirections()
         {
-            int result = 0;
-            
-            if (targetableSpaces != null)
-            {
-                result = targetableSpaces.Keys.Count;
-            }
+            int result = Grid.CurrentTargetingData.GetValidDirections(Grid).Count;
 
             return result;
         }
 
-
-        private bool ValidDirectionSelected()
-        {
-            bool result = false;
-
-            if(targetableSpaces != null && targetableSpaces.ContainsKey(Direction))
-            {
-                result = true;
-            }
-
-            return result;
-        }
 
 
         public void SelectDirection(CharacterDirection direction)
         {
-            Direction = direction;
-            var targets = targetableSpaces[direction];
-
-            grid.ResetHasSelectedTarget();
-
-            foreach(var target in targets)
-            {
-                target.SetHasSelectedTarget(true);
-            }
-
-            turnData.SetTargets(targetableSpaces[direction]);
+            var selection = new TargetingSelection(direction);
+            Grid.SetTargetingSelection(selection);
         }
 
         public void ResetDirection()
         {
-            Direction = CharacterDirection.NONE;
-            turnData.SetTargets(null);
+            Grid.SetTargetingSelection(null);
         }
 
 
-        #endregion
 
 
 
@@ -324,24 +280,17 @@ namespace CombatSystem
         public bool OccupySpace(Vector2I coords, BattleCharacter character)
         {
             bool result = false;
-            var space = grid.GetSpaceFromCoords(coords);
-            HideDirectionButtons();
+            var space = Grid.GetSpaceFromCoords(coords);
 
             if (space != null)
             {
                 result = OccupySpace(space, character);
                 //gray out skills out of range
                 if(character == GetCurrentCharacter())
-                    skillUI.UpdateIfButtonsShouldBeActive(this, grid, GetCurrentCharacter());
+                    skillUI.UpdateIfButtonsShouldBeActive(this, Grid, GetCurrentCharacter());
             }
 
             return result;
-        }
-
-        public void UnoccupySpace(Vector2I coords, BattleCharacter character)
-        {
-            var space = grid.GetSpaceFromCoords(coords);
-            
         }
 
         private bool OccupySpace(GridSpace space, BattleCharacter character)
@@ -352,7 +301,6 @@ namespace CombatSystem
             if (spaceChar == null)
             {
                 result = true;
-                UnoccupyPreviousSpace(character);
                 space.OccupySpace(character);
                 character.SetTemporaryPosition(space);
             }
@@ -360,15 +308,6 @@ namespace CombatSystem
             return result;
         }
 
-        private void UnoccupyPreviousSpace(BattleCharacter character)
-        {
-            var prevPos = character.currPosition;
-            if (prevPos != Vector2I.MinValue)
-            {
-                var prevSpace = grid.GetSpaceFromCoords(prevPos);
-                prevSpace.UnoccupySpace();
-            }
-        }
 
         public BattleGrid GetGrid()
         {

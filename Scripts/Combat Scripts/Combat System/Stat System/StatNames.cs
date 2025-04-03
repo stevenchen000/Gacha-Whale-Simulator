@@ -42,6 +42,12 @@ public partial class StatNames : Node
         get { return instance._speed; }
     }
 
+    [Export] private StatType _movement;
+    public static StatType Movement
+    {
+        get { return instance._movement; }
+    }
+
 
     public override void _Ready()
     {

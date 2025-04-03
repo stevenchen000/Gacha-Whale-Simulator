@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Godot.Collections;
+using static Godot.HttpRequest;
 
 namespace CombatSystem {
 	public partial class BattleGrid : Node2D
@@ -17,21 +18,28 @@ namespace CombatSystem {
 		[Export] private int horizontalGrids = 7;
 		[Export] private int verticalGrids = 3;
 
-		public Array<Vector2I> CurrentWalkableSpaces { get; private set; }
+        public MovementData CurrentMovementData { get; private set; }
+        public TargetingData CurrentTargetingData { get; private set; }
+		public TargetingSelection CurrentSelection { get; private set; }
+
 
 		private Dictionary<BattleCharacter, GridSpace> occupiedSpaces;
+		private Dictionary<GridSpace, BattleCharacter> occupiedSpacesReverse;
 
 
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
+			
 		}
 
 		public void InitGrid(int horizontal, int vertical, BattleState state)
         {
 			horizontalGrids = horizontal;
 			verticalGrids = vertical;
+            occupiedSpaces = new Dictionary<BattleCharacter, GridSpace>();
+			occupiedSpacesReverse = new Dictionary<GridSpace, BattleCharacter>();
             InitBattleSpaces();
             SetAllSpacesToDefault();
         }
@@ -47,52 +55,176 @@ namespace CombatSystem {
 		
 
 
-		/*********************
-		 * Public functions
-		 * *************/
+		/*****************
+		 * Space State Update
+		 * **************/
 
-
-		public void ShowAllTargetableAreas(Dictionary<CharacterDirection, Array<GridSpace>> spaces)
+		public void SetWalkableData(MovementData data)
 		{
-			foreach(var list in spaces.Values)
+			CurrentMovementData = data;
+			UpdateSpaceState();
+		}
+
+
+		public void SetTargetingData(TargetingData data)
+		{
+			CurrentTargetingData = data;
+            UpdateSpaceState();
+        }
+
+		public void SetTargetingSelection(TargetingSelection selection)
+		{
+			CurrentSelection = selection;
+            UpdateSpaceState();
+        }
+
+		private void UpdateSpaceState()
+		{
+			ResetSpaces();
+			UpdateMovementData(CurrentMovementData);
+			UpdateTargetingData(CurrentTargetingData);
+			UpdateTargetSelection(CurrentSelection);
+		}
+
+		private void UpdateMovementData(MovementData moveData)
+		{
+			if (moveData != null)
 			{
-				foreach(var space in list)
+				var coordinates = moveData.WalkableSpaces;
+				foreach (var coords in coordinates)
 				{
-					space.SetCanTarget(true);
+					var space = GetSpaceFromCoords(coords);
+					space.SetWalkable(true);
 				}
 			}
 		}
 
-		public void ResetCanTarget()
-		{
-			foreach(var space in battleSpaces)
-			{
-				space.SetCanTarget(false);
-			}
-		}
-
-		public void ResetHasSelectedTarget()
-		{
-			foreach(var space in battleSpaces)
-				space.SetHasSelectedTarget(false);
-		}
-
-		public void ResetSpaces()
-		{
-			foreach (var space in battleSpaces)
-				space.ResetSpace();
-		}
-
-		public void ReapplyWalkableState()
-		{
-			foreach(var coord in CurrentWalkableSpaces)
-			{
-				var space = GetSpaceFromCoords(coord);
-				space.SetWalkable(true);
-			}
-		}
-
 		/******************
+		 * Targeting Data
+		 * ****************/
+
+		private void UpdateTargetingData(TargetingData targetingData)
+		{
+			if (targetingData != null)
+			{
+				var style = targetingData.SelectionStyle;
+				switch (style)
+				{
+					case TargetSelectionStyle.SelectSpace: //make all selectable spaces yellow
+                        _UpdateTargetDataSpace(targetingData);
+                        break;
+					case TargetSelectionStyle.SelectDirection: //make all possible spaces yellow
+						_UpdateTargetDataDirection(targetingData);
+                        break;
+					case TargetSelectionStyle.None: //make all spaces red (target already selected)
+						_UpdateTargetDataNone(targetingData);
+                        break;
+				}
+			}
+		}
+
+		private void _UpdateTargetDataSpace(TargetingData targetingData)
+		{
+            var spaceCoords = targetingData._spaceDict.Keys;
+            foreach (var coords in spaceCoords)
+            {
+                var space = GetSpaceFromCoords(coords);
+                space.SetCanSelect(true);
+            }
+        }
+
+		private void _UpdateTargetDataDirection(TargetingData targetingData)
+		{
+            var directions = targetingData.GetValidDirections(this);
+            foreach (var direction in directions)
+            {
+                var directionOffset = BattleConstants.GetDirectionOffset(direction);
+                var characterPos = targetingData.Caster.currPosition;
+                var space = GetSpaceFromCoords(characterPos + directionOffset);
+                space.SetCanSelect(true);
+                space.SetSelectionHasDirection(direction);
+            }
+        }
+
+		private void _UpdateTargetDataNone(TargetingData targetingData)
+		{
+            var targetCoords = targetingData._spaces;
+            foreach (var coords in targetCoords)
+            {
+                var space = GetSpaceFromCoords(coords);
+                space.SetHasSelected(true);
+            }
+			CurrentSelection = new TargetingSelection();
+        }
+
+
+		/********************
+		 * Target Selection
+		 * ****************/
+
+		private void UpdateTargetSelection(TargetingSelection targetSelection)
+		{
+			if(targetSelection != null)
+			{
+				var style = targetSelection.Style;
+				switch (style)
+				{
+					case TargetSelectionStyle.SelectSpace:
+						_UpdateSpaceSelection(targetSelection);
+                        break;
+					case TargetSelectionStyle.SelectDirection:
+						_UpdateDirectionSelection(targetSelection);
+                        break;
+					case TargetSelectionStyle.None: //do nothing, already shown in UpdateTargetingData
+						break;
+				}
+			}
+		}
+
+		private void _UpdateSpaceSelection(TargetingSelection selection)
+		{
+			if (CurrentTargetingData == null) return;
+            var selectedSpace = selection.SelectedSpace;
+            var spaceTargets = CurrentTargetingData._spaceDict[selectedSpace];
+            foreach (var coords in spaceTargets)
+            {
+                var space = GetSpaceFromCoords(coords);
+                space?.SetHasSelected(true);
+            }
+        }
+
+		private void _UpdateDirectionSelection(TargetingSelection selection)
+		{
+            var selectedDirection = selection.SelectedDirection;
+            var directionSpaces = CurrentTargetingData._directionDict[selectedDirection];
+            foreach (var coords in directionSpaces)
+            {
+                var space = GetSpaceFromCoords(coords);
+				space.SetHasSelected(true);
+            }
+        }
+
+
+		/********************
+		 * Misc
+		 * ****************/
+
+        public void ResetSpaces()
+        {
+            foreach (var space in battleSpaces)
+                space.ResetSpace();
+        }
+
+		public void ResetGrid()
+		{
+			CurrentMovementData = null;
+			CurrentTargetingData = null;
+			CurrentSelection = null;
+			ResetSpaces();
+		}
+
+
+        /******************
 		 * Get Space
 		 * ***************/
 
@@ -117,34 +249,16 @@ namespace CombatSystem {
 			return GetSpaceFromCoords(x, y);
         }
 
+
+		public bool CoordinatesInGrid(Vector2I coords)
+		{
+			var space = GetSpaceFromCoords(coords);
+			return space != null;
+		}
+
 		#endregion
 
 
-		private Vector2I CheckNearestNeighbors(Vector2I nearestSpace, BattleCharacter character)
-        {
-			var allCoords = new Array<Vector2I>();
-			allCoords.Add(nearestSpace - new Vector2I(1, 0));
-			allCoords.Add(nearestSpace + new Vector2I(1, 0));
-			allCoords.Add(nearestSpace - new Vector2I(0, 1));
-			allCoords.Add(nearestSpace + new Vector2I(0, 1));
-
-			float nearestDistance = 9999;
-			Vector2I result = new Vector2I(0,0);
-			foreach(var coord in allCoords)
-            {
-                if (CurrentWalkableSpaces.Contains(coord))
-                {
-					var space = GetSpaceFromCoords(coord);
-					float dist = (space.GlobalPosition - character.GlobalPosition).Length();
-					if(dist < nearestDistance)
-                    {
-						nearestDistance = dist;
-						result = coord;
-                    }
-                }
-            }
-			return result;
-        }
 
 		public Array<BattleCharacter> GetTargetsInRange(BattleManager battle, BattleCharacter character, GridShape attackShape)
         {
@@ -184,43 +298,124 @@ namespace CombatSystem {
 		 * Occupy and unoccupy spaces
 		 * ****************/
 
+		public void OccupySpace(BattleCharacter character, Vector2I coords)
+		{
+			var space = GetSpaceFromCoords(coords);
+
+			UnoccupySpace(character);
+			occupiedSpaces.Add(character, space);
+			occupiedSpacesReverse.Add(space, character);
+		}
+
 		public void UnoccupySpace(BattleCharacter character)
 		{
-			foreach(var space in battleSpaces)
+            if (occupiedSpaces.ContainsKey(character))
+            {
+                var prevSpace = occupiedSpaces[character];
+				occupiedSpaces.Remove(character);
+                occupiedSpacesReverse.Remove(prevSpace);
+            }
+        }
+
+		public void UnoccupySpace(Vector2I coords)
+		{
+			var space = GetSpaceFromCoords(coords);
+            if (occupiedSpacesReverse.ContainsKey(space))
+            {
+                var prevChar = occupiedSpacesReverse[space];
+                occupiedSpaces.Remove(prevChar);
+                occupiedSpacesReverse.Remove(space);
+            }
+        }
+
+		public BattleCharacter GetCharacterOnSpace(Vector2I coords)
+		{
+			var space = GetSpaceFromCoords(coords);
+			BattleCharacter result = null;
+			if (occupiedSpacesReverse.ContainsKey(space))
 			{
-				if(space.CharacterOnSpace == character)
-				{
-					space.UnoccupySpace();
-				}
+				result = occupiedSpacesReverse[space];
 			}
+
+			return result;
 		}
+
+		public GridSpace GetSpaceOccupiedByCharacter(BattleCharacter character)
+		{
+			GridSpace result = null;
+            if (occupiedSpaces.ContainsKey(character))
+            {
+                result = occupiedSpaces[character];
+            }
+
+            return result;
+        }
 
 
 		/*********************
 		 * Walkable Spaces
 		 * *****************/
 
-		public Array<Vector2I> GetAllWalkableAreas(BattleCharacter character)
+		public MovementData GetAllWalkableAreas(BattleCharacter character)
         {
 			var position = character.turnStartPosition;//GetNearestSpaceToCharacter(character);
-			int movement = character.Stats.GetStat("Movement");
-			var walkableSpaces = GetWalkableSpacesIgnoringObstacles(position, movement);
+            int movement = character.Stats.GetStat(StatNames.Movement);
 
-			//if character has Pass effect, skip the enemyspaces check
-			walkableSpaces = RemoveSpacesWithEnemies(character, walkableSpaces);
-			walkableSpaces = RemoveDisconnectedSpaces(walkableSpaces, character);
-			walkableSpaces = RemoveAllOccupiedSpaces(character, walkableSpaces);
+            var walkableSpaces = new Array<Vector2I>();
+            TraverseMapRecursive(walkableSpaces, position, movement, character);
+			RemoveAllOccupiedSpaces(character, walkableSpaces);
 
-			return walkableSpaces;
+			var result = new MovementData(character, walkableSpaces);
+
+            return result;
 		}
 		public bool CheckIfSpaceIsWalkable(Vector2I position)
         {
-			return CurrentWalkableSpaces.Contains(position);
+			return CurrentMovementData.WalkableSpaces.Contains(position);
         }
 		public bool CheckIfSpaceIsWalkable(GridSpace space)
         {
 			return space.IsWalkable;
         }
+
+
+		private void TraverseMapRecursive(Array<Vector2I> ReachableSpaces, 
+										  Vector2I currSpace, 
+										  int movement, 
+										  BattleCharacter character)
+		{
+			var space = GetSpaceFromCoords(currSpace);
+			if (space == null) return;
+
+			var characterOnSpace = space.CharacterOnSpace;
+			//exit if enemy on space
+			if(characterOnSpace != null && characterOnSpace.IsEnemy(character))
+			{
+				return;
+			}
+
+			//add space
+            if (!ReachableSpaces.Contains(currSpace))
+            {
+                ReachableSpaces.Add(currSpace);
+            }
+
+			//traverse all other spaces
+            if (movement > 0)
+			{
+				var left = currSpace + new Vector2I(-1, 0);
+				var right = currSpace + new Vector2I(1, 0);
+				var up = currSpace + new Vector2I(0, 1);
+				var down = currSpace + new Vector2I(0, -1);
+
+				TraverseMapRecursive(ReachableSpaces, left, movement - 1, character);
+				TraverseMapRecursive(ReachableSpaces, down, movement - 1, character);
+				TraverseMapRecursive(ReachableSpaces, up, movement - 1, character);
+				TraverseMapRecursive(ReachableSpaces, right, movement - 1, character);
+			}
+		}
+
+
 
 		/*******************
 		 * Change Space State

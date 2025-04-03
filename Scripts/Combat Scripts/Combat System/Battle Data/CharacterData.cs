@@ -95,7 +95,7 @@ namespace CombatSystem
 
             result.Add(ampAtk);
             result.Add(hpAtk);
-            Utils.Print(this, $"{role.Name} - {ampAtk.SkillName} - {hpAtk.SkillName}");
+            //Utils.Print(this, $"{role.Name} - {ampAtk.SkillName} - {hpAtk.SkillName}");
 
             return result;
         }

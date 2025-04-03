@@ -9,18 +9,59 @@ namespace CombatSystem
     {
         [Export] private int minRange = 1;
         [Export] private int maxRange = 2;
-        public override Array<Vector2I> GetPositionsInRange(Vector2I position, CharacterDirection direction)
-        {
-            var result = new Array<Vector2I>();
+        //Targeting Style = SelectSpace
+        
+        //Ranged Shape has the caster select a space to attack
+        //Attack will target spaces in attackShape
 
-            for(int i = minRange; i <= maxRange; i++)
+        public override TargetingData GetTargetsFromPosition(BattleGrid grid, BattleCharacter caster, SkillContainer skill, Vector2I position)
+        {
+            TargetingData result = null;
+
+            var coords = GetAllCoords();
+            AddOffsetToSpaces(coords, position);
+            RemoveSpacesOutOfRange(grid, coords);
+            var targetData = CreateTargetingData(coords);
+            result = new TargetingData(caster, skill, targetData);
+
+            return result;
+        }
+
+        private Dictionary<Vector2I, Array<Vector2I>> CreateTargetingData(Array<Vector2I> coords)
+        {
+            var result = new Dictionary<Vector2I, Array<Vector2I>>();
+            
+            for(int i = 0; i < coords.Count; i++)
             {
-                var spaces = GetAllCoordsOfRange(i);
-                result.AddRange(spaces);
+                var currCoords = coords[i];
+                var targetCoords = attackShape.Duplicate(true);
+                AddOffsetToSpaces(targetCoords, currCoords);
+                result[currCoords] = targetCoords;
             }
 
             return result;
         }
+
+        public override Array<Vector2I> GetPositionsToReachPosition(Vector2I target)
+        {
+            var result = GetAllCoords();
+            AddOffsetToSpaces(result, target);
+            return result;
+        }
+
+
+        private Array<Vector2I> GetAllCoords()
+        {
+            var result = new Array<Vector2I>();
+
+            for (int i = minRange; i <= maxRange; i++)
+            {
+                var spaces = AddAllCoordsInRange(result, i);
+            }
+
+            return result;
+        }
+
 
         /// <summary>
         /// Gets all spaces exactly (range) spaces away
@@ -28,10 +69,8 @@ namespace CombatSystem
         /// </summary>
         /// <param name="range"></param>
         /// <returns></returns>
-        private Array<Vector2I> GetAllCoordsOfRange(int range)
+        private Array<Vector2I> AddAllCoordsInRange(Array<Vector2I> result, int range)
         {
-            Array<Vector2I> result = new Array<Vector2I>();
-
             int xOffset = range;
             int yOffset = 0;
 

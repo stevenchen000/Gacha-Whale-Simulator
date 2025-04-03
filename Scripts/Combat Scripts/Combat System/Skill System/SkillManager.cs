@@ -7,6 +7,20 @@ namespace CombatSystem
     public partial class SkillManager : Node
     {
         public List<SkillContainer> Skills { get; private set; } = new List<SkillContainer>();
+        private SimpleWeakRef<BattleCharacter> _caster;
+        private BattleCharacter caster
+        {
+            get
+            {
+                return _caster.Value;
+            }
+            set
+            {
+                _caster = new SimpleWeakRef<BattleCharacter> (value);
+            }
+        }
+
+
 
         public void Init(CharacterData data)
         {

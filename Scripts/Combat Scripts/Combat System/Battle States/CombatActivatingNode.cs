@@ -22,7 +22,7 @@ namespace CombatSystem
         {
             StateNode result = null;
 
-            if (timeInState > 0.5) result = turnNode;
+            if (timeInState > 1) result = turnNode;
             
             return result;
         }

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterSkill" load_steps=5 format=3 uid="uid://courgpip1ivkj"]
 
-[ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_yok7t"]
+[ext_resource type="Resource" uid="uid://b1myme10hhdib" path="res://Resources/Characters/Skills/Skill Shape/range_1_shape.tres" id="1_20a77"]
 [ext_resource type="Texture2D" uid="uid://cu3mtpkpm3lqv" path="res://Art Assets/Character Assets/Weapon Icons/WandT2.png" id="2_yok7t"]
 [ext_resource type="Resource" uid="uid://cdu3dtjeujngn" path="res://Resources/Characters/Skills/Skill Effects/heal_health_effect.tres" id="3_20a77"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="7_s4qso"]
@@ -14,7 +14,7 @@ InfiniteUses = false
 Uses = 3
 effects = Array[Object]([ExtResource("3_20a77")])
 potency = 100
-AttackArea = ExtResource("1_yok7t")
+AttackArea = ExtResource("1_20a77")
 direction = 1
 targetType = 0
 IsChargeSkill = false

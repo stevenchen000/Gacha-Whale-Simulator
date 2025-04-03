@@ -1,5 +1,6 @@
-TextureRect
+Sprite2D
 AnimationPlayer
+TextureRect
 Button
 Camera2D
 Control
@@ -11,4 +12,3 @@ GridContainer
 Node2D
 TabContainer
 VBoxContainer
-HBoxContainer

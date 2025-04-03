@@ -6,15 +6,31 @@ namespace CombatSystem
 {
     public class TurnData
     {
-        public BattleCharacter caster;
+        public BattleCharacter caster
+        {
+            get
+            {
+                BattleCharacter target = null;
+                if (targetData != null) target = targetData.Caster;
+                return target;
+            }
+        }
         public Vector2I casterStartPosition;
         public Vector2I casterPosition; //position where caster was standing at cast time
-        public Vector2I targetLocation; //position where skill is cast
-        public CharacterDirection direction = CharacterDirection.NONE; //direction facing
-        public SkillContainer skill;
+        public TargetingData targetData;
+        public TargetingSelection targetSelection;
+        public SkillContainer Skill
+        {
+            get
+            {
+                SkillContainer result = null;
+                if (targetData != null) result = targetData.Skill;
+                return result;
+            }
+        }
         
         public Array<BattleCharacter> targets;
-        public BattleGrid grid;
+        public BattleGrid grid { get; private set; }
 
         public int totalHpDamageDealt { get; private set; } = 0;
         public int totalAmpDamageDealt { get; private set; } = 0;
@@ -26,19 +42,24 @@ namespace CombatSystem
 
         public TurnData(BattleCharacter caster)
         {
-            this.caster = caster;
             casterStartPosition = caster.turnStartPosition;
         }
 
-        public TurnData(BattleCharacter caster,
-                                   Array<BattleCharacter> targets,
-                                   SkillContainer skill)
+        public TurnData(BattleGrid grid,
+                        TargetingData targetData,
+                        TargetingSelection selection)
         {
-            this.caster = caster;
-            this.targets = new Array<BattleCharacter>();
-            this.targets.AddRange(targets);
-            this.skill = skill;
+            this.grid = grid;
+            this.targetData = targetData;
+            targetSelection = selection;
+            if (targetData != null) 
+                targets = targetData.GetTargets(selection, grid);
         }
+
+
+        /**********************
+         * Damage
+         * *******************/
 
         public void AddHpDamage(int damage)
         {
@@ -57,21 +78,11 @@ namespace CombatSystem
             totalAmountHealed += heal;
         }
 
-        public void SetTargets(Array<GridSpace> spaces)
-        {
-            if (spaces == null) return;
 
-            targets = new Array<BattleCharacter>();
+        /****************
+         * Targeting
+         * **************/
 
-            foreach(var space in spaces)
-            {
-                var target = space.CharacterOnSpace;
-                if(target != null && skill.Skill.IsValidTarget(caster, target))
-                {
-                    targets.Add(target);
-                }
-            }
-        }
 
         
     }

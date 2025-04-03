@@ -8,19 +8,32 @@ namespace CombatSystem {
     {
         //<0,0> is where the character is standing
         //+Y is up, +X is right
-        [Export] private CharacterDirection defaultDirection = CharacterDirection.UP;
-        [Export] private Array<Vector2I> spaces;
-        [Export] public bool SelectSpace = false;
+        [Export] protected Array<Vector2I> attackShape = new Array<Vector2I>();
+
+
+        public virtual TargetingData GetTargetsFromPosition(BattleGrid grid, BattleCharacter caster, SkillContainer skill, Vector2I position)
+        {
+
+            return null;
+        }
+
 
         public virtual Array<Vector2I> GetPositionsInRange(Vector2I position, CharacterDirection direction)
         {
-            var result = TurnSpaces(direction);
-            AddOffsetToSpaces(result, position);
-
-            return result;
+            return null;
         }
 
-        private void AddOffsetToSpaces(Array<Vector2I> spaces, Vector2I position)
+        public virtual Array<Vector2I> GetPositionsToReachPosition(Vector2I target)
+        {
+            return null;
+        }
+
+
+        /*****************
+         * Helpers
+         * ****************/
+
+        protected void AddOffsetToSpaces(Array<Vector2I> spaces, Vector2I position)
         {
             for(int i = 0; i < spaces.Count; i++)
             {
@@ -33,84 +46,44 @@ namespace CombatSystem {
             }
         }
 
-        private Array<Vector2I> TurnSpaces(CharacterDirection newDirection)
+        protected void RemoveSpacesOutOfRange(BattleGrid grid, Array<Vector2I> coords)
         {
-            Array<Vector2I> result = null;
-
-            if (FlippedHorizontal(newDirection))
+            int index = 0;
+            while(index < coords.Count)
             {
-                result = FlipSpacesHorizontally(spaces);
+                var currCoords = coords[index];
+                if (!grid.CoordinatesInGrid(currCoords))
+                {
+                    coords.RemoveAt(index);
+                }
+                else
+                {
+                    index++;
+                }
             }
-            else if (FlippedVertical(newDirection))
-            {
-                result = FlipSpacesVertically(spaces);
-            }
-            else
-            {
-                result = new Array<Vector2I>();
-                result.AddRange(spaces);
-            }
-
-            return result;
         }
 
-        private bool FlippedHorizontal(CharacterDirection newDirection)
+        protected bool ContainsValidTarget(BattleGrid grid, Array<Vector2I> coordinates, BattleCharacter character, TargetType targetType)
         {
             bool result = false;
 
-            switch (newDirection)
+            foreach(var coords in coordinates)
             {
-                case CharacterDirection.LEFT:
-                    result = defaultDirection == CharacterDirection.RIGHT; 
-                    break;
-                case CharacterDirection.RIGHT:
-                    result = defaultDirection == CharacterDirection.LEFT;
-                    break;
-            }
-            return result;
-        }
+                var space = grid.GetSpaceFromCoords(coords);
+                var target = space.CharacterOnSpace;
 
-        private bool FlippedVertical(CharacterDirection newDirection)
-        {
-            bool result = false;
-
-            switch (newDirection)
-            {
-                case CharacterDirection.UP:
-                    result = defaultDirection == CharacterDirection.DOWN;
-                    break;
-                case CharacterDirection.DOWN:
-                    result = defaultDirection == CharacterDirection.UP;
-                    break;
-            }
-            return result;
-        }
-
-        private Array<Vector2I> FlipSpacesHorizontally(Array<Vector2I> spaces)
-        {
-            Array<Vector2I> result = new Array<Vector2I>();
-
-            foreach(var space in spaces)
-            {
-                int x = -space.X;
-                int y = space.Y;
-                var newSpace = new Vector2I(x, y);
-                result.Add(newSpace);
-            }
-
-            return result;
-        }
-
-        private Array<Vector2I> FlipSpacesVertically(Array<Vector2I> spaces)
-        {
-            Array<Vector2I> result = new Array<Vector2I>();
-
-            foreach (var space in spaces)
-            {
-                int x = space.X;
-                int y = -space.Y;
-                var newSpace = new Vector2I(x, y);
-                result.Add(newSpace);
+                if (target != null)
+                {
+                    if(targetType == TargetType.Enemy && character.IsEnemy(target))
+                    {
+                        result = true;
+                        break;
+                    }else if(targetType == TargetType.Ally && !character.IsEnemy(target))
+                    {
+                        result = true;
+                        break;
+                    }
+                }
             }
 
             return result;

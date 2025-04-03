@@ -9,8 +9,8 @@ namespace CombatSystem
     public partial class TurnOrderManager : Node
     {
         private BattleState battleState;
-        public List<CharacterTurnTime> turnOrder { get; private set; }
-
+        public List<CharacterTurnTime> turnOrder { get; private set; } = new List<CharacterTurnTime>();
+        private BattleCharacter currentCharacter;
         private double turnTime = 0;
 
         [Signal]
@@ -21,16 +21,16 @@ namespace CombatSystem
         {
             battleState = state;
 
-            turnOrder = new List<CharacterTurnTime>();
             SetupInitialTurns();
             CalculateTurnOrder();
             turnTime = turnOrder[0].TurnTime;
+            currentCharacter = turnOrder[0].Character;
         }
 
 
         public BattleCharacter GetCurrentCharacter()
         {
-            return turnOrder[0].Character;
+            return currentCharacter;
         }
 
         public double SetupNextTurn()
@@ -38,19 +38,18 @@ namespace CombatSystem
             double turnProgress = 0;
 
             //Update curr character's time
-            var character = turnOrder[0].Character;
-            double charTurnTime = CalculateTurnTime(character);
-            character.SetTurnTime(turnTime + charTurnTime);
-
+            double charTurnTime = CalculateTurnTime(currentCharacter);
+            currentCharacter.SetTurnTime(turnTime + charTurnTime);
+            
 
             //Remove curr turn and recalculate
-            turnOrder.RemoveAt(0);
             CalculateTurnOrder();
 
             //Get time diff
             double newTurnTime = turnOrder[0].TurnTime;
             turnProgress = newTurnTime - turnTime;
             turnTime = turnOrder[0].TurnTime;
+            currentCharacter = turnOrder[0].Character;
 
             return turnProgress;
         }

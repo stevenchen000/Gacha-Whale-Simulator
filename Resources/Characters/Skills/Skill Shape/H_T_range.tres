@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="GridShape" load_steps=2 format=3 uid="uid://cmtkcvyvs20ya"]
-
-[ext_resource type="Script" uid="uid://blk2w3ykqknul" path="res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/GridShape.cs" id="1_pi7bo"]
-
-[resource]
-script = ExtResource("1_pi7bo")
-defaultDirection = 3
-spaces = Array[Vector2i]([Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, -1)])

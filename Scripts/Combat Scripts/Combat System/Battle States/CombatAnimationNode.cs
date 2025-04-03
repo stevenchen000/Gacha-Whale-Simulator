@@ -15,7 +15,7 @@ namespace CombatSystem
 
         protected override void OnStateActivated()
         {
-            battle.turnData.skill.ConsumeSkillUse();
+            battle.turnData.Skill.ConsumeSkillUse();
             /*time = new TimeHandler();
             turnData = battle.turnData;
             skill = battle.SelectedSkill.GetDuplicate();

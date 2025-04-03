@@ -68,6 +68,39 @@ namespace CombatSystem {
             return result;
         }
 
+        public TargetingData GetTargetingData(BattleGrid grid, BattleCharacter caster, SkillContainer skill, Vector2I position)
+        {
+            var data = AttackArea.GetTargetsFromPosition(grid, caster, skill, position);
+
+            return data;
+        }
+
+
+        
+
+        private bool HasTargetsInList(BattleManager battle, BattleCharacter caster, Array<GridSpace> spaces)
+        {
+            bool result = false;
+
+            foreach (var space in spaces)
+            {
+                var target = space.CharacterOnSpace;
+                if (target != null)
+                {
+                    result = IsValidTarget(caster, target);
+                    if (result)
+                        break;
+                }
+            }
+
+            return result;
+        }
+
+
+
+
+
+
 
         public Dictionary<CharacterDirection, Array<GridSpace>> GetAllTargetSpaces(BattleManager battle,
                                                                                    BattleGrid grid, 
@@ -102,8 +135,13 @@ namespace CombatSystem {
             return result;
         }
 
+
+
+
+
         public bool HasTargetInRange(BattleManager battle, BattleGrid grid, BattleCharacter caster)
         {
+            
             var targetsDict = GetAllTargetSpaces(battle, grid, caster, caster.currPosition);
             return targetsDict.Count > 0;
         }
@@ -120,23 +158,6 @@ namespace CombatSystem {
                 spaces[direction] = results;
         }
 
-        private bool HasTargetsInList(BattleManager battle, BattleCharacter caster, Array<GridSpace> spaces)
-        {
-            bool result = false;
-
-            foreach(var space in spaces)
-            {
-                var target = space.CharacterOnSpace;
-                if (target != null)
-                {
-                    result = IsValidTarget(caster, target);
-                    if (result)
-                        break;
-                }
-            }
-
-            return result;
-        }
 
         private Array<GridSpace> GetSpacesInDirection(BattleGrid grid, 
                                                     BattleCharacter caster, 

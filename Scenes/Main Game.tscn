@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=34 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
 [ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Game Scenes/Character Creator Menu.tscn" id="2_vfyon"]
@@ -24,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://c7lns7qgbbffi" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/defense.tres" id="21_0b8tr"]
 [ext_resource type="Resource" uid="uid://bl10614skdi4f" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/speed.tres" id="22_hphdt"]
 [ext_resource type="Resource" uid="uid://dbdtx1lisc55v" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/spirit.tres" id="23_0b8tr"]
+[ext_resource type="Resource" uid="uid://3greor3qyttx" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/movement.tres" id="25_ebwyl"]
 [ext_resource type="Script" uid="uid://b6gqfciepf0vm" path="res://Scripts/Combat Scripts/Combat System/Skill System/ElementChart.cs" id="25_sl7r4"]
 [ext_resource type="Resource" uid="uid://b1wdi00bg4amd" path="res://Resources/Characters/Skills/Elements/fire_element.tres" id="27_0hpn3"]
 [ext_resource type="Resource" uid="uid://dwyicv0en0i8n" path="res://Resources/Characters/Skills/Elements/water_element.tres" id="28_5m6pt"]
@@ -69,6 +70,7 @@ _attack = ExtResource("20_r0cu4")
 _defense = ExtResource("21_0b8tr")
 _spirit = ExtResource("23_0b8tr")
 _speed = ExtResource("22_hphdt")
+_movement = ExtResource("25_ebwyl")
 
 [node name="Element Chart" type="Node2D" parent="Variables"]
 script = ExtResource("25_sl7r4")

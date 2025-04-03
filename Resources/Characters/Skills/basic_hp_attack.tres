@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterSkill" load_steps=5 format=3 uid="uid://61p44fsftl5h"]
 
-[ext_resource type="Resource" uid="uid://drn4elodi0gwg" path="res://Resources/Characters/Skills/Skill Shape/V_single_range.tres" id="1_wh1yj"]
+[ext_resource type="Resource" uid="uid://b1myme10hhdib" path="res://Resources/Characters/Skills/Skill Shape/range_1_shape.tres" id="1_wh1yj"]
 [ext_resource type="Texture2D" uid="uid://de36eeonbvrv8" path="res://Art Assets/Character Assets/Weapon Icons/Rapier.png" id="2_wh1yj"]
 [ext_resource type="Resource" uid="uid://7j8itaw5t7qf" path="res://Resources/Characters/Skills/Skill Effects/hp_damage_effect.tres" id="3_wh1yj"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="4_3bn3j"]

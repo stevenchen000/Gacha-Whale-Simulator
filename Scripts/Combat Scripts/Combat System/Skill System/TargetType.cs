@@ -6,6 +6,7 @@ namespace CombatSystem
         Ally,
         Enemy,
         Self,
-        Target
+        Target,
+        Space
     }
 }

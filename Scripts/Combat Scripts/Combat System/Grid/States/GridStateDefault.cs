@@ -6,10 +6,9 @@ namespace CombatSystem
 {
     public partial class GridStateDefault : GridStateNode
     {
-        [Export] private GridStateNode allyWalkableState;
-        [Export] private GridStateNode allyTargetableState;
-        [Export] private GridStateNode allyTargetingState;
-        [Export] private GridStateNode enemyWalkableState;
+        [Export] private GridStateNode walkableState;
+        [Export] private GridStateNode selectableState;
+        [Export] private GridStateNode targetingState;
 
 
         protected override void OnStateActivated()
@@ -26,22 +25,10 @@ namespace CombatSystem
         {
             StateNode result = null;
             
-            if (Space.IsWalkable)
-            {
-                if (Space.PartyIndex == 0)
-                    result = allyWalkableState;
-                else if(Space.PartyIndex == 1)
-                    result = enemyWalkableState;
-            }
-            else if (Space.CanTarget)
-            {
-                result = allyTargetableState;
-            }
-            else if (Space.HasSelectedTarget)
-            {
-                result = allyTargetingState;
-            }
-
+            if (Space.IsWalkable) result = walkableState;
+            else if (Space.CanSelect) result = selectableState;
+            else if (Space.HasSelected) result = targetingState;
+            
             return result;
         }
 

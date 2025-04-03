@@ -65,14 +65,7 @@ namespace CombatSystem
         {
             foreach (var button in skillButtons)
             {
-                var skill = button.Skill;
-                bool usable = false;
-
-                if(skill != null) usable = skill.Skill.HasTargetInRange(battle, grid, caster);
-
-                if (usable) button.EnableButton();
-                else button.DisableButton();
-                    
+                button.UpdateButtonState();
             }
         }
 

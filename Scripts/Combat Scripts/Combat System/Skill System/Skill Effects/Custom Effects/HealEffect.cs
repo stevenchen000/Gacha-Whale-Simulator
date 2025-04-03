@@ -40,6 +40,9 @@ namespace CombatSystem
 
         private void HealTargets(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
+            Utils.Print(this, caster);
+            Utils.Print(this, caster.Stats);
+            Utils.Print(this, caster.Stats.GetStat(scalingStat));
             int casterStat = caster.Stats.GetStat(scalingStat);
 
             int totalHealing = (int)(casterStat * potency / 100);

@@ -1,3 +1,4 @@
+res://Resources/Characters/Skills/Skill Shape
 res://Scripts/Combat Scripts/Combat System/UI/Combat Rewards
 res://Resources/Characters/Skills/Damage Formulas
 res://Resources/Utilities/Events/Inventory Events
@@ -19,4 +20,3 @@ res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor
 res://Scenes/Overworld/Party Menu/UI
 res://Scenes/Overworld/Party Menu
 res://Resources/Characters/Character Data/001_player
-res://Scenes/Battle/Skill Selection

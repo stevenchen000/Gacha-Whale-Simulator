@@ -15,6 +15,7 @@ namespace CombatSystem
                 return Skill.InfiniteUses;
             }
         }
+        public TargetType TargetType { get { return Skill.targetType; } }
 
         public SkillContainer(CharacterSkill skill)
         {
@@ -57,6 +58,20 @@ namespace CombatSystem
             if(RemainingUses > Skill.Uses) RemainingUses = Skill.Uses;
         }
 
+        /*******************
+         * Targeting
+         * ****************/
+
+        public TargetingData GetTargetingData(BattleGrid grid, BattleCharacter caster, Vector2I position)
+        {
+            return Skill.GetTargetingData(grid, caster, this, position);
+        }
+
+        public bool HasTargetInRange(BattleGrid grid, BattleCharacter caster, Vector2I position)
+        {
+            var data = Skill.GetTargetingData(grid, caster, this, position);
+            return data.ValidTargetExists(grid);
+        }
         
 
     }

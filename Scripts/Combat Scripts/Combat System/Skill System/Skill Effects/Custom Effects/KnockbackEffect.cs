@@ -38,7 +38,7 @@ namespace CombatSystem
 
         private void MoveCharacter(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
-            var direction = data.direction;
+            var direction = data.targetSelection.SelectedDirection;
             if (!knockInSkillDirection) direction = GetOppositeDirection(direction);
 
             var offset = GetOffsetFromDirection(direction);

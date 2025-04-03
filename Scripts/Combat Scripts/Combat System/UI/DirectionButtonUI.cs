@@ -17,13 +17,12 @@ namespace CombatSystem
             battle = new SimpleWeakRef<BattleManager>(tempBattle);
         }
 
-        public void RevealButtons(GridSpace space, Dictionary<CharacterDirection, Array<GridSpace>> targets)
+        public void RevealButtons(TargetingData data)
         {
-            Position = space.GlobalPosition;
-
+            var validDirections = data.GetValidDirections(battle.Value.Grid);
             foreach (var button in buttons)
             {
-                button.RevealButton(targets);
+                button.RevealButton(validDirections);
             }
 
             cancelButton.Disabled = false;

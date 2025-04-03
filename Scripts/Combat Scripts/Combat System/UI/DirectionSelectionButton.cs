@@ -8,37 +8,45 @@ namespace CombatSystem
     {
         [Export] private CharacterDirection direction;
         [Export] private bool Debug = false;
-        private WeakReference<BattleManager> _battleRef;
+        private SimpleWeakRef<BattleManager> _battleRef;
+
+        private TargetingSelection targetSelection;
 
 
         public override void _Ready()
         {
             var battle = Utils.FindParentOfType<BattleManager>(this);
-            _battleRef = new WeakReference<BattleManager>(battle);
+            _battleRef = new SimpleWeakRef<BattleManager>(battle);
+            targetSelection = new TargetingSelection(direction);
             HideButton();
         }
 
         public void OnClick()
         {
-            BattleManager battle;
-            _battleRef.TryGetTarget(out battle);
+            var battle = _battleRef.Value;
+            var currTargetSelection = battle.Grid.CurrentSelection;
 
-            if (battle.Direction != direction)
-            {
-                battle.SelectDirection(direction);
-                battle.ShowConfirmationAndHideSkipButton();
-            }
-            else
+            if (currTargetSelection == targetSelection)
             {
                 battle.ConfirmAction();
             }
-            if (Debug)
-                Utils.Print(this, direction);
+            else
+            {
+                battle.SetTargetSelection(targetSelection);
+            }
         }
 
-        public void RevealButton(Dictionary<CharacterDirection, Array<GridSpace>> targets)
+
+        private bool SelectionIsValid(TargetingSelection selection)
         {
-            if (targets.ContainsKey(direction))
+            return selection != null && selection.Style == TargetSelectionStyle.SelectDirection;
+        }
+
+
+
+        public void RevealButton(Array<CharacterDirection> directions)
+        {
+            if (directions.Contains(direction))
             {
                 MouseFilter = MouseFilterEnum.Stop;
                 Visible = true;

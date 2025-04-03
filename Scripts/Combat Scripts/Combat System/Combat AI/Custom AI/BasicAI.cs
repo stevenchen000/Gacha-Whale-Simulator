@@ -34,7 +34,7 @@ namespace CombatSystem
                                                      Vector2I position)
         {
             CombatActionData result = null;
-
+            /*
             var skills = character.Skills.Skills;
 
             foreach (var skill in skills)
@@ -59,7 +59,7 @@ namespace CombatSystem
 
                 if (result != null) break;
             }
-
+            */
             return result;
         }
 

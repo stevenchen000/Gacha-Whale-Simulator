@@ -4,14 +4,14 @@ using StateSystem;
 
 namespace CombatSystem
 {
-    public partial class GridStateAllyTargetable : GridStateNode
+    public partial class GridStateTargetable : GridStateNode
     {
         [Export] private GridStateNode defaultState;
         [Export] private GridStateNode allySelectedSkill;
 
         protected override void OnStateActivated()
         {
-            Space.SetColor(Space.allyTargetColor);
+            
         }
 
         protected override void RunState(double delta)
@@ -23,13 +23,6 @@ namespace CombatSystem
         {
             StateNode result = null;
 
-            if(Space.CanTarget)
-            {
-                if (Space.HasSelectedTarget)
-                    result = allySelectedSkill;
-            }
-            else if(!Space.IsWalkable)
-                result = defaultState;
 
             return result;
         }

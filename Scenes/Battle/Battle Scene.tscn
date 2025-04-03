@@ -93,21 +93,6 @@ _data = {
 &"show_ui": SubResource("Animation_ijdqy")
 }
 
-[sub_resource type="Animation" id="Animation_yprcx"]
-resource_name = "shake"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0736174, 0.189302, 0.3, 0.433333, 0.566667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(540, 960), Vector2(498, 960), Vector2(587, 960), Vector2(519, 960), Vector2(560, 960), Vector2(540, 960)]
-}
-
 [sub_resource type="Animation" id="Animation_4k4b0"]
 length = 0.001
 tracks/0/type = "value"
@@ -123,13 +108,28 @@ tracks/0/keys = {
 "values": [Vector2(540, 960)]
 }
 
+[sub_resource type="Animation" id="Animation_yprcx"]
+resource_name = "shake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0736174, 0.189302, 0.3, 0.433333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(540, 960), Vector2(498, 960), Vector2(587, 960), Vector2(519, 960), Vector2(560, 960), Vector2(540, 960)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kj58v"]
 _data = {
 &"RESET": SubResource("Animation_4k4b0"),
 &"shake": SubResource("Animation_yprcx")
 }
 
-[node name="BattleScene" type="Control" node_paths=PackedStringArray("grid", "skillUI", "directionUI", "turnDataManager", "Camera", "State")]
+[node name="BattleScene" type="Control" node_paths=PackedStringArray("skillUI", "directionUI", "turnDataManager", "Camera", "State")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,7 +137,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w405p")
-grid = NodePath("Grid")
 skillUI = NodePath("====Skills====/Skill UI")
 directionUI = NodePath("====Direction Buttons====")
 turnDataManager = NodePath("Turn Data Manager")

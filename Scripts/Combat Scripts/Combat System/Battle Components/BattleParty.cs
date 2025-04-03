@@ -72,6 +72,11 @@ namespace CombatSystem
             return result;
         }
 
+        public bool IsInParty(BattleCharacter character)
+        {
+            return LivingMembers.Contains(character) || DeadMembers.Contains(character);
+        }
+
 
 
         public bool IsPartyDead()

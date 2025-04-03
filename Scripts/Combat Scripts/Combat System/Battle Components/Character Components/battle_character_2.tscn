@@ -38,6 +38,21 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 0.501961)
 shadow_offset = Vector2(5, 5)
 
+[sub_resource type="Animation" id="Animation_ddsrv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_w53k8"]
 resource_name = "transition"
 length = 0.4
@@ -54,29 +69,14 @@ tracks/0/keys = {
 "values": [Vector2(0.5, 0.5), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ddsrv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q7df3"]
 _data = {
 &"RESET": SubResource("Animation_ddsrv"),
 &"transition": SubResource("Animation_w53k8")
 }
 
-[sub_resource type="Animation" id="Animation_uf5vx"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_tg0p5"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -90,23 +90,8 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_7dcjt"]
-resource_name = "take_damage"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Follower Node/Character:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.333333, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-32, 0), Vector2(25, 0), Vector2(-20, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tg0p5"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_uf5vx"]
+resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -135,6 +120,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -29), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7dcjt"]
+resource_name = "take_damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-32, 0), Vector2(25, 0), Vector2(-20, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w53k8"]
@@ -179,6 +179,7 @@ anchors_preset = 0
 offset_top = 86.0
 offset_right = 40.0
 offset_bottom = 126.0
+mouse_filter = 2
 script = ExtResource("5_ki7hi")
 bar = NodePath("ProgressBar")
 stat = ExtResource("6_vemd7")
@@ -220,6 +221,7 @@ statLabel = NodePath("Label")
 statContainer = NodePath("../../../Stats Container")
 
 [node name="Label" type="Label" parent="Follower Node/Character/Amp"]
+z_index = 5
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -243,6 +245,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("8_mvo7g")
 characterEffects = NodePath("../../../Effect Manager")
 statusList = NodePath("Status List")
@@ -283,6 +286,7 @@ offset_bottom = 3.0
 
 [node name="Control" type="Control" parent="Follower Node/Character/Unbreak Counter"]
 anchors_preset = 0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="Follower Node/Character/Unbreak Counter/Control"]
 visible = false
@@ -306,6 +310,7 @@ offset_left = -19.0
 offset_top = -96.0
 offset_right = 21.0
 offset_bottom = -56.0
+mouse_filter = 2
 script = ExtResource("8_uf5vx")
 ampNode = NodePath("../Amp")
 breakTurns = NodePath("../Unbreak Counter/Control/Label")

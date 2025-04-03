@@ -27,38 +27,43 @@ namespace CombatSystem
         public void SetSkill(SkillContainer skill)
         {
             Skill = skill;
+            SetupUI(Skill);
+            UpdateButtonState();
+        }
+
+        public void UpdateButtonState()
+        {
+            if (Skill != null && HasUsesLeft() && HasTargetsInRange())
+            {
+                EnableButton();
+            }
+            else
+            {
+                DisableButton();
+            }
+        }
+
+
+
+        private void SetupUI(SkillContainer skill)
+        {
             if (skill != null)
             {
-                if (HasUsesLeft())
-                {
-                    SetupUI(skill);
-                    button.Disabled = false;
-                }
-                else
-                {
-                    SetupUI(skill);
-                    button.Disabled = true;
-                }
+                var baseSkill = skill.Skill;
+
+                button.Icon = baseSkill.Icon;
+
+                nameLabel.Text = baseSkill.SkillName;
+
+                SetupUses(skill);
+
+                if (baseSkill.SkillElement != null)
+                    elementIcon.Texture = baseSkill.SkillElement.Texture;
             }
             else
             {
                 ResetUI();
-                button.Disabled = true;
             }
-        }
-
-        private void SetupUI(SkillContainer skill)
-        {
-            var baseSkill = skill.Skill;
-
-            button.Icon = baseSkill.Icon;
-
-            nameLabel.Text = baseSkill.SkillName;
-
-            SetupUses(skill);
-
-            if(baseSkill.SkillElement != null)
-                elementIcon.Texture = baseSkill.SkillElement.Texture;
         }
 
         private void SetupUses(SkillContainer skill)
@@ -103,18 +108,6 @@ namespace CombatSystem
             {
                 battle.ResetDirection();
                 battle.SetSelectedSkill(Skill);
-                int numOfDirections = battle.GetNumberOfTargetableDirections();
-                if (numOfDirections == 1)
-                {//selects direction if there's only one viable direction
-                    var directions = battle.GetValidDirections();
-                    battle.SelectDirection(directions[0]);
-                    battle.ShowConfirmationAndHideSkipButton();
-                }
-                else if(numOfDirections > 1)
-                {//reveals buttons if there's multiple directions
-                    battle.RevealDirectionButtons();
-                    battle.HideConfirmationAndShowSkipButton();
-                }
             }
             else
             {
@@ -123,6 +116,22 @@ namespace CombatSystem
             //select direction if there's only one
             //show direction selector if there's more than one
         }
+
+
+
+        /***************
+         * Helpers
+         * **************/
+
+        private bool HasTargetsInRange()
+        {
+            if (Skill == null) return false;
+            var grid = battle.Grid;
+            var caster = battle.GetCurrentCharacter();
+            var position = caster.currPosition;
+            return Skill.HasTargetInRange(grid, caster, position);
+        }
+
 
         private bool HasUsesLeft()
         {

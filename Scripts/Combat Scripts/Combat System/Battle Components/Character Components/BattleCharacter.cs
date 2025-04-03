@@ -47,7 +47,14 @@ namespace CombatSystem
         public Vector2I currPosition { get; private set; } = Vector2I.MinValue;
         public CharacterDirection facingDirection { get; private set; }
         [Export] public float speed = 5;
-        public Array<Vector2I> WalkableSpaces { get; private set; } = new Array<Vector2I>();
+        private MovementData moveData;
+        public Array<Vector2I> WalkableSpaces 
+        { 
+            get
+            {
+                return moveData.WalkableSpaces;
+            }
+        }
 
 
         //Combat Vars
@@ -133,7 +140,9 @@ namespace CombatSystem
         public void StartCharacterTurn(BattleState battleState)
         {
             var grid = battleState.Grid;
-            WalkableSpaces = grid.GetAllWalkableAreas(this);
+            var moveData = grid.GetAllWalkableAreas(this);
+            grid.SetWalkableData(moveData);
+
             targets = new Array<BattleCharacter>();
             currPosition = turnStartPosition;
         }
@@ -151,7 +160,6 @@ namespace CombatSystem
 
         public void EndTurn(double delta, BattleManager battle, BattleGrid grid)
         {
-            WalkableSpaces = null;
             turnStartPosition = currPosition;
 
             ActionsTaken++;
@@ -376,14 +384,10 @@ namespace CombatSystem
 
         public bool MoveAndUpdate(Vector2I position)
         {
-            bool moved = battle.OccupySpace(position, this);
-            if (moved)
-            {
-                currPosition = position;
-                turnStartPosition = position;
-            }
+            currPosition = position;
+            turnStartPosition = position;
 
-            return moved;
+            return true;
         }
 
         public void SetParty(BattleParty party)

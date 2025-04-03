@@ -22,7 +22,6 @@ namespace CombatSystem
 
         protected override void OnStateActivated()
         {
-            Utils.Print(this, "Turn started");
             battle.StartTurn();
             grid = battle.GetGrid();
             character = battle.GetCurrentCharacter();
@@ -124,12 +123,6 @@ namespace CombatSystem
          * Helpers
          * ***************/
 
-        private void SetupAction()
-        {
-            var skill = battle.SelectedSkill;
-            var targets = character.targets;
-            battle.SelectAction(character, targets, skill);
-        }
 
         private bool IsEnemyControlled(BattleCharacter character)
         {

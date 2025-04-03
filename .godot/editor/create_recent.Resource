@@ -1,3 +1,5 @@
+DirectionalShape
+RangedShape
 AmpDamageFormula
 ItemResource
 VoidEvent
@@ -11,5 +13,3 @@ HealEffect
 SkillEffect
 CharacterSkill
 AddStatEffect
-StatusEffect
-BattleStatsTemplate

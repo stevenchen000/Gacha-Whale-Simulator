@@ -12,7 +12,6 @@ namespace CombatSystem
         protected override void OnStateActivated()
         {
             base.OnStateActivated();
-            Utils.Print(this, "Turn finished");
             var character = battle.GetCurrentCharacter();
             character.Status.RunTurnEndEffects();
             character.Status.ReduceStatusTime();

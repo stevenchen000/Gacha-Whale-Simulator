@@ -5,6 +5,7 @@ namespace StateSystem
 {
     public partial class StateNode : Node2D
     {
+        [Export] protected bool debug = false;
         [Export(PropertyHint.MultilineText)] protected string Description;
 
         public bool active {
@@ -46,7 +47,12 @@ namespace StateSystem
                 Tick(delta);
                 RunState(delta);
                 var newState = CheckStateChange();
-                if (newState != null) { ChangeState(newState); }
+                if (newState != null) 
+                {
+                    if (debug) Utils.Print(this, $"Exited state: {Name}");
+                    ChangeState(newState);
+                    if (debug) Utils.Print(this, $"Entered state: {Name}");
+                }
             }
         }
 
