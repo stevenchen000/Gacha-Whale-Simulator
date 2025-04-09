@@ -45,7 +45,7 @@ namespace CombatSystem
             int totalDamage = (int)(baseDamage * potency / 100);
             totalDamage = Math.Max(totalDamage, 1);
             target.Stats.TakeDamage(totalDamage);
-            data.AddHpDamage(totalDamage);
+            data.AddHpDamage(caster, target, totalDamage);
             DamageNumberManager.ShowDamageNumber(target, totalDamage, DamageType.HealthDamage);
             Utils.Print(this, "Dealt damage: " + totalDamage);
         }

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 namespace CombatSystem {
     [GlobalClass]
@@ -7,6 +8,7 @@ namespace CombatSystem {
     {
         [Export] protected float delay = 0f;
         [Export(PropertyHint.MultilineText)] protected string description;
+
 
         public bool RunEffect(TurnData data, TimeHandler timer) {
             bool finished = false;

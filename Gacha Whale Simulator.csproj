@@ -10,4 +10,7 @@
     <EmbeddedResource Remove="android\**" />
     <EmbeddedResource Remove="Scripts\Character Creator\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\Combat Scripts\Combat System\Battle Constants\" />
+  </ItemGroup>
 </Project>

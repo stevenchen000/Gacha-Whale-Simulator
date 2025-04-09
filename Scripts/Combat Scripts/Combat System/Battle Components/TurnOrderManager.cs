@@ -122,9 +122,9 @@ namespace CombatSystem
             for(int i = 0; i < fighters.Count; i++)
             {
                 var fighter = fighters[i];
-                double turnTime = CalculateTurnTime(fighter);
+                double turnTime = CalculateTurnTime(fighter)/10;
                 fighter.SetTurnTime(turnTime);
-                fighter.SetTurnPriority(i);
+                fighter.SetTurnPriority(GameState.GetRandomNumber(0,1000));
             }
         }
 

@@ -46,7 +46,7 @@ namespace CombatSystem
             int casterStat = caster.Stats.GetStat(scalingStat);
 
             int totalHealing = (int)(casterStat * potency / 100);
-            target.Stats.AddSlidingStat(statToHeal, totalHealing);
+            target.BatteryAmp(totalHealing);
 
             DamageNumberManager.ShowDamageNumber(target, totalHealing, DamageType.Healing);
             Utils.Print(this, $"Healed {scalingStat.StatName}: " + totalHealing);

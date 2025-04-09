@@ -30,7 +30,8 @@ namespace CombatSystem
         }
         
         public Array<BattleCharacter> targets;
-        public BattleGrid grid { get; private set; }
+        public BattleManager Battle { get; private set; }
+        public BattleGrid Grid { get; private set; }
 
         public int totalHpDamageDealt { get; private set; } = 0;
         public int totalAmpDamageDealt { get; private set; } = 0;
@@ -39,21 +40,27 @@ namespace CombatSystem
         public int previousAmpDamage { get; private set; } = 0;
 
 
+        private Dictionary<BattleCharacter, int> enemyDamageTaken = new Dictionary<BattleCharacter, int>();
+        private Dictionary<BattleCharacter, int> attackerDamageDealt = new Dictionary<BattleCharacter, int>();
+
+
+
 
         public TurnData(BattleCharacter caster)
         {
             casterStartPosition = caster.turnStartPosition;
         }
 
-        public TurnData(BattleGrid grid,
+        public TurnData(BattleManager battle,
                         TargetingData targetData,
                         TargetingSelection selection)
         {
-            this.grid = grid;
+            Battle = battle;
+            Grid = battle.Grid;
             this.targetData = targetData;
             targetSelection = selection;
             if (targetData != null) 
-                targets = targetData.GetTargets(selection, grid);
+                targets = targetData.GetTargets(selection, Grid);
         }
 
 
@@ -61,10 +68,12 @@ namespace CombatSystem
          * Damage
          * *******************/
 
-        public void AddHpDamage(int damage)
+        public void AddHpDamage(BattleCharacter attacker, BattleCharacter target, int damage)
         {
             totalHpDamageDealt += damage;
             previousHpDamage = damage;
+            AddDamageDealt(attacker, damage);
+            AddDamageTaken(target, damage);
         }
 
         public void AddAmpDamage(int damage)
@@ -78,12 +87,43 @@ namespace CombatSystem
             totalAmountHealed += heal;
         }
 
+        public int GetDamageTaken(BattleCharacter target)
+        {
+            if(enemyDamageTaken.ContainsKey(target))
+                return enemyDamageTaken[target];
+            else
+                return 0;
+        }
+
+        public int GetDamageDealt(BattleCharacter attacker)
+        {
+            if(attackerDamageDealt.ContainsKey(attacker))
+                return attackerDamageDealt[attacker];
+            else
+                return 0;
+        }
 
         /****************
-         * Targeting
+         * Helpers
          * **************/
 
+        private void AddDamageTaken(BattleCharacter target, int damage)
+        {
+            AddMissingEntry(enemyDamageTaken, target);
+            enemyDamageTaken[target] += damage;
+        }
+
+        private void AddDamageDealt(BattleCharacter attacker, int damage)
+        {
+            AddMissingEntry(attackerDamageDealt, attacker);
+            attackerDamageDealt[attacker] += damage;
+        }
 
         
+        private void AddMissingEntry(Dictionary<BattleCharacter, int> dictionary, BattleCharacter character)
+        {
+            if (!dictionary.ContainsKey(character))
+                dictionary[character] = 0;
+        }
     }
 }

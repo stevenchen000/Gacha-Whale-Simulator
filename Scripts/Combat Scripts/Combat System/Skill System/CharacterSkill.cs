@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Collections.Generic;
 
 namespace CombatSystem {
     [GlobalClass]
@@ -9,7 +10,16 @@ namespace CombatSystem {
         [Export] public Texture2D Icon { get; private set; }
         [Export] public string SkillName { get; private set; }
         [Export] public SkillAnimation animation { get; private set; }
-        [Export] public float duration { get; private set; } = 2f;
+        public double Duration 
+        { 
+            get 
+            {
+                if (animation == null)
+                    return 0;
+                else
+                    return animation.Duration; 
+            } 
+        }
 
 
         [ExportCategory("Damage & Effects")]
@@ -29,22 +39,22 @@ namespace CombatSystem {
         [Export] public int ChargeAmount { get; private set; } = 100;
 
 
-        public CharacterSkill GetDuplicate()
+        public void SetupSkillAnimation(List<SkillAnimationContainer> animations,
+                                        TurnData turnData)
         {
-            var newSkill = new CharacterSkill();
-            newSkill.animation = animation.GetDuplicate();
-            //duplicate skill effects
-            newSkill.duration = duration;
-            newSkill.potency = potency;
-            newSkill.AttackArea = AttackArea;
-
-            return newSkill;
+            if(animation != null)
+                animation.AddAnimationsToList(animations, turnData);
         }
 
-        public bool PlayAnimation(TurnData data, TimeHandler time, double delta)
+        public void SetupSkillEffects(List<SkillAnimationContainer> animations, TurnData turnData)
         {
-            return animation.PlayAnimation(data, time, delta);
+            foreach(var effect in effects)
+            {
+                
+            }
         }
+
+
 
         public bool RunEffects(TurnData data, TimeHandler time, double delta)
         {
@@ -97,85 +107,5 @@ namespace CombatSystem {
         }
 
 
-
-
-
-
-
-        public Dictionary<CharacterDirection, Array<GridSpace>> GetAllTargetSpaces(BattleManager battle,
-                                                                                   BattleGrid grid, 
-                                                                                   BattleCharacter caster,
-                                                                                   Vector2I position)
-        {
-            var result = new Dictionary<CharacterDirection, Array<GridSpace>>();
-
-            var up = CharacterDirection.UP;
-            var down = CharacterDirection.DOWN;
-            var left = CharacterDirection.LEFT;
-            var right = CharacterDirection.RIGHT;
-
-            switch (direction)
-            {
-                case SkillDirection.VERTICAL:
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, up);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, down);
-                    break;
-                case SkillDirection.HORIZONTAL:
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, left);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, right);
-                    break;
-                case SkillDirection.ALL:
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, up);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, down);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, left);
-                    AddTargetsInDirectionIfExists(result, battle, grid, caster, position, right);
-                    break;
-            }
-
-            return result;
-        }
-
-
-
-
-
-        public bool HasTargetInRange(BattleManager battle, BattleGrid grid, BattleCharacter caster)
-        {
-            
-            var targetsDict = GetAllTargetSpaces(battle, grid, caster, caster.currPosition);
-            return targetsDict.Count > 0;
-        }
-
-        private void AddTargetsInDirectionIfExists(Dictionary<CharacterDirection, Array<GridSpace>> spaces,
-                                                   BattleManager battle, 
-                                                   BattleGrid grid, 
-                                                   BattleCharacter caster, 
-                                                   Vector2I position,
-                                                   CharacterDirection direction)
-        {
-            var results = GetSpacesInDirection(grid, caster, position, direction);
-            if (HasTargetsInList(battle, caster, results))
-                spaces[direction] = results;
-        }
-
-
-        private Array<GridSpace> GetSpacesInDirection(BattleGrid grid, 
-                                                    BattleCharacter caster, 
-                                                    Vector2I position,
-                                                    CharacterDirection direction)
-        {
-            Array<GridSpace> result = new Array<GridSpace>();
-            var attackPositions = AttackArea.GetPositionsInRange(position, direction);
-            foreach (var currPosition in attackPositions)
-            {
-                var space = grid.GetSpaceFromCoords(currPosition);
-                if(space != null)
-                {
-                    result.Add(space);
-                }
-            }
-
-            return result;
-        }
     }
 }

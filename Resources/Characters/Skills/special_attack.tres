@@ -9,7 +9,6 @@
 script = ExtResource("4_yccab")
 Icon = ExtResource("2_6gkid")
 SkillName = "Attack"
-duration = 2.0
 InfiniteUses = true
 Uses = 0
 effects = Array[Object]([ExtResource("3_m63fa")])

@@ -43,9 +43,9 @@ namespace CombatSystem
 
         //Movement Vars
         [Export] private Node2D characterPos;
+        [Export] public Node2D PositionFollower { get; private set; }
         public Vector2I turnStartPosition { get; private set; } = Vector2I.MinValue;
         public Vector2I currPosition { get; private set; } = Vector2I.MinValue;
-        public CharacterDirection facingDirection { get; private set; }
         [Export] public float speed = 5;
         private MovementData moveData;
         public Array<Vector2I> WalkableSpaces 
@@ -58,6 +58,7 @@ namespace CombatSystem
 
 
         //Combat Vars
+        [ExportCategory("Combat Vars")]
         [Export] public SkillManager Skills { get; private set; }
         [Export] public BattleStatsManager Stats { get; private set; }
         public Element CharacterElement { get { return Character.Character.Element; } }
@@ -73,8 +74,14 @@ namespace CombatSystem
         public bool IsTakingTurn { get { return battle.GetCurrentCharacter() == this; } }
 
         //Animations
+        [ExportCategory("Animations")]
         [Export] private AnimationPlayer anim;
+        [Export] private SkillCaster castManager;
+        public bool IsCasting { get { return castManager.IsCasting; } }
 
+        [ExportCategory("Audio")]
+        [Export] private PackedScene hurtSound;
+        [Export] private PackedScene healSound;
 
 
 
@@ -113,7 +120,8 @@ namespace CombatSystem
         public void RemoveFromField()
         {
             battle.GetGrid().UnoccupySpace(this);
-            SetPosition(new Vector2(9999, 9999));
+            PlayAnimation("die");
+            //SetPosition(new Vector2(9999, 9999));
         }
 
         public void AddToField()
@@ -231,8 +239,15 @@ namespace CombatSystem
             {
                 Stats.TakeAmpDamage(damage);
             }
-
+            PlayAnimation(CharacterAnimationNames.HurtAnimation);
             _ShowDamageNumber(damage, isCrit);
+            _PlaySound(hurtSound);
+        }
+
+        private void _PlaySound(PackedScene audioScene)
+        {
+            var audio = Utils.InstantiateCopy(audioScene);
+            AddChild(audio);
         }
 
         private void _ShowDamageNumber(int damage, bool isCrit)
@@ -243,10 +258,25 @@ namespace CombatSystem
                 DamageNumberManager.ShowDamageNumber(this, damage, DamageType.CritDamage);
         }
 
+        /// <summary>
+        /// Adds amp to the character through damage or break bonus
+        /// </summary>
+        /// <param name="amount"></param>
         public void AddAmp(int amount)
         {
             Stats.AddAmpAmount(amount);
             UpdateBreakStatus();
+        }
+
+        /// <summary>
+        /// Adds amp to the character through battery skills
+        /// </summary>
+        /// <param name="amount"></param>
+        public void BatteryAmp(int amount)
+        {
+            Stats.AddAmpAmount(amount);
+            UpdateBreakStatus();
+            _PlaySound(healSound);
         }
 
         public void TakeHpDamage(int damage)
@@ -350,6 +380,46 @@ namespace CombatSystem
             return currAmp < spirit;
         }
 
+        /***************
+         * Knockback
+         * *************/
+        /*
+        public bool IsKnockedBack()
+        {
+            return Flags.GetFlag(BattleFlagNames.knockbackFlag);
+        }
+
+        public void SetKnockbackFlag(bool value)
+        {
+            Flags.SetFlagValue(BattleFlagNames.knockbackFlag, value);
+        }
+
+        public CharacterDirection GetKnockbackDirection()
+        {
+            int value = Flags.GetFlagAmount(BattleFlagNames.knockbackDirectionFlag);
+            return (CharacterDirection)value;
+        }
+
+        public void SetKnockbackDirection(CharacterDirection direction)
+        {
+            Flags.SetFlagValue(BattleFlagNames.knockbackDirectionFlag, (int)direction);
+        }
+
+        public int GetKnockbackAmount()
+        {
+            return Flags.GetFlagAmount(BattleFlagNames.knockbackSpacesFlag);
+        }
+
+        public void SetKnockbackAmount(int spaces)
+        {
+            Flags.SetFlagValue(BattleFlagNames.knockbackSpacesFlag, spaces);
+        }*/
+
+        public void Knockback(int spaces, CharacterDirection direction)
+        {
+            battle.ApplyKnockback(this, spaces, direction);
+        }
+
         /*******************
          * Status Effects
          * ****************/
@@ -369,6 +439,15 @@ namespace CombatSystem
             anim.Play(animation);
         }
 
+        public void CastSkill(SkillContainer skill, TurnData data)
+        {
+            if (skill != null)
+            {
+                skill.ConsumeSkillUse(1);
+                castManager.CastSkill(skill, data);
+            }
+        }
+
 
         /*************
          * Helpers
@@ -386,7 +465,8 @@ namespace CombatSystem
         {
             currPosition = position;
             turnStartPosition = position;
-
+            var space = battle.Grid.GetSpaceFromCoords(position);
+            SetPosition(space);
             return true;
         }
 

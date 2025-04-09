@@ -7,42 +7,40 @@ namespace CombatSystem
     public partial class CombatAnimationNode : CombatStateNode
     {
         [Export] private CombatStateNode damageCalculationNode;
-        private TimeHandler time;
         private SkillContainer skill;
         private TurnData turnData;
-
-        private bool finishedCast = false;
+        private BattleCharacter caster;
 
         protected override void OnStateActivated()
         {
-            battle.turnData.Skill.ConsumeSkillUse();
-            /*time = new TimeHandler();
             turnData = battle.turnData;
-            skill = battle.SelectedSkill.GetDuplicate();
-            Utils.Print(this, "Playing animation...");*/
+            skill = turnData.Skill;
+            caster = turnData.caster;
+            caster.CastSkill(skill, turnData);
         }
 
         protected override void RunState(double delta)
         {
-            //time.Tick(delta);
-            //finishedCast = skill.PlayAnimation(turnData, time, delta);
+            
         }
 
         protected override StateNode CheckStateChange()
         {
-            /*StateNode result = null;
+            CombatStateNode result = null;
 
-            if (finishedCast)
+            if (!caster.IsCasting)
             {
                 result = damageCalculationNode;
-            }*/
+            }
 
-            return damageCalculationNode;
+            return result;
         }
 
         protected override void OnStateDeactivated()
         {
-            
+            skill = null;
+            turnData = null;
+            caster = null;
         }
     }
 }

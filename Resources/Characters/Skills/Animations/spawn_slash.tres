@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillAnimationCreateObject" load_steps=3 format=3 uid="uid://c5wao5rtigfml"]
+
+[ext_resource type="Script" uid="uid://dikg8ka2v1lpo" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationCreateObject.cs" id="1_24sa3"]
+[ext_resource type="PackedScene" uid="uid://jtw8jub2mcvt" path="res://Art Assets/Battle Effects/BDragon Special Effects/Part 8/Single Slash Yellow.tscn" id="1_b7rvt"]
+
+[resource]
+script = ExtResource("1_24sa3")
+castObject = ExtResource("1_b7rvt")
+offset = Vector2(0, 0)
+scale = Vector2(1, 1)
+delayBetweenTargets = 0.2
+relativeTo = 1
+changesWithElement = true
+delay = 0.0
+duration = 0.4
+ignoreDuration = false
+metadata/_custom_type_script = "uid://dikg8ka2v1lpo"

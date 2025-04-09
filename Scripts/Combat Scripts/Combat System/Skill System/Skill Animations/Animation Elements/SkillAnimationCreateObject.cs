@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Collections.Generic;
 
 namespace CombatSystem
 {
@@ -10,36 +11,72 @@ namespace CombatSystem
         [Export] private PackedScene castObject;
         [Export] private Vector2 offset;
         [Export] private Vector2 scale = new Vector2(1,1);
-        private Array<Node2D> tempObjects;
 
-        public override void _StartElement(TurnData data, TimeHandler time)
+        [Export] private double delayBetweenTargets = 0.5;
+
+        [Export] private AnimationParent relativeTo;
+        [Export] private bool changesWithElement = false;
+
+
+        public override void AddAnimationContainer(List<SkillAnimationContainer> skillAnimations,
+                                                   TurnData turnData)
         {
-            Utils.Print(this, "Starting instantiation");
-            tempObjects = new Array<Node2D>();
-            var targets = data.targets;
-
-            foreach(var target in targets)
+            if (relativeTo == AnimationParent.Caster)
             {
-                var newObject = (Node2D)Utils.InstantiateCopy(castObject);
-                target.AddChild(newObject);
-                newObject.Position = offset;
-                newObject.Scale = scale;
-                tempObjects.Add(newObject);
+                var caster = turnData.caster;
+                skillAnimations.Add(new SkillAnimationContainer(turnData, this, delay, caster));
+            }
+            else if (relativeTo == AnimationParent.Target)
+            {
+                var targets = turnData.targets;
+                for(int i = 0; i < targets.Count; i++)
+                {
+                    var target = targets[i];
+                    var newAnim = new SkillAnimationContainer(turnData, this, delay + i * delayBetweenTargets, target);
+                    skillAnimations.Add(newAnim);
+                }
             }
         }
 
-        public override bool _RunElement(TurnData data, TimeHandler time)
+
+        public override void StartElement(SkillAnimationContainer container, TurnData data)
         {
-            return false;
+            var target = container.Target.PositionFollower;
+            var obj = Utils.InstantiateCopy<Node2D>(castObject);
+            target.AddChild(obj);
+            obj.Position = offset;
+            obj.Scale = scale;
+            SetupISkillEffect(obj, data);
         }
 
-        public override void _EndElement(TurnData data, TimeHandler time)
+        public override bool RunElement(SkillAnimationContainer container, TurnData data, TimeHandler time)
         {
-            foreach(var obj in tempObjects)
+            return time.TimeIsUp(duration);
+        }
+
+        public override void EndElement(SkillAnimationContainer container, TurnData data)
+        {
+            
+        }
+
+
+        private void InstantiateAtTarget(Node target)
+        {
+            var newObject = (Node2D)Utils.InstantiateCopy(castObject);
+            target.AddChild(newObject);
+            newObject.Position = offset;
+            newObject.Scale = scale;
+        }
+
+        private void SetupISkillEffect(Node2D obj, TurnData data)
+        {
+            if (!changesWithElement) return;
+            
+            if(obj is ISkillEffect)
             {
-                //obj.QueueFree();
+                var effect = (ISkillEffect)obj;
+                effect.SetupForSkill(data);
             }
-            tempObjects = null;
         }
     }
 }

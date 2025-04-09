@@ -1,10 +1,12 @@
+res://Resources/Characters/Skills/Skill Effects
+res://Scenes/Battle/UI
+res://Resources/Characters/Skills/Animations
 res://Resources/Characters/Skills/Skill Shape
 res://Scripts/Combat Scripts/Combat System/UI/Combat Rewards
 res://Resources/Characters/Skills/Damage Formulas
 res://Resources/Utilities/Events/Inventory Events
 res://Resources/Overworld/Battles/Rewards
 res://Resources/Characters
-res://Resources/Characters/Skills/Skill Effects
 C:/Users/chens/Documents/Sighborg Studios/Gacha-Whale-Simulator/Resources/Characters/Skills/Elements
 res://Resources/Characters/Skills
 res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI
@@ -18,5 +20,3 @@ res://Resources/Room/Items
 res://Resources/Room
 res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor
 res://Scenes/Overworld/Party Menu/UI
-res://Scenes/Overworld/Party Menu
-res://Resources/Characters/Character Data/001_player

@@ -42,12 +42,6 @@ namespace CombatSystem
             return result;
         }
 
-        public override Array<Vector2I> GetPositionsToReachPosition(Vector2I target)
-        {
-            var result = GetAllCoords();
-            AddOffsetToSpaces(result, target);
-            return result;
-        }
 
 
         private Array<Vector2I> GetAllCoords()

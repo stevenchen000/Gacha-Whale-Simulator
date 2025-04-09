@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Collections.Generic;
 
 namespace CombatSystem
 {
@@ -8,38 +9,23 @@ namespace CombatSystem
     public partial class SkillAnimation : Resource
     {
         [Export] private Array<SkillAnimationElement> animations;
+        [Export] public double Duration { get; private set; }
 
         public SkillAnimation()
         {
 
         }
 
-        public SkillAnimation(Array<SkillAnimationElement> newAnimations)
+        public void AddAnimationsToList(List<SkillAnimationContainer> animList,
+                                        TurnData turnData)
         {
-            animations = new Array<SkillAnimationElement>();
-
-            foreach(var animation in newAnimations)
+            if (animations != null)
             {
-                var newAnim = (SkillAnimationElement)(animation.Duplicate());
-                animations.Add(newAnim);
+                foreach (var anim in animations)
+                {
+                    anim.AddAnimationContainer(animList, turnData);
+                }
             }
-        }
-
-        public SkillAnimation GetDuplicate()
-        {
-            return new SkillAnimation(animations);
-        }
-
-
-        //Returns true when the animation is finished
-        public bool PlayAnimation(TurnData data, TimeHandler time, double delta)
-        {
-            bool animationFinished = true;
-            foreach(var animation in animations)
-            {
-                animationFinished &= animation.RunElement(data, time);
-            }
-            return animationFinished;
         }
     }
 }

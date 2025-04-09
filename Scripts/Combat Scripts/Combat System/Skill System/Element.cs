@@ -8,5 +8,6 @@ namespace CombatSystem
     {
         [Export] private string Name;
         [Export] public Texture2D Texture { get; private set; }
+        [Export] public Color ElementColor { get; private set; }
     }
 }

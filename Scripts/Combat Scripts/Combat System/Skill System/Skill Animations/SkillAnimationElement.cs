@@ -1,12 +1,14 @@
 using Godot;
 using System;
 using Godot.Collections;
+using System.Collections.Generic;
 
 namespace CombatSystem
 {
+    [GlobalClass]
     public partial class SkillAnimationElement : Resource
     {
-        [Export] private double delay = 0;
+        [Export] protected double delay = 0;
         [Export] protected double duration = 0;
         [Export] private bool ignoreDuration = false;
         protected double prevFrame = 0;
@@ -14,13 +16,30 @@ namespace CombatSystem
 
         private bool completed = false;
 
-        public bool RunElement(TurnData data, TimeHandler time)
+        /// <summary>
+        /// Adds the animation to the list of animations to play
+        /// </summary>
+        /// <param name="skillAnimations"></param>
+        public virtual void AddAnimationContainer(List<SkillAnimationContainer> skillAnimations,
+                                                  TurnData turnData)
+        {
+            
+        }
+
+
+        /// <summary>
+        /// Called by 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        /*public bool RunElement(TurnData data, TimeHandler time)
         {
             if (completed) return true;
 
             if (prevFrame <= 0 && currFrame > 0)
             {
-                _StartElement(data, time);
+                StartElement(data, time);
             }
 
             if (!ignoreDuration && currFrame > duration)
@@ -34,19 +53,21 @@ namespace CombatSystem
                 if (completed) _EndElement(data, time);
             }
             return completed;
-        }
+        }*/
 
-        public virtual void _StartElement(TurnData data, TimeHandler time)
+        public virtual void StartElement(SkillAnimationContainer container, TurnData data)
         {
         }
 
         //Returns true when the animation is finished
-        public virtual bool _RunElement(TurnData data, TimeHandler time)
+        public virtual bool RunElement(SkillAnimationContainer container, TurnData data, TimeHandler time)
         {
             return true;
         }
 
-        public virtual void _EndElement(TurnData data, TimeHandler time) { } 
+        public virtual void EndElement(SkillAnimationContainer container, TurnData data) { } 
+
+        
 
     }
 }

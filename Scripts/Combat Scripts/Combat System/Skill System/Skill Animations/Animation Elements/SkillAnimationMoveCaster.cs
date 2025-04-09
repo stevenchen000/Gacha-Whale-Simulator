@@ -8,7 +8,7 @@ namespace CombatSystem
     public partial class SkillAnimationMoveCaster : SkillAnimationElement
     {
 
-        public override bool _RunElement(TurnData data, TimeHandler time)
+        public override bool RunElement(SkillAnimationContainer container, TurnData data, TimeHandler time)
         {
             return true;
         }

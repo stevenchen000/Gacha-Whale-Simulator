@@ -93,9 +93,12 @@ namespace CombatSystem
             foreach(var coords in selectedSpaces)
             {
                 var space = grid.GetSpaceFromCoords(coords);
-                var target = space.CharacterOnSpace;
-                if(IsValidTarget(target))
-                    targets.Add(target);
+                if (space != null)
+                {
+                    var target = space.CharacterOnSpace;
+                    if (IsValidTarget(target))
+                        targets.Add(target);
+                }
             }
 
             return targets;

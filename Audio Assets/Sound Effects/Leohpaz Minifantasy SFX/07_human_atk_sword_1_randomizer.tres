@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://dkeac8dd65a6s"]
+
+[ext_resource type="AudioStream" uid="uid://beayqhcsjakyp" path="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/07_human_atk_sword_1.wav" id="1_b5bsy"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_b5bsy")

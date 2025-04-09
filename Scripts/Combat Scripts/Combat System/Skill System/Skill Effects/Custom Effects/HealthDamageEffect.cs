@@ -42,7 +42,7 @@ namespace CombatSystem
 
             target.Stats.TakeDamage(damage);
             caster.Stats.ConsumeAmp(ampConsumptionPercent);
-            data.AddHpDamage(casterAmp);
+            data.AddHpDamage(caster, target, casterAmp);
             
             DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
         }

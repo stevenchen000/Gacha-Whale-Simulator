@@ -44,6 +44,13 @@ namespace CombatSystem
             RaiseEvent();
         }
 
+        public void SetFlagValue(string flag, bool value)
+        {
+            AddMissingFlag(flag);
+            if (value) _flags[flag] = 1;
+            else _flags[flag] = 0;
+            RaiseEvent();
+        }
 
 
         private void AddMissingFlag(string flag)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://8ssh07hfd56t"]
+[gd_scene load_steps=48 format=3 uid="uid://8ssh07hfd56t"]
 
 [ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs" id="1_w405p"]
 [ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dupk5663cjtod" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleState.cs" id="5_h7u6w"]
 [ext_resource type="Script" uid="uid://c7drwxdavjnfx" path="res://Scripts/Combat Scripts/Combat System/Battle Components/TurnDataManager.cs" id="5_yhfgv"]
 [ext_resource type="Script" uid="uid://np2dkxg5chus" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatDamageNode.cs" id="6_0grf5"]
+[ext_resource type="Script" uid="uid://dfreciv7uxgbn" path="res://Scripts/Misc/DeleteParentAfterTime.cs" id="6_kj58v"]
 [ext_resource type="Resource" uid="uid://dosm0n42kdrkx" path="res://Resources/UI/Portrait Boxes/player_border.tres" id="8_ijdqy"]
 [ext_resource type="Script" uid="uid://dxchwut777wmn" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatCheckVictoryStatus.cs" id="9_iv2px"]
 [ext_resource type="Resource" uid="uid://stjbq8uovsgj" path="res://Resources/UI/Portrait Boxes/enemy_border.tres" id="9_jv4ad"]
@@ -25,10 +26,17 @@
 [ext_resource type="Script" uid="uid://b07dlb8fe31iv" path="res://Scripts/Combat Scripts/Combat System/UI/SkipTurnButton.cs" id="15_0grf5"]
 [ext_resource type="PackedScene" uid="uid://cen0vf3wpj18o" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/battle_character_2.tscn" id="15_iplpb"]
 [ext_resource type="PackedScene" uid="uid://chievkas7hxxp" path="res://Scenes/Battle/Skill Selection/skill_button.tscn" id="15_pxkmk"]
-[ext_resource type="Script" uid="uid://bcik8tdi0x2ki" path="res://Scripts/Combat Scripts/Combat System/UI/DirectionButtonUI.cs" id="16_fl4d0"]
-[ext_resource type="PackedScene" uid="uid://c2njhbj4uiopi" path="res://Scenes/Battle/Battle Space/skill_direction_button.tscn" id="16_u0d3x"]
+[ext_resource type="Script" uid="uid://iuc77ubs2taf" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatPartyStatusNode.cs" id="16_i6b8p"]
+[ext_resource type="Script" uid="uid://cw7edjoho3dsp" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatKnockbackState.cs" id="19_ota0i"]
+[ext_resource type="Script" uid="uid://cxrkld6422mi1" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleKnockbackManager.cs" id="22_7x215"]
+[ext_resource type="PackedScene" uid="uid://iyqrh30vxdn8" path="res://Scenes/Battle/Disable Animation Button.tscn" id="24_4k4b0"]
 [ext_resource type="Script" uid="uid://cd1ag3d1dvcsb" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderDisplay.cs" id="27_3gaus"]
 [ext_resource type="PackedScene" uid="uid://bw78lro41fpk6" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/character_turn_display.tscn" id="28_yprcx"]
+[ext_resource type="Texture2D" uid="uid://xarvsperfjvd" path="res://Art Assets/UI/Menu Button.png" id="30_4k4b0"]
+[ext_resource type="Script" uid="uid://dn730xa3l8rlo" path="res://Scenes/Battle/UI/BattlePauseButton.cs" id="30_fsyml"]
+[ext_resource type="Script" uid="uid://b7hy3a8bm2lnf" path="res://Scripts/Menus/MenuStack.cs" id="31_kj58v"]
+[ext_resource type="Script" uid="uid://bm645gvt1ec4b" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleCamera.cs" id="31_ota0i"]
+[ext_resource type="PackedScene" uid="uid://b0cbcjydxi6yg" path="res://Scenes/Battle/UI/battle_pause_menu.tscn" id="31_rvoat"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ija6g"]
 
@@ -129,7 +137,7 @@ _data = {
 &"shake": SubResource("Animation_yprcx")
 }
 
-[node name="BattleScene" type="Control" node_paths=PackedStringArray("skillUI", "directionUI", "turnDataManager", "Camera", "State")]
+[node name="BattleScene" type="Control" node_paths=PackedStringArray("skillUI", "knockbackManager", "turnDataManager", "Camera", "State")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,9 +146,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w405p")
 skillUI = NodePath("====Skills====/Skill UI")
-directionUI = NodePath("====Direction Buttons====")
+knockbackManager = NodePath("Knockback Manager")
 turnDataManager = NodePath("Turn Data Manager")
-Camera = NodePath("Camera2D")
+Camera = NodePath("Battle Camera")
 State = NodePath("Battle State")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -156,7 +164,7 @@ offset_right = -8.0
 offset_bottom = 21.0
 
 [node name="Grid" type="Node2D" parent="."]
-position = Vector2(26, 1330)
+position = Vector2(26, 1425)
 script = ExtResource("2_tbgor")
 spaceScene = ExtResource("3_binbm")
 startingPoint = Vector2(110, 0)
@@ -164,6 +172,185 @@ horizontalOffset = Vector2(200, 0)
 verticalOffset = Vector2(0, -200)
 horizontalGrids = 5
 verticalGrids = 6
+
+[node name="Grid Preview" type="Control" parent="Grid"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 108.0
+offset_top = -16.0
+offset_right = 108.0
+offset_bottom = -16.0
+
+[node name="Auto Delete" type="Control" parent="Grid/Grid Preview"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_kj58v")
+waitTime = 0.0
+
+[node name="GridContainer" type="GridContainer" parent="Grid/Grid Preview"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -1091.0
+offset_right = 894.0
+offset_bottom = 99.0
+grow_vertical = 0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="ColorRect" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect2" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect3" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect4" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect5" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect6" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect7" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect8" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect9" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect10" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect11" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect12" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect13" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect14" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect15" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect16" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect17" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect18" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect19" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect20" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect21" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect22" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect23" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect24" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect25" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect26" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect27" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect28" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect29" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="ColorRect30" type="ColorRect" parent="Grid/Grid Preview/GridContainer"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 2
+color = Color(0, 0, 0, 0.521569)
 
 [node name="Battle State" type="Node2D" parent="." node_paths=PackedStringArray("TurnOrder", "Grid")]
 script = ExtResource("5_h7u6w")
@@ -183,6 +370,7 @@ script = ExtResource("10_yprcx")
 [node name="Activating State" type="Node2D" parent="States/====Start of Combat====" node_paths=PackedStringArray("turnNode")]
 script = ExtResource("2_e03jm")
 turnNode = NodePath("../../====Combat====/Pre-Turn State")
+gridActivateInterval = 0.02
 IsInitialState = true
 
 [node name="====Combat====" type="Node2D" parent="States"]
@@ -195,25 +383,17 @@ Runs all OnTurnStart effects"
 
 [node name="Turn State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode", "turnFinishedNode")]
 script = ExtResource("3_iplpb")
-animationNode = NodePath("../Combat Animation State")
+animationNode = NodePath("../../=====Animation=====/Combat Animation State")
 turnFinishedNode = NodePath("../Turn Finished")
 Description = "Awaits character's actions"
 
-[node name="Combat Animation State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("damageCalculationNode")]
-script = ExtResource("5_5ipmr")
-damageCalculationNode = NodePath("../Damage State")
-Description = "Runs animation for skill"
-
-[node name="Damage State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheckNode")]
-script = ExtResource("6_0grf5")
+[node name="Living Status" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheckNode")]
+script = ExtResource("16_i6b8p")
 victoryCheckNode = NodePath("../Turn Finished")
-Description = "Damage applied after animation"
 
-[node name="Knockback State" type="Node2D" parent="States/====Combat===="]
-
-[node name="Turn Finished" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnPreStartNode")]
+[node name="Turn Finished" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheck")]
 script = ExtResource("13_x6kc0")
-turnPreStartNode = NodePath("../Victory Check")
+victoryCheck = NodePath("../Victory Check")
 Description = "Run turn end effects and countdown status effects"
 
 [node name="Victory Check" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnNode", "victoryNode", "lossNode")]
@@ -221,6 +401,24 @@ script = ExtResource("9_iv2px")
 turnNode = NodePath("../Pre-Turn State")
 victoryNode = NodePath("../../====End of Combat====/Victory State")
 lossNode = NodePath("../../====End of Combat====/Loss State")
+
+[node name="=====Animation=====" type="Node2D" parent="States"]
+
+[node name="Combat Animation State" type="Node2D" parent="States/=====Animation=====" node_paths=PackedStringArray("damageCalculationNode")]
+script = ExtResource("5_5ipmr")
+damageCalculationNode = NodePath("../../=====Damage Calculation=====/Damage State")
+Description = "Runs animation for skill"
+
+[node name="=====Damage Calculation=====" type="Node2D" parent="States"]
+
+[node name="Damage State" type="Node2D" parent="States/=====Damage Calculation=====" node_paths=PackedStringArray("knockbackNode")]
+script = ExtResource("6_0grf5")
+knockbackNode = NodePath("../Knockback State")
+Description = "Damage applied after animation"
+
+[node name="Knockback State" type="Node2D" parent="States/=====Damage Calculation=====" node_paths=PackedStringArray("turnFinishedNode")]
+script = ExtResource("19_ota0i")
+turnFinishedNode = NodePath("../../====Combat====/Living Status")
 
 [node name="====End of Combat====" type="Node2D" parent="States"]
 
@@ -231,10 +429,23 @@ script = ExtResource("10_xtcro")
 script = ExtResource("11_dfb8x")
 
 [node name="Turn Data Manager" type="Node2D" parent="."]
-visible = false
 script = ExtResource("5_yhfgv")
 
+[node name="Knockback Manager" type="Node2D" parent="."]
+script = ExtResource("22_7x215")
+
 [node name="====Skills====" type="CanvasLayer" parent="."]
+
+[node name="DisableAnimationButton" parent="====Skills====" instance=ExtResource("24_4k4b0")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 139.0
+offset_top = 81.0
+offset_right = 139.0
+offset_bottom = 81.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Skill UI" type="Control" parent="====Skills====" node_paths=PackedStringArray("skillButtons", "anim", "confirmButton", "cancelButton", "skipButton")]
 layout_mode = 3
@@ -314,10 +525,10 @@ offset_bottom = 72.0
 
 [node name="Confirm Button" type="Button" parent="====Skills====/Skill UI/Confirmation Buttons"]
 layout_mode = 0
-offset_left = 901.0
-offset_top = 1533.0
-offset_right = 1030.0
-offset_bottom = 1624.0
+offset_left = 870.0
+offset_top = 1771.0
+offset_right = 999.0
+offset_bottom = 1862.0
 theme_override_font_sizes/font_size = 60
 flat = true
 
@@ -342,10 +553,10 @@ label_settings = SubResource("LabelSettings_wwl16")
 
 [node name="Cancel Button" type="Button" parent="====Skills====/Skill UI/Confirmation Buttons"]
 layout_mode = 0
-offset_left = 759.0
-offset_top = 1533.0
-offset_right = 888.0
-offset_bottom = 1624.0
+offset_left = 870.0
+offset_top = 1664.0
+offset_right = 999.0
+offset_bottom = 1755.0
 theme_override_font_sizes/font_size = 60
 flat = true
 
@@ -373,69 +584,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_yprcx")
 }
 
-[node name="====Direction Buttons====" type="Control" parent="." node_paths=PackedStringArray("buttons", "cancelButton")]
-z_index = 4
-layout_mode = 3
-anchors_preset = 0
-offset_left = -4865.0
-offset_top = -3463.0
-offset_right = -4825.0
-offset_bottom = -3423.0
-script = ExtResource("16_fl4d0")
-buttons = [NodePath("Up Button2"), NodePath("Down Button2"), NodePath("Right Button2"), NodePath("Left Button2")]
-cancelButton = NodePath("Cancel Button")
-
-[node name="Cancel Button" type="Button" parent="====Direction Buttons===="]
-layout_mode = 0
-offset_left = -2296.0
-offset_top = -2368.0
-offset_right = 2317.0
-offset_bottom = 2355.0
-disabled = true
-flat = true
-
-[node name="Up Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
-layout_mode = 0
-offset_left = -72.0
-offset_top = -240.0
-offset_right = 78.0
-offset_bottom = -140.0
-
-[node name="Down Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
-layout_mode = 0
-offset_left = 81.0
-offset_top = 240.0
-offset_right = 231.0
-offset_bottom = 340.0
-rotation = 3.14159
-direction = 1
-
-[node name="Right Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
-layout_mode = 0
-offset_left = 240.0
-offset_top = -70.0
-offset_right = 390.0
-offset_bottom = 30.0
-rotation = 1.5708
-direction = 3
-
-[node name="Left Button2" parent="====Direction Buttons====" instance=ExtResource("16_u0d3x")]
-layout_mode = 0
-offset_left = -240.0
-offset_top = 76.0
-offset_right = -90.0
-offset_bottom = 176.0
-rotation = -1.5708
-direction = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(540, 960)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_kj58v")
-}
-
 [node name="Damage Number Manager" type="Node2D" parent="."]
 script = ExtResource("12_fl4d0")
 scene = ExtResource("13_otywn")
@@ -444,8 +592,10 @@ randomness = 80.0
 
 [node name="Turn Order Display" type="Control" parent="." node_paths=PackedStringArray("container", "displays")]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 20.0
+offset_top = 143.0
+offset_right = 60.0
+offset_bottom = 183.0
 script = ExtResource("27_3gaus")
 container = NodePath("HBox")
 displays = [NodePath("HBox/Character Display"), NodePath("HBox/Character Display2"), NodePath("HBox/Character Display3"), NodePath("HBox/Character Display4"), NodePath("HBox/Character Display5"), NodePath("HBox/Character Display6"), NodePath("HBox/Character Display7"), NodePath("HBox/Character Display8")]
@@ -453,9 +603,9 @@ displays = [NodePath("HBox/Character Display"), NodePath("HBox/Character Display
 [node name="HBox" type="HBoxContainer" parent="Turn Order Display"]
 layout_mode = 0
 offset_left = 26.0
-offset_top = 1543.0
-offset_right = 1056.0
-offset_bottom = 1748.0
+offset_top = 39.0
+offset_right = 1126.0
+offset_bottom = 244.0
 theme_override_constants/separation = 20
 
 [node name="Character Display" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
@@ -482,8 +632,66 @@ layout_mode = 2
 [node name="Character Display8" parent="Turn Order Display/HBox" instance=ExtResource("28_yprcx")]
 layout_mode = 2
 
+[node name="Battle Camera" type="Node2D" parent="."]
+script = ExtResource("31_ota0i")
+
+[node name="Camera2D" type="Camera2D" parent="Battle Camera"]
+position = Vector2(540, 960)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Battle Camera"]
+root_node = NodePath("../Camera2D")
+libraries = {
+&"": SubResource("AnimationLibrary_kj58v")
+}
+
+[node name="-----Pause Menu-----" type="CanvasLayer" parent="."]
+
+[node name="Open Pause Menu" type="Control" parent="-----Pause Menu-----" node_paths=PackedStringArray("menuStack")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1037.0
+offset_top = 135.0
+offset_right = 1037.0
+offset_bottom = 135.0
+script = ExtResource("30_fsyml")
+pauseMenu = ExtResource("31_rvoat")
+menuStack = NodePath("../Menu Stack")
+
+[node name="TextureRect" type="TextureRect" parent="-----Pause Menu-----/Open Pause Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -140.0
+offset_right = 185.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("30_4k4b0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="-----Pause Menu-----/Open Pause Menu"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -128.0
+offset_right = 30.0
+offset_bottom = 38.0
+flat = true
+
+[node name="Menu Stack" type="Control" parent="-----Pause Menu-----"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("31_kj58v")
+
 [connection signal="TurnStart" from="." to="Turn Order Display" method="UpdateDisplay"]
 [connection signal="button_up" from="====Skills====/Skill UI/Skip Turn" to="====Skills====/Skill UI/Skip Turn" method="OnClick"]
 [connection signal="button_up" from="====Skills====/Skill UI/Confirmation Buttons/Confirm Button" to="====Skills====/Skill UI" method="ConfirmAction"]
 [connection signal="button_up" from="====Skills====/Skill UI/Confirmation Buttons/Cancel Button" to="====Skills====/Skill UI" method="CancelAction"]
-[connection signal="button_up" from="====Direction Buttons====/Cancel Button" to="====Direction Buttons====" method="CancelMenu"]
+[connection signal="button_up" from="-----Pause Menu-----/Open Pause Menu/Button" to="-----Pause Menu-----/Open Pause Menu" method="OpenPauseMenu"]

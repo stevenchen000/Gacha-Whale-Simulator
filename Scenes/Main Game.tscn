@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=35 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
 [ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Game Scenes/Character Creator Menu.tscn" id="2_vfyon"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dhy4vi30p0fpw" path="res://Scenes/game_state.tscn" id="9_ah32c"]
 [ext_resource type="PackedScene" uid="uid://dmcbt7du1gju2" path="res://Scenes/Room/Room.tscn" id="9_xq76o"]
 [ext_resource type="Script" uid="uid://m6dxv4oa631d" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs" id="16_em1yx"]
-[ext_resource type="Script" uid="uid://cjfr74i01gcs7" path="res://Scripts/Combat Scripts/Combat System/Stat System/StatNames.cs" id="18_buolp"]
+[ext_resource type="Script" uid="uid://b8omm6wcwy35u" path="res://Scripts/Constants/StatNames.cs" id="18_sl7r4"]
 [ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="19_iffwg"]
 [ext_resource type="Resource" uid="uid://8mo1lvp4wgpf" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/amp.tres" id="20_0b8tr"]
 [ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="20_r0cu4"]
@@ -33,6 +33,7 @@
 [ext_resource type="Resource" uid="uid://uwml6uoq7y07" path="res://Resources/Characters/Skills/Elements/light_element.tres" id="31_hlcih"]
 [ext_resource type="Resource" uid="uid://du01f4eike5ym" path="res://Resources/Characters/Skills/Elements/arcane_element.tres" id="32_pjnjj"]
 [ext_resource type="Resource" uid="uid://dsmxegoikjnkm" path="res://Resources/Characters/Skills/Elements/dark_element.tres" id="33_4iwjo"]
+[ext_resource type="Script" uid="uid://bmhv81gdosbu3" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/ISkillEffect/BDragonElementChart.cs" id="35_ohcb0"]
 
 [node name="MainGame" type="Control"]
 layout_mode = 3
@@ -63,7 +64,7 @@ script = ExtResource("16_em1yx")
 [node name="Variables" type="Node2D" parent="."]
 
 [node name="Stat Names" type="Node2D" parent="Variables"]
-script = ExtResource("18_buolp")
+script = ExtResource("18_sl7r4")
 _health = ExtResource("19_iffwg")
 _amp = ExtResource("20_0b8tr")
 _attack = ExtResource("20_r0cu4")
@@ -92,3 +93,15 @@ ExtResource("31_hlcih"): ExtResource("33_4iwjo"),
 ExtResource("33_4iwjo"): ExtResource("32_pjnjj"),
 ExtResource("32_pjnjj"): ExtResource("31_hlcih")
 }
+
+[node name="BDragon Element Chart" type="Node2D" parent="Variables"]
+script = ExtResource("35_ohcb0")
+elementChart = Dictionary[Object, int]({
+ExtResource("27_0hpn3"): 7,
+ExtResource("28_5m6pt"): 2,
+ExtResource("29_ohcb0"): 3,
+ExtResource("30_n5tqu"): 6,
+ExtResource("31_hlcih"): 5,
+ExtResource("33_4iwjo"): 8,
+ExtResource("32_pjnjj"): 1
+})

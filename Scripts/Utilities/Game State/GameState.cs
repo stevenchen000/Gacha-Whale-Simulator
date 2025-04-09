@@ -338,6 +338,11 @@ public partial class GameState : Node
 		return state.flags.GetFlagAmount(flag);
 	}
 
+	public static void ToggleFlag(string flag)
+	{
+		state.flags.ToggleFlag(flag);
+	}
+
 	public static void ResetFlag(string flag)
 	{
 		state.flags.ResetFlag(flag);

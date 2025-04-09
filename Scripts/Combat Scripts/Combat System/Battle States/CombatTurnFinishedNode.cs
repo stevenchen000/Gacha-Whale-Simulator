@@ -6,7 +6,7 @@ namespace CombatSystem
 {
     public partial class CombatTurnFinishedNode : CombatStateNode
     {
-        [Export] private CombatStateNode turnPreStartNode;
+        [Export] private CombatStateNode victoryCheck;
         [Export] private float delay = 1f;
 
         protected override void OnStateActivated()
@@ -26,8 +26,8 @@ namespace CombatSystem
         {
             StateNode result = null;
 
-            if (timeInState > delay)
-                result = turnPreStartNode;
+            //if (timeInState > delay)
+            result = victoryCheck;
 
             return result;
         }

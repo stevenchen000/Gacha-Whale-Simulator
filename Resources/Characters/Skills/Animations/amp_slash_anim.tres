@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillAnimation" load_steps=3 format=3 uid="uid://b7tu63570eb5y"]
+
+[ext_resource type="Script" uid="uid://dkofljjxhtlfe" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs" id="1_2033c"]
+[ext_resource type="Resource" uid="uid://c5wao5rtigfml" path="res://Resources/Characters/Skills/Animations/spawn_slash.tres" id="1_jxckr"]
+
+[resource]
+script = ExtResource("1_2033c")
+animations = Array[Resource]([ExtResource("1_jxckr")])
+Duration = 0.5
+metadata/_custom_type_script = "uid://dkofljjxhtlfe"

@@ -17,6 +17,8 @@ namespace CombatSystem
         [Export] private Sprite2D colliderSprite;
         [Export] private Sprite2D spaceSprite;
 
+        [Export] private AnimationPlayer anim;
+
 
 
         public BattleCharacter CharacterOnSpace {
@@ -87,6 +89,7 @@ namespace CombatSystem
         {
             battle = Utils.FindParentOfType<BattleManager>(this);
             grid = battle.Grid;
+            spaceSprite.Scale = new Vector2(0, 0);
         }
 
         public void InitSpace(Vector2I coords)
@@ -111,14 +114,12 @@ namespace CombatSystem
 
         public void OnClick()
         {
-            Utils.Print(this, $"{IsWalkable} - {CanSelect} - {HasSelected}");
             var caster = battle.GetCurrentCharacter();
             TargetingData targetingData = grid.CurrentTargetingData;
             TargetingSelection selection = grid.CurrentSelection;
 
             if (!battle.CharacterInPlayerParty(caster)) return;
 
-            Utils.Print(this, "clicked space");
             if(CanSelect && HasBeenSelected())
             {
                 bool hasTarget = targetingData.ValidTargetInSelection(selection, grid);
@@ -126,7 +127,6 @@ namespace CombatSystem
             }
             else if (CanSelect)
             {
-                Utils.Print(this, "selected space");
 
                 if (SelectionHasDirection)
                     selection = new TargetingSelection(DirectionSelection);
@@ -137,11 +137,11 @@ namespace CombatSystem
             }
             else if (IsWalkable)
             {
-                Utils.Print(this, "Walked to space");
                 battle.OccupySpace(Coords, caster);
                 caster.MoveAndUpdate(Coords);
-                grid.SetTargetingData(null);
-                grid.SetTargetingSelection(null);
+                battle.SetTargetingData(null);
+                battle.SetTargetSelection(null);
+                battle.SetSelectedSkill(null);
             }
         }
 
@@ -214,7 +214,6 @@ namespace CombatSystem
 
         public void SetCanSelect(bool canSelect)
         {
-            Utils.Print(this, "Can now select space");
             CanSelect = canSelect;
         }
 
@@ -259,6 +258,14 @@ namespace CombatSystem
                 button.Disabled = false;
                 button.Visible = true;
             }
+        }
+
+
+
+
+        public void PlayAppearAnimation()
+        {
+            anim.Play("appear_in");
         }
     }
 }

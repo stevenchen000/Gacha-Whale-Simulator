@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4hhaae5ydmrn"
+path="res://.godot/imported/06_door_close_2.mp3-5ca13198efe9e2e38c5d0a3e46d9c3dc.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/06_door_close_2.mp3"
+dest_files=["res://.godot/imported/06_door_close_2.mp3-5ca13198efe9e2e38c5d0a3e46d9c3dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

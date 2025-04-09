@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://iyqrh30vxdn8"]
+
+[ext_resource type="Script" uid="uid://ceal14ojb2p61" path="res://Scenes/Battle/CombatAnimationButton.cs" id="1_nnef0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xe3tk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pd1v1"]
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.490196)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nnef0"]
+line_spacing = 0.0
+font_size = 50
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.501961)
+shadow_offset = Vector2(5, 5)
+
+[node name="DisableAnimationButton" type="Control" node_paths=PackedStringArray("buttonTexture", "onOffText")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1080.0
+offset_bottom = -1920.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nnef0")
+buttonTexture = NodePath("TextureRect")
+onOffText = NodePath("VBoxContainer/On_Off Text")
+enabledColor = Color(1, 1, 1, 1)
+disabledColor = Color(0.34, 0.34, 0.34, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -57.0
+offset_right = 103.0
+offset_bottom = 54.0
+texture = SubResource("CanvasTexture_xe3tk")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -99.0
+offset_top = -55.0
+offset_right = 102.0
+offset_bottom = 51.0
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -82.0
+offset_top = -52.0
+offset_right = 92.0
+offset_bottom = 49.0
+mouse_filter = 2
+theme_override_constants/separation = -10
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Animations:"
+label_settings = SubResource("LabelSettings_pd1v1")
+
+[node name="On_Off Text" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "ON"
+label_settings = SubResource("LabelSettings_nnef0")
+
+[connection signal="button_up" from="Button" to="." method="OnClick"]

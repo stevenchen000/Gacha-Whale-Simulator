@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PartyMenuSystem;
+using System;
 
 
 public class TimeHandler
@@ -29,12 +30,36 @@ public class TimeHandler
         return prevFrame >= time;
     }
 
+    public bool TimeReached(double time)
+    {
+        return time < currFrame && time >= prevFrame;
+    }
+
     public int IntervalsBetween(double interval)
     {
         if (interval <= 0) return -1;
         int prevInterval = (int)(prevFrame / interval);
         int currInterval = (int)(currFrame / interval);
         return currInterval - prevInterval;
+    }
+    /// <summary>
+    /// Returns the number of the interval reached. 
+    /// Returns 1 if time == interval
+    /// Returns 2 if time == 2 * interval
+    /// Returns -1 if between intervals
+    /// </summary>
+    /// <param name="interval"></param>
+    /// <returns></returns>
+    public int IntervalReached(double interval)
+    {
+        if(interval == 0) return -1;
+        int prevInterval = (int)(prevFrame / interval);
+        int currInterval = (int)(currFrame / interval);
+
+        if (prevInterval != currInterval) 
+            return currInterval;
+        else 
+            return -1;
     }
 
 

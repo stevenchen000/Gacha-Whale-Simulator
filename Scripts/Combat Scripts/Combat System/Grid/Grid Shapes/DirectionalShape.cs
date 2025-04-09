@@ -11,7 +11,10 @@ namespace CombatSystem {
         [Export] private CharacterDirection defaultDirection = CharacterDirection.UP;
         [Export] private DirectionStyle directionStyle = DirectionStyle.VERTICAL;
         
-
+        
+        /*******************
+         * Overrides
+         * ****************/
 
         public override TargetingData GetTargetsFromPosition(BattleGrid grid, BattleCharacter caster, SkillContainer skill, Vector2I position)
         {
@@ -22,6 +25,28 @@ namespace CombatSystem {
 
             return result;
         }
+
+        public override TargetingData GetSpacesReachableToTarget(BattleGrid grid, MovementData movement, Vector2I targetCoords)
+        {
+            TargetingData result = null;
+
+
+
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private Dictionary<CharacterDirection, Array<Vector2I>> CreateDirectionData(Vector2I position)
         {
@@ -51,18 +76,7 @@ namespace CombatSystem {
 
 
 
-        public override Array<Vector2I> GetPositionsInRange(Vector2I position, CharacterDirection direction)
-        {
-            //var result = TurnSpaces(direction);
-            //AddOffsetToSpaces(result, position);
 
-            return null;
-        }
-
-        public override Array<Vector2I> GetPositionsToReachPosition(Vector2I target)
-        {
-            return null;
-        }
 
 
 
@@ -122,6 +136,64 @@ namespace CombatSystem {
             int result = (int)defaultDirection - (int)newDirection;
 
             if (result < 0) result += 4;
+
+            return result;
+        }
+
+
+
+
+        private Dictionary<CharacterDirection, Array<Vector2I>> CreateAIData(MovementData movement, Vector2I position)
+        {
+            var result = new Dictionary<CharacterDirection, Array<Vector2I>>();
+
+            switch (directionStyle)
+            {
+                case DirectionStyle.VERTICAL:
+                    result[CharacterDirection.UP] = GetAllSpacesInDirection(CharacterDirection.UP, position);
+                    result[CharacterDirection.DOWN] = GetAllSpacesInDirection(CharacterDirection.DOWN, position);
+                    break;
+                case DirectionStyle.HORIZONTAL:
+                    result[CharacterDirection.LEFT] = GetAllSpacesInDirection(CharacterDirection.LEFT, position);
+                    result[CharacterDirection.RIGHT] = GetAllSpacesInDirection(CharacterDirection.RIGHT, position);
+                    break;
+                case DirectionStyle.OMNIDIRECTIONAL:
+                    result[CharacterDirection.UP] = GetAllSpacesInDirection(CharacterDirection.UP, position);
+                    result[CharacterDirection.DOWN] = GetAllSpacesInDirection(CharacterDirection.DOWN, position);
+                    result[CharacterDirection.LEFT] = GetAllSpacesInDirection(CharacterDirection.LEFT, position);
+                    result[CharacterDirection.RIGHT] = GetAllSpacesInDirection(CharacterDirection.RIGHT, position);
+                    break;
+            }
+
+            return result;
+        }
+
+        private Array<Vector2I> GetSpacesInDirectionForAI(CharacterDirection direction, MovementData movement, Vector2I position)
+        {
+            var walkableSpaces = movement.WalkableSpaces;
+            var flippedDirection = FlipDirection(direction);
+            var spaces = GetAllSpacesInDirection(flippedDirection, position);
+            return GetIntersection(spaces, walkableSpaces);
+        }
+
+        private CharacterDirection FlipDirection(CharacterDirection direction)
+        {
+            int result = ((int)direction + 2) % 4;
+            return (CharacterDirection)result;
+        }
+
+        private Array<Vector2I> GetIntersection(Array<Vector2I> a, Array<Vector2I> b)
+        {
+            Array<Vector2I> result = new Array<Vector2I>();
+
+            for (int i = 0; i < a.Count; i++)
+            {
+                var space1 = a[i];
+                if(b.Contains(space1))
+                {
+                    result.Add(space1);
+                }
+            }
 
             return result;
         }

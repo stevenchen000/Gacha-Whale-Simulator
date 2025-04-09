@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqqa05wypaxiq"]
+[gd_scene load_steps=9 format=3 uid="uid://cqqa05wypaxiq"]
 
 [ext_resource type="Script" uid="uid://d1o4sx4it6fxl" path="res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectionMenu.cs" id="1_olvwh"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="1_r20pm"]
 [ext_resource type="PackedScene" uid="uid://umkn3hlqwl0r" path="res://Scenes/Overworld/Stage Selection/stage_selection_button.tscn" id="3_yjsmd"]
 [ext_resource type="Resource" uid="uid://beeikrtu3ncsq" path="res://Resources/Overworld/Battles/basic_stage.tres" id="3_ypb73"]
 [ext_resource type="Resource" uid="uid://dxvomwaqkk0h6" path="res://Resources/Overworld/Battles/basic_stage_2.tres" id="4_d66lc"]
+[ext_resource type="Resource" uid="uid://bcbcde42lj5gb" path="res://Resources/Overworld/Battles/basic_stage_3.tres" id="5_d66lc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypb73"]
 bg_color = Color(0.0863162, 0.593837, 0.977843, 1)
@@ -27,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_olvwh")
 stageSelectButtonScene = ExtResource("3_yjsmd")
-stages = Array[Object]([ExtResource("3_ypb73"), ExtResource("4_d66lc")])
+stages = Array[Object]([ExtResource("3_ypb73"), ExtResource("4_d66lc"), ExtResource("5_d66lc")])
 grid = NodePath("TabContainer/Story/Story")
 
 [node name="OverworldMenu" parent="." node_paths=PackedStringArray("buttons") instance=ExtResource("1_r20pm")]

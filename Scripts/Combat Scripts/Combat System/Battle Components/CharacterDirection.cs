@@ -9,8 +9,8 @@ namespace CombatSystem
     public enum CharacterDirection
     {
         UP = 0,
-        DOWN = 1,
-        LEFT = 2,
+        LEFT = 1,
+        DOWN = 2,
         RIGHT = 3
     }
 }

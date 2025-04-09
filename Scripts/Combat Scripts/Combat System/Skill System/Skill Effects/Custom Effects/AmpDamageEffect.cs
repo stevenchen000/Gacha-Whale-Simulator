@@ -53,6 +53,7 @@ namespace CombatSystem
             target.TakeAmpDamage(totalDamage);
             caster.AddAmp(totalDamage);
 
+
             if (totalDamage > targetAmp)
             {
                 bool brokeTarget = target.BreakCharacter();

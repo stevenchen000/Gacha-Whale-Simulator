@@ -18,7 +18,7 @@ namespace CombatSystem
 
         protected override bool _RunEffect(TurnData data, TimeHandler timer)
         {
-            return timer.TimeIsUp(delay + duration);
+            return true;
         }
 
         protected override void _EndEffect(TurnData data)
@@ -28,14 +28,17 @@ namespace CombatSystem
 
         private void ApplyKnockback(TurnData data)
         {
+            var targetSelection = data.targetSelection;
+
+            if (targetSelection == null && targetSelection.Style != TargetSelectionStyle.SelectDirection) return;
             var caster = data.caster;
-            
             foreach(var target in data.targets)
             {
-                MoveCharacter(data, caster, target);
+                //MoveCharacter(data, caster, target);
+                data.Battle.ApplyKnockback(target, numofSpaces, data.targetSelection.SelectedDirection);
             }
         }
-
+        /*
         private void MoveCharacter(TurnData data, BattleCharacter caster, BattleCharacter target)
         {
             var direction = data.targetSelection.SelectedDirection;
@@ -107,6 +110,6 @@ namespace CombatSystem
             }
 
             return offset;
-        }
+        }*/
     }
 }

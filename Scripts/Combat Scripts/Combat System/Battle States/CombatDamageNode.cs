@@ -7,7 +7,7 @@ namespace CombatSystem
 {
     public partial class CombatDamageNode : CombatStateNode
     {
-        [Export] private CombatStateNode victoryCheckNode;
+        [Export] private CombatStateNode knockbackNode;
 
         private Array<SkillEffect> effects;
         private SkillEffect currEffect;
@@ -45,9 +45,7 @@ namespace CombatSystem
 
             if (currEffect == null)
             {
-                result = victoryCheckNode;
-                battle.State.PlayerParty.CheckPartyHealth();
-                battle.State.EnemyParty.CheckPartyHealth();
+                result = knockbackNode;
             }
 
             return result;

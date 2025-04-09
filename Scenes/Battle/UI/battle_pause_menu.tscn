@@ -1,0 +1,271 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0cbcjydxi6yg"]
+
+[ext_resource type="Script" uid="uid://cacid5hebt2pp" path="res://Scripts/Menus/StackableMenu.cs" id="1_1bbh5"]
+[ext_resource type="Script" uid="uid://dqnnxdl08uhnq" path="res://Scripts/Menus/OpenMenu.cs" id="2_e8ufi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kj58v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fsyml"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvoat"]
+font_size = 80
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.576471)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jklyc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7x215"]
+font_size = 100
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.52549)
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="Animation" id="Animation_i6b8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Close Menu Background:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ota0i"]
+resource_name = "pop_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Close Menu Background:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.104656),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.100004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wbcs6"]
+resource_name = "pop_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Close Menu Background:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.116284),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0627934, 0.125587),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(0.8, 0.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 0.125587),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ovav"]
+_data = {
+&"RESET": SubResource("Animation_i6b8p"),
+&"pop_in": SubResource("Animation_ota0i"),
+&"pop_out": SubResource("Animation_wbcs6")
+}
+
+[node name="Pause Menu" type="Control" node_paths=PackedStringArray("anim")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1bbh5")
+anim = NodePath("AnimationPlayer")
+
+[node name="Close Menu Background" type="Button" parent="."]
+layout_mode = 0
+offset_left = -969.0
+offset_top = -585.0
+offset_right = 2584.0
+offset_bottom = 2671.0
+
+[node name="Menu" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 528.0
+offset_top = 876.0
+offset_right = 528.0
+offset_bottom = 876.0
+
+[node name="Border" type="TextureRect" parent="Menu"]
+layout_mode = 0
+offset_left = -450.0
+offset_top = -496.0
+offset_right = 466.0
+offset_bottom = 584.0
+texture = SubResource("CanvasTexture_kj58v")
+
+[node name="Background" type="TextureRect" parent="Menu"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -436.0
+offset_top = -484.0
+offset_right = 452.0
+offset_bottom = 572.0
+texture = SubResource("CanvasTexture_kj58v")
+
+[node name="Pause" type="TextureRect" parent="Menu"]
+self_modulate = Color(0.1098, 0.176493, 0.61, 1)
+layout_mode = 0
+offset_left = -230.0
+offset_top = -567.0
+offset_right = 239.0
+offset_bottom = -422.0
+texture = SubResource("CanvasTexture_fsyml")
+
+[node name="Pause Text" type="Label" parent="Menu/Pause"]
+layout_mode = 0
+offset_right = 469.0
+offset_bottom = 143.0
+text = "Menu"
+label_settings = SubResource("LabelSettings_rvoat")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 0
+offset_left = -392.0
+offset_top = -159.0
+offset_right = 408.0
+offset_bottom = 499.0
+theme_override_constants/separation = 50
+
+[node name="Continue" type="TextureRect" parent="Menu/HBoxContainer"]
+self_modulate = Color(0.76662, 0.76662, 0.76662, 1)
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 2
+texture = SubResource("CanvasTexture_jklyc")
+
+[node name="Label" type="Label" parent="Menu/HBoxContainer/Continue"]
+layout_mode = 0
+offset_right = 799.0
+offset_bottom = 203.0
+text = "Continue"
+label_settings = SubResource("LabelSettings_7x215")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Menu/HBoxContainer/Continue"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 202.0
+flat = true
+
+[node name="Exit" type="TextureRect" parent="Menu/HBoxContainer"]
+self_modulate = Color(0.76662, 0.76662, 0.76662, 1)
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 2
+texture = SubResource("CanvasTexture_jklyc")
+
+[node name="Open Menu Script" type="Control" parent="Menu/HBoxContainer/Exit"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_e8ufi")
+
+[node name="Label" type="Label" parent="Menu/HBoxContainer/Exit"]
+layout_mode = 0
+offset_right = 799.0
+offset_bottom = 203.0
+text = "Exit Battle"
+label_settings = SubResource("LabelSettings_7x215")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Menu/HBoxContainer/Exit"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 202.0
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4ovav")
+}
+autoplay = "pop_in"
+
+[connection signal="button_up" from="Close Menu Background" to="." method="OnBackgroundClick"]
+[connection signal="button_up" from="Menu/HBoxContainer/Continue/Button" to="." method="OnBackgroundClick"]
+[connection signal="button_up" from="Menu/HBoxContainer/Exit/Button2" to="Menu/HBoxContainer/Exit/Open Menu Script" method="OpenBattleSelection"]

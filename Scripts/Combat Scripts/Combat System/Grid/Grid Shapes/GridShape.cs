@@ -13,20 +13,18 @@ namespace CombatSystem {
 
         public virtual TargetingData GetTargetsFromPosition(BattleGrid grid, BattleCharacter caster, SkillContainer skill, Vector2I position)
         {
-
             return null;
         }
 
 
-        public virtual Array<Vector2I> GetPositionsInRange(Vector2I position, CharacterDirection direction)
+        public virtual TargetingData GetSpacesReachableToTarget(BattleGrid grid, MovementData movement, Vector2I targetCoords)
         {
             return null;
         }
 
-        public virtual Array<Vector2I> GetPositionsToReachPosition(Vector2I target)
-        {
-            return null;
-        }
+
+
+
 
 
         /*****************

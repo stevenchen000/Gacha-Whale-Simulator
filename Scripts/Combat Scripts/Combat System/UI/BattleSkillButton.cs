@@ -6,11 +6,19 @@ namespace CombatSystem
     public partial class BattleSkillButton : Control
     {
         [Export] private Button button;
+        [Export] private TextureRect skillIcon;
+        [Export] private TextureRect skillBackground;
         [Export] private Label nameLabel;
         [Export] private Label usesLabel;
         [Export] private TextureRect elementIcon;
         public SkillContainer Skill { get; private set; }
         private BattleManager battle;
+
+        [ExportCategory("Button Enabled/Disabled Colors")]
+        [Export] private Color enabledColor;
+        [Export] private Color disabledColor;
+
+
 
         public override void _Ready()
         {
@@ -51,14 +59,18 @@ namespace CombatSystem
             {
                 var baseSkill = skill.Skill;
 
-                button.Icon = baseSkill.Icon;
+                skillIcon.Texture = baseSkill.Icon;
 
                 nameLabel.Text = baseSkill.SkillName;
 
                 SetupUses(skill);
 
+                var element = baseSkill.SkillElement;
                 if (baseSkill.SkillElement != null)
-                    elementIcon.Texture = baseSkill.SkillElement.Texture;
+                {
+                    skillBackground.SelfModulate = element.ElementColor;
+                }
+                Visible = true;
             }
             else
             {
@@ -81,10 +93,9 @@ namespace CombatSystem
 
         private void ResetUI()
         {
-            button.Icon = null;
             nameLabel.Text = "";
             usesLabel.Text = "";
-            elementIcon.Texture = null;
+            Visible = false;
         }
 
         #endregion
@@ -92,11 +103,13 @@ namespace CombatSystem
         public void EnableButton()
         {
             button.Disabled = false;
+            skillIcon.SelfModulate = enabledColor;
         }
 
         public void DisableButton()
         {
             button.Disabled= true;
+            skillIcon.SelfModulate = disabledColor;
         }
 
 

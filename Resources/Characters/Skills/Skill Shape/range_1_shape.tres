@@ -7,7 +7,4 @@ script = ExtResource("1_trpwe")
 minRange = 1
 maxRange = 1
 attackShape = Array[Vector2i]([Vector2i(0, 0)])
-defaultDirection = 0
-spaces = null
-SelectSpace = false
 metadata/_custom_type_script = "uid://cselmo0jp141"

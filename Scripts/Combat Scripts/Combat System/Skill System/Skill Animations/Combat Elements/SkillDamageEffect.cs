@@ -11,12 +11,12 @@ namespace CombatSystem
         [Export] private int numberOfHits = 1;
         [Export] private double delayBetweenHits = 0.5;
 
-        public override void _StartElement(TurnData data, TimeHandler time)
+        public override void StartElement(SkillAnimationContainer container, TurnData data)
         {
             Utils.Print(this, "Started dealing damage");
         }
 
-        public override bool _RunElement(TurnData data, TimeHandler time)
+        public override bool RunElement(SkillAnimationContainer container, TurnData data, TimeHandler time)
         {
             int prevHitCount = (int)(prevFrame/delayBetweenHits);
             int currHitCount = (int)(currFrame / delayBetweenHits);
@@ -33,7 +33,7 @@ namespace CombatSystem
             return currHitCount >= numberOfHits;
         }
 
-        public override void _EndElement(TurnData data, TimeHandler time)
+        public override void EndElement(SkillAnimationContainer container, TurnData data)
         {
             var totalDamage = data.totalHpDamageDealt;
         }
@@ -55,7 +55,7 @@ namespace CombatSystem
             int damage = (int)(baseDamage * totalPotency / numberOfHits / 100);
 
             targetStats.TakeDamage(damage);
-            data.AddHpDamage(damage);
+            data.AddHpDamage(caster, target, damage);
             DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
         }
     }

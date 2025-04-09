@@ -13,7 +13,6 @@ namespace CombatSystem
         public override void _Ready()
         {
             base._Ready();
-            debug = true;
         }
 
         protected override void OnStateActivated()

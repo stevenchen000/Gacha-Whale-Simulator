@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DirectionalShape" load_steps=2 format=3 uid="uid://ndb7iu6iqmlu"]
+
+[ext_resource type="Script" uid="uid://d0v3688o1uybr" path="res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/DirectionalShape.cs" id="1_j5rse"]
+
+[resource]
+script = ExtResource("1_j5rse")
+defaultDirection = 0
+directionStyle = 1
+attackShape = Array[Vector2i]([Vector2i(0, 1), Vector2i(1, 1), Vector2i(-1, 1), Vector2i(0, 2), Vector2i(-1, 2), Vector2i(1, 2)])
+metadata/_custom_type_script = "uid://d0v3688o1uybr"

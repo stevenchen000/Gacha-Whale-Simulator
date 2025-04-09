@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7wb3svw0gqh7"
+path="res://.godot/imported/02_chest_close_2.wav-e303e029f751f4c6a3133079b0cd78f4.sample"
+
+[deps]
+
+source_file="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/02_chest_close_2.wav"
+dest_files=["res://.godot/imported/02_chest_close_2.wav-e303e029f751f4c6a3133079b0cd78f4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

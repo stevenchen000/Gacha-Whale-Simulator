@@ -1,13 +1,14 @@
 using Godot;
 using System;
 using Godot.Collections;
-using static Godot.HttpRequest;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CombatSystem {
 	public partial class BattleGrid : Node2D
 	{
 		private Array<GridSpace> battleSpaces;
-		private Dictionary<Vector2I, GridSpace> gridPositions;
+		private Godot.Collections.Dictionary<Vector2I, GridSpace> gridPositions;
 		private Array<GridSpace> borderSpaces;
 
 		[Export] private PackedScene spaceScene;
@@ -23,8 +24,8 @@ namespace CombatSystem {
 		public TargetingSelection CurrentSelection { get; private set; }
 
 
-		private Dictionary<BattleCharacter, GridSpace> occupiedSpaces;
-		private Dictionary<GridSpace, BattleCharacter> occupiedSpacesReverse;
+		private Godot.Collections.Dictionary<BattleCharacter, GridSpace> occupiedSpaces;
+		private Godot.Collections.Dictionary<GridSpace, BattleCharacter> occupiedSpacesReverse;
 
 
 
@@ -38,8 +39,8 @@ namespace CombatSystem {
         {
 			horizontalGrids = horizontal;
 			verticalGrids = vertical;
-            occupiedSpaces = new Dictionary<BattleCharacter, GridSpace>();
-			occupiedSpacesReverse = new Dictionary<GridSpace, BattleCharacter>();
+            occupiedSpaces = new Godot.Collections.Dictionary<BattleCharacter, GridSpace>();
+			occupiedSpacesReverse = new Godot.Collections.Dictionary<GridSpace, BattleCharacter>();
             InitBattleSpaces();
             SetAllSpacesToDefault();
         }
@@ -200,7 +201,7 @@ namespace CombatSystem {
             foreach (var coords in directionSpaces)
             {
                 var space = GetSpaceFromCoords(coords);
-				space.SetHasSelected(true);
+				space?.SetHasSelected(true);
             }
         }
 
@@ -223,6 +224,10 @@ namespace CombatSystem {
 			ResetSpaces();
 		}
 
+		public bool SpaceIsInGrid(Vector2I coords)
+		{
+			return GetSpaceFromCoords(coords) != null;
+		}
 
         /******************
 		 * Get Space
@@ -259,15 +264,6 @@ namespace CombatSystem {
 		#endregion
 
 
-
-		public Array<BattleCharacter> GetTargetsInRange(BattleManager battle, BattleCharacter character, GridShape attackShape)
-        {
-			var charPos = character.turnStartPosition;
-			var direction = character.facingDirection;
-			var targetPositions = attackShape.GetPositionsInRange(charPos, direction);
-			var allTargets = PositionsToTargets(targetPositions);
-			return GetValidTarget(battle, allTargets, character);
-        }
 
 		private Array<BattleCharacter> PositionsToTargets(Array<Vector2I> coords)
         {
@@ -566,7 +562,7 @@ namespace CombatSystem {
 		private void InitBattleSpaces()
 		{
 			battleSpaces = new Array<GridSpace>();
-			gridPositions = new Dictionary<Vector2I, GridSpace>();
+			gridPositions = new Godot.Collections.Dictionary<Vector2I, GridSpace>();
 
 			for (int i = 0; i < horizontalGrids; i++)
 			{
@@ -622,6 +618,16 @@ namespace CombatSystem {
 			position += x * horizontalOffset;
 			position += y * verticalOffset;
 			space.Position = position;
+		}
+
+
+
+
+		public List<GridSpace> GetSortedListByDiagonal()
+		{
+			var list = new List<GridSpace>();
+			list.AddRange(battleSpaces);
+			return list.OrderBy(space => (space.Coords.X + space.Coords.Y)).ThenByDescending(space => space.Coords.Y).ToList();
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System;
 using Godot.Collections;
 using GachaSystem;
 using EventSystem;
+using System.Collections.Generic;
 
 namespace CombatSystem
 {
@@ -19,9 +20,10 @@ namespace CombatSystem
         [Export] private PackedScene roomScene;
 
         [Export] private SkillSelection skillUI;
+        [Export] private BattleKnockbackManager knockbackManager;
         [Export] private DirectionButtonUI directionUI;
         [Export] private TurnDataManager turnDataManager;
-        [Export] public Camera2D Camera { get; private set; }
+        [Export] public BattleCamera Camera { get; private set; }
 
         public TurnData turnData;
 
@@ -55,6 +57,8 @@ namespace CombatSystem
             base._Ready();
             Init();
         }
+
+        
 
         public override void _OnDisable()
         {
@@ -93,6 +97,12 @@ namespace CombatSystem
             return State.PlayerParty.IsInParty(character);
         }
 
+        public void UpdateLivingStatus()
+        {
+            State.PlayerParty.CheckPartyHealth();
+            State.EnemyParty.CheckPartyHealth();
+        }
+
         /****************
          * Turn Functions
          * **************/
@@ -101,7 +111,6 @@ namespace CombatSystem
 
         public void StartTurn()
         {
-            Utils.Print(this, GetCurrentCharacter());
             var currentCharacter = GetCurrentCharacter();
             currentCharacter.StartCharacterTurn(State);
 
@@ -159,7 +168,7 @@ namespace CombatSystem
         {
             var targeting = Grid.CurrentTargetingData;
             var selection = Grid.CurrentSelection;
-            turnData = new TurnData(Grid, targeting, selection);
+            turnData = new TurnData(this, targeting, selection);
         }
         #endregion
 
@@ -168,9 +177,10 @@ namespace CombatSystem
 
         public void SetSelectedSkill(SkillContainer skill)
         {
+            var caster = GetCurrentCharacter();
             if (skill != null)
             {
-                var caster = GetCurrentCharacter();
+                caster.PlayAnimation(CharacterAnimationNames.IdleAnimation);
                 var currPos = caster.currPosition;
                 var currSpace = Grid.GetSpaceFromCoords(currPos);
                 var targetingData = skill.GetTargetingData(Grid, caster, currPos);
@@ -179,22 +189,63 @@ namespace CombatSystem
             }
             else
             {
-                Grid.SetTargetingData(null);
+                caster.PlayAnimation(CharacterAnimationNames.IdleTurnAnimation);
+                SetTargetingData(null);
             }
         }
 
+
+        public void SetTargetingData(TargetingData data)
+        {
+            Grid.SetTargetingData(data);
+            if(data == null)
+            {
+                HideConfirmationAndShowSkipButton();
+            }
+        }
 
 
         public void SetTargetSelection(TargetingSelection selection)
         {
             Grid.SetTargetingSelection(selection);
+
+            if (selection != null)
+            {
+                bool hasValidTarget = Grid.CurrentTargetingData.ValidTargetInSelection(selection, Grid);
+                if (hasValidTarget)
+                {
+                    ShowConfirmationButtons();
+                }
+                else
+                {
+                    HideConfirmationButtons();
+                }
+            }
+            else
+            {
+                HideConfirmationButtons();
+            }
+        }
+
+        #endregion
+
+        /*******************
+         * Knockback
+         * *****************/
+
+        public void ApplyKnockback(BattleCharacter character, int spaces, CharacterDirection direction)
+        {
+            knockbackManager.ApplyKnockback(character, spaces, direction);
+        }
+
+        public List<KnockbackCollisionData> RunKnockbacks()
+        {
+            return knockbackManager.RunKnockbacks();
         }
 
 
 
 
-
-        #endregion
         /******************
          * Skill UI
          * *****************/
@@ -209,6 +260,16 @@ namespace CombatSystem
         {
             skillUI.HideConfirmationButtons();
             skillUI.ShowSkipButton();
+        }
+
+        public void ShowConfirmationButtons()
+        {
+            skillUI.ShowConfirmationButtons();
+        }
+
+        public void HideConfirmationButtons()
+        {
+            skillUI.HideConfirmationButtons();
         }
 
         public void ShowSkillUI()
@@ -226,7 +287,6 @@ namespace CombatSystem
         public void CancelSelectedSkill()
         {
             SetSelectedSkill(null);
-            //Need to redo this
             State.Grid.SetTargetingData(null);
             State.Grid.SetTargetingSelection(null);
             

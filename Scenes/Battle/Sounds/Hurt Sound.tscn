@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqogq2o4y2nbm"]
+
+[ext_resource type="AudioStream" uid="uid://bb73ybsv8xrg4" path="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/03_crate_open_3.tres" id="1_qe65a"]
+[ext_resource type="AudioStream" uid="uid://nldlu2l1ibia" path="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/03_crate_open_1.tres" id="2_1u1gc"]
+[ext_resource type="Script" uid="uid://bp3bhwwld0hmx" path="res://Scripts/Utilities/DelayedAudio.cs" id="3_he46y"]
+[ext_resource type="Script" uid="uid://dfreciv7uxgbn" path="res://Scripts/Misc/DeleteParentAfterTime.cs" id="4_1u1gc"]
+
+[node name="HurtSound" type="Node"]
+
+[node name="03CrateOpen3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_qe65a")
+volume_db = 20.0
+autoplay = true
+
+[node name="03CrateOpen1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1u1gc")
+script = ExtResource("3_he46y")
+delay = 0.2
+
+[node name="Delete After Time" type="Node2D" parent="."]
+script = ExtResource("4_1u1gc")
+waitTime = 2.0

@@ -44,6 +44,18 @@ public partial class GameFlags : Node
         flags[flag] = amount;
     }
 
+    public void ToggleFlag(string flag)
+    {
+        if (CheckFlag(flag))
+        {
+            SetFlag(flag, 0);
+        }
+        else
+        {
+            SetFlag(flag, 1);
+        }
+    }
+
     public void AddFlag(string flag, int amount = 1)
     {
         if (!flags.ContainsKey(flag))

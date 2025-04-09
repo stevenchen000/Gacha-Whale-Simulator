@@ -17,7 +17,6 @@ metadata/_custom_type_script = ExtResource("6_mc5aw")
 script = ExtResource("7_v56mn")
 Icon = ExtResource("2_d7d1m")
 SkillName = "Attack++"
-duration = 2.0
 InfiniteUses = false
 Uses = 3
 effects = Array[Object]([SubResource("Resource_d7d1m")])

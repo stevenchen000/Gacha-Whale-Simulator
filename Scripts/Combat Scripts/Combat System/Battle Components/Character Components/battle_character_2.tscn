@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://cen0vf3wpj18o"]
+[gd_scene load_steps=37 format=3 uid="uid://cen0vf3wpj18o"]
 
 [ext_resource type="Script" uid="uid://c0mged6cixh87" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacter.cs" id="1_6ti8j"]
 [ext_resource type="Resource" uid="uid://6o7bcyw7lixn" path="res://Resources/Characters/default_ai.tres" id="2_s32lp"]
+[ext_resource type="PackedScene" uid="uid://dqogq2o4y2nbm" path="res://Scenes/Battle/Sounds/Hurt Sound.tscn" id="3_7dcjt"]
 [ext_resource type="Script" uid="uid://0jvj0y6dgjl5" path="res://Scripts/Utilities/FollowerNode.cs" id="3_vemd7"]
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="4_4wrv8"]
+[ext_resource type="PackedScene" uid="uid://dk8shavxdwyuk" path="res://Scenes/Battle/Sounds/Heal Sound.tscn" id="4_tg0p5"]
 [ext_resource type="Script" uid="uid://dm47nsarqwuf3" path="res://Scripts/Combat Scripts/Combat System/Stat System/UI/SlidingStatUI.cs" id="5_ki7hi"]
 [ext_resource type="Script" uid="uid://cbm4d4jqdx3c8" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleStatsManager.cs" id="6_jkeof"]
 [ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="6_vemd7"]
@@ -14,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://byxvuvp4q14tr" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/status_icon.tscn" id="9_jkeof"]
 [ext_resource type="Script" uid="uid://0yqurwny6p2n" path="res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacterFlags.cs" id="10_x5cup"]
 [ext_resource type="Script" uid="uid://ctrr6yltcf071" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillManager.cs" id="12_jkeof"]
+[ext_resource type="Texture2D" uid="uid://bba842myqhh4n" path="res://Art Assets/Battle Effects/BDragon Special Effects/Part 1/26.png" id="13_wrdih"]
 [ext_resource type="Script" uid="uid://c7q4vdnk44ni8" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillCaster.cs" id="13_x5cup"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki7hi"]
@@ -89,6 +92,144 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Follower Node/Character:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Follower Node/Character:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Follower Node/Character:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Follower Node/Death Sparkle:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Follower Node/Death Sparkle:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q7df3"]
+resource_name = "damage_blink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.566667, 0.7, 0.833333),
+"transitions": PackedFloat32Array(1, 0.392292, 1, 0.392292, 1, 0.392292, 0.105112),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.478431), Color(1, 1, 1, 1), Color(1, 1, 1, 0.478431), Color(1, 1, 1, 1), Color(1, 1, 1, 0.478431), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2jb60"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Follower Node/Character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.856901),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -12.5664]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Follower Node/Character:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 3.13834),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Follower Node/Character:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Follower Node/Death Sparkle:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(0, 2), Vector2i(13, 2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Follower Node/Death Sparkle:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(4, 4)]
+}
 
 [sub_resource type="Animation" id="Animation_uf5vx"]
 resource_name = "idle"
@@ -122,8 +263,9 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -29), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_7dcjt"]
-resource_name = "take_damage"
+[sub_resource type="Animation" id="Animation_rimud"]
+resource_name = "knock_down"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -131,30 +273,104 @@ tracks/0/path = NodePath("Follower Node/Character:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.333333, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.107879, 0.247631),
+"transitions": PackedFloat32Array(1, 0.258816, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-32, 0), Vector2(25, 0), Vector2(-20, 0), Vector2(0, 0)]
+"values": [Vector2(0, -3.8147e-06), Vector2(0, 50), Vector2(0, -3.8147e-06)]
+}
+
+[sub_resource type="Animation" id="Animation_nwb13"]
+resource_name = "knock_left"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.120138, 0.251309),
+"transitions": PackedFloat32Array(1, 0.31864, 1),
+"update": 0,
+"values": [Vector2(0, -3.8147e-06), Vector2(-50, 0), Vector2(0, -3.8147e-06)]
+}
+
+[sub_resource type="Animation" id="Animation_pfj37"]
+resource_name = "knock_right"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.115234, 0.245179),
+"transitions": PackedFloat32Array(1, 0.31864, 1),
+"update": 0,
+"values": [Vector2(0, -3.8147e-06), Vector2(50, 0), Vector2(0, -3.8147e-06)]
+}
+
+[sub_resource type="Animation" id="Animation_kyj0q"]
+resource_name = "knock_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.106146, 0.27),
+"transitions": PackedFloat32Array(1, 0.353553, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7dcjt"]
+resource_name = "take_damage"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Follower Node/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.333333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 0.406126, 2.63902),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-16, 0), Vector2(16, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w53k8"]
 _data = {
 &"RESET": SubResource("Animation_tg0p5"),
+&"damage_blink": SubResource("Animation_q7df3"),
+&"die": SubResource("Animation_2jb60"),
 &"idle": SubResource("Animation_uf5vx"),
 &"idle_turn": SubResource("Animation_wrdih"),
+&"knock_down": SubResource("Animation_rimud"),
+&"knock_left": SubResource("Animation_nwb13"),
+&"knock_right": SubResource("Animation_pfj37"),
+&"knock_up": SubResource("Animation_kyj0q"),
 &"take_damage": SubResource("Animation_7dcjt")
 }
 
-[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait", "characterPos", "Skills", "Stats", "Status", "Flags", "anim")]
+[node name="Battle Character" type="Node2D" node_paths=PackedStringArray("portrait", "characterPos", "PositionFollower", "Skills", "Stats", "Status", "Flags", "anim", "castManager")]
 script = ExtResource("1_6ti8j")
 portrait = NodePath("Follower Node/Character/Character2")
 characterPos = NodePath("Position")
+PositionFollower = NodePath("Follower Node")
 Skills = NodePath("Skill Manager")
 Stats = NodePath("Stats Container")
 Status = NodePath("Effect Manager")
 Flags = NodePath("Flag Manager")
 AI = ExtResource("2_s32lp")
 anim = NodePath("AnimationPlayer")
+castManager = NodePath("Skill Caster")
+hurtSound = ExtResource("3_7dcjt")
+healSound = ExtResource("4_tg0p5")
 
 [node name="Position" type="Node2D" parent="."]
 
@@ -319,6 +535,14 @@ breakColor = Color(1, 1, 1, 0.643137)
 character = NodePath("../../..")
 anim = NodePath("../Unbreak Counter/AnimationPlayer")
 
+[node name="Death Sparkle" type="Sprite2D" parent="Follower Node"]
+position = Vector2(-4, 11)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("13_wrdih")
+hframes = 14
+vframes = 9
+frame = 28
+
 [node name="Stats Container" type="Node2D" parent="."]
 script = ExtResource("6_jkeof")
 
@@ -339,7 +563,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_w53k8")
 }
 next/take_damage = &"idle"
-blend_times = [&"idle_turn", &"idle", 0.1, &"idle_turn", &"idle_turn", 0.1, &"idle_turn", &"take_damage", 0.1, &"take_damage", &"idle", 0.1]
+blend_times = [&"idle_turn", &"idle", 0.1, &"idle_turn", &"idle_turn", 0.1, &"idle_turn", &"take_damage", 0.1, &"take_damage", &"idle", 0.1, &"take_damage", &"take_damage", 0.1]
 
 [connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/HP Bar" method="UpdateDisplay"]
 [connection signal="StatChanged" from="Stats Container" to="Follower Node/Character/Amp" method="UpdateDisplay"]

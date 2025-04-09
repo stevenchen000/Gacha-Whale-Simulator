@@ -19,42 +19,47 @@ font_size = 35
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Skill 1" type="Control" node_paths=PackedStringArray("button", "nameLabel", "usesLabel", "elementIcon")]
-custom_minimum_size = Vector2(200, 200)
+[node name="Skill 1" type="Control" node_paths=PackedStringArray("button", "skillIcon", "skillBackground", "nameLabel", "usesLabel", "elementIcon")]
+custom_minimum_size = Vector2(153, 200)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 200.0
+offset_right = 153.0
 offset_bottom = 200.0
 size_flags_vertical = 8
 script = ExtResource("1_u1pkv")
 button = NodePath("Button")
+skillIcon = NodePath("Skill Icon")
+skillBackground = NodePath("Background")
 nameLabel = NodePath("Skill Name")
 usesLabel = NodePath("Uses Label")
 elementIcon = NodePath("Element Icon")
+enabledColor = Color(1, 1, 1, 1)
+disabledColor = Color(1, 1, 1, 0.529412)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 self_modulate = Color(0.42, 0, 0.00699989, 1)
-custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
-offset_right = 198.0
-offset_bottom = 198.0
+offset_right = 152.0
+offset_bottom = 200.0
 texture = ExtResource("2_4wbt3")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Skill Icon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 200.0
-offset_bottom = 200.0
-icon = ExtResource("2_jms7u")
-flat = true
-expand_icon = true
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 141.0
+offset_bottom = 182.0
+texture = ExtResource("2_jms7u")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Skill Name" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 144.0
-offset_right = 201.0
-offset_bottom = 227.0
+offset_left = -6.0
+offset_top = 145.0
+offset_right = 162.0
+offset_bottom = 228.0
 text = "A very long Skill Name"
 label_settings = SubResource("LabelSettings_jms7u")
 horizontal_alignment = 1
@@ -62,20 +67,28 @@ autowrap_mode = 2
 
 [node name="Uses Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 134.0
-offset_top = -2.0
-offset_right = 195.0
-offset_bottom = 47.0
+offset_left = 94.0
+offset_top = -18.0
+offset_right = 155.0
+offset_bottom = 31.0
 text = "5"
 label_settings = SubResource("LabelSettings_4wbt3")
 horizontal_alignment = 2
 
 [node name="Element Icon" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 47.0
 offset_bottom = 47.0
 texture = ExtResource("2_av5dd")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 202.0
+flat = true
+expand_icon = true
 
 [connection signal="button_up" from="Button" to="." method="OnClick"]

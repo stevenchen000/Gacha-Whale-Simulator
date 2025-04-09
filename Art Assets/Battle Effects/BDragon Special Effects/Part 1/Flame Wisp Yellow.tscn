@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx8awdvoxhbgy"]
+
+[ext_resource type="Texture2D" uid="uid://dwa2nekv56jd3" path="res://Art Assets/Battle Effects/BDragon Special Effects/Part 1/05.png" id="1_fxsv4"]
+[ext_resource type="Script" uid="uid://w3onuctjqs2q" path="res://Resources/Utilities/DeleteAfterAnimation.cs" id="2_jhefh"]
+
+[sub_resource type="Animation" id="Animation_fuhjs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("03:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vgeqd"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("03:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(0, 0), Vector2i(13, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3khe6"]
+_data = {
+&"RESET": SubResource("Animation_fuhjs"),
+&"run": SubResource("Animation_vgeqd")
+}
+
+[node name="ExplosionYellow" type="Node2D"]
+
+[node name="03" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_fxsv4")
+hframes = 14
+vframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3khe6")
+}
+autoplay = "run"
+
+[node name="Delete After Animation" type="Node2D" parent="."]
+script = ExtResource("2_jhefh")

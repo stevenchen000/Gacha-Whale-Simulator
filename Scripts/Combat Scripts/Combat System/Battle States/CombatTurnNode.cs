@@ -75,8 +75,8 @@ namespace CombatSystem
                     }
                     else if (timer.TimeIsBetween(1.5))
                     {
-                        var direction = enemyAction.Direction;
-                        battle.SelectDirection(direction);
+                        var selection = enemyAction.Selection;
+                        battle.SetTargetSelection(selection);
                     }else if (timer.TimeIsBetween(1.75))
                     {
                         battle.ConfirmAction();

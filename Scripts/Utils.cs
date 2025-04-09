@@ -62,6 +62,22 @@ public class Utils
         return result;
     }
 
+    public static T FindChildOfType<T>(Node node) where T : Node
+    {
+        T result = null;
+
+        foreach(var child in node.GetChildren())
+        {
+            if(child is T)
+            {
+                result = (T)child;
+                break;
+            }
+        }
+
+        return result;
+    }
+
     /*********************
      * Arrays
      * ****************/

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rkv7q30f7g6y"
+path="res://.godot/imported/12_human_jump_2.wav-557b8f9e05db9fa4cfc7af601cab6e52.sample"
+
+[deps]
+
+source_file="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/12_human_jump_2.wav"
+dest_files=["res://.godot/imported/12_human_jump_2.wav-557b8f9e05db9fa4cfc7af601cab6e52.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
