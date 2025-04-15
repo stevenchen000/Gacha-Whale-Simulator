@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6kgsi2b5avsm"]
+
+[ext_resource type="PackedScene" uid="uid://bslppprp865n" path="res://Scenes/Battle/UI/Reward Menu/exp_party_character.tscn" id="1_tw0yy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fkdpf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tw0yy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2qcic"]
+font_size = 120
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.462745)
+shadow_offset = Vector2(5, 5)
+
+[node name="ExpRewardDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.368627)
+layout_mode = 0
+offset_left = -409.0
+offset_top = -106.0
+offset_right = 1648.0
+offset_bottom = 2149.0
+texture = SubResource("CanvasTexture_fkdpf")
+
+[node name="Grid Border" type="TextureRect" parent="."]
+self_modulate = Color(0, 0.445827, 0.762719, 1)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 474.0
+offset_right = 1019.0
+offset_bottom = 1448.0
+texture = SubResource("CanvasTexture_tw0yy")
+
+[node name="Grid Background" type="TextureRect" parent="."]
+self_modulate = Color(0.356697, 0.765594, 1, 1)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 497.0
+offset_right = 999.0
+offset_bottom = 1425.0
+texture = SubResource("CanvasTexture_tw0yy")
+
+[node name="Grid" type="GridContainer" parent="Grid Background"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 916.0
+offset_bottom = 916.0
+columns = 3
+
+[node name="Exp Party Character" parent="Grid Background/Grid" instance=ExtResource("1_tw0yy")]
+layout_mode = 2
+
+[node name="Exp Party Character2" parent="Grid Background/Grid" instance=ExtResource("1_tw0yy")]
+layout_mode = 2
+
+[node name="Exp Party Character3" parent="Grid Background/Grid" instance=ExtResource("1_tw0yy")]
+layout_mode = 2
+
+[node name="Exp Party Character4" parent="Grid Background/Grid" instance=ExtResource("1_tw0yy")]
+layout_mode = 2
+
+[node name="Exp Party Character5" parent="Grid Background/Grid" instance=ExtResource("1_tw0yy")]
+layout_mode = 2
+
+[node name="Exp Party Character6" parent="Grid Background/Grid" instance=ExtResource("1_tw0yy")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Grid Background"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -209.0
+offset_right = 796.0
+offset_bottom = -44.0
+text = "Experience"
+label_settings = SubResource("LabelSettings_2qcic")
+horizontal_alignment = 1

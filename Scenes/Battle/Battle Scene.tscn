@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://8ssh07hfd56t"]
+[gd_scene load_steps=50 format=3 uid="uid://8ssh07hfd56t"]
 
 [ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs" id="1_w405p"]
 [ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
@@ -29,7 +29,9 @@
 [ext_resource type="Script" uid="uid://iuc77ubs2taf" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatPartyStatusNode.cs" id="16_i6b8p"]
 [ext_resource type="Script" uid="uid://cw7edjoho3dsp" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatKnockbackState.cs" id="19_ota0i"]
 [ext_resource type="Script" uid="uid://cxrkld6422mi1" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleKnockbackManager.cs" id="22_7x215"]
+[ext_resource type="Script" uid="uid://dv67h8cljn0ll" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatRewardNode.cs" id="23_wbcs6"]
 [ext_resource type="PackedScene" uid="uid://iyqrh30vxdn8" path="res://Scenes/Battle/Disable Animation Button.tscn" id="24_4k4b0"]
+[ext_resource type="PackedScene" uid="uid://dtx2dp8m7k77g" path="res://Scenes/Battle/UI/Reward Menu/Reward_Display.tscn" id="24_4ovav"]
 [ext_resource type="Script" uid="uid://cd1ag3d1dvcsb" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderDisplay.cs" id="27_3gaus"]
 [ext_resource type="PackedScene" uid="uid://bw78lro41fpk6" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/character_turn_display.tscn" id="28_yprcx"]
 [ext_resource type="Texture2D" uid="uid://xarvsperfjvd" path="res://Art Assets/UI/Menu Button.png" id="30_4k4b0"]
@@ -422,11 +424,16 @@ turnFinishedNode = NodePath("../../====Combat====/Living Status")
 
 [node name="====End of Combat====" type="Node2D" parent="States"]
 
-[node name="Victory State" type="Node2D" parent="States/====End of Combat===="]
+[node name="Victory State" type="Node2D" parent="States/====End of Combat====" node_paths=PackedStringArray("rewardNode")]
 script = ExtResource("10_xtcro")
+rewardNode = NodePath("../Rewards State")
 
 [node name="Loss State" type="Node2D" parent="States/====End of Combat===="]
 script = ExtResource("11_dfb8x")
+
+[node name="Rewards State" type="Node2D" parent="States/====End of Combat===="]
+script = ExtResource("23_wbcs6")
+rewardMenuScene = ExtResource("24_4ovav")
 
 [node name="Turn Data Manager" type="Node2D" parent="."]
 script = ExtResource("5_yhfgv")

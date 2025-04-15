@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LimitBreakRarity" load_steps=6 format=3 uid="uid://doxyuakswbeik"]
+
+[ext_resource type="Script" uid="uid://vphd6s1tsebv" path="res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakDict.cs" id="1_cvktb"]
+[ext_resource type="Resource" uid="uid://et024j2h56ky" path="res://Resources/Characters/Limit Break Data/Limit Break Dicts/N Rarity/n_n_lb_dict.tres" id="2_4e37x"]
+[ext_resource type="Resource" uid="uid://dy0mlmxy0xlgk" path="res://Resources/Characters/Limit Break Data/Limit Break Dicts/N Rarity/n_r_lb_dict.tres" id="3_a11hn"]
+[ext_resource type="Resource" uid="uid://byyhsj1xjxo3t" path="res://Resources/Characters/Limit Break Data/Limit Break Dicts/N Rarity/n_sr_lb_dict.tres" id="4_pknf0"]
+[ext_resource type="Script" uid="uid://c3c61k50gn13" path="res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakRarity.cs" id="6_fawgq"]
+
+[resource]
+script = ExtResource("6_fawgq")
+BaseRarity = 1
+dict = Dictionary[int, ExtResource("1_cvktb")]({
+1: ExtResource("2_4e37x"),
+2: ExtResource("3_a11hn"),
+3: ExtResource("4_pknf0")
+})
+metadata/_custom_type_script = "uid://c3c61k50gn13"

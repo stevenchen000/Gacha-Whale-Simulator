@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbh1towfguwmu"]
+
+[ext_resource type="Script" uid="uid://cwagu5msq4x7o" path="res://Resources/Stage Selection/Chapters/ChapterSelectionMenu.cs" id="1_b1gr7"]
+[ext_resource type="PackedScene" uid="uid://ewcsiwm2v34h" path="res://Scenes/Overworld/Stage Selection/chapter_button.tscn" id="2_0esvd"]
+[ext_resource type="Texture2D" uid="uid://dyvnfvb66sint" path="res://Art Assets/Backgrounds/Ocean_2/5.png" id="2_ilj4l"]
+[ext_resource type="PackedScene" uid="uid://x5xjdhaauevs" path="res://Scenes/Overworld/Stage Selection/Chapter_1_Menu.tscn" id="4_b1gr7"]
+[ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="5_daale"]
+
+[node name="ChapterSelectionMenu" type="Control" node_paths=PackedStringArray("Buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1gr7")
+Buttons = [NodePath("====Chapters====/Chapter Button"), NodePath("====Chapters====/Chapter Button2"), NodePath("====Chapters====/Chapter Button3"), NodePath("====Chapters====/Chapter Button4")]
+
+[node name="Background" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+modulate = Color(0.834012, 0.356281, 0, 1)
+position = Vector2(536, 778)
+scale = Vector2(2.59, 2.59)
+texture = ExtResource("2_ilj4l")
+
+[node name="====Chapters====" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Chapter Button" parent="====Chapters====" instance=ExtResource("2_0esvd")]
+offset_left = 388.0
+offset_top = 1447.0
+offset_right = 388.0
+offset_bottom = 1447.0
+Chapter = ExtResource("4_b1gr7")
+
+[node name="Chapter Button2" parent="====Chapters====" instance=ExtResource("2_0esvd")]
+offset_left = 818.0
+offset_top = 1169.0
+offset_right = 818.0
+offset_bottom = 1169.0
+
+[node name="Chapter Button3" parent="====Chapters====" instance=ExtResource("2_0esvd")]
+offset_left = 248.0
+offset_top = 986.0
+offset_right = 248.0
+offset_bottom = 986.0
+
+[node name="Chapter Button4" parent="====Chapters====" instance=ExtResource("2_0esvd")]
+offset_left = 836.0
+offset_top = 776.0
+offset_right = 836.0
+offset_bottom = 776.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(540, 960)
+
+[node name="OverworldMenu" parent="." node_paths=PackedStringArray("buttons") instance=ExtResource("5_daale")]
+layout_mode = 1
+buttons = [NodePath("Menu Bar/HBoxContainer/Home Button"), NodePath("Menu Bar/HBoxContainer/Party Button"), NodePath("Menu Bar/HBoxContainer/Upgrade Button"), null, NodePath("Menu Bar/HBoxContainer/Gacha Button"), NodePath("Menu Bar/HBoxContainer/Stages Button")]
+currentMenuIndex = 5

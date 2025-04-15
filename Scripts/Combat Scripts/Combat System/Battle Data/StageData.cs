@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Collections.Generic;
 
 namespace CombatSystem
 {
@@ -57,12 +58,29 @@ namespace CombatSystem
             int newStars = CalculateNewStarCount(state);
 
             var rewards = CalculateRewardsForStars(currStars, newStars);
-            rewards.AddRange(Rewards);
             SetStarCount(newStars);
 
-            var eventArgs = new StageCompletionData(currStars, newStars, rewards, ExpGained);
+            var levelUps = AddExpToCharacters(state);
+            var eventArgs = new StageCompletionData(currStars, newStars, rewards, levelUps, ExpGained);
             return eventArgs;
         }
+
+        private List<LevelUpData> AddExpToCharacters(BattleState state)
+        {
+            var characters = state.PlayerCharacters;
+            List<LevelUpData> result = new List<LevelUpData>();
+            if (characters != null)
+            {
+                foreach (var character in characters)
+                {
+                    var data = character.AddExp(ExpGained);
+                    result.Add(data);
+                }
+            }
+            return result;
+        }
+
+
 
         private Array<StageReward> CalculateRewardsForStars(int currStars, int newStars)
         {
@@ -83,7 +101,7 @@ namespace CombatSystem
                         break;
                 }
             }
-
+            result.AddRange(Rewards);
             return result;
         }
 

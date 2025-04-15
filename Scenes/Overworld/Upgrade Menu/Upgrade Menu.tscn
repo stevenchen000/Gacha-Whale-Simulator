@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7ad5ckcqdyce"]
+[gd_scene load_steps=10 format=3 uid="uid://b7ad5ckcqdyce"]
 
 [ext_resource type="Script" uid="uid://cslfykb5mpgg7" path="res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/UpgradeMenu.cs" id="1_du8bk"]
+[ext_resource type="PackedScene" uid="uid://b4ee0ghy6sxt4" path="res://Scenes/Overworld/Upgrade Menu/CharacterLevelAndLBMenu.tscn" id="2_k5gb6"]
 [ext_resource type="Script" uid="uid://d15cnaj0wadml" path="res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/CharacterSelector.cs" id="2_yroo8"]
 [ext_resource type="PackedScene" uid="uid://jdrlgyxwcp8p" path="res://Scenes/Overworld/Upgrade Menu/character_button.tscn" id="3_o7mtf"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="4_k0yah"]
@@ -25,9 +26,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_du8bk")
 grid = NodePath("Grid/GridContainer")
+levelUpgradeScene = ExtResource("2_k5gb6")
 
-[node name="OverworldMenu" parent="." instance=ExtResource("4_k0yah")]
+[node name="OverworldMenu" parent="." node_paths=PackedStringArray("buttons") instance=ExtResource("4_k0yah")]
 layout_mode = 1
+buttons = [NodePath("Menu Bar/HBoxContainer/Home Button"), NodePath("Menu Bar/HBoxContainer/Party Button"), NodePath("Menu Bar/HBoxContainer/Upgrade Button"), null, NodePath("Menu Bar/HBoxContainer/Gacha Button"), NodePath("Menu Bar/HBoxContainer/Stages Button"), NodePath("Menu Bar/HBoxContainer/Shop Button")]
 currentMenuIndex = 2
 
 [node name="Grid" type="TextureRect" parent="."]

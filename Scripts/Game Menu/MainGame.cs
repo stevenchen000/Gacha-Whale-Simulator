@@ -5,16 +5,7 @@ using Godot.Collections;
 
 public partial class MainGame : Node
 {
-    [ExportCategory("Menus")]
-    [Export] private PackedScene characterCreatorScene;
-    [Export] private PackedScene battleScene;
-    [Export] private PackedScene homeScene;
-    [Export] private PackedScene partyScene;
-    [Export] private PackedScene gachaScene;
-    [Export] private PackedScene stageSelectionScene;
-    [Export] private PackedScene upgradeMenuScene;
-    [Export] private PackedScene roomMenuScene;
-
+    
     [ExportCategory("Battle Data")]
     [Export] public Array<CharacterData> playerParty { get; private set; }
     [Export] public StageData StageData { get; private set; }
@@ -30,7 +21,7 @@ public partial class MainGame : Node
 
     private void InitMenu()
     {
-        OpenMenu(roomMenuScene);
+        OpenMenu(SceneLibrary.PlayerRoomScene);
     }
 
     public override void _Process(double delta)
@@ -46,41 +37,41 @@ public partial class MainGame : Node
 
     public void OpenCharacterCreator()
     {
-        OpenMenu(characterCreatorScene);
+        //OpenMenu(SceneLibrary.scene);
     }
 
     public void OpenGachaMenu()
     {
-        OpenMenu(gachaScene);
+        OpenMenu(SceneLibrary.GachaScene);
     }
 
     public void OpenPartyMenu()
     {
-        OpenMenu(partyScene);
+        OpenMenu(SceneLibrary.PartyMenuScene);
     }
 
     public void OpenStageSelectionMenu()
     {
-        OpenMenu(stageSelectionScene);
+        OpenMenu(SceneLibrary.StageSelectionScene);
     }
 
     public void OpenBattleMenu()
     {
-        OpenMenu(battleScene);
+        OpenMenu(SceneLibrary.BattleScene);
     }
     public void OpenHomeMenu()
     {
-        OpenMenu(homeScene);
+        OpenMenu(SceneLibrary.HomeScene);
     }
 
     public void OpenUpgradeMenu()
     {
-        OpenMenu(upgradeMenuScene);
+        OpenMenu(SceneLibrary.UpgradeMenuScene);
     }
 
     public void OpenRoomMenu()
     {
-        OpenMenu(roomMenuScene);
+        OpenMenu(SceneLibrary.PlayerRoomScene);
     }
 
     #endregion
@@ -89,9 +80,17 @@ public partial class MainGame : Node
 
     public void OpenMenu(PackedScene menu)
     {
+        LoadScreen.Activate();
+        double transitionTime = LoadScreen.TransitionTime;
+        DelayedCalls.AddCall(transitionTime, () => _OpenMenu(menu));
+    }
+
+    private void _OpenMenu(PackedScene menu)
+    {
         CloseMenu(currMenu);
         var gameMenu = (GameMenu)(Utils.InstantiateCopy(menu));
         AddChild(gameMenu);
+        MoveChild(gameMenu, 0);
         gameMenu._Init();
         currMenu = gameMenu;
     }

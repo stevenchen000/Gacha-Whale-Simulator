@@ -5,6 +5,7 @@ namespace InventorySystem
     {
         Currency,
         GameItem,
-        RealItem
+        RealItem,
+        UpgradeItem
     }
 }

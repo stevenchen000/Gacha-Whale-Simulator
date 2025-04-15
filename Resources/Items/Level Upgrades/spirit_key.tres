@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://s2fnn4a8h738"]
+
+[ext_resource type="Script" uid="uid://cl722yw1v47w6" path="res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs" id="1_bpw6v"]
+[ext_resource type="Texture2D" uid="uid://bdle3b7pvhmt0" path="res://Art Assets/Shapes/Sungraphica/Key Yellow.png" id="1_hiubx"]
+
+[resource]
+script = ExtResource("1_bpw6v")
+Icon = ExtResource("1_hiubx")
+ID = 0
+ItemName = "Spirit Key"
+type = 3
+Description = "A mystical key used to limit break any character."
+metadata/_custom_type_script = "uid://cl722yw1v47w6"

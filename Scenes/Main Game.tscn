@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=45 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
-[ext_resource type="PackedScene" uid="uid://cotgta0ltok1r" path="res://Scenes/Game Scenes/Character Creator Menu.tscn" id="2_vfyon"]
 [ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Battle/Battle Scene.tscn" id="3_f8l6p"]
 [ext_resource type="PackedScene" uid="uid://b43nu8dco1xr2" path="res://Scenes/file_manager.tscn" id="4_506lw"]
 [ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="4_572h4"]
@@ -10,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://c4tahpphjlhfs" path="res://Resources/Characters/Character Data/test_player_healer.tres" id="5_mxwxv"]
 [ext_resource type="PackedScene" uid="uid://hw1mi7nr68ev" path="res://Scenes/Overworld/Party Menu/Party Menu.tscn" id="5_utuun"]
 [ext_resource type="Resource" uid="uid://rd4nkvr3ixkd" path="res://Resources/Characters/Character Data/test_player_tank.tres" id="6_jnj4c"]
-[ext_resource type="PackedScene" uid="uid://cqqa05wypaxiq" path="res://Scenes/Overworld/Stage Selection/Stage Selection Menu.tscn" id="6_u6ta2"]
 [ext_resource type="Resource" uid="uid://vkjf1hjsu2ex" path="res://Resources/Characters/Character Data/test_player_warrior.tres" id="7_u6ta2"]
 [ext_resource type="Resource" uid="uid://beeikrtu3ncsq" path="res://Resources/Overworld/Battles/basic_stage.tres" id="8_572h4"]
 [ext_resource type="PackedScene" uid="uid://b7ad5ckcqdyce" path="res://Scenes/Overworld/Upgrade Menu/Upgrade Menu.tscn" id="8_utuun"]
@@ -31,9 +29,22 @@
 [ext_resource type="Resource" uid="uid://bi6f6w3gybl8u" path="res://Resources/Characters/Skills/Elements/wind_element.tres" id="29_ohcb0"]
 [ext_resource type="Resource" uid="uid://bwb46tp8gc6se" path="res://Resources/Characters/Skills/Elements/earth_element.tres" id="30_n5tqu"]
 [ext_resource type="Resource" uid="uid://uwml6uoq7y07" path="res://Resources/Characters/Skills/Elements/light_element.tres" id="31_hlcih"]
+[ext_resource type="PackedScene" uid="uid://bbh1towfguwmu" path="res://Scenes/Overworld/Stage Selection/chapter_selection_menu.tscn" id="32_ebwyl"]
 [ext_resource type="Resource" uid="uid://du01f4eike5ym" path="res://Resources/Characters/Skills/Elements/arcane_element.tres" id="32_pjnjj"]
 [ext_resource type="Resource" uid="uid://dsmxegoikjnkm" path="res://Resources/Characters/Skills/Elements/dark_element.tres" id="33_4iwjo"]
 [ext_resource type="Script" uid="uid://bmhv81gdosbu3" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/ISkillEffect/BDragonElementChart.cs" id="35_ohcb0"]
+[ext_resource type="Script" uid="uid://2so6n6r0cjc6" path="res://Scripts/Utilities/Delayed Call/DelayedCalls.cs" id="36_5m6pt"]
+[ext_resource type="Script" uid="uid://desdl2uxhwfir" path="res://Scripts/Overworld Scripts/SceneLibrary.cs" id="36_ohcb0"]
+[ext_resource type="Script" uid="uid://dsaba2d1ytica" path="res://Scripts/Constants/ItemNames.cs" id="36_pjnjj"]
+[ext_resource type="Resource" uid="uid://s2fnn4a8h738" path="res://Resources/Items/Level Upgrades/spirit_key.tres" id="37_4iwjo"]
+[ext_resource type="Script" uid="uid://eydv267c20ic" path="res://Scripts/Utilities/Scene Manager/LoadScreen.cs" id="37_ohcb0"]
+[ext_resource type="Script" uid="uid://d37uoyiu3plfg" path="res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakAmounts.cs" id="38_d1u2s"]
+[ext_resource type="Resource" uid="uid://6upsx6shuwto" path="res://Resources/Characters/Limit Break Data/Rarity Lists/n_rarity_lbs.tres" id="39_7mxnp"]
+[ext_resource type="Resource" uid="uid://doxyuakswbeik" path="res://Resources/Characters/Limit Break Data/Rarity Lists/r_rarity_lbs.tres" id="40_3gkku"]
+[ext_resource type="Resource" uid="uid://dr0140tb31js1" path="res://Resources/Characters/Limit Break Data/Rarity Lists/sr_rarity_lbs.tres" id="41_qwau0"]
+[ext_resource type="Resource" uid="uid://3ftxppnw0i0w" path="res://Resources/Characters/Limit Break Data/Rarity Lists/ssr_rarity_lbs.tres" id="42_ktw2p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n5tqu"]
 
 [node name="MainGame" type="Control"]
 layout_mode = 3
@@ -43,14 +54,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qiwpt")
-characterCreatorScene = ExtResource("2_vfyon")
-battleScene = ExtResource("3_f8l6p")
-homeScene = ExtResource("4_lay86")
-partyScene = ExtResource("5_utuun")
-gachaScene = ExtResource("4_mxwxv")
-stageSelectionScene = ExtResource("6_u6ta2")
-upgradeMenuScene = ExtResource("8_utuun")
-roomMenuScene = ExtResource("9_xq76o")
 playerParty = Array[Object]([ExtResource("4_572h4"), ExtResource("5_mxwxv"), ExtResource("6_jnj4c"), ExtResource("7_u6ta2")])
 StageData = ExtResource("8_572h4")
 
@@ -95,6 +98,7 @@ ExtResource("32_pjnjj"): ExtResource("31_hlcih")
 }
 
 [node name="BDragon Element Chart" type="Node2D" parent="Variables"]
+editor_description = "Used to get the correct color for BDragon sprites' based on element"
 script = ExtResource("35_ohcb0")
 elementChart = Dictionary[Object, int]({
 ExtResource("27_0hpn3"): 7,
@@ -105,3 +109,46 @@ ExtResource("31_hlcih"): 5,
 ExtResource("33_4iwjo"): 8,
 ExtResource("32_pjnjj"): 1
 })
+
+[node name="Scene Library" type="Node2D" parent="Variables"]
+script = ExtResource("36_ohcb0")
+_playerRoomScene = ExtResource("9_xq76o")
+_homeScene = ExtResource("4_lay86")
+_partyScene = ExtResource("5_utuun")
+_gachaScene = ExtResource("4_mxwxv")
+_stageSelectionScene = ExtResource("32_ebwyl")
+_upgradeMenuScene = ExtResource("8_utuun")
+_battleScene = ExtResource("3_f8l6p")
+
+[node name="Event Library" type="Node2D" parent="Variables"]
+
+[node name="Item Names" type="Node2D" parent="Variables"]
+script = ExtResource("36_pjnjj")
+_spiritKeys = ExtResource("37_4iwjo")
+
+[node name="Limit Break Amounts" type="Node2D" parent="Variables"]
+script = ExtResource("38_d1u2s")
+rarityList = Array[Object]([ExtResource("39_7mxnp"), ExtResource("40_3gkku"), ExtResource("41_qwau0"), ExtResource("42_ktw2p")])
+
+[node name="Delayed Calls" type="Node2D" parent="."]
+script = ExtResource("36_5m6pt")
+
+[node name="Load Screen" type="Control" parent="." node_paths=PackedStringArray("loadScreen")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("37_ohcb0")
+loadScreen = NodePath("TextureRect")
+loadScreenColor = Color(0, 0, 0, 1)
+transitionTime = 0.5
+
+[node name="TextureRect" type="TextureRect" parent="Load Screen"]
+modulate = Color(0, 0, 0, 1)
+z_index = 4000
+layout_mode = 0
+offset_left = -1664.0
+offset_top = -960.0
+offset_right = 4547.0
+offset_bottom = 3630.0
+mouse_filter = 0
+texture = SubResource("CanvasTexture_n5tqu")

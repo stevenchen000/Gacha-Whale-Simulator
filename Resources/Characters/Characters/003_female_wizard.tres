@@ -20,5 +20,4 @@ Element = ExtResource("2_ybi85")
 Class = ExtResource("1_j0fq0")
 Role = ExtResource("2_igyl3")
 SkillSet = ExtResource("2_gpjd0")
-movement = 3
 metadata/_custom_type_script = "uid://gdabyn413d1c"

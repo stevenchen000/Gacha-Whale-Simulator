@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://dga43qxg6lsac"]
+
+[ext_resource type="Script" uid="uid://c4sn6nq34sd2e" path="res://Scripts/Overworld Scripts/Inventory System/UI/ItemDisplayUI.cs" id="1_llptb"]
+[ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="1_sa47n"]
+[ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="2_llptb"]
+[ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="3_qw16b"]
+[ext_resource type="AudioStream" uid="uid://cu7q4v84i1h0d" path="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/01_chest_open_1.tres" id="5_qw16b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qw16b"]
+font_size = 80
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 0.533333)
+shadow_offset = Vector2(6, 6)
+
+[sub_resource type="Animation" id="Animation_qw16b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Size Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 0.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_llptb"]
+resource_name = "pop_in"
+length = 0.23
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Size Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.132445, 0.207836),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjun4"]
+_data = {
+&"RESET": SubResource("Animation_qw16b"),
+&"pop_in": SubResource("Animation_llptb")
+}
+
+[node name="ItemSlotScene" type="Control" node_paths=PackedStringArray("textureDisplay", "amountDisplay", "anim", "sizeControl")]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -880.0
+offset_bottom = -1720.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_llptb")
+textureDisplay = NodePath("Size Control/Background/Item Icon")
+amountDisplay = NodePath("Size Control/Amount")
+anim = NodePath("AnimationPlayer")
+sizeControl = NodePath("Size Control")
+
+[node name="Size Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 100.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Background" type="TextureRect" parent="Size Control"]
+self_modulate = Color(0.2542, 0.82, 0.55596, 1)
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sa47n")
+
+[node name="Item Icon" type="TextureRect" parent="Size Control/Background"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 232.0
+offset_bottom = 232.0
+texture = ExtResource("2_llptb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Border" type="TextureRect" parent="Size Control"]
+self_modulate = Color(0.175264, 0.519402, 0.357379, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qw16b")
+
+[node name="Amount" type="Label" parent="Size Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 47.5
+offset_top = 41.25
+offset_right = 138.5
+offset_bottom = 151.25
+text = "10"
+label_settings = SubResource("LabelSettings_qw16b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wjun4")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qw16b")

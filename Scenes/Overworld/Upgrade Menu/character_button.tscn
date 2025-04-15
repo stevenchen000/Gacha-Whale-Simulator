@@ -4,9 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="2_04r31"]
 [ext_resource type="Resource" uid="uid://150emt5bvsil" path="res://Resources/UI/Portrait Boxes/character_border.tres" id="2_vjshm"]
 
-[node name="Character Button" type="Button" node_paths=PackedStringArray("display")]
+[node name="Character Button" type="Control" node_paths=PackedStringArray("display")]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(230, 230)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 230.0
 offset_bottom = 230.0
 script = ExtResource("1_v3ct1")
@@ -17,3 +19,11 @@ borderSR = ExtResource("2_vjshm")
 offset_right = 120.0
 offset_bottom = 120.0
 scale = Vector2(1.9, 1.9)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 226.0
+offset_bottom = 226.0
+flat = true
+
+[connection signal="button_up" from="Button" to="." method="OnClick"]

@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_nckim")
-buttons = [NodePath("Menu Bar/HBoxContainer/Home Button"), NodePath("Menu Bar/HBoxContainer/Party Button"), NodePath("Menu Bar/HBoxContainer/Upgrade Button"), null, NodePath("Menu Bar/HBoxContainer/Gacha Button"), NodePath("Menu Bar/HBoxContainer/Stages Button")]
+buttons = [NodePath("Menu Bar/HBoxContainer/Home Button"), NodePath("Menu Bar/HBoxContainer/Party Button"), NodePath("Menu Bar/HBoxContainer/Upgrade Button"), null, NodePath("Menu Bar/HBoxContainer/Gacha Button"), NodePath("Menu Bar/HBoxContainer/Stages Button"), NodePath("Menu Bar/HBoxContainer/Shop Button")]
 
 [node name="RankUi" parent="." instance=ExtResource("4_m082k")]
 
@@ -146,6 +146,25 @@ offset_top = 151.395
 offset_right = 164.945
 offset_bottom = 230.395
 text = "Quests"
+label_settings = SubResource("LabelSettings_i5ara")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Shop Button" type="Button" parent="Menu Bar/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+icon = ExtResource("1_ynnhp")
+flat = true
+expand_icon = true
+script = ExtResource("3_m082k")
+
+[node name="Label5" type="Label" parent="Menu Bar/HBoxContainer/Shop Button"]
+layout_mode = 0
+offset_left = -11.055
+offset_top = 151.395
+offset_right = 164.945
+offset_bottom = 230.395
+text = "Shop"
 label_settings = SubResource("LabelSettings_i5ara")
 horizontal_alignment = 1
 autowrap_mode = 2

@@ -7,8 +7,6 @@ public partial class UpgradeMenu : GameMenu
     [Export] private CharacterSelector grid;
     [Export] private PackedScene levelUpgradeScene;
 
-    private CharacterData selectedCharacter;
-
 
     public override void _Ready()
     {
@@ -16,7 +14,7 @@ public partial class UpgradeMenu : GameMenu
 
     }
 
-    private void Init()
+    public override void _Init()
     {
         grid.SubscribeEvent(SetData);
     }
@@ -27,21 +25,26 @@ public partial class UpgradeMenu : GameMenu
         grid = null;
     }
 
+    public void CloseLimitBreakMenu()
+    {
+        
+    }
+
     private void SetData(CharacterData data)
     {
-        if (data != selectedCharacter)
+        Utils.Print(this, "Called func");
+        if(data != null)
         {
-            selectedCharacter = data;
-        }
-        else
-        {
-            OpenLevelUpgradeMenu();
+            OpenLevelUpgradeMenu(data);
+            Utils.Print(this, "Opening upgrade menu");
         }
     }
 
 
-    private void OpenLevelUpgradeMenu()
+    private void OpenLevelUpgradeMenu(CharacterData character)
     {
-        
+        var menu = Utils.InstantiateCopy<CharacterUpgradeMenu>(levelUpgradeScene);
+        menu.Init(character);
+        AddChild(menu);
     }
 }

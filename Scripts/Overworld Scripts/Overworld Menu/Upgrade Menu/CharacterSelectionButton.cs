@@ -3,7 +3,7 @@ using CombatSystem;
 using Godot;
 
 
-public partial class CharacterSelectionButton : Button
+public partial class CharacterSelectionButton : Control
 {
     [Export] private CharacterPortraitDisplay display;
     [Export] private PortraitBorder borderR;
@@ -19,7 +19,6 @@ public partial class CharacterSelectionButton : Button
     public override void _Ready()
     {
         base._Ready();
-        Pressed += () => onButtonClick.Invoke(data);
     }
 
     public override void _Notification(int what)
@@ -36,6 +35,12 @@ public partial class CharacterSelectionButton : Button
         data = newData;
         var portrait = data.GetPortrait();
         display.UpdatePortrait(portrait);
+    }
+
+    public void OnClick()
+    {
+        Utils.Print(this, "Button clicked");
+        onButtonClick?.Invoke(data);
     }
 
     /**************

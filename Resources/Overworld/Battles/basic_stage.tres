@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StageData" load_steps=9 format=3 uid="uid://beeikrtu3ncsq"]
+[gd_resource type="Resource" script_class="StageData" load_steps=12 format=3 uid="uid://beeikrtu3ncsq"]
 
 [ext_resource type="Resource" uid="uid://d3ventvjbmecp" path="res://Resources/Characters/Character Data/test_enemy.tres" id="1_qxwlk"]
 [ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="2_ckakm"]
@@ -8,6 +8,14 @@
 [ext_resource type="Resource" uid="uid://rd4nkvr3ixkd" path="res://Resources/Characters/Character Data/test_player_tank.tres" id="4_jwixc"]
 [ext_resource type="Resource" uid="uid://vkjf1hjsu2ex" path="res://Resources/Characters/Character Data/test_player_warrior.tres" id="5_q4l2t"]
 [ext_resource type="Script" uid="uid://c6goqmweg7q6a" path="res://Scripts/Combat Scripts/Combat System/Battle Data/StageData.cs" id="7_1kyhe"]
+[ext_resource type="Resource" uid="uid://bquphtsiogc6m" path="res://Resources/Items/money.tres" id="8_jwixc"]
+[ext_resource type="Script" uid="uid://dq5ghgfs18min" path="res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Rewards/ItemReward.cs" id="9_q4l2t"]
+
+[sub_resource type="Resource" id="Resource_d4ux6"]
+script = ExtResource("9_q4l2t")
+item = ExtResource("8_jwixc")
+amount = 1
+metadata/_custom_type_script = "uid://dq5ghgfs18min"
 
 [resource]
 script = ExtResource("7_1kyhe")
@@ -29,7 +37,7 @@ TwoStarCondition = ExtResource("2_lphig")
 TwoStarReward = ExtResource("3_ckakm")
 ThreeStarCondition = ExtResource("2_lphig")
 ThreeStarReward = ExtResource("3_ckakm")
-Rewards = Array[Resource]([ExtResource("3_ckakm")])
+Rewards = Array[Resource]([ExtResource("3_ckakm"), SubResource("Resource_d4ux6")])
 OverridePlayerParty = false
 PlayerParty = Array[Object]([ExtResource("2_ckakm"), ExtResource("3_lphig"), ExtResource("4_jwixc"), ExtResource("5_q4l2t")])
 metadata/_custom_type_script = "uid://c6goqmweg7q6a"

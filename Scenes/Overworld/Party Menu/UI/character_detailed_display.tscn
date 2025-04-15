@@ -1,0 +1,143 @@
+[gd_scene load_steps=13 format=3 uid="uid://cj5rt8017olgn"]
+
+[ext_resource type="Script" uid="uid://djj2a2mevrxmf" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_71qan"]
+[ext_resource type="Script" uid="uid://cf58jp36ttiv" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterDetailedDisplay.cs" id="1_ujg4q"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="2_ujg4q"]
+[ext_resource type="Script" uid="uid://d34i32dihunmy" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterRarityDisplay.cs" id="3_oog8v"]
+[ext_resource type="PackedScene" uid="uid://wismfg5tyquq" path="res://Scenes/Overworld/Party Menu/UI/rarity_star.tscn" id="4_wgrxb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i1ysq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uiub3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ntapu"]
+font_size = 45
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.498039)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rd4sn"]
+font_size = 35
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.501961)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_ctswo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kdkcc"]
+resource_name = "Slide In"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector2(0, 1957), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stix8"]
+_data = {
+&"RESET": SubResource("Animation_ctswo"),
+&"Slide In": SubResource("Animation_kdkcc")
+}
+
+[node name="CharacterDetailedDisplay" type="Control" node_paths=PackedStringArray("display", "nameLabel", "levelLabel", "lbDisplay")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ujg4q")
+display = NodePath("Background")
+nameLabel = NodePath("Background/Name")
+levelLabel = NodePath("Background/Level")
+lbDisplay = NodePath("Background/Stars")
+
+[node name="Background" type="TextureRect" parent="." node_paths=PackedStringArray("background", "portraitElement")]
+self_modulate = Color(0.195484, 0.257636, 0.530667, 1)
+layout_mode = 0
+offset_right = 1002.0
+offset_bottom = 193.0
+texture = SubResource("CanvasTexture_i1ysq")
+script = ExtResource("1_71qan")
+background = NodePath("TextureRect")
+portraitElement = NodePath("TextureRect/Sprite2D")
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+clip_children = 1
+layout_mode = 0
+offset_left = 35.0
+offset_right = 230.0
+offset_bottom = 195.0
+texture = SubResource("CanvasTexture_uiub3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/TextureRect"]
+position = Vector2(-11, 487)
+texture = ExtResource("2_ujg4q")
+
+[node name="Name" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 11.0
+offset_right = 471.0
+offset_bottom = 74.0
+text = "Wizard 1"
+label_settings = SubResource("LabelSettings_ntapu")
+
+[node name="Level" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 70.0
+offset_right = 432.0
+offset_bottom = 119.0
+text = "Lv 10/50"
+label_settings = SubResource("LabelSettings_rd4sn")
+
+[node name="Stars" type="HBoxContainer" parent="Background" node_paths=PackedStringArray("stars")]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 128.0
+offset_right = 942.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+script = ExtResource("3_oog8v")
+stars = [NodePath("Star1"), NodePath("Star2"), NodePath("Star3"), NodePath("Star4"), NodePath("Star5")]
+
+[node name="Star1" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
+layout_mode = 2
+
+[node name="Star2" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
+layout_mode = 2
+
+[node name="Star3" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
+layout_mode = 2
+
+[node name="Star4" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
+layout_mode = 2
+
+[node name="Star5" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_stix8")
+}

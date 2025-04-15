@@ -32,7 +32,13 @@ public partial class TouchHandler : Node
     /// 0 if not pinching
     /// </summary>
     public static float PinchDelta { get; private set; } = 0;
+    /// <summary>
+    /// Location of the center of the current pinch
+    /// </summary>
     public static Vector2 PinchPosition { get; private set; }
+    /// <summary>
+    /// How much the center of the pinch moved
+    /// </summary>
     public static Vector2 PinchMovement { get; private set; }
 
     public override void _Ready()

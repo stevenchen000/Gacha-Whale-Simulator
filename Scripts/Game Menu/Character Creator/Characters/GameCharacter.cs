@@ -19,6 +19,7 @@ public partial class GameCharacter : Resource
     [Export] public CharacterRole Role { get; private set; }
     [Export] public SkillLoadout SkillSet { get; protected set; }
     [Export] public CombatAI EnemyAI { get; protected set; }
+    [Export] public PowercreepLevelData Powercreep { get; protected set; }
     
     public WeaponType Weapon 
     { 
@@ -28,7 +29,6 @@ public partial class GameCharacter : Resource
         }
     }
 
-    [Export] private int movement;
 
 
     public virtual CharacterPortrait GetPortrait()
@@ -36,7 +36,6 @@ public partial class GameCharacter : Resource
         return portrait;
     }
 
-    public int GetMovement() { return movement; }
 
 
 

@@ -4,10 +4,20 @@ using EventSystem;
 
 public partial class LoadScreen : Node
 {
+    private static LoadScreen _instance;
+
     [Export] private TextureRect loadScreen;
     [Export] private Color loadScreenColor;
     [Export] private Color loadScreenDisabledColor;
     [Export] private float transitionTime;
+    public static float TransitionTime 
+    { 
+        get
+        {
+            return _instance.transitionTime;
+        } 
+    }
+
 
     [Export] private VoidEvent OnFadeOutStarted;
     [Export] private VoidEvent OnFadeOutFinished;
@@ -21,7 +31,13 @@ public partial class LoadScreen : Node
 
     public override void _Ready()
     {
-        Init();
+        if (_instance == null)
+        {
+            _instance = this;
+            Init();
+        }
+        else
+            QueueFree();
     }
 
     public override void _Process(double delta)
@@ -35,21 +51,26 @@ public partial class LoadScreen : Node
         SetScreenColor(loadScreenColor);
         ChangeState(LoadScreenState.FADING_IN);
         //Called by Scene Manager when the actual scene swapping happens
-        OnSceneLoad?.SubscribeEvent(() => ChangeState(LoadScreenState.FADING_IN));
+        //OnSceneLoad?.SubscribeEvent(() => ChangeState(LoadScreenState.FADING_IN));
     }
 
-    public void Activate()
+    public static void Activate()
     {
-        ChangeState(LoadScreenState.FADING_OUT);
+        _instance.ChangeState(LoadScreenState.FADING_OUT);
     }
 
+    public static void Deactivate()
+    {
+        _instance.ChangeState(LoadScreenState.FADING_IN);
+    }
+    
     private void RunState(double delta)
     {
         switch (state)
         {
             case LoadScreenState.FADING_OUT:
                 TransitionToColor(loadScreenColor);
-                ChangeStateAtTime(LoadScreenState.LOADING_SCENE, transitionTime, delta);
+                //ChangeStateAtTime(LoadScreenState.LOADING_SCENE, transitionTime, delta);
                 break;
             case LoadScreenState.FADING_IN:
                 TransitionToColor(loadScreenDisabledColor);
@@ -79,18 +100,18 @@ public partial class LoadScreen : Node
         switch (newState)
         {
             case LoadScreenState.FADING_OUT:
-                OnFadeOutStarted?.RaiseEvent(this);
+                SetActive();
                 break;
             case LoadScreenState.FADING_IN:
-                OnFadeInStarted?.RaiseEvent(this);
+                //OnFadeInStarted?.RaiseEvent(this);
                 break;
             case LoadScreenState.LOADING_SCENE:
-                OnFadeOutFinished?.RaiseEvent(this);
+                //OnFadeOutFinished?.RaiseEvent(this);
                 SetScreenColor(loadScreenColor);
                 transitionTimer = 0;
                 break;
             case LoadScreenState.INACTIVE:
-                OnFadeInFinished?.RaiseEvent(this);
+                SetInactive();
                 SetScreenColor(loadScreenDisabledColor);
                 transitionTimer = 0;
                 break;
@@ -101,10 +122,22 @@ public partial class LoadScreen : Node
     }
 
 
+    private void SetInactive()
+    {
+        loadScreen.Position = new Vector2(99999, 99999);
+        loadScreen.Scale = Vector2.Zero;
+    }
+
+    private void SetActive()
+    {
+        loadScreen.Position = Vector2.Zero;
+        loadScreen.Scale = Vector2.One;
+    }
+
     private void TransitionToColor(Color color)
     {
         var screenColor = loadScreen.Modulate;
-        screenColor = screenColor.Lerp(color, 0.02f);
+        screenColor = screenColor.Lerp(color, 0.05f);
         loadScreen.Modulate = screenColor;
     }
 
@@ -125,4 +158,5 @@ public partial class LoadScreen : Node
             transitionTimer += (float)delta;
         }
     }
+    
 }

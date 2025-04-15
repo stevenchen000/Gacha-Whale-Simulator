@@ -1,0 +1,319 @@
+[gd_scene load_steps=14 format=3 uid="uid://b4ee0ghy6sxt4"]
+
+[ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="1_vp2w4"]
+[ext_resource type="Script" uid="uid://by360xhuwjxms" path="res://Scripts/Game Menu/Upgrade Menu/CharacterUpgradeMenu.cs" id="1_wrecx"]
+[ext_resource type="Texture2D" uid="uid://cm6sdskokv6c5" path="res://Art Assets/Backgrounds/nature_8/origbig.png" id="2_1l0jv"]
+[ext_resource type="PackedScene" uid="uid://cj5rt8017olgn" path="res://Scenes/Overworld/Party Menu/UI/character_detailed_display.tscn" id="2_34gv2"]
+[ext_resource type="Script" uid="uid://dvsr77mocxvbk" path="res://Scripts/Game Menu/Upgrade Menu/LimitBreakMenu.cs" id="2_lfi5a"]
+[ext_resource type="Texture2D" uid="uid://bdle3b7pvhmt0" path="res://Art Assets/Shapes/Sungraphica/Key Yellow.png" id="4_34gv2"]
+
+[sub_resource type="Theme" id="Theme_wrecx"]
+TabContainer/font_sizes/font_size = 60
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_34gv2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lfi5a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_34gv2"]
+font_size = 50
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.537255)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1l0jv"]
+font_size = 70
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.568627)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vp2w4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxfe7"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.52549)
+shadow_offset = Vector2(3, 3)
+
+[node name="CharacterLevelAndLbMenu" type="Control" node_paths=PackedStringArray("charDisplay", "limitBreakMenu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrecx")
+charDisplay = NodePath("CharacterDetailedDisplay")
+limitBreakMenu = NodePath("TabContainer/Limit Break")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1309.0
+offset_top = -171.0
+offset_right = 2474.0
+offset_bottom = 1957.0
+texture = ExtResource("2_1l0jv")
+metadata/_edit_lock_ = true
+
+[node name="CharacterDetailedDisplay" parent="." instance=ExtResource("2_34gv2")]
+layout_mode = 1
+offset_left = 43.0
+offset_top = 338.0
+offset_right = 43.0
+offset_bottom = 338.0
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 597.0
+offset_right = 1050.0
+offset_bottom = 1636.0
+theme = SubResource("Theme_wrecx")
+current_tab = 1
+
+[node name="Level Up" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Limit Break" type="Control" parent="TabContainer" node_paths=PackedStringArray("portrait", "copiesOutline", "ownedCopiesLabel", "copiesNeededLabel", "keysOutline", "ownedKeysLabel", "keysNeededLabel")]
+layout_mode = 2
+script = ExtResource("2_lfi5a")
+portrait = NodePath("VBoxContainer/Copies/Character")
+copiesOutline = NodePath("VBoxContainer/Copies/Outline")
+ownedCopiesLabel = NodePath("VBoxContainer/Copies/Owned/Owned Amount")
+copiesNeededLabel = NodePath("VBoxContainer/Copies/Needed/Needed Amount")
+keysOutline = NodePath("VBoxContainer/Universal Copies/Outline2")
+ownedKeysLabel = NodePath("VBoxContainer/Universal Copies/Owned2/Owned Amount")
+keysNeededLabel = NodePath("VBoxContainer/Universal Copies/Needed2/Needed Amount")
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Limit Break"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 34.0
+offset_right = 982.0
+offset_bottom = 894.0
+theme_override_constants/separation = 30
+
+[node name="Copies" type="Control" parent="TabContainer/Limit Break/VBoxContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="Outline" type="TextureRect" parent="TabContainer/Limit Break/VBoxContainer/Copies"]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 966.0
+offset_bottom = 257.0
+texture = SubResource("CanvasTexture_34gv2")
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Limit Break/VBoxContainer/Copies"]
+self_modulate = Color(4.62055e-06, 0.601355, 0.914591, 1)
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+offset_right = 959.0
+offset_bottom = 250.0
+texture = SubResource("CanvasTexture_lfi5a")
+
+[node name="Owned" type="HBoxContainer" parent="TabContainer/Limit Break/VBoxContainer/Copies"]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 109.095
+offset_right = 939.0
+offset_bottom = 178.095
+theme_override_constants/separation = 10
+
+[node name="Owned Text" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Copies/Owned"]
+layout_mode = 2
+text = "Owned"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Owned Amount" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Copies/Owned"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "30"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Needed" type="HBoxContainer" parent="TabContainer/Limit Break/VBoxContainer/Copies"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 168.0
+offset_right = 938.0
+offset_bottom = 237.0
+theme_override_constants/separation = 10
+
+[node name="Needed Text" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Copies/Needed"]
+layout_mode = 2
+text = "Needed"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Needed Amount" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Copies/Needed"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "30"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Name" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Copies"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 10.0
+offset_right = 700.0
+offset_bottom = 120.0
+text = "Copies"
+label_settings = SubResource("LabelSettings_1l0jv")
+
+[node name="Character" parent="TabContainer/Limit Break/VBoxContainer/Copies" instance=ExtResource("1_vp2w4")]
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 144.0
+offset_bottom = 138.0
+scale = Vector2(1.8, 1.8)
+
+[node name="Button" type="Button" parent="TabContainer/Limit Break/VBoxContainer/Copies"]
+layout_mode = 0
+offset_right = 961.0
+offset_bottom = 251.0
+flat = true
+
+[node name="Universal Copies" type="Control" parent="TabContainer/Limit Break/VBoxContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="Outline2" type="TextureRect" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 966.0
+offset_bottom = 257.0
+texture = SubResource("CanvasTexture_34gv2")
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies"]
+self_modulate = Color(4.62055e-06, 0.601355, 0.914591, 1)
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+offset_right = 959.0
+offset_bottom = 250.0
+texture = SubResource("CanvasTexture_lfi5a")
+
+[node name="Owned2" type="HBoxContainer" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies"]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 113.67
+offset_right = 939.0
+offset_bottom = 182.67
+theme_override_constants/separation = 10
+
+[node name="Owned Text" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies/Owned2"]
+layout_mode = 2
+text = "Owned"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Owned Amount" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies/Owned2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "30"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Needed2" type="HBoxContainer" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 172.0
+offset_right = 938.0
+offset_bottom = 241.0
+theme_override_constants/separation = 10
+
+[node name="Needed Text" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies/Needed2"]
+layout_mode = 2
+text = "Needed"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Needed Amount" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies/Needed2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "30"
+label_settings = SubResource("LabelSettings_34gv2")
+horizontal_alignment = 2
+
+[node name="Name" type="Label" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 10.0
+offset_right = 698.0
+offset_bottom = 120.0
+text = "Spirit Keys"
+label_settings = SubResource("LabelSettings_1l0jv")
+
+[node name="TextureRect2" type="TextureRect" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 234.0
+offset_bottom = 236.0
+texture = ExtResource("4_34gv2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button2" type="Button" parent="TabContainer/Limit Break/VBoxContainer/Universal Copies"]
+layout_mode = 0
+offset_right = 961.0
+offset_bottom = 251.0
+flat = true
+
+[node name="LB Button" type="Control" parent="TabContainer/Limit Break"]
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 792.0
+offset_right = 380.0
+offset_bottom = 832.0
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Limit Break/LB Button"]
+self_modulate = Color(0.933333, 1, 0, 1)
+layout_mode = 0
+offset_right = 361.0
+offset_bottom = 103.0
+texture = SubResource("CanvasTexture_vp2w4")
+
+[node name="Label" type="Label" parent="TabContainer/Limit Break/LB Button"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 344.0
+offset_bottom = 92.0
+text = "Limit Break"
+label_settings = SubResource("LabelSettings_pxfe7")
+
+[node name="Button" type="Button" parent="TabContainer/Limit Break/LB Button"]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 105.0
+flat = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 155.0
+offset_right = 188.0
+offset_bottom = 305.0
+
+[connection signal="OnUpgrade" from="TabContainer/Limit Break" to="." method="UpdateDisplay"]
+[connection signal="OnUpgrade" from="TabContainer/Limit Break" to="TabContainer/Limit Break" method="UpdateDisplay"]
+[connection signal="button_up" from="TabContainer/Limit Break/VBoxContainer/Copies/Button" to="TabContainer/Limit Break" method="SetUseCopies"]
+[connection signal="button_up" from="TabContainer/Limit Break/VBoxContainer/Universal Copies/Button2" to="TabContainer/Limit Break" method="SetUseKeys"]
+[connection signal="pressed" from="TabContainer/Limit Break/LB Button/Button" to="TabContainer/Limit Break" method="LimitBreak"]
+[connection signal="button_up" from="Button" to="." method="CloseMenu"]

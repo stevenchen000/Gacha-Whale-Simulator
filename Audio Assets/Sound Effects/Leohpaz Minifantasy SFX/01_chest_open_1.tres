@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://cu7q4v84i1h0d"]
+
+[ext_resource type="AudioStream" uid="uid://diw6bfw6slmdp" path="res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/01_chest_open_1.wav" id="1_p0pjg"]
+
+[resource]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("1_p0pjg")

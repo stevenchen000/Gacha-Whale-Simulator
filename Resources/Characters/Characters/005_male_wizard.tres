@@ -27,5 +27,4 @@ Class = ExtResource("1_enbd5")
 Role = ExtResource("3_x7iov")
 SkillSet = ExtResource("2_no2d6")
 EnemyAI = SubResource("Resource_x7iov")
-movement = 3
 metadata/_custom_type_script = "uid://gdabyn413d1c"

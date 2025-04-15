@@ -67,7 +67,7 @@ public partial class SceneManager : Node
 		if (!instance.loadingStarted)
 		{
 			instance.resourcePath = path;
-			instance.loadScreen.Activate();
+			//instance.loadScreen.Activate();
 		}
 	}
 

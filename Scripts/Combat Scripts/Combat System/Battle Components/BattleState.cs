@@ -16,6 +16,9 @@ namespace CombatSystem
         public BattleParty EnemyParty { get; private set; }
         public BattleParty NeutralParty { get; private set; }
 
+        public Array<CharacterData> PlayerCharacters { get; private set; }
+
+
         //Turns
         public int TurnCount { get; private set; }
         [Export] public TurnOrderManager TurnOrder { get; private set; }
@@ -88,8 +91,8 @@ namespace CombatSystem
             if (!data.OverridePlayerParty)
             {
                 var party = GameState.GetCurrentParty();
-                var playerCharacters = party.Party;
-                PlayerParty = new BattleParty(this, playerCharacters, battleCharacterScene, playerBorder);
+                PlayerCharacters = party.Party;
+                PlayerParty = new BattleParty(this, PlayerCharacters, battleCharacterScene, playerBorder);
             }
             var enemyCharacters = data.EnemyList;
             var playerStartPos = data.PlayerStartPositions;

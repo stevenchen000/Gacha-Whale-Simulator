@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LimitBreakDict" load_steps=2 format=3 uid="uid://byyhsj1xjxo3t"]
+
+[ext_resource type="Script" uid="uid://vphd6s1tsebv" path="res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakDict.cs" id="1_ihxgp"]
+
+[resource]
+script = ExtResource("1_ihxgp")
+dict = Dictionary[int, int]({
+0: 10,
+1: 12,
+2: 14,
+3: 16,
+4: 18,
+5: 20
+})
+metadata/_custom_type_script = "uid://vphd6s1tsebv"

@@ -10,6 +10,7 @@ public partial class GameMenu : Control
     {
         var tempGame = Utils.FindParentOfType<MainGame>(this);
         game = new SimpleWeakRef<MainGame>(tempGame);
+        DelayedCalls.AddCall(0.5, () => LoadScreen.Deactivate());
     }
 
     public virtual void _Init()

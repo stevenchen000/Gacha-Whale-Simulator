@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
 
@@ -8,16 +9,19 @@ namespace CombatSystem
     {
         public int PrevStars { get; private set; }
         public int NewStars { get; private set; }
-        public Array<StageReward> Rewards { get; private set; }
+        public List<StageReward> Rewards { get; private set; } = new List<StageReward>();
         public int Exp { get; private set; }
+        public List<LevelUpData> LevelUps { get; private set; } = new List<LevelUpData>();
 
 
-        public StageCompletionData(int prevStars, int newStars, Array<StageReward> rewards, int exp) 
+        public StageCompletionData(int prevStars, int newStars, 
+                                   Array<StageReward> rewards, 
+                                   List<LevelUpData> levelUps, int exp) 
         { 
             PrevStars = prevStars;
             NewStars = newStars;
-            Rewards = new Array<StageReward>();
             Rewards.AddRange(rewards);
+            LevelUps.AddRange(levelUps);
             Exp = exp;
         }
 

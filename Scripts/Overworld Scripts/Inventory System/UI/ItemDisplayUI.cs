@@ -9,10 +9,13 @@ namespace InventorySystem
         [Export] private TextureRect textureDisplay;
         [Export] private Label nameDisplay;
         [Export] private Label amountDisplay;
+        [Export] private AnimationPlayer anim;
+        [Export] private Control sizeControl;
 
         public override void _Ready()
         {
-            CallDeferred(MethodName.UpdateDisplay);
+            HideIcon();
+            //CallDeferred(MethodName.UpdateDisplay);
         }
 
         public void SetItem(ItemResource itemToDisplay)
@@ -21,13 +24,31 @@ namespace InventorySystem
             UpdateDisplay();
         }
 
+        public void SetAmount(int amount)
+        {
+            if(amountDisplay != null) 
+                amountDisplay.Text = amount.ToString();
+        }
+
+        public void SetAmount()
+        {
+            if (amountDisplay != null)
+            {
+                int amount = GameState.GetAmountOfItemInPlayerInventory(item);
+                amountDisplay.Text = amount.ToString();
+            }
+        }
+
+        public void SetItemIcon(Texture2D texture)
+        {
+            textureDisplay.Texture = texture;
+        }
+
         public void UpdateDisplay()
         {
             if (item == null) return;
 
-            if (textureDisplay != null) DisplayTexture();
             if (nameDisplay != null) DisplayName();
-            if(amountDisplay != null) DisplayAmount();
         }
 
         private void DisplayTexture()
@@ -40,10 +61,25 @@ namespace InventorySystem
             nameDisplay.Text = item.ItemName;
         }
 
-        private void DisplayAmount()
+
+        /*****************
+         * Animations
+         * *************/
+
+        public void HideIcon()
         {
-            int amount = GameState.GetAmountOfItemInPlayerInventory(item);
-            amountDisplay.Text = amount.ToString();
+            sizeControl.Scale = Vector2.Zero;
         }
+
+        public void PopIn()
+        {
+            anim.Play("pop_in");
+        }
+
+        public void Reset()
+        {
+            anim.Play("RESET");
+        }
+
     }
 }

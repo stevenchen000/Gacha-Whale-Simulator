@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://bslppprp865n"]
+
+[ext_resource type="Script" uid="uid://c3enkart8n7up" path="res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CharacterExpUi.cs" id="1_ledbf"]
+[ext_resource type="Script" uid="uid://djj2a2mevrxmf" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="2_kxraf"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="3_xcsl8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ljtxj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cbqg7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ywg6"]
+bg_color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qb7sb"]
+bg_color = Color(1, 0.933333, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ledbf"]
+font_size = 30
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.529412)
+shadow_offset = Vector2(3, 3)
+
+[node name="Exp Party Character" type="Control"]
+custom_minimum_size = Vector2(300, 450)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ledbf")
+
+[node name="Size Control" type="Control" parent="."]
+anchors_preset = 0
+scale = Vector2(1.5, 1.5)
+
+[node name="TextureRect" type="TextureRect" parent="Size Control"]
+self_modulate = Color(0, 0.155, 0.93, 1)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 300.0
+texture = SubResource("CanvasTexture_ljtxj")
+
+[node name="Character Background" type="TextureRect" parent="Size Control"]
+clip_children = 1
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 226.0
+texture = SubResource("CanvasTexture_cbqg7")
+
+[node name="Character Display" type="TextureRect" parent="Size Control/Character Background" node_paths=PackedStringArray("background", "portraitElement")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 6.0
+offset_right = 172.0
+offset_bottom = 151.0
+script = ExtResource("2_kxraf")
+background = NodePath(".")
+portraitElement = NodePath("Sprite2D")
+borderSize = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Size Control/Character Background/Character Display"]
+position = Vector2(-4.76837e-07, 382)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_xcsl8")
+
+[node name="ProgressBar" type="ProgressBar" parent="Size Control"]
+layout_mode = 0
+offset_top = 272.0
+offset_right = 200.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_7ywg6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qb7sb")
+value = 50.0
+
+[node name="Label" type="Label" parent="Size Control"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 228.0
+offset_right = 122.0
+offset_bottom = 270.0
+text = "Level 70"
+label_settings = SubResource("LabelSettings_ledbf")

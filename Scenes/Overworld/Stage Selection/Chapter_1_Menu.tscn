@@ -1,0 +1,332 @@
+[gd_scene load_steps=9 format=3 uid="uid://x5xjdhaauevs"]
+
+[ext_resource type="Texture2D" uid="uid://1jbgql7w47db" path="res://Art Assets/Backgrounds/Ocean_3/5.png" id="1_hmhqo"]
+[ext_resource type="Script" uid="uid://dreubgkqg4a84" path="res://Resources/Stage Selection/Chapters/StageConnections.cs" id="1_s7f0v"]
+[ext_resource type="Texture2D" uid="uid://u3sm7mbgb8hu" path="res://Art Assets/UI/Stage Selection/Stage_Icon_Trees.png" id="2_hmhqo"]
+[ext_resource type="PackedScene" uid="uid://umkn3hlqwl0r" path="res://Scenes/Overworld/Stage Selection/stage_selection_button.tscn" id="4_61aj1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_33c1a"]
+font_size = 70
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.509804)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="Animation" id="Animation_61aj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hmhqo"]
+resource_name = "appear_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0nw58"]
+_data = {
+&"RESET": SubResource("Animation_61aj1"),
+&"appear_in": SubResource("Animation_hmhqo")
+}
+
+[node name="SlidingStageSelectionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="====Background====" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="====Background===="]
+modulate = Color(0.92528, 0.302318, 1, 1)
+position = Vector2(690, 887)
+scale = Vector2(2.19, 2.19)
+texture = ExtResource("1_hmhqo")
+
+[node name="Stage Connector" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_s7f0v")
+
+[node name="Border" type="Line2D" parent="Stage Connector"]
+points = PackedVector2Array(345, 1510, 745, 1197, 199, 929, 861, 732, 285, 484)
+width = 24.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line" type="Line2D" parent="Stage Connector"]
+points = PackedVector2Array(345, 1510, 745, 1197, 199, 929, 861, 732, 285, 484)
+width = 14.0
+
+[node name="Stage Button" type="Control" parent="."]
+editor_description = "Open a menu for entering battle"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 349.0
+offset_top = 1465.0
+offset_right = 349.0
+offset_bottom = 1465.0
+
+[node name="TextureRect" type="TextureRect" parent="Stage Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 144.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hmhqo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Stage Button"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -115.0
+offset_right = 116.0
+offset_bottom = 117.0
+flat = true
+
+[node name="Label" type="Label" parent="Stage Button"]
+layout_mode = 0
+offset_left = -159.0
+offset_top = 59.0
+offset_right = 155.0
+offset_bottom = 155.0
+text = "1-1"
+label_settings = SubResource("LabelSettings_33c1a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage Button2" type="Control" parent="."]
+editor_description = "Open a menu for entering battle"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 749.0
+offset_top = 1158.0
+offset_right = 749.0
+offset_bottom = 1158.0
+
+[node name="TextureRect" type="TextureRect" parent="Stage Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 144.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hmhqo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Stage Button2"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -115.0
+offset_right = 116.0
+offset_bottom = 117.0
+flat = true
+
+[node name="Label" type="Label" parent="Stage Button2"]
+layout_mode = 0
+offset_left = -159.0
+offset_top = 59.0
+offset_right = 155.0
+offset_bottom = 155.0
+text = "1-2"
+label_settings = SubResource("LabelSettings_33c1a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage Button3" type="Control" parent="."]
+editor_description = "Open a menu for entering battle"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 211.0
+offset_top = 920.0
+offset_right = 211.0
+offset_bottom = 920.0
+
+[node name="TextureRect" type="TextureRect" parent="Stage Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 144.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hmhqo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Stage Button3"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -115.0
+offset_right = 116.0
+offset_bottom = 117.0
+flat = true
+
+[node name="Label" type="Label" parent="Stage Button3"]
+layout_mode = 0
+offset_left = -159.0
+offset_top = 59.0
+offset_right = 155.0
+offset_bottom = 155.0
+text = "1-3"
+label_settings = SubResource("LabelSettings_33c1a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage Button4" type="Control" parent="."]
+editor_description = "Open a menu for entering battle"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 874.0
+offset_top = 719.0
+offset_right = 874.0
+offset_bottom = 719.0
+
+[node name="TextureRect" type="TextureRect" parent="Stage Button4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 144.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hmhqo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Stage Button4"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -115.0
+offset_right = 116.0
+offset_bottom = 117.0
+flat = true
+
+[node name="Label" type="Label" parent="Stage Button4"]
+layout_mode = 0
+offset_left = -159.0
+offset_top = 59.0
+offset_right = 155.0
+offset_bottom = 155.0
+text = "1-4"
+label_settings = SubResource("LabelSettings_33c1a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage Button5" type="Control" parent="."]
+editor_description = "Open a menu for entering battle"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 287.0
+offset_top = 478.0
+offset_right = 287.0
+offset_bottom = 478.0
+
+[node name="TextureRect" type="TextureRect" parent="Stage Button5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -144.0
+offset_right = 144.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hmhqo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Stage Button5"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -115.0
+offset_right = 116.0
+offset_bottom = 117.0
+flat = true
+
+[node name="Label" type="Label" parent="Stage Button5"]
+layout_mode = 0
+offset_left = -159.0
+offset_top = 59.0
+offset_right = 155.0
+offset_bottom = 155.0
+text = "1-5"
+label_settings = SubResource("LabelSettings_33c1a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(540, 960)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 142.0
+offset_right = 203.0
+offset_bottom = 306.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0nw58")
+}
+autoplay = "appear_in"
+
+[node name="Stage Selection" parent="." instance=ExtResource("4_61aj1")]
+offset_left = 483.0
+offset_top = 283.0
+offset_right = 897.0
+offset_bottom = 423.0

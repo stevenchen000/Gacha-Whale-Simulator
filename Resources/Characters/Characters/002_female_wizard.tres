@@ -11,7 +11,7 @@
 script = ExtResource("4_2330f")
 ID = 2
 portrait = ExtResource("5_6b21g")
-BaseRarity = 1
+BaseRarity = 2
 Name = "Blonde"
 Title = ""
 Description = ""
@@ -20,5 +20,4 @@ Element = ExtResource("2_882qk")
 Class = ExtResource("1_xnbaj")
 Role = ExtResource("2_qo84a")
 SkillSet = ExtResource("2_g0hds")
-movement = 2
 metadata/_custom_type_script = "uid://gdabyn413d1c"

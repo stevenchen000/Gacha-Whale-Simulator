@@ -31,6 +31,16 @@ namespace CombatSystem
                 return Character.BaseRarity;
             }
         }
+        public CharacterRarity MaxRarity
+        {
+            get
+            {
+                int max = (int)Character.Powercreep.GetMaxRarity();
+                int min = (int)BaseRarity;
+                int highest = Math.Max(max, min);
+                return (CharacterRarity)highest;
+            }
+        }
         [Export] public int Stars { get; private set; } = 0;
         [Export] public int ExtraCopies { get; private set; }
 
@@ -108,21 +118,39 @@ namespace CombatSystem
          * Experience Functions
          * **************/
 
-        public void AddExp(int exp)
+        public LevelUpData AddExp(int exp)
         {
+            LevelUpData data = null;
+            double prevPercent = (double)CurrExp / ExpToNextLevel * 100;
+            int prevLevel = Level;
             CurrExp += exp;
 
-            while (CurrExp >= ExpToNextLevel &&
-                   Level < LevelCap)
-            {
-                LevelUp();
-            }
+            LevelUp();
+
+            double newExpPercent = (double)CurrExp / ExpToNextLevel * 100;
+            int newLevel = Level;
+            data = new LevelUpData(this, prevLevel, newLevel, prevPercent, newExpPercent);
+            return data;
         }
 
         private void LevelUp()
         {
-            Level++;
-            CurrExp -= ExpToNextLevel;
+            while (CurrExp >= ExpToNextLevel &&
+                   Level < LevelCap)
+            {
+                Level++;
+                CurrExp -= ExpToNextLevel;
+            }
+
+            CapExp();
+        }
+
+        private void CapExp()
+        {
+            if(Level == LevelCap)
+            {
+                CurrExp = 0;
+            }
         }
 
         private int GetLevelCap()
@@ -144,45 +172,45 @@ namespace CombatSystem
             ExtraCopies -= copies;
         }
 
-        public void LimitBreak()
+        public void LimitBreakWithCopies()
         {
-            if(CopiesNeededForUpgrade() >= ExtraCopies)
+            if(CopiesNeededForUpgrade() <= ExtraCopies)
             {
-                if (Stars < 5)
-                {
-                    Stars++;
-                }
-                else if(Rarity == CharacterRarity.R)
-                {
-                    Rarity = CharacterRarity.SR;
-                    Stars = 0;
-                }else if(Rarity == CharacterRarity.SR)
-                {
-                    Rarity = CharacterRarity.SSR;
-                    Stars = 0;
-                }
+                _LimitBreak();
                 ExtraCopies -= CopiesNeededForUpgrade();
             }
         }
 
+        public void LimitBreak()
+        {
+            _LimitBreak();
+        }
+
+        private void _LimitBreak()
+        {
+            if (Stars < 5)
+            {
+                Stars++;
+            }
+            else
+            {
+                int currRarity = (int)Rarity;
+                int newRarity = currRarity + 1;
+                Rarity = (CharacterRarity)newRarity;
+                Stars = 0;
+            }
+        }
+
+
         public int CopiesNeededForUpgrade()
         {
-            int result = -1;
+            return LimitBreakAmounts.GetCopiesNeeded(this);
+        }
 
-            switch (BaseRarity)
-            {
-                case CharacterRarity.R:
-                    result = 10;
-                    break;
-                case CharacterRarity.SR:
-                    result = 3;
-                    break;
-                case CharacterRarity.SSR:
-                    result = 1;
-                    break;
-            }
-
-            return result;
+        public int KeysNeededForUpgrade()
+        {
+            int rarity = (int)BaseRarity;
+            return CopiesNeededForUpgrade() * (int)Math.Pow(10, rarity);
         }
 
 
@@ -218,8 +246,17 @@ namespace CombatSystem
             Level = (int)data["level"];
             CurrExp = (int)data["exp"];
             Rarity = (CharacterRarity)(int)data["rarity"];
+            FixRarity();
             Stars = (int)data["stars"];
             ExtraCopies = (int)data["copies"];
+        }
+
+        private void FixRarity()
+        {
+            if((int)Rarity < (int)BaseRarity)
+            {
+                Rarity = BaseRarity;
+            }
         }
     }
 }
