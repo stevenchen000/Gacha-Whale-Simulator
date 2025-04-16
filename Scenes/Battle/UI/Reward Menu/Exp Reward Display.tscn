@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6kgsi2b5avsm"]
+[gd_scene load_steps=6 format=3 uid="uid://b6kgsi2b5avsm"]
 
+[ext_resource type="Script" uid="uid://drvg7o3bnjlko" path="res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CombatExpDisplay.cs" id="1_2qcic"]
 [ext_resource type="PackedScene" uid="uid://bslppprp865n" path="res://Scenes/Battle/UI/Reward Menu/exp_party_character.tscn" id="1_tw0yy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fkdpf"]
@@ -14,13 +15,16 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 0.462745)
 shadow_offset = Vector2(5, 5)
 
-[node name="ExpRewardDisplay" type="Control"]
+[node name="ExpRewardDisplay" type="Control" node_paths=PackedStringArray("displays")]
+z_index = 200
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2qcic")
+displays = [NodePath("Grid Background/Grid/Exp Party Character"), NodePath("Grid Background/Grid/Exp Party Character2"), NodePath("Grid Background/Grid/Exp Party Character3"), NodePath("Grid Background/Grid/Exp Party Character4"), NodePath("Grid Background/Grid/Exp Party Character5"), NodePath("Grid Background/Grid/Exp Party Character6")]
 
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 0.368627)
@@ -84,3 +88,13 @@ offset_bottom = -44.0
 text = "Experience"
 label_settings = SubResource("LabelSettings_2qcic")
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -514.0
+offset_top = -188.0
+offset_right = 1842.0
+offset_bottom = 2168.0
+flat = true
+
+[connection signal="button_up" from="Button" to="." method="OnClick"]

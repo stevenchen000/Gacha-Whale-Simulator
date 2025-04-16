@@ -22,11 +22,15 @@ shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.529412)
 shadow_offset = Vector2(3, 3)
 
-[node name="Exp Party Character" type="Control"]
+[node name="Exp Party Character" type="Control" node_paths=PackedStringArray("characterDisplay", "expBar", "levelText")]
+z_index = 100
 custom_minimum_size = Vector2(300, 450)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ledbf")
+characterDisplay = NodePath("Size Control/Character Background")
+expBar = NodePath("Size Control/ProgressBar")
+levelText = NodePath("Size Control/Level Text")
 
 [node name="Size Control" type="Control" parent="."]
 anchors_preset = 0
@@ -39,23 +43,23 @@ offset_right = 200.0
 offset_bottom = 300.0
 texture = SubResource("CanvasTexture_ljtxj")
 
-[node name="Character Background" type="TextureRect" parent="Size Control"]
+[node name="Character Background" type="TextureRect" parent="Size Control" node_paths=PackedStringArray("background", "portraitElement")]
 clip_children = 1
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 226.0
 texture = SubResource("CanvasTexture_cbqg7")
+script = ExtResource("2_kxraf")
+background = NodePath("Character Display")
+portraitElement = NodePath("Character Display/Sprite2D")
+borderSize = 0.0
 
-[node name="Character Display" type="TextureRect" parent="Size Control/Character Background" node_paths=PackedStringArray("background", "portraitElement")]
+[node name="Character Display" type="TextureRect" parent="Size Control/Character Background"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 6.0
 offset_right = 172.0
 offset_bottom = 151.0
-script = ExtResource("2_kxraf")
-background = NodePath(".")
-portraitElement = NodePath("Sprite2D")
-borderSize = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Size Control/Character Background/Character Display"]
 position = Vector2(-4.76837e-07, 382)
@@ -75,7 +79,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_7ywg6")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qb7sb")
 value = 50.0
 
-[node name="Label" type="Label" parent="Size Control"]
+[node name="Level Text" type="Label" parent="Size Control"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 228.0

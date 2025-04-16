@@ -1,3 +1,5 @@
+res://Resources/Items
+res://Scenes/Overworld
 res://Resources/Characters/Limit Break Data/Limit Break Dicts
 res://Resources/Characters/Limit Break Data
 res://Resources/Items/Level Upgrades
@@ -18,5 +20,4 @@ res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI
 res://
 res://Resources/Characters/Skills/Status Effects
 res://Resources/Room/Player Character
-res://Resources/Overworld/Battles/Conditions
 C:/Users/chens/Documents/Sighborg Studios/Gacha-Whale-Simulator/Resources/Room

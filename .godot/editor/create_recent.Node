@@ -1,7 +1,7 @@
 Button
+Node2D
 TextureRect
 Control
-Node2D
 Label
 HBoxContainer
 VBoxContainer

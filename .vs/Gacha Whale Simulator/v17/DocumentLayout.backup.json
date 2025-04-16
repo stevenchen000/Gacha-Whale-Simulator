@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\ui\\rewards ui\\characterexpui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\ui\\rewards ui\\characterexpui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\game menu\\upgrade menu\\limitbreakmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\game menu\\upgrade menu\\limitbreakmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\ui\\rewards ui\\combatexpdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\ui\\rewards ui\\combatexpdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\game menu\\character creator\\characters\\limit break data\\limitbreakdict.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\game menu\\character creator\\characters\\limit break data\\limitbreakdict.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\overworld scripts\\overworld menu\\stage selection\\stagecompletiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\overworld scripts\\overworld menu\\stage selection\\stagecompletiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\battle data\\characterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\battle data\\characterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\battle components\\battlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\battle components\\battlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\overworld scripts\\overworld menu\\upgrade menu\\upgrademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\overworld scripts\\overworld menu\\upgrade menu\\upgrademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\combat scripts\\combat system\\battle states\\combatrewardnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\combat scripts\\combat system\\battle states\\combatrewardnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\game menu\\upgrade menu\\characterupgrademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\game menu\\upgrade menu\\characterupgrademenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|c:\\users\\chens\\documents\\sighborg studios\\gacha-whale-simulator\\scripts\\game menu\\character creator\\characters\\limit break data\\limitbreakamounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D3C3A0F-E8A5-4150-944E-7A1911B4ED0C}|Gacha Whale Simulator.csproj|solutionrelative:scripts\\game menu\\character creator\\characters\\limit break data\\limitbreakamounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,76 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CharacterExpUi.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CharacterExpUi.cs",
-              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CharacterExpUi.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CharacterExpUi.cs",
-              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CharacterExpUi.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB4AAAA6AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CharacterUpgradeMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Upgrade Menu\\CharacterUpgradeMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Upgrade Menu\\CharacterUpgradeMenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Upgrade Menu\\CharacterUpgradeMenu.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Upgrade Menu\\CharacterUpgradeMenu.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T06:21:40.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CombatExpDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CombatExpDisplay.cs",
-              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CombatExpDisplay.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CombatExpDisplay.cs",
-              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\UI\\Rewards UI\\CombatExpDisplay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T06:04:15.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T07:59:11.132Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BattleState.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
-              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
-              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Battle Components\\BattleState.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAkwF4AAABEAAAAAAAAAA==",
+              "Title": "UpgradeMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Upgrade Menu\\UpgradeMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Overworld Scripts\\Overworld Menu\\Upgrade Menu\\UpgradeMenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Upgrade Menu\\UpgradeMenu.cs",
+              "RelativeToolTip": "Scripts\\Overworld Scripts\\Overworld Menu\\Upgrade Menu\\UpgradeMenu.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T06:15:25.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StageCompletionData.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Stage Selection\\StageCompletionData.cs",
-              "RelativeDocumentMoniker": "Scripts\\Overworld Scripts\\Overworld Menu\\Stage Selection\\StageCompletionData.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Overworld Scripts\\Overworld Menu\\Stage Selection\\StageCompletionData.cs",
-              "RelativeToolTip": "Scripts\\Overworld Scripts\\Overworld Menu\\Stage Selection\\StageCompletionData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T06:10:53.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CombatRewardNode.cs",
-              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle States\\CombatRewardNode.cs",
-              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Battle States\\CombatRewardNode.cs",
-              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle States\\CombatRewardNode.cs",
-              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Battle States\\CombatRewardNode.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBcAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:36:56.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T08:51:16.886Z",
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LimitBreakMenu.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Upgrade Menu\\LimitBreakMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Upgrade Menu\\LimitBreakMenu.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Upgrade Menu\\LimitBreakMenu.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Upgrade Menu\\LimitBreakMenu.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:38:57.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LimitBreakDict.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakDict.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakDict.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakDict.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakDict.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:19:44.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CharacterData.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "RelativeDocumentMoniker": "Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "RelativeToolTip": "Scripts\\Combat Scripts\\Combat System\\Battle Data\\CharacterData.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAwwMcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:13:03.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LimitBreakAmounts.cs",
+              "DocumentMoniker": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakAmounts.cs",
+              "RelativeDocumentMoniker": "Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakAmounts.cs",
+              "ToolTip": "C:\\Users\\chens\\Documents\\Sighborg Studios\\Gacha-Whale-Simulator\\Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakAmounts.cs",
+              "RelativeToolTip": "Scripts\\Game Menu\\Character Creator\\Characters\\Limit Break Data\\LimitBreakAmounts.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T09:09:07.646Z"
             }
           ]
         }

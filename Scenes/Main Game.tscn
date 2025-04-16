@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=46 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
 [ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Battle/Battle Scene.tscn" id="3_f8l6p"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dmcbt7du1gju2" path="res://Scenes/Room/Room.tscn" id="9_xq76o"]
 [ext_resource type="Script" uid="uid://m6dxv4oa631d" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs" id="16_em1yx"]
 [ext_resource type="Script" uid="uid://b8omm6wcwy35u" path="res://Scripts/Constants/StatNames.cs" id="18_sl7r4"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="19_d1u2s"]
 [ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="19_iffwg"]
 [ext_resource type="Resource" uid="uid://8mo1lvp4wgpf" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/amp.tres" id="20_0b8tr"]
 [ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="20_r0cu4"]
@@ -78,7 +79,7 @@ _movement = ExtResource("25_ebwyl")
 
 [node name="Element Chart" type="Node2D" parent="Variables"]
 script = ExtResource("25_sl7r4")
-Weaknesses = {
+Weaknesses = Dictionary[ExtResource("19_d1u2s"), ExtResource("19_d1u2s")]({
 ExtResource("27_0hpn3"): ExtResource("28_5m6pt"),
 ExtResource("29_ohcb0"): ExtResource("27_0hpn3"),
 ExtResource("30_n5tqu"): ExtResource("29_ohcb0"),
@@ -86,8 +87,8 @@ ExtResource("28_5m6pt"): ExtResource("30_n5tqu"),
 ExtResource("31_hlcih"): ExtResource("32_pjnjj"),
 ExtResource("33_4iwjo"): ExtResource("31_hlcih"),
 ExtResource("32_pjnjj"): ExtResource("33_4iwjo")
-}
-Resistances = {
+})
+Resistances = Dictionary[ExtResource("19_d1u2s"), ExtResource("19_d1u2s")]({
 ExtResource("27_0hpn3"): ExtResource("29_ohcb0"),
 ExtResource("29_ohcb0"): ExtResource("33_4iwjo"),
 ExtResource("30_n5tqu"): ExtResource("28_5m6pt"),
@@ -95,7 +96,7 @@ ExtResource("28_5m6pt"): ExtResource("31_hlcih"),
 ExtResource("31_hlcih"): ExtResource("33_4iwjo"),
 ExtResource("33_4iwjo"): ExtResource("32_pjnjj"),
 ExtResource("32_pjnjj"): ExtResource("31_hlcih")
-}
+})
 
 [node name="BDragon Element Chart" type="Node2D" parent="Variables"]
 editor_description = "Used to get the correct color for BDragon sprites' based on element"

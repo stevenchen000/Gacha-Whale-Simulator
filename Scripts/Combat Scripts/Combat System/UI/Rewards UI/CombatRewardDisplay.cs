@@ -9,7 +9,7 @@ public partial class CombatRewardDisplay : Node
     private List<StageReward> earnedRewards = new List<StageReward>();
     [Export] private PackedScene itemDisplay;
     [Export] private Node displayParent;
-    private List<ItemDisplayUI> displays = new List<ItemDisplayUI>();
+    private List<RewardItemDisplay> displays = new List<RewardItemDisplay>();
     [Export] private Button skipButton;
 
     private bool isDisplaying = false;
@@ -72,7 +72,7 @@ public partial class CombatRewardDisplay : Node
     {
         foreach(var reward in rewards)
         {
-            var newDisplay = Utils.InstantiateCopy<ItemDisplayUI>(itemDisplay);
+            var newDisplay = Utils.InstantiateCopy<RewardItemDisplay>(itemDisplay);
             displayParent.AddChild(newDisplay);
             displays.Add(newDisplay);
             newDisplay.SetAmount(reward.GetAmount());

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4ee0ghy6sxt4"]
+[gd_scene load_steps=15 format=3 uid="uid://b4ee0ghy6sxt4"]
 
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="1_vp2w4"]
 [ext_resource type="Script" uid="uid://by360xhuwjxms" path="res://Scripts/Game Menu/Upgrade Menu/CharacterUpgradeMenu.cs" id="1_wrecx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cj5rt8017olgn" path="res://Scenes/Overworld/Party Menu/UI/character_detailed_display.tscn" id="2_34gv2"]
 [ext_resource type="Script" uid="uid://dvsr77mocxvbk" path="res://Scripts/Game Menu/Upgrade Menu/LimitBreakMenu.cs" id="2_lfi5a"]
 [ext_resource type="Texture2D" uid="uid://bdle3b7pvhmt0" path="res://Art Assets/Shapes/Sungraphica/Key Yellow.png" id="4_34gv2"]
+[ext_resource type="Texture2D" uid="uid://wtrrdkllq6ni" path="res://Art Assets/Shapes/Sungraphica/Asset 85.png" id="7_1l0jv"]
 
 [sub_resource type="Theme" id="Theme_wrecx"]
 TabContainer/font_sizes/font_size = 60
@@ -310,6 +311,9 @@ offset_left = 38.0
 offset_top = 155.0
 offset_right = 188.0
 offset_bottom = 305.0
+icon = ExtResource("7_1l0jv")
+flat = true
+expand_icon = true
 
 [connection signal="OnUpgrade" from="TabContainer/Limit Break" to="." method="UpdateDisplay"]
 [connection signal="OnUpgrade" from="TabContainer/Limit Break" to="TabContainer/Limit Break" method="UpdateDisplay"]

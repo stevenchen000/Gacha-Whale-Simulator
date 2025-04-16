@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cutch6ml2cxwb"]
+
+[ext_resource type="Script" uid="uid://cl722yw1v47w6" path="res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs" id="1_0g2mg"]
+[ext_resource type="Texture2D" uid="uid://ttiicxmmlsmu" path="res://Art Assets/UI/Coin.png" id="1_owubl"]
+
+[resource]
+script = ExtResource("1_0g2mg")
+Icon = ExtResource("1_owubl")
+ID = 0
+ItemName = "Coin"
+type = 0
+Description = "The currency of Everdonia."
+metadata/_custom_type_script = "uid://cl722yw1v47w6"

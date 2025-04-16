@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://8ssh07hfd56t"]
+[gd_scene load_steps=51 format=3 uid="uid://8ssh07hfd56t"]
 
 [ext_resource type="Script" uid="uid://gif33acrjfq" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs" id="1_w405p"]
 [ext_resource type="Script" uid="uid://doh268gk7cnr8" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs" id="2_e03jm"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://dv67h8cljn0ll" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatRewardNode.cs" id="23_wbcs6"]
 [ext_resource type="PackedScene" uid="uid://iyqrh30vxdn8" path="res://Scenes/Battle/Disable Animation Button.tscn" id="24_4k4b0"]
 [ext_resource type="PackedScene" uid="uid://dtx2dp8m7k77g" path="res://Scenes/Battle/UI/Reward Menu/Reward_Display.tscn" id="24_4ovav"]
+[ext_resource type="PackedScene" uid="uid://b6kgsi2b5avsm" path="res://Scenes/Battle/UI/Reward Menu/Exp Reward Display.tscn" id="25_f4vdb"]
 [ext_resource type="Script" uid="uid://cd1ag3d1dvcsb" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderDisplay.cs" id="27_3gaus"]
 [ext_resource type="PackedScene" uid="uid://bw78lro41fpk6" path="res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/character_turn_display.tscn" id="28_yprcx"]
 [ext_resource type="Texture2D" uid="uid://xarvsperfjvd" path="res://Art Assets/UI/Menu Button.png" id="30_4k4b0"]
@@ -434,6 +435,7 @@ script = ExtResource("11_dfb8x")
 [node name="Rewards State" type="Node2D" parent="States/====End of Combat===="]
 script = ExtResource("23_wbcs6")
 rewardMenuScene = ExtResource("24_4ovav")
+expMenuScene = ExtResource("25_f4vdb")
 
 [node name="Turn Data Manager" type="Node2D" parent="."]
 script = ExtResource("5_yhfgv")
@@ -653,7 +655,8 @@ libraries = {
 
 [node name="-----Pause Menu-----" type="CanvasLayer" parent="."]
 
-[node name="Open Pause Menu" type="Control" parent="-----Pause Menu-----" node_paths=PackedStringArray("menuStack")]
+[node name="Open Pause Menu" type="Control" parent="." node_paths=PackedStringArray("menuStack")]
+z_index = 150
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1037.0
@@ -664,7 +667,7 @@ script = ExtResource("30_fsyml")
 pauseMenu = ExtResource("31_rvoat")
 menuStack = NodePath("../Menu Stack")
 
-[node name="TextureRect" type="TextureRect" parent="-----Pause Menu-----/Open Pause Menu"]
+[node name="TextureRect" type="TextureRect" parent="Open Pause Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -682,7 +685,7 @@ texture = ExtResource("30_4k4b0")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="-----Pause Menu-----/Open Pause Menu"]
+[node name="Button" type="Button" parent="Open Pause Menu"]
 layout_mode = 0
 offset_left = -136.0
 offset_top = -128.0
@@ -690,7 +693,7 @@ offset_right = 30.0
 offset_bottom = 38.0
 flat = true
 
-[node name="Menu Stack" type="Control" parent="-----Pause Menu-----"]
+[node name="Menu Stack" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -701,4 +704,4 @@ script = ExtResource("31_kj58v")
 [connection signal="button_up" from="====Skills====/Skill UI/Skip Turn" to="====Skills====/Skill UI/Skip Turn" method="OnClick"]
 [connection signal="button_up" from="====Skills====/Skill UI/Confirmation Buttons/Confirm Button" to="====Skills====/Skill UI" method="ConfirmAction"]
 [connection signal="button_up" from="====Skills====/Skill UI/Confirmation Buttons/Cancel Button" to="====Skills====/Skill UI" method="CancelAction"]
-[connection signal="button_up" from="-----Pause Menu-----/Open Pause Menu/Button" to="-----Pause Menu-----/Open Pause Menu" method="OpenPauseMenu"]
+[connection signal="button_up" from="Open Pause Menu/Button" to="Open Pause Menu" method="OpenPauseMenu"]

@@ -5,17 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://d2t0su28768hj" path="res://Art Assets/Character Assets/MC.png" id="2_goatx"]
 [ext_resource type="Texture2D" uid="uid://cf7gsrxje7se7" path="res://Art Assets/Shapes/Heart.png" id="2_tp208"]
 [ext_resource type="Script" uid="uid://dlsalq8trnub8" path="res://Scripts/UI/Main Overlay/StaminaText.cs" id="3_8hw4h"]
-[ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="3_tp208"]
 [ext_resource type="Texture2D" uid="uid://ckthnfqactwlq" path="res://Art Assets/Portrait Circle/Avatar Circle Border.png" id="3_w55ot"]
 [ext_resource type="Script" uid="uid://du8pvqj4ocmqm" path="res://Scripts/Event System/VoidEventHandler.cs" id="7_c75cs"]
-[ext_resource type="Script" uid="uid://c4sn6nq34sd2e" path="res://Scripts/Overworld Scripts/Inventory System/UI/ItemDisplayUI.cs" id="7_e6bqo"]
+[ext_resource type="PackedScene" uid="uid://da4vv5eaclqsr" path="res://Scenes/Overworld/overworld_item_display.tscn" id="7_e6bqo"]
+[ext_resource type="Resource" uid="uid://cutch6ml2cxwb" path="res://Resources/Items/coin.tres" id="8_gl1o1"]
 [ext_resource type="Resource" uid="uid://bu0eun0hmtjh1" path="res://Resources/Items/premium_gems.tres" id="8_i2h4f"]
+[ext_resource type="Resource" uid="uid://bquphtsiogc6m" path="res://Resources/Items/money.tres" id="9_e6bqo"]
 [ext_resource type="Script" uid="uid://b1vc721oa2kyw" path="res://Scripts/UI/Calendar/CalendarUI.cs" id="9_gqbcn"]
 [ext_resource type="Resource" uid="uid://dbdv0f3e6px7t" path="res://Resources/Room/Events/OnRankChanged.tres" id="9_j5ymw"]
 [ext_resource type="Texture2D" uid="uid://1jbgql7w47db" path="res://Art Assets/Backgrounds/Ocean_3/5.png" id="10_2pbe6"]
 [ext_resource type="Script" uid="uid://u6ye1awpgeqy" path="res://Scripts/Event System/Variant Game Events/IntEventHandler.cs" id="10_8hw4h"]
 [ext_resource type="Texture2D" uid="uid://cu3ege7udfw42" path="res://Art Assets/Backgrounds/Ocean_8/1.png" id="10_gqbcn"]
-[ext_resource type="Texture2D" uid="uid://dt0gi1lmsr05q" path="res://Art Assets/Dollar.png" id="10_i2h4f"]
 [ext_resource type="Resource" uid="uid://du06mxg461xfx" path="res://Resources/Room/Events/OnStaminaChanged.tres" id="10_ve70h"]
 [ext_resource type="Texture2D" uid="uid://cppf3te4oybjk" path="res://Art Assets/Backgrounds/Ocean_6/1.png" id="12_j5ymw"]
 [ext_resource type="Resource" uid="uid://bc3mvqbjfdyki" path="res://Resources/Room/Events/OnTimeChanged.tres" id="13_2pbe6"]
@@ -183,123 +183,17 @@ offset_right = 802.0
 offset_bottom = 202.0
 theme_override_constants/separation = 10
 
-[node name="Coins" type="Control" parent="Currency Bar"]
-custom_minimum_size = Vector2(176.76, 48)
+[node name="Coins" parent="Currency Bar" instance=ExtResource("7_e6bqo")]
 layout_mode = 2
+itemToDisplay = ExtResource("8_gl1o1")
 
-[node name="TextureRect" type="TextureRect" parent="Currency Bar/Coins"]
-self_modulate = Color(0, 0, 0, 0.243137)
-layout_mode = 0
-offset_right = 176.0
-offset_bottom = 48.0
-texture = SubResource("CanvasTexture_c75cs")
-
-[node name="Coin Outline2" type="TextureRect" parent="Currency Bar/Coins"]
-self_modulate = Color(0, 0, 0, 1)
+[node name="Gem" parent="Currency Bar" instance=ExtResource("7_e6bqo")]
 layout_mode = 2
-offset_left = 7.0
-offset_top = 4.0
-offset_right = 31.0
-offset_bottom = 44.0
-texture = ExtResource("1_s0tg0")
-expand_mode = 1
+itemToDisplay = ExtResource("8_i2h4f")
 
-[node name="Coin" type="TextureRect" parent="Currency Bar/Coins"]
-self_modulate = Color(1, 0.8, 0, 1)
+[node name="Money" parent="Currency Bar" instance=ExtResource("7_e6bqo")]
 layout_mode = 2
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 29.0
-offset_bottom = 42.0
-texture = ExtResource("1_s0tg0")
-expand_mode = 1
-
-[node name="Coin Count" type="Label" parent="Currency Bar/Coins"]
-layout_mode = 2
-offset_left = 36.0
-offset_top = 3.0
-offset_right = 263.0
-offset_bottom = 72.0
-scale = Vector2(0.57, 0.57)
-text = "1,999,999"
-label_settings = SubResource("LabelSettings_c75cs")
-horizontal_alignment = 2
-
-[node name="Gem" type="Control" parent="Currency Bar" node_paths=PackedStringArray("amountDisplay")]
-custom_minimum_size = Vector2(197, 48)
-layout_mode = 2
-script = ExtResource("7_e6bqo")
-item = ExtResource("8_i2h4f")
-amountDisplay = NodePath("Gem Count")
-
-[node name="TextureRect" type="TextureRect" parent="Currency Bar/Gem"]
-self_modulate = Color(0, 0, 0, 0.243137)
-layout_mode = 0
-offset_right = 197.0
-offset_bottom = 48.0
-texture = SubResource("CanvasTexture_c75cs")
-
-[node name="Gem Icon2" type="TextureRect" parent="Currency Bar/Gem"]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-offset_left = 5.0
-offset_top = -2.0
-offset_right = 49.0
-offset_bottom = 50.0
-texture = ExtResource("3_tp208")
-stretch_mode = 5
-
-[node name="Gem Icon" type="TextureRect" parent="Currency Bar/Gem"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 1.0
-offset_right = 46.0
-offset_bottom = 45.0
-texture = ExtResource("3_tp208")
-stretch_mode = 5
-
-[node name="Gem Count" type="Label" parent="Currency Bar/Gem"]
-layout_mode = 2
-offset_left = 52.0
-offset_top = 2.99998
-offset_right = 279.0
-offset_bottom = 72.0
-scale = Vector2(0.57, 0.57)
-text = "1,999,999"
-label_settings = SubResource("LabelSettings_c75cs")
-horizontal_alignment = 2
-
-[node name="Money" type="Control" parent="Currency Bar"]
-custom_minimum_size = Vector2(197, 48)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Currency Bar/Money"]
-self_modulate = Color(0, 0, 0, 0.243137)
-layout_mode = 0
-offset_right = 197.0
-offset_bottom = 48.0
-texture = SubResource("CanvasTexture_c75cs")
-
-[node name="Money Icon" type="TextureRect" parent="Currency Bar/Money"]
-layout_mode = 2
-offset_left = 7.0
-offset_top = 3.0
-offset_right = 47.0
-offset_bottom = 43.0
-texture = ExtResource("10_i2h4f")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Money Count" type="Label" parent="Currency Bar/Money"]
-layout_mode = 2
-offset_left = 52.0
-offset_top = 2.99998
-offset_right = 279.0
-offset_bottom = 72.0
-scale = Vector2(0.57, 0.57)
-text = "1,999,999"
-label_settings = SubResource("LabelSettings_c75cs")
-horizontal_alignment = 2
+itemToDisplay = ExtResource("9_e6bqo")
 
 [node name="Name" type="Control" parent="."]
 custom_minimum_size = Vector2(197, 48)
@@ -444,7 +338,10 @@ horizontal_alignment = 2
 script = ExtResource("7_c75cs")
 voidEvent = ExtResource("13_2pbe6")
 
+[node name="Inventory Update Event" type="Node2D" parent="."]
+script = ExtResource("7_c75cs")
+voidEvent = ExtResource("14_e6bqo")
+
 [connection signal="MyVoid" from="Stamina Update Event" to="Stamina Bar/Stamina" method="UpdateText"]
 [connection signal="MyInt" from="Rank Update Event" to="Stamina Bar/Rank" method="UpdateText"]
-[connection signal="MyVoid" from="GemCount Event" to="Currency Bar/Gem" method="UpdateDisplay"]
 [connection signal="MyVoid" from="TimeChange Event" to="Calendar UI" method="UpdateUI"]

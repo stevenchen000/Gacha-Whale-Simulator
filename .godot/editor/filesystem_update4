@@ -1,320 +1,4 @@
-res://Scripts/Game Menu/Upgrade Menu/LimitBreakMenu.cs
-res://Scripts/Menus/StackableMenu.cs
-res://Scripts/Combat Scripts/Combat System/Affiliation/CharacterAffiliation.cs
-res://Scripts/Game Menu/Character Creator/CharacterCreatorManager.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatAnimationNode.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Damage Formulas/AmpDamageFormula.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Level Up Menu/LevelUpMenu.cs
-res://Scripts/Event System/Custom Game Events/DialogueEvent.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger Effects/ChangeFlagTriggerEffect.cs
-res://Scripts/Gacha System/GachaCost.cs
-res://Scripts/Room Scripts/Time/GameTimeManager.cs
-res://Scripts/Overworld Scripts/Quest System/QuestManager.cs
-res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Filter/FilterByRole.cs
-res://Scripts/Overworld Scripts/Quest System/BaseQuest.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Rewards/ItemReward.cs
-res://Scripts/Game Menu/Character Creator/Characters/Worlds/CustomCharacterWorld.cs
-res://Scripts/Utilities/State System/Resource-Based States/StateChangeCondition.cs
-res://Scripts/Utilities/Flags/GameStringFlags.cs
-res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/DialogueCondition.cs
-res://Scripts/Utilities/State System/Node-Based States/StateNode.cs
-res://Scripts/Game Menu/Gacha Menu/GachaBannerUI.cs
-res://Scripts/Overworld Scripts/World Events/WorldEventManager.cs
-res://Scripts/InfiniNumber.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger.cs
-res://Scripts/Utilities/State System/Resource-Based States/StateChangeData.cs
-res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/DirectionalShape.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacterFlags.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/SelectPartyMemberSubmenu.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs
-res://Scripts/Misc/DeleteParentAfterTime.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/EffectManager.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectButton.cs
-res://Scripts/Utilities/Dialogue System/States/DialogueTextUpdatingState.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/PartyCharacterDisplay.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationMoveCaster.cs
-res://Scripts/Overworld Scripts/Overworld Menu/OverworldMenu.cs
-res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateDialogueNotNullCondition.cs
-res://Scripts/Game Menu/Character Creator/Characters/Worlds/CharacterWorld.cs
-res://Scripts/Combat Scripts/Combat System/Combat AI/CombatAI.cs
-res://Scripts/UI/Main Overlay/StaminaText.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectionMenu.cs
-res://Scripts/Gacha System/UpgradeCurrency.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateChangeData.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger Effects/AddItemTriggerEffect.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterRarityDisplay.cs
-res://Scripts/Combat Scripts/Combat System/Stat System/Stats/BattleStatsTemplate.cs
-res://Scripts/Event System/CustomEventHandler.cs
-res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CombatRewardDisplay.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/PortraitEditorMenu.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/CameraController.cs
-res://Scripts/Overworld Scripts/Triggers/TriggerEffect.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/BattleCamera.cs
-res://Scripts/Overworld Scripts/SceneLibrary.cs
-res://Scripts/Menus/OpenMenu.cs
-res://Scripts/Game Menu/Character Creator/Display Overrides/CharacterEditorPortrait.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/DialogueAndCondition.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs
-res://Scripts/Overworld Scripts/Overworld Menu/GemDisplay.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationCreateObject.cs
-res://Scripts/PortraitEditorTool.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/CharacterStatusList.cs
-res://Scripts/Room Scripts/PlayerRankManager.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/UpgradeMenu.cs
-res://Scripts/TestData.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealEffect.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/SkillManager.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorState.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateTimePassedCondition.cs
-res://Scripts/Room Scripts/RoomMenu.cs
-res://Scripts/Utilities/SpriteSheetYSetter.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/CharacterSelectionButton.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/_CharacterCreatorStateTemplate.cs
-res://Scripts/Event System/VoidEvent.cs
-res://Scripts/Combat Scripts/Combat System/Battle Data/Clear Conditions/ClearCondition.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/Custom Dialogue Picker/DialoguePickerQuest.cs
-res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumber.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorAdjustCropState.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/PartySetup.cs
-res://Scripts/Overworld Scripts/Calendar Event/CalendarEvent.cs
-res://Scripts/Combat Scripts/Combat System/Battle Data/StageData.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionOrCondition.cs
-res://Scripts/Overworld Scripts/Calendar Event/CalendarEventLibrary.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/RarityStar.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatStateNode.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatKnockbackState.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/AddStatEffect.cs
-res://Scripts/Misc/ParticleStart.cs
-res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterExpCurve.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger Effects/AddMoneyTriggerEffect.cs
-res://Scripts/Game Menu/Character Creator/Menus/_CharacterCreatorMenuTemplate.cs
-res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/DelayTurnEffect.cs
-res://Scripts/Game Menu/GameMenu.cs
-res://Scripts/Utilities/Scene Manager/LoadScreen.cs
-res://Scripts/Utilities/DelayedAudio.cs
-res://Scripts/UI/Calendar/DateTime.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs
-res://Scripts/Gacha System/Dungeons/Dungeon.cs
-res://Scripts/Combat Scripts/Combat System/Grid/BattleGrid.cs
-res://Scripts/Combat Scripts/Combat System/Combat AI/ConditionalAI.cs
-res://Scripts/Game Menu/Character Creator/Character Portraits/CustomCharacterPortrait.cs
-res://Resources/Stage Selection/Chapters/ChapterSelectionButton.cs
-res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/AmpAttackAI.cs
-res://Scripts/Overworld Scripts/Inventory System/InventorySlot.cs
-res://Scripts/Utilities/Game State/GameState.cs
-res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/BasicAI.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/CharacterStatusUI.cs
-res://Scripts/Combat Scripts/Combat System/Grid/States/_GridStateTemplate.cs
-res://Scripts/Combat Scripts/Combat System/UI/Character/CharacterHealth.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs
-res://Scripts/Room Scripts/Player Character/PlayerCharacter.cs
-res://Scripts/Overworld Scripts/World Events/WorldEventEffect.cs
-res://Scripts/Overworld Scripts/Player Scripts/Player.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatFinishedNode.cs
-res://Resources/Stage Selection/Chapters/ChapterSelectionMenu.cs
-res://Scripts/Combat Scripts/Combat System/Grid/GridSpace.cs
-res://Scripts/Event System/Variant Game Events/IntEventHandler.cs
-res://Scripts/Game Menu/Character Creator/CharacterDisplayUi.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/ApplyStatusEffect.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Star Conditions/TurnClearCondition.cs
-res://Scripts/Event System/Custom Game Events/InventoryChangeEvent.cs
-res://Scripts/Combat Scripts/Combat System/Stat System/UI/BreakStatusUI.cs
-res://Scripts/Utilities/Dialogue System/Actor.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Star Conditions/StageStarCondition.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/DialoguePicker.cs
-res://Scripts/Utilities/State System/Resource-Based States/StateResource.cs
-res://Scripts/Event System/GameEvent.cs
-res://Scripts/Gacha System/CustomGachaCharacter.cs
-res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterBoxDisplay.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/AddSlidingStatEffect.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/DealDamageEffect.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/SkillCaster.cs
-res://Resources/Utilities/DeleteAfterAnimation.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/PartyMemberSelectionButton.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacter.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/SkillEffect.cs
-res://Scripts/Game Menu/MainGame.cs
-res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/GridShape.cs
-res://Scripts/UI/Banners Display/BannersWindow.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/ISkillEffect/BDragonElementChart.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Rewards/GemReward.cs
-res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateSelectable.cs
-res://Scripts/Event System/Custom Game Events/CharacterPortraitEvent.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatVictoryNode.cs
-res://Scripts/Game Menu/Character Creator/Characters/Classes/WeaponType.cs
-res://Scripts/Game Menu/Character Creator/Menus/Character Editor/CreateCharacterMenu.cs
-res://Scripts/Save System/OwnedCharacterData.cs
-res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/EditorPortraitDisplay.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueDisplayingTextStateResource.cs
-res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CombatExpDisplay.cs
-res://Scripts/Combat Scripts/Combat System/UI/DirectionButtonUI.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger Effects/DeleteObjectTriggerEffect.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerLoadScene.cs
-res://Scripts/Overworld Scripts/Quest System/QuestGoal.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleStatsManager.cs
-res://Scripts/Utilities/Dialogue System/States/DialogueTextCompletedState.cs
-res://Scripts/Combat Scripts/Combat System/Stat System/UI/SlidingStatUI.cs
-res://Scripts/Combat Scripts/Combat System/Stat System/Stats/StatType.cs
-res://Scripts/Utilities/Flags/GameFlags.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionQuestFinished.cs
-res://Scripts/Tag.cs
-res://Scripts/Utilities/Dialogue System/States/DialogueStateNode.cs
-res://Scripts/Overworld Scripts/Triggers/Trigger Effects/SkipTimeTriggerEffect.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs
-res://Scripts/Room Scripts/Stamina System/StaminaManager.cs
-res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/_TemplateAI.cs
-res://Scripts/Overworld Scripts/NPC.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/BattleKnockbackManager.cs
-res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateTargeting.cs
-res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateWalkable.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CurrentPartySubmenu.cs
-res://Scripts/Game Menu/Character Creator/ScaleScrollContainerToBottom.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnNode.cs
-res://Scripts/Overworld Scripts/Player Scripts/PlayerEventManager.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Star Conditions/NoDeathCondition.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/KnockbackEffect.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs
-res://Scripts/Utilities/Game State/Data/GachaGame.cs
-res://Scripts/Game Menu/Party Menu/PartyCharacterBox.cs
-res://Scripts/Utilities/Dialogue System/DialogueTree.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorCropState.cs
-res://Scripts/Overworld Scripts/World Events/Custom World Events/WorldEffectGiveQuest.cs
-res://Scripts/Room Scripts/Player Character/SpriteList.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/Conditions/SkillEffectCondition.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealthDamageEffect.cs
-res://Scripts/Combat Scripts/Combat System/UI/BattleSkillButton.cs
-res://Scripts/Utilities/Dialogue System/ActorEmotion.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/_CombatNodeTemplate.cs
-res://Scripts/Overworld Scripts/World Events/Custom World Events/LoadSceneWorldEffect.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorIdleState.cs
-res://Scripts/Utilities/Dialogue System/DialogueManager.cs
-res://Scripts/Game Menu/Character Creator/CharacterGridManager.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/SkillLoadout.cs
-res://Scripts/Overworld Scripts/Overworld Menu/MainMenuButton.cs
-res://Scripts/Gacha System/GachaCharacterData.cs
-res://Scripts/UI/GUI Overrides/ScrollableButton.cs
-res://Scripts/Gacha System/GachaBanner.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Home Menu/HomeMenu.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/ISkillEffect/BDragonElementEffect.cs
-res://Scripts/UI/Main Overlay/RankText.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/ElementChart.cs
-res://Scripts/Room Scripts/Stamina System/FoodItem.cs
-res://Scripts/Utilities/Scene Manager/SceneManager.cs
-res://Scripts/Save System/FileSaver.cs
-res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/RangedShape.cs
-res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderDisplay.cs
-res://Scripts/Overworld Scripts/Inventory System/UI/ItemDisplayUI.cs
-res://Scripts/Game Menu/Character Creator/Characters/Powercreep/PowercreepData.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/ConditionalSkillEffect.cs
-res://Scripts/UI/GachaBottomBar.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/SkillRevertEffect.cs
-res://Scripts/Constants/StatNames.cs
-res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterWorldField.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatRewardNode.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/CharacterSelector.cs
-res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/ImageCropper.cs
-res://Scripts/Event System/Variant Game Events/IntGameEvent.cs
-res://Scripts/Combat Scripts/Combat System/UI/SkipTurnButton.cs
-res://Scripts/UI/Calendar/CalendarUI.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Combat Elements/SkillDamageEffect.cs
-res://Scripts/Game Menu/Character Creator/Characters/Powercreep/PowercreepLevelData.cs
-res://Scripts/Utilities/Game State/Data/CharacterDictionary.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatDamageNode.cs
-res://Scripts/Utilities/Dialogue System/DialogueScene.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Scenes/DialogueSceneText.cs
-res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs
-res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs
-res://Scripts/Test2.cs
-res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/SkillReplaceEffect.cs
-res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CharacterExpUi.cs
-res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs
-res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterNameField.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs
-res://Scripts/Room Scripts/PlayerRankUI.cs
-res://Scripts/Utilities/State System/Resource-Based States/StateObject.cs
-res://Scenes/Battle/UI/BattlePauseButton.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatCheckVictoryStatus.cs
-res://Resources/Stage Selection/Chapters/StageConnections.cs
-res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterTitleField.cs
-res://Scripts/Game Menu/Gacha Menu/GachaMenu.cs
-res://Scripts/Combat Scripts/Combat System/UI/SkillSelection.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateResource.cs
-res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs
-res://Scripts/Time System/DateTimeManager.cs
-res://Scripts/Menus/MenuStack.cs
-res://Scripts/Combat Scripts/Combat System/Battle Data/Clear Conditions/TurnCountClearCondition.cs
-res://Scripts/Combat Scripts/Combat System/Grid/BattleSpaceArrow.cs
-res://Scripts/Combat Scripts/Combat System/Stat System/RoleStatGrowth.cs
-res://Scripts/Event System/Custom Game Events/GachaCharacterEvent.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionHasQuest.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatLossNode.cs
-res://Scripts/Overworld Scripts/Inventory System/Inventory.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Sorter/SortByLevel.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/BattleState.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/BaseEffect.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Filter/CharacterFilter.cs
-res://Scripts/TouchInputManager.cs
-res://Scripts/Utilities/Dialogue System/States/DialogueInactiveState.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Sorter/CharacterSorter.cs
-res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateNode.cs
-res://Scripts/Combat Scripts/Combat System/UI/DirectionSelectionButton.cs
-res://Scripts/Game Menu/Character Creator/ImageSaver.cs
-res://Scripts/Game Menu/Character Creator/Menus/Character Editor/CharacterFieldMenu.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Damage Formulas/BaseDamageFormula.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnFinishedNode.cs
-res://Scripts/Gacha System/GachaCharacter.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/AmpDamageEffect.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueInactiveStateResource.cs
-res://Scripts/Utilities/FollowerNode.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/TurnOrderManager.cs
-res://Scripts/Utilities/Delayed Call/DelayedCalls.cs
-res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
-res://Scripts/Test.cs
-res://Scripts/Game Menu/Character Creator/Menus/SelectionMenu.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/StatusEffect.cs
-res://Scripts/Game Menu/Character Creator/Characters/CustomGameCharacter.cs
-res://Scripts/Combat Scripts/Combat System/Battle Components/TurnDataManager.cs
-res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
-res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateDefault.cs
-res://Scripts/Time System/TimePassedEvent.cs
-res://Scripts/Menus/GachaMenu.cs
-res://Scripts/Event System/Custom Game Events/CharacterSkillEvent.cs
-res://Scripts/Overworld Scripts/Quest System/Custom Quest Goals/QuestGoalItemPickup.cs
-res://Scripts/Game Menu/Character Creator/Display Overrides/CharacterCreatorPreview.cs
-res://Scripts/Gacha System/GachaCharacterList.cs
-res://Scripts/Game Menu/Party Menu/PartyMenu.cs
-res://Scripts/Utilities/Dialogue System/States/DialogueActivatingState.cs
-res://Scripts/Combat Scripts/Combat System/Battle Initializer/BattleDataResource.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Rewards/StageReward.cs
-res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateTargetable.cs
-res://Scripts/Game Menu/Upgrade Menu/CharacterUpgradeMenu.cs
-res://Scripts/Event System/EventManager.cs
-res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Sorter/SortByName.cs
-res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatPartyStatusNode.cs
-res://Scripts/Combat Scripts/Combat System/Stat System/Stats/StatContainer.cs
-res://Scripts/Combat Scripts/Combat System/Battle States/CombatPreTurnStartNode.cs
-res://Scripts/Combat Scripts/Combat System/Stat System/UI/StatUI.cs
-res://Scripts/Game Menu/Character Creator/Menus/CharacterCreatorMenu.cs
-res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumberManager.cs
-res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/SkillAnimationElement.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueFinishedDisplayingTextStateResource.cs
-res://Scripts/Game Menu/Character Creator/Image Manager/CustomCharacterManager.cs
-res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueActivatingStateResource.cs
-res://Scripts/Utilities/DelayedNode.cs
-res://Scenes/Battle/CombatAnimationButton.cs
-res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderPortrait.cs
-res://Scripts/UI/Main Overlay/GemText.cs
-res://Scripts/Event System/VoidEventHandler.cs
-res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionFlagSet.cs
-res://Scenes/Overworld/Upgrade Menu/CharacterLevelAndLBMenu.tscn
+res://Scenes/Overworld/overworld_item_display.tscn
 res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/03_crate_open_3.tres
 res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/03_crate_open_1.tres
 res://Audio Assets/Sound Effects/Leohpaz Minifantasy SFX/01_chest_open_1.tres
@@ -363,27 +47,340 @@ res://Resources/Characters/Character Data/test_enemy.tres
 res://Resources/Overworld/Battles/basic_stage.tres
 res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_006_male_wizard.tres
 res://Resources/Characters/Characters/006_male_wizard.tres
-res://Resources/Items/Level Upgrades/spirit_key.tres
-res://Scripts/Constants/ItemNames.cs
-res://Scenes/Main Game.tscn
-res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakDict.cs
-res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakRarity.cs
-res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakAmounts.cs
 res://Resources/Characters/Limit Break Data/Rarity Lists/n_rarity_lbs.tres
-res://Resources/Characters/Limit Break Data/Limit Break Dicts/n_ssr_lb_dict.tres
 res://Resources/Characters/Limit Break Data/Rarity Lists/r_rarity_lbs.tres
 res://Resources/Characters/Limit Break Data/Rarity Lists/sr_rarity_lbs.tres
 res://Resources/Characters/Limit Break Data/Rarity Lists/ssr_rarity_lbs.tres
-res://Scenes/Overworld/Party Menu/UI/character_party_menu_display.tscn
-res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterDetailedDisplay.cs
-res://Scenes/Overworld/Party Menu/UI/character_detailed_display.tscn
-res://Scenes/game_state.tscn
-res://Art Assets/Backgrounds/Cartoon_Forest_BG_01/Layers/Forest_1_Parallax.tscn
-res://Scenes/Battle/Battle Scene.tscn
-res://Scenes/Battle/UI/Reward Menu/Reward_Display.tscn
-res://Scenes/Battle/UI/Reward Menu/Exp Reward Display.tscn
-res://Scenes/Battle/UI/Reward Menu/exp_party_character.tscn
+res://Scenes/Room/Rank UI.tscn
+res://Scenes/Main Game.tscn
 res://Scenes/Overworld/Upgrade Menu/Upgrade Menu.tscn
 res://Scenes/Overworld/Party Menu/Party Menu.tscn
-res://Scenes/Overworld/Upgrade Menu/character_button.tscn
-res://Resources/Characters/Limit Break Data/Limit Break Dicts/N Rarity/n_n_lb_dict.tres
+res://Scenes/Overworld/Overworld Menu.tscn
+res://Scenes/game_state.tscn
+res://Scripts/Overworld Scripts/Inventory System/UI/InventoryItemDisplay.cs
+res://Scripts/Menus/OpenMenu.cs
+res://Scenes/Battle/UI/BattlePauseButton.cs
+res://Scripts/Game Menu/Character Creator/CharacterGridManager.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatAnimationNode.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Damage Formulas/AmpDamageFormula.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/CharacterSelectionButton.cs
+res://Scripts/Event System/Custom Game Events/InventoryChangeEvent.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger Effects/AddItemTriggerEffect.cs
+res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs
+res://Scripts/Room Scripts/Stamina System/FoodItem.cs
+res://Scripts/Overworld Scripts/Quest System/Custom Quest Goals/QuestGoalItemPickup.cs
+res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterBoxDisplay.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Star Conditions/StageStarCondition.cs
+res://Scripts/Overworld Scripts/Player Scripts/Player.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/RarityStar.cs
+res://Scripts/Game Menu/Character Creator/Characters/Worlds/CharacterWorld.cs
+res://Scripts/Utilities/Scene Manager/LoadScreen.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateChangeData.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerLoadScene.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionOrCondition.cs
+res://Scripts/Utilities/Game State/GameState.cs
+res://Scripts/Game Menu/Character Creator/Menus/_CharacterCreatorMenuTemplate.cs
+res://Scripts/Overworld Scripts/World Events/WorldEventDialogueEvent.cs
+res://Scripts/Game Menu/Upgrade Menu/LimitBreakMenu.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger Effects/TriggerDialogue.cs
+res://Scripts/Utilities/State System/Resource-Based States/StateObject.cs
+res://Scripts/Utilities/Scene Manager/SceneManager.cs
+res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/DirectionalShape.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacterFlags.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/PartyCharacterDisplay.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnTransitionNode.cs
+res://Scripts/Game Menu/Upgrade Menu/CharacterUpgradeMenu.cs
+res://Scripts/Menus/StackableMenu.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/EffectManager.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Rewards/GemReward.cs
+res://Scripts/Utilities/Dialogue System/States/DialogueInactiveState.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterDetailedDisplay.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationMoveCaster.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Home Menu/HomeMenu.cs
+res://Scripts/Game Menu/Character Creator/Characters/Classes/WeaponType.cs
+res://Scripts/Utilities/State System/Resource-Based States/StateChangeCondition.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueActivatingStateResource.cs
+res://Scripts/Game Menu/Character Creator/Characters/Powercreep/PowercreepLevelData.cs
+res://Scripts/Combat Scripts/Combat System/Combat AI/CombatAI.cs
+res://Scripts/UI/GUI Overrides/ScrollableButton.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Rewards/ItemReward.cs
+res://Scripts/Game Menu/Character Creator/Character Portraits/CustomCharacterPortrait.cs
+res://Scripts/Utilities/Dialogue System/States/DialogueTextUpdatingState.cs
+res://Scripts/Overworld Scripts/Quest System/QuestManager.cs
+res://Scripts/Overworld Scripts/Overworld Menu/OverworldMenu.cs
+res://Scripts/Combat Scripts/Combat System/Stat System/UI/BreakStatusUI.cs
+res://Scripts/Event System/GameEvent.cs
+res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderDisplay.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/_CharacterCreatorStateTemplate.cs
+res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterWorldField.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs
+res://Scripts/Combat Scripts/Combat System/Affiliation/CharacterAffiliation.cs
+res://Scripts/Overworld Scripts/Quest System/QuestGoal.cs
+res://Scripts/Menus/MenuStack.cs
+res://Scripts/Game Menu/Character Creator/Display Overrides/CharacterCreatorPreview.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionFlagSet.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/ImageCropper.cs
+res://Scripts/Overworld Scripts/Inventory System/UI/RewardItemDisplay.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationCreateObject.cs
+res://Scripts/Overworld Scripts/World Events/WorldEventEffect.cs
+res://Scripts/Combat Scripts/Combat System/Stat System/Stats/BattleStatsTemplate.cs
+res://Scripts/Room Scripts/Player Character/PlayerCharacter.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/CharacterSelector.cs
+res://Scripts/Test.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/KnockbackEffect.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/AddStatEffect.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorCropState.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueFinishedDisplayingTextStateResource.cs
+res://Scripts/Room Scripts/PlayerRankManager.cs
+res://Scripts/Utilities/Game State/Data/GachaGame.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Sorter/SortByLevel.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorIdleState.cs
+res://Scripts/Gacha System/Dungeons/Dungeon.cs
+res://Scripts/Combat Scripts/Combat System/Battle Data/Clear Conditions/ClearCondition.cs
+res://Scripts/Utilities/DelayedAudio.cs
+res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumber.cs
+res://Scripts/Game Menu/Character Creator/Menus/CharacterCreatorMenu.cs
+res://Scripts/Overworld Scripts/Overworld Menu/MainMenuButton.cs
+res://Scripts/Misc/ParticleStart.cs
+res://Scripts/Combat Scripts/Combat System/Battle Data/StageData.cs
+res://Scripts/Utilities/Dialogue System/ActorEmotion.cs
+res://Scripts/Overworld Scripts/Calendar Event/CalendarEvent.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CurrentPartySubmenu.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatStateNode.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatKnockbackState.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/CharacterStatusUI.cs
+res://Scripts/Misc/DeleteParentAfterTime.cs
+res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterExpCurve.cs
+res://Scripts/Overworld Scripts/SceneLibrary.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs
+res://Scripts/Overworld Scripts/Inventory System/InventorySlot.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealEffect.cs
+res://Scripts/Game Menu/Gacha Menu/GachaBannerUI.cs
+res://Scripts/Utilities/Flags/GameStringFlags.cs
+res://Scripts/UI/Main Overlay/RankText.cs
+res://Scripts/UI/Banners Display/BannersWindow.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs
+res://Scripts/Gacha System/GachaBanner.cs
+res://Scripts/Combat Scripts/Combat System/Grid/BattleGrid.cs
+res://Scripts/Combat Scripts/Combat System/Combat AI/ConditionalAI.cs
+res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs
+res://Resources/Stage Selection/Chapters/ChapterSelectionButton.cs
+res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/AmpAttackAI.cs
+res://Scripts/Overworld Scripts/Inventory System/Inventory.cs
+res://Scripts/Utilities/Flags/GameFlags.cs
+res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/BasicAI.cs
+res://Scripts/Combat Scripts/Combat System/Stat System/Stats/StatContainer.cs
+res://Scripts/Combat Scripts/Combat System/Grid/States/_GridStateTemplate.cs
+res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CharacterExpUi.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger Effects/DeleteObjectTriggerEffect.cs
+res://Scripts/Overworld Scripts/World Events/WorldEventManager.cs
+res://Scripts/Overworld Scripts/World Events/Custom World Events/WorldEffectGiveQuest.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Level Up Menu/LevelUpMenu.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatFinishedNode.cs
+res://Resources/Stage Selection/Chapters/ChapterSelectionMenu.cs
+res://Scripts/Combat Scripts/Combat System/Grid/GridSpace.cs
+res://Scripts/Event System/VoidEventHandler.cs
+res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterClass.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/ApplyStatusEffect.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectionMenu.cs
+res://Scripts/Event System/EventManager.cs
+res://Scripts/Combat Scripts/Combat System/UI/BattleSkillButton.cs
+res://Scripts/UI/Main Overlay/StaminaText.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/StageSelectButton.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionQuestFinished.cs
+res://Scripts/Utilities/State System/Node-Based States/StateNode.cs
+res://Scripts/Event System/VoidEvent.cs
+res://Scripts/Gacha System/Dungeons/GachaDungeons.cs
+res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/EditorPortraitDisplay.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/UI/CharacterStatusList.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/DealDamageEffect.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/BaseEffect.cs
+res://Resources/Utilities/DeleteAfterAnimation.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterRarityDisplay.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleCharacter.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/SkillLoadout.cs
+res://Scripts/Game Menu/Gacha Menu/GachaMenu.cs
+res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/GridShape.cs
+res://Scripts/Time System/TimePassedEvent.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/ISkillEffect/BDragonElementChart.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/PartyMemberSelectionButton.cs
+res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateSelectable.cs
+res://Scripts/Event System/Custom Game Events/DialogueEvent.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatVictoryNode.cs
+res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs
+res://Scripts/Game Menu/Character Creator/ImageSaver.cs
+res://Scripts/Room Scripts/Time/GameTimeManager.cs
+res://Scripts/Game Menu/Character Creator/CharacterCreatorManager.cs
+res://Scripts/Utilities/Dialogue System/States/DialogueStateNode.cs
+res://Scripts/Combat Scripts/Combat System/UI/SkipTurnButton.cs
+res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CombatExpDisplay.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger Effects/AddMoneyTriggerEffect.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger Effects/SkipTimeTriggerEffect.cs
+res://Scripts/Overworld Scripts/Quest System/BaseQuest.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/Character Components/BattleStatsManager.cs
+res://Scripts/Utilities/Dialogue System/States/DialogueActivatingState.cs
+res://Scripts/Combat Scripts/Combat System/UI/Character/CharacterHealth.cs
+res://Scripts/Combat Scripts/Combat System/Stat System/UI/StatUI.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueInactiveStateResource.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/Custom Dialogue Picker/DialoguePickerQuest.cs
+res://Scripts/Save System/FileSaver.cs
+res://Scripts/Utilities/Dialogue System/DialogueTree.cs
+res://Scripts/Overworld Scripts/Triggers/Trigger Effects/ChangeFlagTriggerEffect.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/BattleKnockbackManager.cs
+res://Scripts/Room Scripts/RoomMenu.cs
+res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/_TemplateAI.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/BattleCamera.cs
+res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateTargeting.cs
+res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateWalkable.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/PartySetup.cs
+res://Scripts/Game Menu/Character Creator/Menus/SelectionMenu.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnNode.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/UpgradeMenu.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Rewards/StageReward.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/SkillRevertEffect.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/SkillManager.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateTimePassedCondition.cs
+res://Scripts/Game Menu/GameMenu.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Scenes/DialogueSceneText.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/CameraController.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerEffect.cs
+res://Scripts/PortraitEditorTool.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/Conditions/SkillEffectCondition.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/SkillReplaceEffect.cs
+res://Scripts/Combat Scripts/Combat System/UI/DirectionSelectionButton.cs
+res://Scripts/Utilities/Delayed Call/DelayedCalls.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/_CombatNodeTemplate.cs
+res://Scripts/Overworld Scripts/Triggers/TriggerDetector.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorAdjustCropState.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/DialogueCondition.cs
+res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/AddSlidingStatEffect.cs
+res://Scripts/Overworld Scripts/Overworld Menu/GemDisplay.cs
+res://Scripts/Gacha System/GachaCost.cs
+res://Scripts/UI/Gacha Display/OwnedGachaCharactersMenu.cs
+res://Scripts/Gacha System/GachaCharacterData.cs
+res://Scripts/Overworld Scripts/NPC.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/ISkillEffect/BDragonElementEffect.cs
+res://Scripts/UI/GachaBottomBar.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/ElementChart.cs
+res://Scripts/Room Scripts/PlayerRankUI.cs
+res://Scripts/Utilities/Game State/Data/CharacterDictionary.cs
+res://Scripts/Room Scripts/Stamina System/StaminaManager.cs
+res://Scripts/Combat Scripts/Combat System/Grid/Grid Shapes/RangedShape.cs
+res://Scripts/Event System/Custom Game Events/CharacterPortraitEvent.cs
+res://Scripts/Overworld Scripts/Inventory System/ItemResource.cs
+res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakRarity.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/ConditionalSkillEffect.cs
+res://Scripts/UI/Calendar/DateTime.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/SkillCaster.cs
+res://Scripts/Event System/Custom Game Events/CharacterSkillEvent.cs
+res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterNameField.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatRewardNode.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Sorter/SortByName.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/Creation State/CharacterCreatorState.cs
+res://Scripts/Utilities/State System/Resource-Based States/StateResource.cs
+res://Scripts/Gacha System/CustomGachaCharacter.cs
+res://Scripts/Constants/ItemNames.cs
+res://Scripts/TouchInputManager.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Combat Elements/SkillDamageEffect.cs
+res://Scripts/Game Menu/Character Creator/Characters/Powercreep/PowercreepData.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateResource.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatDamageNode.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/DialoguePicker.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/DialogueAndCondition.cs
+res://Scripts/Game Menu/Character Creator/Character Portraits/PortraitBorder.cs
+res://Scripts/Overworld Scripts/World Events/Custom World Events/LoadSceneWorldEffect.cs
+res://Scripts/Tag.cs
+res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/SkillEffect.cs
+res://Scripts/Combat Scripts/Combat System/UI/SkillSelection.cs
+res://Scripts/Game Menu/Character Creator/Characters/CustomGameCharacter.cs
+res://Scripts/Game Menu/Character Creator/Menus/Character Editor/CharacterFieldMenu.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatActivatingNode.cs
+res://Scripts/Room Scripts/Player Character/SpriteList.cs
+res://Scripts/Utilities/SpriteSheetYSetter.cs
+res://Scenes/Battle/CombatAnimationButton.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatCheckVictoryStatus.cs
+res://Resources/Stage Selection/Chapters/StageConnections.cs
+res://Scripts/Game Menu/Character Creator/Menus/Character Editor/CreateCharacterMenu.cs
+res://Scripts/Game Menu/Character Creator/ScaleScrollContainerToBottom.cs
+res://Scripts/Combat Scripts/Combat System/UI/Turn Order UI/TurnOrderPortrait.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueDisplayingTextStateResource.cs
+res://Scripts/Game Menu/Character Creator/CharacterDisplayUi.cs
+res://Scripts/Test2.cs
+res://Scripts/Menus/GachaMenu.cs
+res://Scripts/Combat Scripts/Combat System/Battle Data/Clear Conditions/TurnCountClearCondition.cs
+res://Scripts/Combat Scripts/Combat System/Grid/BattleSpaceArrow.cs
+res://Scripts/Combat Scripts/Combat System/Stat System/Stats/StatType.cs
+res://Scripts/Event System/CustomEventHandler.cs
+res://Scripts/Utilities/DelayedNode.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatLossNode.cs
+res://Scripts/Overworld Scripts/Calendar Event/CalendarEventLibrary.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Filter/FilterByRole.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/BattleManager.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/StatusEffect.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Star Conditions/NoDeathCondition.cs
+res://Scripts/Time System/DateTimeManager.cs
+res://Scripts/Utilities/Dialogue System/DialogueScene.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Filter/CharacterFilter.cs
+res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateNode.cs
+res://Scripts/Combat Scripts/Combat System/UI/Rewards UI/CombatRewardDisplay.cs
+res://Scripts/Game Menu/Character Creator/Display Overrides/CharacterEditorPortrait.cs
+res://Scripts/Game Menu/Character Creator/Image Manager/CustomCharacterManager.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Damage Formulas/BaseDamageFormula.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnFinishedNode.cs
+res://Scripts/Gacha System/GachaCharacterList.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/AmpDamageEffect.cs
+res://Scripts/Utilities/Dialogue System/States/DialogueTextCompletedState.cs
+res://Scripts/Utilities/Dialogue System/States/Resource Version/DialogueStateDialogueNotNullCondition.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/TurnOrderManager.cs
+res://Scripts/UI/Main Overlay/GemText.cs
+res://Scripts/UI/Calendar/CalendarUI.cs
+res://Scripts/Save System/OwnedCharacterData.cs
+res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/PortraitEditorMenu.cs
+res://Scripts/Combat Scripts/Combat System/Stat System/RoleStatGrowth.cs
+res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakAmounts.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/TurnDataManager.cs
+res://Scripts/Gacha System/GachaCharacter.cs
+res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateDefault.cs
+res://Scripts/TestData.cs
+res://Scripts/InfiniNumber.cs
+res://Scripts/Event System/Custom Game Events/GachaCharacterEvent.cs
+res://Scripts/Overworld Scripts/Player Scripts/PlayerEventManager.cs
+res://Scripts/Game Menu/Character Creator/Characters/Worlds/CustomCharacterWorld.cs
+res://Scripts/Gacha System/UpgradeCurrency.cs
+res://Scripts/Game Menu/MainGame.cs
+res://Scripts/Utilities/Dialogue System/DialogueManager.cs
+res://Scripts/Combat Scripts/Combat System/Battle Initializer/BattleDataResource.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/SelectPartyMemberSubmenu.cs
+res://Scripts/Combat Scripts/Combat System/Grid/States/GridStateTargetable.cs
+res://Scripts/Game Menu/Party Menu/PartyMenu.cs
+res://Scripts/Event System/Variant Game Events/IntGameEvent.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Upgrade Menu/Character Sorter/CharacterSorter.cs
+res://Scripts/Game Menu/Character Creator/Characters/Limit Break Data/LimitBreakDict.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatPartyStatusNode.cs
+res://Scripts/Combat Scripts/Combat System/Stat System/UI/SlidingStatUI.cs
+res://Scripts/Combat Scripts/Combat System/Battle States/CombatPreTurnStartNode.cs
+res://Scripts/Combat Scripts/Combat System/UI/DirectionButtonUI.cs
+res://Scripts/Game Menu/Character Creator/Menus/Character Editor/Field Editors/CharacterTitleField.cs
+res://Scripts/Combat Scripts/Combat System/Damage Numbers/DamageNumberManager.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/SkillAnimationElement.cs
+res://Scripts/Utilities/State System/Resource-Based States/StateChangeData.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/DelayTurnEffect.cs
+res://Scripts/Combat Scripts/Combat System/Battle Components/BattleState.cs
+res://Scripts/Utilities/Dialogue System/Dialogue Picker/Dialogue Conditions/DialogueConditionHasQuest.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealthDamageEffect.cs
+res://Scripts/Game Menu/Party Menu/PartyCharacterBox.cs
+res://Scripts/Event System/Variant Game Events/IntEventHandler.cs
+res://Scripts/Overworld Scripts/Overworld Menu/Stage Selection/Star Conditions/TurnClearCondition.cs
+res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs
+res://Scripts/Constants/StatNames.cs
+res://Scripts/Utilities/FollowerNode.cs
+res://Scripts/Utilities/Dialogue System/Actor.cs
+res://Scenes/Battle/UI/Reward Menu/Reward_Display.tscn
+res://Scripts/Combat Scripts/Combat System/UI/Combat Rewards/Combat Reward Menu.tscn
+res://Scenes/Battle/UI/Reward Menu/exp_party_character.tscn
+res://Scenes/Battle/UI/Reward Menu/Exp Reward Display.tscn
+res://Scenes/Battle/Battle Scene.tscn

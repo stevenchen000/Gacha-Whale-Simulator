@@ -1,6 +1,6 @@
+ItemResource
 LimitBreakDict
 LimitBreakRarity
-ItemResource
 KnockbackEffect
 AudioStreamRandomizer
 SkillAnimationCreateObject
@@ -12,4 +12,3 @@ VoidEvent
 StageReward
 BasicAI
 SkillReplaceEffect
-SkillRevertEffect

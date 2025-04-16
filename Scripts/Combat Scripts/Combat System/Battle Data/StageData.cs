@@ -60,9 +60,18 @@ namespace CombatSystem
             var rewards = CalculateRewardsForStars(currStars, newStars);
             SetStarCount(newStars);
 
+            ReceiveRewards(rewards);
             var levelUps = AddExpToCharacters(state);
             var eventArgs = new StageCompletionData(currStars, newStars, rewards, levelUps, ExpGained);
             return eventArgs;
+        }
+
+        private void ReceiveRewards(Array<StageReward> rewards)
+        {
+            foreach(var reward in rewards)
+            {
+                reward.ReceiveReward();
+            }
         }
 
         private List<LevelUpData> AddExpToCharacters(BattleState state)

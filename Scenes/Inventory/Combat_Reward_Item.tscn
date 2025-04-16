@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dga43qxg6lsac"]
 
-[ext_resource type="Script" uid="uid://c4sn6nq34sd2e" path="res://Scripts/Overworld Scripts/Inventory System/UI/ItemDisplayUI.cs" id="1_llptb"]
+[ext_resource type="Script" uid="uid://c4sn6nq34sd2e" path="res://Scripts/Overworld Scripts/Inventory System/UI/RewardItemDisplay.cs" id="1_llptb"]
 [ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="1_sa47n"]
 [ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="2_llptb"]
 [ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="3_qw16b"]

@@ -7,10 +7,13 @@ namespace CombatSystem
     public partial class CombatRewardNode : CombatStateNode
     {
         [Export] private PackedScene rewardMenuScene;
+        [Export] private PackedScene expMenuScene;
         private CombatRewardDisplay rewardMenu;
+        private CombatExpDisplay expMenu;
         private StageCompletionData completionData;
 
         private bool expShown = false;
+        private bool isExiting = false;
 
         protected override void OnStateActivated()
         {
@@ -28,7 +31,9 @@ namespace CombatSystem
 
         private void DisplayExp()
         {
-
+            expMenu = Utils.InstantiateCopy<CombatExpDisplay>(expMenuScene);
+            battle.AddChild(expMenu);
+            expMenu.Init(completionData.LevelUps);
         }
 
         protected override void RunState(double delta)
@@ -40,11 +45,18 @@ namespace CombatSystem
                 DisplayExp();
                 Utils.Print(this, "Showing exp animation");
             }
+            if (expShown && !IsInstanceValid(expMenu) && !isExiting)
+            {
+                isExiting = true;
+                battle.ReturnToCombatMenu();
+            }
         }
 
         protected override StateNode CheckStateChange()
         {
             StateNode result = null;
+
+            
 
             return result;
         }

@@ -3,6 +3,7 @@ using System;
 
 namespace InventorySystem
 {
+    [Tool]
     [GlobalClass]
     public partial class ItemResource : Resource
     {

@@ -3,7 +3,7 @@ using System;
 
 namespace CombatSystem
 {
-    public partial class CharacterExpUi : Node
+    public partial class CharacterExpUi : Control
     {
         [Export] private CharacterPortraitDisplay characterDisplay;
         [Export] private ProgressBar expBar;
@@ -11,33 +11,63 @@ namespace CombatSystem
         private LevelUpData data;
         private double previousPercent;
         private double percentDiff;
+        [Export] private double minFillSpeed = 30;
         private double currDiffAddition = 0;
+        private int currLevel;
 
 
         private bool isUpdating = false;
-        private bool hasFinished = false;
+        public bool HasFinished { get; private set; } = false;
 
 
         public void Init(LevelUpData data)
         {
             this.data = data;
+            SetupDisplay();
+            UpdateLevelText();
             CalculatePercentageDifference();
+            DelayedCalls.AddCall(0.1, StartAnimation);
         }
 
         public override void _Process(double delta)
         {
             if (isUpdating)
             {
-                currDiffAddition += percentDiff / 5 * delta;
+                currDiffAddition += CalculateAddSpeed(delta);
                 currDiffAddition = Math.Min(currDiffAddition, percentDiff);
                 expBar.Value = (previousPercent + currDiffAddition) % 100;
 
+                CalculateCurrLevel();
                 if(currDiffAddition == percentDiff)
                 {
                     isUpdating = false;
-                    hasFinished = true;
+                    HasFinished = true;
                 }
             }
+        }
+
+        private double CalculateAddSpeed(double delta)
+        {
+            double minAmount = minFillSpeed * delta;
+            double amount = percentDiff / 5 * delta;
+
+            return Math.Max(minAmount, amount);
+        }
+
+        private void SkipAnimation()
+        {
+            if (isUpdating)
+            {
+                isUpdating = false;
+                HasFinished = true;
+                expBar.Value = (previousPercent + percentDiff) % 100;
+                currLevel = data.NewLevel;
+            }
+        }
+
+        private void StartAnimation()
+        {
+            isUpdating = true;
         }
 
         private void CalculatePercentageDifference()
@@ -51,6 +81,25 @@ namespace CombatSystem
             expBar.Value = prevValue;
             previousPercent = prevValue;
             percentDiff = newExp - prevExp;
+        }
+
+        private void CalculateCurrLevel()
+        {
+            int prevLevel = data.PreviousLevel;
+            int currLevelIncrease = (int)(data.PreviousExpPercent + percentDiff) / 100;
+            currLevel = prevLevel + currLevelIncrease;
+        }
+
+        private void SetupDisplay()
+        {
+            var character = data.Character;
+            var portrait = character.GetPortrait();
+            characterDisplay.UpdatePortrait(portrait);
+        }
+
+        private void UpdateLevelText()
+        {
+            levelText.Text = $"Level {currLevel}";
         }
     }
 }

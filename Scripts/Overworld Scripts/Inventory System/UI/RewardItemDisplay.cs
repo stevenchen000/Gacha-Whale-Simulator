@@ -3,7 +3,7 @@ using Godot;
 
 namespace InventorySystem
 {
-    public partial class ItemDisplayUI : Node
+    public partial class RewardItemDisplay : Node
     {
         [Export] private ItemResource item;
         [Export] private TextureRect textureDisplay;
