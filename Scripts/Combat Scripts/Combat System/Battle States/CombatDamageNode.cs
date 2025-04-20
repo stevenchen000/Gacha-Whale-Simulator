@@ -12,21 +12,25 @@ namespace CombatSystem
         private Array<SkillEffect> effects;
         private SkillEffect currEffect;
         private int effectIndex = 0;
+        private TurnData turnData;
+        private SkillCastData skillCast;
 
         private TimeHandler timer;
 
         protected override void OnStateActivated()
         {
             timer = new TimeHandler();
-            effects = battle.SelectedSkill.Skill.effects;
+            turnData = battle.turnData;
+            skillCast = turnData.GetCurrentSkillCast();
+            effects = skillCast.Skill.Skill.effects;
             if (effects != null && effects.Count > 0)
                 currEffect = effects[0];
         }
 
         protected override void RunState(double delta)
         {
-            timer.Tick(delta);
-            bool finished = currEffect.RunEffect(battle.turnData, timer);
+            /*timer.Tick(delta);
+            bool finished = currEffect.RunEffect(turnData, skillCast, timer);
             
             if (finished)
             {
@@ -36,7 +40,7 @@ namespace CombatSystem
                     currEffect = effects[effectIndex];
                 else
                     currEffect = null;
-            }
+            }*/
         }
 
         protected override StateNode CheckStateChange()
@@ -54,7 +58,7 @@ namespace CombatSystem
         protected override void OnStateDeactivated()
         {
             Reset();
-            
+            turnData.RemoveCurrentSkill();
         }
 
         private void Reset()
@@ -63,6 +67,8 @@ namespace CombatSystem
             effectIndex = 0;
             currEffect = null;
             timer = null;
+            turnData = null;
+            skillCast = null;
         }
     }
 }

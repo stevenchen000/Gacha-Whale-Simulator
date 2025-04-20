@@ -7,44 +7,50 @@ namespace CombatSystem
     public partial class HealthDamageEffect : SkillEffect
     {
         [Export] private float ampConsumptionPercent = 100;
-        protected override void _StartEffect(TurnData data)
+        protected override void _StartEffect(TurnData data, SkillCastData skillCast)
         {
-            DealDamage(data);
+            DealDamage(data, skillCast);
         }
 
-        protected override bool _RunEffect(TurnData data, TimeHandler timer)
+        protected override bool _RunEffect(TurnData data, SkillCastData skillCast, TimeHandler timer)
         {
             return timer.TimeIsUp(delay);
         }
 
-        protected override void _EndEffect(TurnData data)
+        protected override void _EndEffect(TurnData data, SkillCastData skillCast)
         {
             
         }
 
         
-        private void DealDamage(TurnData data)
+        private void DealDamage(TurnData data, SkillCastData skillCast)
         {
-            var caster = data.caster;
-            var targets = data.targets;
+            var caster = skillCast.Caster;
+            var targets = GetTargets(skillCast);
+            int damagePerTarget = CalculateDamage(caster, targets.Count);
 
-            foreach(var target in targets)
+            caster.Stats.ConsumeAmp(ampConsumptionPercent);
+            foreach (var target in targets)
             {
-                DealDamageToTarget(data, caster, target);
+                DealDamageToTarget(data, skillCast, caster, target, damagePerTarget);
             }
         }
 
-        private void DealDamageToTarget(TurnData data, BattleCharacter caster, BattleCharacter target)
+        private void DealDamageToTarget(TurnData data, SkillCastData skillCast, BattleCharacter caster, BattleCharacter target, int damage)
+        {
+            target.Stats.TakeDamage(damage);
+            data.AddHpDamage(caster, target, damage);
+            
+            DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
+        }
+
+        private int CalculateDamage(BattleCharacter caster, int numOfTargets)
         {
             int casterAmp = caster.Stats.GetSlidingStat(StatNames.Amp);
             float percent = ampConsumptionPercent / 100;
             int damage = (int)(casterAmp * percent);
 
-            target.Stats.TakeDamage(damage);
-            caster.Stats.ConsumeAmp(ampConsumptionPercent);
-            data.AddHpDamage(caster, target, casterAmp);
-            
-            DamageNumberManager.ShowDamageNumber(target, damage, DamageType.HealthDamage);
+            return damage / numOfTargets;
         }
     }
 }

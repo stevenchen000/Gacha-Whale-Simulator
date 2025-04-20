@@ -8,39 +8,46 @@ namespace CombatSystem
     public partial class SkillCaster : Node
     {
 
-        public bool IsCasting { get { return skill != null; } }
+        public bool IsCasting { get { return turnData != null; } }
         private SkillContainer skill;
         private TimeHandler time;
         private TurnData turnData;
-        private List<SkillAnimationContainer> animations;
-        private List<SkillAnimationContainer> runningAnimations;
-        private List<SkillAnimationContainer> effects;
-        private SkillAnimationContainer currEffect;
+        private SkillCastData skillCast;
+        private List<SkillAnimationContainer> animations = new List<SkillAnimationContainer>();
+        private List<SkillAnimationContainer> runningAnimations = new List<SkillAnimationContainer>();
 
-        public override void _Ready()
-        {
-            animations = new List<SkillAnimationContainer>();
-            runningAnimations = new List<SkillAnimationContainer>();
-        }
+        private List<SkillEffect> effects = new List<SkillEffect>();
+        private int effectIndex = 0;
+
+        private bool isRunningEffects = false;
+
 
         public override void _Process(double delta)
         {
-            if (skill != null && !SkipAnimation())
+            if (turnData != null)
             {
                 time.Tick(delta);
-                bool hasFinished = RunSkill(delta);
-                if (hasFinished)
+
+                if (!isRunningEffects)
+                {
+                    bool animDone = RunSkillAnimations(delta);
+                    if (animDone)
+                    {
+                        isRunningEffects = true;
+                        time.Reset();
+                    }
+                }else if(effectIndex < effects.Count)
+                {
+                    RunEffects(delta);
+                }
+                else
                 {
                     EndSkillCast();
                 }
             }
-            else
-            {
-                EndSkillCast();
-            }
         }
 
-        private bool RunSkill(double delta)
+        private bool RunSkillAnimations(double delta)
         {
             CheckUnstartedAnimations();
             RunCurrentAnimations(delta);
@@ -92,23 +99,38 @@ namespace CombatSystem
 
         private void RunEffects(double delta)
         {
+            var effect = effects[effectIndex];
+            bool finished = effect.RunEffect(turnData, skillCast, time);
 
+            if (finished)
+            {
+                effectIndex++;
+                time.Reset();
+            }
         }
 
 
-        public void CastSkill(SkillContainer skill, TurnData turn)
+        public void CastSkill(SkillContainer skill, TurnData turn, SkillCastData skillCast)
         {
             this.skill = skill;
             turnData = turn;
-            skill = turn.Skill;
+            this.skillCast = skillCast;
+            skill = skillCast.Skill;
             time = new TimeHandler();
-            SetupAnimationData();
+
+            SetupAnimationData(turnData, skillCast);
+            SetupEffectData(skillCast);
         }
 
-        private void SetupAnimationData()
+        private void SetupAnimationData(TurnData turnData, SkillCastData skillCast)
         {
+            Utils.Print(this, "Targets: ");
+            foreach(var target in skillCast.Targets)
+            {
+                Utils.Print(this, target.Character.Character.Name);
+            }
             if(!IgnoringAnimations())
-                skill.Skill.SetupSkillAnimation(animations, turnData);
+                skill.Skill.SetupSkillAnimation(animations, turnData, skillCast);
         }
 
         private bool IgnoringAnimations()
@@ -117,10 +139,10 @@ namespace CombatSystem
             return GameState.GetFlag(setting);
         }
 
-        private void SetupEffectData()
+        private void SetupEffectData(SkillCastData skillCast)
         {
-            effects = new List<SkillAnimationContainer>();
-            
+            var newEffects = skillCast.Skill.Skill.effects;
+            effects.AddRange(newEffects);
         }
 
         private void EndSkillCast()
@@ -128,6 +150,11 @@ namespace CombatSystem
             skill = null;
             time = null;
             turnData = null;
+            isRunningEffects = false;
+            runningAnimations.Clear();
+            effects.Clear();
+            effectIndex = 0;
+            skillCast = null;
         }
 
         private bool SkipAnimation()

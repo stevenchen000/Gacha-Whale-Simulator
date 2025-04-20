@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Godot.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,29 +9,23 @@ namespace CombatSystem
 {
     public class SkillEffectContainer
     {
-        private SkillEffect effect;
-        public BattleCharacter target { get; private set; }
+        private SkillEffect Effect;
+        public TurnData Data { get; private set; }
+        public SkillCastData CastData { get; private set; }
+        public BattleCharacter Target { get; private set; }
 
-        public SkillEffectContainer(SkillEffect effect, BattleCharacter target, TurnData data)
+        public SkillEffectContainer(SkillEffect effect, BattleCharacter target, TurnData data, SkillCastData skillCast)
         {
-            
+            Effect = effect;
+            Target = target;
+            Data = data;
+            CastData = skillCast;
         }
 
 
-
-        public void StartEffect()
+        public bool RunEffect(TimeHandler time)
         {
-
-        }
-
-        public bool RunEffect()
-        {
-            return false;
-        }
-
-        public void EndEffect()
-        {
-
+            return Effect.RunEffect(Data, CastData, time);
         }
     }
 }

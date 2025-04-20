@@ -63,5 +63,11 @@ public class TimeHandler
     }
 
 
+    public void Reset()
+    {
+        prevFrame = 0;
+        currFrame = 0;
+    }
+
 }
 

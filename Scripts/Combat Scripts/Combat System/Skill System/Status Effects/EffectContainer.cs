@@ -23,15 +23,18 @@ namespace SkillSystem
                 return Status.Target;
             }
         }
+        public BattleManager Battle { get; private set; }
+
 
         //Used for effects that shouldn't repeat (unlike poison effects)
         private bool isActive = false;
 
 
-        public EffectContainer(BaseEffect effect, StatusContainer status)
+        public EffectContainer(BaseEffect effect, StatusContainer status, BattleManager battle)
         {
             Effect = effect;
             Status = status;
+            Battle = battle;
         }
 
         public void ActivateEffect()

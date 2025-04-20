@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillLoadout" load_steps=5 format=3 uid="uid://ceuop764p5g4r"]
+
+[ext_resource type="Resource" uid="uid://dnnyd8jxmunat" path="res://Resources/Characters/Characters/001_vayne/Skills/001_skill_branch_1.tres" id="1_3l6y4"]
+[ext_resource type="Script" uid="uid://dshcfn65n67r8" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillLoadout.cs" id="1_geawq"]
+[ext_resource type="Resource" uid="uid://jtc7bf5ssjmt" path="res://Resources/Characters/Characters/001_vayne/Skills/001_skill_branch_2.tres" id="2_dtei6"]
+[ext_resource type="Resource" uid="uid://b27taplm7btpl" path="res://Resources/Characters/Characters/001_vayne/Skills/001_skill_branch_3.tres" id="3_e2fy0"]
+
+[resource]
+script = ExtResource("1_geawq")
+SkillList = Array[Object]([ExtResource("1_3l6y4"), ExtResource("2_dtei6"), ExtResource("3_e2fy0")])
+description = ""
+metadata/_custom_type_script = "uid://dshcfn65n67r8"

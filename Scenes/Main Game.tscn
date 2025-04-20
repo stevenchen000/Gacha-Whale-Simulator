@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=51 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
 [ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Battle/Battle Scene.tscn" id="3_f8l6p"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dmcbt7du1gju2" path="res://Scenes/Room/Room.tscn" id="9_xq76o"]
 [ext_resource type="Script" uid="uid://m6dxv4oa631d" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs" id="16_em1yx"]
 [ext_resource type="Script" uid="uid://b8omm6wcwy35u" path="res://Scripts/Constants/StatNames.cs" id="18_sl7r4"]
-[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="19_d1u2s"]
 [ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="19_iffwg"]
 [ext_resource type="Resource" uid="uid://8mo1lvp4wgpf" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/amp.tres" id="20_0b8tr"]
 [ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="20_r0cu4"]
@@ -43,7 +42,13 @@
 [ext_resource type="Resource" uid="uid://6upsx6shuwto" path="res://Resources/Characters/Limit Break Data/Rarity Lists/n_rarity_lbs.tres" id="39_7mxnp"]
 [ext_resource type="Resource" uid="uid://doxyuakswbeik" path="res://Resources/Characters/Limit Break Data/Rarity Lists/r_rarity_lbs.tres" id="40_3gkku"]
 [ext_resource type="Resource" uid="uid://dr0140tb31js1" path="res://Resources/Characters/Limit Break Data/Rarity Lists/sr_rarity_lbs.tres" id="41_qwau0"]
+[ext_resource type="Script" uid="uid://dwsop4dy78aii" path="res://Scripts/Constants/RarityNames.cs" id="42_ihatp"]
 [ext_resource type="Resource" uid="uid://3ftxppnw0i0w" path="res://Resources/Characters/Limit Break Data/Rarity Lists/ssr_rarity_lbs.tres" id="42_ktw2p"]
+[ext_resource type="Texture2D" uid="uid://ch3nhi5x5twob" path="res://Art Assets/UI/Rarity Text/N.png" id="43_ptb6g"]
+[ext_resource type="Texture2D" uid="uid://diwccs301kwl4" path="res://Art Assets/UI/Rarity Text/R.png" id="44_vrm3r"]
+[ext_resource type="Script" uid="uid://cipobsducgi2e" path="res://Scripts/Utilities/Memory Leak Checker/MemoryLeakChecker.cs" id="45_7mxnp"]
+[ext_resource type="Texture2D" uid="uid://l3gw8qlkrakg" path="res://Art Assets/UI/Rarity Text/SR.png" id="45_db814"]
+[ext_resource type="Texture2D" uid="uid://dddkbfd551g5k" path="res://Art Assets/UI/Rarity Text/SSR.png" id="46_tb8as"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_n5tqu"]
 
@@ -79,7 +84,7 @@ _movement = ExtResource("25_ebwyl")
 
 [node name="Element Chart" type="Node2D" parent="Variables"]
 script = ExtResource("25_sl7r4")
-Weaknesses = Dictionary[ExtResource("19_d1u2s"), ExtResource("19_d1u2s")]({
+Weaknesses = {
 ExtResource("27_0hpn3"): ExtResource("28_5m6pt"),
 ExtResource("29_ohcb0"): ExtResource("27_0hpn3"),
 ExtResource("30_n5tqu"): ExtResource("29_ohcb0"),
@@ -87,8 +92,8 @@ ExtResource("28_5m6pt"): ExtResource("30_n5tqu"),
 ExtResource("31_hlcih"): ExtResource("32_pjnjj"),
 ExtResource("33_4iwjo"): ExtResource("31_hlcih"),
 ExtResource("32_pjnjj"): ExtResource("33_4iwjo")
-})
-Resistances = Dictionary[ExtResource("19_d1u2s"), ExtResource("19_d1u2s")]({
+}
+Resistances = {
 ExtResource("27_0hpn3"): ExtResource("29_ohcb0"),
 ExtResource("29_ohcb0"): ExtResource("33_4iwjo"),
 ExtResource("30_n5tqu"): ExtResource("28_5m6pt"),
@@ -96,7 +101,7 @@ ExtResource("28_5m6pt"): ExtResource("31_hlcih"),
 ExtResource("31_hlcih"): ExtResource("33_4iwjo"),
 ExtResource("33_4iwjo"): ExtResource("32_pjnjj"),
 ExtResource("32_pjnjj"): ExtResource("31_hlcih")
-})
+}
 
 [node name="BDragon Element Chart" type="Node2D" parent="Variables"]
 editor_description = "Used to get the correct color for BDragon sprites' based on element"
@@ -131,6 +136,13 @@ _spiritKeys = ExtResource("37_4iwjo")
 script = ExtResource("38_d1u2s")
 rarityList = Array[Object]([ExtResource("39_7mxnp"), ExtResource("40_3gkku"), ExtResource("41_qwau0"), ExtResource("42_ktw2p")])
 
+[node name="Rarity Icons" type="Node2D" parent="Variables"]
+script = ExtResource("42_ihatp")
+nRarity = ExtResource("43_ptb6g")
+rRarity = ExtResource("44_vrm3r")
+srRarity = ExtResource("45_db814")
+ssrRarity = ExtResource("46_tb8as")
+
 [node name="Delayed Calls" type="Node2D" parent="."]
 script = ExtResource("36_5m6pt")
 
@@ -153,3 +165,6 @@ offset_right = 4547.0
 offset_bottom = 3630.0
 mouse_filter = 0
 texture = SubResource("CanvasTexture_n5tqu")
+
+[node name="Memory Leak Checker" type="Node2D" parent="."]
+script = ExtResource("45_7mxnp")

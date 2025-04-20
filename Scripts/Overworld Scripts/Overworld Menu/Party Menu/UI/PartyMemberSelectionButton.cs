@@ -7,6 +7,7 @@ namespace PartyMenuSystem
     public partial class PartyMemberSelectionButton : Control
     {
         [Export] private CharacterPortraitDisplay display;
+        [Export] private Label characterName;
 
 
         private SimpleWeakRef<PartyMenu> menu;
@@ -29,6 +30,7 @@ namespace PartyMenuSystem
             var portrait = character.GetPortrait();
 
             display.UpdatePortrait(portrait);
+            UpdateName();
         }
 
         public void EnableButton()
@@ -46,6 +48,11 @@ namespace PartyMenuSystem
         {
             menu.Value.SetCurrentMember(character);
             menu.Value.OpenPartyEditor();
+        }
+
+        private void UpdateName()
+        {
+            characterName.Text = character.Character.Name;
         }
 
     }

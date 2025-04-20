@@ -9,14 +9,19 @@ namespace CombatSystem
         [Export] private CombatStateNode damageCalculationNode;
         private SkillContainer skill;
         private TurnData turnData;
+        private SkillCastData skillCast;
         private BattleCharacter caster;
 
         protected override void OnStateActivated()
         {
             turnData = battle.turnData;
-            skill = turnData.Skill;
-            caster = turnData.caster;
-            caster.CastSkill(skill, turnData);
+            skillCast = turnData.MainSkillCast;
+            if (skillCast != null)
+            {
+                skill = skillCast.Skill;
+                caster = skillCast.Caster;
+                caster.CastSkill(skill, turnData, skillCast);
+            }
         }
 
         protected override void RunState(double delta)
@@ -28,7 +33,7 @@ namespace CombatSystem
         {
             CombatStateNode result = null;
 
-            if (!caster.IsCasting)
+            if (skillCast == null || !caster.IsCasting)
             {
                 result = damageCalculationNode;
             }
@@ -38,6 +43,7 @@ namespace CombatSystem
 
         protected override void OnStateDeactivated()
         {
+            turnData.RemoveCurrentSkill();
             skill = null;
             turnData = null;
             caster = null;

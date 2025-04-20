@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillBranch" load_steps=4 format=3 uid="uid://d3cne32cie1p8"]
+
+[ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_sitgd"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="2_pj3ja"]
+[ext_resource type="Resource" uid="uid://dgir2nricktly" path="res://Resources/Characters/Skills/Roles/Attacker/Skills/basic_amp_attack.tres" id="3_ns0i8"]
+
+[resource]
+script = ExtResource("1_sitgd")
+skillTiers = Array[ExtResource("2_pj3ja")]([ExtResource("3_ns0i8")])
+metadata/_custom_type_script = "uid://oi7b31cv68hk"

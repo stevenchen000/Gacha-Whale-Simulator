@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=8 format=3 uid="uid://d3yk0tyglrs1t"]
+
+[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/warrior_class.tres" id="1_as080"]
+[ext_resource type="Resource" uid="uid://dsmxegoikjnkm" path="res://Resources/Characters/Skills/Elements/dark_element.tres" id="2_8wimw"]
+[ext_resource type="Resource" uid="uid://bf8cl74tynfbm" path="res://Resources/Characters/Characters/001_vayne/001_vayne_powercreep.tres" id="3_8wimw"]
+[ext_resource type="Resource" uid="uid://cnmga8on2vcdy" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_role.tres" id="3_kgx30"]
+[ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="4_2ghjo"]
+[ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="6_7l7e3"]
+[ext_resource type="Resource" uid="uid://cy45sywmtdaui" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne_portrait.tres" id="6_kgx30"]
+
+[resource]
+script = ExtResource("6_7l7e3")
+ID = 1
+portrait = ExtResource("6_kgx30")
+BaseRarity = 2
+Name = "Vayne"
+Title = ""
+World = ""
+Element = ExtResource("2_8wimw")
+Class = ExtResource("1_as080")
+Role = ExtResource("3_kgx30")
+SkillSet = ExtResource("4_2ghjo")
+Powercreep = ExtResource("3_8wimw")
+Description = ""
+metadata/_custom_type_script = "uid://gdabyn413d1c"

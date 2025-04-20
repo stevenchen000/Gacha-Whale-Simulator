@@ -10,10 +10,10 @@ namespace CombatSystem
         [Export] private TargetType targetType = TargetType.Target;
         [Export] private StatusEffect status;
 
-        protected override void _StartEffect(TurnData data)
+        protected override void _StartEffect(TurnData data, SkillCastData skillCast)
         {
-            var caster = data.caster;
-            var targets = data.targets;
+            var caster = skillCast.Caster;
+            var targets = GetTargets(skillCast);
 
             switch (targetType) {
                 case TargetType.Self:
@@ -28,12 +28,12 @@ namespace CombatSystem
             }
         }
 
-        protected override bool _RunEffect(TurnData data, TimeHandler timer)
+        protected override bool _RunEffect(TurnData data, SkillCastData skillCast, TimeHandler timer)
         {
             return timer.TimeIsUp(delay);
         }
 
-        protected override void _EndEffect(TurnData data)
+        protected override void _EndEffect(TurnData data, SkillCastData skillCast)
         {
             
         }

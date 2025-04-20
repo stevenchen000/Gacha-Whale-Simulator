@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillAnimation" load_steps=3 format=3 uid="uid://cb2rgucig1cco"]
+
+[ext_resource type="Resource" uid="uid://cxwkw15pkt42n" path="res://Resources/Characters/Skills/Status Effects/Damaging Debuffs/Burn/instantiate_fire.tres" id="1_a6n0a"]
+[ext_resource type="Script" uid="uid://dkofljjxhtlfe" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/SkillAnimation.cs" id="1_x6v68"]
+
+[resource]
+script = ExtResource("1_x6v68")
+animations = Array[Object]([ExtResource("1_a6n0a")])
+Duration = 0.0
+metadata/_custom_type_script = "uid://dkofljjxhtlfe"

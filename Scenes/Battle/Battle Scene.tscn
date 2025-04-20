@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://ciphn1edo3jcp" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatAnimationNode.cs" id="5_5ipmr"]
 [ext_resource type="Script" uid="uid://dupk5663cjtod" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleState.cs" id="5_h7u6w"]
 [ext_resource type="Script" uid="uid://c7drwxdavjnfx" path="res://Scripts/Combat Scripts/Combat System/Battle Components/TurnDataManager.cs" id="5_yhfgv"]
-[ext_resource type="Script" uid="uid://np2dkxg5chus" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatDamageNode.cs" id="6_0grf5"]
 [ext_resource type="Script" uid="uid://dfreciv7uxgbn" path="res://Scripts/Misc/DeleteParentAfterTime.cs" id="6_kj58v"]
 [ext_resource type="Resource" uid="uid://dosm0n42kdrkx" path="res://Resources/UI/Portrait Boxes/player_border.tres" id="8_ijdqy"]
 [ext_resource type="Script" uid="uid://dxchwut777wmn" path="res://Scripts/Combat Scripts/Combat System/Battle States/End Of Combat/CombatCheckVictoryStatus.cs" id="9_iv2px"]
@@ -28,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://chievkas7hxxp" path="res://Scenes/Battle/Skill Selection/skill_button.tscn" id="15_pxkmk"]
 [ext_resource type="Script" uid="uid://iuc77ubs2taf" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatPartyStatusNode.cs" id="16_i6b8p"]
 [ext_resource type="Script" uid="uid://cw7edjoho3dsp" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatKnockbackState.cs" id="19_ota0i"]
+[ext_resource type="Script" uid="uid://bkyhjxuggbcct" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatTurnEndAnimationNode.cs" id="21_qpwcd"]
 [ext_resource type="Script" uid="uid://cxrkld6422mi1" path="res://Scripts/Combat Scripts/Combat System/Battle Components/BattleKnockbackManager.cs" id="22_7x215"]
 [ext_resource type="Script" uid="uid://dv67h8cljn0ll" path="res://Scripts/Combat Scripts/Combat System/Battle States/CombatRewardNode.cs" id="23_wbcs6"]
 [ext_resource type="PackedScene" uid="uid://iyqrh30vxdn8" path="res://Scenes/Battle/Disable Animation Button.tscn" id="24_4k4b0"]
@@ -384,11 +384,19 @@ turnStart = NodePath("../Turn State")
 Description = "Start of turn
 Runs all OnTurnStart effects"
 
-[node name="Turn State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode", "turnFinishedNode")]
+[node name="Turn State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("animationNode")]
 script = ExtResource("3_iplpb")
-animationNode = NodePath("../../=====Animation=====/Combat Animation State")
-turnFinishedNode = NodePath("../Turn Finished")
+animationNode = NodePath("../Combat Animation State")
 Description = "Awaits character's actions"
+
+[node name="Combat Animation State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("damageCalculationNode")]
+script = ExtResource("5_5ipmr")
+damageCalculationNode = NodePath("../Knockback State")
+Description = "Runs animation for skill"
+
+[node name="Knockback State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnFinishedNode")]
+script = ExtResource("19_ota0i")
+turnFinishedNode = NodePath("../Living Status")
 
 [node name="Living Status" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheckNode")]
 script = ExtResource("16_i6b8p")
@@ -396,32 +404,22 @@ victoryCheckNode = NodePath("../Turn Finished")
 
 [node name="Turn Finished" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheck")]
 script = ExtResource("13_x6kc0")
-victoryCheck = NodePath("../Victory Check")
+victoryCheck = NodePath("../Additional Animation State")
 Description = "Run turn end effects and countdown status effects"
+
+[node name="Additional Animation State" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheckNode")]
+script = ExtResource("21_qpwcd")
+victoryCheckNode = NodePath("../Living Status 2")
+
+[node name="Living Status 2" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("victoryCheckNode")]
+script = ExtResource("16_i6b8p")
+victoryCheckNode = NodePath("../Victory Check")
 
 [node name="Victory Check" type="Node2D" parent="States/====Combat====" node_paths=PackedStringArray("turnNode", "victoryNode", "lossNode")]
 script = ExtResource("9_iv2px")
 turnNode = NodePath("../Pre-Turn State")
 victoryNode = NodePath("../../====End of Combat====/Victory State")
 lossNode = NodePath("../../====End of Combat====/Loss State")
-
-[node name="=====Animation=====" type="Node2D" parent="States"]
-
-[node name="Combat Animation State" type="Node2D" parent="States/=====Animation=====" node_paths=PackedStringArray("damageCalculationNode")]
-script = ExtResource("5_5ipmr")
-damageCalculationNode = NodePath("../../=====Damage Calculation=====/Damage State")
-Description = "Runs animation for skill"
-
-[node name="=====Damage Calculation=====" type="Node2D" parent="States"]
-
-[node name="Damage State" type="Node2D" parent="States/=====Damage Calculation=====" node_paths=PackedStringArray("knockbackNode")]
-script = ExtResource("6_0grf5")
-knockbackNode = NodePath("../Knockback State")
-Description = "Damage applied after animation"
-
-[node name="Knockback State" type="Node2D" parent="States/=====Damage Calculation=====" node_paths=PackedStringArray("turnFinishedNode")]
-script = ExtResource("19_ota0i")
-turnFinishedNode = NodePath("../../====Combat====/Living Status")
 
 [node name="====End of Combat====" type="Node2D" parent="States"]
 

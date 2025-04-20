@@ -146,6 +146,7 @@ namespace CombatSystem
             TurnConfirmed = true;
             Grid.SetTargetingData(null);
             Grid.SetTargetingSelection(null);
+            turnData = new TurnData(GetCurrentCharacter());
         }
 
 
@@ -362,7 +363,7 @@ namespace CombatSystem
             {
                 result = true;
                 space.OccupySpace(character);
-                character.SetTemporaryPosition(space);
+                character.SetPosition(space);
             }
 
             return result;

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=7 format=3 uid="uid://cy45sywmtdaui"]
+
+[ext_resource type="Texture2D" uid="uid://by2c2hk3wsso1" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne_angry.png" id="1_e3q3l"]
+[ext_resource type="Texture2D" uid="uid://d2kbf3ytfcrhs" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne_frown.png" id="2_m663c"]
+[ext_resource type="Texture2D" uid="uid://pvg5swb3p4vi" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne_neutral.png" id="3_ebfjw"]
+[ext_resource type="Texture2D" uid="uid://tuhjasi07c8y" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne_smile.png" id="4_6dp5q"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne.png" id="5_6vhnu"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="6_e38w7"]
+
+[resource]
+script = ExtResource("6_e38w7")
+portrait = ExtResource("5_6vhnu")
+emotions = Dictionary[String, Texture2D]({
+"angry": ExtResource("1_e3q3l"),
+"frown": ExtResource("2_m663c"),
+"hurt": ExtResource("1_e3q3l"),
+"neutral": ExtResource("3_ebfjw"),
+"smile": ExtResource("4_6dp5q")
+})
+Position = Vector2(-52.6998, 223.758)
+Scale = 0.57
+cgPosition = Vector2(0, 0)
+cgScale = 1.0
+metadata/_custom_type_script = "uid://1lyyvtgem8vj"

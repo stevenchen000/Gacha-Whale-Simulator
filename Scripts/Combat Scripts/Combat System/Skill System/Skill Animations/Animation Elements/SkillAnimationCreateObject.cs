@@ -19,42 +19,47 @@ namespace CombatSystem
 
 
         public override void AddAnimationContainer(List<SkillAnimationContainer> skillAnimations,
-                                                   TurnData turnData)
+                                                   TurnData turnData, 
+                                                   SkillCastData skillCast)
         {
+            Utils.Print(this, "Adding animation...");
             if (relativeTo == AnimationParent.Caster)
             {
-                var caster = turnData.caster;
-                skillAnimations.Add(new SkillAnimationContainer(turnData, this, delay, caster));
+                var caster = skillCast.Caster;
+                skillAnimations.Add(new SkillAnimationContainer(turnData, skillCast, this, delay, caster));
             }
             else if (relativeTo == AnimationParent.Target)
             {
-                var targets = turnData.targets;
+                var targets = skillCast.Targets;
                 for(int i = 0; i < targets.Count; i++)
                 {
                     var target = targets[i];
-                    var newAnim = new SkillAnimationContainer(turnData, this, delay + i * delayBetweenTargets, target);
+                    var newAnim = new SkillAnimationContainer(turnData, skillCast, this, delay + i * delayBetweenTargets, target);
                     skillAnimations.Add(newAnim);
                 }
             }
         }
 
 
-        public override void StartElement(SkillAnimationContainer container, TurnData data)
+        public override void StartElement(SkillAnimationContainer container, TurnData data,
+                                                   SkillCastData skillCast)
         {
             var target = container.Target.PositionFollower;
             var obj = Utils.InstantiateCopy<Node2D>(castObject);
             target.AddChild(obj);
             obj.Position = offset;
             obj.Scale = scale;
-            SetupISkillEffect(obj, data);
+            SetupISkillEffect(obj, skillCast);
         }
 
-        public override bool RunElement(SkillAnimationContainer container, TurnData data, TimeHandler time)
+        public override bool RunElement(SkillAnimationContainer container, TurnData data,
+                                                   SkillCastData skillCast, TimeHandler time)
         {
             return time.TimeIsUp(duration);
         }
 
-        public override void EndElement(SkillAnimationContainer container, TurnData data)
+        public override void EndElement(SkillAnimationContainer container, TurnData data,
+                                                   SkillCastData skillCast)
         {
             
         }
@@ -62,13 +67,14 @@ namespace CombatSystem
 
         private void InstantiateAtTarget(Node target)
         {
+            Utils.Print(this, "Instantiating object");
             var newObject = (Node2D)Utils.InstantiateCopy(castObject);
             target.AddChild(newObject);
             newObject.Position = offset;
             newObject.Scale = scale;
         }
 
-        private void SetupISkillEffect(Node2D obj, TurnData data)
+        private void SetupISkillEffect(Node2D obj, SkillCastData data)
         {
             if (!changesWithElement) return;
             

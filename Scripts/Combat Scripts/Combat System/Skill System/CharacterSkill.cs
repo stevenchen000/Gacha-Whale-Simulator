@@ -40,10 +40,11 @@ namespace CombatSystem {
 
 
         public void SetupSkillAnimation(List<SkillAnimationContainer> animations,
-                                        TurnData turnData)
+                                        TurnData turnData,
+                                        SkillCastData skillCast)
         {
             if(animation != null)
-                animation.AddAnimationsToList(animations, turnData);
+                animation.AddAnimationsToList(animations, turnData, skillCast);
         }
 
         public void SetupSkillEffects(List<SkillAnimationContainer> animations, TurnData turnData)

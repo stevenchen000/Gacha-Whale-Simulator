@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=2 format=3 uid="uid://xmxkmtwyu14x"]
+
+[ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="1_2csky"]
+
+[resource]
+script = ExtResource("1_2csky")
+ID = 0
+BaseRarity = 0
+Name = ""
+Title = ""
+World = ""
+Description = ""
+metadata/_custom_type_script = "uid://gdabyn413d1c"

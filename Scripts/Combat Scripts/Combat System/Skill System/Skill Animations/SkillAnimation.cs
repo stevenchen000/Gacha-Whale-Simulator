@@ -17,13 +17,14 @@ namespace CombatSystem
         }
 
         public void AddAnimationsToList(List<SkillAnimationContainer> animList,
-                                        TurnData turnData)
+                                        TurnData turnData,
+                                        SkillCastData skillCast)
         {
             if (animations != null)
             {
                 foreach (var anim in animations)
                 {
-                    anim.AddAnimationContainer(animList, turnData);
+                    anim.AddAnimationContainer(animList, turnData, skillCast);
                 }
             }
         }

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillReplaceEffect" load_steps=3 format=3 uid="uid://y1aw2vbsh2uj"]
 
 [ext_resource type="Script" uid="uid://c88xwxtnbc4bt" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/SkillReplaceEffect.cs" id="1_kmlgt"]
-[ext_resource type="Resource" uid="uid://ub0fxw54re72" path="res://Resources/Characters/Skills/basic_amp_recover.tres" id="2_xoyec"]
+[ext_resource type="Resource" uid="uid://ub0fxw54re72" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/basic_amp_recover.tres" id="2_xoyec"]
 
 [resource]
 script = ExtResource("1_kmlgt")

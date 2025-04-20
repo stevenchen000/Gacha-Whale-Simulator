@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
 
@@ -6,15 +7,7 @@ namespace CombatSystem
 {
     public class TurnData
     {
-        public BattleCharacter caster
-        {
-            get
-            {
-                BattleCharacter target = null;
-                if (targetData != null) target = targetData.Caster;
-                return target;
-            }
-        }
+        public BattleCharacter Caster { get; private set; }
         public Vector2I casterStartPosition;
         public Vector2I casterPosition; //position where caster was standing at cast time
         public TargetingData targetData;
@@ -29,7 +22,11 @@ namespace CombatSystem
             }
         }
         
-        public Array<BattleCharacter> targets;
+        public List<BattleCharacter> Targets { get; private set; } = new List<BattleCharacter>();
+
+        public SkillCastData MainSkillCast { get; private set; }
+        public List<SkillCastData> SkillCasts { get; private set; } = new List<SkillCastData>();
+        private List<SkillCastData> completedSkills = new List<SkillCastData>();
         public BattleManager Battle { get; private set; }
         public BattleGrid Grid { get; private set; }
 
@@ -40,14 +37,15 @@ namespace CombatSystem
         public int previousAmpDamage { get; private set; } = 0;
 
 
-        private Dictionary<BattleCharacter, int> enemyDamageTaken = new Dictionary<BattleCharacter, int>();
-        private Dictionary<BattleCharacter, int> attackerDamageDealt = new Dictionary<BattleCharacter, int>();
+        private System.Collections.Generic.Dictionary<BattleCharacter, int> enemyDamageTaken = new System.Collections.Generic.Dictionary<BattleCharacter, int>();
+        private System.Collections.Generic.Dictionary<BattleCharacter, int> attackerDamageDealt = new System.Collections.Generic.Dictionary<BattleCharacter, int>();
 
 
 
 
         public TurnData(BattleCharacter caster)
         {
+            Caster = caster;
             casterStartPosition = caster.turnStartPosition;
         }
 
@@ -57,10 +55,41 @@ namespace CombatSystem
         {
             Battle = battle;
             Grid = battle.Grid;
-            this.targetData = targetData;
-            targetSelection = selection;
-            if (targetData != null) 
-                targets = targetData.GetTargets(selection, Grid);
+            var caster = targetData.Caster;
+            var skill = targetData.Skill;
+            var newSkillCast = new SkillCastData(caster, Grid, skill, targetData, selection);
+            MainSkillCast = newSkillCast;
+        }
+
+
+        public void AddSkillCast(BattleCharacter caster, Array<BattleCharacter> targets, CharacterSkill skill)
+        {
+            var newSkillCast = new SkillCastData(caster, targets, skill);
+            SkillCasts.Add(newSkillCast);
+        }
+
+        public SkillCastData GetCurrentSkillCast() 
+        {
+            if (SkillCasts.Count > 0)
+                return SkillCasts[0];
+            else
+                return null;
+        }
+
+        public void RemoveCurrentSkill()
+        {
+            if(SkillCasts.Count > 0) 
+            {
+                var cast = SkillCasts[0];
+                completedSkills.Add(cast);
+                SkillCasts.RemoveAt(0);
+            }
+        }
+
+        public bool HasSkillQueued()
+        {
+            //Utils.Print(this, SkillCasts.Count);
+            return SkillCasts.Count > 0;
         }
 
 
@@ -120,7 +149,7 @@ namespace CombatSystem
         }
 
         
-        private void AddMissingEntry(Dictionary<BattleCharacter, int> dictionary, BattleCharacter character)
+        private void AddMissingEntry(System.Collections.Generic.Dictionary<BattleCharacter, int> dictionary, BattleCharacter character)
         {
             if (!dictionary.ContainsKey(character))
                 dictionary[character] = 0;

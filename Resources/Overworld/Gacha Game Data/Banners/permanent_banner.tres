@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bu0eun0hmtjh1" path="res://Resources/Items/premium_gems.tres" id="1_3slnh"]
 [ext_resource type="Resource" uid="uid://4qorrqwhv7ri" path="res://Resources/Overworld/Gacha Game Data/Gacha Characters List.tres" id="1_3upsp"]
-[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_female_wizard.tres" id="1_iysby"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="1_iysby"]
 [ext_resource type="Script" uid="uid://vdsxlluavxds" path="res://Scripts/Gacha System/GachaBanner.cs" id="1_xa0ob"]
 [ext_resource type="Script" uid="uid://dt2mexu8xpdog" path="res://Scripts/Gacha System/GachaCharacterList.cs" id="2_s7lgf"]
 [ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="2_y4e40"]

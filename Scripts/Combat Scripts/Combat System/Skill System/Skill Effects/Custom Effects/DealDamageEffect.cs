@@ -9,26 +9,26 @@ namespace CombatSystem
         [Export] private float potency;
         [Export] private float duration = 0.2f;
 
-        protected override void _StartEffect(TurnData data)
+        protected override void _StartEffect(TurnData data, SkillCastData skillCast)
         {
-            DealDamage(data);
+            DealDamage(data, skillCast);
         }
 
-        protected override bool _RunEffect(TurnData data, TimeHandler timer)
+        protected override bool _RunEffect(TurnData data, SkillCastData skillCast, TimeHandler timer)
         {
             return timer.TimeIsUp(delay + duration);
         }
 
-        protected override void _EndEffect(TurnData data)
+        protected override void _EndEffect(TurnData data, SkillCastData skillCast)
         {
             
         }
 
         
-        private void DealDamage(TurnData data)
+        private void DealDamage(TurnData data, SkillCastData skillCast)
         {
-            var caster = data.caster;
-            var targets = data.targets;
+            var caster = skillCast.Caster;
+            var targets = skillCast.Targets;
 
             foreach(var target in targets)
             {

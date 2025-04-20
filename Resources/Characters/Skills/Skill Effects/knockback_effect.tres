@@ -6,7 +6,7 @@
 script = ExtResource("1_tdqdq")
 duration = 0.5
 knockInSkillDirection = true
-numofSpaces = 2
+numofSpaces = 4
 delay = 0.0
 description = ""
 metadata/_custom_type_script = "uid://bllobu0xrm1s7"

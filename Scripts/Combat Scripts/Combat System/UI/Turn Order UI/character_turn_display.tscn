@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://djj2a2mevrxmf" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="3_ckmof"]
 [ext_resource type="Texture2D" uid="uid://biv7cid2nku43" path="res://Art Assets/Portrait Circle/Avatar Circle Background.png" id="4_ckmof"]
 [ext_resource type="Texture2D" uid="uid://ckthnfqactwlq" path="res://Art Assets/Portrait Circle/Avatar Circle Border.png" id="5_ikaj4"]
-[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="5_r1ff7"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne.png" id="5_r1ff7"]
 
 [node name="Character Display" type="Control" node_paths=PackedStringArray("display")]
 custom_minimum_size = Vector2(120, 120)

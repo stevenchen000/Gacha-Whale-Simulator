@@ -12,7 +12,7 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 0.564706)
 shadow_offset = Vector2(3, 3)
 
-[node name="Character Button" type="Control" node_paths=PackedStringArray("display")]
+[node name="Character Button" type="Control" node_paths=PackedStringArray("display", "characterName")]
 custom_minimum_size = Vector2(226, 226)
 layout_mode = 3
 anchors_preset = 0
@@ -20,6 +20,7 @@ offset_right = 226.0
 offset_bottom = 226.0
 script = ExtResource("1_gb515")
 display = NodePath("Character")
+characterName = NodePath("Label")
 
 [node name="Character" parent="." instance=ExtResource("1_3oqa1")]
 scale = Vector2(1.9, 1.9)

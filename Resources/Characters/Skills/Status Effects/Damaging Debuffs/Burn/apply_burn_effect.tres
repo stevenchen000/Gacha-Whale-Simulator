@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ApplyStatusEffect" load_steps=3 format=3 uid="uid://50126rss67ma"]
+
+[ext_resource type="Script" uid="uid://dlnccrg4bkgdt" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/ApplyStatusEffect.cs" id="1_qhk3j"]
+[ext_resource type="Resource" uid="uid://b8tgag2ddd6gi" path="res://Resources/Characters/Skills/Status Effects/Damaging Debuffs/Burn/burn_effect.tres" id="2_l7h5w"]
+
+[resource]
+script = ExtResource("1_qhk3j")
+targetType = 3
+status = ExtResource("2_l7h5w")
+delay = 0.0
+description = ""
+metadata/_custom_type_script = "uid://dlnccrg4bkgdt"

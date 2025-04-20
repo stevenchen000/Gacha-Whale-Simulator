@@ -1,6 +1,6 @@
-Button
-Node2D
 TextureRect
+Node2D
+Button
 Control
 Label
 HBoxContainer

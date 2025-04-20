@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bh46yw6h8wato" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/PortraitEditorMenu.cs" id="1_qcped"]
 [ext_resource type="Script" uid="uid://bhv1qupunmv2w" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/ImageCropper.cs" id="1_wcu8w"]
 [ext_resource type="Texture2D" uid="uid://dc7ma4mqep7gm" path="res://Art Assets/Backgrounds/Ocean_5/1.png" id="2_v5ids"]
-[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="4_kbsw6"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne.png" id="4_kbsw6"]
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="7_26bvy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_6lr6w"]

@@ -22,14 +22,15 @@ namespace CombatSystem
             Direction = direction;
         }
 
-        public KnockbackCollisionData CheckCollision(BattleGrid grid, List<KnockbackPositionData> previousPositions)
+        public KnockbackCollisionData CheckCollisionOnGrid(BattleGrid grid, Dictionary<BattleCharacter, BattleCharacter> dependencies)
         {
             KnockbackCollisionData collision = null;
-            collision = CheckCollisionOnGrid(grid, previousPositions);
+            collision = _GridCollisions(grid, dependencies);
+
             return collision;
         }
 
-        private KnockbackCollisionData CheckCollisionOnGrid(BattleGrid grid, List<KnockbackPositionData> previousPositions)
+        private KnockbackCollisionData _GridCollisions(BattleGrid grid, Dictionary<BattleCharacter, BattleCharacter> dependencies)
         {
             KnockbackCollisionData result = null;
 
@@ -37,11 +38,34 @@ namespace CombatSystem
             var charOnSpace = space.CharacterOnSpace;
             if (charOnSpace != null)
             {
-                if (!CharacterIsKnockedBack(charOnSpace, previousPositions))
+                if (!CharacterIsKnockedBack(charOnSpace, dependencies))
                     result = new KnockbackCollisionData(Character, charOnSpace, RemainingSpaces, Direction);
             }
 
             return result;
+        }
+
+        public KnockbackCollisionData CheckCollisionWithKnockedUnits(List<KnockbackPositionData> newPositions,
+                                                                     Dictionary<BattleCharacter, BattleCharacter> dependencies)
+        {
+            var dependency = dependencies[Character];
+            KnockbackCollisionData collision = null;
+
+            if (dependency != null)
+            {
+                for (int i = 0; i < newPositions.Count; i++)
+                {
+                    var position = newPositions[i];
+                    var tarCoords = position.Coords;
+                    var target = position.Character;
+                    if (target == dependency && tarCoords == Coords)
+                    {
+                        collision = new KnockbackCollisionData(Character, target, RemainingSpaces, Direction);
+                    }
+                }
+            }
+
+            return collision;
         }
 
         /// <summary>
@@ -63,18 +87,9 @@ namespace CombatSystem
             return collision;
         }
 
-        private bool CharacterIsKnockedBack(BattleCharacter target, List<KnockbackPositionData> previousPositions)
+        private bool CharacterIsKnockedBack(BattleCharacter target, Dictionary<BattleCharacter, BattleCharacter> dependencies)
         {
-            bool result = false;
-
-            for(int i = 0; i < previousPositions.Count; i++)
-            {
-                var prevPos = previousPositions[i];
-                result = prevPos.Character == target;
-                if (result) break;
-            }
-
-            return result;
+            return dependencies.ContainsKey(target);
         }
     }
 }

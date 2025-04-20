@@ -629,5 +629,16 @@ namespace CombatSystem {
 			list.AddRange(battleSpaces);
 			return list.OrderBy(space => (space.Coords.X + space.Coords.Y)).ThenByDescending(space => space.Coords.Y).ToList();
 		}
+
+		public void PrintCharacterList()
+		{
+			string names = "Characters on grid: ";
+
+			foreach(var key in occupiedSpaces.Keys)
+			{
+				names += $"{key.Character.Character.Name} - {key.currPosition}, ";
+			}
+			Utils.Print(this, names);
+		}
 	}
 }

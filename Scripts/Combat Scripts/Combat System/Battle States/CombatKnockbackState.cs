@@ -33,26 +33,13 @@ namespace CombatSystem
         protected override void OnStateActivated()
         {
             base.OnStateActivated();
-            Utils.Print(this, "Entered knockback");
             knockbacks = battle.RunKnockbacks();
-            Utils.Print(this, knockbacks.Count);
             SeparateKnockbacks();
+            time.Reset();
         }
 
         protected override void RunState(double delta)
         {
-            /*time.Tick(delta);
-            if (time.TimeReached(knockbackTime))
-            {
-                currKnockback = enemyKnockbacks[enemyKnockbackIndex];
-                target = currKnockback.KnockedbackCharacter;
-                obstacle = currKnockback.KnockedIntoCharacter;
-            }
-
-            if(time.TimePassed(knockbackTime))
-            {
-                MoveCameraBetweenTargets();
-            }*/
             time.Tick(delta);
 
             if (time.TimeReached(0.2))

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djj2a2mevrxmf" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_71qan"]
 [ext_resource type="Script" uid="uid://cf58jp36ttiv" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterDetailedDisplay.cs" id="1_ujg4q"]
-[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="2_ujg4q"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne.png" id="2_ujg4q"]
 [ext_resource type="Script" uid="uid://d34i32dihunmy" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterRarityDisplay.cs" id="3_oog8v"]
 [ext_resource type="PackedScene" uid="uid://wismfg5tyquq" path="res://Scenes/Overworld/Party Menu/UI/rarity_star.tscn" id="4_wgrxb"]
 

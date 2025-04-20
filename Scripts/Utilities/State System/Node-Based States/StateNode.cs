@@ -51,7 +51,7 @@ namespace StateSystem
                 {
                     if (debug) Utils.Print(this, $"Exited state: {Name}");
                     ChangeState(newState);
-                    if (debug) Utils.Print(this, $"Entered state: {Name}");
+                    if (debug) Utils.Print(this, $"Entered state: {newState.Name}");
                 }
             }
         }

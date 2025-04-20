@@ -21,7 +21,8 @@ namespace CombatSystem
         /// </summary>
         /// <param name="skillAnimations"></param>
         public virtual void AddAnimationContainer(List<SkillAnimationContainer> skillAnimations,
-                                                  TurnData turnData)
+                                                  TurnData turnData,
+                                                  SkillCastData skillCast)
         {
             
         }
@@ -55,17 +56,24 @@ namespace CombatSystem
             return completed;
         }*/
 
-        public virtual void StartElement(SkillAnimationContainer container, TurnData data)
+        public virtual void StartElement(SkillAnimationContainer container, 
+                                         TurnData data, 
+                                         SkillCastData skillCast)
         {
         }
 
         //Returns true when the animation is finished
-        public virtual bool RunElement(SkillAnimationContainer container, TurnData data, TimeHandler time)
+        public virtual bool RunElement(SkillAnimationContainer container, 
+                                       TurnData data, 
+                                       SkillCastData skillCast, 
+                                       TimeHandler time)
         {
             return true;
         }
 
-        public virtual void EndElement(SkillAnimationContainer container, TurnData data) { } 
+        public virtual void EndElement(SkillAnimationContainer container, 
+                                       TurnData data,
+                                       SkillCastData skillCast) { } 
 
         
 

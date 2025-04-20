@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Schema;
 using Godot;
 
@@ -12,6 +13,8 @@ namespace CombatSystem
         private List<KnockbackPositionData> prevPositions = new List<KnockbackPositionData> ();
         private List<KnockbackPositionData> newPositions = new List<KnockbackPositionData> ();
         private List<KnockbackCollisionData> collisions = new List<KnockbackCollisionData> ();
+
+        private Dictionary<BattleCharacter, BattleCharacter> dependencies = new Dictionary<BattleCharacter, BattleCharacter>();
 
         private SimpleWeakRef<BattleManager> _battle;
         private BattleManager battle
@@ -78,9 +81,12 @@ namespace CombatSystem
 
         public List<KnockbackCollisionData> RunKnockbacks()
         {
+            SetupDependencies();
+            SortKnockbacksByDependencies();
+            RemoveKnockedUnitsFromField();
             InitPositionsList();
-            int currKnockback = 0;
 
+            int currKnockback = 0;
             while (Knockbacks.Count > 0)
             {
                 RunSingleKnockback(currKnockback);
@@ -96,6 +102,15 @@ namespace CombatSystem
             return result;
         }
 
+        private void RemoveKnockedUnitsFromField()
+        {
+            foreach(var kb in Knockbacks)
+            {
+                var character = kb.KnockedCharacter;
+                battle.Grid.UnoccupySpace(character);
+            }
+        }
+
         private void InitPositionsList()
         {
             foreach (var knockback in Knockbacks)
@@ -107,6 +122,39 @@ namespace CombatSystem
                 var positionData = new KnockbackPositionData(character, currPos, spaces, direction);
                 prevPositions.Add(positionData);
                 newPositions.Add(positionData);
+            }
+        }
+
+        private void SetupDependencies()
+        {
+            dependencies.Clear();
+            foreach (var knockback in Knockbacks)
+            {
+                var character = knockback.KnockedCharacter;
+                dependencies[character] = null;
+            }
+
+            foreach (var knockback in Knockbacks)
+            {
+                var direction = knockback.KnockedDirection;
+                var character = knockback.KnockedCharacter;
+                var coords = character.currPosition;
+                var directionVector = BattleConstants.GetDirectionOffset(direction);
+
+                int index = 1;
+                var newCoords = coords + directionVector * index;
+                while (battle.Grid.CoordinatesInGrid(newCoords))
+                {
+                    var space = battle.Grid.GetSpaceFromCoords(newCoords);
+                    var charOnSpace = space.CharacterOnSpace;
+                    if (charOnSpace != null && dependencies.ContainsKey(charOnSpace))
+                    {
+                        dependencies[character] = charOnSpace;
+                        break;
+                    }
+                    index++;
+                    newCoords = coords + directionVector * index;
+                }
             }
         }
 
@@ -174,7 +222,8 @@ namespace CombatSystem
                     var posData = newPositions[j];
                     if(posData.Character == knockback.KnockedCharacter)
                     {
-                        collision = posData.CheckCollision(battle.Grid, prevPositions);
+                        collision = posData.CheckCollisionOnGrid(battle.Grid, dependencies);
+                        if(collision == null) collision = posData.CheckCollisionWithKnockedUnits(newPositions, dependencies);
                         if(collision != null)
                         {
                             collisions.Add(collision);
@@ -185,6 +234,62 @@ namespace CombatSystem
                     }
                 }
                 if (collision == null) index++;
+            }
+        }
+
+        private void SortKnockbacksByDependencies()
+        {
+            var dependenciesList = GetKnockedUnitsByDependencies();
+            Knockbacks = Knockbacks.OrderBy(x => dependenciesList.IndexOf(x.KnockedCharacter)).ToList();
+        }
+
+        private List<BattleCharacter> GetKnockedUnitsByDependencies()
+        {
+            var currList = new List<BattleCharacter>();
+            currList.AddRange(dependencies.Keys);
+            var result = new List<BattleCharacter>();
+
+            MoveNonDependencies(currList, result);
+            AddRemainingUnits(currList, result);
+
+            return result;
+        }
+
+        private void MoveNonDependencies(List<BattleCharacter> listA, List<BattleCharacter> listB)
+        {
+            int index = 0;
+            while(index < listA.Count)
+            {
+                var character = listA[index];
+                if (dependencies[character] == null)
+                {
+                    listA.RemoveAt(index);
+                    listB.Add(character);
+                }
+                else
+                {
+                    index++;
+                }
+            }
+        }
+        
+        private void AddRemainingUnits(List<BattleCharacter> listA, List<BattleCharacter> listB)
+        {
+            int index = 0;
+            while(listA.Count > 0)
+            {
+                var character = listA[index];
+                var currDependency = dependencies[character];
+                if (listB.Contains(currDependency))
+                {
+                    listB.Add(character);
+                    listA.RemoveAt(index);
+                    if(listA.Count > 0) index = index % listA.Count;
+                }
+                else
+                {
+                    index = (index + 1) % listA.Count;
+                }
             }
         }
 
@@ -208,9 +313,7 @@ namespace CombatSystem
             {
                 var character = pos.Character;
                 var coords = pos.Coords;
-                Utils.Print(this, $"{character.Name} - {character.currPosition} - {coords}");
-                character.MoveAndUpdate(coords);
-                Utils.Print(this, $"{character.Name} - {character.currPosition} - {coords}");
+                battle.OccupySpace(coords, character);
             }
         }
 
@@ -258,6 +361,7 @@ namespace CombatSystem
         private void ResetKnockbacks()
         {
             Knockbacks.Clear();
+            dependencies.Clear();
             completedKnockbacks.Clear();
             prevPositions.Clear();
             newPositions.Clear();

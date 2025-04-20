@@ -9,6 +9,7 @@ public partial class CharacterPortraitDisplay : Control
 	[Export] private TextureRect border;
 	[Export] private Sprite2D portraitElement;
 	[Export] private float borderSize = 5f;
+	private CharacterPortrait portrait;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,12 +27,20 @@ public partial class CharacterPortraitDisplay : Control
 		if(portrait == null)
         {
 			portraitElement.Texture = null;
+			this.portrait = null;
         }
         else
         {
 			portrait.SetupPortraitSimple(background, portraitElement, borderSize);
+			this.portrait = portrait;
         }
     }
+
+	public void SetEmotion(string emotion)
+	{
+		if(portrait != null)
+			portraitElement.Texture = portrait.GetPortrait(emotion);
+	}
 
 	public void SetBorder(PortraitBorder border)
     {

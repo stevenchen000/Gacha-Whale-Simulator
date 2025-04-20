@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=6 format=3 uid="uid://ceho202yfbxv"]
+
+[ext_resource type="Resource" uid="uid://cb2rgucig1cco" path="res://Resources/Characters/Skills/Status Effects/Damaging Debuffs/Burn/burn_animation.tres" id="1_djdkl"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="1_tlfid"]
+[ext_resource type="Resource" uid="uid://fcukt1cpsimo" path="res://Resources/Characters/Skills/Damage Formulas/amp_damage_formula.tres" id="2_g2pa7"]
+[ext_resource type="Script" uid="uid://cesrwdrfdj38f" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/AmpDamageEffect.cs" id="3_t8bye"]
+
+[sub_resource type="Resource" id="Resource_l3nd7"]
+script = ExtResource("3_t8bye")
+duration = 0.2
+numberOfHits = 1
+formula = ExtResource("2_g2pa7")
+delay = 0.0
+description = ""
+metadata/_custom_type_script = "uid://cesrwdrfdj38f"
+
+[resource]
+script = ExtResource("1_tlfid")
+SkillName = "Burn"
+animation = ExtResource("1_djdkl")
+InfiniteUses = false
+Uses = 3
+effects = Array[Object]([SubResource("Resource_l3nd7")])
+potency = 100
+direction = 0
+targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100
+metadata/_custom_type_script = "uid://djopsu18jnynm"

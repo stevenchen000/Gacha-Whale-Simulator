@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="CharacterRole" load_steps=9 format=3 uid="uid://ch2f8nppud3k7"]
 
-[ext_resource type="Resource" uid="uid://573qkfvlq1pc" path="res://Resources/Characters/Character Data/000_basic_skills/defender_amp_branch.tres" id="1_dauxl"]
+[ext_resource type="Resource" uid="uid://573qkfvlq1pc" path="res://Resources/Characters/Skills/Roles/Defender/Skills/defender_amp_branch.tres" id="1_dauxl"]
 [ext_resource type="Texture2D" uid="uid://b2rfwf3ecnsmo" path="res://Art Assets/Character Assets/Role Icons/ShieldIcon.png" id="1_j5u8v"]
 [ext_resource type="Script" uid="uid://bt65k28bw5if6" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs" id="1_ngqpr"]
-[ext_resource type="Resource" uid="uid://dp5wbsrr5yhrn" path="res://Resources/Characters/Character Data/000_basic_skills/defender_hp_branch.tres" id="2_303g6"]
+[ext_resource type="Resource" uid="uid://dp5wbsrr5yhrn" path="res://Resources/Characters/Skills/Roles/Defender/Skills/defender_hp_branch.tres" id="2_303g6"]
 [ext_resource type="Script" uid="uid://bnm4j23bkjybk" path="res://Scripts/Combat Scripts/Combat System/Stat System/RoleStatGrowth.cs" id="3_ixo0g"]
-[ext_resource type="Resource" uid="uid://cfl6w8nl6hod7" path="res://Resources/Characters/Skills/Roles/Defender/defender_base_stats.tres" id="3_mhf0l"]
-[ext_resource type="Resource" uid="uid://dbrd0u4ec4yag" path="res://Resources/Characters/Skills/Roles/Defender/defender_growth_stats.tres" id="4_mnayd"]
+[ext_resource type="Resource" uid="uid://cfl6w8nl6hod7" path="res://Resources/Characters/Skills/Roles/Defender/Stats/defender_base_stats.tres" id="3_mhf0l"]
+[ext_resource type="Resource" uid="uid://dbrd0u4ec4yag" path="res://Resources/Characters/Skills/Roles/Defender/Stats/defender_growth_stats.tres" id="4_mnayd"]
 
 [sub_resource type="Resource" id="Resource_dauxl"]
 script = ExtResource("3_ixo0g")

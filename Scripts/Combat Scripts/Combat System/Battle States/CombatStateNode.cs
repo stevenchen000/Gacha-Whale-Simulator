@@ -12,6 +12,7 @@ namespace CombatSystem
         {
             base._Ready();
             battle = Utils.FindParentOfType<BattleManager>(this);
+            //debug = true;
         }
 
         protected override void OnStateActivated()

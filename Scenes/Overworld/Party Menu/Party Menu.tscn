@@ -217,6 +217,7 @@ offset_bottom = 1639.0
 texture = SubResource("CanvasTexture_51ohi")
 
 [node name="Character Display" parent="Select Party Member Menu" instance=ExtResource("4_lsvsl")]
+visible = false
 offset_left = 40.0
 offset_top = 285.0
 offset_right = 1042.0

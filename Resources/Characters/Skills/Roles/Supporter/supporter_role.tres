@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="CharacterRole" load_steps=9 format=3 uid="uid://cta0py0mhsput"]
 
 [ext_resource type="Texture2D" uid="uid://dot04mqxqng7h" path="res://Art Assets/Character Assets/Role Icons/StaffIcon.png" id="1_8vndi"]
-[ext_resource type="Resource" uid="uid://cqufvxc6a2y3b" path="res://Resources/Characters/Character Data/000_basic_skills/supporter_amp_branch.tres" id="1_r7urm"]
+[ext_resource type="Resource" uid="uid://cqufvxc6a2y3b" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/supporter_amp_branch.tres" id="1_r7urm"]
 [ext_resource type="Script" uid="uid://bt65k28bw5if6" path="res://Scripts/Game Menu/Character Creator/Characters/Classes/CharacterRole.cs" id="2_iridv"]
-[ext_resource type="Resource" uid="uid://c830gwayrbxbw" path="res://Resources/Characters/Character Data/000_basic_skills/supporter_hp_branch.tres" id="2_s0tda"]
-[ext_resource type="Resource" uid="uid://dy6yltky208af" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_base_stats.tres" id="3_5xjlq"]
+[ext_resource type="Resource" uid="uid://c830gwayrbxbw" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/supporter_hp_branch.tres" id="2_s0tda"]
+[ext_resource type="Resource" uid="uid://dy6yltky208af" path="res://Resources/Characters/Skills/Roles/Supporter/Stats/supporter_base_stats.tres" id="3_5xjlq"]
 [ext_resource type="Script" uid="uid://bnm4j23bkjybk" path="res://Scripts/Combat Scripts/Combat System/Stat System/RoleStatGrowth.cs" id="3_25emp"]
-[ext_resource type="Resource" uid="uid://duse8andhtccx" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_growth_stats.tres" id="4_su0lj"]
+[ext_resource type="Resource" uid="uid://duse8andhtccx" path="res://Resources/Characters/Skills/Roles/Supporter/Stats/supporter_growth_stats.tres" id="4_su0lj"]
 
 [sub_resource type="Resource" id="Resource_r7urm"]
 script = ExtResource("3_25emp")

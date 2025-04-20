@@ -10,6 +10,7 @@ namespace PartyMenuSystem {
 
         [Export] private int index = 0;
         [Export] private CharacterDetailedDisplay charDisplay;
+        [Export] private TextureRect rarityIcon;
 
 
         public override void _Ready()
@@ -34,6 +35,8 @@ namespace PartyMenuSystem {
         private void UpdateDisplay()
         {
             charDisplay.Init(character);
+            var rarity = character.Rarity;
+            rarityIcon.Texture = RarityNames.GetRarityIcon(rarity);
         }
     }
 }

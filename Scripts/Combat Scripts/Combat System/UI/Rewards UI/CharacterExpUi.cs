@@ -24,7 +24,7 @@ namespace CombatSystem
         {
             this.data = data;
             SetupDisplay();
-            UpdateLevelText();
+            UpdateLevelText(data.PreviousLevel);
             CalculatePercentageDifference();
             DelayedCalls.AddCall(0.1, StartAnimation);
         }
@@ -38,7 +38,8 @@ namespace CombatSystem
                 expBar.Value = (previousPercent + currDiffAddition) % 100;
 
                 CalculateCurrLevel();
-                if(currDiffAddition == percentDiff)
+                UpdateLevelText(currLevel);
+                if (currDiffAddition == percentDiff)
                 {
                     isUpdating = false;
                     HasFinished = true;
@@ -62,6 +63,7 @@ namespace CombatSystem
                 HasFinished = true;
                 expBar.Value = (previousPercent + percentDiff) % 100;
                 currLevel = data.NewLevel;
+                UpdateLevelText(currLevel);
             }
         }
 
@@ -97,9 +99,9 @@ namespace CombatSystem
             characterDisplay.UpdatePortrait(portrait);
         }
 
-        private void UpdateLevelText()
+        private void UpdateLevelText(int level)
         {
-            levelText.Text = $"Level {currLevel}";
+            levelText.Text = $"Level {level}";
         }
     }
 }

@@ -12,7 +12,6 @@ public partial class GameCharacter : Resource
     [Export] public CharacterRarity BaseRarity { get; protected set; }
     [Export] public string Name { get; protected set; }
     [Export] public string Title { get; protected set; }
-    [Export] public string Description { get; protected set; }
     [Export] public string World { get; protected set; }
     [Export] public Element Element { get; protected set; }
     [Export] public CharacterClass Class { get; protected set; }
@@ -20,7 +19,8 @@ public partial class GameCharacter : Resource
     [Export] public SkillLoadout SkillSet { get; protected set; }
     [Export] public CombatAI EnemyAI { get; protected set; }
     [Export] public PowercreepLevelData Powercreep { get; protected set; }
-    
+    [Export(PropertyHint.MultilineText)] public string Description { get; protected set; }
+
     public WeaponType Weapon 
     { 
         get

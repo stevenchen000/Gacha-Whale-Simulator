@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dhy4vi30p0fpw"]
+[gd_scene load_steps=38 format=3 uid="uid://dhy4vi30p0fpw"]
 
 [ext_resource type="Script" uid="uid://c5h8h5fd4fdsd" path="res://Scripts/Utilities/Game State/GameState.cs" id="1_1csjl"]
 [ext_resource type="Script" uid="uid://bo7pxpc8yx3v6" path="res://Scripts/Room Scripts/Time/GameTimeManager.cs" id="2_8igk3"]
@@ -13,11 +13,10 @@
 [ext_resource type="Resource" uid="uid://ctpuj03es8r7i" path="res://Resources/Utilities/Events/Inventory Events/OnInventoryUpdate (Void).tres" id="13_48wcd"]
 [ext_resource type="Script" uid="uid://tl82ibilaxhs" path="res://Scripts/Save System/OwnedCharacterData.cs" id="14_4mo12"]
 [ext_resource type="Script" uid="uid://cparukonr4gds" path="res://Scripts/Overworld Scripts/Quest System/QuestManager.cs" id="15_u3q2k"]
-[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="16_8igk3"]
 [ext_resource type="Script" uid="uid://crwjm0wp0dttb" path="res://Scripts/Overworld Scripts/Inventory System/Inventory.cs" id="16_n8140"]
 [ext_resource type="Script" uid="uid://booj8f3hwcnco" path="res://Scripts/Utilities/Game State/Data/CharacterDictionary.cs" id="17_0rwfx"]
 [ext_resource type="Script" uid="uid://dg6hi4clsmqht" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/PartySetup.cs" id="17_ig1aq"]
-[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_female_wizard.tres" id="18_ig1aq"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="18_ig1aq"]
 [ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="19_017w6"]
 [ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="20_48wcd"]
 [ext_resource type="Resource" uid="uid://cbk1w2gmifv02" path="res://Resources/Room/Events/OnGemCountChanged.tres" id="21_3scac"]
@@ -30,77 +29,77 @@
 
 [sub_resource type="Resource" id="Resource_gyq6b"]
 script = ExtResource("14_4mo12")
-OwnedCharacters = Array[ExtResource("16_8igk3")]([])
+OwnedCharacters = []
 metadata/_custom_type_script = ExtResource("14_4mo12")
 
 [sub_resource type="Resource" id="Resource_017w6"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 0
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_48wcd"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 1
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_8igk3"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 2
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_idyri"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 3
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_ig1aq"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 4
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_ac2g0"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 5
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_3scac"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 6
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_waiek"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 7
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_t4ncp"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 8
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [sub_resource type="Resource" id="Resource_poyn3"]
 script = ExtResource("17_ig1aq")
 name = ""
 PartyID = 9
-Party = Array[ExtResource("16_8igk3")]([])
+Party = []
 metadata/_custom_type_script = ExtResource("17_ig1aq")
 
 [node name="Game State" type="Node2D" node_paths=PackedStringArray("rank", "time", "flags", "stringFlags", "playerInventory", "quests", "game", "stamina")]

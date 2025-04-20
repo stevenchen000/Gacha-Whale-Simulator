@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PowercreepData" load_steps=2 format=3 uid="uid://c4i751bou7mvc"]
+
+[ext_resource type="Script" uid="uid://20xgwg8wtucn" path="res://Scripts/Game Menu/Character Creator/Characters/Powercreep/PowercreepData.cs" id="1_b7mex"]
+
+[resource]
+script = ExtResource("1_b7mex")
+Rarity = 3
+PowercreepLevel = 0
+unlockEventID = -1
+metadata/_custom_type_script = "uid://20xgwg8wtucn"

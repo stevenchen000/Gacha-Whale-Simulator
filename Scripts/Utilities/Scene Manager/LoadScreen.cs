@@ -118,7 +118,6 @@ public partial class LoadScreen : Node
         }
 
         state = newState;
-        Utils.Print(this, state);
     }
 
 

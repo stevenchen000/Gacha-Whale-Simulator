@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PowercreepLevelData" load_steps=4 format=3 uid="uid://bf8cl74tynfbm"]
+
+[ext_resource type="Script" uid="uid://20xgwg8wtucn" path="res://Scripts/Game Menu/Character Creator/Characters/Powercreep/PowercreepData.cs" id="1_gicpe"]
+[ext_resource type="Resource" uid="uid://c4i751bou7mvc" path="res://Resources/Characters/Characters/001_vayne/001_vayne_ssr_upgrade.tres" id="2_1nama"]
+[ext_resource type="Script" uid="uid://m2s24ffuqm3v" path="res://Scripts/Game Menu/Character Creator/Characters/Powercreep/PowercreepLevelData.cs" id="3_tkgui"]
+
+[resource]
+script = ExtResource("3_tkgui")
+PowercreepData = Array[ExtResource("1_gicpe")]([ExtResource("2_1nama")])
+metadata/_custom_type_script = "uid://m2s24ffuqm3v"

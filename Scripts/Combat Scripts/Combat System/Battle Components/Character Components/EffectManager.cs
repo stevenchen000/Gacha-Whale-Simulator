@@ -27,6 +27,10 @@ namespace SkillSystem
         private List<EffectContainer> onApplyEffects = new List<EffectContainer>();
         private List<EffectContainer> onExpireEffects = new List<EffectContainer>();
 
+        // Used for effects that run after taking damage from an enemy skill.
+        // Not used for counters, burns, etc
+        private List<EffectContainer> afterHurtEffects = new List<EffectContainer>();
+
         [Signal]
         public delegate void OnStatusChangedEventHandler();
 
@@ -80,7 +84,7 @@ namespace SkillSystem
          * ***************/
 
 
-        public void AddEffect(BattleCharacter caster, StatusEffect status)
+        public void AddEffect(BattleCharacter caster, StatusEffect status, BattleManager battle)
         {
             if (HasStatus(status))
             {
@@ -88,26 +92,26 @@ namespace SkillSystem
             }
             else
             {
-                _AddNewEffect(caster, status);
+                _AddNewEffect(caster, status, battle);
             }
 
             RaiseEvent();
         }
 
-        private void _AddNewEffect(BattleCharacter caster, StatusEffect status)
+        private void _AddNewEffect(BattleCharacter caster, StatusEffect status, BattleManager battle)
         {
             var newStatus = new StatusContainer(caster, Character, status);
             StatusEffects.Add(newStatus);
-            AddBaseEffects(newStatus, status);
+            AddBaseEffects(newStatus, status, battle);
         }
-        private void AddBaseEffects(StatusContainer container, StatusEffect status)
+        private void AddBaseEffects(StatusContainer container, StatusEffect status, BattleManager battle)
         {
             var effects = status.Effects;
 
             foreach (var effect in effects)
             {
                 var timing = effect.Timing;
-                var effectContainer = new EffectContainer(effect, container);
+                var effectContainer = new EffectContainer(effect, container, battle);
 
                 switch (timing)
                 {

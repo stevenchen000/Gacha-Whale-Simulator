@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cjltkttsclcni"]
 
-[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="1_n7xl4"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne.png" id="1_n7xl4"]
 [ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="1_qkxek"]
 [ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="2_4865e"]
 [ext_resource type="PackedScene" uid="uid://g4cq8iht4otw" path="res://Scenes/Character Editor/Character Displays/character_display.tscn" id="2_k7l0j"]

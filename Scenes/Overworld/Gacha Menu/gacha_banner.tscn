@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dyvnfvb66sint" path="res://Art Assets/Backgrounds/Ocean_2/5.png" id="3_6s18s"]
 [ext_resource type="Texture2D" uid="uid://cku1q7yyjiuq" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0033_warrior_elve_man_03.png" id="3_oynkw"]
 [ext_resource type="Texture2D" uid="uid://bwwov267yadho" path="res://Art Assets/GemRed.png" id="4_6s18s"]
-[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0034_warrior_elve_man_02.png" id="4_gpigy"]
+[ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne.png" id="4_gpigy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_6s18s"]
 

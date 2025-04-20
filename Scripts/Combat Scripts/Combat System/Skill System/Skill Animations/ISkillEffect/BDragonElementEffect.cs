@@ -11,11 +11,11 @@ namespace CombatSystem
     {
         [Export] private SpriteSheetYSetter colorMod;
 
-        public void SetupForSkill(TurnData data)
+        public void SetupForSkill(SkillCastData data)
         {
             if (colorMod != null)
             {
-                var caster = data.caster;
+                var caster = data.Caster;
                 var element = caster.CharacterElement;
                 int colorIndex = BDragonElementChart.GetIntFromElement(element);
                 colorMod.SetColorIndex(colorIndex);

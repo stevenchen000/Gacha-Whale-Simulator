@@ -3,6 +3,6 @@ namespace CombatSystem
 {
     public interface ISkillEffect
     {
-        public void SetupForSkill(TurnData data);
+        public void SetupForSkill(SkillCastData data);
     }
 }

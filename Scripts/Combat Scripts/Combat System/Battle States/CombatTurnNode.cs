@@ -10,8 +10,6 @@ namespace CombatSystem
         private BattleCharacter character;
         private BattleGrid grid;
         [Export] private CombatStateNode animationNode;
-        [Export] private CombatStateNode turnFinishedNode;
-        [Export] private CombatStateNode checkVictoryNode;
         private Vector2I prevCoords;
         private Vector2I currCoords;
 
@@ -96,12 +94,7 @@ namespace CombatSystem
 
             if (battle.TurnConfirmed)
             {
-                if (battle.SelectedSkill != null)
-                    result = animationNode;
-                else
-                {
-                    result = turnFinishedNode;
-                }
+                result = animationNode;
             }
 
             return result;

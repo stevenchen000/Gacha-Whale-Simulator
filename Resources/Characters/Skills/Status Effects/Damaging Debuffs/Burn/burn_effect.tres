@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=5 format=3 uid="uid://b8tgag2ddd6gi"]
+
+[ext_resource type="Script" uid="uid://cy57fc2ou8dvx" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/BaseEffect.cs" id="1_7bquy"]
+[ext_resource type="Resource" uid="uid://cvq6h2ipw8jag" path="res://Resources/Characters/Skills/Status Effects/Damaging Debuffs/Burn/cast_burn_effect.tres" id="1_ngvkq"]
+[ext_resource type="Texture2D" uid="uid://oqd5m70mqf1h" path="res://Art Assets/Shapes/Arrow (7).png" id="3_cs1qu"]
+[ext_resource type="Script" uid="uid://clra7ofaokdqn" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/StatusEffect.cs" id="4_72411"]
+
+[resource]
+script = ExtResource("4_72411")
+ID = 1
+Name = "Burn"
+IsUnique = false
+Texture = ExtResource("3_cs1qu")
+Effects = Array[ExtResource("1_7bquy")]([ExtResource("1_ngvkq")])
+Duration = 3
+IsBuff = false
+Level = 1
+metadata/_custom_type_script = "uid://clra7ofaokdqn"

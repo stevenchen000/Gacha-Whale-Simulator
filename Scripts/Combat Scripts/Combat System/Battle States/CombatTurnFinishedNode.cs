@@ -34,7 +34,7 @@ namespace CombatSystem
 
         protected override void OnStateDeactivated()
         {
-            battle.EndTurn();
+            
         }
     }
 }

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_wvwwa"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="2_y2ug8"]
-[ext_resource type="Resource" uid="uid://61p44fsftl5h" path="res://Resources/Characters/Skills/basic_hp_attack.tres" id="3_i0lkh"]
+[ext_resource type="Resource" uid="uid://61p44fsftl5h" path="res://Resources/Characters/Skills/Roles/Attacker/Skills/basic_hp_attack.tres" id="3_i0lkh"]
 
 [resource]
 script = ExtResource("1_wvwwa")

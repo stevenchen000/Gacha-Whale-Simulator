@@ -34,8 +34,6 @@ namespace CombatSystem
 
 
 
-
-
         public BattleParty(Array<BattleCharacter> characters)
         {
             foreach (var character in characters)
@@ -43,6 +41,16 @@ namespace CombatSystem
                 AddMember(character);
             }
         }
+
+
+
+
+
+
+        /***********************
+         * Member Getters
+         * ******************/
+
 
         public Array<BattleCharacter> GetAllLivingMembers()
         {

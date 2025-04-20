@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CastSkillEffect" load_steps=3 format=3 uid="uid://cvq6h2ipw8jag"]
+
+[ext_resource type="Script" uid="uid://b6d3gac8pm2gw" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/CastSkillEffect.cs" id="1_7bfj8"]
+[ext_resource type="Resource" uid="uid://ceho202yfbxv" path="res://Resources/Characters/Skills/Status Effects/Damaging Debuffs/Burn/burn_effect_attack.tres" id="2_7bfj8"]
+
+[resource]
+script = ExtResource("1_7bfj8")
+skill = ExtResource("2_7bfj8")
+description = ""
+Timing = 2
+Potency = 0.0
+metadata/_custom_type_script = "uid://pq22kq203q1r"

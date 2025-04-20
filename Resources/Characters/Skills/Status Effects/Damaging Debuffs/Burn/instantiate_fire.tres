@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillAnimationCreateObject" load_steps=3 format=3 uid="uid://cxwkw15pkt42n"]
+
+[ext_resource type="Script" uid="uid://dikg8ka2v1lpo" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Animations/Animation Elements/SkillAnimationCreateObject.cs" id="1_bnyn7"]
+[ext_resource type="PackedScene" uid="uid://bdva8u2qj8364" path="res://Art Assets/Battle Effects/BDragon Special Effects/Part 1/04_Flame Slash Yellow.tscn" id="1_mah44"]
+
+[resource]
+script = ExtResource("1_bnyn7")
+castObject = ExtResource("1_mah44")
+offset = Vector2(0, 0)
+scale = Vector2(1, 1)
+delayBetweenTargets = 0.5
+relativeTo = 1
+changesWithElement = false
+delay = 0.0
+duration = 1.2
+ignoreDuration = false
+metadata/_custom_type_script = "uid://dikg8ka2v1lpo"

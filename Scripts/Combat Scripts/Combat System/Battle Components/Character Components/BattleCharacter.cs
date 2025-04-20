@@ -172,7 +172,6 @@ namespace CombatSystem
 
             ActionsTaken++;
             TurnsTaken++;
-            //Need to check if free turn happened
         }
 
         public CombatActionData GetAutomaticAction()
@@ -204,12 +203,7 @@ namespace CombatSystem
         /*****************
          * Movement
          * **************/
-
-        public void SetTemporaryPosition(GridSpace space)
-        {
-            currPosition = space.Coords;
-            characterPos.GlobalPosition = space.GlobalPosition;
-        }
+        
 
         public void SetPosition(GridSpace space)
         {
@@ -343,13 +337,13 @@ namespace CombatSystem
         {
             if (IsBroken())
             {
-                Utils.Print(this, $"Decreasing {Character.Character.Name}'s break counter...");
+                //Utils.Print(this, $"Decreasing {Character.Character.Name}'s break counter...");
                 Flags.RemoveFlag(BattleFlagNames.turnsToUnbreakFlag);
-                Utils.Print(this, Flags.GetFlagAmount(BattleFlagNames.turnsToUnbreakFlag));
+                //Utils.Print(this, Flags.GetFlagAmount(BattleFlagNames.turnsToUnbreakFlag));
                 if(GetTurnsToUnbreak() <= 0)
                 {
                     UnbreakCharacter();
-                    Utils.Print(this, "Character unbroken");
+                    //Utils.Print(this, "Character unbroken");
                 }
             }
         }
@@ -362,7 +356,7 @@ namespace CombatSystem
 
             if(IsBroken() && currAmp >= spirit)
             {
-                Utils.Print(this, "Unbroken! CurrAmp > Spirit!");
+                //Utils.Print(this, "Unbroken! CurrAmp > Spirit!");
                 UnbreakCharacter();
             }
         }
@@ -426,7 +420,7 @@ namespace CombatSystem
 
         public void AddStatus(BattleCharacter caster, StatusEffect effect)
         {
-            Status.AddEffect(caster, effect);
+            Status.AddEffect(caster, effect, battle);
         }
 
 
@@ -439,12 +433,12 @@ namespace CombatSystem
             anim.Play(animation);
         }
 
-        public void CastSkill(SkillContainer skill, TurnData data)
+        public void CastSkill(SkillContainer skill, TurnData data, SkillCastData skillCast)
         {
             if (skill != null)
             {
                 skill.ConsumeSkillUse(1);
-                castManager.CastSkill(skill, data);
+                castManager.CastSkill(skill, data, skillCast);
             }
         }
 

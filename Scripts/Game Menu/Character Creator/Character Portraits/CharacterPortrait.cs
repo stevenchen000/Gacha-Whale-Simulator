@@ -8,10 +8,13 @@ using System.IO;
 public partial class CharacterPortrait : Resource
 {
     [Export] private Texture2D portrait;
+    [Export] private Dictionary<string, Texture2D> emotions = new Dictionary<string, Texture2D>();
     [Export] public Vector2 Position { get; private set; }
     [Export] public float Scale { get; private set; } = 1;
-    [Export] public Vector2 startArea;
-    [Export] public float size = 0;
+
+    [ExportCategory("CG Positions")]
+    [Export] public Vector2 cgPosition { get; private set; }
+    [Export] public float cgScale { get; private set; } = 1;
 
     public CharacterPortrait()
     {
@@ -23,9 +26,14 @@ public partial class CharacterPortrait : Resource
      * Getters/Setters
     *****************/
 
-    public virtual Texture2D GetPortrait()
+    public virtual Texture2D GetPortrait(string emotion = "")
     {
-        return portrait;
+        Texture2D result = portrait;
+
+        if(emotions.ContainsKey(emotion))
+            result = emotions[emotion];
+
+        return result;
     }
 
     public void SetupPortraitSimple(Control box, Sprite2D spriteElement, float borderSize = 0)
@@ -60,43 +68,17 @@ public partial class CharacterPortrait : Resource
         if (GetPortrait() != null)
         {
             float previewSize = box.Size.X - borderSize * 2;
-
-            if (size != 0)
-            {
-                float sizeScale = previewSize / size;
-                spriteElement.Scale = new Vector2(sizeScale, sizeScale);
-                var newPos = ConvertUIPosToSpritePos(box, sizeScale, borderSize);
-
-                spriteElement.Position = newPos;
-                //first scale portrait so that the cropped area matches the new area
-                //convert startPos and size into an offset
-                //position + half of size to shift anchor of UI element to center
-                //multiply result by size scale from earlier
-                //Take half the size of the new box to show the image in and subtract the
-                //converted position to get the new offset
-                //scale of the box is irrelevant, so easy to manage
-            }
-            else
-            {
-                float textureX = GetPortrait().GetSize().X;
-                float textureY = GetPortrait().GetSize().Y;
-                float maxSize = MathF.Max(textureX, textureY);
-                float sizeScale = previewSize / maxSize;
-                spriteElement.Position = box.Size / 2;
-                spriteElement.Scale = new Vector2(sizeScale, sizeScale);
-            }
+            float textureX = GetPortrait().GetSize().X;
+            float textureY = GetPortrait().GetSize().Y;
+            float maxSize = MathF.Max(textureX, textureY);
+            float sizeScale = previewSize / maxSize;
+            spriteElement.Position = box.Size / 2;
+            spriteElement.Scale = new Vector2(sizeScale, sizeScale);
         }
         else
         {
             spriteElement.Texture = null;
         }
-    }
-
-    private Vector2 ConvertUIPosToSpritePos(Control box, float sizeScale, float borderSize)
-    {
-        var cropBoxOffset = new Vector2(size / 2, size / 2);
-        var boxSize = box.Size;
-        return boxSize / 2 - (startArea + cropBoxOffset) * sizeScale;
     }
 
 }

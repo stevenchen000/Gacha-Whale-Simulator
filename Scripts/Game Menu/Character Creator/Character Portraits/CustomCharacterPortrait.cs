@@ -18,7 +18,7 @@ public partial class CustomCharacterPortrait : CharacterPortrait
         portraitFile = texture.ResourcePath;
     }
 
-    public override Texture2D GetPortrait()
+    public override Texture2D GetPortrait(string emotion = "")
     {
         return CustomCharacterManager.GetCustomTexture(portraitFile);
     }

@@ -119,7 +119,7 @@ namespace CombatSystem
         private void SetupPartyPositions(BattleParty party, Array<Vector2I> positions)
         {
             var members = party.GetAllMembers();
-            Utils.Print(this, members.Count);
+            //Utils.Print(this, members.Count);
             for (int i = 0; i < members.Count; i++)
             {
                 Vector2I coords = new Vector2I(-1, -1);
