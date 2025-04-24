@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="StageParty" load_steps=11 format=3 uid="uid://egghk07vqqk2"]
+
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="1_id0mu"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="2_7fbhx"]
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="3_3b88m"]
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="4_ukiue"]
+[ext_resource type="Script" uid="uid://0bxl0n4px1sv" path="res://Scripts/Combat Scripts/Combat System/Battle Data/Stage Party/StageParty.cs" id="5_j2aao"]
+
+[sub_resource type="Resource" id="Resource_gd0u2"]
+script = ExtResource("1_id0mu")
+Character = ExtResource("2_7fbhx")
+Level = 7
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_ti5t3"]
+script = ExtResource("1_id0mu")
+Character = ExtResource("2_7fbhx")
+Level = 7
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_gb2jw"]
+script = ExtResource("1_id0mu")
+Character = ExtResource("3_3b88m")
+Level = 7
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_04l1a"]
+script = ExtResource("1_id0mu")
+Character = ExtResource("4_ukiue")
+Level = 7
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_0t8u7"]
+script = ExtResource("1_id0mu")
+Character = ExtResource("4_ukiue")
+Level = 7
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[resource]
+script = ExtResource("5_j2aao")
+Characters = Array[ExtResource("1_id0mu")]([SubResource("Resource_gd0u2"), SubResource("Resource_ti5t3"), SubResource("Resource_gb2jw"), SubResource("Resource_04l1a"), SubResource("Resource_0t8u7")])
+GloryLevel = 1

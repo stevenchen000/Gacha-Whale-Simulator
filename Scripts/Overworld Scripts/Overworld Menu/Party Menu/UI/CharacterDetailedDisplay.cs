@@ -10,6 +10,7 @@ public partial class CharacterDetailedDisplay : Control
     [Export] private Label nameLabel;
     [Export] private Label levelLabel;
     [Export] private CharacterRarityDisplay lbDisplay;
+    [Export] private TextureRect rarityDisplay;
 
 
     public void Init(CharacterData character)
@@ -30,6 +31,8 @@ public partial class CharacterDetailedDisplay : Control
             UpdateLevel();
         if (lbDisplay != null)
             UpdateLimitBreak();
+        if (rarityDisplay != null)
+            UpdateRarityDisplay();
     }
 
     private void UpdatePortrait()
@@ -55,6 +58,12 @@ public partial class CharacterDetailedDisplay : Control
     {
         var lb = character.Stars;
         lbDisplay.SetStars(lb);
+    }
+
+    private void UpdateRarityDisplay()
+    {
+        var rb = character.Rarity;
+        rarityDisplay.Texture = RarityNames.GetRarityIcon(rb);
     }
 }
 

@@ -84,7 +84,7 @@ public partial class MainGame : Node
         double transitionTime = LoadScreen.TransitionTime;
         DelayedCalls.AddCall(transitionTime, () => _OpenMenu(menu));
         DelayedCalls.AddCall(transitionTime + 0.1, () => MemoryLeakChecker.TrackAllChildren(currMenu));
-        DelayedCalls.AddCall(transitionTime + 0.1, () => MemoryLeakChecker.CheckStatus());
+        //DelayedCalls.AddCall(transitionTime + 0.1, () => MemoryLeakChecker.CheckStatus());
     }
 
     private void _OpenMenu(PackedScene menu)

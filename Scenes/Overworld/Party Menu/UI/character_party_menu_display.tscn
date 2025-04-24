@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c05wi4urb34et"]
+[gd_scene load_steps=3 format=3 uid="uid://c05wi4urb34et"]
 
 [ext_resource type="Script" uid="uid://bk0cuhlvwrl7l" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/PartyCharacterDisplay.cs" id="1_6ebla"]
 [ext_resource type="PackedScene" uid="uid://cj5rt8017olgn" path="res://Scenes/Overworld/Party Menu/UI/character_detailed_display.tscn" id="2_ygdmw"]
-[ext_resource type="Texture2D" uid="uid://l3gw8qlkrakg" path="res://Art Assets/UI/Rarity Text/SR.png" id="3_l3kae"]
 
-[node name="Character Display" type="Control" node_paths=PackedStringArray("charDisplay", "rarityIcon")]
+[node name="Character Display" type="Control" node_paths=PackedStringArray("charDisplay")]
 custom_minimum_size = Vector2(1002, 193)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_6ebla")
 charDisplay = NodePath("CharacterDetailedDisplay")
-rarityIcon = NodePath("Rarity")
 
 [node name="CharacterDetailedDisplay" parent="." instance=ExtResource("2_ygdmw")]
 layout_mode = 1
@@ -20,17 +18,5 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1006.0
 offset_bottom = 196.0
-
-[node name="Rarity" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 517.0
-offset_top = 6.0
-offset_right = 758.0
-offset_bottom = 247.0
-rotation = -0.174533
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("3_l3kae")
-expand_mode = 1
-stretch_mode = 5
 
 [connection signal="button_up" from="Button" to="." method="OpenCharacterSelector"]

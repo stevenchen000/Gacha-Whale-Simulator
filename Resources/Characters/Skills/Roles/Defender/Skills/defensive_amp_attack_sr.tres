@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=7 format=3 uid="uid://islxfiq705ov"]
+
+[ext_resource type="Resource" uid="uid://b1myme10hhdib" path="res://Resources/Characters/Skills/Skill Shape/range_1_shape.tres" id="1_v2r22"]
+[ext_resource type="Texture2D" uid="uid://dagl8oftpm4a6" path="res://Art Assets/Character Assets/Weapon Icons/Shield.png" id="2_kkj6s"]
+[ext_resource type="Resource" uid="uid://b1m2rik3tw6uf" path="res://Resources/Characters/Skills/Skill Effects/amp_damage_effect.tres" id="3_um44n"]
+[ext_resource type="Script" uid="uid://dm511uppwjaw3" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealStatByDamageEffect.cs" id="4_n4ili"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="5_57wkr"]
+
+[sub_resource type="Resource" id="Resource_omy62"]
+script = ExtResource("4_n4ili")
+healAmp = true
+percentHealing = 100.0
+useAmpDamage = true
+delay = 0.0
+description = ""
+targetType = 3
+metadata/_custom_type_script = "uid://dm511uppwjaw3"
+
+[resource]
+script = ExtResource("5_57wkr")
+Icon = ExtResource("2_kkj6s")
+SkillName = "HP Attack"
+InfiniteUses = true
+Uses = 0
+effects = Array[Object]([ExtResource("3_um44n"), SubResource("Resource_omy62")])
+potency = 50
+AttackArea = ExtResource("1_v2r22")
+direction = 1
+targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100

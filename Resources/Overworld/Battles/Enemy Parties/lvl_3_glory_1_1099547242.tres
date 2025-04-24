@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="StageParty" load_steps=12 format=3 uid="uid://2v0hipvocosm"]
+
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="1_6i7vi"]
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="2_6mbmk"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="3_5w2wl"]
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="4_8gaoo"]
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="5_mmxkv"]
+[ext_resource type="Script" uid="uid://0bxl0n4px1sv" path="res://Scripts/Combat Scripts/Combat System/Battle Data/Stage Party/StageParty.cs" id="6_8jwrb"]
+
+[sub_resource type="Resource" id="Resource_usn40"]
+script = ExtResource("1_6i7vi")
+Character = ExtResource("2_6mbmk")
+Level = 3
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_63hbd"]
+script = ExtResource("1_6i7vi")
+Character = ExtResource("3_5w2wl")
+Level = 3
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_b27d6"]
+script = ExtResource("1_6i7vi")
+Character = ExtResource("4_8gaoo")
+Level = 3
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_hdsmi"]
+script = ExtResource("1_6i7vi")
+Character = ExtResource("5_mmxkv")
+Level = 3
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_gb373"]
+script = ExtResource("1_6i7vi")
+Character = ExtResource("4_8gaoo")
+Level = 3
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[resource]
+script = ExtResource("6_8jwrb")
+Characters = Array[ExtResource("1_6i7vi")]([SubResource("Resource_usn40"), SubResource("Resource_63hbd"), SubResource("Resource_b27d6"), SubResource("Resource_hdsmi"), SubResource("Resource_gb373")])
+GloryLevel = 1

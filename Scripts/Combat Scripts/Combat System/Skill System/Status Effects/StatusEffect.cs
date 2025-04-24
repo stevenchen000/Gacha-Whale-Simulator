@@ -10,7 +10,6 @@ namespace SkillSystem
     {
         [Export] public int ID { get; private set; } = 1;
         [Export] public string Name { get; private set; }
-        [Export] public bool IsUnique { get; private set; } = false;
         [Export] public Texture2D Texture { get; private set; }
 
         [ExportCategory("Effects")]
@@ -21,5 +20,22 @@ namespace SkillSystem
         /// This is for generic buffs/debuffs only
         /// </summary>
         [Export] public int Level { get; private set; } = 1;
+        [Export] public bool IsPassive { get; private set; } = false;
+
+        public StatusEffect GetCopy(int level)
+        {
+            var result = new StatusEffect()
+            {
+                ID = ID,
+                Name = Name,
+                Texture = Texture,
+                Effects = Effects,
+                Duration = Duration,
+                Level = level,
+                IsBuff = IsBuff,
+                IsPassive = IsPassive
+            };
+            return result;
+        }
     }
 }

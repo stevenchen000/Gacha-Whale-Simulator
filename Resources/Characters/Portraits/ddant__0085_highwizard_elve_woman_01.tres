@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://popbm5stqh51"]
+
+[ext_resource type="Texture2D" uid="uid://bt26qnpeji04d" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0085_highwizard_elve_woman_01.png" id="1_s2d0q"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_nh0bb"]
+
+[resource]
+script = ExtResource("2_nh0bb")
+portrait = ExtResource("1_s2d0q")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(-11.6631, 156.803)
+Scale = 0.4
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

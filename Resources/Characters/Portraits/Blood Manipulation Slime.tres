@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://c6xuduj6c80yi"]
+
+[ext_resource type="Texture2D" uid="uid://cpv2t05hf51o" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Blood Manipulation Slime.png" id="1_en71l"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_vkvw1"]
+
+[resource]
+script = ExtResource("2_vkvw1")
+portrait = ExtResource("1_en71l")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(31.1015, -15.9827)
+Scale = 0.83
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

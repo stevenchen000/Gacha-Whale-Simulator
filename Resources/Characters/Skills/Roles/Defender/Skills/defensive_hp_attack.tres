@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterSkill" load_steps=5 format=3 uid="uid://mhrekhehc6ok"]
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=6 format=3 uid="uid://mhrekhehc6ok"]
 
 [ext_resource type="Resource" uid="uid://b1myme10hhdib" path="res://Resources/Characters/Skills/Skill Shape/range_1_shape.tres" id="1_6o6oc"]
 [ext_resource type="Texture2D" uid="uid://dagl8oftpm4a6" path="res://Art Assets/Character Assets/Weapon Icons/Shield.png" id="2_6o6oc"]
-[ext_resource type="Resource" uid="uid://2a2ybf3dpuaa" path="res://Resources/Characters/Skills/Skill Effects/def_hp_damage_effect.tres" id="3_6o6oc"]
+[ext_resource type="Resource" uid="uid://7j8itaw5t7qf" path="res://Resources/Characters/Skills/Skill Effects/hp_damage_effect.tres" id="3_ul2ox"]
+[ext_resource type="Resource" uid="uid://d0thh0nrn1trj" path="res://Resources/Characters/Skills/Skill Effects/recover_amp_by_damage.tres" id="4_0lvii"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="4_l3ofd"]
 
 [resource]
@@ -11,7 +12,7 @@ Icon = ExtResource("2_6o6oc")
 SkillName = "HP Attack"
 InfiniteUses = true
 Uses = 0
-effects = Array[Object]([ExtResource("3_6o6oc")])
+effects = Array[Object]([ExtResource("3_ul2ox"), ExtResource("4_0lvii")])
 potency = 100
 AttackArea = ExtResource("1_6o6oc")
 direction = 1

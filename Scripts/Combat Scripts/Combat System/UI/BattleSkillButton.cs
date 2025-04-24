@@ -5,6 +5,8 @@ namespace CombatSystem
 {
     public partial class BattleSkillButton : Control
     {
+        [Export] private TextureProgressBar progress;
+        [Export] private TextureProgressBar progressGlow;
         [Export] private Button button;
         [Export] private TextureRect skillIcon;
         [Export] private TextureRect skillBackground;
@@ -63,6 +65,9 @@ namespace CombatSystem
 
                 nameLabel.Text = baseSkill.SkillName;
 
+                SetupProgressBar(skill);
+                SetupSkillBackground();
+
                 SetupUses(skill);
 
                 var element = baseSkill.SkillElement;
@@ -76,6 +81,30 @@ namespace CombatSystem
             {
                 ResetUI();
             }
+        }
+
+        private void SetupProgressBar(SkillContainer skill)
+        {
+            if (skill.IsChargeSkill)
+            {
+                float percent = skill.ChargePercent;
+                progress.Value = percent;
+                progressGlow.Value = percent;
+                progress.Visible = true;
+            }
+            else
+            {
+                progress.Visible = false;
+            }
+        }
+
+        private void SetupSkillBackground()
+        {
+            var character = battle.GetCurrentCharacter();
+            var element = character.CharacterElement;
+
+            if (element != null)
+                skillBackground.SelfModulate = element.ElementColor;
         }
 
         private void SetupUses(SkillContainer skill)

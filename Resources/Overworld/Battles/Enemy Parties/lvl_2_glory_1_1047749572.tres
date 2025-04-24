@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="StageParty" load_steps=10 format=3 uid="uid://yhpwmxmhtm7k"]
+
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="1_efekq"]
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="2_6b2hq"]
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="3_v6ukx"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="4_g6jco"]
+[ext_resource type="Script" uid="uid://0bxl0n4px1sv" path="res://Scripts/Combat Scripts/Combat System/Battle Data/Stage Party/StageParty.cs" id="5_ex0p3"]
+
+[sub_resource type="Resource" id="Resource_1r3pe"]
+script = ExtResource("1_efekq")
+Character = ExtResource("2_6b2hq")
+Level = 2
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_b2brn"]
+script = ExtResource("1_efekq")
+Character = ExtResource("3_v6ukx")
+Level = 2
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_8m5v4"]
+script = ExtResource("1_efekq")
+Character = ExtResource("4_g6jco")
+Level = 2
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_e6er0"]
+script = ExtResource("1_efekq")
+Character = ExtResource("3_v6ukx")
+Level = 2
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[resource]
+script = ExtResource("5_ex0p3")
+Characters = Array[ExtResource("1_efekq")]([SubResource("Resource_1r3pe"), SubResource("Resource_b2brn"), SubResource("Resource_8m5v4"), SubResource("Resource_e6er0")])
+GloryLevel = 1

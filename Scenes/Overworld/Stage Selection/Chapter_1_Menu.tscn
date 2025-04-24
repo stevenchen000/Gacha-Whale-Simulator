@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://x5xjdhaauevs"]
+[gd_scene load_steps=15 format=3 uid="uid://x5xjdhaauevs"]
 
 [ext_resource type="Texture2D" uid="uid://1jbgql7w47db" path="res://Art Assets/Backgrounds/Ocean_3/5.png" id="1_hmhqo"]
 [ext_resource type="Script" uid="uid://dreubgkqg4a84" path="res://Resources/Stage Selection/Chapters/StageConnections.cs" id="1_s7f0v"]
 [ext_resource type="Texture2D" uid="uid://u3sm7mbgb8hu" path="res://Art Assets/UI/Stage Selection/Stage_Icon_Trees.png" id="2_hmhqo"]
 [ext_resource type="PackedScene" uid="uid://umkn3hlqwl0r" path="res://Scenes/Overworld/Stage Selection/stage_selection_button.tscn" id="4_61aj1"]
+[ext_resource type="Resource" uid="uid://dxvomwaqkk0h6" path="res://Resources/Overworld/Battles/basic_stage_2.tres" id="5_xqs60"]
+[ext_resource type="Resource" uid="uid://bcbcde42lj5gb" path="res://Resources/Overworld/Battles/basic_stage_3.tres" id="6_0o7p6"]
+[ext_resource type="Resource" uid="uid://b6xxm8twopbh4" path="res://Resources/Overworld/Battles/basic_stage_4.tres" id="7_qtvy5"]
+[ext_resource type="Resource" uid="uid://b4l30a7b7ye7d" path="res://Resources/Overworld/Battles/basic_stage_5.tres" id="8_vg6nr"]
+[ext_resource type="Resource" uid="uid://e4hc6q547hwb" path="res://Resources/Overworld/Battles/basic_stage_6.tres" id="9_afy3r"]
+[ext_resource type="Resource" uid="uid://buh4roi5u2jxk" path="res://Resources/Overworld/Battles/basic_stage_7.tres" id="10_6hin4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_33c1a"]
 font_size = 70
@@ -330,3 +336,51 @@ offset_left = 483.0
 offset_top = 283.0
 offset_right = 897.0
 offset_bottom = 423.0
+
+[node name="Stage Selection2" parent="." node_paths=PackedStringArray("clearStars") instance=ExtResource("4_61aj1")]
+offset_left = 483.0
+offset_top = 463.0
+offset_right = 897.0
+offset_bottom = 603.0
+data = ExtResource("5_xqs60")
+clearStars = [NodePath("../Stage Selection/Stars/Star"), NodePath("../Stage Selection/Stars/Star2"), NodePath("../Stage Selection/Stars/Star3")]
+
+[node name="Stage Selection3" parent="." node_paths=PackedStringArray("clearStars") instance=ExtResource("4_61aj1")]
+offset_left = 483.0
+offset_top = 647.0
+offset_right = 897.0
+offset_bottom = 787.0
+data = ExtResource("6_0o7p6")
+clearStars = [NodePath("../Stage Selection/Stars/Star"), NodePath("../Stage Selection/Stars/Star2"), NodePath("../Stage Selection/Stars/Star3")]
+
+[node name="Stage Selection4" parent="." node_paths=PackedStringArray("clearStars") instance=ExtResource("4_61aj1")]
+offset_left = 483.0
+offset_top = 827.0
+offset_right = 897.0
+offset_bottom = 967.0
+data = ExtResource("7_qtvy5")
+clearStars = [NodePath("../Stage Selection/Stars/Star"), NodePath("../Stage Selection/Stars/Star2"), NodePath("../Stage Selection/Stars/Star3")]
+
+[node name="Stage Selection5" parent="." node_paths=PackedStringArray("clearStars") instance=ExtResource("4_61aj1")]
+offset_left = 483.0
+offset_top = 1002.0
+offset_right = 897.0
+offset_bottom = 1142.0
+data = ExtResource("8_vg6nr")
+clearStars = [NodePath("../Stage Selection/Stars/Star"), NodePath("../Stage Selection/Stars/Star2"), NodePath("../Stage Selection/Stars/Star3")]
+
+[node name="Stage Selection6" parent="." node_paths=PackedStringArray("clearStars") instance=ExtResource("4_61aj1")]
+offset_left = 483.0
+offset_top = 1186.0
+offset_right = 897.0
+offset_bottom = 1326.0
+data = ExtResource("9_afy3r")
+clearStars = [NodePath("../Stage Selection/Stars/Star"), NodePath("../Stage Selection/Stars/Star2"), NodePath("../Stage Selection/Stars/Star3")]
+
+[node name="Stage Selection7" parent="." node_paths=PackedStringArray("clearStars") instance=ExtResource("4_61aj1")]
+offset_left = 483.0
+offset_top = 1186.0
+offset_right = 897.0
+offset_bottom = 1326.0
+data = ExtResource("10_6hin4")
+clearStars = [NodePath("../Stage Selection/Stars/Star"), NodePath("../Stage Selection/Stars/Star2"), NodePath("../Stage Selection/Stars/Star3")]

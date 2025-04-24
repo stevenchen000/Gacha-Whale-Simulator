@@ -43,11 +43,14 @@ public partial class CharacterStatusUI : Control
         this.status = status;
         var texture = status.Status.Texture;
 
-        icon.Texture = texture;
-        var backgroundSize = background.Size;
-        var textureSize = texture.GetSize();
+        if (texture != null)
+        {
+            icon.Texture = texture;
+            var backgroundSize = background.Size;
+            var textureSize = texture.GetSize();
 
-        icon.Scale = backgroundSize / textureSize;
+            icon.Scale = backgroundSize / textureSize;
+        }
     }
 
     private void SetAsBuff()

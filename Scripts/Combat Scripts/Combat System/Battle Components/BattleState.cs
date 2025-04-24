@@ -3,6 +3,7 @@ using System;
 using GachaSystem;
 using Godot.Collections;
 using static Godot.WebSocketPeer;
+using SkillSystem;
 
 namespace CombatSystem
 {
@@ -53,6 +54,8 @@ namespace CombatSystem
             SetupGrid(data);
             SetupParties(data);
             SetupStartingPositions();
+            if(CurrentStage.UsesGloryStats)
+                ApplyGloryStats();
             TurnOrder.Init(this);
             DamageManager = new CharacterDamageManager();
         }
@@ -94,7 +97,7 @@ namespace CombatSystem
                 PlayerCharacters = party.Party;
                 PlayerParty = new BattleParty(this, PlayerCharacters, battleCharacterScene, playerBorder);
             }
-            var enemyCharacters = data.EnemyList;
+            var enemyCharacters = data.EnemyParty.Characters;
             var playerStartPos = data.PlayerStartPositions;
             var enemyStartPos = data.EnemyStartPositions;
 
@@ -110,9 +113,7 @@ namespace CombatSystem
             var playerPositions = stage.PlayerStartPositions;
             var enemyPositions = stage.EnemyStartPositions;
 
-            Utils.Print(this, "Setting up player party...");
             SetupPartyPositions(playerParty, playerPositions);
-            Utils.Print(this, "Setting up enemy party...");
             SetupPartyPositions(enemyParty, enemyPositions);
         }
 
@@ -141,5 +142,40 @@ namespace CombatSystem
             }
         }
 
+        private void ApplyGloryStats()
+        {
+            _ApplyPlayerGlory();
+            _ApplyEnemyGlory();
+        }
+
+        private void _ApplyPlayerGlory()
+        {
+            int gloryLevel = GameState.GetGloryOffense();
+            var gloryOffense = StatusEffectsDict.GetStatusByID(1).GetCopy(gloryLevel);
+            var gloryDefense = StatusEffectsDict.GetStatusByID(2).GetCopy(gloryLevel);
+            var glorySupport = StatusEffectsDict.GetStatusByID(3).GetCopy(gloryLevel);
+
+            foreach (var member in PlayerParty.GetAllMembers())
+            {
+                member.AddStatus(member, gloryOffense);
+                member.AddStatus(member, gloryDefense);
+                member.AddStatus(member, glorySupport);
+            }
+        }
+
+        private void _ApplyEnemyGlory()
+        {
+            int gloryLevel = CurrentStage.EnemyGloryLevel;
+            var gloryOffense = StatusEffectsDict.GetStatusByID(1).GetCopy(gloryLevel);
+            var gloryDefense = StatusEffectsDict.GetStatusByID(2).GetCopy(gloryLevel);
+            var glorySupport = StatusEffectsDict.GetStatusByID(3).GetCopy(gloryLevel);
+
+            foreach(var member in EnemyParty.GetAllMembers())
+            {
+                member.AddStatus(member, gloryOffense);
+                member.AddStatus(member, gloryDefense);
+                member.AddStatus(member, glorySupport);
+            }
+        }
     }
 }

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HealEffect" load_steps=2 format=3 uid="uid://r3ntukm5jxma"]
+
+[ext_resource type="Script" uid="uid://bbrl5cbuw6sh8" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealEffect.cs" id="1_cl3nd"]
+
+[resource]
+script = ExtResource("1_cl3nd")
+potency = 0.0
+duration = 0.2
+delay = 0.0
+description = ""
+targetType = 0
+metadata/_custom_type_script = "uid://bbrl5cbuw6sh8"

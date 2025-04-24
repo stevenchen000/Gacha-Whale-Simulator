@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="StageParty" load_steps=8 format=3 uid="uid://ta70vnmj5xge"]
+
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="1_cuhdv"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="2_n2i83"]
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="3_0tdqq"]
+[ext_resource type="Script" uid="uid://0bxl0n4px1sv" path="res://Scripts/Combat Scripts/Combat System/Battle Data/Stage Party/StageParty.cs" id="4_o3msm"]
+
+[sub_resource type="Resource" id="Resource_gdjgo"]
+script = ExtResource("1_cuhdv")
+Character = ExtResource("2_n2i83")
+Level = 6
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_bf6w8"]
+script = ExtResource("1_cuhdv")
+Character = ExtResource("3_0tdqq")
+Level = 6
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_bq4sm"]
+script = ExtResource("1_cuhdv")
+Character = ExtResource("3_0tdqq")
+Level = 6
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[resource]
+script = ExtResource("4_o3msm")
+Characters = Array[ExtResource("1_cuhdv")]([SubResource("Resource_gdjgo"), SubResource("Resource_bf6w8"), SubResource("Resource_bq4sm")])
+GloryLevel = 1

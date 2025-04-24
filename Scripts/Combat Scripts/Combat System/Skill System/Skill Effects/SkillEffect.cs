@@ -3,6 +3,7 @@ using Godot.Collections;
 using System;
 
 namespace CombatSystem {
+    [Tool]
     [GlobalClass]
     public partial class SkillEffect : Resource
     {

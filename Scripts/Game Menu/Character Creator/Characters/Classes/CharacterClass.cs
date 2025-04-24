@@ -4,6 +4,7 @@ using EventSystem;
 
 namespace CombatSystem
 {
+	[Tool]
 	[GlobalClass]
 	public partial class CharacterClass : Resource
 	{

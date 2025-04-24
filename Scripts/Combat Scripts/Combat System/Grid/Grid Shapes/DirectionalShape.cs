@@ -2,7 +2,9 @@ using Godot;
 using System;
 using Godot.Collections;
 
-namespace CombatSystem {
+namespace CombatSystem
+{
+    [Tool]
     [GlobalClass]
     public partial class DirectionalShape : GridShape
     {

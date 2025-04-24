@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://cbs2qjh1dolvx"]
+
+[ext_resource type="Texture2D" uid="uid://luqf3yhtaw7p" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0036_warrior_dwarf_man_02.png" id="1_pd3hh"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_mo2rs"]
+
+[resource]
+script = ExtResource("2_mo2rs")
+portrait = ExtResource("1_pd3hh")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(41.9006, 139.957)
+Scale = 0.39
+cgPosition = Vector2(0, 0)
+cgScale = 1.0
+metadata/_custom_type_script = "uid://1lyyvtgem8vj"

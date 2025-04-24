@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bcpgugil0hh65"]
+
+[ext_resource type="Texture2D" uid="uid://dwrlbm5dnx2ae" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Colossal Bat.png" id="1_mynl1"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_in4xc"]
+
+[resource]
+script = ExtResource("2_in4xc")
+portrait = ExtResource("1_mynl1")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(71.7063, -13.3909)
+Scale = 0.905
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

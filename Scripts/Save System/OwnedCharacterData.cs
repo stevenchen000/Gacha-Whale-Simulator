@@ -117,6 +117,7 @@ public partial class OwnedCharacterData : Resource
         foreach (var item in data)
         {
             var character = new CharacterData(item);
+            Utils.Print(this, item);
             SetCharacter(character);
         }
 

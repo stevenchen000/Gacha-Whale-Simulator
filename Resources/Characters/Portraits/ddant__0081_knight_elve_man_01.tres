@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://ctsqyg64ibpf6"]
+
+[ext_resource type="Texture2D" uid="uid://by06v7gfq6w3q" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0081_knight_elve_man_01.png" id="1_bau3x"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_g0ufj"]
+
+[resource]
+script = ExtResource("2_g0ufj")
+portrait = ExtResource("1_bau3x")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(47.5162, 190.929)
+Scale = 0.45
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

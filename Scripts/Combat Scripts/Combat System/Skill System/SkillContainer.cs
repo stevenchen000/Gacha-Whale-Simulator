@@ -12,10 +12,49 @@ namespace CombatSystem
         {
             get
             {
-                return Skill.InfiniteUses;
+                bool result = false;
+                if (Skill != null) result = Skill.InfiniteUses;
+                return result;
             }
         }
         public TargetType TargetType { get { return Skill.targetType; } }
+
+
+        //Charge
+        public bool IsChargeSkill
+        {
+            get
+            {
+                bool result = false;
+                if (Skill != null) result = Skill.IsChargeSkill;
+                return result;
+            }
+        }
+        public int ChargeAmount { get; private set; } = 0;
+        public int MaxCharge
+        {
+            get
+            {
+                int result = -1;
+                if (Skill != null) result = Skill.ChargeAmount;
+                return result;
+            }
+        }
+        public float ChargePercent
+        {
+            get
+            {
+                return ChargeAmount / (float)MaxCharge * 100;
+            }
+        }
+
+        public bool IsFullyCharged
+        {
+            get
+            {
+                return IsChargeSkill && ChargeAmount >= MaxCharge;
+            }
+        }
 
         public SkillContainer(CharacterSkill skill)
         {
@@ -56,6 +95,16 @@ namespace CombatSystem
             RemainingUses += amount;
 
             if(RemainingUses > Skill.Uses) RemainingUses = Skill.Uses;
+        }
+
+        /***************
+         * Charging
+         * ************/
+
+        public void AddCharge(int amount)
+        {
+            ChargeAmount += amount;
+            ChargeAmount = Math.Min(ChargeAmount, MaxCharge);
         }
 
         /*******************

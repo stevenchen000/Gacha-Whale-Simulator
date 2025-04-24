@@ -3,6 +3,7 @@ using Godot;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class Element : Resource
     {

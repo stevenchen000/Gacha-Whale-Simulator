@@ -4,6 +4,7 @@ using Godot.Collections;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class RoleStatGrowth : Resource
     {

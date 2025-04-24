@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dusq27e8daubb"]
+
+[ext_resource type="Texture2D" uid="uid://70bychtcgw0j" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Colossal Snake Black.png" id="1_68jix"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_ioihc"]
+
+[resource]
+script = ExtResource("2_ioihc")
+portrait = ExtResource("1_68jix")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(31.1015, 52.2678)
+Scale = 0.615
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

@@ -3,6 +3,7 @@ using System;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class DealDamageEffect : SkillEffect
     {

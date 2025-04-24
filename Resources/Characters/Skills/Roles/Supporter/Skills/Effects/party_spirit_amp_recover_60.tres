@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="HealEffect" load_steps=4 format=3 uid="uid://5ymunbxoolju"]
+
+[ext_resource type="Resource" uid="uid://dbdtx1lisc55v" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/spirit.tres" id="1_dk16g"]
+[ext_resource type="Script" uid="uid://bbrl5cbuw6sh8" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealEffect.cs" id="2_dtqql"]
+[ext_resource type="Resource" uid="uid://8mo1lvp4wgpf" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/amp.tres" id="3_qfiqt"]
+
+[resource]
+script = ExtResource("2_dtqql")
+statToHeal = ExtResource("3_qfiqt")
+scalingStat = ExtResource("1_dk16g")
+potency = 60.0
+duration = 0.2
+delay = 0.0
+description = ""
+targetType = 1
+metadata/_custom_type_script = "uid://bbrl5cbuw6sh8"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dhy4vi30p0fpw"]
+[gd_scene load_steps=39 format=3 uid="uid://dhy4vi30p0fpw"]
 
 [ext_resource type="Script" uid="uid://c5h8h5fd4fdsd" path="res://Scripts/Utilities/Game State/GameState.cs" id="1_1csjl"]
 [ext_resource type="Script" uid="uid://bo7pxpc8yx3v6" path="res://Scripts/Room Scripts/Time/GameTimeManager.cs" id="2_8igk3"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dg6hi4clsmqht" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/PartySetup.cs" id="17_ig1aq"]
 [ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="18_ig1aq"]
 [ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="19_017w6"]
+[ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="20_8igk3"]
 [ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="20_48wcd"]
 [ext_resource type="Resource" uid="uid://cbk1w2gmifv02" path="res://Resources/Room/Events/OnGemCountChanged.tres" id="21_3scac"]
 [ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="21_8igk3"]
@@ -142,10 +143,6 @@ script = ExtResource("6_017w6")
 [node name="Quest Manager" type="Node2D" parent="."]
 script = ExtResource("15_u3q2k")
 
-[node name="Game Inventory" type="Node2D" parent="."]
-script = ExtResource("16_n8140")
-OnInventoryChange = ExtResource("13_48wcd")
-
 [node name="Gacha Data" type="Node2D" parent="." node_paths=PackedStringArray("allCharacters")]
 script = ExtResource("6_6ps7c")
 premiumCurrency = 70000
@@ -157,14 +154,11 @@ OnGemCountChanged = ExtResource("21_3scac")
 
 [node name="Character Dictionary" type="Node2D" parent="Gacha Data"]
 script = ExtResource("17_0rwfx")
-_characters = Dictionary[int, Object]({
-1: ExtResource("18_ig1aq"),
-2: ExtResource("19_017w6"),
-3: ExtResource("20_48wcd"),
-4: ExtResource("21_8igk3"),
-5: ExtResource("22_idyri"),
-6: ExtResource("23_ac2g0")
-})
+_characterList = Array[ExtResource("20_8igk3")]([null, ExtResource("18_ig1aq"), ExtResource("19_017w6"), ExtResource("20_48wcd"), ExtResource("21_8igk3"), ExtResource("22_idyri"), ExtResource("23_ac2g0"), null, null])
+
+[node name="Game Inventory" type="Node2D" parent="."]
+script = ExtResource("16_n8140")
+OnInventoryChange = ExtResource("13_48wcd")
 
 [node name="Exp Curve" type="Node2D" parent="."]
 script = ExtResource("31_waiek")

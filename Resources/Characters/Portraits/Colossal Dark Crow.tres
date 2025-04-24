@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://lkp34vk6k58t"]
+
+[ext_resource type="Texture2D" uid="uid://2obdgngeilkj" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Colossal Dark Crow.png" id="1_tbsmo"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_c7nc7"]
+
+[resource]
+script = ExtResource("2_c7nc7")
+portrait = ExtResource("1_tbsmo")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(71.7063, 34.1253)
+Scale = 0.835
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

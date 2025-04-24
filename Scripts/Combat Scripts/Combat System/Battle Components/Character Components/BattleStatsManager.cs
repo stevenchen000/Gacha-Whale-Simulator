@@ -118,12 +118,23 @@ namespace CombatSystem
             return GetStat(type);
         }
 
-        public void AddStatMultiplier(StatType type, float amount)
+        public void AddBaseStat(StatType type, int amount)
         {
             if (_stats.ContainsKey(type))
             {
                 var stat = _stats[type];
-                stat.AddMultiplier(amount);
+                stat.AddStat(amount);
+
+                RaiseEvent();
+            }
+        }
+
+        public void AddStatMultiplier(StatType type, StatMultiplierType multiType, float amount)
+        {
+            if (_stats.ContainsKey(type))
+            {
+                var stat = _stats[type];
+                stat.AddMultiplier(multiType, amount);
 
                 RaiseEvent();
             }

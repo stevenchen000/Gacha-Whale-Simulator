@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SkillBranch" load_steps=3 format=3 uid="uid://jtc7bf5ssjmt"]
+
+[ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_0gxu1"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="2_02dod"]
+
+[resource]
+script = ExtResource("1_0gxu1")
+skillTiers = Dictionary[int, ExtResource("2_02dod")]({})
+metadata/_custom_type_script = "uid://oi7b31cv68hk"

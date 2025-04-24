@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://b5fwuxv1ak62o"]
+
+[ext_resource type="Texture2D" uid="uid://dpjo1p6ip28ul" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Goblin Mage.png" id="1_tsjqk"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_5fd2r"]
+
+[resource]
+script = ExtResource("2_5fd2r")
+portrait = ExtResource("1_tsjqk")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(17.7106, 11.6631)
+Scale = 1.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

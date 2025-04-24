@@ -7,3 +7,4 @@
 script = ExtResource("2_w0bmh")
 Name = "Arcane"
 Texture = ExtResource("1_3bk8a")
+ElementColor = Color(0.835333, 0.48, 1, 1)

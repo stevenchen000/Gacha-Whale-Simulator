@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://2kthqj8w2efn"]
+
+[ext_resource type="Texture2D" uid="uid://b1vcrr7ij1usv" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Clockwork Abomination.png" id="1_naghn"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_5psh0"]
+
+[resource]
+script = ExtResource("2_5psh0")
+portrait = ExtResource("1_naghn")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(41.4687, 51.4039)
+Scale = 1.185
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

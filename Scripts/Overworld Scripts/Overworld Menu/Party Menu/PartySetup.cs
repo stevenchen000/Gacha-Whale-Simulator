@@ -15,7 +15,12 @@ public partial class PartySetup : Resource
 
     public PartySetup()
     {
+        
+    }
 
+    public PartySetup(CharacterData defaultCharacter)
+    {
+        Party.Add(defaultCharacter);
     }
 
     public void CopyParty(PartySetup party)

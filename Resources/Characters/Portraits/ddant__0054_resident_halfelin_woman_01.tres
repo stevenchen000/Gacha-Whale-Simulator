@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://b7d6hg0tvdrof"]
+
+[ext_resource type="Texture2D" uid="uid://dopt8lbgb54m0" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0054_resident_halfelin_woman_01.png" id="1_q0cmc"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_qqu1n"]
+
+[resource]
+script = ExtResource("2_qqu1n")
+portrait = ExtResource("1_q0cmc")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(37.149, 178.402)
+Scale = 0.45
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

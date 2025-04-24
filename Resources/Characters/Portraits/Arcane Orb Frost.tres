@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://daswkwhniaqqw"]
+
+[ext_resource type="Texture2D" uid="uid://bx7bbd8u7lbna" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Arcane Orb Frost.png" id="1_m8yxu"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_5pxdu"]
+
+[resource]
+script = ExtResource("2_5pxdu")
+portrait = ExtResource("1_m8yxu")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(0, 10.7991)
+Scale = 1.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

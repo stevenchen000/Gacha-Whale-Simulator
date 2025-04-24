@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmn18skr435xy" path="res://Scripts/Overworld Scripts/Overworld Menu/Home Menu/HomeMenu.cs" id="1_3tb56"]
 [ext_resource type="PackedScene" uid="uid://bxkk5567kit0w" path="res://Scenes/Overworld/Backgrounds/BannerBackground.tscn" id="2_5pf24"]
-[ext_resource type="Texture2D" uid="uid://luqf3yhtaw7p" path="res://Art Assets/Character Assets/ddant Characters/ddant__0036_warrior_dwarf_man_02.png" id="2_n5usi"]
+[ext_resource type="Texture2D" uid="uid://luqf3yhtaw7p" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0036_warrior_dwarf_man_02.png" id="2_n5usi"]
 [ext_resource type="AudioStream" uid="uid://x8ucd0cuuhrh" path="res://Audio Assets/BGM/Action 1.mp3" id="2_sp7lu"]
 [ext_resource type="PackedScene" uid="uid://bhjsm6nthivlg" path="res://Scenes/Overworld/Overworld Menu.tscn" id="3_n5usi"]
 [ext_resource type="Texture2D" uid="uid://d01u0sdo6f624" path="res://icon.svg" id="6_roi4q"]

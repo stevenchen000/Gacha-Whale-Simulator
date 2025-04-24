@@ -3,7 +3,9 @@ using System;
 using Godot.Collections;
 using System.Collections.Generic;
 
-namespace CombatSystem {
+namespace CombatSystem 
+{
+    [Tool]
     [GlobalClass]
     public partial class CharacterSkill : Resource
     {

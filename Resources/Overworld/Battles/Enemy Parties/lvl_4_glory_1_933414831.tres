@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="StageParty" load_steps=11 format=3 uid="uid://cnpsi6f8oxb3r"]
+
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="1_2hrv5"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="2_h34xw"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="3_ynhv2"]
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="4_jli88"]
+[ext_resource type="Script" uid="uid://0bxl0n4px1sv" path="res://Scripts/Combat Scripts/Combat System/Battle Data/Stage Party/StageParty.cs" id="5_l0res"]
+
+[sub_resource type="Resource" id="Resource_4qbjt"]
+script = ExtResource("1_2hrv5")
+Character = ExtResource("2_h34xw")
+Level = 4
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_djh0k"]
+script = ExtResource("1_2hrv5")
+Character = ExtResource("3_ynhv2")
+Level = 4
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_owlrw"]
+script = ExtResource("1_2hrv5")
+Character = ExtResource("4_jli88")
+Level = 4
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_d8dw8"]
+script = ExtResource("1_2hrv5")
+Character = ExtResource("4_jli88")
+Level = 4
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_w4ni4"]
+script = ExtResource("1_2hrv5")
+Character = ExtResource("4_jli88")
+Level = 4
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[resource]
+script = ExtResource("5_l0res")
+Characters = Array[ExtResource("1_2hrv5")]([SubResource("Resource_4qbjt"), SubResource("Resource_djh0k"), SubResource("Resource_owlrw"), SubResource("Resource_d8dw8"), SubResource("Resource_w4ni4")])
+GloryLevel = 1

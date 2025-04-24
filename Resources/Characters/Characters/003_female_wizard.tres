@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="GameCharacter" load_steps=7 format=3 uid="uid://csyib1t6sh40y"]
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=8 format=3 uid="uid://csyib1t6sh40y"]
 
-[ext_resource type="Resource" uid="uid://duop67bc0ld4r" path="res://Resources/Characters/Skills/Classes/knight_class.tres" id="1_j0fq0"]
-[ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_gpjd0"]
-[ext_resource type="Resource" uid="uid://ch2f8nppud3k7" path="res://Resources/Characters/Skills/Roles/Defender/defender_role.tres" id="2_igyl3"]
-[ext_resource type="Resource" uid="uid://04u2tigv8q45" path="res://Resources/Characters/Skills/Elements/thunder_element.tres" id="2_ybi85"]
+[ext_resource type="Resource" uid="uid://cpu3bycepp1eh" path="res://Resources/Characters/Skills/Classes/magic_knight_class.tres" id="1_ybi85"]
+[ext_resource type="Resource" uid="uid://b1wdi00bg4amd" path="res://Resources/Characters/Skills/Elements/fire_element.tres" id="2_j0fq0"]
+[ext_resource type="Resource" uid="uid://bf8cl74tynfbm" path="res://Resources/Characters/Characters/001_vayne/001_vayne_powercreep.tres" id="3_ftugo"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_ftugo"]
+[ext_resource type="Resource" uid="uid://cnmga8on2vcdy" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_role.tres" id="4_q6olu"]
+[ext_resource type="Resource" uid="uid://ceuop764p5g4r" path="res://Resources/Characters/Characters/001_vayne/Skills/001_vayne_skill_loadout.tres" id="5_ea0wl"]
 [ext_resource type="Resource" uid="uid://hq4rn8lrg3lh" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_003_female_wizard.tres" id="5_q6olu"]
 
 [resource]
@@ -14,10 +15,11 @@ portrait = ExtResource("5_q6olu")
 BaseRarity = 1
 Name = "Red Mage"
 Title = ""
-Description = ""
 World = ""
-Element = ExtResource("2_ybi85")
-Class = ExtResource("1_j0fq0")
-Role = ExtResource("2_igyl3")
-SkillSet = ExtResource("2_gpjd0")
+Element = ExtResource("2_j0fq0")
+Class = ExtResource("1_ybi85")
+Role = ExtResource("4_q6olu")
+SkillSet = ExtResource("5_ea0wl")
+Powercreep = ExtResource("3_ftugo")
+Description = ""
 metadata/_custom_type_script = "uid://gdabyn413d1c"

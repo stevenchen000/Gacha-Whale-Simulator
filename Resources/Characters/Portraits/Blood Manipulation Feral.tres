@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://ic0q5ahu7oxu"]
+
+[ext_resource type="Texture2D" uid="uid://ua3knf31qigl" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Blood Manipulation Feral.png" id="1_ln73b"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_ogmrx"]
+
+[resource]
+script = ExtResource("2_ogmrx")
+portrait = ExtResource("1_ln73b")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(86.8251, 37.149)
+Scale = 0.745
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

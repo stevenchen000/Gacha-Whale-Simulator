@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bo131p1iysxet"]
+
+[ext_resource type="Texture2D" uid="uid://d1y4cxirktb4f" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Boss Abomination Aqua.png" id="1_4es0f"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_1ill5"]
+
+[resource]
+script = ExtResource("2_1ill5")
+portrait = ExtResource("1_4es0f")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(-23.3261, 14.2549)
+Scale = 0.515
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

@@ -21,6 +21,7 @@ namespace SkillSystem
 
 
         public List<StatusContainer> StatusEffects { get; private set; } = new List<StatusContainer>();
+        public List<StatusContainer> PassiveEffects { get; private set; } = new List<StatusContainer>();
 
         private List<EffectContainer> turnStartEffects = new List<EffectContainer>();
         private List<EffectContainer> turnEndEffects = new List<EffectContainer>();
@@ -73,6 +74,10 @@ namespace SkillSystem
             {
                 effect.CountDown();
             }
+            foreach (var effect in PassiveEffects)
+            {
+                effect.CountDown();
+            }
             RemoveExpiredEffects();
 
             RaiseEvent();
@@ -86,6 +91,8 @@ namespace SkillSystem
 
         public void AddEffect(BattleCharacter caster, StatusEffect status, BattleManager battle)
         {
+            //Utils.Print(this, $"{caster.Character.Character.Name} had {StatusEffects.Count} effects before");
+
             if (HasStatus(status))
             {
                 RefreshStatus(caster, status);
@@ -94,6 +101,7 @@ namespace SkillSystem
             {
                 _AddNewEffect(caster, status, battle);
             }
+            //Utils.Print(this, $"{caster.Character.Character.Name} has {StatusEffects.Count} effects");
 
             RaiseEvent();
         }
@@ -101,7 +109,17 @@ namespace SkillSystem
         private void _AddNewEffect(BattleCharacter caster, StatusEffect status, BattleManager battle)
         {
             var newStatus = new StatusContainer(caster, Character, status);
-            StatusEffects.Add(newStatus);
+
+            if (status.IsPassive)
+            {
+                //Utils.Print(this, $"Added passive {status.Name}");
+                PassiveEffects.Add(newStatus);
+            }
+            else
+            {
+                //Utils.Print(this, $"Added effect {status.Name}");
+                StatusEffects.Add(newStatus);
+            }
             AddBaseEffects(newStatus, status, battle);
         }
         private void AddBaseEffects(StatusContainer container, StatusEffect status, BattleManager battle)
@@ -212,14 +230,20 @@ namespace SkillSystem
 
         private void RemoveExpiredEffects()
         {
+            _RemoveExpiredEffects(StatusEffects);
+            _RemoveExpiredEffects(PassiveEffects);
+        }
+
+        private void _RemoveExpiredEffects(List<StatusContainer> effects)
+        {
             int index = 0;
-            while (index < StatusEffects.Count)
+            while (index < effects.Count)
             {
-                var effect = StatusEffects[index];
+                var effect = effects[index];
 
                 if (effect.DurationIsUp())
                 {
-                    RemoveEffect(index);
+                    effects.RemoveAt(index);
                 }
                 else
                 {
@@ -257,10 +281,13 @@ namespace SkillSystem
         private StatusContainer GetExistingStatus(StatusEffect status)
         {
             StatusContainer result = null;
+            var allEffects = new List<StatusContainer>();
+            allEffects.AddRange(StatusEffects);
+            allEffects.AddRange(PassiveEffects);
 
-            for (int i = 0; i < StatusEffects.Count; i++)
+            for (int i = 0; i < allEffects.Count; i++)
             {
-                var effect = StatusEffects[i];
+                var effect = allEffects[i];
                 if (effect.Status == status)
                 {
                     result = effect;

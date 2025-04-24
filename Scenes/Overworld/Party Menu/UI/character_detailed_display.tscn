@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj5rt8017olgn"]
+[gd_scene load_steps=14 format=3 uid="uid://cj5rt8017olgn"]
 
 [ext_resource type="Script" uid="uid://djj2a2mevrxmf" path="res://Scripts/Game Menu/Character Creator/Character Portraits/Displays/CharacterPortraitDisplay.cs" id="1_71qan"]
 [ext_resource type="Script" uid="uid://cf58jp36ttiv" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterDetailedDisplay.cs" id="1_ujg4q"]
 [ext_resource type="Texture2D" uid="uid://cdvfljbulumt5" path="res://Resources/Characters/Characters/001_vayne/Portraits/001_vayne.png" id="2_ujg4q"]
 [ext_resource type="Script" uid="uid://d34i32dihunmy" path="res://Scripts/Overworld Scripts/Overworld Menu/Party Menu/UI/CharacterRarityDisplay.cs" id="3_oog8v"]
 [ext_resource type="PackedScene" uid="uid://wismfg5tyquq" path="res://Scenes/Overworld/Party Menu/UI/rarity_star.tscn" id="4_wgrxb"]
+[ext_resource type="Texture2D" uid="uid://l3gw8qlkrakg" path="res://Art Assets/UI/Rarity Text/SR.png" id="6_oog8v"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_i1ysq"]
 
@@ -63,7 +64,7 @@ _data = {
 &"Slide In": SubResource("Animation_kdkcc")
 }
 
-[node name="CharacterDetailedDisplay" type="Control" node_paths=PackedStringArray("display", "nameLabel", "levelLabel", "lbDisplay")]
+[node name="CharacterDetailedDisplay" type="Control" node_paths=PackedStringArray("display", "nameLabel", "levelLabel", "lbDisplay", "rarityDisplay")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ujg4q")
@@ -71,6 +72,7 @@ display = NodePath("Background")
 nameLabel = NodePath("Background/Name")
 levelLabel = NodePath("Background/Level")
 lbDisplay = NodePath("Background/Stars")
+rarityDisplay = NodePath("Background/Rarity")
 
 [node name="Background" type="TextureRect" parent="." node_paths=PackedStringArray("background", "portraitElement")]
 self_modulate = Color(0.195484, 0.257636, 0.530667, 1)
@@ -120,7 +122,7 @@ offset_right = 942.0
 offset_bottom = 256.0
 scale = Vector2(0.4, 0.4)
 script = ExtResource("3_oog8v")
-stars = [NodePath("Star1"), NodePath("Star2"), NodePath("Star3"), NodePath("Star4"), NodePath("Star5")]
+stars = [NodePath("Star1"), NodePath("Star2"), NodePath("Star3")]
 
 [node name="Star1" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
 layout_mode = 2
@@ -131,11 +133,17 @@ layout_mode = 2
 [node name="Star3" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
 layout_mode = 2
 
-[node name="Star4" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
-layout_mode = 2
-
-[node name="Star5" parent="Background/Stars" instance=ExtResource("4_wgrxb")]
-layout_mode = 2
+[node name="Rarity" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 6.0
+offset_right = 758.0
+offset_bottom = 247.0
+rotation = -0.174533
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_oog8v")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -12,5 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Combat Scripts\Combat System\Battle Constants\" />
+    <Folder Include="Scripts\Tools\" />
   </ItemGroup>
 </Project>

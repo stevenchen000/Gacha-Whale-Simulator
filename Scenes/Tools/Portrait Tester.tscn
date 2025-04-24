@@ -1,11 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddu7s0e6ql2mk"]
 
-[ext_resource type="Texture2D" uid="uid://cgm55tt3we6p7" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0035_warrior_elve_man_01.png" id="1_03j5a"]
 [ext_resource type="Texture2D" uid="uid://chqsw3a7g3im7" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0003_wizard_human_woman_01.png" id="1_lw56o"]
-[ext_resource type="Script" uid="uid://l87osi2sefbc" path="res://Scripts/PortraitEditorTool.cs" id="2_03j5a"]
-[ext_resource type="Resource" uid="uid://bh30tb1rj6iqn" path="res://Resources/Characters/Portraits/ddant/ddant_portrait_036_male_elf_warrior.tres" id="3_s3hsq"]
+[ext_resource type="Script" uid="uid://l87osi2sefbc" path="res://Scripts/Tools/PortraitEditorTool.cs" id="2_03j5a"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_lw56o"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vwqdy"]
+
+[sub_resource type="Resource" id="Resource_lw56o"]
+script = ExtResource("2_lw56o")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(0, 0)
+Scale = 1.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0
 
 [node name="PortraitTester" type="Control"]
 layout_mode = 3
@@ -27,11 +34,8 @@ offset_bottom = 50.0
 texture = SubResource("CanvasTexture_vwqdy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("previewBox", "previewSprite")]
-position = Vector2(15.9827, 146.868)
-scale = Vector2(0.685, 0.685)
-texture = ExtResource("1_03j5a")
 script = ExtResource("2_03j5a")
-portrait = ExtResource("3_s3hsq")
+portrait = SubResource("Resource_lw56o")
 previewBox = NodePath("../Background3/Background2")
 previewSprite = NodePath("../Background3/Background2/Sprite2D2")
 
@@ -58,9 +62,8 @@ offset_bottom = 105.0
 texture = SubResource("CanvasTexture_vwqdy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Background3/Background2"]
-position = Vector2(79.1793, 236.242)
-scale = Vector2(0.822, 0.822)
-texture = ExtResource("1_03j5a")
+position = Vector2(60, 60)
+scale = Vector2(1.2, 1.2)
 
 [node name="Reference Sprite" type="Sprite2D" parent="Background3/Background2"]
 visible = false

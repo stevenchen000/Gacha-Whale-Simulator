@@ -29,6 +29,7 @@ public partial class GameState : Node
 	[ExportCategory("Combat Data")]
 	[Export] private StageData Stage { get; set; }
 	[Export] private PartySetup CurrentParty { get; set; }
+	private GloryStats gloryStats = new GloryStats(50);
 
 
 
@@ -80,6 +81,12 @@ public partial class GameState : Node
 	{
 		state.Stage = newStage;
 	}
+
+	public static int GetGloryOffense()
+	{
+		return state.gloryStats.OffenseLevel;
+	}
+
 
     /***********************
 	 * Party Functions

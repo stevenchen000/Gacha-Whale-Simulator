@@ -3,6 +3,7 @@ using System;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class AmpDamageEffect : SkillEffect
     {
@@ -37,17 +38,23 @@ namespace CombatSystem
         {
             var caster = skillCast.Caster;
             var targets = GetTargets(skillCast);
+            double potency = skillCast.Skill.Skill.potency;
+            int numOfTargets = targets.Count;
+            if(numOfTargets > 1) potency = potency / numOfTargets + 0.2;
 
             foreach(var target in targets)
             {
-                DealDamageToTarget(data, skillCast, caster, target);
+                DealDamageToTarget(data, skillCast, caster, target, potency);
             }
         }
 
-        private void DealDamageToTarget(TurnData data, SkillCastData skillCast, BattleCharacter caster, BattleCharacter target)
+        private void DealDamageToTarget(TurnData data, 
+                                        SkillCastData skillCast, 
+                                        BattleCharacter caster, 
+                                        BattleCharacter target, 
+                                        double potency)
         {
             var skill = skillCast.Skill;
-            double potency = skill.Skill.potency;
             int totalDamage = formula.CalculateDamage(caster, target, potency);
             int targetAmp = target.Stats.GetSlidingStat(StatNames.Amp);
             

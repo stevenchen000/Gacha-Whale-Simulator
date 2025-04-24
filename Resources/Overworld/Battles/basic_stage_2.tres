@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StageData" load_steps=9 format=3 uid="uid://dxvomwaqkk0h6"]
 
-[ext_resource type="Resource" uid="uid://d3ventvjbmecp" path="res://Resources/Characters/Character Data/test_enemy.tres" id="1_mm4lg"]
+[ext_resource type="Resource" uid="uid://yhpwmxmhtm7k" path="res://Resources/Overworld/Battles/Enemy Parties/lvl_2_glory_1_1047749572.tres" id="1_6xivr"]
 [ext_resource type="Resource" uid="uid://n0wvo4twsbim" path="res://Resources/Overworld/Battles/Conditions/_clear_condition.tres" id="2_6xivr"]
 [ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="2_52f84"]
 [ext_resource type="Resource" uid="uid://c4tahpphjlhfs" path="res://Resources/Characters/Character Data/test_player_healer.tres" id="3_8er32"]
@@ -16,10 +16,12 @@ StageName = "Second Bout"
 IsUnlocked = true
 StaminaCost = 1
 isSkippable = true
-RecommendedLevel = 1
-EnemyList = Array[Object]([ExtResource("1_mm4lg"), ExtResource("1_mm4lg")])
+UsesGloryStats = true
+RecommendedLevel = 2
+EnemyGloryLevel = 1
+EnemyParty = ExtResource("1_6xivr")
 PlayerStartPositions = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0)])
-EnemyStartPositions = Array[Vector2i]([Vector2i(0, 2), Vector2i(1, 3), Vector2i(2, 2), Vector2i(3, 3)])
+EnemyStartPositions = Array[Vector2i]([Vector2i(3, 5), Vector2i(2, 4), Vector2i(4, 5), Vector2i(1, 4), Vector2i(5, 4)])
 GridSize = Vector2i(5, 5)
 ExpGained = 1000
 MaxStars = 3

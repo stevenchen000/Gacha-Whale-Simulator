@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dfhjyw5m2cvk8"]
+
+[ext_resource type="Texture2D" uid="uid://bfuksgx6hu7an" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Goblin Raider.png" id="1_c8kvo"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_ykd3w"]
+
+[resource]
+script = ExtResource("2_ykd3w")
+portrait = ExtResource("1_c8kvo")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(24.622, 21.5983)
+Scale = 0.91
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

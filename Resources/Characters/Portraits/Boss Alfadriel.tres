@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dtvrlouypiyi3"]
+
+[ext_resource type="Texture2D" uid="uid://bc5m0ywqq5hsb" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Boss Alfadriel.png" id="1_oy72e"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_c082d"]
+
+[resource]
+script = ExtResource("2_c082d")
+portrait = ExtResource("1_oy72e")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(18.5745, 38.013)
+Scale = 1.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

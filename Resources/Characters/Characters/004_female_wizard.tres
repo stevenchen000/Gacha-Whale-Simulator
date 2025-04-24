@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="GameCharacter" load_steps=7 format=3 uid="uid://dxgmviatu4y56"]
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=8 format=3 uid="uid://dxgmviatu4y56"]
 
-[ext_resource type="Resource" uid="uid://8p7fsjvqx4ye" path="res://Resources/Characters/Skills/Classes/priest_class.tres" id="1_tlfs5"]
+[ext_resource type="Resource" uid="uid://dnkp8jmxhbt8a" path="res://Resources/Characters/Skills/Classes/caster_class.tres" id="1_323sl"]
 [ext_resource type="Resource" uid="uid://cta0py0mhsput" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_role.tres" id="2_1lidx"]
-[ext_resource type="Resource" uid="uid://bi6f6w3gybl8u" path="res://Resources/Characters/Skills/Elements/wind_element.tres" id="2_323sl"]
-[ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_rqu2j"]
+[ext_resource type="Resource" uid="uid://dwyicv0en0i8n" path="res://Resources/Characters/Skills/Elements/water_element.tres" id="2_r3g78"]
+[ext_resource type="Resource" uid="uid://bf8cl74tynfbm" path="res://Resources/Characters/Characters/001_vayne/001_vayne_powercreep.tres" id="3_4u7n3"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_r3g78"]
 [ext_resource type="Resource" uid="uid://cj5cd28778se6" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_004_female_wizard.tres" id="5_4u7n3"]
+[ext_resource type="Resource" uid="uid://ceuop764p5g4r" path="res://Resources/Characters/Characters/001_vayne/Skills/001_vayne_skill_loadout.tres" id="5_uma62"]
 
 [resource]
 script = ExtResource("4_r3g78")
@@ -14,10 +15,11 @@ portrait = ExtResource("5_4u7n3")
 BaseRarity = 1
 Name = "Black Hair"
 Title = ""
-Description = ""
 World = ""
-Element = ExtResource("2_323sl")
-Class = ExtResource("1_tlfs5")
+Element = ExtResource("2_r3g78")
+Class = ExtResource("1_323sl")
 Role = ExtResource("2_1lidx")
-SkillSet = ExtResource("2_rqu2j")
+SkillSet = ExtResource("5_uma62")
+Powercreep = ExtResource("3_4u7n3")
+Description = ""
 metadata/_custom_type_script = "uid://gdabyn413d1c"

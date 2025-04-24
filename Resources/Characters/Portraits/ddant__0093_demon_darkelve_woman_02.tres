@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://ur4tg2g40n6"]
+
+[ext_resource type="Texture2D" uid="uid://7cfmmyy4hnql" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0093_demon_darkelve_woman_02.png" id="1_r68lr"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_5l84y"]
+
+[resource]
+script = ExtResource("2_5l84y")
+portrait = ExtResource("1_r68lr")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(-87.257, 183.585)
+Scale = 0.45
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

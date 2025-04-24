@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=8 format=3 uid="uid://cdkkhod5788mr"]
+
+[ext_resource type="Script" uid="uid://cy57fc2ou8dvx" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/BaseEffect.cs" id="1_aglvv"]
+[ext_resource type="Script" uid="uid://bfitd6h4jc87g" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/AddStatEffect.cs" id="2_ivq7p"]
+[ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="3_ivq7p"]
+[ext_resource type="Script" uid="uid://clra7ofaokdqn" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/StatusEffect.cs" id="4_2o5pa"]
+[ext_resource type="Resource" uid="uid://c7lns7qgbbffi" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/defense.tres" id="4_u3jx1"]
+
+[sub_resource type="Resource" id="Resource_3cj40"]
+script = ExtResource("2_ivq7p")
+stat = ExtResource("3_ivq7p")
+multiplierType = 0
+description = ""
+Timing = 0
+Potency = 10.0
+metadata/_custom_type_script = "uid://bfitd6h4jc87g"
+
+[sub_resource type="Resource" id="Resource_3pf3p"]
+script = ExtResource("2_ivq7p")
+stat = ExtResource("4_u3jx1")
+multiplierType = 0
+description = ""
+Timing = 0
+Potency = 10.0
+metadata/_custom_type_script = "uid://bfitd6h4jc87g"
+
+[resource]
+script = ExtResource("4_2o5pa")
+ID = 2
+Name = "Glory Defense"
+Effects = Array[ExtResource("1_aglvv")]([SubResource("Resource_3cj40"), SubResource("Resource_3pf3p")])
+Duration = 99999
+IsBuff = true
+Level = 1
+IsPassive = true
+metadata/_custom_type_script = "uid://clra7ofaokdqn"

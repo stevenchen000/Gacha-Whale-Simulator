@@ -7,3 +7,4 @@
 script = ExtResource("2_atioy")
 Name = "Dark"
 Texture = ExtResource("1_ryvea")
+ElementColor = Color(0.433333, 0, 1, 1)

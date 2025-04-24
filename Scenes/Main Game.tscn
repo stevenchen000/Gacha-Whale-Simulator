@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cfom6ofevr8xw"]
+[gd_scene load_steps=56 format=3 uid="uid://cfom6ofevr8xw"]
 
 [ext_resource type="Script" uid="uid://b7x76m0ttykkg" path="res://Scripts/Game Menu/MainGame.cs" id="1_qiwpt"]
 [ext_resource type="PackedScene" uid="uid://8ssh07hfd56t" path="res://Scenes/Battle/Battle Scene.tscn" id="3_f8l6p"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://m6dxv4oa631d" path="res://Scripts/Game Menu/Character Creator/Menus/Portrait Editor/TouchHandler.cs" id="16_em1yx"]
 [ext_resource type="Script" uid="uid://b8omm6wcwy35u" path="res://Scripts/Constants/StatNames.cs" id="18_sl7r4"]
 [ext_resource type="Resource" uid="uid://bwgeh3opk85bs" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/health_max.tres" id="19_iffwg"]
+[ext_resource type="Script" uid="uid://b7uy4owqu8640" path="res://Scripts/Combat Scripts/Combat System/Skill System/Element.cs" id="19_ptb6g"]
 [ext_resource type="Resource" uid="uid://8mo1lvp4wgpf" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/amp.tres" id="20_0b8tr"]
 [ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="20_r0cu4"]
 [ext_resource type="Resource" uid="uid://c7lns7qgbbffi" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/defense.tres" id="21_0b8tr"]
@@ -49,6 +50,10 @@
 [ext_resource type="Script" uid="uid://cipobsducgi2e" path="res://Scripts/Utilities/Memory Leak Checker/MemoryLeakChecker.cs" id="45_7mxnp"]
 [ext_resource type="Texture2D" uid="uid://l3gw8qlkrakg" path="res://Art Assets/UI/Rarity Text/SR.png" id="45_db814"]
 [ext_resource type="Texture2D" uid="uid://dddkbfd551g5k" path="res://Art Assets/UI/Rarity Text/SSR.png" id="46_tb8as"]
+[ext_resource type="Script" uid="uid://br6app8is0qie" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/StatusEffectsDict.cs" id="48_4mx3a"]
+[ext_resource type="Resource" uid="uid://draqteg4g8f6v" path="res://Resources/Characters/Skills/Status Effects/Glory Status/glory_offense.tres" id="49_phwms"]
+[ext_resource type="Resource" uid="uid://cdkkhod5788mr" path="res://Resources/Characters/Skills/Status Effects/Glory Status/glory_defense.tres" id="50_l4kuo"]
+[ext_resource type="Resource" uid="uid://dexj324qi4bbf" path="res://Resources/Characters/Skills/Status Effects/Glory Status/glory_support.tres" id="51_xtbxq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_n5tqu"]
 
@@ -63,9 +68,9 @@ script = ExtResource("1_qiwpt")
 playerParty = Array[Object]([ExtResource("4_572h4"), ExtResource("5_mxwxv"), ExtResource("6_jnj4c"), ExtResource("7_u6ta2")])
 StageData = ExtResource("8_572h4")
 
-[node name="File Manager" parent="." instance=ExtResource("4_506lw")]
-
 [node name="Game State" parent="." instance=ExtResource("9_ah32c")]
+
+[node name="File Manager" parent="." instance=ExtResource("4_506lw")]
 
 [node name="Touch Manager" type="Node2D" parent="."]
 script = ExtResource("16_em1yx")
@@ -84,7 +89,7 @@ _movement = ExtResource("25_ebwyl")
 
 [node name="Element Chart" type="Node2D" parent="Variables"]
 script = ExtResource("25_sl7r4")
-Weaknesses = {
+Weaknesses = Dictionary[ExtResource("19_ptb6g"), ExtResource("19_ptb6g")]({
 ExtResource("27_0hpn3"): ExtResource("28_5m6pt"),
 ExtResource("29_ohcb0"): ExtResource("27_0hpn3"),
 ExtResource("30_n5tqu"): ExtResource("29_ohcb0"),
@@ -92,8 +97,8 @@ ExtResource("28_5m6pt"): ExtResource("30_n5tqu"),
 ExtResource("31_hlcih"): ExtResource("32_pjnjj"),
 ExtResource("33_4iwjo"): ExtResource("31_hlcih"),
 ExtResource("32_pjnjj"): ExtResource("33_4iwjo")
-}
-Resistances = {
+})
+Resistances = Dictionary[ExtResource("19_ptb6g"), ExtResource("19_ptb6g")]({
 ExtResource("27_0hpn3"): ExtResource("29_ohcb0"),
 ExtResource("29_ohcb0"): ExtResource("33_4iwjo"),
 ExtResource("30_n5tqu"): ExtResource("28_5m6pt"),
@@ -101,7 +106,7 @@ ExtResource("28_5m6pt"): ExtResource("31_hlcih"),
 ExtResource("31_hlcih"): ExtResource("33_4iwjo"),
 ExtResource("33_4iwjo"): ExtResource("32_pjnjj"),
 ExtResource("32_pjnjj"): ExtResource("31_hlcih")
-}
+})
 
 [node name="BDragon Element Chart" type="Node2D" parent="Variables"]
 editor_description = "Used to get the correct color for BDragon sprites' based on element"
@@ -142,6 +147,10 @@ nRarity = ExtResource("43_ptb6g")
 rRarity = ExtResource("44_vrm3r")
 srRarity = ExtResource("45_db814")
 ssrRarity = ExtResource("46_tb8as")
+
+[node name="Status Effects Dict" type="Node2D" parent="Variables"]
+script = ExtResource("48_4mx3a")
+_Statuses = Array[Object]([ExtResource("50_l4kuo"), ExtResource("51_xtbxq"), ExtResource("49_phwms")])
 
 [node name="Delayed Calls" type="Node2D" parent="."]
 script = ExtResource("36_5m6pt")

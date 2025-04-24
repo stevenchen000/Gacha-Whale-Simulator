@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="StageData" load_steps=9 format=3 uid="uid://e4hc6q547hwb"]
+
+[ext_resource type="Resource" uid="uid://ta70vnmj5xge" path="res://Resources/Overworld/Battles/Enemy Parties/lvl_6_glory_1_599923147.tres" id="1_88wje"]
+[ext_resource type="Resource" uid="uid://n0wvo4twsbim" path="res://Resources/Overworld/Battles/Conditions/_clear_condition.tres" id="2_vlf5r"]
+[ext_resource type="Resource" uid="uid://bb0o02w1bxs6p" path="res://Resources/Overworld/Battles/Rewards/1000 gems.tres" id="3_sg2l3"]
+[ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="4_5gd3i"]
+[ext_resource type="Resource" uid="uid://c4tahpphjlhfs" path="res://Resources/Characters/Character Data/test_player_healer.tres" id="5_agunb"]
+[ext_resource type="Resource" uid="uid://rd4nkvr3ixkd" path="res://Resources/Characters/Character Data/test_player_tank.tres" id="6_g7j7c"]
+[ext_resource type="Resource" uid="uid://vkjf1hjsu2ex" path="res://Resources/Characters/Character Data/test_player_warrior.tres" id="7_0n5n6"]
+[ext_resource type="Script" uid="uid://c6goqmweg7q6a" path="res://Scripts/Combat Scripts/Combat System/Battle Data/StageData.cs" id="8_k3fay"]
+
+[resource]
+script = ExtResource("8_k3fay")
+ID = 2
+StageName = "Super Ultra Hard Stage"
+IsUnlocked = true
+StaminaCost = 1
+isSkippable = true
+UsesGloryStats = true
+RecommendedLevel = 6
+EnemyGloryLevel = 1
+EnemyParty = ExtResource("1_88wje")
+PlayerStartPositions = Array[Vector2i]([Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4)])
+EnemyStartPositions = Array[Vector2i]([Vector2i(3, 5), Vector2i(2, 4), Vector2i(4, 5), Vector2i(1, 4), Vector2i(5, 4)])
+GridSize = Vector2i(5, 6)
+ExpGained = 1000
+MaxStars = 3
+OneStarCondition = ExtResource("2_vlf5r")
+OneStarReward = ExtResource("3_sg2l3")
+TwoStarCondition = ExtResource("2_vlf5r")
+TwoStarReward = ExtResource("3_sg2l3")
+ThreeStarCondition = ExtResource("2_vlf5r")
+ThreeStarReward = ExtResource("3_sg2l3")
+Rewards = Array[Resource]([ExtResource("3_sg2l3")])
+OverridePlayerParty = false
+PlayerParty = Array[Object]([ExtResource("4_5gd3i"), ExtResource("5_agunb"), ExtResource("6_g7j7c"), ExtResource("7_0n5n6")])
+metadata/_custom_type_script = "uid://c6goqmweg7q6a"

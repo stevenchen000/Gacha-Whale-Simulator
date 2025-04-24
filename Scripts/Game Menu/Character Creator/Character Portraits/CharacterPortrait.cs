@@ -36,6 +36,11 @@ public partial class CharacterPortrait : Resource
         return result;
     }
 
+    public void SetPortrait(Texture2D image)
+    {
+        portrait = image;
+    }
+
     public void SetupPortraitSimple(Control box, Sprite2D spriteElement, float borderSize = 0)
     {
         spriteElement.Texture = GetPortrait();

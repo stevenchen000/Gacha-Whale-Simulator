@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bhytefqos4xod"]
+
+[ext_resource type="Texture2D" uid="uid://cc5nre60siwfh" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Colossal Scorpion.png" id="1_8fldc"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_syhx6"]
+
+[resource]
+script = ExtResource("2_syhx6")
+portrait = ExtResource("1_8fldc")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(8.63931, -2.59179)
+Scale = 0.375
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

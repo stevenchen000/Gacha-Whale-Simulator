@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://hj3rybn7xehr"]
+
+[ext_resource type="Texture2D" uid="uid://bva5vq4dvnhap" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Arcane Golem.png" id="1_af33w"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_wuxrb"]
+
+[resource]
+script = ExtResource("2_wuxrb")
+portrait = ExtResource("1_af33w")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(5.18359, 63.067)
+Scale = 0.415
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

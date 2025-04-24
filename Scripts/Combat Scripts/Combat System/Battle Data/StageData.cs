@@ -13,11 +13,13 @@ namespace CombatSystem
         [Export] public bool IsUnlocked { get; private set; } = false;
         [Export] public int StaminaCost { get; private set; } = 1;
         [Export] private bool isSkippable = true;
+        [Export] public bool UsesGloryStats { get; private set; } = true;
 
 
         [ExportCategory("Combat Data")]
         [Export] public int RecommendedLevel { get; private set; } = 1;
-        [Export] public Array<CharacterData> EnemyList { get; private set; }
+        [Export] public int EnemyGloryLevel { get; private set; } = 1;
+        [Export] public StageParty EnemyParty { get; private set; }
         [Export] public Array<Vector2I> PlayerStartPositions { get; private set; }
         [Export] public Array<Vector2I> EnemyStartPositions { get; private set; }
         [Export] public Vector2I GridSize { get; private set; }

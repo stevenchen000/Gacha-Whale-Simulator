@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=7 format=3 uid="uid://dunnr0105ynlt"]
+
+[ext_resource type="Resource" uid="uid://wgol8m2edmhl" path="res://Resources/Characters/Skills/Skill Shape/range_1-2_spaces.tres" id="1_ee865"]
+[ext_resource type="Texture2D" uid="uid://bsuf4lk883evo" path="res://Art Assets/Shapes/Star (3).png" id="2_g1gyp"]
+[ext_resource type="Resource" uid="uid://cb2rgucig1cco" path="res://Resources/Characters/Skills/Status Effects/Damaging Debuffs/Burn/burn_animation.tres" id="3_gl0ql"]
+[ext_resource type="Resource" uid="uid://b1m2rik3tw6uf" path="res://Resources/Characters/Skills/Skill Effects/amp_damage_effect.tres" id="4_o4qyj"]
+[ext_resource type="Resource" uid="uid://dgmc3kjtmtpk" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/Effects/damage_amp_recover_20.tres" id="5_g1gyp"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="6_elmui"]
+
+[resource]
+script = ExtResource("6_elmui")
+Icon = ExtResource("2_g1gyp")
+SkillName = "Battery Atk"
+animation = ExtResource("3_gl0ql")
+InfiniteUses = true
+Uses = 0
+effects = Array[Object]([ExtResource("4_o4qyj"), ExtResource("5_g1gyp")])
+potency = 50
+AttackArea = ExtResource("1_ee865")
+direction = 0
+targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100
+metadata/_custom_type_script = "uid://djopsu18jnynm"

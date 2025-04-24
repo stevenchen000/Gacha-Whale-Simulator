@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="SkillBranch" load_steps=2 format=3 uid="uid://jtc7bf5ssjmt"]
-
-[ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_v8q5v"]
-
-[resource]
-script = ExtResource("1_v8q5v")
-skillTiers = []
-metadata/_custom_type_script = "uid://oi7b31cv68hk"

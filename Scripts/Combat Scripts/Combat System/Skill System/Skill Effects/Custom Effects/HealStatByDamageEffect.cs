@@ -3,10 +3,11 @@ using System;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class HealStatByDamageEffect : SkillEffect
     {
-        [Export] private StatType slidingStat;
+        [Export] private bool healAmp = true;
         [Export] private double percentHealing = 10;
         [Export] private bool useAmpDamage = true;
 
@@ -36,7 +37,9 @@ namespace CombatSystem
                 int healing = (int)(damage * percentHealing / 100);
             foreach(var target in targets)
             {
-                target.Stats.AddSlidingStat(slidingStat, healing);
+                if (healAmp)
+                    target.BatteryAmp(healing);
+                
             }
         }
     }

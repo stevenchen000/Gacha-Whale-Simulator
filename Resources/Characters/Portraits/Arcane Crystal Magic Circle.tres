@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dlmnaxhl3guh5"]
+
+[ext_resource type="Texture2D" uid="uid://ca53dtni5thrb" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Arcane Crystal Magic Circle.png" id="1_fli8b"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_4xpjr"]
+
+[resource]
+script = ExtResource("2_4xpjr")
+portrait = ExtResource("1_fli8b")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(-1.72786, 6.04752)
+Scale = 0.45
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

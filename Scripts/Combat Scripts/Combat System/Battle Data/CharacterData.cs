@@ -61,6 +61,13 @@ namespace CombatSystem
             Rarity = BaseRarity;
         }
 
+        public CharacterData(GameCharacter character, int level)
+        {
+            Character = character;
+            Level = level;
+            Rarity = character.BaseRarity;
+        }
+
         public CharacterData(string json)
         {
             try
@@ -86,7 +93,7 @@ namespace CombatSystem
         {
             var skills = new Array<CharacterSkill>();
             var basicSkills = GetBasicSkills();
-            var charSkills = Character.GetSkills(BaseRarity, Rarity, Stars);
+            var charSkills = Character.GetSkills(Rarity, Stars);
 
             skills.AddRange(basicSkills);
             skills.AddRange(charSkills);
@@ -100,13 +107,14 @@ namespace CombatSystem
             int tier = GetRarityDifference();
             var role = Character.Role;
 
-            var ampAtk = role.AmpAttackBranch.GetSkillAtTier(tier);
-            var hpAtk = role.HpAttackBranch.GetSkillAtTier(tier);
+            var ampAtk = role.AmpAttackBranch.GetSkillAtTier(Rarity);
+            var hpAtk = role.HpAttackBranch.GetSkillAtTier(Rarity);
 
-            result.Add(ampAtk);
-            result.Add(hpAtk);
-            //Utils.Print(this, $"{role.Name} - {ampAtk.SkillName} - {hpAtk.SkillName}");
-
+            if(ampAtk != null)
+                result.Add(ampAtk);
+            if(hpAtk != null)
+                result.Add(hpAtk);
+            
             return result;
         }
 
@@ -188,7 +196,7 @@ namespace CombatSystem
 
         private void _LimitBreak()
         {
-            if (Stars < 5)
+            if (Stars < 3)
             {
                 Stars++;
             }

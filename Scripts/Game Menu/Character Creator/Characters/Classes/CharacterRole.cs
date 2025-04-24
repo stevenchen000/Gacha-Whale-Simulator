@@ -3,6 +3,7 @@ using System;
 using EventSystem;
 using CombatSystem;
 
+[Tool]
 [GlobalClass]
 public partial class CharacterRole : Resource
 {

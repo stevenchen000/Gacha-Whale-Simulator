@@ -4,28 +4,18 @@ using Godot.Collections;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class SkillBranch : Resource
     {
-        [Export] private Array<CharacterSkill> skillTiers = new Array<CharacterSkill>();
+        [Export] private Dictionary<CharacterRarity, CharacterSkill> skillTiers = new Dictionary<CharacterRarity, CharacterSkill>();
 
-        public CharacterSkill GetSkillAtTier(int tier)
+        public CharacterSkill GetSkillAtTier(CharacterRarity rarity)
         {
             CharacterSkill result = null;
 
-            if (tier >= 0 && tier < skillTiers.Count)
-            {
-                result = skillTiers[tier];
-            }
-            else if(tier < 0)
-            {
-                result = null;
-            }
-            else
-            {
-                int index = skillTiers.Count - 1;
-                result = skillTiers[index];
-            }
+            if(skillTiers.ContainsKey(rarity))
+                result = skillTiers[rarity];
 
             return result;
         }

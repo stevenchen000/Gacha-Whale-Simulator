@@ -4,6 +4,7 @@ using System;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class SkillLoadout : Resource
     {
@@ -11,73 +12,42 @@ namespace CombatSystem
         [Export(PropertyHint.MultilineText)] private string description = "";
         //0 stars = level cap +10 + amp/hp atk up
         //1 star = Skill 1
-        //3 star = Skill 2
-        //5 star = Ultimate
+        //2 star = Skill 2
+        //3 star = Ultimate
 
 
-        public Array<CharacterSkill> GetSkillsAtLB(CharacterRarity baseRarity,
-                                                   CharacterRarity rarity,
+        public Array<CharacterSkill> GetSkillsAtLB(CharacterRarity rarity,
                                                    int stars)
         {
             var result = new Array<CharacterSkill>();
-            
-            int rarityDiff = (int)rarity - (int)baseRarity;
 
-            for (int i = 0; i < SkillList.Count; i++)
+            for(int i = 0; i < SkillList.Count; i++)
             {
-                CharacterSkill skill = null;
+                var branch = SkillList[i];
+                CharacterSkill currSkill = null;
+                if(i >= stars - 1) currSkill = GetSkillAtRarity(branch, rarity);
+                else currSkill = GetSkillAtPreviousRarity(branch, rarity);
 
-                if (IsCurrTier(stars, i))
-                {
-                    skill = _GetSkillAtLB(rarityDiff, i);
-                }
-                else
-                {
-                    skill = _GetSkillAtLB(rarityDiff - 1, i);
-                }
-
-                if (skill != null) result.Add(skill);
+                if(currSkill != null)
+                    result.Add(currSkill);
             }
 
             return result;
         }
 
-        //Checks whether the skill should use the current tier
-        //   or previous tier
-        private bool IsCurrTier(int stars, int index)
+        private CharacterSkill GetSkillAtRarity(SkillBranch branch, CharacterRarity rarity)
         {
-            bool result = false;
+            return branch.GetSkillAtTier(rarity);
+        }
 
-            if(stars == 0 && index == 0)
-            {
-                result = false;
-            }
+        private CharacterSkill GetSkillAtPreviousRarity(SkillBranch branch, CharacterRarity rarity)
+        {
+            if (rarity == CharacterRarity.N)
+                return null;
             else
-            {
-                result = stars / 2 > index;
-            }
-
-            return result;
+                return branch.GetSkillAtTier(rarity - 1);
         }
 
-        private CharacterSkill _GetSkillAtLB(int rarityDifference, int index)
-        {
-            var branch = SkillList[index];
-            return branch.GetSkillAtTier(rarityDifference);
-        }
-
-        public Array<CharacterSkill> GetSkillsAtLevel(int level)
-        {
-            var result = new Array<CharacterSkill>();
-
-            foreach (var branch in SkillList)
-            {
-                var skill = branch.GetSkillAtTier(level);
-                result.Add(skill);
-            }
-
-            return result;
-        }
     }
 
 }

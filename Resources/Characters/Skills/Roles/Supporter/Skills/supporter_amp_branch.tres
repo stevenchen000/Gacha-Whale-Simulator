@@ -1,10 +1,18 @@
-[gd_resource type="Resource" script_class="SkillBranch" load_steps=4 format=3 uid="uid://cqufvxc6a2y3b"]
+[gd_resource type="Resource" script_class="SkillBranch" load_steps=7 format=3 uid="uid://cqufvxc6a2y3b"]
 
 [ext_resource type="Script" uid="uid://oi7b31cv68hk" path="res://Scripts/Combat Scripts/Combat System/Skill System/SkillBranch.cs" id="1_s6dbm"]
-[ext_resource type="Resource" uid="uid://ub0fxw54re72" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/basic_amp_recover.tres" id="2_d1anr"]
 [ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="2_s6dbm"]
+[ext_resource type="Resource" uid="uid://ub0fxw54re72" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/supporter_amp_atk_n.tres" id="3_ak4s0"]
+[ext_resource type="Resource" uid="uid://bncg307ju67hs" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/supporter_amp_atk_r.tres" id="4_v6uep"]
+[ext_resource type="Resource" uid="uid://dunnr0105ynlt" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/supporter_amp_atk_sr.tres" id="5_a8sdo"]
+[ext_resource type="Resource" uid="uid://b4amiejo8s7u1" path="res://Resources/Characters/Skills/Roles/Supporter/Skills/supporter_amp_atk_ssr.tres" id="6_5qjfh"]
 
 [resource]
 script = ExtResource("1_s6dbm")
-skillTiers = Array[ExtResource("2_s6dbm")]([ExtResource("2_d1anr")])
+skillTiers = Dictionary[int, ExtResource("2_s6dbm")]({
+0: ExtResource("3_ak4s0"),
+1: ExtResource("4_v6uep"),
+2: ExtResource("5_a8sdo"),
+3: ExtResource("6_5qjfh")
+})
 metadata/_custom_type_script = "uid://oi7b31cv68hk"

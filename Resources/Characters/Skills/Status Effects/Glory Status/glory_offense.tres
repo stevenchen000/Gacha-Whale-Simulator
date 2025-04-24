@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="StatusEffect" load_steps=6 format=3 uid="uid://draqteg4g8f6v"]
+
+[ext_resource type="Script" uid="uid://cy57fc2ou8dvx" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/BaseEffect.cs" id="1_fa418"]
+[ext_resource type="Script" uid="uid://clra7ofaokdqn" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/StatusEffect.cs" id="2_3xytl"]
+[ext_resource type="Script" uid="uid://bfitd6h4jc87g" path="res://Scripts/Combat Scripts/Combat System/Skill System/Status Effects/Custom Effects/AddStatEffect.cs" id="2_ndyr7"]
+[ext_resource type="Resource" uid="uid://c86mm6qh4mac2" path="res://Scripts/Combat Scripts/Combat System/Stat System/Stats/Stat Types/attack.tres" id="3_0ucpp"]
+
+[sub_resource type="Resource" id="Resource_3cj40"]
+script = ExtResource("2_ndyr7")
+stat = ExtResource("3_0ucpp")
+multiplierType = 0
+description = ""
+Timing = 0
+Potency = 10.0
+metadata/_custom_type_script = "uid://bfitd6h4jc87g"
+
+[resource]
+script = ExtResource("2_3xytl")
+ID = 1
+Name = "Glory Offense"
+Effects = Array[ExtResource("1_fa418")]([SubResource("Resource_3cj40")])
+Duration = 99999
+IsBuff = true
+Level = 1
+IsPassive = true
+metadata/_custom_type_script = "uid://clra7ofaokdqn"

@@ -4,6 +4,7 @@ using System;
 using EventSystem;
 using CombatSystem;
 
+[Tool]
 [GlobalClass]
 public partial class GameCharacter : Resource
 {
@@ -38,19 +39,9 @@ public partial class GameCharacter : Resource
 
 
 
-
-    public virtual Array<CharacterSkill> GetSkills()
-    {
-        if (SkillSet != null)
-            return SkillSet.GetSkillsAtLevel(0);
-        else
-            return null;
-    }
-
-    public virtual Array<CharacterSkill> GetSkills(CharacterRarity baseRarity,
-                                                   CharacterRarity currRarity,
+    public virtual Array<CharacterSkill> GetSkills(CharacterRarity currRarity,
                                                    int stars)
     {
-        return SkillSet.GetSkillsAtLB(baseRarity, currRarity, stars);
+        return SkillSet.GetSkillsAtLB(currRarity, stars);
     }
 }

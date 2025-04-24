@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://0tcsebfs6bsl"]
+
+[ext_resource type="Texture2D" uid="uid://tkxy1cyg562x" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Arcane Orb Wind.png" id="1_78fsi"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_kmj4t"]
+
+[resource]
+script = ExtResource("2_kmj4t")
+portrait = ExtResource("1_78fsi")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(9.07127, 3.45572)
+Scale = 1.53
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

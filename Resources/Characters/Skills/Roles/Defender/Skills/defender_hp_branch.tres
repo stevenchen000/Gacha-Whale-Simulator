@@ -6,5 +6,10 @@
 
 [resource]
 script = ExtResource("1_7uc0p")
-skillTiers = Array[ExtResource("2_g83l4")]([ExtResource("3_7uc0p")])
+skillTiers = Dictionary[int, ExtResource("2_g83l4")]({
+0: ExtResource("3_7uc0p"),
+1: ExtResource("3_7uc0p"),
+2: ExtResource("3_7uc0p"),
+3: ExtResource("3_7uc0p")
+})
 metadata/_custom_type_script = "uid://oi7b31cv68hk"

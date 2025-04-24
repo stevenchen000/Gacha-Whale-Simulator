@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://y5cd3n08f64x"]
+
+[ext_resource type="Texture2D" uid="uid://bm75orua1xlo6" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0072_knight_raceless_man_01.png" id="1_wf05a"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_uktgv"]
+
+[resource]
+script = ExtResource("2_uktgv")
+portrait = ExtResource("1_wf05a")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(-25.054, 135.637)
+Scale = 0.37
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

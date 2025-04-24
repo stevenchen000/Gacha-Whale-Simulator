@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StageData" load_steps=9 format=3 uid="uid://beeikrtu3ncsq"]
 
-[ext_resource type="Resource" uid="uid://d3ventvjbmecp" path="res://Resources/Characters/Character Data/test_enemy.tres" id="1_qxwlk"]
+[ext_resource type="Resource" uid="uid://bxelu45jqsytr" path="res://Resources/Overworld/Battles/Enemy Parties/lvl_1_glory_1_1822640127.tres" id="1_ckakm"]
 [ext_resource type="Resource" uid="uid://5ewd1ibnjbij" path="res://Resources/Characters/Character Data/test_player_caster.tres" id="2_ckakm"]
 [ext_resource type="Resource" uid="uid://n0wvo4twsbim" path="res://Resources/Overworld/Battles/Conditions/_clear_condition.tres" id="2_lphig"]
 [ext_resource type="Resource" uid="uid://bb0o02w1bxs6p" path="res://Resources/Overworld/Battles/Rewards/1000 gems.tres" id="3_ckakm"]
@@ -16,10 +16,12 @@ StageName = "First Battle"
 IsUnlocked = true
 StaminaCost = 1
 isSkippable = true
+UsesGloryStats = true
 RecommendedLevel = 1
-EnemyList = Array[Object]([ExtResource("1_qxwlk"), ExtResource("1_qxwlk")])
+EnemyGloryLevel = 1
+EnemyParty = ExtResource("1_ckakm")
 PlayerStartPositions = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0)])
-EnemyStartPositions = Array[Vector2i]([Vector2i(2, 3), Vector2i(2, 4), Vector2i(2, 2), Vector2i(3, 3)])
+EnemyStartPositions = Array[Vector2i]([Vector2i(3, 5), Vector2i(2, 4), Vector2i(4, 5), Vector2i(1, 4), Vector2i(5, 4)])
 GridSize = Vector2i(5, 6)
 ExpGained = 1000
 MaxStars = 3

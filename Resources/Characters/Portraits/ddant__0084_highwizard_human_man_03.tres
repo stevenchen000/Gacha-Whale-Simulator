@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://dwramyqwmjr0t"]
+
+[ext_resource type="Texture2D" uid="uid://bnivl3f8eyt3m" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0084_highwizard_human_man_03.png" id="1_fsrs1"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_gik1h"]
+
+[resource]
+script = ExtResource("2_gik1h")
+portrait = ExtResource("1_fsrs1")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(12.527, 206.479)
+Scale = 0.47
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

@@ -7,3 +7,4 @@
 script = ExtResource("2_pfq5g")
 Name = "Light"
 Texture = ExtResource("1_jltpl")
+ElementColor = Color(1, 0.866667, 0, 1)

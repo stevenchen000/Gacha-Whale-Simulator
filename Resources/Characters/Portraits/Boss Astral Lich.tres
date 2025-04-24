@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bc7wxqrkweejt"]
+
+[ext_resource type="Texture2D" uid="uid://xy6bn6axbadu" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Boss Astral Lich.png" id="1_51nbo"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_57hkx"]
+
+[resource]
+script = ExtResource("2_57hkx")
+portrait = ExtResource("1_51nbo")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(65.6587, 76.4579)
+Scale = 1.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

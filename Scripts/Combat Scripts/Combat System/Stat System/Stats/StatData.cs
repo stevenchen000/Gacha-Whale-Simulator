@@ -1,5 +1,6 @@
 ﻿using System;
 using Godot;
+using Godot.Collections;
 
 namespace CombatSystem
 {
@@ -11,9 +12,8 @@ namespace CombatSystem
         /// <summary>
         /// 1 = 1%
         /// </summary>
-        private float multiplier = 0;
+        private Dictionary<StatMultiplierType, float> multipliers = new Dictionary<StatMultiplierType, float>();
         private float sliderOverflow = 0;
-
 
         public StatData(StatType newType, float baseAmount)
         {
@@ -31,7 +31,13 @@ namespace CombatSystem
 
         public int GetTotalAmount()
         {
-            return (int)(amount * (100 + multiplier) / 100);
+            float result = amount;
+            foreach(float multi in multipliers.Values)
+            {
+                result *= (100 + multi) / 100;
+            }
+
+            return (int)result;
         }
 
         public int GetSlidingAmount()
@@ -45,7 +51,7 @@ namespace CombatSystem
         /// <returns></returns>
         public int GetSliderMaxAmount()
         {
-            return (int)(amount * (100 + multiplier) / 100 * (100 + sliderOverflow) / 100);
+            return (int)(GetTotalAmount() * (100 + sliderOverflow) / 100);
         }
 
         /******************
@@ -65,20 +71,30 @@ namespace CombatSystem
             if(amount < minimum) amount = minimum;
         }
 
-        public void AddMultiplier(float amountAdded)
+        public void AddMultiplier(StatMultiplierType type, float amountAdded)
         {
-            multiplier += amountAdded;
+            float currTotal = GetTotalAmount();
+            AddKeyIfMissing(type);
+            multipliers[type] += amountAdded;
+            float newTotal = GetTotalAmount();
 
             if (statType.IsSlidingStat)
             {
-                float amountIncrease = amount * amountAdded / 100;
+                float amountIncrease = newTotal - currTotal;
                 slidingAmount += amountIncrease;
             }
         }
 
-        public void RemoveMultiplier(float amountRemoved)
+        public void RemoveMultiplier(StatMultiplierType type, float amountRemoved)
         {
-            multiplier -= amountRemoved;
+            AddKeyIfMissing(type);
+            multipliers[type] -= amountRemoved;
+        }
+
+        private void AddKeyIfMissing(StatMultiplierType type)
+        {
+            if (!multipliers.ContainsKey(type))
+                multipliers[type] = 0;
         }
 
         /**************

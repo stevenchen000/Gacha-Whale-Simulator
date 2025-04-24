@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://cwcalkko7881b"]
+
+[ext_resource type="Texture2D" uid="uid://cgpik600cyh2a" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Cerberus Ptolemaios.png" id="1_4im6g"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_ie2b5"]
+
+[resource]
+script = ExtResource("2_ie2b5")
+portrait = ExtResource("1_4im6g")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(94.1685, 77.3218)
+Scale = 1.07
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

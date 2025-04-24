@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bo6420m7qu4ga"]
+
+[ext_resource type="Texture2D" uid="uid://cvsi6nb6ah1nm" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Arcane Crystal.png" id="1_hs51o"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_ccxgf"]
+
+[resource]
+script = ExtResource("2_ccxgf")
+portrait = ExtResource("1_hs51o")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(0, 6.04752)
+Scale = 0.45
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

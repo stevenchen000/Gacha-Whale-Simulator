@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://boj85gmrqvffw"]
+
+[ext_resource type="Texture2D" uid="uid://c4gi1i4hikqtn" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0082_highwizard_stellar_woman_01.png" id="1_25bap"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_1jfwn"]
+
+[resource]
+script = ExtResource("2_1jfwn")
+portrait = ExtResource("1_25bap")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(32.3974, 207.343)
+Scale = 0.47
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

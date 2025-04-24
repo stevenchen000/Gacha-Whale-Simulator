@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterSkill" load_steps=4 format=3 uid="uid://4gm5cyd2urjv"]
+
+[ext_resource type="Resource" uid="uid://b1myme10hhdib" path="res://Resources/Characters/Skills/Skill Shape/range_1_shape.tres" id="1_2r1l1"]
+[ext_resource type="Script" uid="uid://djopsu18jnynm" path="res://Scripts/Combat Scripts/Combat System/Skill System/CharacterSkill.cs" id="1_fhnis"]
+[ext_resource type="Resource" uid="uid://b1m2rik3tw6uf" path="res://Resources/Characters/Skills/Skill Effects/amp_damage_effect.tres" id="2_c2xhu"]
+
+[resource]
+script = ExtResource("1_fhnis")
+SkillName = ""
+InfiniteUses = false
+Uses = 3
+effects = Array[Object]([ExtResource("2_c2xhu")])
+potency = 100
+AttackArea = ExtResource("1_2r1l1")
+direction = 0
+targetType = 1
+IsChargeSkill = false
+ChargeAmount = 100
+metadata/_custom_type_script = "uid://djopsu18jnynm"

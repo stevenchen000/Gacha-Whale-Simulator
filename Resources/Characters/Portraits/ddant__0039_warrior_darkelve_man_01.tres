@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://b00d2eo444nn0"]
+
+[ext_resource type="Texture2D" uid="uid://d16nsxmdjrknt" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0039_warrior_darkelve_man_01.png" id="1_kt0od"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_exo4s"]
+
+[resource]
+script = ExtResource("2_exo4s")
+portrait = ExtResource("1_kt0od")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(-19.4384, 244.924)
+Scale = 0.55
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

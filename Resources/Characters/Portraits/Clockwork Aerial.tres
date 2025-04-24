@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://cjriypt6n02o7"]
+
+[ext_resource type="Texture2D" uid="uid://chtbthfo02svd" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Clockwork Aerial.png" id="1_eda25"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_a0niw"]
+
+[resource]
+script = ExtResource("2_a0niw")
+portrait = ExtResource("1_eda25")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(19.4384, 59.6112)
+Scale = 1.225
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

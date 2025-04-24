@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("5_l1613")
-SkillList = Array[Object]([null, null])
+SkillList = Array[Object]([])
 description = ""
 metadata/_custom_type_script = "uid://dshcfn65n67r8"

@@ -7,3 +7,4 @@
 script = ExtResource("1_x7yay")
 Name = "Fire"
 Texture = ExtResource("1_tx6a3")
+ElementColor = Color(1, 0, 0.0166664, 1)

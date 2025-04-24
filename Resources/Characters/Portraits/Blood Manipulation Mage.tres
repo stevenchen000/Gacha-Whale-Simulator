@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://c55qfq8x4bc7w"]
+
+[ext_resource type="Texture2D" uid="uid://drs1tm5xwyh01" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Blood Manipulation Mage.png" id="1_im4yb"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_7iy65"]
+
+[resource]
+script = ExtResource("2_7iy65")
+portrait = ExtResource("1_im4yb")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(16.8467, 51.4039)
+Scale = 1.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

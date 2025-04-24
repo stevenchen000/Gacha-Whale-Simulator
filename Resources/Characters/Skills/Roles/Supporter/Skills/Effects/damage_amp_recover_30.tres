@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealStatByDamageEffect" load_steps=2 format=3 uid="uid://h5mstwokqvlh"]
+
+[ext_resource type="Script" uid="uid://dm511uppwjaw3" path="res://Scripts/Combat Scripts/Combat System/Skill System/Skill Effects/Custom Effects/HealStatByDamageEffect.cs" id="1_srkk8"]
+
+[resource]
+script = ExtResource("1_srkk8")
+healAmp = true
+percentHealing = 30.0
+useAmpDamage = true
+delay = 0.0
+description = ""
+targetType = 1
+metadata/_custom_type_script = "uid://dm511uppwjaw3"

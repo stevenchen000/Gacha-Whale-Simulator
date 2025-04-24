@@ -7,3 +7,4 @@
 script = ExtResource("2_38s2b")
 Name = "Wind"
 Texture = ExtResource("1_sfbft")
+ElementColor = Color(0.220833, 1, 0.15, 1)

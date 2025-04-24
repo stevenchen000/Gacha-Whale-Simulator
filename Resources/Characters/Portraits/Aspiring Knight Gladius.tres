@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://b5s3tw32vk045"]
+
+[ext_resource type="Texture2D" uid="uid://dfh42jhvsi8ii" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Aspiring Knight Gladius.png" id="1_v7l8q"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_e6851"]
+
+[resource]
+script = ExtResource("2_e6851")
+portrait = ExtResource("1_v7l8q")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(80.7775, 118.79)
+Scale = 1.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

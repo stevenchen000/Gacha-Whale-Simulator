@@ -6,8 +6,9 @@
 [resource]
 script = ExtResource("1_jod82")
 portrait = ExtResource("2_jod82")
+emotions = Dictionary[String, Texture2D]({})
 Position = Vector2(-9, 219)
 Scale = 0.5
-startArea = Vector2(0, 0)
-size = 0.0
+cgPosition = Vector2(0, 0)
+cgScale = 1.0
 metadata/_custom_type_script = ExtResource("1_jod82")

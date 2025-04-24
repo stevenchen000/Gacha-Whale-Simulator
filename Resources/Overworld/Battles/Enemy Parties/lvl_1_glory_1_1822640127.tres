@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="StageParty" load_steps=11 format=3 uid="uid://bxelu45jqsytr"]
+
+[ext_resource type="Script" uid="uid://crt8oipcdvd4l" path="res://Scripts/Combat Scripts/Combat System/Battle Data/CharacterData.cs" id="1_htle7"]
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="2_vnely"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="3_mpcwy"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="4_3qliu"]
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="5_28e85"]
+[ext_resource type="Script" uid="uid://0bxl0n4px1sv" path="res://Scripts/Combat Scripts/Combat System/Battle Data/Stage Party/StageParty.cs" id="6_lirwm"]
+
+[sub_resource type="Resource" id="Resource_an5do"]
+script = ExtResource("1_htle7")
+Character = ExtResource("2_vnely")
+Level = 1
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_bhi0n"]
+script = ExtResource("1_htle7")
+Character = ExtResource("3_mpcwy")
+Level = 1
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_o5fd6"]
+script = ExtResource("1_htle7")
+Character = ExtResource("4_3qliu")
+Level = 1
+CurrExp = 0
+Rarity = 2
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[sub_resource type="Resource" id="Resource_2nioj"]
+script = ExtResource("1_htle7")
+Character = ExtResource("5_28e85")
+Level = 1
+CurrExp = 0
+Rarity = 1
+Stars = 0
+ExtraCopies = 0
+PortraitOverride = ""
+
+[resource]
+script = ExtResource("6_lirwm")
+Characters = Array[ExtResource("1_htle7")]([SubResource("Resource_an5do"), SubResource("Resource_bhi0n"), SubResource("Resource_o5fd6"), SubResource("Resource_2nioj")])
+GloryLevel = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=8 format=3 uid="uid://c63hnwqqswvhu"]
+
+[ext_resource type="Script" uid="uid://bq35ic5d5w5cb" path="res://Scripts/Tools/EnemyPartyCreator.cs" id="1_ppmjl"]
+[ext_resource type="Resource" uid="uid://d3yk0tyglrs1t" path="res://Resources/Characters/Characters/001_vayne/001_vayne.tres" id="2_uuert"]
+[ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="2_vg0rh"]
+[ext_resource type="Resource" uid="uid://cqa1p600e7x4l" path="res://Resources/Characters/Characters/002_female_wizard.tres" id="3_vg0rh"]
+[ext_resource type="Resource" uid="uid://csyib1t6sh40y" path="res://Resources/Characters/Characters/003_female_wizard.tres" id="4_iseds"]
+[ext_resource type="Resource" uid="uid://dxgmviatu4y56" path="res://Resources/Characters/Characters/004_female_wizard.tres" id="5_4ufdp"]
+[ext_resource type="Resource" uid="uid://d1e88ubtdb4r8" path="res://Resources/Characters/Characters/005_male_wizard.tres" id="6_un0dp"]
+
+[node name="EnemyPartyCreator" type="Node2D"]
+script = ExtResource("1_ppmjl")
+saveLocation = "res://Resources/Overworld/Battles/Enemy Parties/"
+enemyLevel = 7
+minCharacters = 3
+characterPool = Array[ExtResource("2_vg0rh")]([ExtResource("2_uuert"), ExtResource("3_vg0rh"), ExtResource("4_iseds"), ExtResource("5_4ufdp"), ExtResource("6_un0dp")])

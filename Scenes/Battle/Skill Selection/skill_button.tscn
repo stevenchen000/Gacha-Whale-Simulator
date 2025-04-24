@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://chievkas7hxxp"]
+[gd_scene load_steps=13 format=3 uid="uid://chievkas7hxxp"]
 
 [ext_resource type="Script" uid="uid://bqbrfdufvqdun" path="res://Scripts/Combat Scripts/Combat System/UI/BattleSkillButton.cs" id="1_u1pkv"]
 [ext_resource type="Texture2D" uid="uid://besukoqkd2nym" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame White.png" id="2_4wbt3"]
 [ext_resource type="Texture2D" uid="uid://c3kd8uc75x007" path="res://Art Assets/Character Assets/Element Icons/467_Earth_Pierce.png" id="2_av5dd"]
+[ext_resource type="Texture2D" uid="uid://c4oomny5rsmdm" path="res://Art Assets/UI/Skill Charge/Skill Charge Background.png" id="2_jm0k1"]
 [ext_resource type="Texture2D" uid="uid://tpyi45svpqy1" path="res://Art Assets/Character Assets/Weapon Icons/2.png" id="2_jms7u"]
+[ext_resource type="Texture2D" uid="uid://c68jtnflewfy2" path="res://Art Assets/UI/Skill Charge/Skill Charge Fill 0.png" id="3_3f113"]
+[ext_resource type="Texture2D" uid="uid://coa0wmd3w0nc4" path="res://Art Assets/UI/Skill Charge/Skill Charge Fill 3.png" id="9_nijl5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jms7u"]
 line_spacing = -10.0
@@ -19,7 +22,44 @@ font_size = 35
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Skill 1" type="Control" node_paths=PackedStringArray("button", "skillIcon", "skillBackground", "nameLabel", "usesLabel", "elementIcon")]
+[sub_resource type="Animation" id="Animation_2lx6f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Border Fill 1/Border Fill 2:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cdvwx"]
+resource_name = "border_glow_2"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Border Fill 1/Border Fill 2:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fa2o8"]
+_data = {
+&"RESET": SubResource("Animation_2lx6f"),
+&"border_glow": SubResource("Animation_cdvwx")
+}
+
+[node name="Skill 1" type="Control" node_paths=PackedStringArray("progress", "progressGlow", "button", "skillIcon", "skillBackground", "nameLabel", "usesLabel", "elementIcon")]
 custom_minimum_size = Vector2(153, 200)
 layout_mode = 3
 anchors_preset = 0
@@ -27,6 +67,8 @@ offset_right = 153.0
 offset_bottom = 200.0
 size_flags_vertical = 8
 script = ExtResource("1_u1pkv")
+progress = NodePath("Border Fill 1")
+progressGlow = NodePath("Border Fill 1/Border Fill 2")
 button = NodePath("Button")
 skillIcon = NodePath("Skill Icon")
 skillBackground = NodePath("Background")
@@ -36,7 +78,37 @@ elementIcon = NodePath("Element Icon")
 enabledColor = Color(1, 1, 1, 1)
 disabledColor = Color(1, 1, 1, 0.529412)
 
+[node name="Border Fill 1" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 161.0
+offset_bottom = 208.0
+value = 27.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_under = ExtResource("2_jm0k1")
+texture_progress = ExtResource("3_3f113")
+
+[node name="Border Fill 2" type="TextureProgressBar" parent="Border Fill 1"]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 216.0
+value = 27.0
+fill_mode = 5
+nine_patch_stretch = true
+texture_progress = ExtResource("9_nijl5")
+
+[node name="Background Darkener" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 200.0
+texture = ExtResource("2_4wbt3")
+expand_mode = 1
+
 [node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.662745)
 self_modulate = Color(0.42, 0, 0.00699989, 1)
 layout_mode = 0
 offset_right = 152.0
@@ -90,5 +162,11 @@ offset_right = 152.0
 offset_bottom = 202.0
 flat = true
 expand_icon = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fa2o8")
+}
+autoplay = "border_glow"
 
 [connection signal="button_up" from="Button" to="." method="OnClick"]

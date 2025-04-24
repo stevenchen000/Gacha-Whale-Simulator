@@ -1,17 +1,12 @@
-[gd_resource type="Resource" script_class="GameCharacter" load_steps=9 format=3 uid="uid://d1e88ubtdb4r8"]
+[gd_resource type="Resource" script_class="GameCharacter" load_steps=8 format=3 uid="uid://d1e88ubtdb4r8"]
 
-[ext_resource type="Resource" uid="uid://bj5xnm0nbmfui" path="res://Resources/Characters/Skills/Classes/warrior_class.tres" id="1_enbd5"]
-[ext_resource type="Script" uid="uid://nmxkcq75xw7d" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/BasicAI.cs" id="2_gpa5h"]
-[ext_resource type="Resource" uid="uid://dsmxegoikjnkm" path="res://Resources/Characters/Skills/Elements/dark_element.tres" id="2_ik88e"]
-[ext_resource type="Resource" uid="uid://dogsl4q78o7om" path="res://Resources/Characters/Character Data/001_player/test_skillset.tres" id="2_no2d6"]
-[ext_resource type="Resource" uid="uid://cnmga8on2vcdy" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_role.tres" id="3_x7iov"]
+[ext_resource type="Resource" uid="uid://dnkp8jmxhbt8a" path="res://Resources/Characters/Skills/Classes/caster_class.tres" id="1_enbd5"]
+[ext_resource type="Resource" uid="uid://bwb46tp8gc6se" path="res://Resources/Characters/Skills/Elements/earth_element.tres" id="2_ik88e"]
+[ext_resource type="Resource" uid="uid://bf8cl74tynfbm" path="res://Resources/Characters/Characters/001_vayne/001_vayne_powercreep.tres" id="3_f10if"]
+[ext_resource type="Resource" uid="uid://cta0py0mhsput" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_role.tres" id="4_aksnh"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_ik88e"]
 [ext_resource type="Resource" uid="uid://ddpmbsblrglnc" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_005_male_wizard.tres" id="5_gpa5h"]
-
-[sub_resource type="Resource" id="Resource_x7iov"]
-script = ExtResource("2_gpa5h")
-description = ""
-metadata/_custom_type_script = "uid://nmxkcq75xw7d"
+[ext_resource type="Resource" uid="uid://ceuop764p5g4r" path="res://Resources/Characters/Characters/001_vayne/Skills/001_vayne_skill_loadout.tres" id="5_llnny"]
 
 [resource]
 script = ExtResource("4_ik88e")
@@ -20,11 +15,11 @@ portrait = ExtResource("5_gpa5h")
 BaseRarity = 1
 Name = "Baldie"
 Title = ""
-Description = ""
 World = ""
 Element = ExtResource("2_ik88e")
 Class = ExtResource("1_enbd5")
-Role = ExtResource("3_x7iov")
-SkillSet = ExtResource("2_no2d6")
-EnemyAI = SubResource("Resource_x7iov")
+Role = ExtResource("4_aksnh")
+SkillSet = ExtResource("5_llnny")
+Powercreep = ExtResource("3_f10if")
+Description = ""
 metadata/_custom_type_script = "uid://gdabyn413d1c"

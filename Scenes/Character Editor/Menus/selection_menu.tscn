@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dtv3h5hd0pqvp" path="res://Resources/UI/Portrait Boxes/Frame Icons/Character Frame Border White.png" id="6_kjhoa"]
 [ext_resource type="Script" uid="uid://chy2uvicwyg6n" path="res://Scripts/Game Menu/Character Creator/CharacterDisplayUi.cs" id="7_rs365"]
 [ext_resource type="PackedScene" uid="uid://b8euqy04igiyx" path="res://Scenes/Character Editor/number_of_photos_selection.tscn" id="9_cmjyh"]
-[ext_resource type="Texture2D" uid="uid://luqf3yhtaw7p" path="res://Art Assets/Character Assets/ddant Characters/ddant__0036_warrior_dwarf_man_02.png" id="11_j2knd"]
+[ext_resource type="Texture2D" uid="uid://luqf3yhtaw7p" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0036_warrior_dwarf_man_02.png" id="11_j2knd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fj5p1"]
 line_spacing = 0.0

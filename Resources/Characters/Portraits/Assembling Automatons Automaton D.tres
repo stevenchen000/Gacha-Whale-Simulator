@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://c2ds3tqr6ojib"]
+
+[ext_resource type="Texture2D" uid="uid://cmtbl5xfmf5c3" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Assembling Automatons Automaton D.png" id="1_ylx65"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_1rcch"]
+
+[resource]
+script = ExtResource("2_1rcch")
+portrait = ExtResource("1_ylx65")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(10.7991, 26.7819)
+Scale = 0.755
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

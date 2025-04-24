@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bq0gv5vxhldqi"]
+
+[ext_resource type="Texture2D" uid="uid://d2r2xnxptvm5i" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Boss Big Fish.png" id="1_ckg72"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_mq3gx"]
+
+[resource]
+script = ExtResource("2_mq3gx")
+portrait = ExtResource("1_ckg72")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(28.0778, 26.3499)
+Scale = 0.4
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

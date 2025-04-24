@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://upbcoyx3t0qi"]
+
+[ext_resource type="Texture2D" uid="uid://c30nruml13nln" path="res://Art Assets/Character Assets/ddant Characters/Used Characters/ddant__0099_deity_man_01.png" id="1_n5brd"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_gq1ar"]
+
+[resource]
+script = ExtResource("2_gq1ar")
+portrait = ExtResource("1_n5brd")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(19.4384, 147.3)
+Scale = 0.4
+cgPosition = Vector2(0, 0)
+cgScale = 1.0

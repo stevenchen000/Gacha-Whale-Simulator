@@ -7,3 +7,4 @@
 script = ExtResource("2_6sfam")
 Name = "Ice"
 Texture = ExtResource("1_aapca")
+ElementColor = Color(0, 0.7, 1, 1)

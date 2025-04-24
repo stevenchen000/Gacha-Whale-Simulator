@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterPortrait" load_steps=3 format=3 uid="uid://bou588acxxves"]
+
+[ext_resource type="Texture2D" uid="uid://8xc2p5fkhpro" path="res://Art Assets/Character Assets/Frontview Batch Battlers/Used Characters/Cave Dweller Rock Mimic.png" id="1_j436j"]
+[ext_resource type="Script" uid="uid://1lyyvtgem8vj" path="res://Scripts/Game Menu/Character Creator/Character Portraits/CharacterPortrait.cs" id="2_mrpkp"]
+
+[resource]
+script = ExtResource("2_mrpkp")
+portrait = ExtResource("1_j436j")
+emotions = Dictionary[String, Texture2D]({})
+Position = Vector2(14.2549, 2.59179)
+Scale = 1.34
+cgPosition = Vector2(0, 0)
+cgScale = 1.0
