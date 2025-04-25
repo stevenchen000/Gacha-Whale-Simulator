@@ -4,23 +4,17 @@ using System;
 
 namespace CombatSystem
 {
+    [Tool]
+    [GlobalClass]
     public partial class ConditionalAI : CombatAI
     {
         [Export] private Array<CombatAI> aiList = new Array<CombatAI>();
 
-        public override CombatActionData CalculateAction(BattleManager battle)
+        public override CombatActionData CalculateAction(BattleManager battle, BattleCharacter caster, Array<BattleCharacter> targets)
         {
-            CombatActionData result = null;
+            
 
-            for(int i = 0; i < aiList.Count; i++)
-            {
-                var currAI = aiList[i];
-                result = currAI.CalculateAction(battle);
-
-                if (result != null) break;
-            }
-
-            return result;
+            return null;
         }
     }
 }

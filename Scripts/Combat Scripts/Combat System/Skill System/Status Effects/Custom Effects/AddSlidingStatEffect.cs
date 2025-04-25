@@ -4,6 +4,7 @@ using System;
 
 namespace SkillSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class AddSlidingStatEffect : BaseEffect
     {

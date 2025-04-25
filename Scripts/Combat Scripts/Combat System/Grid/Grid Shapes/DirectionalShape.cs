@@ -28,17 +28,21 @@ namespace CombatSystem
             return result;
         }
 
-        public override TargetingData GetSpacesReachableToTarget(BattleGrid grid, MovementData movement, Vector2I targetCoords)
+        public override Array<Vector2I> GetSpacesReachableToTarget(BattleGrid grid, MovementData movement, Vector2I targetCoords)
         {
-            TargetingData result = null;
+            Array<Vector2I> result = new();
+            var walkableSpaces = movement.WalkableSpaces;
 
+            var upSpaces = GetAllSpacesInDirection(CharacterDirection.UP, targetCoords);
+            var downSpaces = GetAllSpacesInDirection(CharacterDirection.DOWN, targetCoords);
+            var leftSpaces = GetAllSpacesInDirection(CharacterDirection.LEFT, targetCoords);
+            var rightSpaces = GetAllSpacesInDirection(CharacterDirection.RIGHT, targetCoords);
 
+            var allSpaces = JoinArrays(upSpaces, downSpaces, leftSpaces, rightSpaces);
+            result = FindCommonSpaces(allSpaces, walkableSpaces);
 
             return result;
         }
-
-
-
 
 
 

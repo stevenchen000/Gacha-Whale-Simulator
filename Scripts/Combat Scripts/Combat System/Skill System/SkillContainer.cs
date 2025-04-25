@@ -122,6 +122,10 @@ namespace CombatSystem
             return data.ValidTargetExists(grid);
         }
         
-
+        public Godot.Collections.Array<Vector2I> GetValidStandingPositions(BattleGrid grid, BattleCharacter target)
+        {
+            var pos = target.currPosition;
+            return Skill.GetValidSpaces(grid, pos);
+        }
     }
 }

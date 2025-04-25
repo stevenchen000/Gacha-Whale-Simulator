@@ -64,7 +64,7 @@ namespace CombatSystem
         public Element CharacterElement { get { return Character.Character.Element; } }
         [Export] public EffectManager Status { get; private set; }
         [Export] public BattleCharacterFlags Flags { get; private set; }
-        [Export] public CombatAI AI { get; private set; }
+        [Export] public CharacterAI AI { get; private set; }
         public double NextTurnTime {  get; private set; }
         public int TurnPriority { get; private set; } = 0;
         //Used for calculating turn count without free turns
@@ -72,6 +72,9 @@ namespace CombatSystem
         //Counts free turns, used for current turn damage counting
         public int ActionsTaken { get; private set; }
         public bool IsTakingTurn { get { return battle.GetCurrentCharacter() == this; } }
+        public BattleCharacter TauntTarget { get; private set; }
+
+
 
         //Animations
         [ExportCategory("Animations")]
@@ -179,7 +182,7 @@ namespace CombatSystem
             CombatActionData result = null;
 
             if(AI != null)
-                result = AI.CalculateAction(battle);
+                result = AI.CalculateAction(battle, this);
 
             return result;
         }
@@ -372,6 +375,18 @@ namespace CombatSystem
             int spirit = Stats.GetStat(StatNames.Spirit);
             int currAmp = Stats.GetSlidingStat(StatNames.Amp);
             return currAmp < spirit;
+        }
+
+        public void Taunt(BattleCharacter caster)
+        {
+            TauntTarget = caster;
+            Flags.SetFlagValue(BattleFlagNames.isTaunted, true);
+        }
+
+        public void Untaunt()
+        {
+            TauntTarget = null;
+            Flags.SetFlagValue(BattleFlagNames.isTaunted, false);
         }
 
         /***************

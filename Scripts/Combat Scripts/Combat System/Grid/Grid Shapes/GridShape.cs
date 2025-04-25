@@ -19,9 +19,9 @@ namespace CombatSystem
         }
 
 
-        public virtual TargetingData GetSpacesReachableToTarget(BattleGrid grid, MovementData movement, Vector2I targetCoords)
+        public virtual Array<Vector2I> GetSpacesReachableToTarget(BattleGrid grid, MovementData movement, Vector2I targetCoords)
         {
-            return null;
+            return new Array<Vector2I>();
         }
 
 
@@ -84,6 +84,36 @@ namespace CombatSystem
                         break;
                     }
                 }
+            }
+
+            return result;
+        }
+
+
+        protected Array<Vector2I> JoinArrays(params Array<Vector2I>[] spaces)
+        {
+            var result = new Array<Vector2I>();
+
+            foreach (var array in spaces)
+            {
+                foreach (var space in array)
+                {
+                    if (!result.Contains(space))
+                        result.Add(space);
+                }
+            }
+
+            return result;
+        }
+
+        protected Array<Vector2I> FindCommonSpaces(Array<Vector2I> a, Array<Vector2I> b)
+        {
+            Array<Vector2I> result = new();
+
+            foreach (var space in a)
+            {
+                if (b.Contains(space))
+                    result.Add(space);
             }
 
             return result;

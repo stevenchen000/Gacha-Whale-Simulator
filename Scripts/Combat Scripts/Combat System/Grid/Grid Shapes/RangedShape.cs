@@ -28,6 +28,26 @@ namespace CombatSystem
             return result;
         }
 
+
+        public override Array<Vector2I> GetSpacesReachableToTarget(BattleGrid grid, MovementData movement, Vector2I targetCoords)
+        {
+            var walkableSpaces = grid.CurrentMovementData.WalkableSpaces;
+            var allSpaces = GetAllSpaces(grid, targetCoords);
+            var result = FindCommonSpaces(walkableSpaces, allSpaces);
+            return result;
+        }
+
+
+        private Array<Vector2I> GetAllSpaces(BattleGrid grid, Vector2I offset)
+        {
+            var allSpaces = GetAllCoords();
+            AddOffsetToSpaces(allSpaces, offset);
+            return allSpaces;
+        }
+
+
+
+
         private Dictionary<Vector2I, Array<Vector2I>> CreateTargetingData(Array<Vector2I> coords)
         {
             var result = new Dictionary<Vector2I, Array<Vector2I>>();

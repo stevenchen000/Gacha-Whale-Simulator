@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://duop67bc0ld4r" path="res://Resources/Characters/Skills/Classes/knight_class.tres" id="1_8wimw"]
 [ext_resource type="Resource" uid="uid://dsmxegoikjnkm" path="res://Resources/Characters/Skills/Elements/dark_element.tres" id="2_8wimw"]
-[ext_resource type="Resource" uid="uid://bf8cl74tynfbm" path="res://Resources/Characters/Characters/001_vayne/001_vayne_powercreep.tres" id="3_8wimw"]
+[ext_resource type="Resource" uid="uid://cbd3hyosv72hc" path="res://Resources/Characters/AI/default_ai.tres" id="3_2ghjo"]
 [ext_resource type="Resource" uid="uid://cnmga8on2vcdy" path="res://Resources/Characters/Skills/Roles/Attacker/attacker_role.tres" id="3_kgx30"]
 [ext_resource type="Resource" uid="uid://ceuop764p5g4r" path="res://Resources/Characters/Characters/001_vayne/Skills/001_vayne_skill_loadout.tres" id="5_kgx30"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="6_7l7e3"]
@@ -20,6 +20,6 @@ Element = ExtResource("2_8wimw")
 Class = ExtResource("1_8wimw")
 Role = ExtResource("3_kgx30")
 SkillSet = ExtResource("5_kgx30")
-Powercreep = ExtResource("3_8wimw")
+EnemyAI = ExtResource("3_2ghjo")
 Description = ""
 metadata/_custom_type_script = "uid://gdabyn413d1c"

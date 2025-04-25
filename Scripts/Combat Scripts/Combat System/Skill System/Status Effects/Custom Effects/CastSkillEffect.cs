@@ -5,6 +5,7 @@ using System;
 
 namespace SkillSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class CastSkillEffect : BaseEffect
     {

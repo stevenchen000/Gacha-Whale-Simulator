@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GetEnemiesInKillRange" load_steps=2 format=3 uid="uid://dn6r8k27r8wjc"]
+
+[ext_resource type="Script" uid="uid://btikfb6lpth36" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Target Selection/GetEnemiesInKillRange.cs" id="1_lnjjy"]
+
+[resource]
+script = ExtResource("1_lnjjy")
+description = ""
+metadata/_custom_type_script = "uid://btikfb6lpth36"

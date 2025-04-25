@@ -5,11 +5,12 @@ using Godot.Collections;
 
 namespace CombatSystem
 {
+    [Tool]
     [GlobalClass]
     public partial class BasicAI : CombatAI
     {
 
-        public override CombatActionData CalculateAction(BattleManager battle)
+        public override CombatActionData CalculateAction(BattleManager battle, BattleCharacter caster, Array<BattleCharacter> targets)
         {
             CombatActionData result = null;
 

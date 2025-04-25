@@ -18,7 +18,7 @@ public partial class GameCharacter : Resource
     [Export] public CharacterClass Class { get; protected set; }
     [Export] public CharacterRole Role { get; private set; }
     [Export] public SkillLoadout SkillSet { get; protected set; }
-    [Export] public CombatAI EnemyAI { get; protected set; }
+    [Export] public CharacterAI EnemyAI { get; protected set; }
     [Export] public PowercreepLevelData Powercreep { get; protected set; }
     [Export(PropertyHint.MultilineText)] public string Description { get; protected set; }
 

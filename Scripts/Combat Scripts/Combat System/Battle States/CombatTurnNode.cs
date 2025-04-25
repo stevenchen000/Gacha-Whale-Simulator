@@ -27,7 +27,7 @@ namespace CombatSystem
             if (IsEnemyControlled(character))
             {
                 timer = new TimeHandler();
-                enemyAction = character.AI.CalculateAction(battle);
+                enemyAction = character.AI.CalculateAction(battle, character);
             }
             else
             {
@@ -68,8 +68,10 @@ namespace CombatSystem
                     else if (timer.TimeIsBetween(1))
                     {
                         var skill = enemyAction.Skill;
-
-                        battle.SetSelectedSkill(skill);
+                        if (skill != null)
+                            battle.SetSelectedSkill(skill);
+                        else
+                            battle.SkipTurn();
                     }
                     else if (timer.TimeIsBetween(1.5))
                     {

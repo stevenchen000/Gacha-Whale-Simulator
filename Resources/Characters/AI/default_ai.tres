@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="CharacterAI" load_steps=18 format=3 uid="uid://cbd3hyosv72hc"]
+
+[ext_resource type="Script" uid="uid://btua2mjxjv8j5" path="res://Scripts/Combat Scripts/Combat System/Combat AI/AITargetPair.cs" id="1_lrm0l"]
+[ext_resource type="Script" uid="uid://bmowwu65iodu0" path="res://Scripts/Combat Scripts/Combat System/Combat AI/CharacterAI.cs" id="2_bielr"]
+[ext_resource type="Script" uid="uid://bycilr3fbhnbu" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/HPAttackAI.cs" id="2_x3lrw"]
+[ext_resource type="Script" uid="uid://btikfb6lpth36" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Target Selection/GetEnemiesInKillRange.cs" id="3_o1vat"]
+[ext_resource type="Script" uid="uid://dxr03eise5phb" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/AmpAttackAI.cs" id="3_vaef5"]
+[ext_resource type="Script" uid="uid://cfa8ma8hy0w6s" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Target Selection/GetEnemiesByHighestAmp.cs" id="5_2gmm5"]
+[ext_resource type="Script" uid="uid://batf6srsv1mmt" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/MoveTowardsTarget.cs" id="6_q5ax8"]
+[ext_resource type="Script" uid="uid://cih1l6j31mfgb" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Target Selection/GetNearestTargets.cs" id="7_xpq2e"]
+
+[sub_resource type="Resource" id="Resource_dtxlj"]
+script = ExtResource("2_x3lrw")
+description = ""
+metadata/_custom_type_script = "uid://bycilr3fbhnbu"
+
+[sub_resource type="Resource" id="Resource_3u67h"]
+script = ExtResource("3_o1vat")
+description = ""
+metadata/_custom_type_script = "uid://btikfb6lpth36"
+
+[sub_resource type="Resource" id="Resource_xl5cy"]
+script = ExtResource("1_lrm0l")
+TargetSelection = SubResource("Resource_3u67h")
+AI = SubResource("Resource_dtxlj")
+metadata/_custom_type_script = "uid://btua2mjxjv8j5"
+
+[sub_resource type="Resource" id="Resource_cpo1t"]
+script = ExtResource("3_vaef5")
+description = ""
+metadata/_custom_type_script = "uid://dxr03eise5phb"
+
+[sub_resource type="Resource" id="Resource_vnbjk"]
+script = ExtResource("5_2gmm5")
+description = ""
+metadata/_custom_type_script = "uid://cfa8ma8hy0w6s"
+
+[sub_resource type="Resource" id="Resource_hg0pv"]
+script = ExtResource("1_lrm0l")
+TargetSelection = SubResource("Resource_vnbjk")
+AI = SubResource("Resource_cpo1t")
+metadata/_custom_type_script = "uid://btua2mjxjv8j5"
+
+[sub_resource type="Resource" id="Resource_ef7u8"]
+script = ExtResource("6_q5ax8")
+description = ""
+metadata/_custom_type_script = "uid://batf6srsv1mmt"
+
+[sub_resource type="Resource" id="Resource_ms2p0"]
+script = ExtResource("7_xpq2e")
+description = ""
+metadata/_custom_type_script = "uid://cih1l6j31mfgb"
+
+[sub_resource type="Resource" id="Resource_8yiae"]
+script = ExtResource("1_lrm0l")
+TargetSelection = SubResource("Resource_ms2p0")
+AI = SubResource("Resource_ef7u8")
+metadata/_custom_type_script = "uid://btua2mjxjv8j5"
+
+[resource]
+script = ExtResource("2_bielr")
+aiList = Array[ExtResource("1_lrm0l")]([SubResource("Resource_xl5cy"), SubResource("Resource_hg0pv"), SubResource("Resource_8yiae")])
+metadata/_custom_type_script = "uid://bmowwu65iodu0"

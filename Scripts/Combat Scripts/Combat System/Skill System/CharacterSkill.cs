@@ -88,7 +88,10 @@ namespace CombatSystem
             return data;
         }
 
-
+        public Array<Vector2I> GetValidSpaces(BattleGrid grid, Vector2I target)
+        {
+            return AttackArea.GetSpacesReachableToTarget(grid, grid.CurrentMovementData, target);
+        }
         
 
         private bool HasTargetsInList(BattleManager battle, BattleCharacter caster, Array<GridSpace> spaces)

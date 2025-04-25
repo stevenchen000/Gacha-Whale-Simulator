@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="BasicAI" load_steps=2 format=3 uid="uid://6o7bcyw7lixn"]
-
-[ext_resource type="Script" uid="uid://nmxkcq75xw7d" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Custom AI/BasicAI.cs" id="1_51yow"]
-
-[resource]
-script = ExtResource("1_51yow")
-description = ""
-metadata/_custom_type_script = "uid://nmxkcq75xw7d"

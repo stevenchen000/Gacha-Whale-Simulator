@@ -11,30 +11,32 @@ namespace CombatSystem
         [Export(PropertyHint.MultilineText)] protected string description;
 
 
-        public virtual CombatActionData CalculateAction(BattleManager battle)
+        public virtual CombatActionData CalculateAction(BattleManager battle, BattleCharacter caster, Array<BattleCharacter> targets)
         {
             return null;
         }
 
-        protected Array<BattleCharacter> GetValidTargets(BattleState state, BattleCharacter caster, TargetType targetType)
+        protected Array<BattleCharacter> GetValidTargets(BattleManager battle, BattleCharacter caster, TargetType targetType)
         {
+            var state = battle.State;
             var result = new Array<BattleCharacter>();
 
             switch (targetType)
             {
                 case TargetType.Ally:
-                    result = GetAllies(state, caster);
+                    result = GetAllies(battle, caster);
                     break;
                 case TargetType.Enemy:
-                    result = GetEnemies(state, caster);
+                    result = GetEnemies(battle, caster);
                     break;
             }
 
             return result;
         }
 
-        protected Array<BattleCharacter> GetAllies(BattleState state, BattleCharacter caster)
+        protected Array<BattleCharacter> GetAllies(BattleManager battle, BattleCharacter caster)
         {
+            var state = battle.State;
             var result = new Array<BattleCharacter>();
             var fighters = state.GetAllLivingCharacters();
 
@@ -50,8 +52,9 @@ namespace CombatSystem
             return result;
         }
 
-        protected Array<BattleCharacter> GetEnemies(BattleState state, BattleCharacter caster)
+        protected Array<BattleCharacter> GetEnemies(BattleManager battle, BattleCharacter caster)
         {
+            var state = battle.State;
             var result = new Array<BattleCharacter>();
             var fighters = state.GetAllLivingCharacters();
 

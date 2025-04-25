@@ -104,6 +104,35 @@ namespace CombatSystem
             return targets;
         }
 
+        public System.Collections.Generic.List<TargetingSelection> GetValidSelections(BattleGrid grid)
+        {
+            var result = new System.Collections.Generic.List<TargetingSelection>();
+            switch (SelectionStyle)
+            {
+                case TargetSelectionStyle.SelectDirection:
+                    var directions = GetValidDirections(grid);
+                    foreach (var dir in directions)
+                    {
+                        var temp = new TargetingSelection(dir);
+                        result.Add(temp);
+                    }
+                    break;
+                case TargetSelectionStyle.SelectSpace:
+                    var spaces = GetValidSpaces(grid);
+                    foreach(var space in spaces)
+                    {
+                        var temp = new TargetingSelection(space);
+                        result.Add(temp);
+                    }
+                    break;
+                case TargetSelectionStyle.None:
+                    result.Add(new TargetingSelection());
+                    break;
+            }
+
+            return result;
+        }
+
         public Array<Vector2I> GetSpacesInSelection(TargetingSelection selection)
         {
             Array<Vector2I> selectedSpaces = null;

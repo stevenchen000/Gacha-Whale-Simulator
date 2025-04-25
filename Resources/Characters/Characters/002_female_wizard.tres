@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://8p7fsjvqx4ye" path="res://Resources/Characters/Skills/Classes/priest_class.tres" id="1_882qk"]
 [ext_resource type="Resource" uid="uid://bi6f6w3gybl8u" path="res://Resources/Characters/Skills/Elements/wind_element.tres" id="2_2330f"]
-[ext_resource type="Resource" uid="uid://bf8cl74tynfbm" path="res://Resources/Characters/Characters/001_vayne/001_vayne_powercreep.tres" id="3_6b21g"]
+[ext_resource type="Resource" uid="uid://cbd3hyosv72hc" path="res://Resources/Characters/AI/default_ai.tres" id="3_2330f"]
 [ext_resource type="Script" uid="uid://gdabyn413d1c" path="res://Scripts/Game Menu/Character Creator/Characters/GameCharacter.cs" id="4_2330f"]
 [ext_resource type="Resource" uid="uid://cta0py0mhsput" path="res://Resources/Characters/Skills/Roles/Supporter/supporter_role.tres" id="4_i54xx"]
 [ext_resource type="Resource" uid="uid://dpb54d4xomaoi" path="res://Resources/Characters/Portraits/ddant/001-009/ddant_portrait_002_female_wizard.tres" id="5_6b21g"]
@@ -20,6 +20,6 @@ Element = ExtResource("2_2330f")
 Class = ExtResource("1_882qk")
 Role = ExtResource("4_i54xx")
 SkillSet = ExtResource("5_aoiwv")
-Powercreep = ExtResource("3_6b21g")
+EnemyAI = ExtResource("3_2330f")
 Description = ""
 metadata/_custom_type_script = "uid://gdabyn413d1c"

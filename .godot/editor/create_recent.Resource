@@ -1,3 +1,7 @@
+CharacterAI
+GetEnemiesByHighestAmp
+GetEnemiesInKillRange
+ConditionalAI
 RangedShape
 HealEffect
 HealStatByDamageEffect
@@ -9,7 +13,3 @@ PowercreepLevelData
 PowercreepData
 GameCharacter
 SkillBranch
-CharacterPortrait
-CastSkillEffect
-ApplyStatusEffect
-SkillAnimationCreateObject

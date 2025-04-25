@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GetEnemiesByHighestAmp" load_steps=2 format=3 uid="uid://4biv8jpumoj8"]
+
+[ext_resource type="Script" uid="uid://cfa8ma8hy0w6s" path="res://Scripts/Combat Scripts/Combat System/Combat AI/Target Selection/GetEnemiesByHighestAmp.cs" id="1_0grey"]
+
+[resource]
+script = ExtResource("1_0grey")
+description = ""
+metadata/_custom_type_script = "uid://cfa8ma8hy0w6s"
